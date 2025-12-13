@@ -95,8 +95,8 @@ fun RatingEditorDialog(
     if (showConfirmCancelDialog) {
         AlertDialog(
             onDismissRequest = { showConfirmCancelDialog = false },
-            title = { Text("舍弃编辑") },
-            text = { Text("评价尚未保存，确定要舍弃吗？") },
+            title = { Text("捨棄編輯") },
+            text = { Text("評價尚未儲存，確定要捨棄嗎？") },
             confirmButton = {
                 TextButton(
                     onClick = {
@@ -107,14 +107,14 @@ fun RatingEditorDialog(
                         contentColor = MaterialTheme.colorScheme.error,
                     ),
                 ) {
-                    Text("舍弃")
+                    Text("捨棄")
                 }
             },
             dismissButton = {
                 TextButton(
                     onClick = { showConfirmCancelDialog = false },
                 ) {
-                    Text("继续编辑")
+                    Text("繼續編輯")
                 }
             },
         )
@@ -124,7 +124,7 @@ fun RatingEditorDialog(
     AlertDialog(
         onDismissRequest = onDismissRequest,
         icon = { Icon(Icons.Rounded.EditSquare, null) },
-        title = { Text("修改评分") },
+        title = { Text("修改評分") },
         text = {
             RatingEditor(
                 state.score, { state.score = it },
@@ -144,7 +144,7 @@ fun RatingEditorDialog(
                         onRate(RateRequest(state.score, state.comment, state.isPrivate))
                     },
                 ) {
-                    Text("确定")
+                    Text("確定")
                 }
             }
         },
@@ -236,9 +236,9 @@ fun RatingEditor(
                     shape = MaterialTheme.shapes.medium,
                     label = {
                         if (isFocused || comment.isNotEmpty()) {
-                            Text("评价")
+                            Text("評價")
                         } else {
-                            Text("说点什么...")
+                            Text("說點什麼...")
                         }
                     },
                     interactionSource = interactionSource,
@@ -261,7 +261,7 @@ fun RatingEditor(
                 onCheckedChange = onIsPrivateChange,
                 enabled = enabled,
             )
-            Text("仅自己可见")
+            Text("僅自己可見")
         }
     }
 }
@@ -313,16 +313,16 @@ fun TenRatingStars(
 @Stable
 fun renderScoreClass(score: Float): String {
     return when (score) {
-        in 0f..1f -> "不忍直视（请谨慎评价）"
+        in 0f..1f -> "不忍直視（請謹慎評價）"
         in 1f..2f -> "很差"
         in 2f..3f -> "差"
-        in 3f..4f -> "较差"
-        in 4f..5f -> "不过不失"
-        in 5f..6f -> "还行"
-        in 6f..7f -> "推荐"
-        in 7f..8f -> "力荐"
+        in 3f..4f -> "較差"
+        in 4f..5f -> "不過不失"
+        in 5f..6f -> "還行"
+        in 6f..7f -> "推薦"
+        in 7f..8f -> "力薦"
         in 8f..9f -> "神作"
-        in 9f..10f -> "超神作（请谨慎评价）"
+        in 9f..10f -> "超神作（請謹慎評價）"
         else -> ""
     }
 }

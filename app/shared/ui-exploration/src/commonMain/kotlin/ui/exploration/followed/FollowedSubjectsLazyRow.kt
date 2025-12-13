@@ -101,7 +101,7 @@ fun FollowedSubjectsLazyRow(
                             LoadErrorCardRole.Unimportant,
                             content = {
                                 ListItem(
-                                    headlineContent = { Text("将番剧收藏为 \"在看\" 后将在这里显示") },
+                                    headlineContent = { Text("\u5c07\u756a\u5267\u6536\u85cf\u70ba \\\"\u5728\u770b\\\" \u5f8c\u5c07\u5728\u9019\u88e1\u986f\u793a") },
                                     colors = listItemColors,
                                 )
                             },

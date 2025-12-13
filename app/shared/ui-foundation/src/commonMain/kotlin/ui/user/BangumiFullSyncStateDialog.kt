@@ -31,7 +31,7 @@ fun BangumiFullSyncStateDialog(
     onDismissRequest: () -> Unit,
 ) {
     AlertDialog(
-        title = { Text("正在下载 Bangumi 收藏数据") },
+        title = { Text("正在下載 Bangumi 收藏資料") },
         text = {
             Column {
                 Text(renderBangumiSyncState(state))
@@ -42,13 +42,13 @@ fun BangumiFullSyncStateDialog(
                     LinearProgressIndicator({ 1f }, modifier = Modifier.fillMaxWidth())
                 }
                 Spacer(modifier = Modifier.height(24.dp))
-                Text("此操作可能需要 5-15 分钟时间，请耐心等待。在下载过程中，你可以正常使用其他功能。可手动刷新收藏列表查看最新进度。")
+                Text("此操作可能需要 5-15 分鐘時間，請耐心等待。在下載過程中，你可以正常使用其他功能。可手動刷新收藏列表查看最新進度。")
             }
         },
         onDismissRequest = onDismissRequest,
         confirmButton = {
             TextButton(onDismissRequest) {
-                Text("在后台继续")
+                Text("在背景繼續")
             }
         },
         properties = DialogProperties(dismissOnClickOutside = false),
@@ -57,21 +57,21 @@ fun BangumiFullSyncStateDialog(
 
 private fun renderBangumiSyncState(state: BangumiSyncState?): String {
     return when (state) {
-        null -> "准备中"
-        BangumiSyncState.Preparing -> "正在获取元数据"
-        is BangumiSyncState.FetchingSubjects -> "(已完成 ${state.fetchedCount} 条) 正在获取更多收藏列表"
-        is BangumiSyncState.FetchingEpisodes -> "(已完成 ${state.fetchedCount} 条) 正在获取观看进度"
-        is BangumiSyncState.Inserting -> "(已完成 ${state.savedCount} 条) 正在保存"
-        is BangumiSyncState.Finishing -> "(已完成 ${state.savedCount} 条) 正在完成"
+        null -> "準備中"
+        BangumiSyncState.Preparing -> "正在獲取元資料"
+        is BangumiSyncState.FetchingSubjects -> "(已完成 ${state.fetchedCount} 條) 正在獲取更多收藏列表"
+        is BangumiSyncState.FetchingEpisodes -> "(已完成 ${state.fetchedCount} 條) 正在獲取觀看進度"
+        is BangumiSyncState.Inserting -> "(已完成 ${state.savedCount} 條) 正在儲存"
+        is BangumiSyncState.Finishing -> "(已完成 ${state.savedCount} 條) 正在完成"
         is BangumiSyncState.Finished -> {
             if (state.error != null) {
-                "(已完成 ${state.savedCount} 条) 同步失败, 错误信息如下: \n$state"
+                "(已完成 ${state.savedCount} 條) 同步失敗，錯誤訊息如下：\n$state"
             } else {
-                "(已完成 ${state.savedCount} 条) 同步成功"
+                "(已完成 ${state.savedCount} 條) 同步成功"
             }
         }
 
-        BangumiSyncState.Unsupported -> "进行中"
+        BangumiSyncState.Unsupported -> "進行中"
     }
 }
 

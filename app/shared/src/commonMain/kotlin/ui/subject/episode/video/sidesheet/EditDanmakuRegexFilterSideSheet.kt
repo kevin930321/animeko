@@ -95,11 +95,11 @@ fun DanmakuRegexFilterContent(
         OutlinedTextField(
             value = input,
             onValueChange = { input = it; isError = false },
-            placeholder = { Text("输入要屏蔽的弹幕关键词（正则）") },
-            label = { Text("正则表达式") },
+            placeholder = { Text("輸入要封鎖的彈幕關鍵字（正則）") },
+            label = { Text("正則表達式") },
             supportingText = {
-                if (isError) Text("正则表达式语法不正确。")
-                else Text("例如：‘签’ 会屏蔽含文字‘签’的弹幕。")
+                if (isError) Text("正則表達式語法不正確。")
+                else Text("例如：'簽' 會封鎖含文字'簽'的彈幕。")
             },
             isError = isError,
             singleLine = true,
@@ -112,7 +112,7 @@ fun DanmakuRegexFilterContent(
                 },
             trailingIcon = {
                 IconButton(onClick = { add() }, enabled = !isBlank && valid) {
-                    Icon(Icons.Rounded.Add, contentDescription = "添加")
+                    Icon(Icons.Rounded.Add, contentDescription = "新增")
                 }
             },
             keyboardOptions = KeyboardOptions.Default.copy(imeAction = ImeAction.Done),
@@ -143,7 +143,7 @@ fun DanmakuRegexFilterContent(
                             onClick = { onDelete(item) },
                             modifier = Modifier.size(24.dp),
                         ) {
-                            Icon(Icons.Rounded.Close, contentDescription = "删除", modifier = Modifier.size(16.dp))
+                            Icon(Icons.Rounded.Close, contentDescription = "刪除", modifier = Modifier.size(16.dp))
                         }
                     },
                     colors = AssistChipDefaults.assistChipColors(
@@ -169,14 +169,14 @@ fun DanmakuRegexFilterSettings(
     val layoutModifier = if (isPortrait) modifier.fillMaxWidth() else modifier
     
     SideSheetLayout(
-        title = { Text("正则弹幕过滤管理") },
+        title = { Text("正則彈幕過濾管理") },
         onDismissRequest = onDismissRequest,
         modifier = layoutModifier,
         containerColor = backgroundColor,
         closeButton = {
             if (expanded) {
                 IconButton(onClick = onDismissRequest) {
-                    Icon(Icons.Rounded.Close, contentDescription = "关闭")
+                    Icon(Icons.Rounded.Close, contentDescription = "關閉")
                 }
             }
         },

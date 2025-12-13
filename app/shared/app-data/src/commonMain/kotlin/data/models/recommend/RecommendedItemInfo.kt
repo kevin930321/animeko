@@ -17,9 +17,12 @@ sealed class RecommendedItemInfo
 
 data class RecommendedSubjectInfo(
     val bangumiId: Int,
+    val name: String,
     val nameCn: String,
     val imageLarge: String,
-) : RecommendedItemInfo()
+) : RecommendedItemInfo() {
+    val displayName: String get() = name.takeIf { it.isNotBlank() } ?: nameCn
+}
 
 
 val RecommendedItemInfo.id: Any
@@ -37,6 +40,7 @@ val TestRecommendedItemInfos: List<RecommendedItemInfo>
     get() = TestFollowedSubjectInfos.map {
         RecommendedSubjectInfo(
             bangumiId = it.subjectInfo.subjectId,
+            name = it.subjectInfo.name,
             nameCn = it.subjectInfo.nameCn,
             imageLarge = it.subjectInfo.imageLarge,
         )

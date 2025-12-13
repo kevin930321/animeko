@@ -151,9 +151,9 @@ object PlayerControllerDefaults {
             modifier.testTag(TAG_DANMAKU_ICON_BUTTON),
         ) {
             if (danmakuEnabled) {
-                Icon(Icons.Rounded.Subtitles, contentDescription = "禁用弹幕")
+                Icon(Icons.Rounded.Subtitles, contentDescription = "停用彈幕")
             } else {
-                Icon(Icons.Rounded.SubtitlesOff, contentDescription = "启用弹幕")
+                Icon(Icons.Rounded.SubtitlesOff, contentDescription = "啟用彈幕")
             }
         }
     }
@@ -187,7 +187,7 @@ object PlayerControllerDefaults {
                 ) {
                     when {
                         isMute -> {
-                            Icon(Icons.AutoMirrored.Rounded.VolumeOff, contentDescription = "静音")
+                            Icon(Icons.AutoMirrored.Rounded.VolumeOff, contentDescription = "靜音")
                         }
 
                         volume < 0.33f -> {
@@ -290,7 +290,7 @@ object PlayerControllerDefaults {
                 contentColor = LocalContentColor.current,
             ),
         ) {
-            Text("选集")
+            Text("選集")
         }
     }
 
@@ -298,21 +298,21 @@ object PlayerControllerDefaults {
     // See #120
     @Stable
     private val DANMAKU_PLACEHOLDERS = listOf(
-        "来发一条弹幕吧~",
-        "小心，我要发射弹幕啦！",
-        "每一条弹幕背后，都有一个不为人知的秘密",
-        "召唤弹幕精灵！",
-        "这一刻的感受，只有你最懂",
-        "让弹幕变得不一样",
-        "弹幕世界大门已开",
-        "字里行间，藏着宇宙的秘密",
-        "在光与影的交织中，你的话语是唯一的真实",
-        "有趣的灵魂万里挑一",
-        "说点什么",
-        "长期征集有趣的弹幕广告词",
-        "广告位招租",
+        "來發一條彈幕吧~",
+        "小心，我要發射彈幕啦！",
+        "每一條彈幕背後，都有一個不為人知的秘密",
+        "召喚彈幕精靈！",
+        "這一刻的感受，只有你最懂",
+        "讓彈幕變得不一樣",
+        "彈幕世界大門已開",
+        "字裡行間，藏著宇宙的秘密",
+        "在光與影的交織中，你的話語是唯一的真實",
+        "有趣的靈魂萬裡挑一",
+        "說點什麼",
+        "長期徵集有趣的彈幕廣告詞",
+        "廣告位招租",
         "\uD83E\uDD14",
-        "梦开始的地方",
+        "夢開始的地方",
         "心念成形",
         "發個彈幕炒熱氣氛！",
         "來個彈幕吧！",
@@ -332,7 +332,7 @@ object PlayerControllerDefaults {
         modifier: Modifier = Modifier,
     ) {
         IconButton(onClick = onClick, enabled = enabled, modifier = modifier) {
-            Icon(Icons.AutoMirrored.Rounded.Send, contentDescription = "发送")
+            Icon(Icons.AutoMirrored.Rounded.Send, contentDescription = "傳送")
         }
     }
 
@@ -622,7 +622,7 @@ object PlayerControllerDefaults {
                         modifier = Modifier.padding(horizontal = 16.dp),
                         verticalAlignment = Alignment.CenterVertically,
                     ) {
-                        Text("即将跳过 OP 或 ED")
+                        Text("即將跳過 OP 或 ED")
                         TextButton(onClick = onClick) {
                             Text("取消")
                         }

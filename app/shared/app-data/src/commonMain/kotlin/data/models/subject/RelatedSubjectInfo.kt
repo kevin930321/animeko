@@ -13,7 +13,7 @@ class RelatedSubjectInfo(
     val nameCn: String,
     val image: String?,
 ) {
-    val displayName get() = nameCn.ifBlank { name } ?: nameCn
+    val displayName get() = name?.takeIf { it.isNotBlank() } ?: nameCn
 
     companion object {
         fun sortList(subjectList: List<RelatedSubjectInfo>): List<RelatedSubjectInfo> {

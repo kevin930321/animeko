@@ -334,7 +334,7 @@ fun EpisodeDetails(
                             TopAppBar(
                                 title = {
                                     Text(
-                                        "选择数据源",
+                                        "選擇資料源",
                                         modifier = Modifier.padding(start = 8.dp),
                                     )
                                 },
@@ -343,7 +343,7 @@ fun EpisodeDetails(
                                         onClick = { sheetState.close() },
                                         modifier = Modifier.padding(end = 8.dp),
                                     ) {
-                                        Icon(Icons.Outlined.Close, contentDescription = "关闭选择器")
+                                        Icon(Icons.Outlined.Close, contentDescription = "關閉選擇器")
                                     }
                                 },
                                 colors = TopAppBarDefaults.topAppBarColors(
@@ -513,7 +513,7 @@ fun EpisodeDetails(
         subjectRecommendations = { horizontalPadding ->
             item("subject_recommendation_header") {
                 SectionTitle {
-                    Text("相关推荐")
+                    Text("相關推薦")
                 }
             }
             for (recommendation in subjectRecommendations) {
@@ -586,7 +586,7 @@ private fun DanmakuTimeShiftDialog(
         onDismissRequest = onDismissRequest,
         confirmButton = {
             TextButton(onClick = { onConfirm(shift.roundToLong()) }) {
-                Text("确定")
+                Text("確定")
             }
         },
         dismissButton = {
@@ -594,11 +594,11 @@ private fun DanmakuTimeShiftDialog(
                 Text("取消")
             }
         },
-        title = { Text("$serviceName 弹幕时间校准") },
+        title = { Text("$serviceName 彈幕時間校準") },
         text = {
             Column(verticalArrangement = Arrangement.spacedBy(16.dp)) {
-                Text("调整弹幕出现时间以匹配当前视频。正值表示弹幕延后，负值表示弹幕提前。")
-                Text("当前偏移：$shiftLabel")
+                Text("調整彈幕出現時間以匹配當前影片。正值表示彈幕延後，負值表示彈幕提前。")
+                Text("當前偏移：$shiftLabel")
                 Slider(
                     value = shift,
                     onValueChange = { shift = it.coerceIn(sliderRange.start, sliderRange.endInclusive) },
@@ -618,14 +618,14 @@ private fun DanmakuTimeShiftDialog(
                     verticalArrangement = Arrangement.spacedBy(8.dp),
                 ) {
                     OutlinedButton(onClick = { shift = 0f }) {
-                        Text("重置为 0")
+                        Text("重置為 0")
                     }
                     OutlinedButton(
                         onClick = {
                             shift = currentShiftMillis.toFloat().coerceIn(sliderRange.start, sliderRange.endInclusive)
                         },
                     ) {
-                        Text("恢复原值")
+                        Text("恢復原值")
                     }
                 }
             }

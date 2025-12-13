@@ -94,7 +94,7 @@ fun SearchPage(
             SuggestionSearchBar(
                 state.suggestionSearchBarState,
                 Modifier.padding(bottom = 16.dp),
-                placeholder = { Text("关键词") },
+                placeholder = { Text("關鍵字") },
                 windowInsets = contentWindowInsets.only(WindowInsetsSides.Horizontal),
             )
         },
@@ -196,7 +196,7 @@ fun SearchPage(
                         }
                     },
                 ) {
-                    Icon(Icons.Rounded.KeyboardArrowUp, "回到顶部")
+                    Icon(Icons.Rounded.KeyboardArrowUp, "回到頂部")
                 }
             }
         },
@@ -248,7 +248,7 @@ internal fun SearchPageListDetailScaffold(
         navigator,
         listPaneTopAppBar = {
             AniTopAppBar(
-                title = { Text("搜索") },
+                title = { Text("搜尋") },
                 Modifier.fillMaxWidth(),
                 navigationIcon = {
                     if (navigator.canNavigateBack()) {

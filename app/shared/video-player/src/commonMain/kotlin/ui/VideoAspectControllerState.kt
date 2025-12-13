@@ -51,7 +51,7 @@ class VideoAspectRatioControllerState(
 @Composable
 fun renderAspectRatioMode(mode: AspectRatioMode): String {
     return when (mode) {
-        AspectRatioMode.FIT -> "适应"
+        AspectRatioMode.FIT -> "適應"
         AspectRatioMode.STRETCH -> "填充"
         AspectRatioMode.CROP -> "裁切"
     }

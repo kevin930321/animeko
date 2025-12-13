@@ -545,7 +545,7 @@ internal expect fun SettingsScope.PlayerGroupPlatform(
 @Composable
 private fun renderLocale(it: Locale?): String {
     if (it == null) {
-        return "系统语言"
+        return "系統語言"
     }
 
     // The following code does not need to be localized

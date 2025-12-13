@@ -41,7 +41,7 @@ import org.jetbrains.compose.ui.tooling.preview.Preview
 
 private val ACTIONS = listOf(
     SubjectCollectionAction(
-        { Text("取消看过") },
+        { Text("取消看過") },
         { Icon(Icons.Rounded.AccessTime, null) },
         UnifiedCollectionType.WISH,
     ),
@@ -89,18 +89,18 @@ fun EpisodeCollectionActionButton(
     ) {
         when (collectionType) {
             UnifiedCollectionType.DONE -> {
-                Text("已看过")
+                Text("已看過")
             }
 
             UnifiedCollectionType.DROPPED -> {
-                Text("已抛弃")
+                Text("已拋棄")
             }
 
             else -> {
                 Box(Modifier.size(16.dp)) {
                     Icon(Icons.Rounded.Add, null)
                 }
-                Text("看过", Modifier.padding(start = 8.dp))
+                Text("看過", Modifier.padding(start = 8.dp))
             }
         }
 

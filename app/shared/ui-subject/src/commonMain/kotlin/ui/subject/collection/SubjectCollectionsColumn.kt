@@ -259,7 +259,7 @@ private fun SubjectCollectionItemContent(
             verticalAlignment = Alignment.CenterVertically,
         ) {
             TextButton(onShowEpisodeList) {
-                Text("选集")
+                Text("選集")
             }
 
             Box(Modifier.width(IntrinsicSize.Min)) { playButton() }

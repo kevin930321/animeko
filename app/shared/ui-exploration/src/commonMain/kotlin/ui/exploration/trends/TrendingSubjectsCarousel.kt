@@ -64,7 +64,7 @@ fun TrendingSubjectsCarousel(
         val content: @Composable CarouselItemScope.(Int) -> Unit = { index ->
             val item = if (items.isLoadingFirstPageOrRefreshing) null else items[index]
             CarouselItem(
-                label = { CarouselItemDefaults.Text(item?.nameCn ?: "") },
+                label = { CarouselItemDefaults.Text(item?.displayName ?: "") },
                 Modifier.placeholder(item == null, shape = rememberMaskShape(CarouselItemDefaults.shape)),
             ) {
                 if (item != null) {
@@ -72,7 +72,7 @@ fun TrendingSubjectsCarousel(
                         AsyncImage(
                             item.imageLarge,
                             modifier = Modifier.height(size.imageHeight),
-                            contentDescription = item.nameCn,
+                            contentDescription = item.displayName,
                             contentScale = ContentScale.Crop,
                         )
                     }
@@ -145,21 +145,25 @@ val TestTrendingSubjectInfos
     get() = listOf(
         TrendingSubjectInfo(
             bangumiId = 467461,
+            name = "ダンダダン",
             nameCn = "胆大党",
             imageLarge = "https://lain.bgm.tv/pic/cover/l/44/7d/467461_HHw4K.jpg",
         ),
         TrendingSubjectInfo(
             bangumiId = 425998,
+            name = "Re:ゼロから始める異世界生活 3rd season",
             nameCn = "Re：从零开始的异世界生活 第三季 袭击篇",
             imageLarge = "https://lain.bgm.tv/pic/cover/l/26/d6/425998_dnzr8.jpg",
         ),
         TrendingSubjectInfo(
             bangumiId = 389156,
+            name = "チ。 ―地球の運動について―",
             nameCn = "地。 ―关于地球的运动―",
             imageLarge = "https://lain.bgm.tv/pic/cover/l/5f/84/389156_J4gqQ.jpg",
         ),
         TrendingSubjectInfo(
             bangumiId = 464376,
+            name = "負けヒロインが多すぎる！",
             nameCn = "败犬女主太多了！",
             imageLarge = "https://lain.bgm.tv/pic/cover/l/e4/dc/464376_NsZRw.jpg",
         ),

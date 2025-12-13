@@ -30,6 +30,7 @@ class RecommendationRepository(
 
     private fun TrendingSubjectInfo.toRecommendedSubjectInfo(): RecommendedSubjectInfo = RecommendedSubjectInfo(
         bangumiId = bangumiId,
+        name = name,
         nameCn = nameCn,
         imageLarge = imageLarge,
     )

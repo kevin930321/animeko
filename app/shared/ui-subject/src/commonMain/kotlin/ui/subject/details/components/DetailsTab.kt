@@ -194,7 +194,7 @@ fun SubjectDetailsDefaults.DetailsTab(
 
         item("staff title") {
             Text(
-                "制作人员",
+                "製作人員",
                 Modifier.padding(horizontal = horizontalPadding),
                 style = MaterialTheme.typography.titleMedium,
             )
@@ -206,7 +206,7 @@ fun SubjectDetailsDefaults.DetailsTab(
                 exposedStaff,
                 sheetTitle = {
                     Text(
-                        if (totalStaffCount == null) "制作人员" else "制作人员 $totalStaffCount",
+                        if (totalStaffCount == null) "製作人員" else "製作人員 $totalStaffCount",
                     )
                 },
                 modifier = Modifier.padding(horizontal = horizontalPadding),
@@ -217,7 +217,7 @@ fun SubjectDetailsDefaults.DetailsTab(
         if (relatedSubjects.itemCount != 0) {
             item("related subjects title") {
                 Text(
-                    "关联条目",
+                    "關聯條目",
                     Modifier.padding(horizontal = horizontalPadding),
                     style = MaterialTheme.typography.titleMedium,
                 )
@@ -319,14 +319,14 @@ private fun TagsList(
                             { isExpanded = !isExpanded },
                             Modifier.height(40.dp),
                         ) {
-                            Text("显示更少")
+                            Text("顯示更少")
                         }
                     } else {
                         TextButton(
                             { isExpanded = !isExpanded },
                             Modifier.height(40.dp),
                         ) {
-                            Text("显示更多")
+                            Text("顯示更多")
                         }
                     }
                 }

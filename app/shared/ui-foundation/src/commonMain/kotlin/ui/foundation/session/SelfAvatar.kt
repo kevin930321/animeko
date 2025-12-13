@@ -64,7 +64,7 @@ fun SelfAvatar(
         } else {
             if (state.isSessionValid == false || state.selfInfo == null) {
                 TextButton(onClick) {
-                    Text("登录")
+                    Text("登入")
                 }
             } else {
                 AvatarImage(
@@ -121,7 +121,7 @@ private fun SelfAvatarMenus(
     onClickAny: () -> Unit,
 ) {
     DropdownMenuItem(
-        text = { Text("设置") },
+        text = { Text("設定") },
         onClick = {
             handler.onClickSettings()
             onClickAny()
@@ -133,7 +133,7 @@ private fun SelfAvatarMenus(
     var showLogoutConfirmation by rememberSaveable { mutableStateOf(false) }
     val running by logoutTasker.isRunning.collectAsStateWithLifecycle()
     DropdownMenuItem(
-        text = { Text("退出登录", color = MaterialTheme.colorScheme.error) },
+        text = { Text("登出", color = MaterialTheme.colorScheme.error) },
         leadingIcon = { Icon(Icons.AutoMirrored.Rounded.Logout, null) },
         onClick = { showLogoutConfirmation = true },
         enabled = !running,
@@ -141,7 +141,7 @@ private fun SelfAvatarMenus(
     if (showLogoutConfirmation) {
         AlertDialog(
             { showLogoutConfirmation = false },
-            text = { Text("确定要退出登录吗?") },
+            text = { Text("確定要登出嗎？") },
             confirmButton = {
                 TextButton(
                     {
@@ -152,7 +152,7 @@ private fun SelfAvatarMenus(
                         showLogoutConfirmation = false
                     },
                 ) {
-                    Text("退出登录", color = MaterialTheme.colorScheme.error)
+                    Text("登出", color = MaterialTheme.colorScheme.error)
                 }
             },
             dismissButton = {

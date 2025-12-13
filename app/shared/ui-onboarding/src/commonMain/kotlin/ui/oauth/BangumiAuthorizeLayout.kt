@@ -108,7 +108,7 @@ fun BangumiAuthorizeLayout(
                         .fillMaxWidth(),
                 ) {
                     Text(
-                        "授权 Bangumi 账号，可以同步你的观看记录到 Bangumi 或便捷登录 Ani",
+                        "授權 Bangumi 帳號，可以同步你的觀看記錄到 Bangumi 或便捷登入 Ani",
                         style = MaterialTheme.typography.titleMedium,
                     )
                 }
@@ -158,11 +158,11 @@ private fun AuthorizeButton(
             ) {
                 when (it) {
                     is AuthState.LoggedInAni -> {
-                        Text("绑定 Bangumi 账号")
+                        Text("綁定 Bangumi 帳號")
                     }
 
                     is AuthState.Idle, is AuthState.Failed -> {
-                        Text("登录 / 注册")
+                        Text("登入 / 註冊")
                     }
 
                     is AuthState.AwaitingResult -> {
@@ -174,12 +174,12 @@ private fun AuthorizeButton(
                                 modifier = Modifier.size(16.dp),
                                 strokeWidth = 3.dp,
                             )
-                            Text("正在等待结果")
+                            Text("正在等待結果")
                         }
                     }
 
                     is AuthState.Success -> {
-                        Text("已授权")
+                        Text("已授權")
                     }
                 }
             }
@@ -263,13 +263,13 @@ private enum class HelpOption {
 @Composable
 private fun renderHelpOptionTitle(option: HelpOption): String {
     return when (option) {
-        HelpOption.BANGUMI_DESC -> "Bangumi 是什么"
-        HelpOption.WEBSITE_BLOCKED -> "浏览器提示网站被屏蔽或禁止访问"
-        HelpOption.BANGUMI_REGISTER_CHOOSE -> "注册时应该选择哪一项"
-        HelpOption.REGISTER_TYPE_WRONG_CAPTCHA -> "注册或登录时一直提示验证码错误"
-        HelpOption.CANT_RECEIVE_REGISTER_EMAIL -> "无法收到邮箱验证码"
-        HelpOption.REGISTER_ACTIVATION_FAILED -> "注册时一直激活失败"
-        HelpOption.OTHERS -> "其他问题"
+        HelpOption.BANGUMI_DESC -> "Bangumi 是什麼"
+        HelpOption.WEBSITE_BLOCKED -> "瀏覽器提示網站被封鎖或禁止存取"
+        HelpOption.BANGUMI_REGISTER_CHOOSE -> "註冊時應該選擇哪一項"
+        HelpOption.REGISTER_TYPE_WRONG_CAPTCHA -> "註冊或登入時一直提示驗證碼錯誤"
+        HelpOption.CANT_RECEIVE_REGISTER_EMAIL -> "無法收到郵箱驗證碼"
+        HelpOption.REGISTER_ACTIVATION_FAILED -> "註冊時一直啟用失敗"
+        HelpOption.OTHERS -> "其他問題"
     }
 }
 
@@ -284,36 +284,36 @@ private fun RenderHelpOptionContent(
             HelpOption.BANGUMI_DESC -> {
 
                 Text(
-                    "Bangumi 番组计划 是一个中文互联网的 ACGN 内容分享与交流网站，致力于提供一个轻松便捷独特的交流与沟通环境。\n" +
-                            "Bangumi 提供了番剧索引、番剧收藏、追番进等功能，Ani 可以将你的观看记录同步至 Bangumi。",
+                    "Bangumi 番組計畫 是一個中文網路的 ACGN 內容分享與交流網站，致力於提供一個輕鬆便捷獨特的交流與溝通環境。\n" +
+                            "Bangumi 提供了番劇索引、番劇收藏、追番進度等功能，Ani 可以將你的觀看記錄同步至 Bangumi。",
                 )
             }
 
             HelpOption.WEBSITE_BLOCKED -> {
-                Text("请在系统设置中更换默认浏览器，推荐按使用 Google Chrome，Microsoft Edge 或 Mozilla Firefox 浏览器")
+                Text("請在系統設定中更換預設瀏覽器，推薦使用 Google Chrome、Microsoft Edge 或 Mozilla Firefox 瀏覽器")
             }
 
             HelpOption.BANGUMI_REGISTER_CHOOSE -> {
-                Text("管理 ACG 收藏与收视进度，分享交流")
+                Text("管理 ACG 收藏與收視進度，分享交流")
             }
 
             HelpOption.REGISTER_TYPE_WRONG_CAPTCHA -> {
-                Text("如果没有验证码的输入框，可以尝试多点几次密码输入框，如果输错了验证码，需要刷新页面再登录")
+                Text("如果沒有驗證碼的輸入框，可以嘗試多點幾次密碼輸入框，如果輸錯了驗證碼，需要刷新頁面再登入")
             }
 
 
             HelpOption.CANT_RECEIVE_REGISTER_EMAIL -> {
-                Text("请检查垃圾箱，并且尽可能使用常见邮箱注册，例如 QQ, 网易, Outlook")
+                Text("請檢查垃圾信件匣，並且盡可能使用常見郵箱註冊，例如 QQ、網易、Outlook")
             }
 
 
             HelpOption.REGISTER_ACTIVATION_FAILED -> {
-                Text("删除激活码的最后一个字，然后手动输入删除的字，或更换其他浏览器")
+                Text("刪除啟用碼的最後一個字，然後手動輸入刪除的字，或更換其他瀏覽器")
             }
 
             HelpOption.OTHERS -> {
                 Column(verticalArrangement = Arrangement.spacedBy(8.dp)) {
-                    Text("无法解决你的问题？还可以通过以下渠道获取帮助")
+                    Text("無法解決你的問題？還可以透過以下管道獲取幫助")
                     contactActions()
                 }
             }
@@ -336,7 +336,7 @@ private fun SettingsScope.AuthorizeHelpQA(
             horizontalAlignment = Alignment.Start,
         ) {
             Text(
-                "帮助",
+                "幫助",
                 style = MaterialTheme.typography.headlineSmall,
             )
         }

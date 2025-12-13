@@ -99,14 +99,14 @@ fun PlayerControllerDefaults.AudioSwitcher(
         optionsProvider = { options },
         renderValue = {
             if (it == null) {
-                Text("自动")
+                Text("自動")
             } else {
                 Text(it.displayName, maxLines = 1, overflow = TextOverflow.Ellipsis)
             }
         },
         renderValueExposed = {
             Text(
-                remember(it) { it?.displayName ?: "音轨" },
+                remember(it) { it?.displayName ?: "音軌" },
                 Modifier.widthIn(max = 64.dp),
                 maxLines = 1, overflow = TextOverflow.Ellipsis,
             )

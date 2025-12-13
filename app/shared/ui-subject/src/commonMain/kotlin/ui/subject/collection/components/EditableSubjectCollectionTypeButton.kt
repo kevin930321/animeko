@@ -204,9 +204,9 @@ private fun SetAllEpisodeDoneDialog(
     AlertDialog(
         onDismissRequest = onDismissRequest,
         icon = { Icon(Icons.Rounded.TaskAlt, null) },
-        text = { Text("要同时设置所有剧集为看过吗？") },
+        text = { Text("要同時設定所有劇集為看過嗎？") },
         confirmButton = {
-            TextButton(onConfirm) { Text("设置") }
+            TextButton(onConfirm) { Text("設定") }
 
             if (isWorking) {
                 CircularProgressIndicator(Modifier.padding(start = 8.dp).size(24.dp))

@@ -169,7 +169,7 @@ fun DanmakuMatchInfoSummaryRow(
                         Icon(Icons.Rounded.ErrorOutline, null)
                     }
                     Text(
-                        "弹幕加载失败，点击查看",
+                        "彈幕載入失敗，點擊查看",
                         Modifier.weight(1f),
                     )
                 }
@@ -178,29 +178,29 @@ fun DanmakuMatchInfoSummaryRow(
             is DanmakuLoadingState.Success -> {
                 Text(
                     remember(danmakuStatistics) {
-                        "${danmakuStatistics.fetchResults.size} 个弹幕源，共计 ${danmakuStatistics.fetchResults.sumOf { it.matchInfo.count }} 条弹幕"
+                        "${danmakuStatistics.fetchResults.size} 個彈幕源，共計 ${danmakuStatistics.fetchResults.sumOf { it.matchInfo.count }} 條彈幕"
                     },
                     Modifier.weight(1f),
                 )
 
                 IconButton(toggleExpanded, Modifier.padding(start = 16.dp)) {
                     if (expanded) {
-                        Icon(Icons.Rounded.ArrowDropUp, "展示更少")
+                        Icon(Icons.Rounded.ArrowDropUp, "顯示更少")
                     } else {
-                        Icon(Icons.Rounded.ArrowDropDown, "展示更多")
+                        Icon(Icons.Rounded.ArrowDropDown, "顯示更多")
                     }
                 }
             }
 
             DanmakuLoadingState.Idle -> {
                 if (!danmakuStatistics.danmakuEnabled) {
-                    Text("弹幕已关闭，可在播放器内开启")
+                    Text("彈幕已關閉，可在播放器內開啟")
                 }
             }
 
             DanmakuLoadingState.Loading -> {
                 Text(
-                    "弹幕装填中",
+                    "彈幕裝填中",
                     softWrap = false,
                 )
 
@@ -283,7 +283,7 @@ private fun NowPlayingLabel(
                     }
                 }
             } else {
-                Text("请选择数据源")
+                Text("請選擇資料源")
             }
         }
     }
@@ -299,7 +299,7 @@ private fun ErrorTextBox(
         text,
         onValueChange = {},
         modifier,
-        label = { Text("错误信息") },
+        label = { Text("錯誤訊息") },
         shape = MaterialTheme.shapes.medium,
         readOnly = true,
         singleLine = true,

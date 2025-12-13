@@ -309,7 +309,7 @@ private fun SubjectDetailsPage(
             collectionActions = {
                 if (selfInfo.isSessionValid == false) {
                     OutlinedButton(onClickLogin) {
-                        Text("登录后可收藏")
+                        Text("登入後可收藏")
                     }
                 } else {
                     EditableSubjectCollectionTypeButton(state.editableSubjectCollectionTypeState)
@@ -382,7 +382,7 @@ private fun SubjectDetailsPage(
                     ) {
                         item {
                             Box(Modifier.fillMaxWidth(), contentAlignment = Alignment.Center) {
-                                Text("即将上线, 敬请期待", Modifier.padding(16.dp))
+                                Text("即將上線，敬請期待", Modifier.padding(16.dp))
                             }
                         }
                     }
@@ -670,7 +670,7 @@ private fun SubjectDetailsContentPager(
                 SubjectDetailsTab.DETAILS -> {}
                 SubjectDetailsTab.COMMENTS -> {
                     ExtendedFloatingActionButton(
-                        text = { Text("写评价") },
+                        text = { Text("寫評價") },
                         icon = {
                             Icon(Icons.Rounded.AddComment, null)
                         },
@@ -923,8 +923,8 @@ sealed interface SubjectDetailsUIState {
 @Stable
 private fun renderSubjectDetailsTab(tab: SubjectDetailsTab): String {
     return when (tab) {
-        SubjectDetailsTab.DETAILS -> "详情"
-        SubjectDetailsTab.COMMENTS -> "评价"
-        SubjectDetailsTab.DISCUSSIONS -> "讨论"
+        SubjectDetailsTab.DETAILS -> "詳情"
+        SubjectDetailsTab.COMMENTS -> "評價"
+        SubjectDetailsTab.DISCUSSIONS -> "討論"
     }
 }

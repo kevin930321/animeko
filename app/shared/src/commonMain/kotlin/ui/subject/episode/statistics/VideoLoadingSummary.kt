@@ -56,22 +56,22 @@ fun SimpleErrorDialog(
         onDismissRequest,
         confirmButton = {
             TextButton(copy) {
-                Text("复制")
+                Text("複製")
             }
         },
         dismissButton = {
             TextButton(onDismissRequest) {
-                Text("关闭")
+                Text("關閉")
             }
         },
-        title = { Text("错误详情") },
+        title = { Text("錯誤詳情") },
         text = {
             OutlinedTextField(
                 value = text(),
                 onValueChange = {},
                 trailingIcon = {
                     IconButton(copy) {
-                        Icon(Icons.Outlined.ContentCopy, "复制")
+                        Icon(Icons.Outlined.ContentCopy, "複製")
                     }
                 },
                 readOnly = true,
@@ -110,20 +110,20 @@ fun VideoLoadingSummary(
                     contentAlignment = Alignment.Center,
                 ) {
                     Icon(
-                        Icons.Outlined.ErrorOutline, "错误",
+                        Icons.Outlined.ErrorOutline, "錯誤",
                     )
                 }
 
                 when (state) {
-                    VideoLoadingState.NoMatchingFile -> Text("未匹配到文件")
-                    VideoLoadingState.ResolutionTimedOut -> Text("解析超时")
-                    VideoLoadingState.UnsupportedMedia -> Text("不支持的视频类型")
+                    VideoLoadingState.NoMatchingFile -> Text("未匹配到檔案")
+                    VideoLoadingState.ResolutionTimedOut -> Text("解析逾時")
+                    VideoLoadingState.UnsupportedMedia -> Text("不支援的影片類型")
                     is VideoLoadingState.UnknownError -> {
-                        Text("未知错误，点击查看")
+                        Text("未知錯誤，點擊查看")
                     }
 
                     VideoLoadingState.Cancelled -> Text("已取消")
-                    VideoLoadingState.NetworkError -> Text("网络错误，请检查网络连接状况")
+                    VideoLoadingState.NetworkError -> Text("網路錯誤，請檢查網路連線狀況")
                 }
             }
         }

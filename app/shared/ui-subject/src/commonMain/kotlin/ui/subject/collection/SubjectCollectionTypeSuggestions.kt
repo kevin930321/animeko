@@ -90,7 +90,7 @@ object SubjectCollectionTypeSuggestions {
         targetType = UnifiedCollectionType.DROPPED,
         state = state,
         icon = SubjectCollectionActions.Dropped.icon,
-        label = { Text("抛弃") },
+        label = { Text("拋棄") },
         modifier = modifier,
     )
 }

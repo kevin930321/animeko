@@ -342,7 +342,7 @@ private fun LazyGridItemScope.SearchResultColumnScopeImpl(
         when {
             itemsState.value.isFinishedAndEmpty -> {
                 ListItem(
-                    headlineContent = { Text("无搜索结果") },
+                    headlineContent = { Text("無搜尋結果") },
                     modifier = modifier1,
                     colors = ListItemDefaults.colors(containerColor = MaterialTheme.colorScheme.surfaceContainerLowest),
                 )
@@ -355,7 +355,7 @@ private fun LazyGridItemScope.SearchResultColumnScopeImpl(
                         verticalArrangement = Arrangement.aligned(Alignment.CenterVertically),
                         itemVerticalAlignment = Alignment.CenterVertically,
                     ) {
-                        Text("已显示 ${itemsState.value.itemCount} 个结果", style = MaterialTheme.typography.bodyLarge)
+                        Text("已顯示 ${itemsState.value.itemCount} 個結果", style = MaterialTheme.typography.bodyLarge)
                         Row(
                             Modifier.weight(1f).align(Alignment.Bottom),
                             verticalAlignment = Alignment.CenterVertically,

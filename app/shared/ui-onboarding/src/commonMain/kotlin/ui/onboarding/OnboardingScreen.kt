@@ -124,7 +124,7 @@ fun OnboardingScreen(
     ) {
         step(
             "theme",
-            { Text("主题设置") },
+            { Text("主題設定") },
             navigationIcon = navigationIcon,
         ) {
             val themeSelectUiState by state.themeSelectState.state
@@ -139,7 +139,7 @@ fun OnboardingScreen(
         }
         step(
             "proxy",
-            title = { Text("网络设置") },
+            title = { Text("網路設定") },
             autoSkip = { proxyState.overallState == ProxyOverallTestState.SUCCESS },
             forwardButton = {
                 WizardDefaults.GoForwardButton(
@@ -183,7 +183,7 @@ fun OnboardingScreen(
         }
         /*step(
             "bittorrent",
-            { Text("BT 播放和缓存") },
+            { Text("BT 播放和快取") },
             forwardButton = {
                 WizardDefaults.GoForwardButton(
                     {

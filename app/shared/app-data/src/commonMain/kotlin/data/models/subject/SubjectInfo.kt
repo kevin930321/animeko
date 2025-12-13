@@ -87,7 +87,7 @@ data class SubjectInfo(
     /**
      * 主要显示名称
      */
-    val displayName: String get() = nameCn.takeIf { it.isNotBlank() } ?: name
+    val displayName: String get() = name.takeIf { it.isNotBlank() } ?: nameCn
 
     /**
      * 主中文名, 主日文名, 以及所有别名

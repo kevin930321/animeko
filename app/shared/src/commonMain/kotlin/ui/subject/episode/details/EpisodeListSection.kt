@@ -215,7 +215,7 @@ private fun WideEpisodeListSection(
             ListItem(
                 headlineContent = {
                     Text(
-                        "剧集列表",
+                        "劇集列表",
                         style = MaterialTheme.typography.titleMedium,
                     )
                 },
@@ -228,7 +228,7 @@ private fun WideEpisodeListSection(
                 trailingContent = {
                     Icon(
                         if (expanded) Icons.Outlined.ExpandLess else Icons.Outlined.ExpandMore,
-                        contentDescription = if (expanded) "收起" else "展开",
+                        contentDescription = if (expanded) "收起" else "展開",
                     )
                 },
                 colors = ListItemDefaults.colors(
@@ -299,7 +299,7 @@ private fun NarrowEpisodeListSection(
                 ) {
                     Icon(
                         Icons.Outlined.MoreHoriz,
-                        contentDescription = "查看更多剧集",
+                        contentDescription = "查看更多劇集",
                     )
                 }
             }
@@ -358,7 +358,7 @@ private fun NarrowEpisodeListSection(
         ) {
             Column {
                 TopAppBar(
-                    title = { Text("选择剧集") },
+                    title = { Text("選擇劇集") },
                     windowInsets = WindowInsets(0),
                     colors = TopAppBarDefaults.topAppBarColors(
                         containerColor = BottomSheetDefaults.ContainerColor,

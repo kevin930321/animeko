@@ -108,10 +108,10 @@ fun EditableRating(
     if (state.showRatingRequiresCollectionDialog) {
         AlertDialog(
             { state.dismissRatingRequiresCollectionDialog() },
-            text = { Text("请先收藏再评分") },
+            text = { Text("請先收藏再評分") },
             confirmButton = {
                 TextButton({ state.dismissRatingRequiresCollectionDialog() }) {
-                    Text("关闭")
+                    Text("關閉")
                 }
             },
         )

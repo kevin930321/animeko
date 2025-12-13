@@ -115,7 +115,8 @@ class TrendsRepository(
 private fun BangumiNextSlimSubject.toTrendingSubjectInfo(): TrendingSubjectInfo {
     return TrendingSubjectInfo(
         bangumiId = id,
-        nameCn = nameCN.ifEmpty { name },
+        name = name,
+        nameCn = nameCN,
         imageLarge = images?.large ?: images?.medium ?: images?.common ?: "",
     )
 }
@@ -123,7 +124,7 @@ private fun BangumiNextSlimSubject.toTrendingSubjectInfo(): TrendingSubjectInfo 
 fun AniTrends.toTrendsInfo(): TrendsInfo {
     return TrendsInfo(
         subjects = trendingSubjects.map {
-            TrendingSubjectInfo(it.bangumiId, it.nameCn, it.imageLarge)
+            TrendingSubjectInfo(it.bangumiId, it.name, it.nameCn, it.imageLarge)
         },
     )
 }

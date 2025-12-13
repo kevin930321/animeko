@@ -39,23 +39,23 @@ fun FailedToInstallDialog(
                     scope.launch {
                         val file = (state as? AppUpdateState.Downloaded)?.file
                         if (file == null) {
-                            toaster.toast("未找到安装包")
+                            toaster.toast("未找到安裝包")
                             return@launch
                         }
                         val success =
                             KoinPlatform.getKoin().get<UpdateInstaller>().openForManualInstallation(file, context)
 
                         if (!success) {
-                            toaster.toast("打开文件失败，请手动安装 ${file.absolutePath}")
+                            toaster.toast("開啟檔案失敗，請手動安裝 ${file.absolutePath}")
                         }
                     }
                 },
-            ) { Text("查看安装包") }
+            ) { Text("查看安裝包") }
         },
         dismissButton = {
             TextButton(onDismissRequest) { Text("取消更新") }
         },
-        title = { Text("自动安装失败，请手动安装") },
+        title = { Text("自動安裝失敗，請手動安裝") },
         text = { Text(message) },
     )
 }

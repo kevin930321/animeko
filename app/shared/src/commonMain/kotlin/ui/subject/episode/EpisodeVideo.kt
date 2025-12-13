@@ -179,21 +179,21 @@ internal fun EpisodeVideoImpl(
                         },
                         actions = {
                             IconButton({ onClickSkip85(playerState.getCurrentPositionMillis()) }) {
-                                Icon(AniIcons.Forward85, "快进 85 秒")
+                                Icon(AniIcons.Forward85, "快轉 85 秒")
                             }
                             if (expanded) {
                                 IconButton(
                                     { sheetsController.navigateTo(EpisodeVideoSideSheetPage.MEDIA_SELECTOR) },
                                     Modifier.testTag(TAG_SHOW_MEDIA_SELECTOR),
                                 ) {
-                                    Icon(Icons.Rounded.DisplaySettings, contentDescription = "数据源")
+                                    Icon(Icons.Rounded.DisplaySettings, contentDescription = "資料源")
                                 }
                             }
                             IconButton(
                                 { sheetsController.navigateTo(EpisodeVideoSideSheetPage.PLAYER_SETTINGS) },
                                 Modifier.testTag(TAG_SHOW_SETTINGS),
                             ) {
-                                Icon(Icons.Rounded.Settings, contentDescription = "设置")
+                                Icon(Icons.Rounded.Settings, contentDescription = "設定")
                             }
                             if (expanded && LocalPlatform.current.isDesktop()) {
                                 IconButton(
@@ -201,9 +201,9 @@ internal fun EpisodeVideoImpl(
                                     Modifier.testTag(TAG_COLLAPSE_SIDEBAR),
                                 ) {
                                     if (sidebarVisible) {
-                                        Icon(AniIcons.RightPanelClose, contentDescription = "折叠侧边栏")
+                                        Icon(AniIcons.RightPanelClose, contentDescription = "收合側邊欄")
                                     } else {
-                                        Icon(AniIcons.RightPanelOpen, contentDescription = "展开侧边栏")
+                                        Icon(AniIcons.RightPanelOpen, contentDescription = "展開側邊欄")
                                     }
                                 }
                             }
@@ -219,7 +219,7 @@ internal fun EpisodeVideoImpl(
             },
             video = {
                 if (LocalIsPreviewing.current) {
-                    Text("预览模式")
+                    Text("預覽模式")
                 } else {
                     // Save the status bar height to offset the video player
                     val statusBarHeight by rememberStatusBarHeightAsState()

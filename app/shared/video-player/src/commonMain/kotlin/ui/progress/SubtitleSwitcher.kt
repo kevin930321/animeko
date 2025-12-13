@@ -99,7 +99,7 @@ fun PlayerControllerDefaults.SubtitleSwitcher(
         optionsProvider = { options },
         renderValue = {
             if (it == null) {
-                Text("关闭")
+                Text("關閉")
             } else {
                 Text(it.displayName, maxLines = 1, overflow = TextOverflow.Ellipsis)
             }

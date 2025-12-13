@@ -111,12 +111,12 @@ object EpisodeVideoSideSheets {
         if (expanded) {
             val viewModel = remember { EpisodeVideoSettingsViewModel() }
             SideSheetLayout(
-                title = { Text("弹幕设置") },
+                title = { Text("彈幕設定") },
                 onDismissRequest = onDismissRequest,
                 modifier = Modifier,
                 closeButton = {
                     IconButton(onClick = onDismissRequest) {
-                        Icon(Icons.Rounded.Close, contentDescription = "关闭")
+                        Icon(Icons.Rounded.Close, contentDescription = "關閉")
                     }
                 },
             ) {
@@ -176,12 +176,12 @@ fun EpisodeVideoSideSheets.DanmakuSettingsSheet(
     modifier: Modifier = Modifier,
 ) {
     SideSheetLayout(
-        title = { Text(text = "弹幕设置") },
+        title = { Text(text = "彈幕設定") },
         onDismissRequest = onDismissRequest,
         modifier,
         closeButton = {
             IconButton(onClick = onDismissRequest) {
-                Icon(Icons.Rounded.Close, contentDescription = "关闭")
+                Icon(Icons.Rounded.Close, contentDescription = "關閉")
             }
         },
     ) {

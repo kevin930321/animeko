@@ -204,6 +204,15 @@
     <string name="settings_storage_directory_not_exist">該目錄不存在</string>
     <string name="settings_storage_path_is_invalid">該路徑無效</string>
     <string name="settings_storage_directory_create_failed">無法建立目錄</string>
+    <string name="settings_storage_backup_title">備份</string>
+    <string name="settings_storage_backup_op_backup_title">複製應用程式設定到剪貼簿</string>
+    <string name="settings_storage_backup_op_backup_description">複製所有應用程式設定到剪貼簿，可以在重新安裝後透過下方的匯入來繼承所有設定。\n注意：包含帳號敏感資訊，請勿分享備份內容給他人。</string>
+    <string name="settings_storage_backup_op_backup_error">無法匯出應用程式設定，請在日誌中查看錯誤訊息</string>
+    <string name="settings_storage_backup_op_restore">從剪貼簿匯入應用程式設定</string>
+    <string name="settings_storage_backup_op_restore_description">匯入設定會覆蓋目前應用程式的所有設定。</string>
+    <string name="settings_storage_backup_op_restore_warning">這會覆蓋目前應用程式的所有設定，且無法復原，確認匯入嗎？</string>
+    <string name="settings_storage_backup_op_restore_error">剪貼簿內容無效或不是設定備份內容</string>
+    <string name="settings_storage_backup_op_restore_succees">匯入設定成功</string>
 
     <!-- MediaSourceGroup -->
     <string name="settings_media_source_list">資料源列表 (%1$d)</string>
@@ -371,6 +380,14 @@
     <string name="settings_update_popup_continue_download">繼續下載</string>
     <string name="settings_update_popup_restart_update">重啟更新</string>
     <string name="settings_update_popup_download_complete">下載完成</string>
+
+    <!-- Version Expired Overlay -->
+    <string name="settings_update_version_expired_title">版本過期</string>
+    <string name="settings_update_version_expired_message">目前版本過於老舊。為了您的使用體驗，請更新至最新版本。\n右下角將會顯示最新版本，可以點擊自動更新。如果無法更新，請前往官方網站下載：</string>
+    <string name="settings_update_version_expired_message_with_latest">目前版本過於老舊。為了您的使用體驗，請更新至最新版本 %1$s。\n右下角將會顯示最新版本，可以點擊自動更新。如果無法更新，請前往官方網站下載：</string>
+    <string name="settings_update_version_expired_import_settings_hint">如果新版本需要匯入設定，請點擊：</string>
+    <string name="settings_update_version_expired_copied_to_clipboard">已複製到剪貼簿，請到新版本點擊匯入</string>
+    <string name="settings_update_version_expired_export_settings">匯出設定</string>
 
     <!-- ExplorationScreen -->
     <string name="exploration_title">探索</string>

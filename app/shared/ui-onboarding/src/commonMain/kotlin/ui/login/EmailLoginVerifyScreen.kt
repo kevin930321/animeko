@@ -75,8 +75,8 @@ fun EmailLoginVerifyScreen(
                 }
 
                 when (result) {
-                    SendOtpResult.EmailAlreadyExist -> toaster.show("该邮箱已被使用")
-                    SendOtpResult.InvalidOtp -> toaster.show("验证码无效或已过期，请重新发送")
+                    SendOtpResult.EmailAlreadyExist -> toaster.show("該郵箱已被使用")
+                    SendOtpResult.InvalidOtp -> toaster.show("驗證碼無效或已過期，請重新發送")
                     is SendOtpResult.Success -> onSuccess()
                 }
             }
@@ -108,7 +108,7 @@ internal fun EmailLoginVerifyScreenImpl(
     onNavigateSettings: () -> Unit,
     onNavigateBack: () -> Unit,
     modifier: Modifier = Modifier,
-    title: @Composable () -> Unit = { Text("登录") },
+    title: @Composable () -> Unit = { Text("登入") },
     enabled: Boolean = true,
     showThirdPartyLogin: Boolean = true,
 ) {
@@ -121,14 +121,14 @@ internal fun EmailLoginVerifyScreenImpl(
         showThirdPartyLogin = showThirdPartyLogin,
     ) {
         CenteredSectionHeader(
-            title = { Text("输入验证码") },
+            title = { Text("輸入驗證碼") },
             description = {
                 Column(horizontalAlignment = Alignment.CenterHorizontally) {
-                    Text("请检查邮箱 $email")
+                    Text("請檢查郵箱 $email")
                     if (isExistingAccount != null) {
                         Spacer(Modifier.height(2.dp))
                         Text(
-                            if (isExistingAccount) "正在登录现有账号" else "正在注册新账号",
+                            if (isExistingAccount) "正在登入現有帳號" else "正在註冊新帳號",
                             color = MaterialTheme.colorScheme.onSurfaceVariant,
                         )
                     }
@@ -149,11 +149,11 @@ internal fun EmailLoginVerifyScreenImpl(
             },
             Modifier.fillMaxWidth(),
             label = {
-                Text("验证码")
+                Text("驗證碼")
             },
             isError = code.any { !it.isDigit() },
             placeholder = {
-                Text("6 位数字")
+                Text("6 位數字")
             },
             keyboardOptions = KeyboardOptions.Default.copy(
                 autoCorrectEnabled = false,
@@ -195,9 +195,9 @@ internal fun EmailLoginVerifyScreenImpl(
             enabled = enabled && canResend,
         ) {
             if (canResend) {
-                Text("重新发送验证码")
+                Text("重新發送驗證碼")
             } else {
-                Text("${timeLeft.inWholeSeconds} 秒后可重新发送")
+                Text("${timeLeft.inWholeSeconds} 秒後可重新發送")
             }
         }
     }

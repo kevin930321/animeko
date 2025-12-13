@@ -55,7 +55,7 @@ fun MatchingDanmakuDialog(
         confirmButton = {
         },
         title = {
-            Text("更换弹幕")
+            Text("更換彈幕")
         },
         text = {
             MatchingDanmakuScreen(
@@ -122,7 +122,7 @@ fun MatchingDanmakuScreen(
         OutlinedTextField(
             value = query,
             onValueChange = { query = it },
-            label = { Text("关键词") },
+            label = { Text("關鍵字") },
             modifier = Modifier.fillMaxWidth(),
             singleLine = true,
         )
@@ -134,7 +134,7 @@ fun MatchingDanmakuScreen(
             onClick = { onSubmitQuery(query) },
             enabled = query.isNotBlank() && !uiState.isLoadingSubjects,
         ) {
-            Text("搜索")
+            Text("搜尋")
         }
 
         // Show a loading spinner if subjects are loading
@@ -152,7 +152,7 @@ fun MatchingDanmakuScreen(
         // Loading/Errors for episodes and danmaku can also be displayed in-line, if desired.
         if (uiState.isLoadingEpisodes) {
             Spacer(modifier = Modifier.height(8.dp))
-            Text("正在查询剧集列表…")
+            Text("正在查詢劇集列表…")
         }
         uiState.episodeError?.let { episodeErr ->
             Spacer(modifier = Modifier.height(8.dp))
@@ -161,7 +161,7 @@ fun MatchingDanmakuScreen(
 
         if (uiState.isLoadingDanmaku) {
             Spacer(modifier = Modifier.height(8.dp))
-            Text("正在查询弹幕列表…")
+            Text("正在查詢彈幕列表…")
         }
         uiState.danmakuError?.let { danmakuErr ->
             Spacer(modifier = Modifier.height(8.dp))
@@ -202,7 +202,7 @@ fun SubjectPickerDialog(
 ) {
     AlertDialog(
         onDismissRequest = onDismissRequest,
-        title = { Text("选择条目") },
+        title = { Text("選擇條目") },
         text = {
             LazyColumn {
                 items(subjects, key = { "MatchingDanmakuDialog-" + it.id }, contentType = { 1 }) { subject ->
@@ -230,7 +230,7 @@ fun EpisodePickerDialog(
 ) {
     AlertDialog(
         onDismissRequest = onDismissRequest,
-        title = { Text("选择剧集") },
+        title = { Text("選擇劇集") },
         text = {
             LazyColumn {
                 items(episodes, key = { "MatchingDanmakuDialog-" + it.id }, contentType = { 1 }) { episode ->

@@ -82,7 +82,7 @@ internal fun EmailLoginStartScreenImpl(
     onNavigateSettings: () -> Unit,
     onNavigateBack: () -> Unit,
     modifier: Modifier = Modifier,
-    title: @Composable () -> Unit = { Text("登录") },
+    title: @Composable () -> Unit = { Text("登入") },
     enabled: Boolean = true,
     showThirdPartyLogin: Boolean = true,
 ) {
@@ -95,8 +95,8 @@ internal fun EmailLoginStartScreenImpl(
         showThirdPartyLogin,
     ) { scrollState ->
         CenteredSectionHeader(
-            title = { Text("你的邮箱地址") },
-            description = { Text("我们将发送一封验证码邮件") },
+            title = { Text("你的郵箱地址") },
+            description = { Text("我們將發送一封驗證碼郵件") },
         )
 
         Spacer(Modifier.height(8.dp))
@@ -107,7 +107,7 @@ internal fun EmailLoginStartScreenImpl(
             { currentEmailContent = it.trim() },
             Modifier.fillMaxWidth(),
             label = {
-                Text("邮箱")
+                Text("郵箱")
             },
             isError = currentEmailContent.isNotEmpty() &&
                     (!currentEmailContent.contains('@') || !currentEmailContent.contains('.')),
@@ -140,7 +140,7 @@ internal fun EmailLoginStartScreenImpl(
         ) {
             Icon(Icons.AutoMirrored.Rounded.ArrowForward, null, Modifier.size(ButtonDefaults.IconSize))
             Spacer(Modifier.width(ButtonDefaults.IconSpacing))
-            Text("继续")
+            Text("繼續")
         }
     }
 }
@@ -149,13 +149,13 @@ internal fun EmailLoginStartScreenImpl(
 internal fun EmailPageTitle(mode: EmailLoginUiState.Mode, isExistingAccount: Boolean?) {
     when (mode) {
         EmailLoginUiState.Mode.LOGIN -> when (isExistingAccount) {
-            true -> Text("登录")
-            false -> Text("注册")
-            null -> Text("登录 / 注册")
+            true -> Text("登入")
+            false -> Text("註冊")
+            null -> Text("登入 / 註冊")
         }
 
-        EmailLoginUiState.Mode.BIND -> Text("绑定邮箱")
-        EmailLoginUiState.Mode.REBIND -> Text("更改邮箱")
+        EmailLoginUiState.Mode.BIND -> Text("綁定郵箱")
+        EmailLoginUiState.Mode.REBIND -> Text("更改郵箱")
     }
 }
 

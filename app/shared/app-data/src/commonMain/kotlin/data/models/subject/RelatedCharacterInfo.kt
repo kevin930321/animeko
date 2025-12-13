@@ -51,7 +51,7 @@ data class CharacterInfo(
     val imageMedium: String,
     val imageLarge: String,
 ) {
-    val displayName get() = nameCn.takeIf { it.isNotBlank() } ?: name
+    val displayName get() = name.takeIf { it.isNotBlank() } ?: nameCn
 }
 
 @JvmInline
@@ -117,7 +117,7 @@ data class PersonInfo(
     val locked: Boolean?,
     val nameCn: String = "",
 ) {
-    val displayName get() = nameCn.takeIf { it.isNotBlank() } ?: name
+    val displayName get() = name.takeIf { it.isNotBlank() } ?: nameCn
 
     override fun toString(): String {
         return "PersonInfo(id=$id, name='$name', type=$type, careers=$careers, imageLarge='$imageLarge', imageMedium=<omitted>, summary=<omitted>, locked=$locked, nameCn='$nameCn')"

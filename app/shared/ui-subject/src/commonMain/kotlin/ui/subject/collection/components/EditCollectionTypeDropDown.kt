@@ -110,7 +110,7 @@ fun EditCollectionTypeDropDown(
             AlertDialog(
                 onDismissRequest = { showConfirmDeleteDialog = false },
                 title = { Text("取消追番") },
-                text = { Text("这将会清除你的观看进度和评价。此操作无法撤销。确定要取消追番吗？") },
+                text = { Text("這將會清除你的觀看進度和評價。此操作無法撤銷。確定要取消追番嗎？") },
                 icon = { SubjectCollectionActions.DeleteCollection.icon() },
                 confirmButton = {
                     TextButton(
@@ -120,7 +120,7 @@ fun EditCollectionTypeDropDown(
                             showConfirmDeleteDialog = false
                         },
                     ) {
-                        Text("删除", color = MaterialTheme.colorScheme.error)
+                        Text("刪除", color = MaterialTheme.colorScheme.error)
                     }
                 },
                 dismissButton = {

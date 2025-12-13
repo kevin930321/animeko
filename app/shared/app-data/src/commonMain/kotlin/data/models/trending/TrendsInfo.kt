@@ -20,6 +20,9 @@ data class TrendsInfo(
  */
 data class TrendingSubjectInfo(
     val bangumiId: Int,
+    val name: String,
     val nameCn: String,
     val imageLarge: String,
-)
+) {
+    val displayName: String get() = name.takeIf { it.isNotBlank() } ?: nameCn
+}

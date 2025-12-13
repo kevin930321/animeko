@@ -55,11 +55,11 @@ fun AniContactList(
             { browserNavigator.openBrowser(context, AniHelperDestination.ANI_WEBSITE) },
             icon = {
                 Icon(
-                    Icons.Rounded.Public, "官网",
+                    Icons.Rounded.Public, "官網",
                     Modifier.size(ContactIconSize),
                 )
             },
-            label = { Text("官网") },
+            label = { Text("官網") },
         )
 
         SuggestionChip(

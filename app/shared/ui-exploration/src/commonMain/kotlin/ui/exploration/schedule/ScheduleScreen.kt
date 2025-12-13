@@ -133,7 +133,7 @@ fun ScheduleScreen(
         modifier,
         topBar = {
             AniTopAppBar(
-                title = { Text("新番时间表") },
+                title = { Text("新番時間表") },
                 Modifier.fillMaxWidth(),
                 navigationIcon = navigationIcon,
                 windowInsets = windowInsets.only(WindowInsetsSides.Top + WindowInsetsSides.Horizontal),
@@ -387,36 +387,36 @@ private fun renderScheduleDay(day: ScheduleDay): String {
 private fun renderDayOfWeek(day: DayOfWeek, kind: ScheduleDay.Kind): String = when (kind) {
     // we manually permute them to make them real constants to avoid runtime allocations.
     ScheduleDay.Kind.LAST_WEEK -> when (day) {
-        DayOfWeek.MONDAY -> "上周一"
-        DayOfWeek.TUESDAY -> "上周二"
-        DayOfWeek.WEDNESDAY -> "上周三"
-        DayOfWeek.THURSDAY -> "上周四"
-        DayOfWeek.FRIDAY -> "上周五"
-        DayOfWeek.SATURDAY -> "上周六"
-        DayOfWeek.SUNDAY -> "上周日"
+        DayOfWeek.MONDAY -> "上週一"
+        DayOfWeek.TUESDAY -> "上週二"
+        DayOfWeek.WEDNESDAY -> "上週三"
+        DayOfWeek.THURSDAY -> "上週四"
+        DayOfWeek.FRIDAY -> "上週五"
+        DayOfWeek.SATURDAY -> "上週六"
+        DayOfWeek.SUNDAY -> "上週日"
         else -> day.toString()
     }
 
     ScheduleDay.Kind.THIS_WEEK,
     ScheduleDay.Kind.TODAY -> when (day) {
-        DayOfWeek.MONDAY -> "周一"
-        DayOfWeek.TUESDAY -> "周二"
-        DayOfWeek.WEDNESDAY -> "周三"
-        DayOfWeek.THURSDAY -> "周四"
-        DayOfWeek.FRIDAY -> "周五"
-        DayOfWeek.SATURDAY -> "周六"
-        DayOfWeek.SUNDAY -> "周日"
+        DayOfWeek.MONDAY -> "週一"
+        DayOfWeek.TUESDAY -> "週二"
+        DayOfWeek.WEDNESDAY -> "週三"
+        DayOfWeek.THURSDAY -> "週四"
+        DayOfWeek.FRIDAY -> "週五"
+        DayOfWeek.SATURDAY -> "週六"
+        DayOfWeek.SUNDAY -> "週日"
         else -> day.toString()
     }
 
     ScheduleDay.Kind.NEXT_WEEK -> when (day) {
-        DayOfWeek.MONDAY -> "下周一"
-        DayOfWeek.TUESDAY -> "下周二"
-        DayOfWeek.WEDNESDAY -> "下周三"
-        DayOfWeek.THURSDAY -> "下周四"
-        DayOfWeek.FRIDAY -> "下周五"
-        DayOfWeek.SATURDAY -> "下周六"
-        DayOfWeek.SUNDAY -> "下周日"
+        DayOfWeek.MONDAY -> "下週一"
+        DayOfWeek.TUESDAY -> "下週二"
+        DayOfWeek.WEDNESDAY -> "下週三"
+        DayOfWeek.THURSDAY -> "下週四"
+        DayOfWeek.FRIDAY -> "下週五"
+        DayOfWeek.SATURDAY -> "下週六"
+        DayOfWeek.SUNDAY -> "下週日"
         else -> day.toString()
     }
 }

@@ -47,12 +47,12 @@ internal actual fun ColumnScope.PlatformLoggingItems(listItemColors: ListItemCol
 
     ListItem(
         headlineContent = {
-            Text("分享当日日志文件")
+            Text("分享當日日誌檔案")
         },
         Modifier.clickable {
             val file = getTodayLogFile()
             if (file == null) {
-                toaster.toast("未找到文件")
+                toaster.toast("未找到檔案")
             } else {
                 shareFile(file.inSystem.absolutePath, uiViewController)
             }
@@ -62,12 +62,12 @@ internal actual fun ColumnScope.PlatformLoggingItems(listItemColors: ListItemCol
 
     ListItem(
         headlineContent = {
-            Text("复制当日日志内容 (很大)")
+            Text("複製當日日誌內容（很大）")
         },
         Modifier.clickable {
             val file = getTodayLogFile()
             if (file == null) {
-                toaster.toast("未找到文件")
+                toaster.toast("未找到檔案")
             } else {
                 scope.launch {
                     clipboard.setClipEntryText(file.inSystem.readText())
