@@ -137,11 +137,11 @@ fun SettingsScope.ConfigureProxyGroup(
 @Composable
 private fun renderOverallTestText(state: ProxyOverallTestState): String {
     return when (state) {
-        ProxyOverallTestState.INIT -> "正在检测连接，请稍后"
-        ProxyOverallTestState.RUNNING -> "正在检测连接，请稍后"
-        ProxyOverallTestState.FAILED_NOT_PROXIED -> "部分服务连接失败，请考虑启用代理"
-        ProxyOverallTestState.FAILED_PROXIED -> "部分服务连接失败，请更换代理模式或代理地址"
-        ProxyOverallTestState.SUCCESS -> "所有服务连接正常"
+        ProxyOverallTestState.INIT -> "正在偵測連線，請稍候"
+        ProxyOverallTestState.RUNNING -> "正在偵測連線，請稍候"
+        ProxyOverallTestState.FAILED_NOT_PROXIED -> "部分服務連線失敗，請考慮啟用代理"
+        ProxyOverallTestState.FAILED_PROXIED -> "部分服務連線失敗，請更換代理模式或代理位址"
+        ProxyOverallTestState.SUCCESS -> "所有服務連線正常"
     }
 }
 
@@ -163,7 +163,7 @@ private fun SettingsScope.ProxyTestStatusGroup(
         actions = if (state.hasError) {
             {
                 TextButton(onRequestReTest) {
-                    Text("重新测试")
+                    Text("重新測試")
                 }
             }
         } else null,
@@ -185,9 +185,9 @@ private fun renderTestCaseName(case: ProxyTestCase): String {
 @Composable
 private fun renderTestCaseDescription(case: ProxyTestCase): String {
     return when (case.name) {
-        ProxyTestCaseEnums.ANI -> "弹幕服务"
-        ProxyTestCaseEnums.BANGUMI -> "收藏数据服务"
-        ProxyTestCaseEnums.BANGUMI_NEXT -> "评论服务"
+        ProxyTestCaseEnums.ANI -> "彈幕服務"
+        ProxyTestCaseEnums.BANGUMI -> "收藏資料服務"
+        ProxyTestCaseEnums.BANGUMI_NEXT -> "評論服務"
     }
 }
 
@@ -223,12 +223,12 @@ private fun ProxyTestStatusIcon(
 
             ProxyTestCaseState.SUCCESS ->
                 ProvideContentColor(MaterialTheme.colorScheme.onSurfaceVariant) {
-                    Icon(Icons.Default.Check, "使用 ${state.name} 连接成功")
+                    Icon(Icons.Default.Check, "使用 ${state.name} 連線成功")
                 }
 
             ProxyTestCaseState.FAILED ->
                 ProvideContentColor(MaterialTheme.colorScheme.error) {
-                    Icon(Icons.Default.Close, "使用 ${state.name} 连接失败")
+                    Icon(Icons.Default.Close, "使用 ${state.name} 連線失敗")
                 }
         }
     }
@@ -238,8 +238,8 @@ private fun ProxyTestStatusIcon(
 private fun renderProxyConfigModeName(mode: ProxyUIMode): String {
     return when (mode) {
         ProxyUIMode.DISABLED -> "不使用代理"
-        ProxyUIMode.SYSTEM -> "系统代理"
-        ProxyUIMode.CUSTOM -> "自定义代理"
+        ProxyUIMode.SYSTEM -> "系統代理"
+        ProxyUIMode.CUSTOM -> "自訂代理"
     }
 }
 
@@ -254,7 +254,7 @@ private fun SettingsScope.CurrentProxyTextModePresentation(
         title = {
             Text(
                 if (state.config.mode == ProxyUIMode.DISABLED)
-                    "未启用代理" else "正在使用${renderProxyConfigModeName(state.config.mode)}",
+                    "未啟用代理" else "正在使用${renderProxyConfigModeName(state.config.mode)}",
             )
         },
         description = when (state.config.mode) {
@@ -303,10 +303,10 @@ private fun SettingsScope.ProxyConfigGroup(
     }
 
     Group(
-        title = { Text("代理设置") },
+        title = { Text("代理設定") },
         actions = {
             TextButton({ onUpdate(currentConfig.value) }) {
-                Text("保存并测试")
+                Text("儲存並測試")
             }
         },
         useThinHeader = true,
