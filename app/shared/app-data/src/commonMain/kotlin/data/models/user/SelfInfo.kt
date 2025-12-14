@@ -29,7 +29,13 @@ data class SelfInfo(
 data class SelfInfoDisplay(
     val title: String,
     val subtitle: String, // can be ""
-)
+) {
+    companion object {
+        fun guest(): SelfInfoDisplay {
+            return SelfInfoDisplay("載入中...", "") // placeholder, no need to be localized
+        }
+    }
+}
 
 /**
  * 计算用于显示的昵称和 email.
@@ -38,14 +44,7 @@ data class SelfInfoDisplay(
 fun SelfInfo?.calculateDisplay(): SelfInfoDisplay {
     val selfInfo = this
     if (selfInfo == null) {
-    val guest: Boolean,
-) {
-    companion object {
-        fun guest(): SelfInfoDisplay {
-            return SelfInfoDisplay("載入中...", "") // placeholder, no need to be localized
-        }
-    }
-}
+        return SelfInfoDisplay.guest()
     }
 
     if (selfInfo.nickname.isNotEmpty()) {
