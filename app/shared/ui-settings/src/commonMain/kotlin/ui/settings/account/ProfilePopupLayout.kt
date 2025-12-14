@@ -88,7 +88,7 @@ internal fun ProfilePopupLayout(
         val showEmail = false
 
         Text(
-            if (isLogin) title else "未登录",
+            if (isLogin) title else "未登入",
             style = MaterialTheme.typography.titleLarge,
             fontWeight = FontWeight.Bold,
             modifier = Modifier
@@ -128,14 +128,14 @@ internal fun ProfilePopupLayout(
                         icon = { Icon(Icons.Outlined.Edit, contentDescription = "Edit profile settings") },
                         onClick = onClickEditProfile,
                     ) {
-                        Text("编辑个人资料")
+                        Text("編輯個人資料")
                     }
                 } else {
                     TextItem(
                         icon = { Icon(Icons.AutoMirrored.Outlined.Login, contentDescription = "Login") },
                         onClick = onClickLogin,
                     ) {
-                        Text("登录 / 注册")
+                        Text("登入 / 註冊")
                     }
                 }
 
@@ -143,7 +143,7 @@ internal fun ProfilePopupLayout(
                     icon = { Icon(Icons.Outlined.Settings, contentDescription = "Settings") },
                     onClick = onClickSettings,
                 ) {
-                    Text("设置")
+                    Text("設定")
                 }
 
                 if (isLogin) {
@@ -159,7 +159,7 @@ internal fun ProfilePopupLayout(
                         onClick = onClickLogout,
                     ) {
                         ProvideContentColor(MaterialTheme.colorScheme.error) {
-                            Text("退出登录")
+                            Text("登出")
                         }
                     }
                 }
