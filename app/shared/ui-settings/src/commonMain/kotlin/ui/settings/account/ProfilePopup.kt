@@ -163,10 +163,10 @@ fun AccountLogoutDialog(
     AlertDialog(
         onCancel,
         icon = { Icon(Icons.AutoMirrored.Outlined.Logout, null) },
-        text = { Text("确定要退出登录吗?") },
+        text = { Text("確定要登出嗎?") },
         confirmButton = {
             TextButton(onConfirm, enabled = confirmEnabled) {
-                Text("退出登录", color = MaterialTheme.colorScheme.error)
+                Text("登出", color = MaterialTheme.colorScheme.error)
             }
         },
         dismissButton = {
