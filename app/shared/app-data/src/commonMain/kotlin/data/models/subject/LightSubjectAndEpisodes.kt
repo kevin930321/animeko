@@ -39,4 +39,4 @@ data class LightEpisodeInfo(
     val ep: EpisodeSort?,
 )
 
-val LightEpisodeInfo.displayName get() = nameCn.takeIf { it.isNotBlank() } ?: name
+val LightEpisodeInfo.displayName get() = name.takeIf { it.isNotBlank() } ?: nameCn
