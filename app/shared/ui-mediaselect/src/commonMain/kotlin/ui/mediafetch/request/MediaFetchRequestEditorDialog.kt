@@ -62,11 +62,11 @@ fun MediaFetchRequestEditorDialog(
                     editingRequest.toMediaFetchRequestOrNull()?.let {
                         onDismissRequestWrapped()
                         onFetchRequestChange(it)
-                    } ?: toaster.toast("请求无效，请检查")
+                    } ?: toaster.toast("請求無效，請檢查")
                 },
                 enabled = editingRequest.toMediaFetchRequestOrNull() != null,
             ) {
-                Text("保存并刷新")
+                Text("儲存並重新整理")
             }
         },
         dismissButton = {
@@ -75,7 +75,7 @@ fun MediaFetchRequestEditorDialog(
             }
         },
         title = {
-            Text("编辑查询请求")
+            Text("編輯查詢請求")
         },
         text = {
             MediaFetchRequestEditor(
@@ -98,7 +98,7 @@ fun MediaFetchRequestEditorDialog(
                         onDismissRequest()
                     },
                 ) {
-                    Text("舍弃", color = MaterialTheme.colorScheme.error)
+                    Text("捨棄", color = MaterialTheme.colorScheme.error)
                 }
             },
             dismissButton = {
@@ -107,7 +107,7 @@ fun MediaFetchRequestEditorDialog(
                         showConfirmDiscard = false
                     },
                 ) {
-                    Text("继续编辑")
+                    Text("繼續編輯")
                 }
             },
             icon = {
@@ -117,7 +117,7 @@ fun MediaFetchRequestEditorDialog(
                 )
             },
             text = {
-                Text("有未保存的编辑，要舍弃编辑吗？")
+                Text("有未儲存的編輯，要捨棄編輯嗎？")
             },
         )
     }
