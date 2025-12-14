@@ -85,7 +85,7 @@ fun SubjectCollectionTypeButton(
                         Text(renderCollectionTypeAsCurrent(type))
                     }
                 } else {
-                    Text("载入") // 随便什么都行, 占空间
+                    Text("載入") // 隨便什麼都行, 佔空間
                 }
             }
         } else {
@@ -99,7 +99,7 @@ fun SubjectCollectionTypeButton(
                         action.title()
                     }
                 } else {
-                    Text("载入") // 随便什么都行, 占空间
+                    Text("載入") // 隨便什麼都行, 佔空間
                 }
             }
 
@@ -121,9 +121,9 @@ private fun renderCollectionTypeAsCurrent(type: UnifiedCollectionType): String {
     return when (type) {
         UnifiedCollectionType.WISH -> "已想看"
         UnifiedCollectionType.DOING -> "已在看"
-        UnifiedCollectionType.DONE -> "已看过"
-        UnifiedCollectionType.ON_HOLD -> "已搁置"
-        UnifiedCollectionType.DROPPED -> "已抛弃"
+        UnifiedCollectionType.DONE -> "已看過"
+        UnifiedCollectionType.ON_HOLD -> "已擱置"
+        UnifiedCollectionType.DROPPED -> "已拋棄"
         UnifiedCollectionType.NOT_COLLECTED -> "未追番"
     }
 }
