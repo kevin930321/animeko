@@ -25,6 +25,7 @@ import kotlinx.serialization.encoding.*
  * 
  *
  * @param bangumiId 
+ * @param name 
  * @param nameCn 
  * @param imageLarge 
  */
@@ -33,6 +34,8 @@ import kotlinx.serialization.encoding.*
 data class AniTrendingSubject (
 
     @SerialName(value = "bangumiId") @Required val bangumiId: kotlin.Int,
+
+    @SerialName(value = "name") @Required val name: kotlin.String,
 
     @SerialName(value = "nameCn") @Required val nameCn: kotlin.String,
 
