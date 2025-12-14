@@ -152,7 +152,7 @@ fun EpisodeCarousel(
                         },
                         title = {
                             Text(
-                                collection.episodeInfo.nameCn.ifEmpty { "第 ${collection.episodeInfo.sort} 話" },
+                                collection.episodeInfo.name.ifEmpty { collection.episodeInfo.nameCn.ifEmpty { "第 ${collection.episodeInfo.sort} 話" } },
                                 color = if (isPlaying) MaterialTheme.colorScheme.primary else LocalContentColor.current,
                             )
                         },
