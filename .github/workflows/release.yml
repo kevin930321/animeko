@@ -1134,7 +1134,6 @@ jobs:
         fileName: 'android_signing_key'
         fileDir: './'
         encodedString: '${{ secrets.SIGNING_RELEASE_STOREFILE }}'
-      if: '${{ (github.repository == ''open-ani/animeko'') && (!(github.event_name == ''pull_request'')) }}'
     - id: 'step-18'
       name: 'Prepare google-services.json'
       continue-on-error: true
@@ -1291,7 +1290,6 @@ jobs:
       continue-on-error: true
       timeout-minutes: 180
       run: './gradlew assembleRelease "--scan" "-Porg.gradle.daemon.idletimeout=60000" "-Dfile.encoding=UTF-8" "-Dorg.gradle.jvmargs=-Xmx8g -Dkotlin.daemon.jvm.options=-Xmx6g" "-Dkotlin.daemon.jvm.options=-Xmx6g"'
-      if: '${{ (github.repository == ''open-ani/animeko'') && (!(github.event_name == ''pull_request'')) }}'
     - id: 'step-38'
       name: 'Build Android Release APKs (Attempt #2)'
       env:
