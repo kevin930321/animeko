@@ -73,14 +73,14 @@ class BangumiSubjectSearchService(
                 list.orEmpty()
                     .filter { includeNsfw || !it.nsfw }
                     .map { subject ->
-                        subject.nameCn.takeIf { it.isNotEmpty() } ?: subject.name
+                        subject.name.takeIf { it.isNotEmpty() } ?: subject.nameCn
                     }
             },
             right = { list ->
                 list
                     // 不支持 nsfw 过滤
                     .map { subject ->
-                        subject.chineseName.takeIf { it.isNotEmpty() } ?: subject.originalName
+                        subject.originalName.takeIf { it.isNotEmpty() } ?: subject.chineseName
                     }
             },
         )
