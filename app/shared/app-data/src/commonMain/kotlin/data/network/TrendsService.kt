@@ -124,7 +124,7 @@ private fun BangumiNextSlimSubject.toTrendingSubjectInfo(): TrendingSubjectInfo 
 fun AniTrends.toTrendsInfo(): TrendsInfo {
     return TrendsInfo(
         subjects = trendingSubjects.map {
-            TrendingSubjectInfo(it.bangumiId, it.name, it.nameCn, it.imageLarge)
+            TrendingSubjectInfo(it.bangumiId, it.name ?: it.nameCn, it.nameCn, it.imageLarge)
         },
     )
 }
