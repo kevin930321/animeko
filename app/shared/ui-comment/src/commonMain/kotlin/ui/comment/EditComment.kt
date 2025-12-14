@@ -211,10 +211,10 @@ fun EditComment(
 @Composable
 private fun renderCommentSendError(result: CommentSendResult.Error): String {
     return when (result) {
-        is CommentSendResult.TurnstileError.Network -> "验证码加载失败：网络错误(${result.code})"
-        is CommentSendResult.TurnstileError.Unknown -> "验证码加载失败：未知错误(${result.code})"
-        CommentSendResult.NetworkError -> "发送失败：网络错误"
-        is CommentSendResult.UnknownError -> "发送失败，请附带日志反馈此问题\n${result.message}"
+        is CommentSendResult.TurnstileError.Network -> "驗證碼載入失敗：網路錯誤(${result.code})"
+        is CommentSendResult.TurnstileError.Unknown -> "驗證碼載入失敗：未知錯誤(${result.code})"
+        CommentSendResult.NetworkError -> "傳送失敗：網路錯誤"
+        is CommentSendResult.UnknownError -> "傳送失敗，請附帶日誌回報此問題\n${result.message}"
     }
 }
 
@@ -267,7 +267,7 @@ fun EditCommentScaffold(
 
         Row(Modifier.padding(horizontal = 8.dp)) {
             Text(
-                "评论将发送到 Bangumi，请勿讨论视频播放问题",
+                "評論將傳送到 Bangumi，請勿討論影片播放問題",
                 style = MaterialTheme.typography.labelLarge,
                 color = MaterialTheme.colorScheme.outline,
             )
