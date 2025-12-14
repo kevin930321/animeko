@@ -53,21 +53,21 @@ object SubjectCollectionActions {
 
     @Stable
     val Done = SubjectCollectionAction(
-        { Text("看过") },
+        { Text("看過") },
         { Icon(Icons.Rounded.TaskAlt, null) },
         UnifiedCollectionType.DONE,
     )
 
     @Stable
     val OnHold = SubjectCollectionAction(
-        { Text("搁置") },
+        { Text("擱置") },
         { Icon(Icons.Rounded.AccessTime, null) },
         UnifiedCollectionType.ON_HOLD,
     )
 
     @Stable
     val Dropped = SubjectCollectionAction(
-        { Text("抛弃") },
+        { Text("拋棄") },
         { Icon(Icons.Rounded.Block, null) },
         UnifiedCollectionType.DROPPED,
     )
