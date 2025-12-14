@@ -26,15 +26,15 @@ internal fun SettingsScope.VideoResolverGroup(
 
     Group(
         title = {
-            Text("视频解析")
+            Text("影片解析")
         },
         modifier = modifier,
     ) {
         val itemText: @Composable (WebViewDriver) -> Unit = {
             when (it) {
                 WebViewDriver.CHROME -> Text("Chrome")
-                WebViewDriver.EDGE -> Text("Edge浏览器")
-                WebViewDriver.AUTO -> Text("自动选择")
+                WebViewDriver.EDGE -> Text("Edge瀏覽器")
+                WebViewDriver.AUTO -> Text("自動選擇")
             }
         }
         DropdownItem(
@@ -49,8 +49,8 @@ internal fun SettingsScope.VideoResolverGroup(
                     ),
                 )
             },
-            title = { Text("浏览器引擎") },
-            description = { Text("播放部分视频源时需要使用无头浏览器引擎，请在电脑上安装 Chrome 或 Edge 浏览器，Safari 不支持") },
+            title = { Text("瀏覽器引擎") },
+            description = { Text("播放部分影片源時需要使用無頭瀏覽器引擎，請在電腦上安裝 Chrome 或 Edge 瀏覽器，Safari 不支援") },
         )
     }
 }
