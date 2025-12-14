@@ -42,10 +42,7 @@ class ExplorationPageViewModel : AbstractViewModel(), KoinComponent {
         settingsRepository.oneshotActionConfig.flow.map { it.horizontalScrollTip }
 
     val explorationPageState: ExplorationPageState = ExplorationPageState(
-        trendingSubjectInfoPager = trendsRepository.trendsInfoPager()
-            .map { pagingData ->
-                pagingData.flatMap { it.subjects.take(10) }
-            }
+        trendingSubjectInfoPager = trendsRepository.bangumiTrendingSubjectsPager()
             .cachedIn(backgroundScope)
             .launchAsLazyPagingItemsIn(backgroundScope),
 //        TrendingSubjectsState(
