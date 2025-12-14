@@ -62,7 +62,7 @@ class AiringLabelState(
         }
         when (airingInfo.kind) {
             SubjectAiringKind.UPCOMING -> {
-                "未开播"
+                "未開播"
 //                if (airingInfo.airDate.isInvalid) {
 //                    "未开播"
 //                } else {
@@ -73,16 +73,16 @@ class AiringLabelState(
             SubjectAiringKind.ON_AIR -> {
                 when (val s = progressInfo.continueWatchingStatus) {
                     ContinueWatchingStatus.Done -> "已看完"
-                    is ContinueWatchingStatus.Watched -> "看过 ${renderEpAndSort(s.episodeEp, s.episodeSort)}"
+                    is ContinueWatchingStatus.Watched -> "看過 ${renderEpAndSort(s.episodeEp, s.episodeSort)}"
 
                     is ContinueWatchingStatus.Continue,
                     is ContinueWatchingStatus.NotOnAir,
                     is ContinueWatchingStatus.Start,
                         ->
                         if (airingInfo.latestSort == null) {
-                            "连载中"
+                            "連載中"
                         } else {
-                            "连载至 ${renderEpAndSort(airingInfo.latestEp, airingInfo.latestSort)}"
+                            "連載至 ${renderEpAndSort(airingInfo.latestEp, airingInfo.latestSort)}"
                         }
                 }
             }
@@ -97,7 +97,7 @@ class AiringLabelState(
 
                     is ContinueWatchingStatus.NotOnAir,
                     ContinueWatchingStatus.Start,
-                        -> "已完结"
+                        -> "已完結"
                 }
             }
         }
