@@ -49,7 +49,7 @@ fun rememberAsyncBrowserNavigator(): BrowserNavigator {
     val failureAction: suspend (OpenBrowserResult.Failure) -> Unit = remember(clipboard, toaster) {
         { failure ->
             clipboard.setClipEntryText(failure.dest)
-            toaster.toast("无法打开链接，已将链接复制到剪贴板，请打开浏览器访问")
+            toaster.toast("無法開啟連結，已將連結複製到剪貼簿，請開啟瀏覽器訪問")
             logger.error(failure.throwable) { "Failed to open ${failure.dest}" }
         }
     }
