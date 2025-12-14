@@ -240,7 +240,7 @@ fun CollectionPage(
                 || currentWindowAdaptiveInfo1().windowSizeClass.isWidthAtLeastMedium
             ) {
                 IconButton(onClick = onClickSettings) {
-                    Icon(Icons.Rounded.Settings, "设置")
+                    Icon(Icons.Rounded.Settings, "設定")
                 }
             }
         },
@@ -616,7 +616,7 @@ private fun SubjectCollectionItem(
                         },
                         enabled = !editableSubjectCollectionTypePresentation.isSetSelfCollectionTypeWorking,
                     ) {
-                        Text("移至\"看过\"", Modifier.requiredWidth(IntrinsicSize.Max), softWrap = false)
+                        Text("移至\"看過\"", Modifier.requiredWidth(IntrinsicSize.Max), softWrap = false)
                     }
                 } else {
                     SubjectProgressButton(
@@ -640,9 +640,9 @@ private fun UnifiedCollectionType.displayText(): String {
     return when (this) {
         UnifiedCollectionType.WISH -> "想看"
         UnifiedCollectionType.DOING -> "在看"
-        UnifiedCollectionType.DONE -> "看过"
-        UnifiedCollectionType.ON_HOLD -> "搁置"
-        UnifiedCollectionType.DROPPED -> "抛弃"
+        UnifiedCollectionType.DONE -> "看過"
+        UnifiedCollectionType.ON_HOLD -> "擱置"
+        UnifiedCollectionType.DROPPED -> "拋棄"
         UnifiedCollectionType.NOT_COLLECTED -> "未收藏"
     }
 }
@@ -655,17 +655,17 @@ private fun GuestTips(
     modifier: Modifier = Modifier,
 ) {
     Column(modifier) {
-        Text("游客模式下请搜索后观看，或登录后使用收藏功能")
+        Text("訪客模式下請搜尋後觀看，或登入後使用收藏功能")
 
         Row(horizontalArrangement = Arrangement.spacedBy(16.dp)) {
             OutlinedButton(onClickLogin, Modifier.weight(1f)) {
                 Icon(Icons.Rounded.HowToReg, null)
-                Text("登录", Modifier.padding(start = 8.dp))
+                Text("登入", Modifier.padding(start = 8.dp))
             }
 
             Button(onClickSearch, Modifier.weight(1f)) {
                 Icon(Icons.Rounded.Search, null)
-                Text("搜索", Modifier.padding(start = 8.dp))
+                Text("搜尋", Modifier.padding(start = 8.dp))
             }
         }
     }
