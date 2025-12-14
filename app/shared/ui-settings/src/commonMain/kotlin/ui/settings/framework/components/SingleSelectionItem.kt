@@ -150,7 +150,7 @@ fun <T> SettingsScope.SingleSelectionItem(
                         showDialog = false
                         onConfirm(items.getOrNull(selectionState.currentSelected)?.value)
                     },
-                ) { Text("确认") }
+                ) { Text("確認") }
             },
             dismissButton = {
                 TextButton({ showDialog = false }) {

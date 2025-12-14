@@ -62,8 +62,8 @@ internal fun ThemeSelectStep(
                     modifier = Modifier
                         .fillMaxWidth()
                         .clickable { onUpdateUseDynamicTheme(!config.useDynamicTheme) },
-                    title = { Text("动态色彩") },
-                    description = { Text("使用系统强调色") },
+                    title = { Text("動態色彩") },
+                    description = { Text("使用系統強調色") },
                     action = {
                         Switch(
                             checked = config.useDynamicTheme,

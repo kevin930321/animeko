@@ -52,8 +52,8 @@ class LabelFirstRawTitleParser : RawTitleParser() {
             if (builder.episodeRange == null) {
                 words.forEach { word ->
                     if (word.contains("Movie", ignoreCase = true)
-                        || word.contains("电影", ignoreCase = true)
-                        || word.contains("剧场版", ignoreCase = true)
+                        || word.contains("電影", ignoreCase = true)
+                        || word.contains("劇場版", ignoreCase = true)
                     ) {
                         // #1193
                         builder.episodeRange = EpisodeRange.unknownSeason()
@@ -78,8 +78,8 @@ class LabelFirstRawTitleParser : RawTitleParser() {
 
             if (builder.subtitleLanguages.isEmpty()) {
                 when {
-                    "字幕组" in text -> {
-                        // 如果标题只有 "字幕组", 则认为是简日内嵌.
+                    "字幕組" in text -> {
+                        // 如果标题只有 "字幕組", 则认为是简日内嵌.
                         builder.subtitleLanguages.add(SubtitleLanguage.ChineseSimplified)
                         if (builder.subtitleKind == null) {
                             builder.subtitleKind = SubtitleKind.EMBEDDED
@@ -91,9 +91,9 @@ class LabelFirstRawTitleParser : RawTitleParser() {
             // 判断字幕类型
             if (builder.subtitleKind == null) {
                 builder.subtitleKind = when {
-                    "内嵌" in text || "內嵌" in text -> SubtitleKind.EMBEDDED
-                    "内封" in text || "內封" in text -> SubtitleKind.CLOSED
-                    "外挂" in text || "外掛" in text -> SubtitleKind.EXTERNAL_DISCOVER
+                    "內嵌" in text || "內嵌" in text -> SubtitleKind.EMBEDDED
+                    "內封" in text || "內封" in text -> SubtitleKind.CLOSED
+                    "外掛" in text || "外掛" in text -> SubtitleKind.EXTERNAL_DISCOVER
 
                     // 将同时有超过两个非日语语言的资源，标记为非内嵌 #719
                     builder.subtitleLanguages.count { it != SubtitleLanguage.Japanese } >= 2 -> SubtitleKind.CLOSED
@@ -101,7 +101,7 @@ class LabelFirstRawTitleParser : RawTitleParser() {
                 }
             }
 
-            if (words.any { it == "无中文字幕" }) {
+            if (words.any { it == "無中文字幕" }) {
                 builder.subtitleLanguages.clear()
                 builder.subtitleKind = null
             }
@@ -128,7 +128,7 @@ class LabelFirstRawTitleParser : RawTitleParser() {
 
         private fun String.parseSubtitleLanguages(): Boolean {
             var any = false
-            if (this == "简体双语") {
+            if (this == "簡體雙語") {
                 builder.subtitleLanguages.add(SubtitleLanguage.ChineseSimplified)
                 builder.subtitleLanguages.add(SubtitleLanguage.Japanese)
                 return true
@@ -400,7 +400,7 @@ private fun String.getPrefix(): String? {
 private val episodeRemove = listOf(
     Regex("""第"""),
     Regex("""_?(?:完|END)|\(完\)""", RegexOption.IGNORE_CASE),
-    Regex("""[话集話]"""),
+    Regex("""[話集話]"""),
     Regex("""_?v[0-9]""", RegexOption.IGNORE_CASE),
     Regex("""版"""),
     Regex("""Fin|FIN"""),
@@ -411,7 +411,7 @@ private val seasonEpisodePattern = Regex("""S(\d+)E(\d+)""")
 
 // 1998  2022  需要去除, 否则会被匹配为剧集
 private val yearPattern = Regex("""19[0-9]{2}|20[0-3][0-9]""")
-private val newAnime = Regex("(?:★?|★(.*)?)([0-9]|[一二三四五六七八九十]{0,4}) ?[月年] ?(?:新番|日剧)★?")
+private val newAnime = Regex("(?:★?|★(.*)?)([0-9]|[一二三四五六七八九十]{0,4}) ?[月年] ?(?:新番|日劇)★?")
 
 // 性能没问题, 测了一般就 100 steps
 @Suppress("RegExpRedundantEscape") // required on android
@@ -440,15 +440,15 @@ private val collectionPattern = Regex(
 )
 
 private val singleSpecialEpisode = Regex(
-    """(SP|Special|Moview|OVA|OAD|小剧场|特别篇?|番外篇?)[0-9]{0,3}""",
+    """(SP|Special|Moview|OVA|OAD|小劇場|特別篇?|番外篇?)[0-9]{0,3}""",
     RegexOption.IGNORE_CASE,
 )
 
 private val movieKeywords = setOf(
     "Movie",
     "MOVIE",
-    "剧场版",
-    "电影",
+    "劇場版",
+    "電影",
 )
 
 // S1
@@ -485,7 +485,7 @@ internal fun String.splitWords(vararg delimiters: Char = DEFAULT_SPLIT_WORDS_DEL
                 ?: groups["v5"]
                 ?: groups["v6"]
                 ?: groups["v7"]
-            // can be "WebRip 1080p HEVC-10bit AAC" or "简繁内封字幕"
+            // can be "WebRip 1080p HEVC-10bit AAC" or "簡繁內封字幕"
             yield(tag!!.value)
         }
         if (index < text.length) {

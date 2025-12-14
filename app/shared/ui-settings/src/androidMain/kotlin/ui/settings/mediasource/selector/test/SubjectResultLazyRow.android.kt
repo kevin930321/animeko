@@ -44,36 +44,36 @@ fun createTestSelectorTestSubjectPresentation(
 val TestSelectorTestSubjectPresentations
     get() = listOf(
         createTestSelectorTestSubjectPresentation(
-            "孤独摇滚",
+            "孤獨搖滾",
         ),
         createTestSelectorTestSubjectPresentation(
-            "孤独摇滚",
+            "孤獨搖滾",
         ),
         createTestSelectorTestSubjectPresentation(
-            "孤独摇滚",
+            "孤獨搖滾",
         ),
         createTestSelectorTestSubjectPresentation(
-            "孤独摇滚",
+            "孤獨搖滾",
         ),
         createTestSelectorTestSubjectPresentation(
-            "孤独摇滚",
-            tags = listOf(MatchTag("标题", isMatch = false), MatchTag("字幕", isMatch = true)),
+            "孤獨搖滾",
+            tags = listOf(MatchTag("標題", isMatch = false), MatchTag("字幕", isMatch = true)),
         ),
         createTestSelectorTestSubjectPresentation(
-            "孤独摇滚".repeat(10),
-            tags = listOf(MatchTag("标题", isMatch = false)),
+            "孤獨搖滾".repeat(10),
+            tags = listOf(MatchTag("標題", isMatch = false)),
         ),
         createTestSelectorTestSubjectPresentation(
-            "孤独摇滚".repeat(10),
-            tags = listOf(MatchTag("标题", isMatch = false)),
+            "孤獨搖滾".repeat(10),
+            tags = listOf(MatchTag("標題", isMatch = false)),
         ),
         createTestSelectorTestSubjectPresentation(
-            "孤独摇滚".repeat(10),
-            tags = listOf(MatchTag("标题", isMatch = false)),
+            "孤獨搖滾".repeat(10),
+            tags = listOf(MatchTag("標題", isMatch = false)),
         ),
         createTestSelectorTestSubjectPresentation(
-            "孤独摇滚".repeat(10),
-            tags = listOf(MatchTag("标题", isMatch = false)),
+            "孤獨搖滾".repeat(10),
+            tags = listOf(MatchTag("標題", isMatch = false)),
         ),
     )
 

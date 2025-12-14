@@ -34,7 +34,7 @@ interface MediaResolver {
     fun supports(media: Media): Boolean
 
     /**
-     * "挂载" 到 composable 中, 以便进行需要虚拟 UI 的操作, 例如 WebView
+     * "掛載" 到 composable 中, 以便进行需要虚拟 UI 的操作, 例如 WebView
      */
     @Composable
     fun ComposeContent() {

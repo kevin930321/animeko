@@ -41,7 +41,7 @@ class IkarosMediaSource(
         const val ID = "ikaros"
         val INFO = MediaSourceInfo(
             displayName = "Ikaros",
-            description = "专注于 ACGMN 的内容管理系统 (CMS)",
+            description = "專注於 ACGMN 的內容管理系統 (CMS)",
             websiteUrl = "https://docs.ikaros.run",
             iconUrl = "https://docs.ikaros.run/img/favicon.ico",
         )
@@ -65,8 +65,8 @@ class IkarosMediaSource(
 
     object Parameters : MediaSourceParametersBuilder() {
         val baseUrl = string("baseUrl", description = "API base URL")
-        val username = string("username", description = "用户名")
-        val password = string("password", description = "密码")
+        val username = string("username", description = "用戶名")
+        val password = string("password", description = "密碼")
     }
 
     class Factory : MediaSourceFactory {

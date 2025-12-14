@@ -88,14 +88,14 @@ val TestEditingMediaFetchRequest
     get() = EditingMediaFetchRequest(
         subjectId = "12345",
         episodeId = "67890",
-        primaryName = "关于我转生变成史莱姆这档事 第三季",
+        primaryName = "關於我轉生變成史萊姆這檔事 第三季",
         complementaryNames = listOf(
             "転生したらスライムだった件 第3期",
-            "关于我转生变成史莱姆这档事 第三季",
+            "關於我轉生變成史萊姆這檔事 第三季",
             "Tensei Shitara Slime Datta Ken Season 3",
         ),
         episodeSort = "49",
-        episodeName = "恶魔与阴谋",
+        episodeName = "惡魔與陰謀",
         episodeEp = "01",
     )
 
@@ -105,13 +105,13 @@ val TestMediaFetchRequest
     get() = MediaFetchRequest(
         subjectId = "12345",
         episodeId = "67890",
-        subjectNameCN = "关于我转生变成史莱姆这档事 第三季",
+        subjectNameCN = "關於我轉生變成史萊姆這檔事 第三季",
         subjectNames = listOf(
             "転生したらスライムだった件 第3期",
-            "关于我转生变成史莱姆这档事 第三季",
+            "關於我轉生變成史萊姆這檔事 第三季",
             "Tensei Shitara Slime Datta Ken Season 3",
         ),
         episodeSort = EpisodeSort("49"),
-        episodeName = "恶魔与阴谋",
+        episodeName = "惡魔與陰謀",
         episodeEp = EpisodeSort("01"),
     )

@@ -68,7 +68,7 @@ fun createTestEpisodeListItem(
     episodeId: Int = random.nextInt(1, 1000),
     ep: EpisodeSort? = null,
     name: String = "Test Episode $episodeId",
-    nameCn: String = "测试剧集 $episodeId",
+    nameCn: String = "測試劇集 $episodeId",
     collectionType: UnifiedCollectionType = UnifiedCollectionType.entries.random(random),
 //    cacheStatus: EpisodeCacheStatus? = EpisodeCacheStatus.randomOrNull(random),
     isBroadcast: Boolean = random.nextBoolean(),

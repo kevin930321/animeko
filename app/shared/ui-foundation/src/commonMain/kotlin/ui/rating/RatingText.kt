@@ -59,14 +59,14 @@ fun RatingText(
             ) {
                 Column {
                     Text(
-                        "#${rating.rank}\n${rating.total} 人评",
+                        "#${rating.rank}\n${rating.total} 人評",
                         maxLines = 2,
                         softWrap = false,
                     )
                 }
 //                Row {
 //                    Text(
-//                        "${rating.total} 人评丨#${rating.rank}",
+//                        "${rating.total} 人評丨#${rating.rank}",
 //                        maxLines = 1,
 //                        onTextLayout = { hasOverflow = it.hasVisualOverflow },
 //                    )
@@ -74,7 +74,7 @@ fun RatingText(
 //                if (hasOverflow) {
 //                    Column {
 //                        Text(
-//                            "#${rating.rank}\n${rating.total} 人评",
+//                            "#${rating.rank}\n${rating.total} 人評",
 //                            maxLines = 2,
 //                            softWrap = false,
 //                        )

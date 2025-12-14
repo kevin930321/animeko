@@ -81,7 +81,7 @@ fun HandleWindowsWindowProc() {
             val handler = try {
                 WindowsWindowUtils.instance.handleWindowProc(platformWindow)
             } catch (e: Throwable) {
-                logger.error(e) { "处理 Windows 窗口过程失败" }
+                logger.error(e) { "處理 Windows 窗口過程失敗" }
                 null
             }
             onDispose {

@@ -26,8 +26,8 @@ val TestEpisodes = buildList {
             EpisodeInfo(
                 id, EpisodeType.MainStory,
                 nameCn =
-                    if (id.rem(2) == 0) "中文剧集名称中文剧集名称中文剧集名称中文剧集名称"
-                    else "中文剧集名称",
+                    if (id.rem(2) == 0) "中文劇集名稱中文劇集名稱中文劇集名稱中文劇集名稱"
+                    else "中文劇集名稱",
                 name = "Episode Name $id",
                 sort = EpisodeSort((24 + id).toString()),
                 ep = EpisodeSort(id.toString()),
@@ -62,11 +62,11 @@ val TestSubjectRecommendations = buildList {
             SubjectRecommendation(
                 subjectId = it.toLong(),
                 name = "Subject Recommendation $it",
-                nameCn = "推荐条目中文名称 $it",
+                nameCn = "推薦條目中文名稱 $it",
                 imageUrl = "",
                 uri = null,
                 desc1 = "2021 年 10 月",
-                desc2 = "2 万收藏 · 8.0 分",
+                desc2 = "2 萬收藏 · 8.0 分",
             ),
         )
     }

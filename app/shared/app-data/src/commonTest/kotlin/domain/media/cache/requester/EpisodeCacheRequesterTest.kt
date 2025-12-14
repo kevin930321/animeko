@@ -214,7 +214,7 @@ class EpisodeCacheRequesterTest {
     fun `done has correct metadata`() = runTest {
         val request = createRequest().run {
             copy(
-                subjectInfo.copy(subjectId = 12, name = "ひ", nameCn = "孤独摇滚"),
+                subjectInfo.copy(subjectId = 12, name = "ひ", nameCn = "孤獨搖滾"),
                 episodeInfo.copy(sort = EpisodeSort(2), name = "第二集"), // 2 in 12
             )
         }
@@ -231,8 +231,8 @@ class EpisodeCacheRequesterTest {
             MediaCacheMetadata(
                 subjectId = "12",
                 episodeId = "0",
-                subjectNameCN = "孤独摇滚",
-                subjectNames = listOf("孤独摇滚", "ひ"),
+                subjectNameCN = "孤獨搖滾",
+                subjectNames = listOf("孤獨搖滾", "ひ"),
                 episodeSort = EpisodeSort(2), // using new
                 episodeEp = null,
                 episodeName = "第二集",
@@ -298,7 +298,7 @@ class EpisodeCacheRequesterTest {
         val originalMedia = createTestDefaultMedia(
             mediaId = "$SOURCE_DMHY.1",
             mediaSourceId = SOURCE_DMHY,
-            originalTitle = "[桜都字幕组] 孤独摇滚 ABC ABC ABC ABC ABC ABC ABC ABC ABC ABC",
+            originalTitle = "[桜都字幕組] 孤獨搖滾 ABC ABC ABC ABC ABC ABC ABC ABC ABC ABC",
             download = ResourceLocation.MagnetLink("magnet:?xt=urn:btih:1"),
             originalUrl = "https://example.com/1",
             publishedTime = 1,
@@ -306,7 +306,7 @@ class EpisodeCacheRequesterTest {
             properties = createTestMediaProperties(
                 subtitleLanguageIds = listOf(ChineseSimplified, ChineseTraditional).map { it.id },
                 resolution = "1080P",
-                alliance = "桜都字幕组",
+                alliance = "桜都字幕組",
                 size = 122.megaBytes,
                 subtitleKind = null,
             ),
@@ -323,8 +323,8 @@ class EpisodeCacheRequesterTest {
             MediaCacheMetadata(
                 subjectId = "1",
                 episodeId = "1",
-                subjectNameCN = "孤独摇滚",
-                subjectNames = listOf("孤独摇滚"),
+                subjectNameCN = "孤獨搖滾",
+                subjectNames = listOf("孤獨搖滾"),
                 episodeSort = EpisodeSort(1),
                 episodeEp = EpisodeSort(1),
                 episodeName = "test",
@@ -347,7 +347,7 @@ class EpisodeCacheRequesterTest {
         val originalMedia = createTestDefaultMedia(
             mediaId = "$SOURCE_DMHY.1",
             mediaSourceId = SOURCE_DMHY,
-            originalTitle = "[桜都字幕组] 孤独摇滚 ABC ABC ABC ABC ABC ABC ABC ABC ABC ABC",
+            originalTitle = "[桜都字幕組] 孤獨搖滾 ABC ABC ABC ABC ABC ABC ABC ABC ABC ABC",
             download = ResourceLocation.MagnetLink("magnet:?xt=urn:btih:1"),
             originalUrl = "https://example.com/1",
             publishedTime = 1,
@@ -355,7 +355,7 @@ class EpisodeCacheRequesterTest {
             properties = createTestMediaProperties(
                 subtitleLanguageIds = listOf(ChineseSimplified, ChineseTraditional).map { it.id },
                 resolution = "1080P",
-                alliance = "桜都字幕组",
+                alliance = "桜都字幕組",
                 size = 122.megaBytes,
                 subtitleKind = null,
             ),
@@ -372,8 +372,8 @@ class EpisodeCacheRequesterTest {
             MediaCacheMetadata(
                 subjectId = "1",
                 episodeId = "1",
-                subjectNameCN = "孤独摇滚",
-                subjectNames = listOf("孤独摇滚"),
+                subjectNameCN = "孤獨搖滾",
+                subjectNames = listOf("孤獨搖滾"),
                 episodeSort = EpisodeSort(1),
                 episodeEp = EpisodeSort(1),
                 episodeName = "test",
@@ -396,7 +396,7 @@ class EpisodeCacheRequesterTest {
         return createTestDefaultMedia(
             mediaId = id,
             mediaSourceId = SOURCE_DMHY,
-            originalTitle = "[桜都字幕组] 孤独摇滚 ABC ABC ABC ABC ABC ABC ABC ABC ABC ABC",
+            originalTitle = "[桜都字幕組] 孤獨搖滾 ABC ABC ABC ABC ABC ABC ABC ABC ABC ABC",
             download = ResourceLocation.MagnetLink("magnet:?xt=urn:btih:1"),
             originalUrl = "https://example.com/1",
             publishedTime = 1,
@@ -404,7 +404,7 @@ class EpisodeCacheRequesterTest {
             properties = createTestMediaProperties(
                 subtitleLanguageIds = listOf(ChineseSimplified, ChineseTraditional).map { it.id },
                 resolution = "1080P",
-                alliance = "桜都字幕组",
+                alliance = "桜都字幕組",
                 size = 122.megaBytes,
                 subtitleKind = null,
             ),
@@ -428,8 +428,8 @@ class EpisodeCacheRequesterTest {
         MediaCacheMetadata(
             subjectId = "1",
             episodeId = "1",
-            subjectNameCN = "孤独摇滚",
-            subjectNames = listOf("孤独摇滚"),
+            subjectNameCN = "孤獨搖滾",
+            subjectNames = listOf("孤獨搖滾"),
             episodeSort = episodeSort,
             episodeEp = episodeEp,
             episodeName = "test",
@@ -443,7 +443,7 @@ class EpisodeCacheRequesterTest {
 
         val request = createRequest().run {
             copy(
-                subjectInfo.copy(subjectId = 12, name = "ひ", nameCn = "孤独摇滚"),
+                subjectInfo.copy(subjectId = 12, name = "ひ", nameCn = "孤獨搖滾"),
                 episodeInfo.copy(sort = EpisodeSort(2), name = "第二集"), // 2 in 12
             )
         }
@@ -464,8 +464,8 @@ class EpisodeCacheRequesterTest {
             MediaCacheMetadata(
                 subjectId = "12",
                 episodeId = "0",
-                subjectNameCN = "孤独摇滚",
-                subjectNames = listOf("孤独摇滚", "ひ"),
+                subjectNameCN = "孤獨搖滾",
+                subjectNames = listOf("孤獨搖滾", "ひ"),
                 episodeSort = EpisodeSort(2), // using new
                 episodeEp = null,
                 episodeName = "第二集",
@@ -485,7 +485,7 @@ class EpisodeCacheRequesterTest {
 
         val request = createRequest().run {
             copy(
-                subjectInfo.copy(subjectId = 12, name = "ひ", nameCn = "孤独摇滚"),
+                subjectInfo.copy(subjectId = 12, name = "ひ", nameCn = "孤獨搖滾"),
                 episodeInfo.copy(sort = EpisodeSort(2), name = "第二集"), // 2 in 12
             )
         }
@@ -501,8 +501,8 @@ class EpisodeCacheRequesterTest {
             MediaCacheMetadata(
                 subjectId = "12",
                 episodeId = "0",
-                subjectNameCN = "孤独摇滚",
-                subjectNames = listOf("孤独摇滚", "ひ"),
+                subjectNameCN = "孤獨搖滾",
+                subjectNames = listOf("孤獨搖滾", "ひ"),
                 episodeSort = EpisodeSort(2), // using new
                 episodeEp = null,
                 episodeName = "第二集",

@@ -105,7 +105,7 @@ internal fun dummyDanmaku(
     measurer: TextMeasurer,
     baseStyle: TextStyle,
     style: DanmakuStyle,
-    dummyText: String = "dummy 占位 攟 の \uD83D\uDE04"
+    dummyText: String = "dummy 佔位 攟 の \uD83D\uDE04"
 ): StyledDanmaku {
     return StyledDanmaku(
         presentation = DanmakuPresentation(

@@ -192,7 +192,7 @@ fun createTestSubjectCollection(
 ): SubjectCollectionInfo {
     val subjectInfo = SubjectInfo.Empty.copy(
         subjectId = id,
-        nameCn = "中文条目名称",
+        nameCn = "中文條目名稱",
         name = "Subject Name",
         nsfw = Random.nextBoolean(),
     )

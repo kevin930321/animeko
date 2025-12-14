@@ -56,7 +56,7 @@ abstract class AbstractTorrentMediaCacheEngineTest {
     protected val testMedia = createTestDefaultMedia(
         mediaId = "dmhy.2",
         mediaSourceId = "dmhy",
-        originalTitle = "夜晚的水母不会游泳 02 测试剧集",
+        originalTitle = "夜晚的水母不會游泳 02 測試劇集",
         download = ResourceLocation.MagnetLink("magnet:?xt=urn:btih:1"),
         originalUrl = "https://example.com/1",
         publishedTime = 1724493292758,
@@ -64,7 +64,7 @@ abstract class AbstractTorrentMediaCacheEngineTest {
         properties = createTestMediaProperties(
             subtitleLanguageIds = listOf("CHT"),
             resolution = "1080P",
-            alliance = "北宇治字幕组北宇治字幕组北宇治字幕组北宇治字幕组北宇治字幕组北宇治字幕组北宇治字幕组北宇治字幕组",
+            alliance = "北宇治字幕組北宇治字幕組北宇治字幕組北宇治字幕組北宇治字幕組北宇治字幕組北宇治字幕組北宇治字幕組",
             size = 233.megaBytes,
             subtitleKind = null,
         ),

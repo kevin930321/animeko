@@ -118,9 +118,9 @@ fun MediaSelectorSummaryCard(
             ) { state ->
                 val button = @Composable {
                     val buttonLabel = when (state) {
-                        is MediaSelectorSummary.AutoSelecting -> "手动选择"
-                        is MediaSelectorSummary.RequiresManualSelection -> "手动选择"
-                        is MediaSelectorSummary.Selected -> "更换"
+                        is MediaSelectorSummary.AutoSelecting -> "手動選擇"
+                        is MediaSelectorSummary.RequiresManualSelection -> "手動選擇"
+                        is MediaSelectorSummary.Selected -> "更換"
                     }
 
                     OutlinedButton(

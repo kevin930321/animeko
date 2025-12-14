@@ -42,7 +42,7 @@ class TimeFormatterTest {
 
     @Test
     fun testJustNow() {
-        assertEquals("刚刚", timeFormatter.format(fixedTime))
+        assertEquals("剛剛", timeFormatter.format(fixedTime))
     }
 
     @Test
@@ -54,31 +54,31 @@ class TimeFormatterTest {
     @Test
     fun testSecondsLater() {
         val timestamp = Instant.parse("2020-01-01T10:00:30Z")
-        assertEquals("30 秒后", timeFormatter.format(timestamp))
+        assertEquals("30 秒後", timeFormatter.format(timestamp))
     }
 
     @Test
     fun testMinutesAgo() {
         val timestamp = Instant.parse("2020-01-01T09:58:00Z")
-        assertEquals("2 分钟前", timeFormatter.format(timestamp))
+        assertEquals("2 分鐘前", timeFormatter.format(timestamp))
     }
 
     @Test
     fun testMinutesLater() {
         val timestamp = Instant.parse("2020-01-01T10:02:00Z")
-        assertEquals("2 分钟后", timeFormatter.format(timestamp))
+        assertEquals("2 分鐘後", timeFormatter.format(timestamp))
     }
 
     @Test
     fun testHoursAgo() {
         val timestamp = Instant.parse("2020-01-01T08:00:00Z")
-        assertEquals("2 小时前", timeFormatter.format(timestamp))
+        assertEquals("2 小時前", timeFormatter.format(timestamp))
     }
 
     @Test
     fun testHoursLater() {
         val timestamp = Instant.parse("2020-01-01T12:00:00Z")
-        assertEquals("2 小时后", timeFormatter.format(timestamp))
+        assertEquals("2 小時後", timeFormatter.format(timestamp))
     }
 
     @Test

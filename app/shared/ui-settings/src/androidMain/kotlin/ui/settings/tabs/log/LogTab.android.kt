@@ -35,7 +35,7 @@ internal actual fun ColumnScope.PlatformLoggingItems(listItemColors: ListItemCol
     val scope = rememberCoroutineScope()
 
     ListItem(
-        headlineContent = { Text("分享当日日志文件") },
+        headlineContent = { Text("分享當日日誌文件") },
         Modifier.clickable {
             val shareIntent = Intent(Intent.ACTION_SEND)
             shareIntent.setType("text/plain") // Set appropriate MIME type
@@ -48,13 +48,13 @@ internal actual fun ColumnScope.PlatformLoggingItems(listItemColors: ListItemCol
                 ),
             )
             shareIntent.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION)
-            context.startActivity(Intent.createChooser(shareIntent, "分享日志文件"))
+            context.startActivity(Intent.createChooser(shareIntent, "分享日誌文件"))
         },
         colors = listItemColors,
     )
 
     ListItem(
-        headlineContent = { Text("复制当日日志内容 (很大)") },
+        headlineContent = { Text("複製當日日誌內容 (很大)") },
         Modifier.clickable {
             scope.launch {
                 clipboard.setClipEntryText(context.getCurrentLogFile().readText())

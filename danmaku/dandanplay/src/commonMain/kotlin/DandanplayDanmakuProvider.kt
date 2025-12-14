@@ -130,7 +130,7 @@ class DandanplayDanmakuProvider(
                 }.getOrNull()
 
         val prefixedExpectedEpisodeName =
-            "第${(request.episodeEp ?: request.episodeSort).toString().removePrefix("0")}话 " + request.episodeName
+            "第${(request.episodeEp ?: request.episodeSort).toString().removePrefix("0")}話 " + request.episodeName
         val matcher = DanmakuMatchers.mostRelevant(
             request.subjectPrimaryName,
             prefixedExpectedEpisodeName,
@@ -236,9 +236,9 @@ class DandanplayDanmakuProvider(
                 dandanplayClient.searchEpisode(
                     subjectName = name.trim().substringBeforeLast(" "),
                     episodeName = null, // 用我们的匹配算法
-                    //            episodeName = "第${(request.episodeEp ?: request.episodeSort).toString().removePrefix("0")}话",
+                    //            episodeName = "第${(request.episodeEp ?: request.episodeSort).toString().removePrefix("0")}話",
                     // 弹弹的是 EP 顺序
-                    // 弹弹数据库有时候会只有 "第x话" 没有具体标题, 所以不带标题搜索就够了
+                    // 弹弹数据库有时候会只有 "第x話" 没有具体标题, 所以不带标题搜索就够了
                 ).animes
             }.onFailure {
                 if (it is CancellationException) throw it

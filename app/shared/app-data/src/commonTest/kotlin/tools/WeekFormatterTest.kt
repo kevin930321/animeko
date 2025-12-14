@@ -18,7 +18,7 @@ import kotlin.time.Instant
 class WeekFormatterTest {
 
     private val fixedInstant = Instant.parse("2024-08-21T12:00:00Z") // 周三
-    private val testTimeZone = TimeZone.of("Asia/Shanghai") // 上海时间为 "2024-08-21T20:00:00"
+    private val testTimeZone = TimeZone.of("Asia/Shanghai") // 上海時間爲 "2024-08-21T20:00:00"
 
     // Helper function to create a fixed WeekFormatter for predictable testing
     private fun createFormatter(now: Instant): WeekFormatter {
@@ -51,7 +51,7 @@ class WeekFormatterTest {
         val formatter = createFormatter(fixedInstant)
         val instance = Instant.parse("2024-08-24T12:00:00Z")  // 2024-08-24 is Saturday
         val result = formatter.format(instance, testTimeZone)
-        assertEquals("周六", result)
+        assertEquals("週六", result)
     }
 
     @Test
@@ -59,7 +59,7 @@ class WeekFormatterTest {
         val formatter = createFormatter(fixedInstant)
         val instance = Instant.parse("2024-08-28T12:00:00Z")  // 2024-08-28 is next Wednesday
         val result = formatter.format(instance, testTimeZone)
-        assertEquals("下周三", result)
+        assertEquals("下週三", result)
     }
 
     @Test
@@ -99,7 +99,7 @@ class WeekFormatterTest {
         val formatter = createFormatter(Instant.parse("2023-12-29T12:00:00Z"))
         val instance = Instant.parse("2024-01-03T12:00:00Z")  // Date in the first week of the next year
         val result = formatter.format(instance, testTimeZone)
-        assertEquals("下周三", result)
+        assertEquals("下週三", result)
     }
 
     // edge cases
@@ -127,7 +127,7 @@ Test for the Exact Transition Between This Week and Next Week: A date exactly on
         val formatter = createFormatter(fixedInstant)
         val instance = Instant.parse("2024-08-25T12:00:00Z")  // 2024-08-25 is Sunday
         val result = formatter.format(instance, testTimeZone)
-        assertEquals("周日", result)
+        assertEquals("週日", result)
     }
 
     @Test
@@ -135,7 +135,7 @@ Test for the Exact Transition Between This Week and Next Week: A date exactly on
         val formatter = createFormatter(fixedInstant)
         val instance = Instant.parse("2024-08-26T12:00:00Z")  // 2024-08-26 is next Monday
         val result = formatter.format(instance, testTimeZone)
-        assertEquals("下周一", result)
+        assertEquals("下週一", result)
     }
 
     @Test

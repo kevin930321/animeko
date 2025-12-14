@@ -86,7 +86,7 @@ class MikanCNMediaSource(
         const val ID = "mikan-mikanime-tv"
         const val BASE_URL = "https://mikanime.tv"
         val INFO = MediaSourceInfo(
-            displayName = "蜜柑计划 (CN)",
+            displayName = "蜜柑計劃 (CN)",
             websiteUrl = BASE_URL,
             iconUrl = "https://mikanani.me/images/mikan-pic.png",
             iconResourceId = "mikan.png",
@@ -123,7 +123,7 @@ class MikanMediaSource(
         const val ID = "mikan"
         const val BASE_URL = "https://mikanani.me"
         val INFO = MediaSourceInfo(
-            displayName = "蜜柑计划",
+            displayName = "蜜柑計劃",
             websiteUrl = BASE_URL,
             iconUrl = "https://mikanani.me/images/mikan-pic.png",
             iconResourceId = "mikan.png",
@@ -213,7 +213,7 @@ abstract class AbstractMikanMediaSource(
     private suspend fun HttpClient.searchByIndexOrNull(request: MediaFetchRequest): List<MediaMatch>? {
         val client = this
         // 长度限制:
-        // "无职转生Ⅱ ～到了异世界就拿出真本事～" 19 chars, 可以搜索, 再长的就会直接没有结果
+        // "無職轉生Ⅱ ～到了異世界就拿出真本事～" 19 chars, 可以搜索, 再长的就会直接没有结果
 
 
         val bangumiSubjectId = request.subjectId
@@ -340,7 +340,7 @@ abstract class AbstractMikanMediaSource(
             document.getElementsByClass("bangumi-info")
                 .filter(
                     predicate = {
-                        it.text().contains("Bangumi番组计划链接：")
+                        it.text().contains("Bangumi番組計劃鏈接：")
                     },
                 ).firstNotNullOfOrNull { element ->
                     element.getElementsByTag("a").attr("href").substringAfter("subject/", "")

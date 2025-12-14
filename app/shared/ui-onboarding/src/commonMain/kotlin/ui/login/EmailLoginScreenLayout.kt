@@ -53,7 +53,7 @@ internal fun EmailLoginScreenLayout(
     onNavigateSettings: () -> Unit,
     onNavigateBack: () -> Unit,
     modifier: Modifier = Modifier,
-    title: @Composable () -> Unit = { Text("登录") },
+    title: @Composable () -> Unit = { Text("登錄") },
     showThirdPartyLogin: Boolean = true,
     content: @Composable ColumnScope.(scrollState: ScrollState) -> Unit,
 ) {
@@ -65,7 +65,7 @@ internal fun EmailLoginScreenLayout(
                 title = title,
                 navigationIcon = { BackNavigationIconButton(onNavigateBack) },
                 scrollBehavior = scrollBehavior,
-                actions = { IconButton(onNavigateSettings) { Icon(Icons.Outlined.Settings, "设置") } },
+                actions = { IconButton(onNavigateSettings) { Icon(Icons.Outlined.Settings, "設置") } },
                 windowInsets = AniWindowInsets.forTopAppBar(),
             )
         },

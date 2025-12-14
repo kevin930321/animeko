@@ -15,7 +15,7 @@ import kotlin.test.assertEquals
 class BangumiSubjectSearchServiceTest {
     @Test
     fun `test sanitizeKeyword`() {
-        assertEquals("测试 ", BangumiSubjectSearchService.sanitizeKeyword("测试!"))
-        assertEquals("测 试", BangumiSubjectSearchService.sanitizeKeyword("测/试"))
+        assertEquals("測試 ", BangumiSubjectSearchService.sanitizeKeyword("測試!"))
+        assertEquals("測 試", BangumiSubjectSearchService.sanitizeKeyword("測/試"))
     }
 }

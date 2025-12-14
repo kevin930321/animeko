@@ -72,7 +72,7 @@ data class SelectorSearchConfig(
 //     * - `<ch>`: channel name
 //     * - `<ep>`: episode name
 //     *
-//     * E.g. 用于匹配 "线路1 第1集":
+//     * E.g. 用于匹配 "線路1 第1集":
 //     * ```regex
 //     * (?<ch>.+)\s*第(?<ep>\d+)集
 //     * ```

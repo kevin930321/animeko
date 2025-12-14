@@ -38,7 +38,7 @@ public class PatternTitleParserTest怪人的沙拉碗 : PatternBasedTitleParserT
   public fun `671468_LoliHouse_Henjin_no_Salad_Bowl___09_WebRip_1080p_HEVC_10bit_AAC`() {
     kotlin.run {
     val r =
-        parse("[喵萌奶茶屋&LoliHouse] 怪人的沙拉碗 / Henjin no Salad Bowl - 09 [WebRip 1080p HEVC-10bit AAC][简繁内封字幕]")
+        parse("[喵萌奶茶屋&LoliHouse] 怪人的沙拉碗 / Henjin no Salad Bowl - 09 [WebRip 1080p HEVC-10bit AAC][簡繁內封字幕]")
     assertEquals("09..09", r.episodeRange.toString())
     assertEquals("CHS, CHT", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("1080P", r.resolution.toString())
@@ -49,7 +49,7 @@ public class PatternTitleParserTest怪人的沙拉碗 : PatternBasedTitleParserT
   @Test
   public fun `671434_04_Henjin_no_Salad_Bowl_09_1080p`() {
     kotlin.run {
-    val r = parse("【喵萌奶茶屋】★04月新番★[怪人的沙拉碗 / Henjin no Salad Bowl][09][1080p][简体][招募翻译时轴]")
+    val r = parse("【喵萌奶茶屋】★04月新番★[怪人的沙拉碗 / Henjin no Salad Bowl][09][1080p][簡體][招募翻譯時軸]")
     assertEquals("09..09", r.episodeRange.toString())
     assertEquals("CHS", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("1080P", r.resolution.toString())
@@ -96,7 +96,7 @@ public class PatternTitleParserTest怪人的沙拉碗 : PatternBasedTitleParserT
   public fun `670845_LoliHouse_Henjin_no_Salad_Bowl___08_WebRip_1080p_HEVC_10bit_AAC`() {
     kotlin.run {
     val r =
-        parse("[喵萌奶茶屋&LoliHouse] 怪人的沙拉碗 / Henjin no Salad Bowl - 08 [WebRip 1080p HEVC-10bit AAC][简繁内封字幕]")
+        parse("[喵萌奶茶屋&LoliHouse] 怪人的沙拉碗 / Henjin no Salad Bowl - 08 [WebRip 1080p HEVC-10bit AAC][簡繁內封字幕]")
     assertEquals("08..08", r.episodeRange.toString())
     assertEquals("CHS, CHT", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("1080P", r.resolution.toString())
@@ -118,7 +118,7 @@ public class PatternTitleParserTest怪人的沙拉碗 : PatternBasedTitleParserT
   @Test
   public fun `670825_04_Henjin_no_Salad_Bowl_08_1080p`() {
     kotlin.run {
-    val r = parse("【喵萌奶茶屋】★04月新番★[怪人的沙拉碗 / Henjin no Salad Bowl][08][1080p][简体][招募翻译时轴]")
+    val r = parse("【喵萌奶茶屋】★04月新番★[怪人的沙拉碗 / Henjin no Salad Bowl][08][1080p][簡體][招募翻譯時軸]")
     assertEquals("08..08", r.episodeRange.toString())
     assertEquals("CHS", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("1080P", r.resolution.toString())
@@ -154,7 +154,7 @@ public class PatternTitleParserTest怪人的沙拉碗 : PatternBasedTitleParserT
   public fun `670251_LoliHouse_Henjin_no_Salad_Bowl___07_WebRip_1080p_HEVC_10bit_AAC`() {
     kotlin.run {
     val r =
-        parse("[喵萌奶茶屋&LoliHouse] 怪人的沙拉碗 / Henjin no Salad Bowl - 07 [WebRip 1080p HEVC-10bit AAC][简繁内封字幕]")
+        parse("[喵萌奶茶屋&LoliHouse] 怪人的沙拉碗 / Henjin no Salad Bowl - 07 [WebRip 1080p HEVC-10bit AAC][簡繁內封字幕]")
     assertEquals("07..07", r.episodeRange.toString())
     assertEquals("CHS, CHT", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("1080P", r.resolution.toString())
@@ -176,7 +176,7 @@ public class PatternTitleParserTest怪人的沙拉碗 : PatternBasedTitleParserT
   @Test
   public fun `670246_04_Henjin_no_Salad_Bowl_07_1080p`() {
     kotlin.run {
-    val r = parse("【喵萌奶茶屋】★04月新番★[怪人的沙拉碗 / Henjin no Salad Bowl][07][1080p][简体][招募翻译时轴]")
+    val r = parse("【喵萌奶茶屋】★04月新番★[怪人的沙拉碗 / Henjin no Salad Bowl][07][1080p][簡體][招募翻譯時軸]")
     assertEquals("07..07", r.episodeRange.toString())
     assertEquals("CHS", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("1080P", r.resolution.toString())
@@ -224,7 +224,7 @@ public class PatternTitleParserTest怪人的沙拉碗 : PatternBasedTitleParserT
   public fun `669798_LoliHouse_Henjin_no_Salad_Bowl___06_WebRip_1080p_HEVC_10bit_AAC`() {
     kotlin.run {
     val r =
-        parse("[喵萌奶茶屋&LoliHouse] 怪人的沙拉碗 / Henjin no Salad Bowl - 06 [WebRip 1080p HEVC-10bit AAC][简繁内封字幕]")
+        parse("[喵萌奶茶屋&LoliHouse] 怪人的沙拉碗 / Henjin no Salad Bowl - 06 [WebRip 1080p HEVC-10bit AAC][簡繁內封字幕]")
     assertEquals("06..06", r.episodeRange.toString())
     assertEquals("CHS, CHT", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("1080P", r.resolution.toString())
@@ -246,7 +246,7 @@ public class PatternTitleParserTest怪人的沙拉碗 : PatternBasedTitleParserT
   @Test
   public fun `669792_04_Henjin_no_Salad_Bowl_06_1080p`() {
     kotlin.run {
-    val r = parse("【喵萌奶茶屋】★04月新番★[怪人的沙拉碗 / Henjin no Salad Bowl][06][1080p][简体][招募翻译时轴]")
+    val r = parse("【喵萌奶茶屋】★04月新番★[怪人的沙拉碗 / Henjin no Salad Bowl][06][1080p][簡體][招募翻譯時軸]")
     assertEquals("06..06", r.episodeRange.toString())
     assertEquals("CHS", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("1080P", r.resolution.toString())
@@ -280,7 +280,7 @@ public class PatternTitleParserTest怪人的沙拉碗 : PatternBasedTitleParserT
   @Test
   public fun `668955_04_Henjin_no_Salad_Bowl_05_1080p`() {
     kotlin.run {
-    val r = parse("【喵萌奶茶屋】★04月新番★[怪人的沙拉碗 / Henjin no Salad Bowl][05][1080p][简体][招募翻译时轴]")
+    val r = parse("【喵萌奶茶屋】★04月新番★[怪人的沙拉碗 / Henjin no Salad Bowl][05][1080p][簡體][招募翻譯時軸]")
     assertEquals("05..05", r.episodeRange.toString())
     assertEquals("CHS", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("1080P", r.resolution.toString())
@@ -292,7 +292,7 @@ public class PatternTitleParserTest怪人的沙拉碗 : PatternBasedTitleParserT
   public fun `668954_LoliHouse_Henjin_no_Salad_Bowl___05_WebRip_1080p_HEVC_10bit_AAC`() {
     kotlin.run {
     val r =
-        parse("[喵萌奶茶屋&LoliHouse] 怪人的沙拉碗 / Henjin no Salad Bowl - 05 [WebRip 1080p HEVC-10bit AAC][简繁内封字幕]")
+        parse("[喵萌奶茶屋&LoliHouse] 怪人的沙拉碗 / Henjin no Salad Bowl - 05 [WebRip 1080p HEVC-10bit AAC][簡繁內封字幕]")
     assertEquals("05..05", r.episodeRange.toString())
     assertEquals("CHS, CHT", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("1080P", r.resolution.toString())
@@ -340,7 +340,7 @@ public class PatternTitleParserTest怪人的沙拉碗 : PatternBasedTitleParserT
   public fun `668468_LoliHouse_Henjin_no_Salad_Bowl___04_WebRip_1080p_HEVC_10bit_AAC`() {
     kotlin.run {
     val r =
-        parse("[喵萌奶茶屋&LoliHouse] 怪人的沙拉碗 / Henjin no Salad Bowl - 04 [WebRip 1080p HEVC-10bit AAC][简繁内封字幕]")
+        parse("[喵萌奶茶屋&LoliHouse] 怪人的沙拉碗 / Henjin no Salad Bowl - 04 [WebRip 1080p HEVC-10bit AAC][簡繁內封字幕]")
     assertEquals("04..04", r.episodeRange.toString())
     assertEquals("CHS, CHT", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("1080P", r.resolution.toString())
@@ -362,7 +362,7 @@ public class PatternTitleParserTest怪人的沙拉碗 : PatternBasedTitleParserT
   @Test
   public fun `668440_04_Henjin_no_Salad_Bowl_04_1080p`() {
     kotlin.run {
-    val r = parse("【喵萌奶茶屋】★04月新番★[怪人的沙拉碗 / Henjin no Salad Bowl][04][1080p][简体][招募翻译时轴]")
+    val r = parse("【喵萌奶茶屋】★04月新番★[怪人的沙拉碗 / Henjin no Salad Bowl][04][1080p][簡體][招募翻譯時軸]")
     assertEquals("04..04", r.episodeRange.toString())
     assertEquals("CHS", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("1080P", r.resolution.toString())
@@ -386,7 +386,7 @@ public class PatternTitleParserTest怪人的沙拉碗 : PatternBasedTitleParserT
   public fun `667889_LoliHouse_Henjin_no_Salad_Bowl___03_WebRip_1080p_HEVC_10bit_AAC`() {
     kotlin.run {
     val r =
-        parse("[喵萌奶茶屋&LoliHouse] 怪人的沙拉碗 / Henjin no Salad Bowl - 03 [WebRip 1080p HEVC-10bit AAC][简繁内封字幕]")
+        parse("[喵萌奶茶屋&LoliHouse] 怪人的沙拉碗 / Henjin no Salad Bowl - 03 [WebRip 1080p HEVC-10bit AAC][簡繁內封字幕]")
     assertEquals("03..03", r.episodeRange.toString())
     assertEquals("CHS, CHT", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("1080P", r.resolution.toString())
@@ -408,7 +408,7 @@ public class PatternTitleParserTest怪人的沙拉碗 : PatternBasedTitleParserT
   @Test
   public fun `667881_04_Henjin_no_Salad_Bowl_03_1080p`() {
     kotlin.run {
-    val r = parse("【喵萌奶茶屋】★04月新番★[怪人的沙拉碗 / Henjin no Salad Bowl][03][1080p][简体][招募翻译时轴]")
+    val r = parse("【喵萌奶茶屋】★04月新番★[怪人的沙拉碗 / Henjin no Salad Bowl][03][1080p][簡體][招募翻譯時軸]")
     assertEquals("03..03", r.episodeRange.toString())
     assertEquals("CHS", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("1080P", r.resolution.toString())
@@ -444,7 +444,7 @@ public class PatternTitleParserTest怪人的沙拉碗 : PatternBasedTitleParserT
   public fun `667371_LoliHouse_Henjin_no_Salad_Bowl___02_WebRip_1080p_HEVC_10bit_AAC`() {
     kotlin.run {
     val r =
-        parse("[喵萌奶茶屋&LoliHouse] 怪人的沙拉碗 / Henjin no Salad Bowl - 02 [WebRip 1080p HEVC-10bit AAC][简繁内封字幕]")
+        parse("[喵萌奶茶屋&LoliHouse] 怪人的沙拉碗 / Henjin no Salad Bowl - 02 [WebRip 1080p HEVC-10bit AAC][簡繁內封字幕]")
     assertEquals("02..02", r.episodeRange.toString())
     assertEquals("CHS, CHT", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("1080P", r.resolution.toString())
@@ -466,7 +466,7 @@ public class PatternTitleParserTest怪人的沙拉碗 : PatternBasedTitleParserT
   @Test
   public fun `667368_04_Henjin_no_Salad_Bowl_02_1080p`() {
     kotlin.run {
-    val r = parse("【喵萌奶茶屋】★04月新番★[怪人的沙拉碗 / Henjin no Salad Bowl][02][1080p][简体][招募翻译时轴]")
+    val r = parse("【喵萌奶茶屋】★04月新番★[怪人的沙拉碗 / Henjin no Salad Bowl][02][1080p][簡體][招募翻譯時軸]")
     assertEquals("02..02", r.episodeRange.toString())
     assertEquals("CHS", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("1080P", r.resolution.toString())
@@ -502,7 +502,7 @@ public class PatternTitleParserTest怪人的沙拉碗 : PatternBasedTitleParserT
   public fun `666569_LoliHouse_Henjin_no_Salad_Bowl___01_WebRip_1080p_HEVC_10bit_AAC`() {
     kotlin.run {
     val r =
-        parse("[喵萌奶茶屋&LoliHouse] 怪人的沙拉碗 / Henjin no Salad Bowl - 01 [WebRip 1080p HEVC-10bit AAC][简繁内封字幕]")
+        parse("[喵萌奶茶屋&LoliHouse] 怪人的沙拉碗 / Henjin no Salad Bowl - 01 [WebRip 1080p HEVC-10bit AAC][簡繁內封字幕]")
     assertEquals("01..01", r.episodeRange.toString())
     assertEquals("CHS, CHT", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("1080P", r.resolution.toString())
@@ -524,7 +524,7 @@ public class PatternTitleParserTest怪人的沙拉碗 : PatternBasedTitleParserT
   @Test
   public fun `666373_04_Henjin_no_Salad_Bowl_01_1080p`() {
     kotlin.run {
-    val r = parse("【喵萌奶茶屋】★04月新番★[怪人的沙拉碗 / Henjin no Salad Bowl][01][1080p][简体][招募翻译时轴]")
+    val r = parse("【喵萌奶茶屋】★04月新番★[怪人的沙拉碗 / Henjin no Salad Bowl][01][1080p][簡體][招募翻譯時軸]")
     assertEquals("01..01", r.episodeRange.toString())
     assertEquals("CHS", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("1080P", r.resolution.toString())

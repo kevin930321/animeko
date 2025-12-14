@@ -17,11 +17,11 @@ object MediaDetailsRenderer {
         subtitleKind: SubtitleKind?,
     ): String? {
         return when (subtitleKind) {
-            SubtitleKind.EMBEDDED -> "内嵌"
-            SubtitleKind.CLOSED -> "内封"
-            SubtitleKind.EXTERNAL_PROVIDED -> "外挂"
+            SubtitleKind.EMBEDDED -> "內嵌"
+            SubtitleKind.CLOSED -> "內封"
+            SubtitleKind.EXTERNAL_PROVIDED -> "外掛"
             SubtitleKind.EXTERNAL_DISCOVER -> "未知"
-            SubtitleKind.CLOSED_OR_EXTERNAL_DISCOVER -> "内封或未知"
+            SubtitleKind.CLOSED_OR_EXTERNAL_DISCOVER -> "內封或未知"
             null -> null
         }
     }
@@ -63,11 +63,11 @@ fun Media.renderProperties(): String {
 
 fun renderSubtitleLanguage(id: String): String {
     return when (id) {
-        SubtitleLanguage.ChineseCantonese.id -> "粤语"
-        SubtitleLanguage.ChineseSimplified.id -> "简中"
+        SubtitleLanguage.ChineseCantonese.id -> "粵語"
+        SubtitleLanguage.ChineseSimplified.id -> "簡中"
         SubtitleLanguage.ChineseTraditional.id -> "繁中"
-        SubtitleLanguage.Japanese.id -> "日语"
-        SubtitleLanguage.English.id -> "英语"
+        SubtitleLanguage.Japanese.id -> "日語"
+        SubtitleLanguage.English.id -> "英語"
         else -> id
     }
 }

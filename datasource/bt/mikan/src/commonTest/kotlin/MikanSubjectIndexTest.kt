@@ -13,7 +13,7 @@ class MikanSubjectIndexTest {
     fun `can parse subject index`() {
         val ids = AbstractMikanMediaSource.parseMikanSubjectIdsFromSearch(
             Xml.parse(
-                readTestResourceAsString("/mikan-search-无职转生.txt"),
+                readTestResourceAsString("/mikan-search-無職轉生.txt"),
             ),
         )
         assertEquals(listOf(3060, 2353, 2549, 3344).map { it.toString() }, ids)
@@ -23,7 +23,7 @@ class MikanSubjectIndexTest {
     fun `can parse bangumi subject id`() {
         val id = AbstractMikanMediaSource.parseBangumiSubjectIdFromMikanSubjectDetails(
             Xml.parse(
-                readTestResourceAsString("/mikan-bangumi-无职转生.txt"),
+                readTestResourceAsString("/mikan-bangumi-無職轉生.txt"),
             ),
         )
         assertEquals("373247", id)
@@ -33,7 +33,7 @@ class MikanSubjectIndexTest {
     fun `can parse subject rss`() {
         val list = AbstractMikanMediaSource.parseRssTopicList(
             Xml.parse(
-                readTestResourceAsString("/mikan-subject-rss-无职转生.txt"),
+                readTestResourceAsString("/mikan-subject-rss-無職轉生.txt"),
             ),
             TopicCriteria.ANY,
             allowEpMatch = false, // doesn't matter

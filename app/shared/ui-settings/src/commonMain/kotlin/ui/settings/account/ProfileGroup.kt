@@ -241,7 +241,7 @@ internal fun SettingsScope.ProfileGroupImpl(
                             Text(currentInfo?.id.toString())
                         }
                     },
-                    description = { Text("用户 ID") },
+                    description = { Text("用戶 ID") },
                     modifier = Modifier.placeholder(isPlaceholder),
                 )
 

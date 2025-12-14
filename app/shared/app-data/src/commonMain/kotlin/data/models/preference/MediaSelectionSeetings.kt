@@ -18,7 +18,7 @@ import kotlin.time.Duration
 import kotlin.time.Duration.Companion.seconds
 
 /**
- * 数据源选择器 (播放页面点击 "数据源" 按钮弹出的) 的设置
+ * 数据源选择器 (播放页面点击 "數據源" 按钮弹出的) 的设置
  * @see MediaPreference
  */
 @Serializable

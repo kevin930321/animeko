@@ -44,7 +44,7 @@ private fun PreviewTextFieldDialog() {
         TextFieldDialog(
             onDismissRequest = {},
             onConfirm = {},
-            title = { Text(text = "编辑") },
+            title = { Text(text = "編輯") },
             description = { Text(LoremIpsum(20).values.first()) },
         ) {
             OutlinedTextField(

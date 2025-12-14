@@ -99,7 +99,7 @@ abstract class ThreeStepWebMediaSource : WebMediaSource() {
     }
 
     private fun isPossiblyMovie(title: String): Boolean {
-        return ("简" in title || "繁" in title) &&
+        return ("簡" in title || "繁" in title) &&
                 ("2160P" in title || "1440P" in title || "2K" in title || "4K" in title || "1080P" in title || "720P" in title)
     }
 

@@ -565,7 +565,7 @@ class TorrentMediaCacheEngine(
                 val saves = downloader.listSaves()
                 for (save in saves) {
                     if (save.absolutePath !in allowedAbsolute) {
-                        logger.warn { "本地种子缓存文件未找到匹配的 MediaCache, 已释放 ${save.actualSize().bytes}: ${save.absolutePath}" }
+                        logger.warn { "本地種子緩存文件未找到匹配的 MediaCache, 已釋放 ${save.actualSize().bytes}: ${save.absolutePath}" }
                         save.deleteRecursively()
                     }
                 }

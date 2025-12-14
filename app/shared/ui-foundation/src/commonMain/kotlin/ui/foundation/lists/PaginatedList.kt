@@ -124,7 +124,7 @@ private fun <T> PaginatedListNavigation(
         ) {
             Icon(
                 Icons.Outlined.ChevronLeft,
-                contentDescription = "上一组",
+                contentDescription = "上一組",
                 tint = if (state.canNavigateToPreviousGroup) {
                     MaterialTheme.colorScheme.onSurface
                 } else {
@@ -158,7 +158,7 @@ private fun <T> PaginatedListNavigation(
                     )
                     Icon(
                         Icons.Outlined.ArrowDropDown,
-                        contentDescription = "选择分组",
+                        contentDescription = "選擇分組",
                         tint = MaterialTheme.colorScheme.onSurfaceVariant,
                     )
                 }
@@ -197,7 +197,7 @@ private fun <T> PaginatedListNavigation(
         ) {
             Icon(
                 Icons.Outlined.ChevronRight,
-                contentDescription = "下一组",
+                contentDescription = "下一組",
                 tint = if (state.canNavigateToNextGroup) {
                     MaterialTheme.colorScheme.onSurface
                 } else {

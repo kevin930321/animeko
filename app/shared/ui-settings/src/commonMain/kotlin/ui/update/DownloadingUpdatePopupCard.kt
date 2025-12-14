@@ -143,11 +143,11 @@ fun DownloadingUpdatePopupCard(
                 )
 //                ListItem(
 //                    headlineContent = {
-//                        Text("下载失败")
+//                        Text("下載失敗")
 //                    },
 //                    supportingContent = {
 //                        Text(
-//                            error ?: "未知错误",
+//                            error ?: "未知錯誤",
 //                            color = MaterialTheme.colorScheme.error,
 //                        )
 //                    },

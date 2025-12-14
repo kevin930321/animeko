@@ -87,9 +87,9 @@ fun RssOverviewCard(
             val func: () -> Unit = { copy(value()) }
             return combinedClickable(
                 onLongClick = func,
-                onLongClickLabel = "复制",
+                onLongClickLabel = "複製",
                 onClick = func, // no-op
-                onClickLabel = "复制",
+                onClickLabel = "複製",
             ).onRightClickIfSupported(onClick = func)
         }
 

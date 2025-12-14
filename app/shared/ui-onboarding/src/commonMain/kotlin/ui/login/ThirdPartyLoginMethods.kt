@@ -26,7 +26,7 @@ internal fun ThirdPartyLoginMethods(
         TextDivider(
             modifier = Modifier.heightIn(min = 56.dp),
         ) {
-            Text("其他登录方式")
+            Text("其他登錄方式")
         }
 
         FilledTonalButton(

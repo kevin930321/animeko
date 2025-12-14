@@ -100,7 +100,7 @@ fun ScheduleItem(
             },
             trailingContent = action,
             colors = colors,
-            modifier = modifier.clickable(role = Role.Button, onClickLabel = "查看详情", onClick = onClick),
+            modifier = modifier.clickable(role = Role.Button, onClickLabel = "查看詳情", onClick = onClick),
         )
     }
 
@@ -203,7 +203,7 @@ object ScheduleItemDefaults {
 
         val sortDisplay = if (episodeEp == null || episodeEp == episodeSort) {
             if (episodeSort is EpisodeSort.Normal) {
-                "第 $sortText 话"
+                "第 $sortText 話"
             } else {
                 sortText
             }
@@ -211,7 +211,7 @@ object ScheduleItemDefaults {
             check(epText != null)
             // episodeEp != episodeSort
             if (episodeSort is EpisodeSort.Normal && episodeEp is EpisodeSort.Normal) {
-                "第 $epText ($sortText) 话"
+                "第 $epText ($sortText) 話"
             } else {
                 "$epText ($sortText)"
             }

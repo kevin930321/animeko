@@ -54,7 +54,7 @@ class CacheEpisodeStateTest {
     @Suppress("SameParameterValue")
     private fun cacheEpisode(
         sort: Int = 1,
-        displayName: String = "翻转孤独",
+        displayName: String = "翻轉孤獨",
         subjectId: Int = 1,
         episodeId: Int = 1,
         initialPaused: CacheEpisodePaused = when (sort % 2) {

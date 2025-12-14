@@ -282,7 +282,7 @@ private fun SettingsScope.SubscriptionItem(
         },
         supportingContent = {
             Text(
-                "每 ${subscription.updatePeriod} 自动更新，" + formatLastUpdated(subscription.lastUpdated),
+                "每 ${subscription.updatePeriod} 自動更新，" + formatLastUpdated(subscription.lastUpdated),
             )
         },
         trailingContent = {

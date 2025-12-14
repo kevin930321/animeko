@@ -66,11 +66,11 @@ fun AniContactList(
             { browserNavigator.openJoinGroup(context) },
             icon = {
                 Icon(
-                    AniIcons.QqRoundedOutline, "QQ 群",
+                    AniIcons.QqRoundedOutline, "QQ 羣",
                     Modifier.size(ContactIconSize),
                 )
             },
-            label = { Text("QQ 群") },
+            label = { Text("QQ 羣") },
         )
 
         SuggestionChip(

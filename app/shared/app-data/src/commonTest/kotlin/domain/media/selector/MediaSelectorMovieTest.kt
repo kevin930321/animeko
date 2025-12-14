@@ -25,9 +25,9 @@ class MediaSelectorMovieTest {
     @TestFactory
     fun `exclude movie when playing main subject`() = runDynamicTests {
         addSimpleMediaSelectorTest(
-            "玉子市场",
+            "玉子市場",
             {
-                initSubject("玉子市场") {
+                initSubject("玉子市場") {
                     aliases(
                         "Tamako Market",
                         "たまこまーけっと",
@@ -35,8 +35,8 @@ class MediaSelectorMovieTest {
                     seriesInfo(seasonSort = 1) {
                         series(
                             // 剧场版:
-                            "玉子市场 剧场版",
-                            "玉子爱情故事",
+                            "玉子市場 劇場版",
+                            "玉子愛情故事",
                             "Tamako Love Story",
                             "たまこラブストーリー",
                         )
@@ -46,9 +46,9 @@ class MediaSelectorMovieTest {
         ) {
             checkSubjectExclusion {
                 expect(
-                    "玉子市场" to null,
-                    "玉子市场 剧场版" to FromSeriesSeason,
-                    "玉子爱情故事" to FromSeriesSeason,
+                    "玉子市場" to null,
+                    "玉子市場 劇場版" to FromSeriesSeason,
+                    "玉子愛情故事" to FromSeriesSeason,
                     "Tamako Market" to null,
                     "Tamako Love Story" to FromSeriesSeason,
                     "たまこまーけっと" to null,
@@ -61,18 +61,18 @@ class MediaSelectorMovieTest {
     @TestFactory
     fun `exclude main subject when playing movie`() = runDynamicTests {
         addSimpleMediaSelectorTest(
-            "玉子市场剧场版",
+            "玉子市場劇場版",
             {
-                initSubject("玉子市场 剧场版") {
+                initSubject("玉子市場 劇場版") {
                     aliases(
-                        "玉子爱情故事",
+                        "玉子愛情故事",
                         "Tamako Love Story",
                         "たまこラブストーリー",
                     )
                     seriesInfo(seasonSort = 1) {
                         series(
                             // 主番:
-                            "玉子市场",
+                            "玉子市場",
                             "Tamako Market",
                             "たまこまーけっと",
                         )
@@ -82,9 +82,9 @@ class MediaSelectorMovieTest {
         ) {
             checkSubjectExclusion {
                 expect(
-                    "玉子市场" to FromSeriesSeason,
-                    "玉子市场 剧场版" to null,
-                    "玉子爱情故事" to null,
+                    "玉子市場" to FromSeriesSeason,
+                    "玉子市場 劇場版" to null,
+                    "玉子愛情故事" to null,
                     "Tamako Market" to FromSeriesSeason,
                     "Tamako Love Story" to null,
                     "たまこまーけっと" to FromSeriesSeason,

@@ -25,7 +25,7 @@ public class PatternTitleParserTest怪兽8号 : PatternBasedTitleParserTestSuite
   @Test
   public fun `670353_8_Kaijuu_8_Gou_06_1080p_2024_4`() {
     kotlin.run {
-    val r = parse("[猎户压制部] 怪兽8号 / Kaijuu 8 Gou [06] [1080p] [繁日内嵌] [2024年4月番]")
+    val r = parse("[獵戶壓制部] 怪獸8號 / Kaijuu 8 Gou [06] [1080p] [繁日內嵌] [2024年4月番]")
     assertEquals("06..06", r.episodeRange.toString())
     assertEquals("CHT, JPN", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("1080P", r.resolution.toString())
@@ -36,7 +36,7 @@ public class PatternTitleParserTest怪兽8号 : PatternBasedTitleParserTestSuite
   @Test
   public fun `670352_8_Kaijuu_8_Gou_06_1080p_2024_4`() {
     kotlin.run {
-    val r = parse("[猎户压制部] 怪兽8号 / Kaijuu 8 Gou [06] [1080p] [简日内嵌] [2024年4月番]")
+    val r = parse("[獵戶壓制部] 怪獸8號 / Kaijuu 8 Gou [06] [1080p] [簡日內嵌] [2024年4月番]")
     assertEquals("06..06", r.episodeRange.toString())
     assertEquals("CHS, JPN", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("1080P", r.resolution.toString())
@@ -80,7 +80,7 @@ public class PatternTitleParserTest怪兽8号 : PatternBasedTitleParserTestSuite
   @Test
   public fun `670034_LoliHouse_8_Kaijuu_8_gou___06_WebRip_1080p_HEVC_10bit_AAC`() {
     kotlin.run {
-    val r = parse("[LoliHouse] 怪兽8号 / Kaijuu 8-gou - 06 [WebRip 1080p HEVC-10bit AAC][简繁内封字幕]")
+    val r = parse("[LoliHouse] 怪獸8號 / Kaijuu 8-gou - 06 [WebRip 1080p HEVC-10bit AAC][簡繁內封字幕]")
     assertEquals("06..06", r.episodeRange.toString())
     assertEquals("CHS, CHT", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("1080P", r.resolution.toString())
@@ -102,7 +102,7 @@ public class PatternTitleParserTest怪兽8号 : PatternBasedTitleParserTestSuite
   @Test
   public fun `669747_8_Kaijuu_8_Gou_05_1080p_2024_4`() {
     kotlin.run {
-    val r = parse("[猎户压制部] 怪兽8号 / Kaijuu 8 Gou [05] [1080p] [繁日内嵌] [2024年4月番]")
+    val r = parse("[獵戶壓制部] 怪獸8號 / Kaijuu 8 Gou [05] [1080p] [繁日內嵌] [2024年4月番]")
     assertEquals("05..05", r.episodeRange.toString())
     assertEquals("CHT, JPN", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("1080P", r.resolution.toString())
@@ -113,7 +113,7 @@ public class PatternTitleParserTest怪兽8号 : PatternBasedTitleParserTestSuite
   @Test
   public fun `669746_8_Kaijuu_8_Gou_05_1080p_2024_4`() {
     kotlin.run {
-    val r = parse("[猎户压制部] 怪兽8号 / Kaijuu 8 Gou [05 [1080p] [简日内嵌] [2024年4月番]")
+    val r = parse("[獵戶壓制部] 怪獸8號 / Kaijuu 8 Gou [05 [1080p] [簡日內嵌] [2024年4月番]")
     assertEquals("05..05", r.episodeRange.toString())
     assertEquals("CHS, JPN", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("1080P", r.resolution.toString())
@@ -124,7 +124,7 @@ public class PatternTitleParserTest怪兽8号 : PatternBasedTitleParserTestSuite
   @Test
   public fun `669385_LoliHouse_8_Kaijuu_8_gou___05_WebRip_1080p_HEVC_10bit_AAC`() {
     kotlin.run {
-    val r = parse("[LoliHouse] 怪兽8号 / Kaijuu 8-gou - 05 [WebRip 1080p HEVC-10bit AAC][简繁内封字幕]")
+    val r = parse("[LoliHouse] 怪獸8號 / Kaijuu 8-gou - 05 [WebRip 1080p HEVC-10bit AAC][簡繁內封字幕]")
     assertEquals("05..05", r.episodeRange.toString())
     assertEquals("CHS, CHT", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("1080P", r.resolution.toString())
@@ -146,7 +146,7 @@ public class PatternTitleParserTest怪兽8号 : PatternBasedTitleParserTestSuite
   @Test
   public fun `669104_8_Kaijuu_8_Gou_04_1080p_2024_4`() {
     kotlin.run {
-    val r = parse("[猎户压制部] 怪兽8号 / Kaijuu 8 Gou [04] [1080p] [繁日内嵌] [2024年4月番]")
+    val r = parse("[獵戶壓制部] 怪獸8號 / Kaijuu 8 Gou [04] [1080p] [繁日內嵌] [2024年4月番]")
     assertEquals("04..04", r.episodeRange.toString())
     assertEquals("CHT, JPN", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("1080P", r.resolution.toString())
@@ -157,7 +157,7 @@ public class PatternTitleParserTest怪兽8号 : PatternBasedTitleParserTestSuite
   @Test
   public fun `669103_8_Kaijuu_8_Gou_04_1080p_2024_4`() {
     kotlin.run {
-    val r = parse("[猎户压制部] 怪兽8号 / Kaijuu 8 Gou [04] [1080p] [简日内嵌] [2024年4月番]")
+    val r = parse("[獵戶壓制部] 怪獸8號 / Kaijuu 8 Gou [04] [1080p] [簡日內嵌] [2024年4月番]")
     assertEquals("04..04", r.episodeRange.toString())
     assertEquals("CHS, JPN", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("1080P", r.resolution.toString())
@@ -168,7 +168,7 @@ public class PatternTitleParserTest怪兽8号 : PatternBasedTitleParserTestSuite
   @Test
   public fun `668821_LoliHouse_8_Kaijuu_8_gou___04_WebRip_1080p_HEVC_10bit_AAC`() {
     kotlin.run {
-    val r = parse("[LoliHouse] 怪兽8号 / Kaijuu 8-gou - 04 [WebRip 1080p HEVC-10bit AAC][简繁内封字幕]")
+    val r = parse("[LoliHouse] 怪獸8號 / Kaijuu 8-gou - 04 [WebRip 1080p HEVC-10bit AAC][簡繁內封字幕]")
     assertEquals("04..04", r.episodeRange.toString())
     assertEquals("CHS, CHT", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("1080P", r.resolution.toString())
@@ -201,7 +201,7 @@ public class PatternTitleParserTest怪兽8号 : PatternBasedTitleParserTestSuite
   @Test
   public fun `668476_8_Kaijuu_8_Gou_03_1080p_2024_4`() {
     kotlin.run {
-    val r = parse("[猎户压制部] 怪兽8号 / Kaijuu 8 Gou [03] [1080p] [繁日内嵌] [2024年4月番]")
+    val r = parse("[獵戶壓制部] 怪獸8號 / Kaijuu 8 Gou [03] [1080p] [繁日內嵌] [2024年4月番]")
     assertEquals("03..03", r.episodeRange.toString())
     assertEquals("CHT, JPN", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("1080P", r.resolution.toString())
@@ -212,7 +212,7 @@ public class PatternTitleParserTest怪兽8号 : PatternBasedTitleParserTestSuite
   @Test
   public fun `668475_8_Kaijuu_8_Gou_03_1080p_2024_4`() {
     kotlin.run {
-    val r = parse("[猎户压制部] 怪兽8号 / Kaijuu 8 Gou [03] [1080p] [简日内嵌] [2024年4月番]")
+    val r = parse("[獵戶壓制部] 怪獸8號 / Kaijuu 8 Gou [03] [1080p] [簡日內嵌] [2024年4月番]")
     assertEquals("03..03", r.episodeRange.toString())
     assertEquals("CHS, JPN", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("1080P", r.resolution.toString())
@@ -223,7 +223,7 @@ public class PatternTitleParserTest怪兽8号 : PatternBasedTitleParserTestSuite
   @Test
   public fun `668321_LoliHouse_8_Kaijuu_8_gou___03_WebRip_1080p_HEVC_10bit_AAC`() {
     kotlin.run {
-    val r = parse("[LoliHouse] 怪兽8号 / Kaijuu 8-gou - 03 [WebRip 1080p HEVC-10bit AAC][简繁内封字幕]")
+    val r = parse("[LoliHouse] 怪獸8號 / Kaijuu 8-gou - 03 [WebRip 1080p HEVC-10bit AAC][簡繁內封字幕]")
     assertEquals("03..03", r.episodeRange.toString())
     assertEquals("CHS, CHT", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("1080P", r.resolution.toString())
@@ -256,7 +256,7 @@ public class PatternTitleParserTest怪兽8号 : PatternBasedTitleParserTestSuite
   @Test
   public fun `668299_8_Kaijuu_8_gou_02_1080P_WEBrip_MP4`() {
     kotlin.run {
-    val r = parse("[星空字幕组][怪兽8号 / Kaijuu 8-gou][02][简日双语][1080P][WEBrip][MP4]（急招校对、后期）")
+    val r = parse("[星空字幕組][怪獸8號 / Kaijuu 8-gou][02][簡日雙語][1080P][WEBrip][MP4]（急招校對、後期）")
     assertEquals("02..02", r.episodeRange.toString())
     assertEquals("CHS, JPN", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("1080P", r.resolution.toString())
@@ -278,7 +278,7 @@ public class PatternTitleParserTest怪兽8号 : PatternBasedTitleParserTestSuite
   @Test
   public fun `668297_8_Kaijuu_8_gou_01_1080P_WEBrip_MP4`() {
     kotlin.run {
-    val r = parse("[星空字幕组][怪兽8号 / Kaijuu 8-gou][01][简日双语][1080P][WEBrip][MP4]（急招校对、后期）")
+    val r = parse("[星空字幕組][怪獸8號 / Kaijuu 8-gou][01][簡日雙語][1080P][WEBrip][MP4]（急招校對、後期）")
     assertEquals("01..01", r.episodeRange.toString())
     assertEquals("CHS, JPN", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("1080P", r.resolution.toString())
@@ -289,7 +289,7 @@ public class PatternTitleParserTest怪兽8号 : PatternBasedTitleParserTestSuite
   @Test
   public fun `667999_8_Kaijuu_8_Gou_02_1080p_2024_4`() {
     kotlin.run {
-    val r = parse("[猎户压制部] 怪兽8号 / Kaijuu 8 Gou [02] [1080p] [繁日内嵌] [2024年4月番]")
+    val r = parse("[獵戶壓制部] 怪獸8號 / Kaijuu 8 Gou [02] [1080p] [繁日內嵌] [2024年4月番]")
     assertEquals("02..02", r.episodeRange.toString())
     assertEquals("CHT, JPN", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("1080P", r.resolution.toString())
@@ -300,7 +300,7 @@ public class PatternTitleParserTest怪兽8号 : PatternBasedTitleParserTestSuite
   @Test
   public fun `667998_8_Kaijuu_8_Gou_02_1080p_2024_4`() {
     kotlin.run {
-    val r = parse("[猎户压制部] 怪兽8号 / Kaijuu 8 Gou [02] [1080p] [简日内嵌] [2024年4月番]")
+    val r = parse("[獵戶壓制部] 怪獸8號 / Kaijuu 8 Gou [02] [1080p] [簡日內嵌] [2024年4月番]")
     assertEquals("02..02", r.episodeRange.toString())
     assertEquals("CHS, JPN", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("1080P", r.resolution.toString())
@@ -322,7 +322,7 @@ public class PatternTitleParserTest怪兽8号 : PatternBasedTitleParserTestSuite
   @Test
   public fun `667776_LoliHouse_8_Kaijuu_8_gou___02_WebRip_1080p_HEVC_10bit_AAC`() {
     kotlin.run {
-    val r = parse("[LoliHouse] 怪兽8号 / Kaijuu 8-gou - 02 [WebRip 1080p HEVC-10bit AAC][简繁内封字幕]")
+    val r = parse("[LoliHouse] 怪獸8號 / Kaijuu 8-gou - 02 [WebRip 1080p HEVC-10bit AAC][簡繁內封字幕]")
     assertEquals("02..02", r.episodeRange.toString())
     assertEquals("CHS, CHT", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("1080P", r.resolution.toString())
@@ -344,7 +344,7 @@ public class PatternTitleParserTest怪兽8号 : PatternBasedTitleParserTestSuite
   @Test
   public fun `667525_8_Kaijuu_8_Gou_01v2_1080p_2024_4`() {
     kotlin.run {
-    val r = parse("[猎户压制部] 怪兽8号 / Kaijuu 8 Gou [01v2] [1080p] [繁日内嵌] [2024年4月番]")
+    val r = parse("[獵戶壓制部] 怪獸8號 / Kaijuu 8 Gou [01v2] [1080p] [繁日內嵌] [2024年4月番]")
     assertEquals("01..01", r.episodeRange.toString())
     assertEquals("CHT, JPN", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("1080P", r.resolution.toString())
@@ -355,7 +355,7 @@ public class PatternTitleParserTest怪兽8号 : PatternBasedTitleParserTestSuite
   @Test
   public fun `667524_8_Kaijuu_8_Gou_01v2_1080p_2024_4`() {
     kotlin.run {
-    val r = parse("[猎户压制部] 怪兽8号 / Kaijuu 8 Gou [01v2] [1080p] [简日内嵌] [2024年4月番]")
+    val r = parse("[獵戶壓制部] 怪獸8號 / Kaijuu 8 Gou [01v2] [1080p] [簡日內嵌] [2024年4月番]")
     assertEquals("01..01", r.episodeRange.toString())
     assertEquals("CHS, JPN", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("1080P", r.resolution.toString())
@@ -366,7 +366,7 @@ public class PatternTitleParserTest怪兽8号 : PatternBasedTitleParserTestSuite
   @Test
   public fun `667461_LoliHouse_8_Kaijuu_8_gou___01_WebRip_1080p_HEVC_10bit_AAC`() {
     kotlin.run {
-    val r = parse("[LoliHouse] 怪兽8号 / Kaijuu 8-gou - 01 [WebRip 1080p HEVC-10bit AAC][简繁内封字幕]")
+    val r = parse("[LoliHouse] 怪獸8號 / Kaijuu 8-gou - 01 [WebRip 1080p HEVC-10bit AAC][簡繁內封字幕]")
     assertEquals("01..01", r.episodeRange.toString())
     assertEquals("CHS, CHT", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("1080P", r.resolution.toString())
@@ -377,7 +377,7 @@ public class PatternTitleParserTest怪兽8号 : PatternBasedTitleParserTestSuite
   @Test
   public fun `667370_8_Kaijuu_8_Gou_01_1080p_2024_4`() {
     kotlin.run {
-    val r = parse("[猎户压制部] 怪兽8号 / Kaijuu 8 Gou [01] [1080p] [简日内嵌] [2024年4月番]")
+    val r = parse("[獵戶壓制部] 怪獸8號 / Kaijuu 8 Gou [01] [1080p] [簡日內嵌] [2024年4月番]")
     assertEquals("01..01", r.episodeRange.toString())
     assertEquals("CHS, JPN", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("1080P", r.resolution.toString())

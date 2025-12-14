@@ -139,7 +139,7 @@ fun <T> SettingsScope.SorterItem(
 
                                             Icon(
                                                 Icons.Rounded.Reorder,
-                                                "长按排序",
+                                                "長按排序",
                                                 Modifier.detectReorder(state),
                                             )
                                         }

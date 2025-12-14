@@ -37,7 +37,7 @@ class DefaultMediaSelectorSubjectNameMismatchTest : AbstractDefaultMediaSelector
         mediaSelectorContext.value = createMediaSelectorContextFromEmpty(
             true,
             subjectInfo = SubjectInfo.Companion.Empty.copy(
-                nameCn = "条目名称",
+                nameCn = "條目名稱",
             ),
             episodeInfo = EpisodeInfo.Companion.Empty.copy(sort = EpisodeSort(1)),
         )
@@ -47,15 +47,15 @@ class DefaultMediaSelectorSubjectNameMismatchTest : AbstractDefaultMediaSelector
         addMedia(
             media(
                 // kept
-                alliance = "字幕组1",
+                alliance = "字幕組1",
                 episodeRange = EpisodeRange.Companion.single("1"), kind = MediaSourceKind.WEB,
-                subjectName = "条目名称I",
+                subjectName = "條目名稱I",
                 originalTitle = "random value",
                 subtitleLanguages = listOf(SubtitleLanguage.ChineseSimplified.id),
             ).also { target = it },
             media(
                 // excluded
-                alliance = "字幕组2",
+                alliance = "字幕組2",
                 episodeRange = EpisodeRange.Companion.single("1"), kind = MediaSourceKind.WEB,
                 subjectName = "a",
                 originalTitle = "random value 2",
@@ -76,7 +76,7 @@ class DefaultMediaSelectorSubjectNameMismatchTest : AbstractDefaultMediaSelector
         mediaSelectorContext.value = createMediaSelectorContextFromEmpty(
             true,
             subjectInfo = SubjectInfo.Companion.Empty.copy(
-                nameCn = "条目名称",
+                nameCn = "條目名稱",
             ),
             episodeInfo = EpisodeInfo.Companion.Empty.copy(sort = EpisodeSort(1)),
         )
@@ -86,18 +86,18 @@ class DefaultMediaSelectorSubjectNameMismatchTest : AbstractDefaultMediaSelector
         addMedia(
             media(
                 // kept
-                alliance = "字幕组1",
+                alliance = "字幕組1",
                 episodeRange = EpisodeRange.Companion.single("1"), kind = MediaSourceKind.WEB,
                 subjectName = null,
-                originalTitle = "条目名称I 第1话",
+                originalTitle = "條目名稱I 第1話",
                 subtitleLanguages = listOf(SubtitleLanguage.ChineseSimplified.id),
             ).also { target = it },
             media(
                 // excluded
-                alliance = "字幕组2",
+                alliance = "字幕組2",
                 episodeRange = EpisodeRange.Companion.single("1"), kind = MediaSourceKind.WEB,
                 subjectName = null,
-                originalTitle = "ab 第2话",
+                originalTitle = "ab 第2話",
                 subtitleLanguages = listOf(SubtitleLanguage.ChineseTraditional.id),
             ),
         )
@@ -115,7 +115,7 @@ class DefaultMediaSelectorSubjectNameMismatchTest : AbstractDefaultMediaSelector
         mediaSelectorContext.value = createMediaSelectorContextFromEmpty(
             true,
             subjectInfo = SubjectInfo.Companion.Empty.copy(
-                nameCn = "条目名称",
+                nameCn = "條目名稱",
             ),
             episodeInfo = EpisodeInfo.Companion.Empty,
         )
@@ -125,15 +125,15 @@ class DefaultMediaSelectorSubjectNameMismatchTest : AbstractDefaultMediaSelector
         addMedia(
             media(
                 // kept
-                alliance = "字幕组1",
+                alliance = "字幕組1",
                 episodeRange = EpisodeRange.Companion.single("1"), kind = MediaSourceKind.WEB,
-                subjectName = "条目名称I",
-                originalTitle = "条目名称I",
+                subjectName = "條目名稱I",
+                originalTitle = "條目名稱I",
                 subtitleLanguages = listOf(SubtitleLanguage.ChineseSimplified.id),
             ).also { target = it },
             media(
                 // excluded
-                alliance = "字幕组2",
+                alliance = "字幕組2",
                 episodeRange = EpisodeRange.Companion.single("1"), kind = MediaSourceKind.WEB,
                 subjectName = "a",
                 originalTitle = "a",
@@ -164,15 +164,15 @@ class DefaultMediaSelectorSubjectNameMismatchTest : AbstractDefaultMediaSelector
         addMedia(
             media(
                 // kept
-                alliance = "字幕组1",
+                alliance = "字幕組1",
                 episodeRange = EpisodeRange.Companion.single("1"), kind = MediaSourceKind.WEB,
-                subjectName = "条目名称I",
-                originalTitle = "条目名称I",
+                subjectName = "條目名稱I",
+                originalTitle = "條目名稱I",
                 subtitleLanguages = listOf(SubtitleLanguage.ChineseSimplified.id),
             ).also { target = it },
             media(
                 // excluded
-                alliance = "字幕组2",
+                alliance = "字幕組2",
                 episodeRange = EpisodeRange.Companion.single("1"), kind = MediaSourceKind.WEB,
                 subjectName = "a",
                 originalTitle = "a",
@@ -201,15 +201,15 @@ class DefaultMediaSelectorSubjectNameMismatchTest : AbstractDefaultMediaSelector
         addMedia(
             media(
                 // kept
-                alliance = "字幕组1",
+                alliance = "字幕組1",
                 episodeRange = EpisodeRange.Companion.single("1"), kind = MediaSourceKind.WEB,
-                subjectName = "条目名称I",
-                originalTitle = "条目名称I",
+                subjectName = "條目名稱I",
+                originalTitle = "條目名稱I",
                 subtitleLanguages = listOf(SubtitleLanguage.ChineseSimplified.id),
             ).also { target = it },
             media(
                 // excluded
-                alliance = "字幕组2",
+                alliance = "字幕組2",
                 episodeRange = EpisodeRange.Companion.single("1"), kind = MediaSourceKind.WEB,
                 subjectName = "a",
                 originalTitle = "a",

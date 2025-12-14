@@ -145,7 +145,7 @@ object CommentDefaults {
             ) {
                 EditCommentDefaults.ActionButton(
                     imageVector = Icons.Outlined.ModeComment,
-                    contentDescription = "回复评论",
+                    contentDescription = "回覆評論",
                     onClick = onClickReply,
                     iconSize = iconSize,
                 )
@@ -160,14 +160,14 @@ object CommentDefaults {
                     )
                     EditCommentDefaults.ActionButton(
                         imageVector = Icons.Outlined.HeartBroken,
-                        contentDescription = "拉黑用户",
+                        contentDescription = "拉黑用戶",
                         onClick = onClickBlock,
                         iconSize = iconSize,
                         modifier = Modifier.size(height = size, width = expandableActionWidth),
                     )
                     EditCommentDefaults.ActionButton(
                         imageVector = Icons.Outlined.Report,
-                        contentDescription = "举报用户",
+                        contentDescription = "舉報用戶",
                         onClick = onClickReport,
                         iconSize = iconSize,
                         modifier = Modifier.size(height = size, width = expandableActionWidth),
@@ -177,7 +177,7 @@ object CommentDefaults {
                 // 最后一个按钮不要有 ripple effect，因为有动画，看起来比较奇怪
                 EditCommentDefaults.ActionButton(
                     imageVector = Icons.Outlined.MoreHoriz,
-                    contentDescription = "展开更多评论功能",
+                    contentDescription = "展開更多評論功能",
                     iconSize = iconSize,
                     onClick = { actionRowExpanded = true },
                     modifier = Modifier.size(height = size, width = size - expandableActionWidth),
@@ -220,7 +220,7 @@ object CommentDefaults {
                 }
                 if (hiddenReplyCount > 0) {
                     Text(
-                        text = "查看更多 $hiddenReplyCount 条回复>",
+                        text = "查看更多 $hiddenReplyCount 條回覆>",
                         color = primaryColor,
                         modifier = Modifier
                             .fillMaxWidth()

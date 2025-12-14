@@ -38,7 +38,7 @@ suspend fun main() {
         ?: File("testData")
 
     val list = listOf(
-        "约会大作战",
+        "約會大作戰",
     )
 
     TopicFetcher(output, "dmhy").run {

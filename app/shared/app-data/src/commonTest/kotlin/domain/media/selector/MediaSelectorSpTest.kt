@@ -45,12 +45,12 @@ class MediaSelectorSpTest {
     @Test
     fun `when watching SP23 - match main 23`() = runSimpleMediaSelectorTestSuite(
         buildTest = {
-            initSubject("玉子市场") {
+            initSubject("玉子市場") {
                 episodeSort = EpisodeSort(23, EpisodeType.SP)
                 episodeEp = EpisodeSort(0) // This is a normal scenario!
             }
             mediaApi.addSimpleWebMedia(
-                subjectName = "玉子市场",
+                subjectName = "玉子市場",
                 episodeSort = EpisodeSort(23, EpisodeType.MainStory),
             )
         },
@@ -63,16 +63,16 @@ class MediaSelectorSpTest {
     @Test
     fun `when watching SP23 - match both SP23 and main 23`() = runSimpleMediaSelectorTestSuite(
         buildTest = {
-            initSubject("玉子市场") {
+            initSubject("玉子市場") {
                 episodeSort = EpisodeSort(23, EpisodeType.SP)
                 episodeEp = EpisodeSort(0) // This is a normal scenario!
             }
             mediaApi.addSimpleWebMedia(
-                subjectName = "玉子市场",
+                subjectName = "玉子市場",
                 episodeSort = EpisodeSort(23, EpisodeType.SP),
             )
             mediaApi.addSimpleWebMedia(
-                subjectName = "玉子市场",
+                subjectName = "玉子市場",
                 episodeSort = EpisodeSort(23, EpisodeType.MainStory),
             )
         },

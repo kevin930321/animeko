@@ -27,7 +27,7 @@ import me.him188.ani.utils.platform.collections.mapToIntList
 import kotlin.coroutines.CoroutineContext
 
 data class BangumiSearchFilters(
-    val tags: List<String>? = null, // "童年", "原创"
+    val tags: List<String>? = null, // "童年", "原創"
     val airDates: List<String>? = null, // YYYY-MM-DD
     val ratings: List<String>? = null, // ">=6", "<8"
     val ranks: List<String>? = null,

@@ -59,7 +59,7 @@ fun PreviewSubjectDetailsHeaderCompletedLong() {
             nextEpisodeIdToPlay = null,
         ),
         subjectInfo = TestSubjectInfo.copy(
-            nameCn = "孤独摇滚".repeat(20),
+            nameCn = "孤獨搖滾".repeat(20),
         ),
     )
 }

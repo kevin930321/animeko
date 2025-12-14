@@ -22,7 +22,7 @@ object MediaSourceEngineHelpers {
                 subjectName,
                 removeWhitespace = false,
                 replaceNumbers = false,
-                removeMarkers = true, // Note: 删除 "剧场版" 等标记, 否则 "剧场版 命运石之门" 会变为 "剧场版"
+                removeMarkers = true, // Note: 删除 "劇場版" 等标记, 否则 "劇場版 命運石之門" 会变为 "劇場版"
             ) // keep whitespace for getFirstWord
         } else {
             subjectName

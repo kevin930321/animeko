@@ -36,7 +36,7 @@ internal fun testPersonInfo(
     name: String,
     type: PersonType = PersonType.Individual,
     careers: List<PersonCareer> = emptyList(),
-    summary: String = """一个测试人物""",
+    summary: String = """一個測試人物""",
     locked: Boolean = false,
     images: Images? = null,
 ) = PersonInfo(
@@ -58,7 +58,7 @@ internal fun testRelatedPersonInfo(
     position: PersonPosition,
     type: PersonType = PersonType.Individual,
     careers: List<PersonCareer> = emptyList(),
-    shortSummary: String = """一个测试人物""",
+    shortSummary: String = """一個測試人物""",
     locked: Boolean = false,
     images: Images? = null,
 ) = RelatedPersonInfo(
@@ -78,7 +78,7 @@ internal val TestSubjectStaffInfo
         ),
         testRelatedPersonInfo(1, "はまじあき", position = PersonPosition.OriginalWork),
         testRelatedPersonInfo(2, "斎藤圭一郎", position = PersonPosition.Director),
-        testRelatedPersonInfo(3, "吉田恵里香", position = PersonPosition.CharacterDesign),
+        testRelatedPersonInfo(3, "吉田恵裏香", position = PersonPosition.CharacterDesign),
         testRelatedPersonInfo(4, "菊谷知樹", position = PersonPosition.Music),
         testRelatedPersonInfo(5, "けろりら", position = PersonPosition.CharacterDesign),
     )
@@ -121,9 +121,9 @@ internal val TestSubjectCharacterList
         testRelatedCharacterInfo(0, "後藤ひとり", "青山吉能"),
         testRelatedCharacterInfo(1, "伊地知虹夏", "鈴代紗弓"),
         testRelatedCharacterInfo(2, "山田リョウ山田リョウ山田リョウ", "水野朔"),
-        testRelatedCharacterInfo(3, "喜多郁代", "長谷川育美"),
+        testRelatedCharacterInfo(3, "喜多鬱代", "長谷川育美"),
         testRelatedCharacterInfo(4, "後藤直樹", "間島淳司"),
-        testRelatedCharacterInfo(5, "後藤美智代", "末柄里恵"),
+        testRelatedCharacterInfo(5, "後藤美智代", "末柄裏恵"),
     )
 
 @TestOnly
@@ -138,8 +138,8 @@ internal fun testRelatedSubjectInfo(
 @TestOnly
 internal val TestRelatedSubjects
     get() = listOf(
-        testRelatedSubjectInfo("孤独摇滚 第二季", SubjectRelation.SEQUEL),
-        testRelatedSubjectInfo("孤独摇滚 第零季", SubjectRelation.PREQUEL),
-        testRelatedSubjectInfo("孤独摇滚 外传", SubjectRelation.DERIVED),
-        testRelatedSubjectInfo("孤独摇滚 OAD", SubjectRelation.SPECIAL),
+        testRelatedSubjectInfo("孤獨搖滾 第二季", SubjectRelation.SEQUEL),
+        testRelatedSubjectInfo("孤獨搖滾 第零季", SubjectRelation.PREQUEL),
+        testRelatedSubjectInfo("孤獨搖滾 外傳", SubjectRelation.DERIVED),
+        testRelatedSubjectInfo("孤獨搖滾 OAD", SubjectRelation.SPECIAL),
     )

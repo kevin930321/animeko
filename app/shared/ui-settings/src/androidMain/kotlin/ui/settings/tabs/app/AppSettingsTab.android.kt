@@ -36,7 +36,7 @@ actual fun SettingsScope.PlayerGroupPlatform(videoScaffoldConfig: SettingsState<
             values = { supportedModes },
             itemText = {
                 if (it == null) {
-                    Text("自动")
+                    Text("自動")
                 } else {
                     Text(it.refreshRate.roundToInt().toString())
                 }
@@ -49,7 +49,7 @@ actual fun SettingsScope.PlayerGroupPlatform(videoScaffoldConfig: SettingsState<
                 )
             },
             title = {
-                Text("弹幕刷新率")
+                Text("彈幕刷新率")
             },
         )
     }

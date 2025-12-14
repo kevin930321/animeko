@@ -31,12 +31,12 @@ abstract class AbstractMediaSourceTestState {
 @Stable
 private val SampleKeywords
     get() = listOf(
-        "败犬女主太多了！",
+        "敗犬女主太多了！",
         "白箱",
         "CLANNAD",
-        "轻音少女",
-        "战姬绝唱",
-        "凉宫春日的忧郁",
-        "樱 Trick",
-        "命运石之门",
+        "輕音少女",
+        "戰姬絕唱",
+        "涼宮春日的憂鬱",
+        "櫻 Trick",
+        "命運石之門",
     )

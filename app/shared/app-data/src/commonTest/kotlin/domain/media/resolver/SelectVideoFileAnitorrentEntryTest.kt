@@ -30,7 +30,7 @@ class SelectVideoFileAnitorrentEntryTest {
         val selected = TorrentMediaResolver.selectVideoFileEntry(
             listOf("[Nekomoe kissaten&LoliHouse] Shuumatsu Train Doko e Iku - 04 [WebRip 1080p HEVC-10bit AAC ASSx2].mkv"),
             { this },
-            episodeTitles = listOf("终末列车去往何方?"),
+            episodeTitles = listOf("終末列車去往何方?"),
             episodeSort = EpisodeSort(4),
             episodeEp = null,
         )
@@ -71,7 +71,7 @@ class SelectVideoFileAnitorrentEntryTest {
             """.trimIndent(),
             ),
             { this },
-            episodeTitles = listOf("终末列车去往何方?"),
+            episodeTitles = listOf("終末列車去往何方?"),
             episodeSort = EpisodeSort(4),
             episodeEp = null,
         )
@@ -96,7 +96,7 @@ class SelectVideoFileAnitorrentEntryTest {
             """.trimIndent(),
             ),
             { this },
-            episodeTitles = listOf("终末列车去往何方?"),
+            episodeTitles = listOf("終末列車去往何方?"),
             episodeSort = EpisodeSort(26),
             episodeEp = EpisodeSort(4),
         )
@@ -121,7 +121,7 @@ class SelectVideoFileAnitorrentEntryTest {
             """.trimIndent(),
             ),
             { this },
-            episodeTitles = listOf("终末列车去往何方?"),
+            episodeTitles = listOf("終末列車去往何方?"),
             episodeSort = EpisodeSort(4),
             episodeEp = EpisodeSort(2),
         )
@@ -159,20 +159,20 @@ class SelectVideoFileAnitorrentEntryTest {
     @TestFactory
     fun `select normal over PV`() = runDynamicTests(
         listOf(
-            "[DBD-Raws][未来日记][01][1080P][BDRip][HEVC-10bit][FLACx2].mkv",
-            "[DBD-Raws][未来日记] PV [01][1080P][BDRip][HEVC-10bit][FLAC].mkv",
-            "[DBD-Raws][未来日记] PV01 [1080P][BDRip][HEVC-10bit][FLAC].mkv",
+            "[DBD-Raws][未來日記][01][1080P][BDRip][HEVC-10bit][FLACx2].mkv",
+            "[DBD-Raws][未來日記] PV [01][1080P][BDRip][HEVC-10bit][FLAC].mkv",
+            "[DBD-Raws][未來日記] PV01 [1080P][BDRip][HEVC-10bit][FLAC].mkv",
         ).permuted().mapIndexed { index, list ->
             dynamicTest(index.toString()) {
                 val selected = TorrentMediaResolver.selectVideoFileEntry(
                     list,
                     { this },
-                    episodeTitles = listOf("未来日记"),
+                    episodeTitles = listOf("未來日記"),
                     episodeSort = EpisodeSort(1),
                     episodeEp = null,
                 )
                 assertEquals(
-                    "[DBD-Raws][未来日记][01][1080P][BDRip][HEVC-10bit][FLACx2].mkv",
+                    "[DBD-Raws][未來日記][01][1080P][BDRip][HEVC-10bit][FLACx2].mkv",
                     selected,
                     message = list.toString(),
                 )
@@ -183,21 +183,21 @@ class SelectVideoFileAnitorrentEntryTest {
     @TestFactory
     fun `select SP over PV`() = runDynamicTests(
         listOf(
-            "[DBD-Raws][未来日记][01][1080P][BDRip][HEVC-10bit][FLACx2].mkv",
-            "[DBD-Raws][未来日记][PV][01][1080P][BDRip][HEVC-10bit][FLAC].mkv",
-            "[DBD-Raws][未来日记][SP][1080P][BDRip][HEVC-10bit][FLAC].mkv",
-            "[DBD-Raws][未来日记][NCOP1][1080P][BDRip][HEVC-10bit][FLAC].mkv",
+            "[DBD-Raws][未來日記][01][1080P][BDRip][HEVC-10bit][FLACx2].mkv",
+            "[DBD-Raws][未來日記][PV][01][1080P][BDRip][HEVC-10bit][FLAC].mkv",
+            "[DBD-Raws][未來日記][SP][1080P][BDRip][HEVC-10bit][FLAC].mkv",
+            "[DBD-Raws][未來日記][NCOP1][1080P][BDRip][HEVC-10bit][FLAC].mkv",
         ).permuted().mapIndexed { index, list ->
             dynamicTest(index.toString()) {
                 val selected = TorrentMediaResolver.selectVideoFileEntry(
                     list,
                     { this },
-                    episodeTitles = listOf("未来日记"),
+                    episodeTitles = listOf("未來日記"),
                     episodeSort = EpisodeSort("SP"),
                     episodeEp = null,
                 )
                 assertEquals(
-                    "[DBD-Raws][未来日记][SP][1080P][BDRip][HEVC-10bit][FLAC].mkv",
+                    "[DBD-Raws][未來日記][SP][1080P][BDRip][HEVC-10bit][FLAC].mkv",
                     selected,
                     message = list.toString(),
                 )
@@ -217,7 +217,7 @@ class SelectVideoFileAnitorrentEntryTest {
                 val selected = TorrentMediaResolver.selectVideoFileEntry(
                     list,
                     { this },
-                    episodeTitles = listOf("梦想成为魔法少女"),
+                    episodeTitles = listOf("夢想成爲魔法少女"),
                     episodeSort = EpisodeSort("01"),
                     episodeEp = null,
                 )
@@ -242,7 +242,7 @@ class SelectVideoFileAnitorrentEntryTest {
                 val selected = TorrentMediaResolver.selectVideoFileEntry(
                     list,
                     { this },
-                    episodeTitles = listOf("梦想成为魔法少女"),
+                    episodeTitles = listOf("夢想成爲魔法少女"),
                     episodeSort = EpisodeSort("02"),
                     episodeEp = null,
                 )
@@ -258,21 +258,21 @@ class SelectVideoFileAnitorrentEntryTest {
     @TestFactory
     fun `select SP 01 over PV`() = runDynamicTests(
         listOf(
-            "[DBD-Raws][未来日记][01][1080P][BDRip][HEVC-10bit][FLACx2].mkv",
-            "[DBD-Raws][未来日记][PV][01][1080P][BDRip][HEVC-10bit][FLAC].mkv",
-            "[DBD-Raws][未来日记][SP][01][1080P][BDRip][HEVC-10bit][FLAC].mkv",
-            "[DBD-Raws][未来日记][NCOP1][1080P][BDRip][HEVC-10bit][FLAC].mkv",
+            "[DBD-Raws][未來日記][01][1080P][BDRip][HEVC-10bit][FLACx2].mkv",
+            "[DBD-Raws][未來日記][PV][01][1080P][BDRip][HEVC-10bit][FLAC].mkv",
+            "[DBD-Raws][未來日記][SP][01][1080P][BDRip][HEVC-10bit][FLAC].mkv",
+            "[DBD-Raws][未來日記][NCOP1][1080P][BDRip][HEVC-10bit][FLAC].mkv",
         ).permuted().mapIndexed { index, list ->
             dynamicTest(index.toString()) {
                 val selected = TorrentMediaResolver.selectVideoFileEntry(
                     list,
                     { this },
-                    episodeTitles = listOf("未来日记"),
+                    episodeTitles = listOf("未來日記"),
                     episodeSort = EpisodeSort("SP"),
                     episodeEp = null,
                 )
                 assertEquals(
-                    "[DBD-Raws][未来日记][SP][01][1080P][BDRip][HEVC-10bit][FLAC].mkv",
+                    "[DBD-Raws][未來日記][SP][01][1080P][BDRip][HEVC-10bit][FLAC].mkv",
                     selected,
                     message = list.toString(),
                 )
@@ -283,21 +283,21 @@ class SelectVideoFileAnitorrentEntryTest {
     @TestFactory
     fun `select OVA over PV`() = runDynamicTests(
         listOf(
-            "[DBD-Raws][未来日记][01][1080P][BDRip][HEVC-10bit][FLACx2].mkv",
-            "[DBD-Raws][未来日记][PV][01][1080P][BDRip][HEVC-10bit][FLAC].mkv",
-            "[DBD-Raws][未来日记][OVA][1080P][BDRip][HEVC-10bit][FLAC].mkv",
-            "[DBD-Raws][未来日记][NCOP1][1080P][BDRip][HEVC-10bit][FLAC].mkv",
+            "[DBD-Raws][未來日記][01][1080P][BDRip][HEVC-10bit][FLACx2].mkv",
+            "[DBD-Raws][未來日記][PV][01][1080P][BDRip][HEVC-10bit][FLAC].mkv",
+            "[DBD-Raws][未來日記][OVA][1080P][BDRip][HEVC-10bit][FLAC].mkv",
+            "[DBD-Raws][未來日記][NCOP1][1080P][BDRip][HEVC-10bit][FLAC].mkv",
         ).permuted().mapIndexed { index, list ->
             dynamicTest(index.toString()) {
                 val selected = TorrentMediaResolver.selectVideoFileEntry(
                     list,
                     { this },
-                    episodeTitles = listOf("未来日记"),
+                    episodeTitles = listOf("未來日記"),
                     episodeSort = EpisodeSort("OVA"),
                     episodeEp = null,
                 )
                 assertEquals(
-                    "[DBD-Raws][未来日记][OVA][1080P][BDRip][HEVC-10bit][FLAC].mkv",
+                    "[DBD-Raws][未來日記][OVA][1080P][BDRip][HEVC-10bit][FLAC].mkv",
                     selected,
                     message = list.toString(),
                 )
@@ -308,21 +308,21 @@ class SelectVideoFileAnitorrentEntryTest {
     @TestFactory
     fun `select OVA12 over PV`() = runDynamicTests(
         listOf(
-            "[DBD-Raws][未来日记][01][1080P][BDRip][HEVC-10bit][FLACx2].mkv",
-            "[DBD-Raws][未来日记][PV][01][1080P][BDRip][HEVC-10bit][FLAC].mkv",
-            "[DBD-Raws][未来日记][OVA12][1080P][BDRip][HEVC-10bit][FLAC].mkv",
-            "[DBD-Raws][未来日记][NCOP1][1080P][BDRip][HEVC-10bit][FLAC].mkv",
+            "[DBD-Raws][未來日記][01][1080P][BDRip][HEVC-10bit][FLACx2].mkv",
+            "[DBD-Raws][未來日記][PV][01][1080P][BDRip][HEVC-10bit][FLAC].mkv",
+            "[DBD-Raws][未來日記][OVA12][1080P][BDRip][HEVC-10bit][FLAC].mkv",
+            "[DBD-Raws][未來日記][NCOP1][1080P][BDRip][HEVC-10bit][FLAC].mkv",
         ).permuted().mapIndexed { index, list ->
             dynamicTest(index.toString()) {
                 val selected = TorrentMediaResolver.selectVideoFileEntry(
                     list,
                     { this },
-                    episodeTitles = listOf("未来日记"),
+                    episodeTitles = listOf("未來日記"),
                     episodeSort = EpisodeSort("OVA"),
                     episodeEp = null,
                 )
                 assertEquals(
-                    "[DBD-Raws][未来日记][OVA12][1080P][BDRip][HEVC-10bit][FLAC].mkv",
+                    "[DBD-Raws][未來日記][OVA12][1080P][BDRip][HEVC-10bit][FLAC].mkv",
                     selected,
                     message = list.toString(),
                 )
@@ -333,21 +333,21 @@ class SelectVideoFileAnitorrentEntryTest {
     @TestFactory
     fun `select normal 01 over PV if no match`() = runDynamicTests(
         listOf(
-            "[DBD-Raws][未来日记][01][1080P][BDRip][HEVC-10bit][FLACx2].mkv",
-            "[DBD-Raws][未来日记][PV][01][1080P][BDRip][HEVC-10bit][FLAC].mkv",
-            "[DBD-Raws][未来日记][SP][01][1080P][BDRip][HEVC-10bit][FLAC].mkv",
-            "[DBD-Raws][未来日记][NCOP1][1080P][BDRip][HEVC-10bit][FLAC].mkv",
+            "[DBD-Raws][未來日記][01][1080P][BDRip][HEVC-10bit][FLACx2].mkv",
+            "[DBD-Raws][未來日記][PV][01][1080P][BDRip][HEVC-10bit][FLAC].mkv",
+            "[DBD-Raws][未來日記][SP][01][1080P][BDRip][HEVC-10bit][FLAC].mkv",
+            "[DBD-Raws][未來日記][NCOP1][1080P][BDRip][HEVC-10bit][FLAC].mkv",
         ).permuted().mapIndexed { index, list ->
             dynamicTest(index.toString()) {
                 val selected = TorrentMediaResolver.selectVideoFileEntry(
                     list,
                     { this },
-                    episodeTitles = listOf("未来日记"),
+                    episodeTitles = listOf("未來日記"),
                     episodeSort = EpisodeSort("08"),
                     episodeEp = null,
                 )
                 assertEquals(
-                    "[DBD-Raws][未来日记][01][1080P][BDRip][HEVC-10bit][FLACx2].mkv",
+                    "[DBD-Raws][未來日記][01][1080P][BDRip][HEVC-10bit][FLACx2].mkv",
                     selected,
                     message = list.toString(),
                 )
@@ -359,27 +359,27 @@ class SelectVideoFileAnitorrentEntryTest {
     fun `select of full path`() {
         val selected = TorrentMediaResolver.selectVideoFileEntry(
             listOf(
-                "[DBD制作组][4K_HDR][BanG Dream! Ave Mujica][01-13TV全集][2160P][WEB-DL][简日双语内嵌][AAC][MKV]$SystemPathSeparator[DBD-SUB][4K_HDR][BanG Dream! Ave Mujica][01][2160P][WEB-DL][H265-10bit][SCJP][AAC].mkv",
-                "[DBD制作组][4K_HDR][BanG Dream! Ave Mujica][01-13TV全集][2160P][WEB-DL][简日双语内嵌][AAC][MKV]$SystemPathSeparator[DBD-SUB][4K_HDR][BanG Dream! Ave Mujica][02][2160P][WEB-DL][H265-10bit][SCJP][AAC].mkv",
-                "[DBD制作组][4K_HDR][BanG Dream! Ave Mujica][01-13TV全集][2160P][WEB-DL][简日双语内嵌][AAC][MKV]$SystemPathSeparator[DBD-SUB][4K_HDR][BanG Dream! Ave Mujica][04][2160P][WEB-DL][H265-10bit][SCJP][AAC].mkv",
-                "[DBD制作组][4K_HDR][BanG Dream! Ave Mujica][01-13TV全集][2160P][WEB-DL][简日双语内嵌][AAC][MKV]$SystemPathSeparator[DBD-SUB][4K_HDR][BanG Dream! Ave Mujica][05][2160P][WEB-DL][H265-10bit][SCJP][AAC].mkv",
-                "[DBD制作组][4K_HDR][BanG Dream! Ave Mujica][01-13TV全集][2160P][WEB-DL][简日双语内嵌][AAC][MKV]$SystemPathSeparator[DBD-SUB][4K_HDR][BanG Dream! Ave Mujica][06][2160P][WEB-DL][H265-10bit][SCJP][AAC].mkv",
-                "[DBD制作组][4K_HDR][BanG Dream! Ave Mujica][01-13TV全集][2160P][WEB-DL][简日双语内嵌][AAC][MKV]$SystemPathSeparator[DBD-SUB][4K_HDR][BanG Dream! Ave Mujica][07][2160P][WEB-DL][H265-10bit][SCJP][AAC].mkv",
-                "[DBD制作组][4K_HDR][BanG Dream! Ave Mujica][01-13TV全集][2160P][WEB-DL][简日双语内嵌][AAC][MKV]$SystemPathSeparator[DBD-SUB][4K_HDR][BanG Dream! Ave Mujica][08][2160P][WEB-DL][H265-10bit][SCJP][AAC].mkv",
-                "[DBD制作组][4K_HDR][BanG Dream! Ave Mujica][01-13TV全集][2160P][WEB-DL][简日双语内嵌][AAC][MKV]$SystemPathSeparator[DBD-SUB][4K_HDR][BanG Dream! Ave Mujica][09][2160P][WEB-DL][H265-10bit][SCJP][AAC].mkv",
-                "[DBD制作组][4K_HDR][BanG Dream! Ave Mujica][01-13TV全集][2160P][WEB-DL][简日双语内嵌][AAC][MKV]$SystemPathSeparator[DBD-SUB][4K_HDR][BanG Dream! Ave Mujica][10][2160P][WEB-DL][H265-10bit][SCJP][AAC].mkv",
-                "[DBD制作组][4K_HDR][BanG Dream! Ave Mujica][01-13TV全集][2160P][WEB-DL][简日双语内嵌][AAC][MKV]$SystemPathSeparator[DBD-SUB][4K_HDR][BanG Dream! Ave Mujica][11][2160P][WEB-DL][H265-10bit][SCJP][AAC].mkv",
-                "[DBD制作组][4K_HDR][BanG Dream! Ave Mujica][01-13TV全集][2160P][WEB-DL][简日双语内嵌][AAC][MKV]$SystemPathSeparator[DBD-SUB][4K_HDR][BanG Dream! Ave Mujica][12][2160P][WEB-DL][H265-10bit][SCJP][AAC].mkv",
-                "[DBD制作组][4K_HDR][BanG Dream! Ave Mujica][01-13TV全集][2160P][WEB-DL][简日双语内嵌][AAC][MKV]$SystemPathSeparator[DBD-SUB][4K_HDR][BanG Dream! Ave Mujica][13][2160P][WEB-DL][H265-10bit][SCJP][AAC].mkv",
-                "[DBD制作组][4K_HDR][BanG Dream! Ave Mujica][01-13TV全集][2160P][WEB-DL][简日双语内嵌][AAC][MKV]$SystemPathSeparator[DBD-SUB][4K_HDR][Bang Dream! Ave Mujica][03][2160P][WEB-DL][H265-10bit][SCJP][AAC].mkv",
+                "[DBD製作組][4K_HDR][BanG Dream! Ave Mujica][01-13TV全集][2160P][WEB-DL][簡日雙語內嵌][AAC][MKV]$SystemPathSeparator[DBD-SUB][4K_HDR][BanG Dream! Ave Mujica][01][2160P][WEB-DL][H265-10bit][SCJP][AAC].mkv",
+                "[DBD製作組][4K_HDR][BanG Dream! Ave Mujica][01-13TV全集][2160P][WEB-DL][簡日雙語內嵌][AAC][MKV]$SystemPathSeparator[DBD-SUB][4K_HDR][BanG Dream! Ave Mujica][02][2160P][WEB-DL][H265-10bit][SCJP][AAC].mkv",
+                "[DBD製作組][4K_HDR][BanG Dream! Ave Mujica][01-13TV全集][2160P][WEB-DL][簡日雙語內嵌][AAC][MKV]$SystemPathSeparator[DBD-SUB][4K_HDR][BanG Dream! Ave Mujica][04][2160P][WEB-DL][H265-10bit][SCJP][AAC].mkv",
+                "[DBD製作組][4K_HDR][BanG Dream! Ave Mujica][01-13TV全集][2160P][WEB-DL][簡日雙語內嵌][AAC][MKV]$SystemPathSeparator[DBD-SUB][4K_HDR][BanG Dream! Ave Mujica][05][2160P][WEB-DL][H265-10bit][SCJP][AAC].mkv",
+                "[DBD製作組][4K_HDR][BanG Dream! Ave Mujica][01-13TV全集][2160P][WEB-DL][簡日雙語內嵌][AAC][MKV]$SystemPathSeparator[DBD-SUB][4K_HDR][BanG Dream! Ave Mujica][06][2160P][WEB-DL][H265-10bit][SCJP][AAC].mkv",
+                "[DBD製作組][4K_HDR][BanG Dream! Ave Mujica][01-13TV全集][2160P][WEB-DL][簡日雙語內嵌][AAC][MKV]$SystemPathSeparator[DBD-SUB][4K_HDR][BanG Dream! Ave Mujica][07][2160P][WEB-DL][H265-10bit][SCJP][AAC].mkv",
+                "[DBD製作組][4K_HDR][BanG Dream! Ave Mujica][01-13TV全集][2160P][WEB-DL][簡日雙語內嵌][AAC][MKV]$SystemPathSeparator[DBD-SUB][4K_HDR][BanG Dream! Ave Mujica][08][2160P][WEB-DL][H265-10bit][SCJP][AAC].mkv",
+                "[DBD製作組][4K_HDR][BanG Dream! Ave Mujica][01-13TV全集][2160P][WEB-DL][簡日雙語內嵌][AAC][MKV]$SystemPathSeparator[DBD-SUB][4K_HDR][BanG Dream! Ave Mujica][09][2160P][WEB-DL][H265-10bit][SCJP][AAC].mkv",
+                "[DBD製作組][4K_HDR][BanG Dream! Ave Mujica][01-13TV全集][2160P][WEB-DL][簡日雙語內嵌][AAC][MKV]$SystemPathSeparator[DBD-SUB][4K_HDR][BanG Dream! Ave Mujica][10][2160P][WEB-DL][H265-10bit][SCJP][AAC].mkv",
+                "[DBD製作組][4K_HDR][BanG Dream! Ave Mujica][01-13TV全集][2160P][WEB-DL][簡日雙語內嵌][AAC][MKV]$SystemPathSeparator[DBD-SUB][4K_HDR][BanG Dream! Ave Mujica][11][2160P][WEB-DL][H265-10bit][SCJP][AAC].mkv",
+                "[DBD製作組][4K_HDR][BanG Dream! Ave Mujica][01-13TV全集][2160P][WEB-DL][簡日雙語內嵌][AAC][MKV]$SystemPathSeparator[DBD-SUB][4K_HDR][BanG Dream! Ave Mujica][12][2160P][WEB-DL][H265-10bit][SCJP][AAC].mkv",
+                "[DBD製作組][4K_HDR][BanG Dream! Ave Mujica][01-13TV全集][2160P][WEB-DL][簡日雙語內嵌][AAC][MKV]$SystemPathSeparator[DBD-SUB][4K_HDR][BanG Dream! Ave Mujica][13][2160P][WEB-DL][H265-10bit][SCJP][AAC].mkv",
+                "[DBD製作組][4K_HDR][BanG Dream! Ave Mujica][01-13TV全集][2160P][WEB-DL][簡日雙語內嵌][AAC][MKV]$SystemPathSeparator[DBD-SUB][4K_HDR][Bang Dream! Ave Mujica][03][2160P][WEB-DL][H265-10bit][SCJP][AAC].mkv",
             ),
             { this },
-            episodeTitles = listOf("纵使焚身成灰，我亦要爱你。"),
+            episodeTitles = listOf("縱使焚身成灰，我亦要愛你。"),
             episodeSort = EpisodeSort(11),
             episodeEp = EpisodeSort(11),
         )
         assertEquals(
-            "[DBD制作组][4K_HDR][BanG Dream! Ave Mujica][01-13TV全集][2160P][WEB-DL][简日双语内嵌][AAC][MKV]$SystemPathSeparator[DBD-SUB][4K_HDR][BanG Dream! Ave Mujica][11][2160P][WEB-DL][H265-10bit][SCJP][AAC].mkv",
+            "[DBD製作組][4K_HDR][BanG Dream! Ave Mujica][01-13TV全集][2160P][WEB-DL][簡日雙語內嵌][AAC][MKV]$SystemPathSeparator[DBD-SUB][4K_HDR][BanG Dream! Ave Mujica][11][2160P][WEB-DL][H265-10bit][SCJP][AAC].mkv",
             selected,
         )
     }

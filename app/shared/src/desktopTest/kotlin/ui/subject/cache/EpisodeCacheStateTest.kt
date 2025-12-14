@@ -68,7 +68,7 @@ class EpisodeCacheStateTest {
         EpisodeCacheInfo(
             sort = EpisodeSort(1),
             ep = EpisodeSort(1),
-            title = "第一集的标题",
+            title = "第一集的標題",
             watchStatus = UnifiedCollectionType.DOING,
             hasPublished = true,
         ),

@@ -113,26 +113,26 @@ class MediaSelectorMatchMetadataTest {
         addSimpleMediaSelectorTest(
             "subject and episode combined test",
             {
-                initSubject("进击的巨人") {
+                initSubject("進擊的巨人") {
                     episodeSort = EpisodeSort(2)
                 }
             },
         ) {
             checkMatchMetadata {
                 expect(
-                    mediaSubjectName = "进击的巨人",
+                    mediaSubjectName = "進擊的巨人",
                     episodeRange = EpisodeRange.single(EpisodeSort(2)),
                     subjectMatchKind = SubjectMatchKind.EXACT,
                     episodeMatchKind = EpisodeMatchKind.SORT,
                 )
                 expect(
-                    mediaSubjectName = "进击的巨人 第二季",
+                    mediaSubjectName = "進擊的巨人 第二季",
                     episodeRange = EpisodeRange.single(EpisodeSort(2)),
                     subjectMatchKind = SubjectMatchKind.FUZZY,
                     episodeMatchKind = EpisodeMatchKind.SORT,
                 )
                 expect(
-                    mediaSubjectName = "进击的巨人",
+                    mediaSubjectName = "進擊的巨人",
                     episodeRange = EpisodeRange.single(EpisodeSort(3)),
                     subjectMatchKind = SubjectMatchKind.EXACT,
                     episodeMatchKind = EpisodeMatchKind.NONE,

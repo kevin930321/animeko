@@ -33,10 +33,10 @@ class MediaSelectorSubjectSeriesTest {
         addSimpleMediaSelectorTest(
             "香格里拉第二季",
             {
-                initSubject("香格里拉边境 第二季") {
+                initSubject("香格里拉邊境 第二季") {
                     aliases(
-                        "香格里拉边境~粪作猎人向神作游戏发起挑战~ 第二季",
-                        "香格里拉・开拓异境～粪作猎手挑战神作～ 第二季",
+                        "香格里拉邊境~糞作獵人向神作遊戲發起挑戰~ 第二季",
+                        "香格里拉・開拓異境～糞作獵手挑戰神作～ 第二季",
                         "Shangri-La Frontier: Kusoge Hunter, Kamige ni Idoman to su 2nd Season",
                         "Shangri-La Frontier Season 2",
                         "シャングリラ・フロンティア～クソゲーハンター、神ゲーに挑まんとす～ 2nd season",
@@ -44,8 +44,8 @@ class MediaSelectorSubjectSeriesTest {
                     seriesInfo(seasonSort = 1) {
                         series(
                             // 第一季:
-                            "香格里拉边境~粪作猎人向神作游戏发起挑战~",
-                            "香格里拉・开拓异境～粪作猎手挑战神作～",
+                            "香格里拉邊境~糞作獵人向神作遊戲發起挑戰~",
+                            "香格里拉・開拓異境～糞作獵手挑戰神作～",
                             "香格里拉・開拓異境～糞作獵手挑戰神作～",
                         )
                     }
@@ -54,37 +54,37 @@ class MediaSelectorSubjectSeriesTest {
         ) {
             checkSubjectExclusion {
                 expect(
-                    "香格里拉·弗陇提亚～屎作猎人向神作发起挑战～ 第二季" to tentatively(
+                    "香格里拉·弗隴提亞～屎作獵人向神作發起挑戰～ 第二季" to tentatively(
                         SubjectNameMismatch,
                         null,
                     ),
-                    "香格里拉·开拓异境～粪作猎手挑战神作～ 第二季" to null,
-                    "香格里拉·开拓异境～粪作猎手挑战神作～第二季" to null,
-                    "香格里拉·弗陇提亚~屎作猎人向神作发起挑战~第二季" to tentatively(
+                    "香格里拉·開拓異境～糞作獵手挑戰神作～ 第二季" to null,
+                    "香格里拉·開拓異境～糞作獵手挑戰神作～第二季" to null,
+                    "香格里拉·弗隴提亞~屎作獵人向神作發起挑戰~第二季" to tentatively(
                         SubjectNameMismatch,
                         null,
                     ),
-                    "香格里拉·开拓异境～粪作猎手挑战神作～" to FromSeriesSeason,
-                    "香格里拉·开拓异境～粪作猎手挑战神作～ 2nd season" to tentatively(
+                    "香格里拉·開拓異境～糞作獵手挑戰神作～" to FromSeriesSeason,
+                    "香格里拉·開拓異境～糞作獵手挑戰神作～ 2nd season" to tentatively(
                         SubjectNameMismatch,
                         null,
                     ),
                     "香格里拉" to SubjectNameMismatch, // 这确实是另一个番
-                    "香格里拉·弗陇提亚～屎作猎人向神作发起挑战～" to tentatively(
+                    "香格里拉·弗隴提亞～屎作獵人向神作發起挑戰～" to tentatively(
                         SubjectNameMismatch,
                         FromSeriesSeason,
                     ),
-                    "香格里拉·弗陇提亚~屎作猎人向神作发起挑战~" to tentatively(
+                    "香格里拉·弗隴提亞~屎作獵人向神作發起挑戰~" to tentatively(
                         SubjectNameMismatch,
                         FromSeriesSeason,
                     ),
-                    "香格里拉边境" to tentatively(
+                    "香格里拉邊境" to tentatively(
                         SubjectNameMismatch,
                         FromSeriesSeason,
                     ),
                     "香格里拉2009" to SubjectNameMismatch, // 这确实是另一个番
-                    "香格里拉·开拓异境～粪作猎手挑战神作" to FromSeriesSeason,
-                    "这儿是香格里拉" to SubjectNameMismatch,
+                    "香格里拉·開拓異境～糞作獵手挑戰神作" to FromSeriesSeason,
+                    "這兒是香格里拉" to SubjectNameMismatch,
                 )
             }
         }
@@ -95,17 +95,17 @@ class MediaSelectorSubjectSeriesTest {
         addSimpleMediaSelectorTest(
             "香格里拉第一季",
             {
-                initSubject("香格里拉边境~粪作猎人向神作游戏发起挑战~") {
+                initSubject("香格里拉邊境~糞作獵人向神作遊戲發起挑戰~") {
                     aliases(
-                        "香格里拉・开拓异境～粪作猎手挑战神作～",
+                        "香格里拉・開拓異境～糞作獵手挑戰神作～",
                         "香格里拉・開拓異境～糞作獵手挑戰神作～",
                         "Shangri-La Frontier: Kusogee Hunter, Kamige ni Idoman to Su",
                         "シャングリラ・フロンティア～クソゲーハンター、神ゲーに挑まんとす～",
                     )
                     seriesInfo(seasonSort = 1) {
                         series(
-                            "香格里拉边境~粪作猎人向神作游戏发起挑战~ 第二季",
-                            "香格里拉・开拓异境～粪作猎手挑战神作～ 第二季",
+                            "香格里拉邊境~糞作獵人向神作遊戲發起挑戰~ 第二季",
+                            "香格里拉・開拓異境～糞作獵手挑戰神作～ 第二季",
                             "Shangri-La Frontier: Kusoge Hunter, Kamige ni Idoman to su 2nd Season",
                             "Shangri-La Frontier Season 2",
                             "シャングリラ・フロンティア～クソゲーハンター、神ゲーに挑まんとす～ 2nd season",
@@ -116,37 +116,37 @@ class MediaSelectorSubjectSeriesTest {
         ) {
             checkSubjectExclusion {
                 expect(
-                    "香格里拉·弗陇提亚～屎作猎人向神作发起挑战～ 第二季" to tentatively(
+                    "香格里拉·弗隴提亞～屎作獵人向神作發起挑戰～ 第二季" to tentatively(
                         SubjectNameMismatch,
                         FromSeriesSeason,
                     ),
-                    "香格里拉·开拓异境～粪作猎手挑战神作～ 第二季" to FromSeriesSeason,
-                    "香格里拉·开拓异境～粪作猎手挑战神作～第二季" to FromSeriesSeason,
-                    "香格里拉·弗陇提亚~屎作猎人向神作发起挑战~第二季" to tentatively(
+                    "香格里拉·開拓異境～糞作獵手挑戰神作～ 第二季" to FromSeriesSeason,
+                    "香格里拉·開拓異境～糞作獵手挑戰神作～第二季" to FromSeriesSeason,
+                    "香格里拉·弗隴提亞~屎作獵人向神作發起挑戰~第二季" to tentatively(
                         SubjectNameMismatch,
                         FromSeriesSeason,
                     ),
-                    "香格里拉·开拓异境～粪作猎手挑战神作～" to null,
-                    "香格里拉·开拓异境～粪作猎手挑战神作～ 2nd season" to tentatively(
+                    "香格里拉·開拓異境～糞作獵手挑戰神作～" to null,
+                    "香格里拉·開拓異境～糞作獵手挑戰神作～ 2nd season" to tentatively(
                         null,
                         SubjectNameMismatch,
                     ),
                     "香格里拉" to SubjectNameMismatch, // 这确实是另一个番
-                    "香格里拉·弗陇提亚～屎作猎人向神作发起挑战～" to tentatively(
+                    "香格里拉·弗隴提亞～屎作獵人向神作發起挑戰～" to tentatively(
                         SubjectNameMismatch,
                         FromSeriesSeason,
                     ),
-                    "香格里拉·弗陇提亚~屎作猎人向神作发起挑战~" to tentatively(
+                    "香格里拉·弗隴提亞~屎作獵人向神作發起挑戰~" to tentatively(
                         SubjectNameMismatch,
                         FromSeriesSeason,
                     ),
-                    "香格里拉边境" to tentatively(
+                    "香格里拉邊境" to tentatively(
                         SubjectNameMismatch,
                         null,
                     ),
                     "香格里拉2009" to SubjectNameMismatch, // 这确实是另一个番
-                    "香格里拉·开拓异境～粪作猎手挑战神作" to null,
-                    "这儿是香格里拉" to SubjectNameMismatch,
+                    "香格里拉·開拓異境～糞作獵手挑戰神作" to null,
+                    "這兒是香格里拉" to SubjectNameMismatch,
                 )
             }
         }
@@ -155,13 +155,13 @@ class MediaSelectorSubjectSeriesTest {
     @TestFactory
     fun `sequel name specially matches subject name`() = runDynamicTests {
         addSimpleMediaSelectorTest(
-            "轻音少女",
+            "輕音少女",
             {
-                initSubject("轻音少女") {
+                initSubject("輕音少女") {
                     seriesInfo(seasonSort = 1) {
                         sequel(
-                            "轻音少女 第二季",
-                            "轻音少女~",
+                            "輕音少女 第二季",
+                            "輕音少女~",
                         )
                     }
                 }
@@ -169,8 +169,8 @@ class MediaSelectorSubjectSeriesTest {
         ) {
             checkSubjectExclusion {
                 expect(
-                    "轻音少女" to null,
-                    "轻音少女 第二季" to FromSequelSeason,
+                    "輕音少女" to null,
+                    "輕音少女 第二季" to FromSequelSeason,
                 )
             }
         }
@@ -179,15 +179,15 @@ class MediaSelectorSubjectSeriesTest {
     @TestFactory
     fun `series name specially matches subject name`() = runDynamicTests {
         addSimpleMediaSelectorTest(
-            "轻音少女",
+            "輕音少女",
             {
-                initSubject("轻音少女") {
+                initSubject("輕音少女") {
                     seriesInfo(seasonSort = 1) {
                         series(
-                            "轻音少女~",
+                            "輕音少女~",
                         )
                         sequel(
-                            "轻音少女 第二季",
+                            "輕音少女 第二季",
                         )
                     }
                 }
@@ -195,8 +195,8 @@ class MediaSelectorSubjectSeriesTest {
         ) {
             checkSubjectExclusion {
                 expect(
-                    "轻音少女" to null,
-                    "轻音少女 第二季" to FromSequelSeason,
+                    "輕音少女" to null,
+                    "輕音少女 第二季" to FromSequelSeason,
                 )
             }
         }

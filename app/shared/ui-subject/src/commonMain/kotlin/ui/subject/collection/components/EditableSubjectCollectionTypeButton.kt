@@ -72,7 +72,7 @@ class EditableSubjectCollectionTypeState(
     }
 
     /**
-     * 是否显示 "将所有剧集标记为看过" 对话框
+     * 是否显示 "將所有劇集標記爲看過" 对话框
      */
     private val showSetAllEpisodesDoneDialogFlow = MutableStateFlow(false)
 
@@ -140,7 +140,7 @@ class EditableSubjectCollectionTypeState(
 
 /**
  * 展示当前收藏状态的按钮, 点击弹出 [EditCollectionTypeDropDown].
- * 当设置为 "看过" 时, 还会弹出 [SetAllEpisodeDoneDialog].
+ * 当设置为 "看過" 时, 还会弹出 [SetAllEpisodeDoneDialog].
  */
 @Composable
 fun EditableSubjectCollectionTypeButton(
@@ -170,7 +170,7 @@ fun EditableSubjectCollectionTypeButton(
 }
 
 /**
- * 用于显示 "同时设置所有剧集为看过" 的对话框.
+ * 用于显示 "同時設置所有劇集爲看過" 的对话框.
  *
  * [EditableSubjectCollectionTypeButton] 已经包含了这个 dialog, 所以一般来说不需要单独使用这个.
  *

@@ -48,7 +48,7 @@ import me.him188.ani.app.ui.foundation.text.ProvideTextStyleContentColor
 
 /**
  * @param sanitizeValue 每当用户输入时调用, 可以清除首尾空格等
- * @param onValueChangeCompleted 当用户点击对话框的 "确认" 时调用
+ * @param onValueChangeCompleted 当用户点击对话框的 "確認" 时调用
  */
 @SettingsDsl
 @Composable
@@ -105,7 +105,7 @@ fun SettingsScope.TextFieldItem(
             },
             trailingContent = {
                 IconButton({ showDialog = true }) {
-                    Icon(Icons.Rounded.Edit, "编辑", tint = MaterialTheme.colorScheme.primary)
+                    Icon(Icons.Rounded.Edit, "編輯", tint = MaterialTheme.colorScheme.primary)
                 }
             },
         )
@@ -183,7 +183,7 @@ internal fun SettingsScope.TextFieldDialog(
                 onClick = onConfirm,
                 enabled = confirmEnabled,
             ) {
-                Text("确认")
+                Text("確認")
             }
         },
         title = title,

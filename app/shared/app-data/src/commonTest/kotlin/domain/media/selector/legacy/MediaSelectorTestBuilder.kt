@@ -108,11 +108,11 @@ class MediaSelectorTestBuilder(
     fun createMedia(
         mediaSourceId: String,
         kind: MediaSourceKind = MediaSourceKind.WEB,
-        alliance: String = "XX字幕组",
+        alliance: String = "XX字幕組",
     ): DefaultMedia = createTestDefaultMedia(
         mediaId = "$mediaSourceId.1",
         mediaSourceId = mediaSourceId,
-        originalTitle = "[XX字幕组] 孤独摇滚 ABC ABC ABC ABC ABC ABC ABC ABC ABC ABC",
+        originalTitle = "[XX字幕組] 孤獨搖滾 ABC ABC ABC ABC ABC ABC ABC ABC ABC ABC",
         download = ResourceLocation.MagnetLink("magnet:?xt=urn:btih:1"),
         originalUrl = "https://example.com/1",
         publishedTime = 1,
@@ -141,7 +141,7 @@ class MediaSelectorTestBuilder(
         MediaFetchRequest(
             subjectId = "1",
             episodeId = "1",
-            subjectNames = listOf("孤独摇滚"),
+            subjectNames = listOf("孤獨搖滾"),
             episodeSort = EpisodeSort(1),
             episodeName = "test",
         ),

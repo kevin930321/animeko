@@ -64,9 +64,9 @@ class AiringLabelState(
             SubjectAiringKind.UPCOMING -> {
                 "未開播"
 //                if (airingInfo.airDate.isInvalid) {
-//                    "未开播"
+//                    "未開播"
 //                } else {
-//                    airingInfo.airDate.toStringExcludingSameYear() + " 开播"
+//                    airingInfo.airDate.toStringExcludingSameYear() + " 開播"
 //                }
             }
 
@@ -91,9 +91,9 @@ class AiringLabelState(
                 when (val s = progressInfo.continueWatchingStatus) {
                     ContinueWatchingStatus.Done -> "已看完"
 
-                    is ContinueWatchingStatus.Watched -> "看过 ${renderEpAndSort(s.episodeEp, s.episodeSort)}"
+                    is ContinueWatchingStatus.Watched -> "看過 ${renderEpAndSort(s.episodeEp, s.episodeSort)}"
                     is ContinueWatchingStatus.Continue ->
-                        "看过 ${renderEpAndSort(s.watchedEpisodeEp, s.watchedEpisodeSort)}"
+                        "看過 ${renderEpAndSort(s.watchedEpisodeEp, s.watchedEpisodeSort)}"
 
                     is ContinueWatchingStatus.NotOnAir,
                     ContinueWatchingStatus.Start,
@@ -120,7 +120,7 @@ class AiringLabelState(
     }
 
     /**
-     * "全 xx 话"
+     * "全 xx 話"
      */
     val totalEpisodesText by derivedStateOf {
         val airingInfo = airingInfo ?: return@derivedStateOf null

@@ -52,7 +52,7 @@ class TitleParserTest : PatternBasedTitleParserTestSuite() {
 
     @Test
     fun special() {
-        val r = parse("特典映像/[DBD-Raws] [龙猫] [特典映像] [01][1080P][BDRip][HEVC-10bit][AC3].mkv")
+        val r = parse("特典映像/[DBD-Raws] [龍貓] [特典映像] [01][1080P][BDRip][HEVC-10bit][AC3].mkv")
         assertEquals("SP01..SP01", r.episodeRange.toString())
         assertEquals("", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
         assertEquals("1080P", r.resolution.toString())
@@ -60,7 +60,7 @@ class TitleParserTest : PatternBasedTitleParserTestSuite() {
 
     @Test
     fun `movie v2 as 01`() {
-        val r = parse("[北宇治字幕组] 蓦然回首 / Look Back [Movie v2][WebRip][HEVC_AAC×2][简繁日内封]")
+        val r = parse("[北宇治字幕組] 驀然回首 / Look Back [Movie v2][WebRip][HEVC_AAC×2][簡繁日內封]")
         assertEquals("S?", r.episodeRange.toString())
         assertEquals("CHS, CHT, JPN", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
         assertEquals("null", r.resolution.toString())
@@ -68,7 +68,7 @@ class TitleParserTest : PatternBasedTitleParserTestSuite() {
 
     @Test
     fun `movie as 01`() {
-        val r = parse("[北宇治字幕组] 蓦然回首 / Look Back [Movie][WebRip][HEVC_AAC×2][简繁日内封]")
+        val r = parse("[北宇治字幕組] 驀然回首 / Look Back [Movie][WebRip][HEVC_AAC×2][簡繁日內封]")
         assertEquals("S?", r.episodeRange.toString())
         assertEquals("CHS, CHT, JPN", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
         assertEquals("null", r.resolution.toString())
@@ -76,7 +76,7 @@ class TitleParserTest : PatternBasedTitleParserTestSuite() {
 
     @Test
     fun `no subtitle`() {
-        val r = parse("[北宇治字幕组] 蓦然回首 / Look Back [Movie][WebRip][HEVC_AAC×2][无中文字幕]")
+        val r = parse("[北宇治字幕組] 驀然回首 / Look Back [Movie][WebRip][HEVC_AAC×2][無中文字幕]")
         assertEquals("S?", r.episodeRange.toString())
         assertEquals("", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
         assertEquals("null", r.resolution.toString())
@@ -84,7 +84,7 @@ class TitleParserTest : PatternBasedTitleParserTestSuite() {
 
     @Test
     fun `no subtitle even if matches`() {
-        val r = parse("[北宇治字幕组] 蓦然回首 / Look Back [Movie][WebRip][HEVC_AAC×2][简繁日内封][无中文字幕]")
+        val r = parse("[北宇治字幕組] 驀然回首 / Look Back [Movie][WebRip][HEVC_AAC×2][簡繁日內封][無中文字幕]")
         assertEquals("S?", r.episodeRange.toString())
         assertEquals("", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
         assertEquals("null", r.resolution.toString())
@@ -92,7 +92,7 @@ class TitleParserTest : PatternBasedTitleParserTestSuite() {
 
     @Test
     fun `S1-S2`() {
-        val r = parse("[H-Enc] 我心里危险的东西 / Boku no Kokoro no Yabai Yatsu S1-S2 (BDRip 1080p HEVC AAC)\n")
+        val r = parse("[H-Enc] 我心裏危險的東西 / Boku no Kokoro no Yabai Yatsu S1-S2 (BDRip 1080p HEVC AAC)\n")
         assertEquals("S1+S2", r.episodeRange.toString())
         assertEquals("", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
         assertEquals("1080P", r.resolution.toString())
@@ -100,7 +100,7 @@ class TitleParserTest : PatternBasedTitleParserTestSuite() {
 
     @Test
     fun `S1-S3`() {
-        val r = parse("[H-Enc] 我心里危险的东西 / Boku no Kokoro no Yabai Yatsu S1-S3 (BDRip 1080p HEVC AAC)\n")
+        val r = parse("[H-Enc] 我心裏危險的東西 / Boku no Kokoro no Yabai Yatsu S1-S3 (BDRip 1080p HEVC AAC)\n")
         assertEquals("S1+S2+S3", r.episodeRange.toString())
         assertEquals("", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
         assertEquals("1080P", r.resolution.toString())

@@ -63,7 +63,7 @@ data class EpisodeListUiState(
 @TestOnly
 val TestEpisodeListUiState
     get() = EpisodeListUiState(
-        subjectTitle = "测试标题",
+        subjectTitle = "測試標題",
         mainEpisodes = TestEpisodeListItems,
         otherEpisodes = TestEpisodeListItems.take(2)
             .map { it.copy(sort = EpisodeSort(BigNum(it.sort.number!!), EpisodeType.SP)) },
@@ -72,7 +72,7 @@ val TestEpisodeListUiState
 @TestOnly
 val TestEpisodeListUiStateVeryLong
     get() = EpisodeListUiState(
-        subjectTitle = "测试标题",
+        subjectTitle = "測試標題",
         mainEpisodes = buildList {
             repeat(100) {
                 add(createTestEpisodeListItem(EpisodeSort(it + 1)))

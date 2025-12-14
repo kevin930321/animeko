@@ -89,7 +89,7 @@ internal fun WelcomeScene(
                     ProvideTextStyle(MaterialTheme.typography.bodyLarge) {
                         Row(Modifier.padding(top = 8.dp).align(Alignment.Start)) {
                             Text(
-                                """一站式線上彈幕追番平台 (簡稱 Ani)""",
+                                """一站式線上彈幕追番平臺 (簡稱 Ani)""",
                                 color = MaterialTheme.colorScheme.primary,
                             )
                         }
@@ -100,7 +100,7 @@ internal fun WelcomeScene(
                         verticalArrangement = Arrangement.spacedBy(12.dp),
                     ) {
                         ProvideTextStyle(MaterialTheme.typography.bodyMedium) {
-                            Text("""Ani 目前由愛好者組成的組織 OpenAni 和社群貢獻者維護，完全免費，在 GitHub 上開源。""")
+                            Text("""Ani 目前由愛好者組成的組織 OpenAni 和社羣貢獻者維護，完全免費，在 GitHub 上開源。""")
 
                             Text("""Ani 的目標是提供盡可能簡單且舒適的追番體驗。""")
                         }

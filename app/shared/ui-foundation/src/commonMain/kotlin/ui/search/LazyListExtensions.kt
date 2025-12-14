@@ -64,7 +64,7 @@ fun <T : Any> LazyListScope.noMoreItemsItem(
                     contentAlignment = Alignment.Center,
                 ) {
                     Text(
-                        "没有更多了",
+                        "沒有更多了",
                         color = MaterialTheme.colorScheme.onSurfaceVariant,
                         style = MaterialTheme.typography.bodySmall,
                     )

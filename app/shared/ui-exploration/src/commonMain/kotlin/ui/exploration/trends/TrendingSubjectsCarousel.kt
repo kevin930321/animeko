@@ -146,25 +146,25 @@ val TestTrendingSubjectInfos
         TrendingSubjectInfo(
             bangumiId = 467461,
             name = "ダンダダン",
-            nameCn = "胆大党",
+            nameCn = "膽大黨",
             imageLarge = "https://lain.bgm.tv/pic/cover/l/44/7d/467461_HHw4K.jpg",
         ),
         TrendingSubjectInfo(
             bangumiId = 425998,
             name = "Re:ゼロから始める異世界生活 3rd season",
-            nameCn = "Re：从零开始的异世界生活 第三季 袭击篇",
+            nameCn = "Re：從零開始的異世界生活 第三季 襲擊篇",
             imageLarge = "https://lain.bgm.tv/pic/cover/l/26/d6/425998_dnzr8.jpg",
         ),
         TrendingSubjectInfo(
             bangumiId = 389156,
             name = "チ。 ―地球の運動について―",
-            nameCn = "地。 ―关于地球的运动―",
+            nameCn = "地。 ―關於地球的運動―",
             imageLarge = "https://lain.bgm.tv/pic/cover/l/5f/84/389156_J4gqQ.jpg",
         ),
         TrendingSubjectInfo(
             bangumiId = 464376,
             name = "負けヒロインが多すぎる！",
-            nameCn = "败犬女主太多了！",
+            nameCn = "敗犬女主太多了！",
             imageLarge = "https://lain.bgm.tv/pic/cover/l/e4/dc/464376_NsZRw.jpg",
         ),
     )

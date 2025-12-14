@@ -99,7 +99,7 @@ import org.jetbrains.compose.ui.tooling.preview.PreviewLightDark
 
 private inline val WINDOW_VERTICAL_PADDING get() = 8.dp
 
-// For search: "数据源"
+// For search: "數據源"
 /**
  * 通用的数据源选择器. See preview
  */
@@ -248,7 +248,7 @@ private fun ViewKindAndMoreRow(
             }
 //            DropdownMenu(showDropdown, { showDropdown = false }) {
 //                DropdownMenuItem(
-//                    text = { Text("编辑查询请求") },
+//                    text = { Text("編輯查詢請求") },
 //                    onClick = {
 //                        showEditRequest = true
 //                        showDropdown = false

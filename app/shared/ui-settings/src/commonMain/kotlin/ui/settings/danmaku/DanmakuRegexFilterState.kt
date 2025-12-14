@@ -25,13 +25,13 @@ fun createTestDanmakuRegexFilterState(): DanmakuRegexFilterState {
         listOf(
             DanmakuRegexFilter(
                 id = Uuid.randomString(),
-                name = "测试",
-                regex = "测试",
+                name = "測試",
+                regex = "測試",
             ),
             DanmakuRegexFilter(
                 id = Uuid.randomString(),
-                name = "测试2",
-                regex = "测试2",
+                name = "測試2",
+                regex = "測試2",
             ),
         ),
     )

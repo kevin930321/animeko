@@ -78,7 +78,7 @@ sealed interface Media {
      *
      * 在 [MediaSource.fetch] 时, 如果自定义的数据源查询到的资源没有确定的剧集信息, 可以考虑猜测该资源的剧集为 [MediaFetchRequest.episodeSort].
      *
-     * 如果剧集为单集 [EpisodeRange.single], 且类型 [kind] 为 [MediaSourceKind.BitTorrent], 则很有可能会因为默认启用的"完结番隐藏单集资源"功能而被过滤掉.
+     * 如果剧集为单集 [EpisodeRange.single], 且类型 [kind] 为 [MediaSourceKind.BitTorrent], 则很有可能会因为默认启用的"完結番隱藏單集資源"功能而被过滤掉.
      * 在 UI 中不会显示. 设计上, 这是为了让用户看到的资源更加整洁. 如果你期望一直显示资源, 考虑将 [kind] 改为 [MediaSourceKind.WEB], 或是在 GitHub 讨论更改这个过滤行为.
      */
     val episodeRange: EpisodeRange?
@@ -231,7 +231,7 @@ data class MediaProperties @SerializationOnly constructor(
      * ## APP 行为细节
      *
      * 建议的值: "CHS", "CHT", "JPY", "ENG".
-     * 这些值能保证在 APP UI 中显示为 "简体中文" 等本地化名称.
+     * 这些值能保证在 APP UI 中显示为 "簡體中文" 等本地化名称.
      *
      * 为空字符串表示没有任何字幕. 但这很有可能会导致被数据源选择器忽略掉. 因为默认偏好设置是忽略无字幕的资源 (可在 APP 设置中关闭)
      *
@@ -253,14 +253,14 @@ data class MediaProperties @SerializationOnly constructor(
      */
     val resolution: String,
     /**
-     * 字幕组名称, 例如 "桜都字幕组", "北宇治字幕组".
+     * 字幕组名称, 例如 "桜都字幕組", "北宇治字幕組".
      * 空字符串可能导致数据源选择器忽略掉这个资源.
      *
      * 对于在线数据源, 这会是线路名称.
      *
      * 对于无法确定字幕组的数据源, 可以使用数据源的 [MediaSource.mediaSourceId] 代替.
      *
-     * 该属性建议比较稳定. 例如对于桜都字幕组资源, 总是返回 "桜都字幕组", 而不要返回相似的 "樱都字幕组", "桜都字幕组2" 等内容.
+     * 该属性建议比较稳定. 例如对于桜都字幕组资源, 总是返回 "桜都字幕組", 而不要返回相似的 "櫻都字幕組", "桜都字幕組2" 等内容.
      * 因为当用户选择字幕组后, 该偏好会保存, 并在下次选择时自动使用. 如果字幕组名称不稳定, 将无法选择正确的偏好资源.
      */
     val alliance: String,
@@ -322,7 +322,7 @@ enum class SubtitleKind {
     EMBEDDED,
 
     /**
-     * "内封字幕"是指嵌入在视频文件中的字幕，可以通过播放器的设置来显示或隐藏。这类字幕通常存在于视频文件的字幕轨道中，因此用户可以选择是否显示这些字幕。
+     * "內封字幕"是指嵌入在视频文件中的字幕，可以通过播放器的设置来显示或隐藏。这类字幕通常存在于视频文件的字幕轨道中，因此用户可以选择是否显示这些字幕。
      */
     CLOSED,
 

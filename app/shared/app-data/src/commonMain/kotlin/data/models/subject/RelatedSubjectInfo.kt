@@ -32,12 +32,12 @@ class RelatedSubjectInfo(
 
 enum class SubjectRelation {
     /**
-     * 对应 Bangumi "续集", 包括第二季, 外传
+     * 对应 Bangumi "續集", 包括第二季, 外传
      */
     SEQUEL,
 
     /**
-     * 对应 Bangumi "前传"
+     * 对应 Bangumi "前傳"
      */
     PREQUEL,
 

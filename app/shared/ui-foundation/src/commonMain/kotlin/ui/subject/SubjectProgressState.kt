@@ -56,7 +56,7 @@ class SubjectProgressState(
                 val date = s.airDate.toLocalDateOrNull()
                 if (date != null) {
                     val week = weekFormatter.format(date)
-                    "${week}开播"
+                    "${week}開播"
                 } else {
                     "尚未開播"
                 }

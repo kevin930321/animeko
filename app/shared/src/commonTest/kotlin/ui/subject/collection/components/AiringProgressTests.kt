@@ -98,156 +98,156 @@ class AiringProgressTests {
         val watched1 = ContinueWatchingStatus.Watched(EpisodeSort(1), EpisodeSort(1), Invalid)
         val done = Done
 
-        add("未开播, 没有时间") {
+        add("未開播, 沒有時間") {
             create(UPCOMING, null, ep = NotOnAir(Invalid)).run {
-                assertEquals("未开播 · 预定全 12 话", airingLabel)
+                assertEquals("未開播 · 預定全 12 話", airingLabel)
                 assertEquals(false, highlightProgress)
-                assertEquals("还未开播", buttonText)
+                assertEquals("還未開播", buttonText)
                 assertEquals(false, buttonIsPrimary)
             }
         }
-        add("未开播但是有最新剧集 (bgm 条目数据问题)") {
+        add("未開播但是有最新劇集 (bgm 條目數據問題)") {
             create(UPCOMING, 1, ep = NotOnAir(Invalid)).run {
-                assertEquals("未开播 · 预定全 12 话", airingLabel)
+                assertEquals("未開播 · 預定全 12 話", airingLabel)
                 assertEquals(false, highlightProgress)
-                assertEquals("还未开播", buttonText)
+                assertEquals("還未開播", buttonText)
                 assertEquals(false, buttonIsPrimary)
             }
         }
-        add("未开播, 有开播时间") {
+        add("未開播, 有開播時間") {
             create(UPCOMING, null, ep = NotOnAir(aug24)).run {
-                assertEquals("未开播 · 预定全 12 话", airingLabel)
+                assertEquals("未開播 · 預定全 12 話", airingLabel)
                 assertEquals(false, highlightProgress)
-                assertEquals("明天开播", buttonText)
+                assertEquals("明天開播", buttonText)
                 assertEquals(false, buttonIsPrimary)
             }
         }
-        add("未开播, 有开播时间 (下个月)") {
+        add("未開播, 有開播時間 (下個月)") {
             create(UPCOMING, null, ep = NotOnAir(sep30)).run {
-                assertEquals("未开播 · 预定全 12 话", airingLabel)
+                assertEquals("未開播 · 預定全 12 話", airingLabel)
                 assertEquals(false, highlightProgress)
-                assertEquals("9 月 30 日开播", buttonText)
+                assertEquals("9 月 30 日開播", buttonText)
                 assertEquals(false, buttonIsPrimary)
             }
         }
-        add("未开播, 看过第一集 (偷跑)") {
+        add("未開播, 看過第一集 (偷跑)") {
             create(UPCOMING, null, ep = watched1).run {
-                assertEquals("未开播 · 预定全 12 话", airingLabel)
+                assertEquals("未開播 · 預定全 12 話", airingLabel)
                 assertEquals(false, highlightProgress)
-                assertEquals("看过 01", buttonText)
+                assertEquals("看過 01", buttonText)
                 assertEquals(false, buttonIsPrimary)
             }
         }
-        add("未开播, 看完了") {
+        add("未開播, 看完了") {
             create(UPCOMING, null, ep = done).run {
-                assertEquals("未开播 · 预定全 12 话", airingLabel)
+                assertEquals("未開播 · 預定全 12 話", airingLabel)
                 assertEquals(false, highlightProgress)
                 assertEquals("已看完", buttonText)
                 assertEquals(false, buttonIsPrimary)
             }
         }
 
-        add("连载中, 还没开始看") {
+        add("連載中, 還沒開始看") {
             create(ON_AIR, null, ep = Start).run {
-                assertEquals("连载中 · 预定全 12 话", airingLabel)
+                assertEquals("連載中 · 預定全 12 話", airingLabel)
                 assertEquals(false, highlightProgress)
-                assertEquals("开始观看", buttonText)
+                assertEquals("開始觀看", buttonText)
                 assertEquals(true, buttonIsPrimary)
             }
         }
-        add("连载中, 剧集列表还未知, 看完了") {
+        add("連載中, 劇集列表還未知, 看完了") {
             create(ON_AIR, null, ep = Done).run {
-                assertEquals("已看完 · 预定全 12 话", airingLabel)
+                assertEquals("已看完 · 預定全 12 話", airingLabel)
                 assertEquals(false, highlightProgress)
                 assertEquals("已看完", buttonText)
                 assertEquals(false, buttonIsPrimary)
             }
         }
-        add("连载到 2, 看完了") {
+        add("連載到 2, 看完了") {
             create(ON_AIR, 2, ep = Done).run {
-                assertEquals("已看完 · 预定全 12 话", airingLabel)
+                assertEquals("已看完 · 預定全 12 話", airingLabel)
                 assertEquals(false, highlightProgress)
                 assertEquals("已看完", buttonText)
                 assertEquals(false, buttonIsPrimary)
             }
         }
-        add("连载到 1, 看过 2, 没有 3 的开播时间") {
+        add("連載到 1, 看過 2, 沒有 3 的開播時間") {
             create(ON_AIR, 1, ep = watched2).run {
-                assertEquals("看过 02 · 预定全 12 话", airingLabel)
+                assertEquals("看過 02 · 預定全 12 話", airingLabel)
                 assertEquals(false, highlightProgress)
-                assertEquals("看过 02", buttonText)
+                assertEquals("看過 02", buttonText)
                 assertEquals(false, buttonIsPrimary)
             }
         }
-        add("连载到 1, 看过 2, 有 3 的开播时间") {
+        add("連載到 1, 看過 2, 有 3 的開播時間") {
             create(ON_AIR, 1, ep = ContinueWatchingStatus.Watched(EpisodeSort(2), EpisodeSort(2), aug24)).run {
-                assertEquals("看过 02 · 预定全 12 话", airingLabel)
+                assertEquals("看過 02 · 預定全 12 話", airingLabel)
                 assertEquals(false, highlightProgress)
                 assertEquals("明天更新", buttonText)
                 assertEquals(false, buttonIsPrimary)
             }
         }
-        add("连载到 2, 看过 1, 没有下集的开播时间") {
+        add("連載到 2, 看過 1, 沒有下集的開播時間") {
             create(
                 ON_AIR, 2,
                 ep = ContinueWatchingStatus.Watched(EpisodeSort(1), EpisodeSort(1), Invalid),
             ).run {
-                assertEquals("看过 01 · 预定全 12 话", airingLabel)
+                assertEquals("看過 01 · 預定全 12 話", airingLabel)
                 assertEquals(false, highlightProgress)
-                assertEquals("看过 01", buttonText)
+                assertEquals("看過 01", buttonText)
                 assertEquals(false, buttonIsPrimary)
             }
         }
-        add("连载到 2, 看过 1, 有下集开播时间") {
+        add("連載到 2, 看過 1, 有下集開播時間") {
             create(
                 ON_AIR, 2,
                 ep = ContinueWatchingStatus.Watched(EpisodeSort(1), EpisodeSort(1), aug24),
             ).run {
-                assertEquals("看过 01 · 预定全 12 话", airingLabel)
+                assertEquals("看過 01 · 預定全 12 話", airingLabel)
                 assertEquals(false, highlightProgress)
                 assertEquals("明天更新", buttonText)
                 assertEquals(false, buttonIsPrimary)
             }
         }
-        add("连载到 2, 看过 1, 可以看 2") {
+        add("連載到 2, 看過 1, 可以看 2") {
             create(
                 ON_AIR, 2,
                 ep = ContinueWatchingStatus.Continue(EpisodeSort(2), EpisodeSort(2), EpisodeSort(1), EpisodeSort(1)),
             ).run {
-                assertEquals("连载至 02 · 预定全 12 话", airingLabel)
+                assertEquals("連載至 02 · 預定全 12 話", airingLabel)
                 assertEquals(true, highlightProgress)
-                assertEquals("继续观看 02", buttonText)
+                assertEquals("繼續觀看 02", buttonText)
                 assertEquals(true, buttonIsPrimary)
             }
         }
-        add("连载到 2, 看过 2, 没有下集开播时间") {
+        add("連載到 2, 看過 2, 沒有下集開播時間") {
             create(ON_AIR, 2, ep = watched2).run {
-                assertEquals("看过 02 · 预定全 12 话", airingLabel)
+                assertEquals("看過 02 · 預定全 12 話", airingLabel)
                 assertEquals(false, highlightProgress)
-                assertEquals("看过 02", buttonText)
+                assertEquals("看過 02", buttonText)
                 assertEquals(false, buttonIsPrimary)
             }
         }
-        add("连载到 2, 看过 2, 有下集开播时间") {
+        add("連載到 2, 看過 2, 有下集開播時間") {
             create(
                 ON_AIR, 2,
                 ep = ContinueWatchingStatus.Watched(EpisodeSort(2), EpisodeSort(2), aug24),
             ).run {
-                assertEquals("看过 02 · 预定全 12 话", airingLabel)
+                assertEquals("看過 02 · 預定全 12 話", airingLabel)
                 assertEquals(false, highlightProgress)
                 assertEquals("明天更新", buttonText)
                 assertEquals(false, buttonIsPrimary)
             }
         }
-        add("已完结, 没看过") {
+        add("已完結, 沒看過") {
             create(COMPLETED, 12, ep = Start).run {
-                assertEquals("已完结 · 全 12 话", airingLabel)
+                assertEquals("已完結 · 全 12 話", airingLabel)
                 assertEquals(false, highlightProgress)
-                assertEquals("开始观看", buttonText)
+                assertEquals("開始觀看", buttonText)
                 assertEquals(true, buttonIsPrimary)
             }
         }
-        add("已完结, 看了 1") {
+        add("已完結, 看了 1") {
             create(
                 COMPLETED, 12,
                 ep = ContinueWatchingStatus.Continue(
@@ -257,26 +257,26 @@ class AiringProgressTests {
                     EpisodeSort(1),
                 ),
             ).run {
-                assertEquals("看过 01 · 全 12 话", airingLabel)
+                assertEquals("看過 01 · 全 12 話", airingLabel)
                 assertEquals(false, highlightProgress)
-                assertEquals("继续观看 02", buttonText)
+                assertEquals("繼續觀看 02", buttonText)
                 assertEquals(true, buttonIsPrimary)
             }
         }
-        add("已完结, 看了 1, 没有下一集") {
-            // 注意, 只要是计算为了 ContinueWatchingStatus.Watched, 就只能显示 "看过"
+        add("已完結, 看了 1, 沒有下一集") {
+            // 注意, 只要是计算为了 ContinueWatchingStatus.Watched, 就只能显示 "看過"
             // 不过如果总过有 12 集, 这种情况下 ContinueWatchingStatus 不会是 Watched.
             // 这个 case 只是为了更稳健
             create(COMPLETED, 12, ep = watched1).run {
-                assertEquals("看过 01 · 全 12 话", airingLabel)
+                assertEquals("看過 01 · 全 12 話", airingLabel)
                 assertEquals(false, highlightProgress)
-                assertEquals("看过 01", buttonText)
+                assertEquals("看過 01", buttonText)
                 assertEquals(false, buttonIsPrimary)
             }
         }
-        add("已完结, 看完了") {
+        add("已完結, 看完了") {
             create(COMPLETED, 12, ep = done).run {
-                assertEquals("已看完 · 全 12 话", airingLabel)
+                assertEquals("已看完 · 全 12 話", airingLabel)
                 assertEquals(false, highlightProgress)
                 assertEquals("已看完", buttonText)
                 assertEquals(false, buttonIsPrimary)
@@ -285,23 +285,23 @@ class AiringProgressTests {
 
 
         // “看过 xx，全 xx 话” 同时显示 ep 和 sort #1047
-        add("同时显示 ep 和 sort: 连载到 2, 看过 2, 没有下集开播时间") {
+        add("同時顯示 ep 和 sort: 連載到 2, 看過 2, 沒有下集開播時間") {
             create(ON_AIR, 23, ep = watched22).run {
-                assertEquals("看过 10 (22) · 预定全 12 话", airingLabel)
+                assertEquals("看過 10 (22) · 預定全 12 話", airingLabel)
                 assertEquals(false, highlightProgress)
-                assertEquals("看过 10 (22)", buttonText)
+                assertEquals("看過 10 (22)", buttonText)
                 assertEquals(false, buttonIsPrimary)
             }
         }
-        add("同时显示 ep 和 sort: 看过 22, 全 12 话") {
+        add("同時顯示 ep 和 sort: 看過 22, 全 12 話") {
             create(COMPLETED, 23, ep = watched22).run {
-                assertEquals("看过 10 (22) · 全 12 话", airingLabel)
+                assertEquals("看過 10 (22) · 全 12 話", airingLabel)
                 assertEquals(false, highlightProgress)
-                assertEquals("看过 10 (22)", buttonText)
+                assertEquals("看過 10 (22)", buttonText)
                 assertEquals(false, buttonIsPrimary)
             }
         }
-        add("同时显示 ep 和 sort: 连载到 23, 看过 22, 可以看 23") {
+        add("同時顯示 ep 和 sort: 連載到 23, 看過 22, 可以看 23") {
             create(
                 ON_AIR, 23,
                 ep = ContinueWatchingStatus.Continue(
@@ -311,9 +311,9 @@ class AiringProgressTests {
                     watchedEpisodeSort = EpisodeSort(22),
                 ),
             ).run {
-                assertEquals("连载至 11 (23) · 预定全 12 话", airingLabel)
+                assertEquals("連載至 11 (23) · 預定全 12 話", airingLabel)
                 assertEquals(true, highlightProgress)
-                assertEquals("继续观看 11 (23)", buttonText)
+                assertEquals("繼續觀看 11 (23)", buttonText)
                 assertEquals(true, buttonIsPrimary)
             }
         }

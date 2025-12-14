@@ -45,7 +45,7 @@ sealed class SelectorChannelFormat<in Config : SelectorFormatConfig>(override va
         }
 
         @Language("regexp")
-        const val DEFAULT_MATCH_EPISODE_SORT_FROM_NAME = """第\s*(?<ep>.+)\s*[话集]"""
+        const val DEFAULT_MATCH_EPISODE_SORT_FROM_NAME = """第\s*(?<ep>.+)\s*[話集]"""
 
         private fun isPossiblyMovie(title: String): Boolean {
             // https://github.com/open-ani/animeko/pull/1171#issuecomment-2466115293

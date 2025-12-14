@@ -201,7 +201,7 @@ class SubjectSearchRepository(
 //            }
 //
 //            /*
-//              (findInfoboxValue("播放结束") ?: findInfoboxValue("放送结束"))
+//              (findInfoboxValue("播放結束") ?: findInfoboxValue("放送結束"))
 //                ?.let {
 //                    PackedDate.parseFromDate(
 //                        it.replace('年', '-')
