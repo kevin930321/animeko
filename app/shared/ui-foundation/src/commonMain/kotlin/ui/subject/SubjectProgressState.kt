@@ -50,7 +50,7 @@ class SubjectProgressState(
 
     val buttonText by derivedStateOf {
         when (val s = continueWatchingStatus) {
-            is ContinueWatchingStatus.Continue -> "继续观看 ${renderEpAndSort(s.episodeEp, s.episodeSort)}"
+            is ContinueWatchingStatus.Continue -> "繼續觀看 ${renderEpAndSort(s.episodeEp, s.episodeSort)}"
             ContinueWatchingStatus.Done -> "已看完"
             is ContinueWatchingStatus.NotOnAir -> {
                 val date = s.airDate.toLocalDateOrNull()
@@ -58,18 +58,18 @@ class SubjectProgressState(
                     val week = weekFormatter.format(date)
                     "${week}开播"
                 } else {
-                    "还未开播"
+                    "尚未開播"
                 }
             }
 
-            ContinueWatchingStatus.Start -> "开始观看"
+            ContinueWatchingStatus.Start -> "開始觀看"
             is ContinueWatchingStatus.Watched -> {
                 val date = s.nextEpisodeAirDate.toLocalDateOrNull()
                 if (date != null) {
                     val week = weekFormatter.format(date)
                     "${week}更新"
                 } else {
-                    "看过 ${renderEpAndSort(s.episodeEp, s.episodeSort)}"
+                    "看過 ${renderEpAndSort(s.episodeEp, s.episodeSort)}"
                 }
             }
 
