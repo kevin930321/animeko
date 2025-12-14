@@ -62,7 +62,7 @@ fun RssTestPane(
     ) {
         val connectedScrollState = rememberConnectedScrollState()
         Column(Modifier.connectedScroll(connectedScrollState)) {
-            Text("测试数据源", style = MaterialTheme.typography.headlineSmall)
+            Text("測試資料源", style = MaterialTheme.typography.headlineSmall)
 
             EditTestDataCard(
                 state,
@@ -72,7 +72,7 @@ fun RssTestPane(
             )
 
             RefreshIndicatedHeadlineRow(
-                headline = { Text("查询结果") },
+                headline = { Text("查詢結果") },
                 onRefresh = { state.searcher.restartCurrentSearch() },
                 result = searchResult,
                 Modifier.padding(top = 20.dp),
@@ -108,9 +108,9 @@ fun RssTestPane(
                 ) {
                     Text(
                         when (tab) {
-                            RssTestPaneTab.Overview -> "总览"
-                            RssTestPaneTab.RssInfo -> "RSS 信息"
-                            RssTestPaneTab.FinalResult -> "最终结果"
+                            RssTestPaneTab.Overview -> "總覽"
+                            RssTestPaneTab.RssInfo -> "RSS 資訊"
+                            RssTestPaneTab.FinalResult -> "最終結果"
                         },
                         maxLines = 1,
                     )
@@ -195,7 +195,7 @@ private fun EditTestDataCard(
                     value = state.pageString,
                     onValueChange = { state.pageString = it.trim() },
                     Modifier.weight(1f),
-                    label = { Text("页码") },
+                    label = { Text("頁碼") },
                     singleLine = true,
                     keyboardOptions = KeyboardOptions.Default.copy(
                         keyboardType = KeyboardType.Number,
