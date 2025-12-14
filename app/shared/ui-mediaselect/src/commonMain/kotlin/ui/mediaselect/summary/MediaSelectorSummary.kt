@@ -141,7 +141,7 @@ fun MediaSelectorSummaryCard(
                     when (state) {
                         is MediaSelectorSummary.AutoSelecting -> {
                             ListItem(
-                                headlineContent = { Text("正在自动选择数据源") },
+                                headlineContent = { Text("正在自動選擇資料源") },
                                 commonModifiers,
                                 leadingContent = {
                                     LoadingIndicator(
@@ -154,7 +154,7 @@ fun MediaSelectorSummaryCard(
 
                         is MediaSelectorSummary.RequiresManualSelection -> {
                             ListItem(
-                                headlineContent = { Text("请选择数据源") },
+                                headlineContent = { Text("請選擇資料源") },
                                 commonModifiers,
                                 colors = listItemColors,
                             )
@@ -164,7 +164,7 @@ fun MediaSelectorSummaryCard(
                             ListItem(
                                 headlineContent = { Text(state.source.sourceName, softWrap = true, maxLines = 2) },
                                 commonModifiers,
-                                overlineContent = { Text("数据源") },
+                                overlineContent = { Text("資料源") },
                                 leadingContent = {
                                     SourceIcon(
                                         state.source,
