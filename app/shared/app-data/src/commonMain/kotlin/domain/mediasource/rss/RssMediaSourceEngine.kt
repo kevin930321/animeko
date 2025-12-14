@@ -208,7 +208,7 @@ class DefaultRssMediaSourceEngine(
                     )
                 }
                 if (e.response.status == HttpStatusCode.BadRequest) {
-                    // io.ktor.client.plugins.ClientRequestException: Client request(GET https://garden.breadio.wiki/feed.xml?filter=[{"type":"动画","search":["Bocchi%20the%20%22Guitar%20Hero%22%20Rock%20Story"]}]) invalid: 400 . Text: "{"status":400,"detail":{"url":"https://garden.breadio.wiki/feed.xml?filter=[{%22type%22:%22%E5%8A%A8%E7%94%BB%22,%22search%22:[%22Bocchi%20the%20%22Guitar%20Hero%22%20Rock%20Story%22]}]","filter":"[{\"type\":\"动画\",\"search\":[\"Bocchi the \"Guitar Hero\" Rock Story\"]}]","message":"Expected ',' or ']' after array element in JSON at position 37"}}"
+                    // io.ktor.client.plugins.ClientRequestException: Client request(GET https://garden.breadio.wiki/feed.xml?filter=[{"type":"動畫","search":["Bocchi%20the%20%22Guitar%20Hero%22%20Rock%20Story"]}]) invalid: 400 . Text: "{"status":400,"detail":{"url":"https://garden.breadio.wiki/feed.xml?filter=[{%22type%22:%22%E5%8A%A8%E7%94%BB%22,%22search%22:[%22Bocchi%20the%20%22Guitar%20Hero%22%20Rock%20Story%22]}]","filter":"[{\"type\":\"動畫\",\"search\":[\"Bocchi the \"Guitar Hero\" Rock Story\"]}]","message":"Expected ',' or ']' after array element in JSON at position 37"}}"
                     return Result(
                         finalUrl,
                         query,

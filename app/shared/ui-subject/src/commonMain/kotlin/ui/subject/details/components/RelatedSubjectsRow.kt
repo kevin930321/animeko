@@ -145,8 +145,8 @@ private fun RelatedSubjectItem(
                             Box(Modifier.padding(horizontal = 12.dp, vertical = 8.dp)) {
                                 Text(
                                     when (it) {
-                                        SubjectRelation.PREQUEL -> "前传"
-                                        SubjectRelation.SEQUEL -> "续集"
+                                        SubjectRelation.PREQUEL -> "前傳"
+                                        SubjectRelation.SEQUEL -> "續集"
                                         SubjectRelation.DERIVED -> "衍生"
                                         SubjectRelation.SPECIAL -> "番外篇"
                                     },

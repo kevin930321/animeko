@@ -18,32 +18,32 @@ import kotlin.test.assertEquals
 class EpisodeWithAiringTimeDefaultsTest {
     @Test
     fun `renderEpisodeDisplay sort only`() {
-        assertEquals("第 1 话", renderEpisodeDisplay(EpisodeSort(1), null, null))
+        assertEquals("第 1 話", renderEpisodeDisplay(EpisodeSort(1), null, null))
     }
 
     @Test
     fun `renderEpisodeDisplay sort with name`() {
-        assertEquals("第 1 话  Foo", renderEpisodeDisplay(EpisodeSort(1), null, "Foo"))
+        assertEquals("第 1 話  Foo", renderEpisodeDisplay(EpisodeSort(1), null, "Foo"))
     }
 
     @Test
     fun `renderEpisodeDisplay sort equal ep`() {
-        assertEquals("第 1 话", renderEpisodeDisplay(EpisodeSort(1), EpisodeSort(1), null))
+        assertEquals("第 1 話", renderEpisodeDisplay(EpisodeSort(1), EpisodeSort(1), null))
     }
 
     @Test
     fun `renderEpisodeDisplay sort equal ep with name`() {
-        assertEquals("第 1 话  Foo", renderEpisodeDisplay(EpisodeSort(1), EpisodeSort(1), "Foo"))
+        assertEquals("第 1 話  Foo", renderEpisodeDisplay(EpisodeSort(1), EpisodeSort(1), "Foo"))
     }
 
     @Test
     fun `renderEpisodeDisplay sort does not equal ep`() {
-        assertEquals("第 1 (12) 话", renderEpisodeDisplay(EpisodeSort(12), EpisodeSort(1), null))
+        assertEquals("第 1 (12) 話", renderEpisodeDisplay(EpisodeSort(12), EpisodeSort(1), null))
     }
 
     @Test
     fun `renderEpisodeDisplay sort does not equal ep with name`() {
-        assertEquals("第 1 (12) 话  Foo", renderEpisodeDisplay(EpisodeSort(12), EpisodeSort(1), "Foo"))
+        assertEquals("第 1 (12) 話  Foo", renderEpisodeDisplay(EpisodeSort(12), EpisodeSort(1), "Foo"))
     }
 
     @Test
@@ -61,10 +61,10 @@ class EpisodeWithAiringTimeDefaultsTest {
     @Test
     fun `renderEpisodeDisplay unknown sort`() {
         assertEquals(
-            "剧场版  Foo",
+            "劇場版  Foo",
             renderEpisodeDisplay(
-                EpisodeSort("剧场版"),
-                EpisodeSort("剧场版"),
+                EpisodeSort("劇場版"),
+                EpisodeSort("劇場版"),
                 "Foo",
             ),
         )

@@ -126,9 +126,9 @@ fun createTestMediaStats(): MediaStats = MediaStats.Unspecified
 @TestOnly
 val TestCacheEpisodes
     get() = listOf(
-        createTestCacheEpisode(1, "翻转孤独", 1),
-        createTestCacheEpisode(2, "明天见", 1),
-        createTestCacheEpisode(3, "火速增员", 1),
+        createTestCacheEpisode(1, "翻轉孤獨", 1),
+        createTestCacheEpisode(2, "明天見", 1),
+        createTestCacheEpisode(3, "火速增員", 1),
     )
 
 @OptIn(DelicateCoroutinesApi::class)
@@ -136,7 +136,7 @@ val TestCacheEpisodes
 @TestOnly
 fun createTestCacheEpisode(
     sort: Int,
-    displayName: String = "第 $sort 话",
+    displayName: String = "第 $sort 話",
     subjectId: Int = 1,
     episodeId: Int = sort,
     initialState: CacheEpisodePaused = when (sort % 2) {

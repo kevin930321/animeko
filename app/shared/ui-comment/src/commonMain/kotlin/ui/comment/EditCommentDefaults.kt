@@ -99,7 +99,7 @@ object EditCommentDefaults {
 
     @Composable
     fun CommentTextFieldPlaceholder(modifier: Modifier = Modifier) {
-        Text(text = "发送评论", modifier, softWrap = false)
+        Text(text = "發送評論", modifier, softWrap = false)
     }
 
     @Composable
@@ -319,21 +319,21 @@ object EditCommentDefaults {
                     )
                     ActionButton(
                         imageVector = Icons.Outlined.FormatItalic,
-                        contentDescription = "斜体",
+                        contentDescription = "斜體",
                         onClick = onClickItalic,
                         modifier = Modifier.size(height = size, width = expandableActionWidth),
                         enabled = actionEnabled,
                     )
                     ActionButton(
                         imageVector = Icons.Outlined.FormatUnderlined,
-                        contentDescription = "下划线",
+                        contentDescription = "下劃線",
                         onClick = onClickUnderlined,
                         modifier = Modifier.size(height = size, width = expandableActionWidth),
                         enabled = actionEnabled,
                     )
                     ActionButton(
                         imageVector = Icons.Outlined.FormatStrikethrough,
-                        contentDescription = "删除线",
+                        contentDescription = "刪除線",
                         onClick = onClickStrikethrough,
                         modifier = Modifier.size(height = size, width = expandableActionWidth),
                         enabled = actionEnabled,
@@ -348,7 +348,7 @@ object EditCommentDefaults {
                 )
                 ActionButton(
                     imageVector = Icons.Outlined.Image,
-                    contentDescription = "图片",
+                    contentDescription = "圖片",
                     onClick = onClickImage,
                     modifier = Modifier.size(size),
                     enabled = actionEnabled,
@@ -356,7 +356,7 @@ object EditCommentDefaults {
                 if (actionRowExpanded) {
                     ActionButton(
                         imageVector = Icons.Outlined.Link,
-                        contentDescription = "链接",
+                        contentDescription = "鏈接",
                         onClick = onClickUrl,
                         modifier = Modifier.size(height = size, width = expandableActionWidth),
                         enabled = actionEnabled,
@@ -365,7 +365,7 @@ object EditCommentDefaults {
                 // 最后一个按钮不要有 ripple effect，因为有动画，看起来比较奇怪
                 ActionButton(
                     imageVector = Icons.Outlined.MoreHoriz,
-                    contentDescription = "更多评论编辑功能",
+                    contentDescription = "更多評論編輯功能",
                     enabled = true,
                     onClick = { actionRowExpanded = true },
                     modifier = Modifier.size(height = size, width = size - expandableActionWidth),
@@ -377,7 +377,7 @@ object EditCommentDefaults {
                         onClick = onPreview,
                         modifier = Modifier.padding(end = 4.dp),
                     ) {
-                        Text(text = if (previewing) "编辑" else "预览")
+                        Text(text = if (previewing) "編輯" else "預覽")
                     }
                     OutlinedButton(
                         onClick = onSend,
@@ -390,7 +390,7 @@ object EditCommentDefaults {
                                     verticalAlignment = Alignment.CenterVertically,
                                     horizontalArrangement = Arrangement.spacedBy(8.dp),
                                 ) {
-                                    Text(text = "发送", textAlign = TextAlign.Center)
+                                    Text(text = "發送", textAlign = TextAlign.Center)
                                     Icon(
                                         imageVector = Icons.AutoMirrored.Rounded.Send,
                                         modifier = Modifier.size(24.dp),

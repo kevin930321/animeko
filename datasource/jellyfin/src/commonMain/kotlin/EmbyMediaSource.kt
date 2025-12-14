@@ -38,11 +38,11 @@ class EmbyMediaSource(
         val baseUrl = string(
             "baseUrl",
             defaultProvider = { "http://localhost:8096" },
-            description = "服务器地址\n示例: http://localhost:8096",
+            description = "服務器地址\n示例: http://localhost:8096",
         )
         val userId = string(
             "userId",
-            description = "User ID, 可在 Emby \"控制台 - 用户\" 中选择一个用户, 在浏览器地址栏找到 \"userId=\" 后面的内容\n示例: cc91f58d951648829c90115520f6adec",
+            description = "User ID, 可在 Emby \"控制台 - 用户\" 中選擇一個用戶, 在瀏覽器地址欄找到 \"userId=\" 後面的內容\n示例: cc91f58d951648829c90115520f6adec",
         )
         val apikey = string(
             "apikey",

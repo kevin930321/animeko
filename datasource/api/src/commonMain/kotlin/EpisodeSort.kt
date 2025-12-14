@@ -28,7 +28,7 @@ import me.him188.ani.utils.serialization.BigNum
 /**
  * 剧集序号, 例如 "01", "24.5", "OVA".
  *
- * - [Normal] 代表普通正片剧集, 例如 "01", "24.5". 注意, 只有整数和 ".5" 的浮点数会被解析为 Normal 类型.
+ * - [Normal] 代表普通正片剧集, 例如 "01", "24.5". 注意, 只有整數和 ".5" 的浮点数会被解析为 Normal 类型.
  * - [Special] 代表任何其他剧集, 统称为特殊剧集, 例如 "OVA", "SP".
  *
  *
@@ -46,7 +46,7 @@ sealed class EpisodeSort : Comparable<EpisodeSort> {
     abstract val number: Float?
 
     /**
-     * "1", "1.5", "SP". 对于小于 10 的序号, 前面没有 "0".
+     * "1", "1.5", "SP". 對於小於 10 的序號, 前面沒有 "0".
      *
      * @see toString
      */

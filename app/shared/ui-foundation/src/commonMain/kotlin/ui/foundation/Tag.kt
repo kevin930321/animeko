@@ -53,7 +53,7 @@ fun OutlinedTag(
     )
 }
 
-// 一个标签, 例如 "2023年10月", "漫画改"
+// 一个标签, 例如 "2023年10月", "漫畫改"
 @Composable
 fun Tag(
     modifier: Modifier = Modifier,

@@ -76,31 +76,31 @@ class StringMatcherTest {
         // 语法: 有错误的名字 matches 正确名称 at 匹配率 
 
         // 错了一个字
-        "哥特萝莉侦探事件薄" matches "哥特萝莉侦探事件簿" at 88
+        "哥特蘿莉偵探事件薄" matches "哥特蘿莉偵探事件簿" at 88
 
         // 这说明 <80% 可能会匹配到第二季
-        "哥特萝莉侦探事件簿" matches "哥特萝莉侦探事件簿第二季" at 75
+        "哥特蘿莉偵探事件簿" matches "哥特蘿莉偵探事件簿第二季" at 75
 
         // #780
-        "败犬女主太多了" matches "败犬女主太多啦" at 85
+        "敗犬女主太多了" matches "敗犬女主太多啦" at 85
 
         // 此方法无法识别这种区别
-        "别当欧尼酱了" matches "别当哥哥了" at 50
+        "別當歐尼醬了" matches "別當哥哥了" at 50
 
-        "地狱少女第一季" matches "地。 ―关于地球的运动―" at 8
-        "地狱少女第一季" matches "地。" at 14
+        "地獄少女第一季" matches "地。 ―關於地球的運動―" at 8
+        "地獄少女第一季" matches "地。" at 14
         val chiRemoved = removeSpecials(
-            "地。 ―关于地球的运动―",
+            "地。 ―關於地球的運動―",
             removeWhitespace = true,
             replaceNumbers = true,
         )
-        "地狱少女第一季" matches chiRemoved at 9
-        "地狱少女" matches "地。" at 25
+        "地獄少女第一季" matches chiRemoved at 9
+        "地獄少女" matches "地。" at 25
     }
 
     @Test
     fun `test GOSICK2`() {
-        val result = StringMatcher.calculateMatchRate("哥特萝莉侦探事件簿", "哥特萝莉侦探事件薄")
+        val result = StringMatcher.calculateMatchRate("哥特蘿莉偵探事件簿", "哥特蘿莉偵探事件薄")
         // distance is length of "kotlin", i.e., 6
         // maxLen = 6 => similarity = 1 - (6/6) = 0 => 0%
         assertEquals(88, result)

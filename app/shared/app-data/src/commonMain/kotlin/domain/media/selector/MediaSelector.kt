@@ -90,18 +90,18 @@ import kotlin.coroutines.CoroutineContext
  * suspend fun usageExample(mediaSelector: MediaSelector) {
  *     // 观察过滤后但包含排除原因的候选
  *     mediaSelector.filteredCandidates.collect { allCandidates ->
- *         println("所有候选资源(含排除原因): $allCandidates")
+ *         println("所有候選資源(含排除原因): $allCandidates")
  *     }
  *
  *     // 观察过滤后可用的字幕组选项
  *     mediaSelector.alliance.available.collect { alliances ->
- *         println("可选的字幕组列表: $alliances")
+ *         println("可選的字幕組列表: $alliances")
  *     }
  *
  *     // 如果尚未选择任何资源，尝试自动选择一个符合当前偏好的资源
  *     val autoSelected = mediaSelector.trySelectDefault()
  *     if (autoSelected != null) {
- *         println("已自动选择: ${autoSelected.mediaId}")
+ *         println("已自動選擇: ${autoSelected.mediaId}")
  *     }
  *
  *     // 用户在 UI 中手动指定某个资源
@@ -109,7 +109,7 @@ import kotlin.coroutines.CoroutineContext
  *     mediaSelector.select(userChosenMedia)
  *
  *     // 最终获取当前选中的资源
- *     println("当前选中的资源: ${mediaSelector.selected.value}")
+ *     println("當前選中的資源: ${mediaSelector.selected.value}")
  * }
  * ```
  *
@@ -258,7 +258,7 @@ interface MediaPreferenceItem<T : Any> {
     /**
      * [userSelected] 与 [defaultSelected] 合并考虑的选择. 不必是 [available] 里面的选项.
      */
-    val finalSelected: Flow<T?> // 注意, autoEnableLastSelected 依赖 "不必是 [available] 里面的选项" 这个性质.
+    val finalSelected: Flow<T?> // 注意, autoEnableLastSelected 依赖 "不必是 [available] 裏面的選項" 这个性质.
 
     /**
      * 用户选择

@@ -77,7 +77,7 @@ class SubjectPreviewItemInfo(
                     append(" · ")
                 }
                 airingInfo.computeTotalEpisodeText()?.let {
-                    append("全 $mainEpisodeCount 话")
+                    append("全 $mainEpisodeCount 話")
                     append(" · ")
                 }
 
@@ -106,7 +106,7 @@ class SubjectPreviewItemInfo(
                 if (persons.isEmpty()) return@let null
 
                 buildString {
-                    append("制作:  ")
+                    append("製作:  ")
                     persons.forEachIndexed { index, relatedPersonInfo ->
                         append(relatedPersonInfo.name)
                         if (index != persons.lastIndex) {
@@ -159,9 +159,9 @@ internal val TestSubjectPreviewItemInfos
         SubjectPreviewItemInfo(
             subjectId = 1,
             imageUrl = "https://example.com/image.jpg",
-            title = "关于我转生变成史莱姆这档事 第三季",
-            tags = "2024 年 10 月 · 全 24 话 · 奇幻 / 战斗",
-            staff = "制作:  8bit · 中山敦史 · 泽野弘之",
+            title = "關於我轉生變成史萊姆這檔事 第三季",
+            tags = "2024 年 10 月 · 全 24 話 · 奇幻 / 戰鬥",
+            staff = "製作:  8bit · 中山敦史 · 澤野弘之",
             actors = "配音:  岡咲美保 · 前野智昭 · 古川慎",
             rating = RatingInfo(
                 rank = 123,
@@ -175,9 +175,9 @@ internal val TestSubjectPreviewItemInfos
         SubjectPreviewItemInfo(
             subjectId = 2,
             imageUrl = "https://example.com/image.jpg",
-            title = "关于我转生变成史莱姆这档事 第三季",
-            tags = "2024 年 10 月 · 全 24 话 · 奇幻 / 战斗",
-            staff = "制作:  8bit · 中山敦史 · 泽野弘之",
+            title = "關於我轉生變成史萊姆這檔事 第三季",
+            tags = "2024 年 10 月 · 全 24 話 · 奇幻 / 戰鬥",
+            staff = "製作:  8bit · 中山敦史 · 澤野弘之",
             actors = "配音:  岡咲美保 · 前野智昭 · 古川慎",
             rating = RatingInfo(
                 rank = 123,
@@ -262,12 +262,12 @@ private fun PreviewSubjectItemLayout() = ProvideCompositionLocalsForPreview {
         {},
         image = { SubjectItemDefaults.Image("a", Modifier.fillMaxSize(), null) },
         title = { maxLines ->
-            Text("关于我转生变成史莱姆这档事 第三季", maxLines = maxLines)
+            Text("關於我轉生變成史萊姆這檔事 第三季", maxLines = maxLines)
         },
-        tags = { Text("2024 年 10 月 · 全 24 话 · 奇幻 / 战斗") },
+        tags = { Text("2024 年 10 月 · 全 24 話 · 奇幻 / 戰鬥") },
         extraInfo = {
             Text("配音:  岡咲美保 · 前野智昭 ·  古川慎")
-            Text("制作:  8bit · 中山敦史 · 泽野弘之 ")
+            Text("製作:  8bit · 中山敦史 · 澤野弘之 ")
         },
         rating = {},
         actions = {

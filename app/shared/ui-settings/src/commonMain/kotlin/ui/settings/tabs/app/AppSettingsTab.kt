@@ -552,7 +552,7 @@ private fun renderLocale(it: Locale?): String {
     return when (it.language) {
         "en", "eng" -> "English"
         "zh", "chi", "zho" -> when (it.region) {
-            "CN" -> "简体中文"
+            "CN" -> "簡體中文"
             "HK" -> "繁體中文(香港)"
             "TW" -> "正體中文"
             else -> "繁體中文"

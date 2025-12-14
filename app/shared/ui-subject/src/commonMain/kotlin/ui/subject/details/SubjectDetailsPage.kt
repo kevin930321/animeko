@@ -428,7 +428,7 @@ private fun PlaceholderSubjectDetailsPage(
             OutlinedButton(
                 onClick = {},
                 modifier = Modifier.placeholder(true),
-            ) { Text("登录后可收藏") }
+            ) { Text("登錄後可收藏") }
         },
         rating = {
             val scope = rememberCoroutineScope()

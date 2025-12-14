@@ -34,7 +34,7 @@ interface BangumiSearchApi {
         limit: Int? = null,
         sort: BangumiSort? = null,
         types: List<BangumiSubjectType>? = null,
-        tags: List<String>? = null, // "童年", "原创"
+        tags: List<String>? = null, // "童年", "原創"
         airDates: List<String>? = null, // YYYY-MM-DD
         ratings: List<String>? = null, // ">=6", "<8"
         ranks: List<String>? = null,

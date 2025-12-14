@@ -39,7 +39,7 @@ fun SubjectDetailsDefaults.CollectionData(
         )
         Text(
             remember(collection) {
-                " / ${collection.dropped} 抛弃"
+                " / ${collection.dropped} 拋棄"
             },
             style = MaterialTheme.typography.labelLarge,
             maxLines = 1,

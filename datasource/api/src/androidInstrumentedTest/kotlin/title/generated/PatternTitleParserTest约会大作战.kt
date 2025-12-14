@@ -26,7 +26,7 @@ public class PatternTitleParserTest约会大作战 : PatternBasedTitleParserTest
   public fun `685031-679848-675404-675383-675368-675285-675279-674235-674234-673571`() {
     kotlin.run {
     val r =
-        parse("[Fatum Fatalis] 约会大作战 第五季 / デート・ア・ライブV / Date a Live V (BD REENCODE EP01-12+SP Fin)")
+        parse("[Fatum Fatalis] 約會大作戰 第五季 / デート・ア・ライブV / Date a Live V (BD REENCODE EP01-12+SP Fin)")
     assertEquals("01..12+SP", r.episodeRange.toString())
     assertEquals("", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("null", r.resolution.toString())
@@ -34,7 +34,7 @@ public class PatternTitleParserTest约会大作战 : PatternBasedTitleParserTest
     }
     kotlin.run {
     val r =
-        parse("[7³ACG] 约会大作战5/ デート・ア・ライブ Ⅴ/Date A Live S05 | 01-12 [简繁字幕] BDrip 1080p x265 FLAC 2.0")
+        parse("[7³ACG] 約會大作戰5/ デート・ア・ライブ Ⅴ/Date A Live S05 | 01-12 [簡繁字幕] BDrip 1080p x265 FLAC 2.0")
     assertEquals("01..12", r.episodeRange.toString())
     assertEquals("CHS, CHT", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("1080P", r.resolution.toString())
@@ -42,7 +42,7 @@ public class PatternTitleParserTest约会大作战 : PatternBasedTitleParserTest
     }
     kotlin.run {
     val r =
-        parse("[DBD-Raws][约会大作战 第四季/Date a Live IV/デート・ア・ライブIV][01-12TV全集][1080P][BDRip][HEVC-10bit][简繁外挂][FLAC][MKV]")
+        parse("[DBD-Raws][約會大作戰 第四季/Date a Live IV/デート・ア・ライブIV][01-12TV全集][1080P][BDRip][HEVC-10bit][簡繁外掛][FLAC][MKV]")
     assertEquals("01..12", r.episodeRange.toString())
     assertEquals("CHS, CHT", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("1080P", r.resolution.toString())
@@ -50,7 +50,7 @@ public class PatternTitleParserTest约会大作战 : PatternBasedTitleParserTest
     }
     kotlin.run {
     val r =
-        parse("[DBD-Raws][约会大作战 第三季/Date a Live III/デート・ア・ライブIII][01-12TV全集][1080P][BDRip][HEVC-10bit][简繁外挂][FLAC][MKV]")
+        parse("[DBD-Raws][約會大作戰 第三季/Date a Live III/デート・ア・ライブIII][01-12TV全集][1080P][BDRip][HEVC-10bit][簡繁外掛][FLAC][MKV]")
     assertEquals("01..12", r.episodeRange.toString())
     assertEquals("CHS, CHT", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("1080P", r.resolution.toString())
@@ -58,7 +58,7 @@ public class PatternTitleParserTest约会大作战 : PatternBasedTitleParserTest
     }
     kotlin.run {
     val r =
-        parse("[DBD-Raws][约会大作战 第二季/Date a Live II/デート・ア・ライブ II][01-10TV全集+OAD+特典映像][1080P][BDRip][HEVC-10bit][简繁外挂][FLAC][MKV]")
+        parse("[DBD-Raws][約會大作戰 第二季/Date a Live II/デート・ア・ライブ II][01-10TV全集+OAD+特典映像][1080P][BDRip][HEVC-10bit][簡繁外掛][FLAC][MKV]")
     assertEquals("01..10+OAD", r.episodeRange.toString())
     assertEquals("CHS, CHT", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("1080P", r.resolution.toString())
@@ -66,7 +66,7 @@ public class PatternTitleParserTest约会大作战 : PatternBasedTitleParserTest
     }
     kotlin.run {
     val r =
-        parse("[DBD-Raws][约会大作战 第一季/Date a Live S1/デート・ア・ライブ][导演剪辑版/Director's Cut/ディレクターズカット版][01-12TV全集+OAD][1080P][BDRip][HEVC-10bit][简繁外挂][FLAC][MKV]")
+        parse("[DBD-Raws][約會大作戰 第一季/Date a Live S1/デート・ア・ライブ][導演剪輯版/Director's Cut/ディレクターズカット版][01-12TV全集+OAD][1080P][BDRip][HEVC-10bit][簡繁外掛][FLAC][MKV]")
     assertEquals("01..12+OAD", r.episodeRange.toString())
     assertEquals("CHS, CHT", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("1080P", r.resolution.toString())
@@ -74,14 +74,14 @@ public class PatternTitleParserTest约会大作战 : PatternBasedTitleParserTest
     }
     kotlin.run {
     val r =
-        parse("[DBD-Raws][约会大作战 第一季/Date a Live S1/デート・ア・ライブ][01-12TV全集+OAD][1080P][BDRip][HEVC-10bit][FLAC][MKV]")
+        parse("[DBD-Raws][約會大作戰 第一季/Date a Live S1/デート・ア・ライブ][01-12TV全集+OAD][1080P][BDRip][HEVC-10bit][FLAC][MKV]")
     assertEquals("01..12+OAD", r.episodeRange.toString())
     assertEquals("", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("1080P", r.resolution.toString())
     assertEquals(null, r.subtitleKind)
     }
     kotlin.run {
-    val r = parse("[爱恋&漫猫字幕组] 约会大作战/Date A Live V (01-12Fin WEBRIP 1080p AVC AAC MP4 2024年4月 简中)")
+    val r = parse("[愛戀&漫貓字幕組] 約會大作戰/Date A Live V (01-12Fin WEBRIP 1080p AVC AAC MP4 2024年4月 簡中)")
     assertEquals("01..12", r.episodeRange.toString())
     assertEquals("CHS", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("1080P", r.resolution.toString())
@@ -95,7 +95,7 @@ public class PatternTitleParserTest约会大作战 : PatternBasedTitleParserTest
     assertEquals(null, r.subtitleKind)
     }
     kotlin.run {
-    val r = parse("[澄空学园&华盟字幕社] Date A Live V 约会大作战V 第12话 MP4 720p 完")
+    val r = parse("[澄空學園&華盟字幕社] Date A Live V 約會大作戰V 第12話 MP4 720p 完")
     assertEquals("12..12", r.episodeRange.toString())
     assertEquals("", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("720P", r.resolution.toString())
@@ -106,7 +106,7 @@ public class PatternTitleParserTest约会大作战 : PatternBasedTitleParserTest
   @Test
   public fun `673096-673095-672920-672917-672916-672876-672875-672874-672454-672110`() {
     kotlin.run {
-    val r = parse("[爱恋&漫猫字幕组][4月新番][约会大作战][Date A Live V][12][1080p][MP4][简中]")
+    val r = parse("[愛戀&漫貓字幕組][4月新番][約會大作戰][Date A Live V][12][1080p][MP4][簡中]")
     assertEquals("12..12", r.episodeRange.toString())
     assertEquals("CHS", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("1080P", r.resolution.toString())
@@ -128,7 +128,7 @@ public class PatternTitleParserTest约会大作战 : PatternBasedTitleParserTest
     assertEquals(null, r.subtitleKind)
     }
     kotlin.run {
-    val r = parse("[爱恋&漫猫字幕组][4月新番][约会大作战][Date A Live V][11][1080p][MP4][简中]")
+    val r = parse("[愛戀&漫貓字幕組][4月新番][約會大作戰][Date A Live V][11][1080p][MP4][簡中]")
     assertEquals("11..11", r.episodeRange.toString())
     assertEquals("CHS", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("1080P", r.resolution.toString())
@@ -142,21 +142,21 @@ public class PatternTitleParserTest约会大作战 : PatternBasedTitleParserTest
     assertEquals(null, r.subtitleKind)
     }
     kotlin.run {
-    val r = parse("[澄空学园&华盟字幕社] Date A Live V 约会大作战V 第11话 MP4 720p")
+    val r = parse("[澄空學園&華盟字幕社] Date A Live V 約會大作戰V 第11話 MP4 720p")
     assertEquals("11..11", r.episodeRange.toString())
     assertEquals("", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("720P", r.resolution.toString())
     assertEquals(null, r.subtitleKind)
     }
     kotlin.run {
-    val r = parse("[澄空学园&华盟字幕社] Date A Live V 约会大作战V 第10话 MP4 720p")
+    val r = parse("[澄空學園&華盟字幕社] Date A Live V 約會大作戰V 第10話 MP4 720p")
     assertEquals("10..10", r.episodeRange.toString())
     assertEquals("", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("720P", r.resolution.toString())
     assertEquals(null, r.subtitleKind)
     }
     kotlin.run {
-    val r = parse("[澄空学园&华盟字幕社] Date A Live V 约会大作战V 第09话 MP4 720p")
+    val r = parse("[澄空學園&華盟字幕社] Date A Live V 約會大作戰V 第09話 MP4 720p")
     assertEquals("09..09", r.episodeRange.toString())
     assertEquals("", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("720P", r.resolution.toString())
@@ -204,7 +204,7 @@ public class PatternTitleParserTest约会大作战 : PatternBasedTitleParserTest
     assertEquals(null, r.subtitleKind)
     }
     kotlin.run {
-    val r = parse("[爱恋&漫猫字幕组][4月新番][约会大作战][Date A Live V][09][1080p][MP4][简中]")
+    val r = parse("[愛戀&漫貓字幕組][4月新番][約會大作戰][Date A Live V][09][1080p][MP4][簡中]")
     assertEquals("09..09", r.episodeRange.toString())
     assertEquals("CHS", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("1080P", r.resolution.toString())
@@ -226,7 +226,7 @@ public class PatternTitleParserTest约会大作战 : PatternBasedTitleParserTest
     assertEquals(null, r.subtitleKind)
     }
     kotlin.run {
-    val r = parse("[爱恋&漫猫字幕组][4月新番][约会大作战][Date A Live V][08][1080p][MP4][简中]")
+    val r = parse("[愛戀&漫貓字幕組][4月新番][約會大作戰][Date A Live V][08][1080p][MP4][簡中]")
     assertEquals("08..08", r.episodeRange.toString())
     assertEquals("CHS", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("1080P", r.resolution.toString())
@@ -240,14 +240,14 @@ public class PatternTitleParserTest约会大作战 : PatternBasedTitleParserTest
     assertEquals(null, r.subtitleKind)
     }
     kotlin.run {
-    val r = parse("[澄空学园&华盟字幕社] Date A Live V 约会大作战V 第08话 MP4 720p")
+    val r = parse("[澄空學園&華盟字幕社] Date A Live V 約會大作戰V 第08話 MP4 720p")
     assertEquals("08..08", r.episodeRange.toString())
     assertEquals("", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("720P", r.resolution.toString())
     assertEquals(null, r.subtitleKind)
     }
     kotlin.run {
-    val r = parse("[澄空学园&华盟字幕社] Date A Live V 约会大作战V 第07话 MP4 720p")
+    val r = parse("[澄空學園&華盟字幕社] Date A Live V 約會大作戰V 第07話 MP4 720p")
     assertEquals("07..07", r.episodeRange.toString())
     assertEquals("", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("720P", r.resolution.toString())
@@ -258,7 +258,7 @@ public class PatternTitleParserTest约会大作战 : PatternBasedTitleParserTest
   @Test
   public fun `671123-670990-670937-670879-670878-670562-670222-670221-670174-670132`() {
     kotlin.run {
-    val r = parse("[澄空学园&华盟字幕社] Date A Live V 约会大作战V 第06话 MP4 720p")
+    val r = parse("[澄空學園&華盟字幕社] Date A Live V 約會大作戰V 第06話 MP4 720p")
     assertEquals("06..06", r.episodeRange.toString())
     assertEquals("", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("720P", r.resolution.toString())
@@ -280,7 +280,7 @@ public class PatternTitleParserTest约会大作战 : PatternBasedTitleParserTest
     assertEquals(null, r.subtitleKind)
     }
     kotlin.run {
-    val r = parse("[爱恋&漫猫字幕组][4月新番][约会大作战][Date A Live V][07][1080p][MP4][简中]")
+    val r = parse("[愛戀&漫貓字幕組][4月新番][約會大作戰][Date A Live V][07][1080p][MP4][簡中]")
     assertEquals("07..07", r.episodeRange.toString())
     assertEquals("CHS", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("1080P", r.resolution.toString())
@@ -301,7 +301,7 @@ public class PatternTitleParserTest约会大作战 : PatternBasedTitleParserTest
     assertEquals(null, r.subtitleKind)
     }
     kotlin.run {
-    val r = parse("[爱恋&漫猫字幕组][4月新番][约会大作战][Date A Live V][06][1080p][MP4][简中]")
+    val r = parse("[愛戀&漫貓字幕組][4月新番][約會大作戰][Date A Live V][06][1080p][MP4][簡中]")
     assertEquals("06..06", r.episodeRange.toString())
     assertEquals("CHS", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("1080P", r.resolution.toString())
@@ -341,7 +341,7 @@ public class PatternTitleParserTest约会大作战 : PatternBasedTitleParserTest
     assertEquals(null, r.subtitleKind)
     }
     kotlin.run {
-    val r = parse("[爱恋&漫猫字幕组][4月新番][约会大作战][Date A Live V][05][1080p][MP4][简中]")
+    val r = parse("[愛戀&漫貓字幕組][4月新番][約會大作戰][Date A Live V][05][1080p][MP4][簡中]")
     assertEquals("05..05", r.episodeRange.toString())
     assertEquals("CHS", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("1080P", r.resolution.toString())
@@ -355,7 +355,7 @@ public class PatternTitleParserTest约会大作战 : PatternBasedTitleParserTest
     assertEquals(null, r.subtitleKind)
     }
     kotlin.run {
-    val r = parse("[爱恋&漫猫字幕组][4月新番][约会大作战][Date A Live V][05][720p][MP4][简中]")
+    val r = parse("[愛戀&漫貓字幕組][4月新番][約會大作戰][Date A Live V][05][720p][MP4][簡中]")
     assertEquals("05..05", r.episodeRange.toString())
     assertEquals("CHS", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("720P", r.resolution.toString())
@@ -369,7 +369,7 @@ public class PatternTitleParserTest约会大作战 : PatternBasedTitleParserTest
     assertEquals(null, r.subtitleKind)
     }
     kotlin.run {
-    val r = parse("[爱恋&漫猫字幕组][4月新番][约会大作战][Date A Live V][04v2][1080p][MP4][简中]")
+    val r = parse("[愛戀&漫貓字幕組][4月新番][約會大作戰][Date A Live V][04v2][1080p][MP4][簡中]")
     assertEquals("04..04", r.episodeRange.toString())
     assertEquals("CHS", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("1080P", r.resolution.toString())
@@ -383,7 +383,7 @@ public class PatternTitleParserTest约会大作战 : PatternBasedTitleParserTest
     assertEquals(null, r.subtitleKind)
     }
     kotlin.run {
-    val r = parse("[爱恋&漫猫字幕组][4月新番][约会大作战][Date A Live V][04v2][720p][MP4][简中]")
+    val r = parse("[愛戀&漫貓字幕組][4月新番][約會大作戰][Date A Live V][04v2][720p][MP4][簡中]")
     assertEquals("04..04", r.episodeRange.toString())
     assertEquals("CHS", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("720P", r.resolution.toString())
@@ -397,7 +397,7 @@ public class PatternTitleParserTest约会大作战 : PatternBasedTitleParserTest
     assertEquals(null, r.subtitleKind)
     }
     kotlin.run {
-    val r = parse("[爱恋&漫猫字幕组][4月新番][约会大作战][Date A Live V][03][1080p][MP4][简中]")
+    val r = parse("[愛戀&漫貓字幕組][4月新番][約會大作戰][Date A Live V][03][1080p][MP4][簡中]")
     assertEquals("03..03", r.episodeRange.toString())
     assertEquals("CHS", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("1080P", r.resolution.toString())
@@ -415,7 +415,7 @@ public class PatternTitleParserTest约会大作战 : PatternBasedTitleParserTest
     assertEquals(null, r.subtitleKind)
     }
     kotlin.run {
-    val r = parse("[爱恋&漫猫字幕组][4月新番][约会大作战][Date A Live V][03][720p][MP4][简中]")
+    val r = parse("[愛戀&漫貓字幕組][4月新番][約會大作戰][Date A Live V][03][720p][MP4][簡中]")
     assertEquals("03..03", r.episodeRange.toString())
     assertEquals("CHS", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("720P", r.resolution.toString())
@@ -429,7 +429,7 @@ public class PatternTitleParserTest约会大作战 : PatternBasedTitleParserTest
     assertEquals(null, r.subtitleKind)
     }
     kotlin.run {
-    val r = parse("[爱恋&漫猫字幕组][4月新番][约会大作战][Date A Live V][02][1080p][MP4][简中]")
+    val r = parse("[愛戀&漫貓字幕組][4月新番][約會大作戰][Date A Live V][02][1080p][MP4][簡中]")
     assertEquals("02..02", r.episodeRange.toString())
     assertEquals("CHS", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("1080P", r.resolution.toString())
@@ -443,7 +443,7 @@ public class PatternTitleParserTest约会大作战 : PatternBasedTitleParserTest
     assertEquals(null, r.subtitleKind)
     }
     kotlin.run {
-    val r = parse("[爱恋&漫猫字幕组][4月新番][约会大作战][Date A Live V][02][720p][MP4][简中]")
+    val r = parse("[愛戀&漫貓字幕組][4月新番][約會大作戰][Date A Live V][02][720p][MP4][簡中]")
     assertEquals("02..02", r.episodeRange.toString())
     assertEquals("CHS", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("720P", r.resolution.toString())
@@ -457,7 +457,7 @@ public class PatternTitleParserTest约会大作战 : PatternBasedTitleParserTest
     assertEquals(null, r.subtitleKind)
     }
     kotlin.run {
-    val r = parse("[爱恋&漫猫字幕组][4月新番][约会大作战][Date A Live V][01][1080p][MP4][简中]")
+    val r = parse("[愛戀&漫貓字幕組][4月新番][約會大作戰][Date A Live V][01][1080p][MP4][簡中]")
     assertEquals("01..01", r.episodeRange.toString())
     assertEquals("CHS", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("1080P", r.resolution.toString())
@@ -471,7 +471,7 @@ public class PatternTitleParserTest约会大作战 : PatternBasedTitleParserTest
     assertEquals(null, r.subtitleKind)
     }
     kotlin.run {
-    val r = parse("[爱恋&漫猫字幕组][4月新番][约会大作战][Date A Live V][01][720p][MP4][简中]")
+    val r = parse("[愛戀&漫貓字幕組][4月新番][約會大作戰][Date A Live V][01][720p][MP4][簡中]")
     assertEquals("01..01", r.episodeRange.toString())
     assertEquals("CHS", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("720P", r.resolution.toString())
@@ -489,7 +489,7 @@ public class PatternTitleParserTest约会大作战 : PatternBasedTitleParserTest
     assertEquals(null, r.subtitleKind)
     }
     kotlin.run {
-    val r = parse("[澄空学园&华盟字幕社] Date A Live V 约会大作战V 第05话 MP4 720p")
+    val r = parse("[澄空學園&華盟字幕社] Date A Live V 約會大作戰V 第05話 MP4 720p")
     assertEquals("05..05", r.episodeRange.toString())
     assertEquals("", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("720P", r.resolution.toString())
@@ -504,21 +504,21 @@ public class PatternTitleParserTest约会大作战 : PatternBasedTitleParserTest
     assertEquals(null, r.subtitleKind)
     }
     kotlin.run {
-    val r = parse("[澄空学园&华盟字幕社] Date A Live V 约会大作战V 第04话 MP4 720p")
+    val r = parse("[澄空學園&華盟字幕社] Date A Live V 約會大作戰V 第04話 MP4 720p")
     assertEquals("04..04", r.episodeRange.toString())
     assertEquals("", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("720P", r.resolution.toString())
     assertEquals(null, r.subtitleKind)
     }
     kotlin.run {
-    val r = parse("[澄空学园&华盟字幕社] Date A Live V 约会大作战V 第03话 MP4 720p")
+    val r = parse("[澄空學園&華盟字幕社] Date A Live V 約會大作戰V 第03話 MP4 720p")
     assertEquals("03..03", r.episodeRange.toString())
     assertEquals("", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("720P", r.resolution.toString())
     assertEquals(null, r.subtitleKind)
     }
     kotlin.run {
-    val r = parse("[爱恋&漫猫字幕组][4月新番][约会大作战 V][Date A Live V][04][1080p][MP4][简中]")
+    val r = parse("[愛戀&漫貓字幕組][4月新番][約會大作戰 V][Date A Live V][04][1080p][MP4][簡中]")
     assertEquals("04..04", r.episodeRange.toString())
     assertEquals("CHS", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("1080P", r.resolution.toString())
@@ -566,7 +566,7 @@ public class PatternTitleParserTest约会大作战 : PatternBasedTitleParserTest
     assertEquals(null, r.subtitleKind)
     }
     kotlin.run {
-    val r = parse("[澄空学园&华盟字幕社] Date A Live V 约会大作战V 第02话 MP4 720p")
+    val r = parse("[澄空學園&華盟字幕社] Date A Live V 約會大作戰V 第02話 MP4 720p")
     assertEquals("02..02", r.episodeRange.toString())
     assertEquals("", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("720P", r.resolution.toString())
@@ -588,14 +588,14 @@ public class PatternTitleParserTest约会大作战 : PatternBasedTitleParserTest
     assertEquals(null, r.subtitleKind)
     }
     kotlin.run {
-    val r = parse("[澄空学园&华盟字幕社] Date A Live V 约会大作战V 第01话 MP4 720p")
+    val r = parse("[澄空學園&華盟字幕社] Date A Live V 約會大作戰V 第01話 MP4 720p")
     assertEquals("01..01", r.episodeRange.toString())
     assertEquals("", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("720P", r.resolution.toString())
     assertEquals(null, r.subtitleKind)
     }
     kotlin.run {
-    val r = parse("[BakeSubs] Date A Bullet [BD][1080p] 约会大作战约战狂三外传前篇虚或实篇后篇红或白篇")
+    val r = parse("[BakeSubs] Date A Bullet [BD][1080p] 約會大作戰約戰狂三外傳前篇虛或實篇後篇紅或白篇")
     assertEquals("S?", r.episodeRange.toString())
     assertEquals("", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("1080P", r.resolution.toString())
@@ -617,7 +617,7 @@ public class PatternTitleParserTest约会大作战 : PatternBasedTitleParserTest
     }
     kotlin.run {
     val r =
-        parse("[7³ACG] 约会大作战IV/Date A Live IV/デート・ア・ライブ IV | 01-12[简繁英字幕] BDrip 1080p x265 FLAC")
+        parse("[7³ACG] 約會大作戰IV/Date A Live IV/デート・ア・ライブ IV | 01-12[簡繁英字幕] BDrip 1080p x265 FLAC")
     assertEquals("01..12", r.episodeRange.toString())
     assertEquals("CHS, CHT, ENG", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("1080P", r.resolution.toString())
@@ -625,7 +625,7 @@ public class PatternTitleParserTest约会大作战 : PatternBasedTitleParserTest
     }
     kotlin.run {
     val r =
-        parse("[千夏字幕组&LoliHouse] 约会大作战 IV / Date A Live IV - 12 [WebRip 1080p HEVC-10bit AAC][简繁内封字幕][End]")
+        parse("[千夏字幕組&LoliHouse] 約會大作戰 IV / Date A Live IV - 12 [WebRip 1080p HEVC-10bit AAC][簡繁內封字幕][End]")
     assertEquals("12..12", r.episodeRange.toString())
     assertEquals("CHS, CHT", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("1080P", r.resolution.toString())
@@ -637,7 +637,7 @@ public class PatternTitleParserTest约会大作战 : PatternBasedTitleParserTest
   public fun `607119-607101-607100-607099-607098-606271-606270-606234-606233-606232`() {
     kotlin.run {
     val r =
-        parse("[千夏字幕组&LoliHouse] 约会大作战 IV / Date A Live IV - 11 [WebRip 1080p HEVC-10bit AAC][简繁内封字幕]")
+        parse("[千夏字幕組&LoliHouse] 約會大作戰 IV / Date A Live IV - 11 [WebRip 1080p HEVC-10bit AAC][簡繁內封字幕]")
     assertEquals("11..11", r.episodeRange.toString())
     assertEquals("CHS, CHT", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("1080P", r.resolution.toString())
@@ -651,7 +651,7 @@ public class PatternTitleParserTest约会大作战 : PatternBasedTitleParserTest
     assertEquals(null, r.subtitleKind)
     }
     kotlin.run {
-    val r = parse("【千夏字幕组】【约会大作战IV_Date A Live IV】[第12话][1080p_AVC][简体][完]")
+    val r = parse("【千夏字幕組】【約會大作戰IV_Date A Live IV】[第12話][1080p_AVC][簡體][完]")
     assertEquals("12..12", r.episodeRange.toString())
     assertEquals("CHS", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("1080P", r.resolution.toString())
@@ -665,7 +665,7 @@ public class PatternTitleParserTest约会大作战 : PatternBasedTitleParserTest
     assertEquals(null, r.subtitleKind)
     }
     kotlin.run {
-    val r = parse("【千夏字幕组】【约会大作战IV_Date A Live IV】[第11话][1080p_AVC][简体]")
+    val r = parse("【千夏字幕組】【約會大作戰IV_Date A Live IV】[第11話][1080p_AVC][簡體]")
     assertEquals("11..11", r.episodeRange.toString())
     assertEquals("CHS", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("1080P", r.resolution.toString())
@@ -673,7 +673,7 @@ public class PatternTitleParserTest约会大作战 : PatternBasedTitleParserTest
     }
     kotlin.run {
     val r =
-        parse("[千夏字幕组&LoliHouse] 约会大作战 IV / Date A Live IV - 10 [WebRip 1080p HEVC-10bit AAC][简繁内封字幕]")
+        parse("[千夏字幕組&LoliHouse] 約會大作戰 IV / Date A Live IV - 10 [WebRip 1080p HEVC-10bit AAC][簡繁內封字幕]")
     assertEquals("10..10", r.episodeRange.toString())
     assertEquals("CHS, CHT", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("1080P", r.resolution.toString())
@@ -681,7 +681,7 @@ public class PatternTitleParserTest约会大作战 : PatternBasedTitleParserTest
     }
     kotlin.run {
     val r =
-        parse("[千夏字幕组&LoliHouse] 约会大作战 IV / Date A Live IV - 09 [WebRip 1080p HEVC-10bit AAC][简繁内封字幕]")
+        parse("[千夏字幕組&LoliHouse] 約會大作戰 IV / Date A Live IV - 09 [WebRip 1080p HEVC-10bit AAC][簡繁內封字幕]")
     assertEquals("09..09", r.episodeRange.toString())
     assertEquals("CHS, CHT", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("1080P", r.resolution.toString())
@@ -695,7 +695,7 @@ public class PatternTitleParserTest约会大作战 : PatternBasedTitleParserTest
     assertEquals(null, r.subtitleKind)
     }
     kotlin.run {
-    val r = parse("【千夏字幕组】【约会大作战IV_Date A Live IV】[第10话][1080p_AVC][简体]")
+    val r = parse("【千夏字幕組】【約會大作戰IV_Date A Live IV】[第10話][1080p_AVC][簡體]")
     assertEquals("10..10", r.episodeRange.toString())
     assertEquals("CHS", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("1080P", r.resolution.toString())
@@ -713,35 +713,35 @@ public class PatternTitleParserTest约会大作战 : PatternBasedTitleParserTest
   @Test
   public fun `606231-605058-604944-604936-604641-604638-604636-604635-604618-604617`() {
     kotlin.run {
-    val r = parse("【千夏字幕组】【约会大作战IV_Date A Live IV】[第09话][1080p_AVC][简体]")
+    val r = parse("【千夏字幕組】【約會大作戰IV_Date A Live IV】[第09話][1080p_AVC][簡體]")
     assertEquals("09..09", r.episodeRange.toString())
     assertEquals("CHS", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("1080P", r.resolution.toString())
     assertEquals(null, r.subtitleKind)
     }
     kotlin.run {
-    val r = parse("[澄空学园&华盟字幕社] Date A Live IV 约会大作战IV 第12话 MP4 720p 完")
+    val r = parse("[澄空學園&華盟字幕社] Date A Live IV 約會大作戰IV 第12話 MP4 720p 完")
     assertEquals("12..12", r.episodeRange.toString())
     assertEquals("", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("720P", r.resolution.toString())
     assertEquals(null, r.subtitleKind)
     }
     kotlin.run {
-    val r = parse("[澄空学园&华盟字幕社] Date A Live IV 约会大作战IV 第11话 MP4 720p")
+    val r = parse("[澄空學園&華盟字幕社] Date A Live IV 約會大作戰IV 第11話 MP4 720p")
     assertEquals("11..11", r.episodeRange.toString())
     assertEquals("", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("720P", r.resolution.toString())
     assertEquals(null, r.subtitleKind)
     }
     kotlin.run {
-    val r = parse("[澄空学园&华盟字幕社] Date A Live IV 约会大作战IV 第10话 MP4 720p")
+    val r = parse("[澄空學園&華盟字幕社] Date A Live IV 約會大作戰IV 第10話 MP4 720p")
     assertEquals("10..10", r.episodeRange.toString())
     assertEquals("", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("720P", r.resolution.toString())
     assertEquals(null, r.subtitleKind)
     }
     kotlin.run {
-    val r = parse("[爱恋&漫猫字幕组] 约会大作战/Date A Live IV (01-12Fin WEBRIP 1080p AVC AAC 2022年4月 简中)")
+    val r = parse("[愛戀&漫貓字幕組] 約會大作戰/Date A Live IV (01-12Fin WEBRIP 1080p AVC AAC 2022年4月 簡中)")
     assertEquals("01..12", r.episodeRange.toString())
     assertEquals("CHS", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("1080P", r.resolution.toString())
@@ -755,7 +755,7 @@ public class PatternTitleParserTest约会大作战 : PatternBasedTitleParserTest
     assertEquals(null, r.subtitleKind)
     }
     kotlin.run {
-    val r = parse("[爱恋&漫猫字幕组][4月新番][约会大作战][Date A Live IV][12][1080p][MP4][简中]")
+    val r = parse("[愛戀&漫貓字幕組][4月新番][約會大作戰][Date A Live IV][12][1080p][MP4][簡中]")
     assertEquals("12..12", r.episodeRange.toString())
     assertEquals("CHS", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("1080P", r.resolution.toString())
@@ -769,7 +769,7 @@ public class PatternTitleParserTest约会大作战 : PatternBasedTitleParserTest
     assertEquals(null, r.subtitleKind)
     }
     kotlin.run {
-    val r = parse("[爱恋&漫猫字幕组][4月新番][约会大作战][Date A Live IV][11][1080p][MP4][简中]")
+    val r = parse("[愛戀&漫貓字幕組][4月新番][約會大作戰][Date A Live IV][11][1080p][MP4][簡中]")
     assertEquals("11..11", r.episodeRange.toString())
     assertEquals("CHS", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("1080P", r.resolution.toString())
@@ -787,7 +787,7 @@ public class PatternTitleParserTest约会大作战 : PatternBasedTitleParserTest
   @Test
   public fun `604616-604615-604295-604264-604263-604133-604132-603875-603874-603873`() {
     kotlin.run {
-    val r = parse("[爱恋&漫猫字幕组][4月新番][约会大作战][Date A Live IV][10][1080p][MP4][简中]")
+    val r = parse("[愛戀&漫貓字幕組][4月新番][約會大作戰][Date A Live IV][10][1080p][MP4][簡中]")
     assertEquals("10..10", r.episodeRange.toString())
     assertEquals("CHS", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("1080P", r.resolution.toString())
@@ -802,7 +802,7 @@ public class PatternTitleParserTest约会大作战 : PatternBasedTitleParserTest
     }
     kotlin.run {
     val r =
-        parse("[千夏字幕组&LoliHouse] 约会大作战 IV / Date A Live IV - 08 [WebRip 1080p HEVC-10bit AAC][简繁内封字幕]")
+        parse("[千夏字幕組&LoliHouse] 約會大作戰 IV / Date A Live IV - 08 [WebRip 1080p HEVC-10bit AAC][簡繁內封字幕]")
     assertEquals("08..08", r.episodeRange.toString())
     assertEquals("CHS, CHT", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("1080P", r.resolution.toString())
@@ -816,14 +816,14 @@ public class PatternTitleParserTest约会大作战 : PatternBasedTitleParserTest
     assertEquals(null, r.subtitleKind)
     }
     kotlin.run {
-    val r = parse("【千夏字幕组】【约会大作战IV_Date A Live IV】[第08话][1080p_AVC][简体]")
+    val r = parse("【千夏字幕組】【約會大作戰IV_Date A Live IV】[第08話][1080p_AVC][簡體]")
     assertEquals("08..08", r.episodeRange.toString())
     assertEquals("CHS", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("1080P", r.resolution.toString())
     assertEquals(null, r.subtitleKind)
     }
     kotlin.run {
-    val r = parse("[爱恋&漫猫字幕组][4月新番][约会大作战][Date A Live IV][09][1080p][MP4][简中]")
+    val r = parse("[愛戀&漫貓字幕組][4月新番][約會大作戰][Date A Live IV][09][1080p][MP4][簡中]")
     assertEquals("09..09", r.episodeRange.toString())
     assertEquals("CHS", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("1080P", r.resolution.toString())
@@ -844,7 +844,7 @@ public class PatternTitleParserTest约会大作战 : PatternBasedTitleParserTest
     assertEquals(null, r.subtitleKind)
     }
     kotlin.run {
-    val r = parse("[爱恋&漫猫字幕组][4月新番][约会大作战][Date A Live IV][08][1080p][MP4][简中]")
+    val r = parse("[愛戀&漫貓字幕組][4月新番][約會大作戰][Date A Live IV][08][1080p][MP4][簡中]")
     assertEquals("08..08", r.episodeRange.toString())
     assertEquals("CHS", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("1080P", r.resolution.toString())
@@ -870,21 +870,21 @@ public class PatternTitleParserTest约会大作战 : PatternBasedTitleParserTest
     }
     kotlin.run {
     val r =
-        parse("[ANi] 約會大作戰 DATE A LIVE 第四季（僅限港澳台地區） - 12 [1080P][Bilibili][WEB-DL][AAC AVC][CHT CHS][MP4]")
+        parse("[ANi] 約會大作戰 DATE A LIVE 第四季（僅限港澳臺地區） - 12 [1080P][Bilibili][WEB-DL][AAC AVC][CHT CHS][MP4]")
     assertEquals("12..12", r.episodeRange.toString())
     assertEquals("CHS, CHT", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("1080P", r.resolution.toString())
     assertEquals(SubtitleKind.CLOSED, r.subtitleKind)
     }
     kotlin.run {
-    val r = parse("[NC-Raws] 约会大作战 第四季 / Date A Live S4 - 12 (B-Global 1920x1080 HEVC AAC MKV)")
+    val r = parse("[NC-Raws] 約會大作戰 第四季 / Date A Live S4 - 12 (B-Global 1920x1080 HEVC AAC MKV)")
     assertEquals("12..12", r.episodeRange.toString())
     assertEquals("", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("1080P", r.resolution.toString())
     assertEquals(null, r.subtitleKind)
     }
     kotlin.run {
-    val r = parse("[爱恋&漫猫字幕组][4月新番][约会大作战][Date A Live IV][07][1080p][MP4][简中]")
+    val r = parse("[愛戀&漫貓字幕組][4月新番][約會大作戰][Date A Live IV][07][1080p][MP4][簡中]")
     assertEquals("07..07", r.episodeRange.toString())
     assertEquals("CHS", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("1080P", r.resolution.toString())
@@ -906,28 +906,28 @@ public class PatternTitleParserTest约会大作战 : PatternBasedTitleParserTest
     }
     kotlin.run {
     val r =
-        parse("[ANi] 約會大作戰 DATE A LIVE 第四季（僅限港澳台地區） - 11 [1080P][Bilibili][WEB-DL][AAC AVC][CHT CHS][MP4]")
+        parse("[ANi] 約會大作戰 DATE A LIVE 第四季（僅限港澳臺地區） - 11 [1080P][Bilibili][WEB-DL][AAC AVC][CHT CHS][MP4]")
     assertEquals("11..11", r.episodeRange.toString())
     assertEquals("CHS, CHT", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("1080P", r.resolution.toString())
     assertEquals(SubtitleKind.CLOSED, r.subtitleKind)
     }
     kotlin.run {
-    val r = parse("[NC-Raws] 约会大作战 第四季 / Date A Live S4 - 11 (B-Global 1920x1080 HEVC AAC MKV)")
+    val r = parse("[NC-Raws] 約會大作戰 第四季 / Date A Live S4 - 11 (B-Global 1920x1080 HEVC AAC MKV)")
     assertEquals("11..11", r.episodeRange.toString())
     assertEquals("", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("1080P", r.resolution.toString())
     assertEquals(null, r.subtitleKind)
     }
     kotlin.run {
-    val r = parse("[c.c動漫][4月新番][約會大作戰 第四季][10][BIG5][1080P][MP4][内详]")
+    val r = parse("[c.c動漫][4月新番][約會大作戰 第四季][10][BIG5][1080P][MP4][內詳]")
     assertEquals("10..10", r.episodeRange.toString())
     assertEquals("CHT", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("1080P", r.resolution.toString())
     assertEquals(null, r.subtitleKind)
     }
     kotlin.run {
-    val r = parse("[爱恋&漫猫字幕组][4月新番][约会大作战][Date A Live IV][06][1080p][MP4][简中]")
+    val r = parse("[愛戀&漫貓字幕組][4月新番][約會大作戰][Date A Live IV][06][1080p][MP4][簡中]")
     assertEquals("06..06", r.episodeRange.toString())
     assertEquals("CHS", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("1080P", r.resolution.toString())
@@ -945,7 +945,7 @@ public class PatternTitleParserTest约会大作战 : PatternBasedTitleParserTest
     assertEquals(null, r.subtitleKind)
     }
     kotlin.run {
-    val r = parse("[爱恋&漫猫字幕组][4月新番][约会大作战][Date A Live IV][05][1080p][MP4][简中]")
+    val r = parse("[愛戀&漫貓字幕組][4月新番][約會大作戰][Date A Live IV][05][1080p][MP4][簡中]")
     assertEquals("05..05", r.episodeRange.toString())
     assertEquals("CHS", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("1080P", r.resolution.toString())
@@ -959,7 +959,7 @@ public class PatternTitleParserTest约会大作战 : PatternBasedTitleParserTest
     assertEquals(null, r.subtitleKind)
     }
     kotlin.run {
-    val r = parse("[NC-Raws] 约会大作战 第四季 / Date A Live S4 - 10 (B-Global 1920x1080 HEVC AAC MKV)")
+    val r = parse("[NC-Raws] 約會大作戰 第四季 / Date A Live S4 - 10 (B-Global 1920x1080 HEVC AAC MKV)")
     assertEquals("10..10", r.episodeRange.toString())
     assertEquals("", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("1080P", r.resolution.toString())
@@ -967,14 +967,14 @@ public class PatternTitleParserTest约会大作战 : PatternBasedTitleParserTest
     }
     kotlin.run {
     val r =
-        parse("[ANi] 約會大作戰 DATE A LIVE 第四季（僅限港澳台地區） - 10 [1080P][Bilibili][WEB-DL][AAC AVC][CHT CHS][MP4]")
+        parse("[ANi] 約會大作戰 DATE A LIVE 第四季（僅限港澳臺地區） - 10 [1080P][Bilibili][WEB-DL][AAC AVC][CHT CHS][MP4]")
     assertEquals("10..10", r.episodeRange.toString())
     assertEquals("CHS, CHT", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("1080P", r.resolution.toString())
     assertEquals(SubtitleKind.CLOSED, r.subtitleKind)
     }
     kotlin.run {
-    val r = parse("[澄空学园&华盟字幕社] Date A Live IV 约会大作战IV 第09话 MP4 720p")
+    val r = parse("[澄空學園&華盟字幕社] Date A Live IV 約會大作戰IV 第09話 MP4 720p")
     assertEquals("09..09", r.episodeRange.toString())
     assertEquals("", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("720P", r.resolution.toString())
@@ -989,21 +989,21 @@ public class PatternTitleParserTest约会大作战 : PatternBasedTitleParserTest
     }
     kotlin.run {
     val r =
-        parse("[ANi] 約會大作戰 DATE A LIVE 第四季（僅限港澳台地區） - 09 [1080P][Bilibili][WEB-DL][AAC AVC][CHT CHS][MP4]")
+        parse("[ANi] 約會大作戰 DATE A LIVE 第四季（僅限港澳臺地區） - 09 [1080P][Bilibili][WEB-DL][AAC AVC][CHT CHS][MP4]")
     assertEquals("09..09", r.episodeRange.toString())
     assertEquals("CHS, CHT", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("1080P", r.resolution.toString())
     assertEquals(SubtitleKind.CLOSED, r.subtitleKind)
     }
     kotlin.run {
-    val r = parse("[NC-Raws] 约会大作战 第四季 / Date A Live S4 - 09 (B-Global 1920x1080 HEVC AAC MKV)")
+    val r = parse("[NC-Raws] 約會大作戰 第四季 / Date A Live S4 - 09 (B-Global 1920x1080 HEVC AAC MKV)")
     assertEquals("09..09", r.episodeRange.toString())
     assertEquals("", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("1080P", r.resolution.toString())
     assertEquals(null, r.subtitleKind)
     }
     kotlin.run {
-    val r = parse("[澄空学园&华盟字幕社] Date A Live IV 约会大作战IV 第08话 MP4 720p")
+    val r = parse("[澄空學園&華盟字幕社] Date A Live IV 約會大作戰IV 第08話 MP4 720p")
     assertEquals("08..08", r.episodeRange.toString())
     assertEquals("", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("720P", r.resolution.toString())
@@ -1014,21 +1014,21 @@ public class PatternTitleParserTest约会大作战 : PatternBasedTitleParserTest
   @Test
   public fun `601951-601950-601949-601812-601807-601806-601731-601729-601728-601630`() {
     kotlin.run {
-    val r = parse("[澄空学园&华盟字幕社] Date A Live IV 约会大作战IV 第07话 MP4 720p")
+    val r = parse("[澄空學園&華盟字幕社] Date A Live IV 約會大作戰IV 第07話 MP4 720p")
     assertEquals("07..07", r.episodeRange.toString())
     assertEquals("", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("720P", r.resolution.toString())
     assertEquals(null, r.subtitleKind)
     }
     kotlin.run {
-    val r = parse("[澄空学园&华盟字幕社] Date A Live IV 约会大作战IV 第06话 MP4 720p")
+    val r = parse("[澄空學園&華盟字幕社] Date A Live IV 約會大作戰IV 第06話 MP4 720p")
     assertEquals("06..06", r.episodeRange.toString())
     assertEquals("", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("720P", r.resolution.toString())
     assertEquals(null, r.subtitleKind)
     }
     kotlin.run {
-    val r = parse("[澄空学园&华盟字幕社] Date A Live IV 约会大作战IV 第05话 MP4 720p")
+    val r = parse("[澄空學園&華盟字幕社] Date A Live IV 約會大作戰IV 第05話 MP4 720p")
     assertEquals("05..05", r.episodeRange.toString())
     assertEquals("", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("720P", r.resolution.toString())
@@ -1036,7 +1036,7 @@ public class PatternTitleParserTest约会大作战 : PatternBasedTitleParserTest
     }
     kotlin.run {
     val r =
-        parse("[千夏字幕组&LoliHouse] 约会大作战 IV / Date A Live IV - 07 [WebRip 1080p HEVC-10bit AAC][简繁内封字幕]")
+        parse("[千夏字幕組&LoliHouse] 約會大作戰 IV / Date A Live IV - 07 [WebRip 1080p HEVC-10bit AAC][簡繁內封字幕]")
     assertEquals("07..07", r.episodeRange.toString())
     assertEquals("CHS, CHT", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("1080P", r.resolution.toString())
@@ -1050,7 +1050,7 @@ public class PatternTitleParserTest约会大作战 : PatternBasedTitleParserTest
     assertEquals(null, r.subtitleKind)
     }
     kotlin.run {
-    val r = parse("【千夏字幕组】【约会大作战IV_Date A Live IV】[第07话][1080p_AVC][简体]")
+    val r = parse("【千夏字幕組】【約會大作戰IV_Date A Live IV】[第07話][1080p_AVC][簡體]")
     assertEquals("07..07", r.episodeRange.toString())
     assertEquals("CHS", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("1080P", r.resolution.toString())
@@ -1058,7 +1058,7 @@ public class PatternTitleParserTest约会大作战 : PatternBasedTitleParserTest
     }
     kotlin.run {
     val r =
-        parse("[千夏字幕组&LoliHouse] 约会大作战 IV / Date A Live IV - 06 [WebRip 1080p HEVC-10bit AAC][简繁内封字幕]")
+        parse("[千夏字幕組&LoliHouse] 約會大作戰 IV / Date A Live IV - 06 [WebRip 1080p HEVC-10bit AAC][簡繁內封字幕]")
     assertEquals("06..06", r.episodeRange.toString())
     assertEquals("CHS, CHT", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("1080P", r.resolution.toString())
@@ -1072,7 +1072,7 @@ public class PatternTitleParserTest约会大作战 : PatternBasedTitleParserTest
     assertEquals(null, r.subtitleKind)
     }
     kotlin.run {
-    val r = parse("【千夏字幕组】【约会大作战IV_Date A Live IV】[第06话][1080p_AVC][简体]")
+    val r = parse("【千夏字幕組】【約會大作戰IV_Date A Live IV】[第06話][1080p_AVC][簡體]")
     assertEquals("06..06", r.episodeRange.toString())
     assertEquals("CHS", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("1080P", r.resolution.toString())
@@ -1091,14 +1091,14 @@ public class PatternTitleParserTest约会大作战 : PatternBasedTitleParserTest
   public fun `601386-601384-601033-601027-601026-600754-600752-600492-600491-600185`() {
     kotlin.run {
     val r =
-        parse("[ANi] 約會大作戰 DATE A LIVE 第四季（僅限港澳台地區） - 08 [1080P][Bilibili][WEB-DL][AAC AVC][CHT CHS][MP4]")
+        parse("[ANi] 約會大作戰 DATE A LIVE 第四季（僅限港澳臺地區） - 08 [1080P][Bilibili][WEB-DL][AAC AVC][CHT CHS][MP4]")
     assertEquals("08..08", r.episodeRange.toString())
     assertEquals("CHS, CHT", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("1080P", r.resolution.toString())
     assertEquals(SubtitleKind.CLOSED, r.subtitleKind)
     }
     kotlin.run {
-    val r = parse("[NC-Raws] 约会大作战 第四季 / Date A Live S4 - 08 (B-Global 1920x1080 HEVC AAC MKV)")
+    val r = parse("[NC-Raws] 約會大作戰 第四季 / Date A Live S4 - 08 (B-Global 1920x1080 HEVC AAC MKV)")
     assertEquals("08..08", r.episodeRange.toString())
     assertEquals("", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("1080P", r.resolution.toString())
@@ -1106,7 +1106,7 @@ public class PatternTitleParserTest约会大作战 : PatternBasedTitleParserTest
     }
     kotlin.run {
     val r =
-        parse("[千夏字幕组&LoliHouse] 约会大作战 IV / Date A Live IV - 05 [WebRip 1080p HEVC-10bit AAC][简繁内封字幕]")
+        parse("[千夏字幕組&LoliHouse] 約會大作戰 IV / Date A Live IV - 05 [WebRip 1080p HEVC-10bit AAC][簡繁內封字幕]")
     assertEquals("05..05", r.episodeRange.toString())
     assertEquals("CHS, CHT", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("1080P", r.resolution.toString())
@@ -1120,7 +1120,7 @@ public class PatternTitleParserTest约会大作战 : PatternBasedTitleParserTest
     assertEquals(null, r.subtitleKind)
     }
     kotlin.run {
-    val r = parse("【千夏字幕组】【约会大作战IV_Date A Live IV】[第05话][1080p_AVC][简体]")
+    val r = parse("【千夏字幕組】【約會大作戰IV_Date A Live IV】[第05話][1080p_AVC][簡體]")
     assertEquals("05..05", r.episodeRange.toString())
     assertEquals("CHS", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("1080P", r.resolution.toString())
@@ -1128,21 +1128,21 @@ public class PatternTitleParserTest约会大作战 : PatternBasedTitleParserTest
     }
     kotlin.run {
     val r =
-        parse("[ANi] 約會大作戰 DATE A LIVE 第四季（僅限港澳台地區） - 07 [1080P][Bilibili][WEB-DL][AAC AVC][CHT CHS][MP4]")
+        parse("[ANi] 約會大作戰 DATE A LIVE 第四季（僅限港澳臺地區） - 07 [1080P][Bilibili][WEB-DL][AAC AVC][CHT CHS][MP4]")
     assertEquals("07..07", r.episodeRange.toString())
     assertEquals("CHS, CHT", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("1080P", r.resolution.toString())
     assertEquals(SubtitleKind.CLOSED, r.subtitleKind)
     }
     kotlin.run {
-    val r = parse("[NC-Raws] 约会大作战 第四季 / Date A Live S4 - 07 (B-Global 1920x1080 HEVC AAC MKV)")
+    val r = parse("[NC-Raws] 約會大作戰 第四季 / Date A Live S4 - 07 (B-Global 1920x1080 HEVC AAC MKV)")
     assertEquals("07..07", r.episodeRange.toString())
     assertEquals("", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("1080P", r.resolution.toString())
     assertEquals(null, r.subtitleKind)
     }
     kotlin.run {
-    val r = parse("[爱恋&漫猫字幕组][4月新番][约会大作战][Date A Live IV][04][1080p][MP4][简中]")
+    val r = parse("[愛戀&漫貓字幕組][4月新番][約會大作戰][Date A Live IV][04][1080p][MP4][簡中]")
     assertEquals("04..04", r.episodeRange.toString())
     assertEquals("CHS", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("1080P", r.resolution.toString())
@@ -1157,7 +1157,7 @@ public class PatternTitleParserTest约会大作战 : PatternBasedTitleParserTest
     }
     kotlin.run {
     val r =
-        parse("[ANi] 約會大作戰 DATE A LIVE 第四季（僅限港澳台地區） - 06 [1080P][Bilibili][WEB-DL][AAC AVC][CHT CHS][MP4]")
+        parse("[ANi] 約會大作戰 DATE A LIVE 第四季（僅限港澳臺地區） - 06 [1080P][Bilibili][WEB-DL][AAC AVC][CHT CHS][MP4]")
     assertEquals("06..06", r.episodeRange.toString())
     assertEquals("CHS, CHT", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("1080P", r.resolution.toString())
@@ -1168,7 +1168,7 @@ public class PatternTitleParserTest约会大作战 : PatternBasedTitleParserTest
   @Test
   public fun `600183-599803-599802-599801-599524-599522-599508-599507-599392-599391`() {
     kotlin.run {
-    val r = parse("[NC-Raws] 约会大作战 第四季 / Date A Live S4 - 06 (B-Global 1920x1080 HEVC AAC MKV)")
+    val r = parse("[NC-Raws] 約會大作戰 第四季 / Date A Live S4 - 06 (B-Global 1920x1080 HEVC AAC MKV)")
     assertEquals("06..06", r.episodeRange.toString())
     assertEquals("", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("1080P", r.resolution.toString())
@@ -1176,7 +1176,7 @@ public class PatternTitleParserTest约会大作战 : PatternBasedTitleParserTest
     }
     kotlin.run {
     val r =
-        parse("[千夏字幕组&LoliHouse] 约会大作战 IV / Date A Live IV - 04 [WebRip 1080p HEVC-10bit AAC][简繁内封字幕]")
+        parse("[千夏字幕組&LoliHouse] 約會大作戰 IV / Date A Live IV - 04 [WebRip 1080p HEVC-10bit AAC][簡繁內封字幕]")
     assertEquals("04..04", r.episodeRange.toString())
     assertEquals("CHS, CHT", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("1080P", r.resolution.toString())
@@ -1190,7 +1190,7 @@ public class PatternTitleParserTest约会大作战 : PatternBasedTitleParserTest
     assertEquals(null, r.subtitleKind)
     }
     kotlin.run {
-    val r = parse("【千夏字幕组】【约会大作战IV_Date A Live IV】[第04话][1080p_AVC][简体]")
+    val r = parse("【千夏字幕組】【約會大作戰IV_Date A Live IV】[第04話][1080p_AVC][簡體]")
     assertEquals("04..04", r.episodeRange.toString())
     assertEquals("CHS", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("1080P", r.resolution.toString())
@@ -1198,35 +1198,35 @@ public class PatternTitleParserTest约会大作战 : PatternBasedTitleParserTest
     }
     kotlin.run {
     val r =
-        parse("[ANi] 約會大作戰 DATE A LIVE 第四季（僅限港澳台地區） - 05 [1080P][Bilibili][WEB-DL][AAC AVC][CHT CHS][MP4]")
+        parse("[ANi] 約會大作戰 DATE A LIVE 第四季（僅限港澳臺地區） - 05 [1080P][Bilibili][WEB-DL][AAC AVC][CHT CHS][MP4]")
     assertEquals("05..05", r.episodeRange.toString())
     assertEquals("CHS, CHT", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("1080P", r.resolution.toString())
     assertEquals(SubtitleKind.CLOSED, r.subtitleKind)
     }
     kotlin.run {
-    val r = parse("[NC-Raws] 约会大作战 第四季 / Date A Live S4 - 05 (B-Global 1920x1080 HEVC AAC MKV)")
+    val r = parse("[NC-Raws] 約會大作戰 第四季 / Date A Live S4 - 05 (B-Global 1920x1080 HEVC AAC MKV)")
     assertEquals("05..05", r.episodeRange.toString())
     assertEquals("", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("1080P", r.resolution.toString())
     assertEquals(null, r.subtitleKind)
     }
     kotlin.run {
-    val r = parse("[澄空学园&华盟字幕社] Date A Live IV 约会大作战IV 第04话 MP4 720p")
+    val r = parse("[澄空學園&華盟字幕社] Date A Live IV 約會大作戰IV 第04話 MP4 720p")
     assertEquals("04..04", r.episodeRange.toString())
     assertEquals("", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("720P", r.resolution.toString())
     assertEquals(null, r.subtitleKind)
     }
     kotlin.run {
-    val r = parse("[澄空学园&华盟字幕社] Date A Live IV 约会大作战IV 第03话 MP4 720p")
+    val r = parse("[澄空學園&華盟字幕社] Date A Live IV 約會大作戰IV 第03話 MP4 720p")
     assertEquals("03..03", r.episodeRange.toString())
     assertEquals("", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("720P", r.resolution.toString())
     assertEquals(null, r.subtitleKind)
     }
     kotlin.run {
-    val r = parse("[爱恋&漫猫字幕组][4月新番][约会大作战][Date A Live IV][03][1080p][MP4][简中]")
+    val r = parse("[愛戀&漫貓字幕組][4月新番][約會大作戰][Date A Live IV][03][1080p][MP4][簡中]")
     assertEquals("03..03", r.episodeRange.toString())
     assertEquals("CHS", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("1080P", r.resolution.toString())
@@ -1245,14 +1245,14 @@ public class PatternTitleParserTest约会大作战 : PatternBasedTitleParserTest
   public fun `598923-598918-598909-598904-598902-598603-598602-598507-598414-598413`() {
     kotlin.run {
     val r =
-        parse("[ANi] 約會大作戰 DATE A LIVE 第四季（僅限港澳台地區） - 04 [1080P][Bilibili][WEB-DL][AAC AVC][CHT CHS][MP4]")
+        parse("[ANi] 約會大作戰 DATE A LIVE 第四季（僅限港澳臺地區） - 04 [1080P][Bilibili][WEB-DL][AAC AVC][CHT CHS][MP4]")
     assertEquals("04..04", r.episodeRange.toString())
     assertEquals("CHS, CHT", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("1080P", r.resolution.toString())
     assertEquals(SubtitleKind.CLOSED, r.subtitleKind)
     }
     kotlin.run {
-    val r = parse("[NC-Raws] 约会大作战 第四季 / Date A Live S4 - 04 (B-Global 1920x1080 HEVC AAC MKV)")
+    val r = parse("[NC-Raws] 約會大作戰 第四季 / Date A Live S4 - 04 (B-Global 1920x1080 HEVC AAC MKV)")
     assertEquals("04..04", r.episodeRange.toString())
     assertEquals("", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("1080P", r.resolution.toString())
@@ -1260,7 +1260,7 @@ public class PatternTitleParserTest约会大作战 : PatternBasedTitleParserTest
     }
     kotlin.run {
     val r =
-        parse("[千夏字幕组&LoliHouse] 约会大作战 IV / Date A Live IV - 03 [WebRip 1080p HEVC-10bit AAC][简繁内封字幕]")
+        parse("[千夏字幕組&LoliHouse] 約會大作戰 IV / Date A Live IV - 03 [WebRip 1080p HEVC-10bit AAC][簡繁內封字幕]")
     assertEquals("03..03", r.episodeRange.toString())
     assertEquals("CHS, CHT", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("1080P", r.resolution.toString())
@@ -1274,14 +1274,14 @@ public class PatternTitleParserTest约会大作战 : PatternBasedTitleParserTest
     assertEquals(null, r.subtitleKind)
     }
     kotlin.run {
-    val r = parse("【千夏字幕组】【约会大作战IV_Date A Live IV】[第03话][1080p_AVC][简体]")
+    val r = parse("【千夏字幕組】【約會大作戰IV_Date A Live IV】[第03話][1080p_AVC][簡體]")
     assertEquals("03..03", r.episodeRange.toString())
     assertEquals("CHS", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("1080P", r.resolution.toString())
     assertEquals(null, r.subtitleKind)
     }
     kotlin.run {
-    val r = parse("[爱恋&漫猫字幕组][4月新番][约会大作战][Date A Live IV][02][1080p][MP4][简中]")
+    val r = parse("[愛戀&漫貓字幕組][4月新番][約會大作戰][Date A Live IV][02][1080p][MP4][簡中]")
     assertEquals("02..02", r.episodeRange.toString())
     assertEquals("CHS", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("1080P", r.resolution.toString())
@@ -1296,7 +1296,7 @@ public class PatternTitleParserTest约会大作战 : PatternBasedTitleParserTest
     }
     kotlin.run {
     val r =
-        parse("[千夏字幕组&LoliHouse] 约会大作战 IV / Date A Live IV - 02 [WebRip 1080p HEVC-10bit AAC][简繁内封字幕]")
+        parse("[千夏字幕組&LoliHouse] 約會大作戰 IV / Date A Live IV - 02 [WebRip 1080p HEVC-10bit AAC][簡繁內封字幕]")
     assertEquals("02..02", r.episodeRange.toString())
     assertEquals("CHS, CHT", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("1080P", r.resolution.toString())
@@ -1310,7 +1310,7 @@ public class PatternTitleParserTest约会大作战 : PatternBasedTitleParserTest
     assertEquals(null, r.subtitleKind)
     }
     kotlin.run {
-    val r = parse("【千夏字幕组】【约会大作战IV_Date A Live IV】[第02话][1080p_AVC][简体]")
+    val r = parse("【千夏字幕組】【約會大作戰IV_Date A Live IV】[第02話][1080p_AVC][簡體]")
     assertEquals("02..02", r.episodeRange.toString())
     assertEquals("CHS", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("1080P", r.resolution.toString())
@@ -1322,21 +1322,21 @@ public class PatternTitleParserTest约会大作战 : PatternBasedTitleParserTest
   public fun `598280-598272-597949-597780-597726-597725-597691-597522-597519-597482`() {
     kotlin.run {
     val r =
-        parse("[ANi] 約會大作戰 DATE A LIVE 第四季（僅限港澳台地區） - 03 [1080P][Bilibili][WEB-DL][AAC AVC][CHT CHS][MP4]")
+        parse("[ANi] 約會大作戰 DATE A LIVE 第四季（僅限港澳臺地區） - 03 [1080P][Bilibili][WEB-DL][AAC AVC][CHT CHS][MP4]")
     assertEquals("03..03", r.episodeRange.toString())
     assertEquals("CHS, CHT", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("1080P", r.resolution.toString())
     assertEquals(SubtitleKind.CLOSED, r.subtitleKind)
     }
     kotlin.run {
-    val r = parse("[NC-Raws] 约会大作战 第四季 / Date A Live S4 - 03 (B-Global 1920x1080 HEVC AAC MKV)")
+    val r = parse("[NC-Raws] 約會大作戰 第四季 / Date A Live S4 - 03 (B-Global 1920x1080 HEVC AAC MKV)")
     assertEquals("03..03", r.episodeRange.toString())
     assertEquals("", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("1080P", r.resolution.toString())
     assertEquals(null, r.subtitleKind)
     }
     kotlin.run {
-    val r = parse("[NC-Raws] 约会大作战 第四季 / Date A Live S4 - 02 (B-Global 1920x1080 HEVC AAC MKV)")
+    val r = parse("[NC-Raws] 約會大作戰 第四季 / Date A Live S4 - 02 (B-Global 1920x1080 HEVC AAC MKV)")
     assertEquals("02..02", r.episodeRange.toString())
     assertEquals("", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("1080P", r.resolution.toString())
@@ -1350,7 +1350,7 @@ public class PatternTitleParserTest约会大作战 : PatternBasedTitleParserTest
     assertEquals(null, r.subtitleKind)
     }
     kotlin.run {
-    val r = parse("[爱恋&漫猫字幕组][4月新番][约会大作战][Date A Live IV][01][1080p][MP4][简中]")
+    val r = parse("[愛戀&漫貓字幕組][4月新番][約會大作戰][Date A Live IV][01][1080p][MP4][簡中]")
     assertEquals("01..01", r.episodeRange.toString())
     assertEquals("CHS", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("1080P", r.resolution.toString())
@@ -1364,7 +1364,7 @@ public class PatternTitleParserTest约会大作战 : PatternBasedTitleParserTest
     assertEquals(null, r.subtitleKind)
     }
     kotlin.run {
-    val r = parse("[澄空学园&华盟字幕社] Date A Live IV 约会大作战IV 第02话 MP4 720p")
+    val r = parse("[澄空學園&華盟字幕社] Date A Live IV 約會大作戰IV 第02話 MP4 720p")
     assertEquals("02..02", r.episodeRange.toString())
     assertEquals("", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("720P", r.resolution.toString())
@@ -1372,21 +1372,21 @@ public class PatternTitleParserTest约会大作战 : PatternBasedTitleParserTest
     }
     kotlin.run {
     val r =
-        parse("[ANi] 約會大作戰 DATE A LIVE 第四季（僅限港澳台地區） - 02 [1080P][Bilibili][WEB-DL][AAC AVC][CHT CHS][MP4]")
+        parse("[ANi] 約會大作戰 DATE A LIVE 第四季（僅限港澳臺地區） - 02 [1080P][Bilibili][WEB-DL][AAC AVC][CHT CHS][MP4]")
     assertEquals("02..02", r.episodeRange.toString())
     assertEquals("CHS, CHT", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("1080P", r.resolution.toString())
     assertEquals(SubtitleKind.CLOSED, r.subtitleKind)
     }
     kotlin.run {
-    val r = parse("[NC-Raws] 约会大作战 第四季 / Date A Live S4 - 02 (B-Global 1920x1080 HEVC AAC MKV)")
+    val r = parse("[NC-Raws] 約會大作戰 第四季 / Date A Live S4 - 02 (B-Global 1920x1080 HEVC AAC MKV)")
     assertEquals("02..02", r.episodeRange.toString())
     assertEquals("", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("1080P", r.resolution.toString())
     assertEquals(null, r.subtitleKind)
     }
     kotlin.run {
-    val r = parse("[澄空学园&华盟字幕社] Date A Live IV 约会大作战IV 第01话 MP4 720p")
+    val r = parse("[澄空學園&華盟字幕社] Date A Live IV 約會大作戰IV 第01話 MP4 720p")
     assertEquals("01..01", r.episodeRange.toString())
     assertEquals("", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("720P", r.resolution.toString())
@@ -1404,7 +1404,7 @@ public class PatternTitleParserTest约会大作战 : PatternBasedTitleParserTest
     assertEquals(null, r.subtitleKind)
     }
     kotlin.run {
-    val r = parse("【千夏字幕组】【约会大作战IV_Date A Live IV】[第01话][1080p_AVC][简体]")
+    val r = parse("【千夏字幕組】【約會大作戰IV_Date A Live IV】[第01話][1080p_AVC][簡體]")
     assertEquals("01..01", r.episodeRange.toString())
     assertEquals("CHS", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("1080P", r.resolution.toString())
@@ -1412,7 +1412,7 @@ public class PatternTitleParserTest约会大作战 : PatternBasedTitleParserTest
     }
     kotlin.run {
     val r =
-        parse("[千夏字幕组&LoliHouse] 约会大作战 IV / Date A Live IV - 01 [WebRip 1080p HEVC-10bit AAC][简繁内封字幕]")
+        parse("[千夏字幕組&LoliHouse] 約會大作戰 IV / Date A Live IV - 01 [WebRip 1080p HEVC-10bit AAC][簡繁內封字幕]")
     assertEquals("01..01", r.episodeRange.toString())
     assertEquals("CHS, CHT", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("1080P", r.resolution.toString())
@@ -1433,7 +1433,7 @@ public class PatternTitleParserTest约会大作战 : PatternBasedTitleParserTest
     assertEquals(null, r.subtitleKind)
     }
     kotlin.run {
-    val r = parse("[NC-Raws] 约会大作战 第四季 / Date A Live S4 - 01 (B-Global 1920x1080 HEVC AAC MKV)")
+    val r = parse("[NC-Raws] 約會大作戰 第四季 / Date A Live S4 - 01 (B-Global 1920x1080 HEVC AAC MKV)")
     assertEquals("01..01", r.episodeRange.toString())
     assertEquals("", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("1080P", r.resolution.toString())
@@ -1493,14 +1493,14 @@ public class PatternTitleParserTest约会大作战 : PatternBasedTitleParserTest
     }
     kotlin.run {
     val r =
-        parse("[VCB-Studio] Date A Live / 约会大作战 / デート・ア・ライブ 10-bit 1080p HEVC/AVC BDRip [S1-S2 + MOVIE Reseed V3 Fin]")
+        parse("[VCB-Studio] Date A Live / 約會大作戰 / デート・ア・ライブ 10-bit 1080p HEVC/AVC BDRip [S1-S2 + MOVIE Reseed V3 Fin]")
     assertEquals("S1+S2+S?", r.episodeRange.toString())
     assertEquals("", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("1080P", r.resolution.toString())
     assertEquals(null, r.subtitleKind)
     }
     kotlin.run {
-    val r = parse("约会大作战 全三季 Date A Live S1+S2+S3+Movie [BD 1920x1080 HEVC-10bit OPUS][简繁内封字幕]")
+    val r = parse("約會大作戰 全三季 Date A Live S1+S2+S3+Movie [BD 1920x1080 HEVC-10bit OPUS][簡繁內封字幕]")
     assertEquals("S1+S2+S3+S?", r.episodeRange.toString())
     assertEquals("CHS, CHT", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("1080P", r.resolution.toString())
@@ -1508,7 +1508,7 @@ public class PatternTitleParserTest约会大作战 : PatternBasedTitleParserTest
     }
     kotlin.run {
     val r =
-        parse("[Snow-Raws] 约会大作战 第三季/Date a Live III/デート・ア・ライブ III(BD 1920x1080 HEVC-YUV420P10 FLAC)")
+        parse("[Snow-Raws] 約會大作戰 第三季/Date a Live III/デート・ア・ライブ III(BD 1920x1080 HEVC-YUV420P10 FLAC)")
     assertEquals("S?", r.episodeRange.toString())
     assertEquals("", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("1080P", r.resolution.toString())
@@ -1516,14 +1516,14 @@ public class PatternTitleParserTest约会大作战 : PatternBasedTitleParserTest
     }
     kotlin.run {
     val r =
-        parse("[Snow-Raws] 约会大作战 第二季/Date a Live II/デート・ア・ライブ II(BD 1920x1080 HEVC-YUV420P10 FLAC)")
+        parse("[Snow-Raws] 約會大作戰 第二季/Date a Live II/デート・ア・ライブ II(BD 1920x1080 HEVC-YUV420P10 FLAC)")
     assertEquals("S?", r.episodeRange.toString())
     assertEquals("", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("1080P", r.resolution.toString())
     assertEquals(null, r.subtitleKind)
     }
     kotlin.run {
-    val r = parse("[Snow-Raws] 约会大作战 第一季/Date a Live/デート・ア・ライブ(BD 1920x1080 HEVC-YUV420P10 FLAC)")
+    val r = parse("[Snow-Raws] 約會大作戰 第一季/Date a Live/デート・ア・ライブ(BD 1920x1080 HEVC-YUV420P10 FLAC)")
     assertEquals("S?", r.episodeRange.toString())
     assertEquals("", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("1080P", r.resolution.toString())
@@ -1531,7 +1531,7 @@ public class PatternTitleParserTest约会大作战 : PatternBasedTitleParserTest
     }
     kotlin.run {
     val r =
-        parse("[千夏字幕组&VCB-Studio] Date A Live Ⅲ / 约会大作战Ⅲ / デート・ア・ライブⅢ 10-bit 720p HEVC BDRip [MP4 Ver]")
+        parse("[千夏字幕組&VCB-Studio] Date A Live Ⅲ / 約會大作戰Ⅲ / デート・ア・ライブⅢ 10-bit 720p HEVC BDRip [MP4 Ver]")
     assertEquals("S?", r.episodeRange.toString())
     assertEquals("CHS", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("720P", r.resolution.toString())
@@ -1539,7 +1539,7 @@ public class PatternTitleParserTest约会大作战 : PatternBasedTitleParserTest
     }
     kotlin.run {
     val r =
-        parse("[千夏字幕组&VCB-Studio] Date A Live Ⅲ / 约会大作战Ⅲ / デート・ア・ライブⅢ 10-bit 1080p HEVC BDRip [Fin]")
+        parse("[千夏字幕組&VCB-Studio] Date A Live Ⅲ / 約會大作戰Ⅲ / デート・ア・ライブⅢ 10-bit 1080p HEVC BDRip [Fin]")
     assertEquals("S?", r.episodeRange.toString())
     assertEquals("CHS", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("1080P", r.resolution.toString())
@@ -1564,21 +1564,21 @@ public class PatternTitleParserTest约会大作战 : PatternBasedTitleParserTest
     assertEquals(null, r.subtitleKind)
     }
     kotlin.run {
-    val r = parse("[Moozzi2] 约会大作战第三季 Date A Live S3 BD-BOX 1-12 (BD 1920x1080 x.264 Flac)")
+    val r = parse("[Moozzi2] 約會大作戰第三季 Date A Live S3 BD-BOX 1-12 (BD 1920x1080 x.264 Flac)")
     assertEquals("01..12", r.episodeRange.toString())
     assertEquals("", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("1080P", r.resolution.toString())
     assertEquals(null, r.subtitleKind)
     }
     kotlin.run {
-    val r = parse("【ReinForce】【约会大作战 第三季】【DATE A LIVE S3 Vol 1】【01-06】【BDrip】【1920x1680】【mkv】")
+    val r = parse("【ReinForce】【約會大作戰 第三季】【DATE A LIVE S3 Vol 1】【01-06】【BDrip】【1920x1680】【mkv】")
     assertEquals("01..06", r.episodeRange.toString())
     assertEquals("", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("null", r.resolution.toString())
     assertEquals(null, r.subtitleKind)
     }
     kotlin.run {
-    val r = parse("[澄空学园&华盟字幕社] Date A Live III 约会大作战III 第12话 MP4 720p 完")
+    val r = parse("[澄空學園&華盟字幕社] Date A Live III 約會大作戰III 第12話 MP4 720p 完")
     assertEquals("12..12", r.episodeRange.toString())
     assertEquals("", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("720P", r.resolution.toString())
@@ -1586,7 +1586,7 @@ public class PatternTitleParserTest约会大作战 : PatternBasedTitleParserTest
     }
     kotlin.run {
     val r =
-        parse("[千夏字幕组&LoliHouse] 约会大作战 III / Date A Live III - 12 [WebRip 1080p HEVC-10bit AAC][繁体内封字幕]")
+        parse("[千夏字幕組&LoliHouse] 約會大作戰 III / Date A Live III - 12 [WebRip 1080p HEVC-10bit AAC][繁體內封字幕]")
     assertEquals("12..12", r.episodeRange.toString())
     assertEquals("CHT", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("1080P", r.resolution.toString())
@@ -1614,7 +1614,7 @@ public class PatternTitleParserTest约会大作战 : PatternBasedTitleParserTest
     assertEquals(null, r.subtitleKind)
     }
     kotlin.run {
-    val r = parse("[搬运] 约会大作战III 12 [1080p][简体中文字幕]")
+    val r = parse("[搬運] 約會大作戰III 12 [1080p][簡體中文字幕]")
     assertEquals("12..12", r.episodeRange.toString())
     assertEquals("CHS", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("1080P", r.resolution.toString())
@@ -1622,7 +1622,7 @@ public class PatternTitleParserTest约会大作战 : PatternBasedTitleParserTest
     }
     kotlin.run {
     val r =
-        parse("[千夏字幕组&LoliHouse] 约会大作战 III / Date A Live III - 11 [WebRip 1080p HEVC-10bit AAC][繁体内封字幕]")
+        parse("[千夏字幕組&LoliHouse] 約會大作戰 III / Date A Live III - 11 [WebRip 1080p HEVC-10bit AAC][繁體內封字幕]")
     assertEquals("11..11", r.episodeRange.toString())
     assertEquals("CHT", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("1080P", r.resolution.toString())
@@ -1647,14 +1647,14 @@ public class PatternTitleParserTest约会大作战 : PatternBasedTitleParserTest
     assertEquals(null, r.subtitleKind)
     }
     kotlin.run {
-    val r = parse("[澄空学园&华盟字幕社] Date A Live III 约会大作战III 第11话 MP4 720p")
+    val r = parse("[澄空學園&華盟字幕社] Date A Live III 約會大作戰III 第11話 MP4 720p")
     assertEquals("11..11", r.episodeRange.toString())
     assertEquals("", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("720P", r.resolution.toString())
     assertEquals(null, r.subtitleKind)
     }
     kotlin.run {
-    val r = parse("[搬运] 约会大作战III 11 [1080p][简体中文字幕]")
+    val r = parse("[搬運] 約會大作戰III 11 [1080p][簡體中文字幕]")
     assertEquals("11..11", r.episodeRange.toString())
     assertEquals("CHS", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("1080P", r.resolution.toString())
@@ -1662,14 +1662,14 @@ public class PatternTitleParserTest约会大作战 : PatternBasedTitleParserTest
     }
     kotlin.run {
     val r =
-        parse("[千夏字幕组&LoliHouse] 约会大作战 III / Date A Live III - 10 [WebRip 1080p HEVC-10bit AAC][繁体内封字幕]")
+        parse("[千夏字幕組&LoliHouse] 約會大作戰 III / Date A Live III - 10 [WebRip 1080p HEVC-10bit AAC][繁體內封字幕]")
     assertEquals("10..10", r.episodeRange.toString())
     assertEquals("CHT", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("1080P", r.resolution.toString())
     assertEquals(SubtitleKind.CLOSED, r.subtitleKind)
     }
     kotlin.run {
-    val r = parse("[澄空学园&华盟字幕社] Date A Live III 约会大作战III 第10话 MP4 720p")
+    val r = parse("[澄空學園&華盟字幕社] Date A Live III 約會大作戰III 第10話 MP4 720p")
     assertEquals("10..10", r.episodeRange.toString())
     assertEquals("", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("720P", r.resolution.toString())
@@ -1677,7 +1677,7 @@ public class PatternTitleParserTest约会大作战 : PatternBasedTitleParserTest
     }
     kotlin.run {
     val r =
-        parse("[千夏字幕组&LoliHouse] 约会大作战 III / Date A Live III - 09 [WebRip 1080p HEVC-10bit AAC][繁体内封字幕]")
+        parse("[千夏字幕組&LoliHouse] 約會大作戰 III / Date A Live III - 09 [WebRip 1080p HEVC-10bit AAC][繁體內封字幕]")
     assertEquals("09..09", r.episodeRange.toString())
     assertEquals("CHT", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("1080P", r.resolution.toString())
@@ -1723,21 +1723,21 @@ public class PatternTitleParserTest约会大作战 : PatternBasedTitleParserTest
     assertEquals(null, r.subtitleKind)
     }
     kotlin.run {
-    val r = parse("[搬运] 约会大作战III 09 [1080p][简体中文字幕]")
+    val r = parse("[搬運] 約會大作戰III 09 [1080p][簡體中文字幕]")
     assertEquals("09..09", r.episodeRange.toString())
     assertEquals("CHS", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("1080P", r.resolution.toString())
     assertEquals(null, r.subtitleKind)
     }
     kotlin.run {
-    val r = parse("[澄空学园&华盟字幕社] Date A Live III 约会大作战III 第09话 MP4 720p")
+    val r = parse("[澄空學園&華盟字幕社] Date A Live III 約會大作戰III 第09話 MP4 720p")
     assertEquals("09..09", r.episodeRange.toString())
     assertEquals("", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("720P", r.resolution.toString())
     assertEquals(null, r.subtitleKind)
     }
     kotlin.run {
-    val r = parse("[搬运] 约会大作战III 09 [1080p][简体中文字幕]")
+    val r = parse("[搬運] 約會大作戰III 09 [1080p][簡體中文字幕]")
     assertEquals("09..09", r.episodeRange.toString())
     assertEquals("CHS", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("1080P", r.resolution.toString())
@@ -1745,14 +1745,14 @@ public class PatternTitleParserTest约会大作战 : PatternBasedTitleParserTest
     }
     kotlin.run {
     val r =
-        parse("[千夏字幕组&LoliHouse] 约会大作战 III / Date A Live III - 08 [WebRip 1080p HEVC-10bit AAC][繁体内封字幕]")
+        parse("[千夏字幕組&LoliHouse] 約會大作戰 III / Date A Live III - 08 [WebRip 1080p HEVC-10bit AAC][繁體內封字幕]")
     assertEquals("08..08", r.episodeRange.toString())
     assertEquals("CHT", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("1080P", r.resolution.toString())
     assertEquals(SubtitleKind.CLOSED, r.subtitleKind)
     }
     kotlin.run {
-    val r = parse("[澄空学园&华盟字幕社] Date A Live III 约会大作战III 第08话 MP4 720p")
+    val r = parse("[澄空學園&華盟字幕社] Date A Live III 約會大作戰III 第08話 MP4 720p")
     assertEquals("08..08", r.episodeRange.toString())
     assertEquals("", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("720P", r.resolution.toString())
@@ -1774,7 +1774,7 @@ public class PatternTitleParserTest约会大作战 : PatternBasedTitleParserTest
     }
     kotlin.run {
     val r =
-        parse("[千夏字幕组&LoliHouse] 约会大作战 III / Date A Live III - 07 [WebRip 1080p HEVC-10bit AAC][繁体内封字幕]")
+        parse("[千夏字幕組&LoliHouse] 約會大作戰 III / Date A Live III - 07 [WebRip 1080p HEVC-10bit AAC][繁體內封字幕]")
     assertEquals("07..07", r.episodeRange.toString())
     assertEquals("CHT", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("1080P", r.resolution.toString())
@@ -1806,7 +1806,7 @@ public class PatternTitleParserTest约会大作战 : PatternBasedTitleParserTest
     assertEquals(null, r.subtitleKind)
     }
     kotlin.run {
-    val r = parse("[搬运] 约会大作战III 08 [1080p][简体中文字幕]")
+    val r = parse("[搬運] 約會大作戰III 08 [1080p][簡體中文字幕]")
     assertEquals("08..08", r.episodeRange.toString())
     assertEquals("CHS", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("1080P", r.resolution.toString())
@@ -1814,14 +1814,14 @@ public class PatternTitleParserTest约会大作战 : PatternBasedTitleParserTest
     }
     kotlin.run {
     val r =
-        parse("[Moozzi2] 约会大作战 剧场版 万由里审判 Date a Live Mayuri Judgement (BD 1920x1080 x.264 2Audio)")
+        parse("[Moozzi2] 約會大作戰 劇場版 萬由裏審判 Date a Live Mayuri Judgement (BD 1920x1080 x.264 2Audio)")
     assertEquals("S?", r.episodeRange.toString())
     assertEquals("", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("1080P", r.resolution.toString())
     assertEquals(null, r.subtitleKind)
     }
     kotlin.run {
-    val r = parse("[Moozzi2] 约会大作战第二季 Date A Live S2 1-10+OAD (BD 1920x1080 x.264 Flac)")
+    val r = parse("[Moozzi2] 約會大作戰第二季 Date A Live S2 1-10+OAD (BD 1920x1080 x.264 Flac)")
     assertEquals("01..10+OAD", r.episodeRange.toString())
     assertEquals("", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("1080P", r.resolution.toString())
@@ -1829,7 +1829,7 @@ public class PatternTitleParserTest约会大作战 : PatternBasedTitleParserTest
     }
     kotlin.run {
     val r =
-        parse("[Moozzi2] 约会大作战第一季 Date A Live S1 Director's Cut 1-12+OAD (BD 1920x1080 x.264 Flac)")
+        parse("[Moozzi2] 約會大作戰第一季 Date A Live S1 Director's Cut 1-12+OAD (BD 1920x1080 x.264 Flac)")
     assertEquals("01..12+OAD", r.episodeRange.toString())
     assertEquals("", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("1080P", r.resolution.toString())
@@ -1843,7 +1843,7 @@ public class PatternTitleParserTest约会大作战 : PatternBasedTitleParserTest
     assertEquals(null, r.subtitleKind)
     }
     kotlin.run {
-    val r = parse("[澄空学园&华盟字幕社] Date A Live III 约会大作战III 第07话 MP4 720p")
+    val r = parse("[澄空學園&華盟字幕社] Date A Live III 約會大作戰III 第07話 MP4 720p")
     assertEquals("07..07", r.episodeRange.toString())
     assertEquals("", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("720P", r.resolution.toString())
@@ -1851,7 +1851,7 @@ public class PatternTitleParserTest约会大作战 : PatternBasedTitleParserTest
     }
     kotlin.run {
     val r =
-        parse("[千夏字幕组&LoliHouse] 约会大作战 III / Date A Live III - 06 [WebRip 1080p HEVC-10bit AAC][繁体内封字幕]")
+        parse("[千夏字幕組&LoliHouse] 約會大作戰 III / Date A Live III - 06 [WebRip 1080p HEVC-10bit AAC][繁體內封字幕]")
     assertEquals("06..06", r.episodeRange.toString())
     assertEquals("CHT", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("1080P", r.resolution.toString())
@@ -1876,21 +1876,21 @@ public class PatternTitleParserTest约会大作战 : PatternBasedTitleParserTest
     assertEquals(null, r.subtitleKind)
     }
     kotlin.run {
-    val r = parse("[搬运] 约会大作战III 07 [1080p][简体中文字幕]")
+    val r = parse("[搬運] 約會大作戰III 07 [1080p][簡體中文字幕]")
     assertEquals("07..07", r.episodeRange.toString())
     assertEquals("CHS", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("1080P", r.resolution.toString())
     assertEquals(null, r.subtitleKind)
     }
     kotlin.run {
-    val r = parse("[澄空学园&华盟字幕社] Date A Live III 约会大作战III 第06话 MP4 720p")
+    val r = parse("[澄空學園&華盟字幕社] Date A Live III 約會大作戰III 第06話 MP4 720p")
     assertEquals("06..06", r.episodeRange.toString())
     assertEquals("", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("720P", r.resolution.toString())
     assertEquals(null, r.subtitleKind)
     }
     kotlin.run {
-    val r = parse("[搬运]约会大作战第三季第06集")
+    val r = parse("[搬運]約會大作戰第三季第06集")
     assertEquals("null", r.episodeRange.toString())
     assertEquals("", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("null", r.resolution.toString())
@@ -1905,7 +1905,7 @@ public class PatternTitleParserTest约会大作战 : PatternBasedTitleParserTest
     }
     kotlin.run {
     val r =
-        parse("[千夏字幕组&LoliHouse] 约会大作战 III / Date A Live III - 05 [WebRip 1080p HEVC-10bit AAC][繁体内封字幕]")
+        parse("[千夏字幕組&LoliHouse] 約會大作戰 III / Date A Live III - 05 [WebRip 1080p HEVC-10bit AAC][繁體內封字幕]")
     assertEquals("05..05", r.episodeRange.toString())
     assertEquals("CHT", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("1080P", r.resolution.toString())
@@ -1926,7 +1926,7 @@ public class PatternTitleParserTest约会大作战 : PatternBasedTitleParserTest
     assertEquals(null, r.subtitleKind)
     }
     kotlin.run {
-    val r = parse("[澄空学园&华盟字幕社] Date A Live III 约会大作战III 第05话 MP4 720p")
+    val r = parse("[澄空學園&華盟字幕社] Date A Live III 約會大作戰III 第05話 MP4 720p")
     assertEquals("05..05", r.episodeRange.toString())
     assertEquals("", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("720P", r.resolution.toString())
@@ -1945,14 +1945,14 @@ public class PatternTitleParserTest约会大作战 : PatternBasedTitleParserTest
     }
     kotlin.run {
     val r =
-        parse("[千夏字幕组&LoliHouse] 约会大作战 III / Date A Live III - 01-04 [WebRip 1080p HEVC-10bit AAC][繁体内封字幕]")
+        parse("[千夏字幕組&LoliHouse] 約會大作戰 III / Date A Live III - 01-04 [WebRip 1080p HEVC-10bit AAC][繁體內封字幕]")
     assertEquals("01..04", r.episodeRange.toString())
     assertEquals("CHT", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("1080P", r.resolution.toString())
     assertEquals(SubtitleKind.CLOSED, r.subtitleKind)
     }
     kotlin.run {
-    val r = parse("[搬运] 约会大作战III 05 [1080p][简体中文字幕]")
+    val r = parse("[搬運] 約會大作戰III 05 [1080p][簡體中文字幕]")
     assertEquals("05..05", r.episodeRange.toString())
     assertEquals("CHS", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("1080P", r.resolution.toString())
@@ -2026,7 +2026,7 @@ public class PatternTitleParserTest约会大作战 : PatternBasedTitleParserTest
     assertEquals(null, r.subtitleKind)
     }
     kotlin.run {
-    val r = parse("[澄空学园&华盟字幕社] Date A Live III 约会大作战III 第04话 MP4 720p")
+    val r = parse("[澄空學園&華盟字幕社] Date A Live III 約會大作戰III 第04話 MP4 720p")
     assertEquals("04..04", r.episodeRange.toString())
     assertEquals("", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("720P", r.resolution.toString())
@@ -2040,7 +2040,7 @@ public class PatternTitleParserTest约会大作战 : PatternBasedTitleParserTest
     assertEquals(null, r.subtitleKind)
     }
     kotlin.run {
-    val r = parse("[搬运] 约会大作战III 04 [1080p][简体中文字幕]")
+    val r = parse("[搬運] 約會大作戰III 04 [1080p][簡體中文字幕]")
     assertEquals("04..04", r.episodeRange.toString())
     assertEquals("CHS", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("1080P", r.resolution.toString())
@@ -2054,7 +2054,7 @@ public class PatternTitleParserTest约会大作战 : PatternBasedTitleParserTest
     assertEquals(null, r.subtitleKind)
     }
     kotlin.run {
-    val r = parse("[澄空学园&华盟字幕社][1月新番] Date A Live III 约会大作战III 第03话 MP4 720p")
+    val r = parse("[澄空學園&華盟字幕社][1月新番] Date A Live III 約會大作戰III 第03話 MP4 720p")
     assertEquals("03..03", r.episodeRange.toString())
     assertEquals("", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("720P", r.resolution.toString())
@@ -2062,14 +2062,14 @@ public class PatternTitleParserTest约会大作战 : PatternBasedTitleParserTest
     }
     kotlin.run {
     val r =
-        parse("[LoliHouse] 约会大作战 III / Date A Live III - 03 [WebRip 1080p HEVC-10bit AAC][英文内封字幕]")
+        parse("[LoliHouse] 約會大作戰 III / Date A Live III - 03 [WebRip 1080p HEVC-10bit AAC][英文內封字幕]")
     assertEquals("03..03", r.episodeRange.toString())
     assertEquals("ENG", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("1080P", r.resolution.toString())
     assertEquals(SubtitleKind.CLOSED, r.subtitleKind)
     }
     kotlin.run {
-    val r = parse("[搬运] 约会大作战III 03 [1080p][简体中文字幕]")
+    val r = parse("[搬運] 約會大作戰III 03 [1080p][簡體中文字幕]")
     assertEquals("03..03", r.episodeRange.toString())
     assertEquals("CHS", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("1080P", r.resolution.toString())
@@ -2077,7 +2077,7 @@ public class PatternTitleParserTest约会大作战 : PatternBasedTitleParserTest
     }
     kotlin.run {
     val r =
-        parse("[LoliHouse] 约会大作战 III / Date A Live III - 02 [WebRip 1080p HEVC-10bit AAC][英文内封字幕]")
+        parse("[LoliHouse] 約會大作戰 III / Date A Live III - 02 [WebRip 1080p HEVC-10bit AAC][英文內封字幕]")
     assertEquals("02..02", r.episodeRange.toString())
     assertEquals("ENG", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("1080P", r.resolution.toString())
@@ -2095,7 +2095,7 @@ public class PatternTitleParserTest约会大作战 : PatternBasedTitleParserTest
     assertEquals(null, r.subtitleKind)
     }
     kotlin.run {
-    val r = parse("[澄空学园&华盟字幕社][1月新番] Date A Live III 约会大作战III 第02话 MP4 720p")
+    val r = parse("[澄空學園&華盟字幕社][1月新番] Date A Live III 約會大作戰III 第02話 MP4 720p")
     assertEquals("02..02", r.episodeRange.toString())
     assertEquals("", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("720P", r.resolution.toString())
@@ -2103,14 +2103,14 @@ public class PatternTitleParserTest约会大作战 : PatternBasedTitleParserTest
     }
     kotlin.run {
     val r =
-        parse("[VCB-Studio] Date A Live / 约会大作战 / デート・ア・ライブ 10-bit 1080p AVC BDRip [S1 Reseed Fin]")
+        parse("[VCB-Studio] Date A Live / 約會大作戰 / デート・ア・ライブ 10-bit 1080p AVC BDRip [S1 Reseed Fin]")
     assertEquals("S1", r.episodeRange.toString())
     assertEquals("", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("1080P", r.resolution.toString())
     assertEquals(null, r.subtitleKind)
     }
     kotlin.run {
-    val r = parse("[搬运] 约会大作战III 02 [1080p][简体中文字幕]")
+    val r = parse("[搬運] 約會大作戰III 02 [1080p][簡體中文字幕]")
     assertEquals("02..02", r.episodeRange.toString())
     assertEquals("CHS", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("1080P", r.resolution.toString())
@@ -2118,21 +2118,21 @@ public class PatternTitleParserTest约会大作战 : PatternBasedTitleParserTest
     }
     kotlin.run {
     val r =
-        parse("[LoliHouse] 约会大作战 III / Date A Live III - 01 [WebRip 1080p HEVC-10bit AAC][英文内封字幕]")
+        parse("[LoliHouse] 約會大作戰 III / Date A Live III - 01 [WebRip 1080p HEVC-10bit AAC][英文內封字幕]")
     assertEquals("01..01", r.episodeRange.toString())
     assertEquals("ENG", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("1080P", r.resolution.toString())
     assertEquals(SubtitleKind.CLOSED, r.subtitleKind)
     }
     kotlin.run {
-    val r = parse("[澄空学园&华盟字幕社][1月新番] Date A Live III 约会大作战III 第01话 MP4 720p")
+    val r = parse("[澄空學園&華盟字幕社][1月新番] Date A Live III 約會大作戰III 第01話 MP4 720p")
     assertEquals("01..01", r.episodeRange.toString())
     assertEquals("", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("720P", r.resolution.toString())
     assertEquals(null, r.subtitleKind)
     }
     kotlin.run {
-    val r = parse("[搬运] 约会大作战III 01 [1080p][简体中文字幕]")
+    val r = parse("[搬運] 約會大作戰III 01 [1080p][簡體中文字幕]")
     assertEquals("01..01", r.episodeRange.toString())
     assertEquals("CHS", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("1080P", r.resolution.toString())
@@ -2140,7 +2140,7 @@ public class PatternTitleParserTest约会大作战 : PatternBasedTitleParserTest
     }
     kotlin.run {
     val r =
-        parse("[VCB-Studio] Date A Live / 约会大作战 / デート・ア・ライブ 10-bit 1080p AVC/HEVC BDRip [S1(DC)+S2+M1 Reseed Fin]")
+        parse("[VCB-Studio] Date A Live / 約會大作戰 / デート・ア・ライブ 10-bit 1080p AVC/HEVC BDRip [S1(DC)+S2+M1 Reseed Fin]")
     assertEquals("S2", r.episodeRange.toString())
     assertEquals("", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("1080P", r.resolution.toString())
@@ -2148,7 +2148,7 @@ public class PatternTitleParserTest约会大作战 : PatternBasedTitleParserTest
     }
     kotlin.run {
     val r =
-        parse("[ANK-Raws] デート・ア・ライブⅡ DATE A LIVEⅡ 约会大作战Ⅱ TV 01-10Fin OVA (BDrip 1920x1080 HEVC-YUV420P10 FLAC)")
+        parse("[ANK-Raws] デート・ア・ライブⅡ DATE A LIVEⅡ 約會大作戰Ⅱ TV 01-10Fin OVA (BDrip 1920x1080 HEVC-YUV420P10 FLAC)")
     assertEquals("01..10", r.episodeRange.toString())
     assertEquals("", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("1080P", r.resolution.toString())
@@ -2156,7 +2156,7 @@ public class PatternTitleParserTest约会大作战 : PatternBasedTitleParserTest
     }
     kotlin.run {
     val r =
-        parse("[ANK-Raws] デート・ア・ライブ DATE A LIVE 约会大作战 TV 01-12Fin OVA (BDrip 1920x1080 HEVC-YUV420P10 FLAC)")
+        parse("[ANK-Raws] デート・ア・ライブ DATE A LIVE 約會大作戰 TV 01-12Fin OVA (BDrip 1920x1080 HEVC-YUV420P10 FLAC)")
     assertEquals("01..12", r.episodeRange.toString())
     assertEquals("", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("1080P", r.resolution.toString())
@@ -2174,28 +2174,28 @@ public class PatternTitleParserTest约会大作战 : PatternBasedTitleParserTest
     assertEquals(null, r.subtitleKind)
     }
     kotlin.run {
-    val r = parse("【F宅】约会大作战II 11话 OVA 简 720P MP4")
+    val r = parse("【F宅】約會大作戰II 11話 OVA 簡 720P MP4")
     assertEquals("OVA..OVA", r.episodeRange.toString())
     assertEquals("CHS", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("720P", r.resolution.toString())
     assertEquals(null, r.subtitleKind)
     }
     kotlin.run {
-    val r = parse("【F宅】约会大作战 13话 OVA 简 720P MP4")
+    val r = parse("【F宅】約會大作戰 13話 OVA 簡 720P MP4")
     assertEquals("OVA..OVA", r.episodeRange.toString())
     assertEquals("CHS", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("720P", r.resolution.toString())
     assertEquals(null, r.subtitleKind)
     }
     kotlin.run {
-    val r = parse("【F宅】约会大作战II 11话 OVA 简 1080P MKV")
+    val r = parse("【F宅】約會大作戰II 11話 OVA 簡 1080P MKV")
     assertEquals("OVA..OVA", r.episodeRange.toString())
     assertEquals("CHS", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("1080P", r.resolution.toString())
     assertEquals(null, r.subtitleKind)
     }
     kotlin.run {
-    val r = parse("【F宅】约会大作战 13话 OVA 简 1080P MKV")
+    val r = parse("【F宅】約會大作戰 13話 OVA 簡 1080P MKV")
     assertEquals("OVA..OVA", r.episodeRange.toString())
     assertEquals("CHS", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("1080P", r.resolution.toString())
@@ -2203,21 +2203,21 @@ public class PatternTitleParserTest约会大作战 : PatternBasedTitleParserTest
     }
     kotlin.run {
     val r =
-        parse("[繁星字幕組][Array Stars][劇場版 約會大作戰 - 萬由里審判][Gekijouban Date a Live - Mayuri Judgement ][BDrip][1080P][BIG5&GB&Jap][中日雙語簡繁內掛][mkv][字幕招新]")
+        parse("[繁星字幕組][Array Stars][劇場版 約會大作戰 - 萬由裏審判][Gekijouban Date a Live - Mayuri Judgement ][BDrip][1080P][BIG5&GB&Jap][中日雙語簡繁內掛][mkv][字幕招新]")
     assertEquals("S?", r.episodeRange.toString())
     assertEquals("CHS, CHT, JPN", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("1080P", r.resolution.toString())
     assertEquals(SubtitleKind.CLOSED, r.subtitleKind)
     }
     kotlin.run {
-    val r = parse("【F宅】约会大作战【剧场版】DATE A LIVE 万由里裁决 简 1080P MKV")
+    val r = parse("【F宅】約會大作戰【劇場版】DATE A LIVE 萬由裏裁決 簡 1080P MKV")
     assertEquals("S?", r.episodeRange.toString())
     assertEquals("CHS", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("1080P", r.resolution.toString())
     assertEquals(null, r.subtitleKind)
     }
     kotlin.run {
-    val r = parse("[澄空学园&华盟字幕社] Date A Live 约会大作战 导演剪辑版BDBOX BDRip 简繁外挂")
+    val r = parse("[澄空學園&華盟字幕社] Date A Live 約會大作戰 導演剪輯版BDBOX BDRip 簡繁外掛")
     assertEquals("S?", r.episodeRange.toString())
     assertEquals("CHS, CHT", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("null", r.resolution.toString())
@@ -2225,7 +2225,7 @@ public class PatternTitleParserTest约会大作战 : PatternBasedTitleParserTest
     }
     kotlin.run {
     val r =
-        parse("[繁星字幕組][Array Stars][劇場版 約會大作戰 - 萬由里審判][Gekijouban Date a Live - Mayuri Judgement ][BDrip][720P][BIG5&Jap][中日雙語繁體][mp4][字幕招新]")
+        parse("[繁星字幕組][Array Stars][劇場版 約會大作戰 - 萬由裏審判][Gekijouban Date a Live - Mayuri Judgement ][BDrip][720P][BIG5&Jap][中日雙語繁體][mp4][字幕招新]")
     assertEquals("S?", r.episodeRange.toString())
     assertEquals("CHT, JPN", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("720P", r.resolution.toString())
@@ -2233,7 +2233,7 @@ public class PatternTitleParserTest约会大作战 : PatternBasedTitleParserTest
     }
     kotlin.run {
     val r =
-        parse("[Makino House&VCB-S&philosophy-raws] Date A Live The Movie：Mayuri Judgement/约会大作战剧场版 万由里裁决 10bit 1080p HEVC BDRip")
+        parse("[Makino House&VCB-S&philosophy-raws] Date A Live The Movie：Mayuri Judgement/約會大作戰劇場版 萬由裏裁決 10bit 1080p HEVC BDRip")
     assertEquals("S?", r.episodeRange.toString())
     assertEquals("", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("1080P", r.resolution.toString())
@@ -2245,28 +2245,28 @@ public class PatternTitleParserTest约会大作战 : PatternBasedTitleParserTest
   public fun `425985-425643-425240-425043-425018-424999-424922-424896-424729-424579`() {
     kotlin.run {
     val r =
-        parse("[繁星字幕组][Array Stars][剧场版 约会大作战 - 万由里审判][Gekijouban Date a Live - Mayuri Judgement ][BDrip][720P][GB&Jap][中日双语简体][mp4]")
+        parse("[繁星字幕組][Array Stars][劇場版 約會大作戰 - 萬由裏審判][Gekijouban Date a Live - Mayuri Judgement ][BDrip][720P][GB&Jap][中日雙語簡體][mp4]")
     assertEquals("S?", r.episodeRange.toString())
     assertEquals("CHS, CHT, JPN", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("720P", r.resolution.toString())
     assertEquals(SubtitleKind.CLOSED, r.subtitleKind)
     }
     kotlin.run {
-    val r = parse("约会大作战 万由里裁决[漏勺rip 720P]（外挂字幕）")
+    val r = parse("約會大作戰 萬由裏裁決[漏勺rip 720P]（外掛字幕）")
     assertEquals("null", r.episodeRange.toString())
     assertEquals("", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("720P", r.resolution.toString())
     assertEquals(SubtitleKind.EXTERNAL_DISCOVER, r.subtitleKind)
     }
     kotlin.run {
-    val r = parse("[澄空学园&华盟字幕社] 剧场版 Date A Live 约会大作战 万由里裁决 Mayuri Judgement BDRip 简繁外挂")
+    val r = parse("[澄空學園&華盟字幕社] 劇場版 Date A Live 約會大作戰 萬由裏裁決 Mayuri Judgement BDRip 簡繁外掛")
     assertEquals("S?", r.episodeRange.toString())
     assertEquals("CHS, CHT", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("null", r.resolution.toString())
     assertEquals(SubtitleKind.EXTERNAL_DISCOVER, r.subtitleKind)
     }
     kotlin.run {
-    val r = parse("【F宅】约会大作战【剧场版】DATE A LIVE 万由里裁决 简 720P MP4")
+    val r = parse("【F宅】約會大作戰【劇場版】DATE A LIVE 萬由裏裁決 簡 720P MP4")
     assertEquals("S?", r.episodeRange.toString())
     assertEquals("CHS", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("720P", r.resolution.toString())
@@ -2274,14 +2274,14 @@ public class PatternTitleParserTest约会大作战 : PatternBasedTitleParserTest
     }
     kotlin.run {
     val r =
-        parse("【莳乃汉化组】约会大作战 剧场版：万由里审判 [Special Video][GB+BIG5][BDRip_1080p_x264_8bit][AAC]（诱宵美九:Go☆Summer Girl MV 内嵌）【请注意这个不是SP，是SV】")
+        parse("【蒔乃漢化組】約會大作戰 劇場版：萬由裏審判 [Special Video][GB+BIG5][BDRip_1080p_x264_8bit][AAC]（誘宵美九:Go☆Summer Girl MV 內嵌）【請注意這個不是SP，是SV】")
     assertEquals("Special..Special", r.episodeRange.toString())
     assertEquals("CHS, CHT", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("1080P", r.resolution.toString())
     assertEquals(SubtitleKind.EMBEDDED, r.subtitleKind)
     }
     kotlin.run {
-    val r = parse("【莳乃汉化组】约会大作战 剧场版：万由里审判 [GBv2][BDRip_1080p_x264_8bit][AAC]【请下载本版本，上个版本压成繁体了】")
+    val r = parse("【蒔乃漢化組】約會大作戰 劇場版：萬由裏審判 [GBv2][BDRip_1080p_x264_8bit][AAC]【請下載本版本，上個版本壓成繁體了】")
     assertEquals("S?", r.episodeRange.toString())
     assertEquals("CHS, CHT", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("1080P", r.resolution.toString())
@@ -2289,14 +2289,14 @@ public class PatternTitleParserTest约会大作战 : PatternBasedTitleParserTest
     }
     kotlin.run {
     val r =
-        parse("【莳乃汉化组】约会大作战 剧场版：万由里审判 [GB][BDRip_1080p_x264_8bit][AAC]【这个其实是压成了BIG5版的。。。。。下载转v2】")
+        parse("【蒔乃漢化組】約會大作戰 劇場版：萬由裏審判 [GB][BDRip_1080p_x264_8bit][AAC]【這個其實是壓成了BIG5版的。。。。。下載轉v2】")
     assertEquals("S?", r.episodeRange.toString())
     assertEquals("CHS, CHT", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("1080P", r.resolution.toString())
     assertEquals(SubtitleKind.CLOSED, r.subtitleKind)
     }
     kotlin.run {
-    val r = parse("【蒔乃漢化組】約會大作戰 劇場版：萬由里審判 [BIG5][BDRip_1080p_x264_8bit][AAC]")
+    val r = parse("【蒔乃漢化組】約會大作戰 劇場版：萬由裏審判 [BIG5][BDRip_1080p_x264_8bit][AAC]")
     assertEquals("S?", r.episodeRange.toString())
     assertEquals("CHT", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("1080P", r.resolution.toString())
@@ -2304,7 +2304,7 @@ public class PatternTitleParserTest约会大作战 : PatternBasedTitleParserTest
     }
     kotlin.run {
     val r =
-        parse("[ReinForce]約會大作戰劇場版 萬由里審判-DATE A LIVE - Mayuri Judgement (BDRip 1920x1080 x264 FLAC) [字幕内附]")
+        parse("[ReinForce]約會大作戰劇場版 萬由裏審判-DATE A LIVE - Mayuri Judgement (BDRip 1920x1080 x264 FLAC) [字幕內附]")
     assertEquals("S?", r.episodeRange.toString())
     assertEquals("", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("1080P", r.resolution.toString())
@@ -2312,7 +2312,7 @@ public class PatternTitleParserTest约会大作战 : PatternBasedTitleParserTest
     }
     kotlin.run {
     val r =
-        parse("【千夏字幕組】【約會大作戰 萬由里審判_DATE_A_LIVE Mayuri Judgement】[劇場版][BDRIP_1080P][x264-Hi10P_FLAC][繁體外掛]（修正字體包）")
+        parse("【千夏字幕組】【約會大作戰 萬由裏審判_DATE_A_LIVE Mayuri Judgement】[劇場版][BDRIP_1080P][x264-Hi10P_FLAC][繁體外掛]（修正字體包）")
     assertEquals("S?", r.episodeRange.toString())
     assertEquals("CHT", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("1080P", r.resolution.toString())
@@ -2324,7 +2324,7 @@ public class PatternTitleParserTest约会大作战 : PatternBasedTitleParserTest
   public fun `424572-424492-424436-424435-424395-424354-424256-424150-424129-417427`() {
     kotlin.run {
     val r =
-        parse("【漫猫字幕组&爱恋字幕社】【约会大作战 万由里审判/DATE_A_LIVE Mayuri Judgement】[剧场版][1080P][MKV][简繁外挂][ x264_FLAC_Hi10P]")
+        parse("【漫貓字幕組&愛戀字幕社】【約會大作戰 萬由裏審判/DATE_A_LIVE Mayuri Judgement】[劇場版][1080P][MKV][簡繁外掛][ x264_FLAC_Hi10P]")
     assertEquals("S?", r.episodeRange.toString())
     assertEquals("CHS, CHT", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("1080P", r.resolution.toString())
@@ -2332,28 +2332,28 @@ public class PatternTitleParserTest约会大作战 : PatternBasedTitleParserTest
     }
     kotlin.run {
     val r =
-        parse("【千夏字幕組】【約會大作戰 萬由里審判_DATE_A_LIVE Mayuri Judgement】[劇場版][BDRIP_720P][x264_AAC][繁體內嵌]（正式版）")
+        parse("【千夏字幕組】【約會大作戰 萬由裏審判_DATE_A_LIVE Mayuri Judgement】[劇場版][BDRIP_720P][x264_AAC][繁體內嵌]（正式版）")
     assertEquals("S?", r.episodeRange.toString())
     assertEquals("CHT", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("720P", r.resolution.toString())
     assertEquals(SubtitleKind.EMBEDDED, r.subtitleKind)
     }
     kotlin.run {
-    val r = parse("【MGRT&幻之字幕组】约会大作战 万由里审判 [GB][1080P][PSV&PC][MP4][新人招募]")
+    val r = parse("【MGRT&幻之字幕組】約會大作戰 萬由裏審判 [GB][1080P][PSV&PC][MP4][新人招募]")
     assertEquals("null", r.episodeRange.toString())
     assertEquals("CHS", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("1080P", r.resolution.toString())
     assertEquals(null, r.subtitleKind)
     }
     kotlin.run {
-    val r = parse("【MGRT&幻之字幕组】约会大作战 万由里审判 [GB][720P][PSV&PC][MP4][新人招募]")
+    val r = parse("【MGRT&幻之字幕組】約會大作戰 萬由裏審判 [GB][720P][PSV&PC][MP4][新人招募]")
     assertEquals("null", r.episodeRange.toString())
     assertEquals("CHS", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("720P", r.resolution.toString())
     assertEquals(null, r.subtitleKind)
     }
     kotlin.run {
-    val r = parse("【漫猫字幕组&爱恋字幕社】【约会大作战 万由里审判/DATE_A_LIVE Mayuri Judgement】[剧场版]简体][720P][x264_AAC]")
+    val r = parse("【漫貓字幕組&愛戀字幕社】【約會大作戰 萬由裏審判/DATE_A_LIVE Mayuri Judgement】[劇場版]簡體][720P][x264_AAC]")
     assertEquals("S?", r.episodeRange.toString())
     assertEquals("CHS", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("720P", r.resolution.toString())
@@ -2368,21 +2368,21 @@ public class PatternTitleParserTest约会大作战 : PatternBasedTitleParserTest
     assertEquals(null, r.subtitleKind)
     }
     kotlin.run {
-    val r = parse("[澄空学园&华盟字幕社] 剧场版 Date A Live 约会大作战 万由里裁决 Mayuri Judgement MP4 720p")
+    val r = parse("[澄空學園&華盟字幕社] 劇場版 Date A Live 約會大作戰 萬由裏裁決 Mayuri Judgement MP4 720p")
     assertEquals("S?", r.episodeRange.toString())
     assertEquals("", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("720P", r.resolution.toString())
     assertEquals(null, r.subtitleKind)
     }
     kotlin.run {
-    val r = parse("【蒔乃漢化組】約會大作戰 劇場版：萬由里審判 [BIG5][DVDRip_720p_x264_8bit][AAC]")
+    val r = parse("【蒔乃漢化組】約會大作戰 劇場版：萬由裏審判 [BIG5][DVDRip_720p_x264_8bit][AAC]")
     assertEquals("null", r.episodeRange.toString())
     assertEquals("CHT", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("720P", r.resolution.toString())
     assertEquals(null, r.subtitleKind)
     }
     kotlin.run {
-    val r = parse("【莳乃汉化组】约会大作战 剧场版：万由里审判 [GB][DVDRip_720p_x264_8bit][AAC]")
+    val r = parse("【蒔乃漢化組】約會大作戰 劇場版：萬由裏審判 [GB][DVDRip_720p_x264_8bit][AAC]")
     assertEquals("S?", r.episodeRange.toString())
     assertEquals("CHS", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("720P", r.resolution.toString())
@@ -2390,7 +2390,7 @@ public class PatternTitleParserTest约会大作战 : PatternBasedTitleParserTest
     }
     kotlin.run {
     val r =
-        parse("[philosophy-raws][约会大作战][BDRIP][1080p 10bit][TV 01-13+Director's cut Edition+SP][日英双语][英文字幕]")
+        parse("[philosophy-raws][約會大作戰][BDRIP][1080p 10bit][TV 01-13+Director's cut Edition+SP][日英雙語][英文字幕]")
     assertEquals("01..13+SP", r.episodeRange.toString())
     assertEquals("ENG, JPN", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("1080P", r.resolution.toString())
@@ -2401,14 +2401,14 @@ public class PatternTitleParserTest约会大作战 : PatternBasedTitleParserTest
   @Test
   public fun `417426-406743-406031-406024-402130-397951-392118-385057-384760-383828`() {
     kotlin.run {
-    val r = parse("[VCB-S&philosophy-raws][约会大作战][BDRIP][1080p 10bit][TV 01-13+SP][导演剪辑版]")
+    val r = parse("[VCB-S&philosophy-raws][約會大作戰][BDRIP][1080p 10bit][TV 01-13+SP][導演剪輯版]")
     assertEquals("01..13+SP", r.episodeRange.toString())
     assertEquals("", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("1080P", r.resolution.toString())
     assertEquals(null, r.subtitleKind)
     }
     kotlin.run {
-    val r = parse("【浩天个人发布】约会大作战第二季 BD720P MP4内嵌简体字幕")
+    val r = parse("【浩天個人發佈】約會大作戰第二季 BD720P MP4內嵌簡體字幕")
     assertEquals("S?", r.episodeRange.toString())
     assertEquals("CHS", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("720P", r.resolution.toString())
@@ -2423,7 +2423,7 @@ public class PatternTitleParserTest约会大作战 : PatternBasedTitleParserTest
     assertEquals(null, r.subtitleKind)
     }
     kotlin.run {
-    val r = parse("【浩天个人发布】约会大作战第一季 BD720P MP4内嵌简体字幕")
+    val r = parse("【浩天個人發佈】約會大作戰第一季 BD720P MP4內嵌簡體字幕")
     assertEquals("S?", r.episodeRange.toString())
     assertEquals("CHS", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("720P", r.resolution.toString())
@@ -2431,7 +2431,7 @@ public class PatternTitleParserTest约会大作战 : PatternBasedTitleParserTest
     }
     kotlin.run {
     val r =
-        parse("约会大作战2 Date a Live2[BDrip][1920x1080][TV11+CM5+OPED5+pv1+menu8][x264_m4a][10bit]加刘景长压制")
+        parse("約會大作戰2 Date a Live2[BDrip][1920x1080][TV11+CM5+OPED5+pv1+menu8][x264_m4a][10bit]加劉景長壓制")
     assertEquals("S?", r.episodeRange.toString())
     assertEquals("", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("1080P", r.resolution.toString())
@@ -2439,35 +2439,35 @@ public class PatternTitleParserTest约会大作战 : PatternBasedTitleParserTest
     }
     kotlin.run {
     val r =
-        parse("约会大作战 Date a Live[BDrip][1920x1080][TV12+OAD+CM10+OPED11+info3+menu14][x264_m4a][10bit]加刘景长压制")
+        parse("約會大作戰 Date a Live[BDrip][1920x1080][TV12+OAD+CM10+OPED11+info3+menu14][x264_m4a][10bit]加劉景長壓制")
     assertEquals("OAD..OAD", r.episodeRange.toString())
     assertEquals("", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("1080P", r.resolution.toString())
     assertEquals(null, r.subtitleKind)
     }
     kotlin.run {
-    val r = parse("[澄空学园&华盟字幕社] Date A Live II 约会大作战II BDRip 简繁外挂 合集")
+    val r = parse("[澄空學園&華盟字幕社] Date A Live II 約會大作戰II BDRip 簡繁外掛 合集")
     assertEquals("S?", r.episodeRange.toString())
     assertEquals("CHS, CHT", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("null", r.resolution.toString())
     assertEquals(SubtitleKind.EXTERNAL_DISCOVER, r.subtitleKind)
     }
     kotlin.run {
-    val r = parse("[澄空学园&华盟字幕社] Date A Live II 约会大作战II BDRip TV未放送第11话 简繁外挂")
+    val r = parse("[澄空學園&華盟字幕社] Date A Live II 約會大作戰II BDRip TV未放送第11話 簡繁外掛")
     assertEquals("S?", r.episodeRange.toString())
     assertEquals("CHS, CHT", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("null", r.resolution.toString())
     assertEquals(SubtitleKind.EXTERNAL_DISCOVER, r.subtitleKind)
     }
     kotlin.run {
-    val r = parse("[澄空学园&华盟字幕社] Date A Live II 约会大作战II BDRip Vol.3-5 简繁外挂")
+    val r = parse("[澄空學園&華盟字幕社] Date A Live II 約會大作戰II BDRip Vol.3-5 簡繁外掛")
     assertEquals("03..05", r.episodeRange.toString())
     assertEquals("CHS, CHT", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("null", r.resolution.toString())
     assertEquals(SubtitleKind.EXTERNAL_DISCOVER, r.subtitleKind)
     }
     kotlin.run {
-    val r = parse("[异域-11番小队][约会大作战合集Date A Live][BDRIP][720P][X264-10bit_AAC][春节贺礼第十八弹]")
+    val r = parse("[異域-11番小隊][約會大作戰合集Date A Live][BDRIP][720P][X264-10bit_AAC][春節賀禮第十八彈]")
     assertEquals("S?", r.episodeRange.toString())
     assertEquals("", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("720P", r.resolution.toString())
@@ -2478,35 +2478,35 @@ public class PatternTitleParserTest约会大作战 : PatternBasedTitleParserTest
   @Test
   public fun `381865-378454-378453-378121-377243-377211-377068-376296-375889-375756`() {
     kotlin.run {
-    val r = parse("[FFF] DATE A LIVE [BD][1080p-FLAC] 约会大作战 第一季 含OVA [内封英文字幕]")
+    val r = parse("[FFF] DATE A LIVE [BD][1080p-FLAC] 約會大作戰 第一季 含OVA [內封英文字幕]")
     assertEquals("S?", r.episodeRange.toString())
     assertEquals("ENG", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("1080P", r.resolution.toString())
     assertEquals(SubtitleKind.CLOSED, r.subtitleKind)
     }
     kotlin.run {
-    val r = parse("[U2-Rip] Date a Live II/约会大作战2期 10bit 1080p BDRip [Fin]")
+    val r = parse("[U2-Rip] Date a Live II/約會大作戰2期 10bit 1080p BDRip [Fin]")
     assertEquals("S?", r.episodeRange.toString())
     assertEquals("", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("1080P", r.resolution.toString())
     assertEquals(null, r.subtitleKind)
     }
     kotlin.run {
-    val r = parse("[VCB-Studio & TUcaptions] Date a Live II/约会大作战2期 10bit 1080p BDRip [Fin] 繁简外挂")
+    val r = parse("[VCB-Studio & TUcaptions] Date a Live II/約會大作戰2期 10bit 1080p BDRip [Fin] 繁簡外掛")
     assertEquals("S?", r.episodeRange.toString())
     assertEquals("CHS, CHT", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("1080P", r.resolution.toString())
     assertEquals(SubtitleKind.EXTERNAL_DISCOVER, r.subtitleKind)
     }
     kotlin.run {
-    val r = parse("《约会大作战II》（Date A Live II）[漏勺rip 720P]（外挂字幕）")
+    val r = parse("《約會大作戰II》（Date A Live II）[漏勺rip 720P]（外掛字幕）")
     assertEquals("null", r.episodeRange.toString())
     assertEquals("", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("720P", r.resolution.toString())
     assertEquals(SubtitleKind.EXTERNAL_DISCOVER, r.subtitleKind)
     }
     kotlin.run {
-    val r = parse("【F宅】【BD版】约会大作战 Date a Live II 01-11【合集】 简 720P MP4")
+    val r = parse("【F宅】【BD版】約會大作戰 Date a Live II 01-11【合集】 簡 720P MP4")
     assertEquals("01..11", r.episodeRange.toString())
     assertEquals("CHS", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("720P", r.resolution.toString())
@@ -2514,7 +2514,7 @@ public class PatternTitleParserTest约会大作战 : PatternBasedTitleParserTest
     }
     kotlin.run {
     val r =
-        parse("【莳乃字幕屋&AE漫画组&LE Project】Date A Live II 约会大作战 II - 第11话（TV未放送）[GB-BIG5-JPN][BDRip_1080p_x264_10bit][FLAC]")
+        parse("【蒔乃字幕屋&AE漫畫組&LE Project】Date A Live II 約會大作戰 II - 第11話（TV未放送）[GB-BIG5-JPN][BDRip_1080p_x264_10bit][FLAC]")
     assertEquals("11..11", r.episodeRange.toString())
     assertEquals("CHS, CHT, JPN", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("1080P", r.resolution.toString())
@@ -2530,7 +2530,7 @@ public class PatternTitleParserTest约会大作战 : PatternBasedTitleParserTest
     }
     kotlin.run {
     val r =
-        parse("【莳乃字幕屋&AE漫画组&LE Project】Date A Live II 约会大作战 II - 第11话（TV未放送）[GB-JPN][1080P][PSV&PC][招募内详]")
+        parse("【蒔乃字幕屋&AE漫畫組&LE Project】Date A Live II 約會大作戰 II - 第11話（TV未放送）[GB-JPN][1080P][PSV&PC][招募內詳]")
     assertEquals("11..11", r.episodeRange.toString())
     assertEquals("CHS, JPN", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("1080P", r.resolution.toString())
@@ -2544,7 +2544,7 @@ public class PatternTitleParserTest约会大作战 : PatternBasedTitleParserTest
     assertEquals(null, r.subtitleKind)
     }
     kotlin.run {
-    val r = parse("[澄空学园&华盟字幕社] Date A Live II 约会大作战 II TV未放送第11话 MP4 720p")
+    val r = parse("[澄空學園&華盟字幕社] Date A Live II 約會大作戰 II TV未放送第11話 MP4 720p")
     assertEquals("null", r.episodeRange.toString())
     assertEquals("", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("720P", r.resolution.toString())
@@ -2562,7 +2562,7 @@ public class PatternTitleParserTest约会大作战 : PatternBasedTitleParserTest
     assertEquals(null, r.subtitleKind)
     }
     kotlin.run {
-    val r = parse("[VCB-Studio] Date a Live/约会大作战 S1 10bit 1080p BDRip [Fin] (附CD+扫图+特典)")
+    val r = parse("[VCB-Studio] Date a Live/約會大作戰 S1 10bit 1080p BDRip [Fin] (附CD+掃圖+特典)")
     assertEquals("S1", r.episodeRange.toString())
     assertEquals("", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("1080P", r.resolution.toString())
@@ -2583,35 +2583,35 @@ public class PatternTitleParserTest约会大作战 : PatternBasedTitleParserTest
     assertEquals(null, r.subtitleKind)
     }
     kotlin.run {
-    val r = parse("[澄空学园&华盟字幕社] Date A Live II 约会大作战II BDRip Vol.1-2 简繁外挂")
+    val r = parse("[澄空學園&華盟字幕社] Date A Live II 約會大作戰II BDRip Vol.1-2 簡繁外掛")
     assertEquals("01..02", r.episodeRange.toString())
     assertEquals("CHS, CHT", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("null", r.resolution.toString())
     assertEquals(SubtitleKind.EXTERNAL_DISCOVER, r.subtitleKind)
     }
     kotlin.run {
-    val r = parse("[澄空学园&华盟字幕社] Date A Live 约会大作战 BDRip 简繁外挂 合集")
+    val r = parse("[澄空學園&華盟字幕社] Date A Live 約會大作戰 BDRip 簡繁外掛 合集")
     assertEquals("S?", r.episodeRange.toString())
     assertEquals("CHS, CHT", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("null", r.resolution.toString())
     assertEquals(SubtitleKind.EXTERNAL_DISCOVER, r.subtitleKind)
     }
     kotlin.run {
-    val r = parse("[澄空学园&华盟字幕社] Date A Live 约会大作战 BDRip TV未放送第13话 简繁外挂")
+    val r = parse("[澄空學園&華盟字幕社] Date A Live 約會大作戰 BDRip TV未放送第13話 簡繁外掛")
     assertEquals("S?", r.episodeRange.toString())
     assertEquals("CHS, CHT", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("null", r.resolution.toString())
     assertEquals(SubtitleKind.EXTERNAL_DISCOVER, r.subtitleKind)
     }
     kotlin.run {
-    val r = parse("[澄空学园&华盟字幕社] Date A Live 约会大作战 BDRip Vol.6 简繁外挂")
+    val r = parse("[澄空學園&華盟字幕社] Date A Live 約會大作戰 BDRip Vol.6 簡繁外掛")
     assertEquals("S?", r.episodeRange.toString())
     assertEquals("CHS, CHT", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("null", r.resolution.toString())
     assertEquals(SubtitleKind.EXTERNAL_DISCOVER, r.subtitleKind)
     }
     kotlin.run {
-    val r = parse("[银光字幕组][约会大作战第二季DATE·A·LIVE][合集][BIG5][四月新番][720P][MP4]")
+    val r = parse("[銀光字幕組][約會大作戰第二季DATE·A·LIVE][合集][BIG5][四月新番][720P][MP4]")
     assertEquals("null", r.episodeRange.toString())
     assertEquals("CHT", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("720P", r.resolution.toString())
@@ -2630,70 +2630,70 @@ public class PatternTitleParserTest约会大作战 : PatternBasedTitleParserTest
   @Test
   public fun `354651-354536-354503-354255-354187-354087-354083-354077-354076-354058`() {
     kotlin.run {
-    val r = parse("【附百度网盘】【修罗字幕组】【约会大作战　第二季】【10】【720P】【中日双语字幕】")
+    val r = parse("【附百度網盤】【修羅字幕組】【約會大作戰　第二季】【10】【720P】【中日雙語字幕】")
     assertEquals("10..10", r.episodeRange.toString())
     assertEquals("JPN", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("720P", r.resolution.toString())
     assertEquals(null, r.subtitleKind)
     }
     kotlin.run {
-    val r = parse("[澄空学园&华盟字幕社] Date A Live II 约会大作战II 第01-10话 MKV 720p 简繁外挂 合集")
+    val r = parse("[澄空學園&華盟字幕社] Date A Live II 約會大作戰II 第01-10話 MKV 720p 簡繁外掛 合集")
     assertEquals("01..10", r.episodeRange.toString())
     assertEquals("CHS, CHT", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("720P", r.resolution.toString())
     assertEquals(SubtitleKind.EXTERNAL_DISCOVER, r.subtitleKind)
     }
     kotlin.run {
-    val r = parse("[4月新番][约会大作战II][Date A Live II][第01-10话][HEVC][MP4][无字幕]")
+    val r = parse("[4月新番][約會大作戰II][Date A Live II][第01-10話][HEVC][MP4][無字幕]")
     assertEquals("01..10", r.episodeRange.toString())
     assertEquals("", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("null", r.resolution.toString())
     assertEquals(null, r.subtitleKind)
     }
     kotlin.run {
-    val r = parse("[澄空学园&华盟字幕社] Date A Live II 约会大作战II 第01-10话 MP4 720p 合集")
+    val r = parse("[澄空學園&華盟字幕社] Date A Live II 約會大作戰II 第01-10話 MP4 720p 合集")
     assertEquals("01..10", r.episodeRange.toString())
     assertEquals("", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("720P", r.resolution.toString())
     assertEquals(null, r.subtitleKind)
     }
     kotlin.run {
-    val r = parse("【F宅】Date a Live II 约会大作战II【简】【合集】 720P MP4")
+    val r = parse("【F宅】Date a Live II 約會大作戰II【簡】【合集】 720P MP4")
     assertEquals("null", r.episodeRange.toString())
     assertEquals("CHS", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("720P", r.resolution.toString())
     assertEquals(null, r.subtitleKind)
     }
     kotlin.run {
-    val r = parse("【萌物百科字幕组】[约会大作战 第二季_Date A Live II][10][END][GB][1280×720][MP4]")
+    val r = parse("【萌物百科字幕組】[約會大作戰 第二季_Date A Live II][10][END][GB][1280×720][MP4]")
     assertEquals("10..10", r.episodeRange.toString())
     assertEquals("CHS", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("null", r.resolution.toString())
     assertEquals(null, r.subtitleKind)
     }
     kotlin.run {
-    val r = parse("【恶俗×KNA】[约会大作战 2期][Date A Live ll][10][Fin][720P][简体][MP4]")
+    val r = parse("【惡俗×KNA】[約會大作戰 2期][Date A Live ll][10][Fin][720P][簡體][MP4]")
     assertEquals("10..10", r.episodeRange.toString())
     assertEquals("CHS", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("720P", r.resolution.toString())
     assertEquals(null, r.subtitleKind)
     }
     kotlin.run {
-    val r = parse("[澄空学园&华盟字幕社] Date A Live II 约会大作战II 第09话 MKV 720p 简繁外挂")
+    val r = parse("[澄空學園&華盟字幕社] Date A Live II 約會大作戰II 第09話 MKV 720p 簡繁外掛")
     assertEquals("09..09", r.episodeRange.toString())
     assertEquals("CHS, CHT", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("720P", r.resolution.toString())
     assertEquals(SubtitleKind.EXTERNAL_DISCOVER, r.subtitleKind)
     }
     kotlin.run {
-    val r = parse("[澄空学园&华盟字幕社] Date A Live II 约会大作战II 第10话 MP4 720p 完")
+    val r = parse("[澄空學園&華盟字幕社] Date A Live II 約會大作戰II 第10話 MP4 720p 完")
     assertEquals("10..10", r.episodeRange.toString())
     assertEquals("", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("720P", r.resolution.toString())
     assertEquals(null, r.subtitleKind)
     }
     kotlin.run {
-    val r = parse("【恶魔岛字幕组】★4月新番【约会大作战 第二季_Date A Live II】[01-10][GB_BIG5][720P][MKV][全]")
+    val r = parse("【惡魔島字幕組】★4月新番【約會大作戰 第二季_Date A Live II】[01-10][GB_BIG5][720P][MKV][全]")
     assertEquals("01..10", r.episodeRange.toString())
     assertEquals("CHS, CHT", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("720P", r.resolution.toString())
@@ -2711,7 +2711,7 @@ public class PatternTitleParserTest约会大作战 : PatternBasedTitleParserTest
     assertEquals(null, r.subtitleKind)
     }
     kotlin.run {
-    val r = parse("【恶魔岛字幕组】★4月新番【约会大作战 第二季_Date A Live II】[01-10][GB][720P][MP4][全]")
+    val r = parse("【惡魔島字幕組】★4月新番【約會大作戰 第二季_Date A Live II】[01-10][GB][720P][MP4][全]")
     assertEquals("01..10", r.episodeRange.toString())
     assertEquals("CHS", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("720P", r.resolution.toString())
@@ -2733,7 +2733,7 @@ public class PatternTitleParserTest约会大作战 : PatternBasedTitleParserTest
     assertEquals(null, r.subtitleKind)
     }
     kotlin.run {
-    val r = parse("【恶魔岛字幕组】★4月新番【约会大作战 第二季_Date A Live II】[10][GB][720P][MP4][完]")
+    val r = parse("【惡魔島字幕組】★4月新番【約會大作戰 第二季_Date A Live II】[10][GB][720P][MP4][完]")
     assertEquals("10..10", r.episodeRange.toString())
     assertEquals("CHS", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("720P", r.resolution.toString())
@@ -2747,7 +2747,7 @@ public class PatternTitleParserTest约会大作战 : PatternBasedTitleParserTest
     assertEquals(null, r.subtitleKind)
     }
     kotlin.run {
-    val r = parse("【动漫国字幕组&DHR动研字幕组】[约会大作战 第二季_DATE A LIVE II][10完][简体][720P][MP4]")
+    val r = parse("【動漫國字幕組&DHR動研字幕組】[約會大作戰 第二季_DATE A LIVE II][10完][簡體][720P][MP4]")
     assertEquals("10..10", r.episodeRange.toString())
     assertEquals("CHS", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("720P", r.resolution.toString())
@@ -2768,7 +2768,7 @@ public class PatternTitleParserTest约会大作战 : PatternBasedTitleParserTest
     assertEquals(null, r.subtitleKind)
     }
     kotlin.run {
-    val r = parse("【动漫国字幕组&DHR动研字幕组】[约会大作战 第二季_DATE A LIVE II][09][简体][720P][MP4]")
+    val r = parse("【動漫國字幕組&DHR動研字幕組】[約會大作戰 第二季_DATE A LIVE II][09][簡體][720P][MP4]")
     assertEquals("09..09", r.episodeRange.toString())
     assertEquals("CHS", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("720P", r.resolution.toString())
@@ -2779,35 +2779,35 @@ public class PatternTitleParserTest约会大作战 : PatternBasedTitleParserTest
   @Test
   public fun `353777-353776-353773-353691-353470-353436-353435-353401-353332-353295`() {
     kotlin.run {
-    val r = parse("[银光字幕组][约会大作战第二季DATE·A·LIVE][09][BIG5][四月新番][720P][MP4]")
+    val r = parse("[銀光字幕組][約會大作戰第二季DATE·A·LIVE][09][BIG5][四月新番][720P][MP4]")
     assertEquals("09..09", r.episodeRange.toString())
     assertEquals("CHT", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("720P", r.resolution.toString())
     assertEquals(null, r.subtitleKind)
     }
     kotlin.run {
-    val r = parse("[银光字幕组][约会大作战第二季DATE·A·LIVE][09][GB][四月新番][720P][MP4]")
+    val r = parse("[銀光字幕組][約會大作戰第二季DATE·A·LIVE][09][GB][四月新番][720P][MP4]")
     assertEquals("09..09", r.episodeRange.toString())
     assertEquals("CHS", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("720P", r.resolution.toString())
     assertEquals(null, r.subtitleKind)
     }
     kotlin.run {
-    val r = parse("【附百度网盘】【修罗字幕组】【约会大作战　第二季】【09】【720P】【中日双语字幕】")
+    val r = parse("【附百度網盤】【修羅字幕組】【約會大作戰　第二季】【09】【720P】【中日雙語字幕】")
     assertEquals("09..09", r.episodeRange.toString())
     assertEquals("JPN", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("720P", r.resolution.toString())
     assertEquals(null, r.subtitleKind)
     }
     kotlin.run {
-    val r = parse("【附百度网盘】【修罗字幕组】【约会大作战　第二季】【08】【720P】【中日双语字幕】")
+    val r = parse("【附百度網盤】【修羅字幕組】【約會大作戰　第二季】【08】【720P】【中日雙語字幕】")
     assertEquals("08..08", r.episodeRange.toString())
     assertEquals("JPN", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("720P", r.resolution.toString())
     assertEquals(null, r.subtitleKind)
     }
     kotlin.run {
-    val r = parse("【萌物百科字幕组】[约会大作战 第二季_Date A Live II][09][GB][1280×720][MP4](内附网盘地址）")
+    val r = parse("【萌物百科字幕組】[約會大作戰 第二季_Date A Live II][09][GB][1280×720][MP4](內附網盤地址）")
     assertEquals("09..09", r.episodeRange.toString())
     assertEquals("CHS", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("null", r.resolution.toString())
@@ -2821,21 +2821,21 @@ public class PatternTitleParserTest约会大作战 : PatternBasedTitleParserTest
     assertEquals(null, r.subtitleKind)
     }
     kotlin.run {
-    val r = parse("【动漫国字幕组&DHR动研字幕组】[约会大作战 第二季_DATE A LIVE II][08][简体][720P][MP4]")
+    val r = parse("【動漫國字幕組&DHR動研字幕組】[約會大作戰 第二季_DATE A LIVE II][08][簡體][720P][MP4]")
     assertEquals("08..08", r.episodeRange.toString())
     assertEquals("CHS", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("720P", r.resolution.toString())
     assertEquals(null, r.subtitleKind)
     }
     kotlin.run {
-    val r = parse("[澄空学园&华盟字幕社] Date A Live II 约会大作战II 第09话 MP4 720p")
+    val r = parse("[澄空學園&華盟字幕社] Date A Live II 約會大作戰II 第09話 MP4 720p")
     assertEquals("09..09", r.episodeRange.toString())
     assertEquals("", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("720P", r.resolution.toString())
     assertEquals(null, r.subtitleKind)
     }
     kotlin.run {
-    val r = parse("【恶俗×KNA】[约会大作战 2期][Date A Live ll][09][720P][简体][MP4]")
+    val r = parse("【惡俗×KNA】[約會大作戰 2期][Date A Live ll][09][720P][簡體][MP4]")
     assertEquals("09..09", r.episodeRange.toString())
     assertEquals("CHS", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("720P", r.resolution.toString())
@@ -2861,7 +2861,7 @@ public class PatternTitleParserTest约会大作战 : PatternBasedTitleParserTest
     assertEquals(null, r.subtitleKind)
     }
     kotlin.run {
-    val r = parse("【恶魔岛字幕组】★4月新番【约会大作战 第二季_Date A Live II】[09][GB][720P][MP4]")
+    val r = parse("【惡魔島字幕組】★4月新番【約會大作戰 第二季_Date A Live II】[09][GB][720P][MP4]")
     assertEquals("09..09", r.episodeRange.toString())
     assertEquals("CHS", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("720P", r.resolution.toString())
@@ -2875,28 +2875,28 @@ public class PatternTitleParserTest约会大作战 : PatternBasedTitleParserTest
     assertEquals(null, r.subtitleKind)
     }
     kotlin.run {
-    val r = parse("[澄空学园&华盟字幕社] Date A Live II 约会大作战II 第08话 MKV 720p 简繁外挂")
+    val r = parse("[澄空學園&華盟字幕社] Date A Live II 約會大作戰II 第08話 MKV 720p 簡繁外掛")
     assertEquals("08..08", r.episodeRange.toString())
     assertEquals("CHS, CHT", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("720P", r.resolution.toString())
     assertEquals(SubtitleKind.EXTERNAL_DISCOVER, r.subtitleKind)
     }
     kotlin.run {
-    val r = parse("[银光字幕组][约会大作战第二季DATE·A·LIVE][08][BIG5][四月新番][720P][MP4]")
+    val r = parse("[銀光字幕組][約會大作戰第二季DATE·A·LIVE][08][BIG5][四月新番][720P][MP4]")
     assertEquals("08..08", r.episodeRange.toString())
     assertEquals("CHT", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("720P", r.resolution.toString())
     assertEquals(null, r.subtitleKind)
     }
     kotlin.run {
-    val r = parse("[银光字幕组][约会大作战第二季DATE·A·LIVE][08][GB][四月新番][720P][MP4]")
+    val r = parse("[銀光字幕組][約會大作戰第二季DATE·A·LIVE][08][GB][四月新番][720P][MP4]")
     assertEquals("08..08", r.episodeRange.toString())
     assertEquals("CHS", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("720P", r.resolution.toString())
     assertEquals(null, r.subtitleKind)
     }
     kotlin.run {
-    val r = parse("[银光字幕组][约会大作战第二季DATE·A·LIVE][07][BIG5][四月新番][720P][MP4]")
+    val r = parse("[銀光字幕組][約會大作戰第二季DATE·A·LIVE][07][BIG5][四月新番][720P][MP4]")
     assertEquals("07..07", r.episodeRange.toString())
     assertEquals("CHT", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("720P", r.resolution.toString())
@@ -2910,14 +2910,14 @@ public class PatternTitleParserTest约会大作战 : PatternBasedTitleParserTest
     assertEquals(null, r.subtitleKind)
     }
     kotlin.run {
-    val r = parse("【动漫国字幕组&DHR动研字幕组】[约会大作战 第二季_DATE A LIVE II][07][简体][720P][MP4]")
+    val r = parse("【動漫國字幕組&DHR動研字幕組】[約會大作戰 第二季_DATE A LIVE II][07][簡體][720P][MP4]")
     assertEquals("07..07", r.episodeRange.toString())
     assertEquals("CHS", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("720P", r.resolution.toString())
     assertEquals(null, r.subtitleKind)
     }
     kotlin.run {
-    val r = parse("[银光字幕组][约会大作战第二季DATE·A·LIVE][07][GB][四月新番][720P][MP4]")
+    val r = parse("[銀光字幕組][約會大作戰第二季DATE·A·LIVE][07][GB][四月新番][720P][MP4]")
     assertEquals("07..07", r.episodeRange.toString())
     assertEquals("CHS", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("720P", r.resolution.toString())
@@ -2928,28 +2928,28 @@ public class PatternTitleParserTest约会大作战 : PatternBasedTitleParserTest
   @Test
   public fun `352551-352499-352490-352480-352461-352432-352431-352430-352420-351938`() {
     kotlin.run {
-    val r = parse("【萌物百科字幕组】[约会大作战 第二季_Date A Live II][08][GB][1280×720][MP4](内附网盘地址）")
+    val r = parse("【萌物百科字幕組】[約會大作戰 第二季_Date A Live II][08][GB][1280×720][MP4](內附網盤地址）")
     assertEquals("08..08", r.episodeRange.toString())
     assertEquals("CHS", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("null", r.resolution.toString())
     assertEquals(null, r.subtitleKind)
     }
     kotlin.run {
-    val r = parse("【恶俗×KNA】[约会大作战 2期][Date A Live ll][08][720P][简体][MP4]")
+    val r = parse("【惡俗×KNA】[約會大作戰 2期][Date A Live ll][08][720P][簡體][MP4]")
     assertEquals("08..08", r.episodeRange.toString())
     assertEquals("CHS", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("720P", r.resolution.toString())
     assertEquals(null, r.subtitleKind)
     }
     kotlin.run {
-    val r = parse("[澄空学园&华盟字幕社] Date A Live II 约会大作战II 第08话 MP4 720p")
+    val r = parse("[澄空學園&華盟字幕社] Date A Live II 約會大作戰II 第08話 MP4 720p")
     assertEquals("08..08", r.episodeRange.toString())
     assertEquals("", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("720P", r.resolution.toString())
     assertEquals(null, r.subtitleKind)
     }
     kotlin.run {
-    val r = parse("[澄空学园&华盟字幕社] Date A Live II 约会大作战II 第07话 MKV 720p 简繁外挂")
+    val r = parse("[澄空學園&華盟字幕社] Date A Live II 約會大作戰II 第07話 MKV 720p 簡繁外掛")
     assertEquals("07..07", r.episodeRange.toString())
     assertEquals("CHS, CHT", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("720P", r.resolution.toString())
@@ -2971,7 +2971,7 @@ public class PatternTitleParserTest约会大作战 : PatternBasedTitleParserTest
     assertEquals(null, r.subtitleKind)
     }
     kotlin.run {
-    val r = parse("【恶魔岛字幕组】★4月新番【约会大作战 第二季_Date A Live II】[08][GB][720P][MP4]")
+    val r = parse("【惡魔島字幕組】★4月新番【約會大作戰 第二季_Date A Live II】[08][GB][720P][MP4]")
     assertEquals("08..08", r.episodeRange.toString())
     assertEquals("CHS", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("720P", r.resolution.toString())
@@ -3011,28 +3011,28 @@ public class PatternTitleParserTest约会大作战 : PatternBasedTitleParserTest
     assertEquals(null, r.subtitleKind)
     }
     kotlin.run {
-    val r = parse("[澄空学园&华盟字幕社] Date A Live II 约会大作战II 第07话 MP4 720p")
+    val r = parse("[澄空學園&華盟字幕社] Date A Live II 約會大作戰II 第07話 MP4 720p")
     assertEquals("07..07", r.episodeRange.toString())
     assertEquals("", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("720P", r.resolution.toString())
     assertEquals(null, r.subtitleKind)
     }
     kotlin.run {
-    val r = parse("【萌物百科字幕组】[约会大作战 第二季_Date A Live II][07][GB][1280×720][MP4](内附网盘地址）")
+    val r = parse("【萌物百科字幕組】[約會大作戰 第二季_Date A Live II][07][GB][1280×720][MP4](內附網盤地址）")
     assertEquals("07..07", r.episodeRange.toString())
     assertEquals("CHS", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("null", r.resolution.toString())
     assertEquals(null, r.subtitleKind)
     }
     kotlin.run {
-    val r = parse("【恶俗×KNA】[约会大作战 2期][Date A Live ll][07][720P][简体][MP4]")
+    val r = parse("【惡俗×KNA】[約會大作戰 2期][Date A Live ll][07][720P][簡體][MP4]")
     assertEquals("07..07", r.episodeRange.toString())
     assertEquals("CHS", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("720P", r.resolution.toString())
     assertEquals(null, r.subtitleKind)
     }
     kotlin.run {
-    val r = parse("【附百度网盘】【修罗字幕组】【约会大作战　第二季】【06】【720P】【中日双语字幕】")
+    val r = parse("【附百度網盤】【修羅字幕組】【約會大作戰　第二季】【06】【720P】【中日雙語字幕】")
     assertEquals("06..06", r.episodeRange.toString())
     assertEquals("JPN", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("720P", r.resolution.toString())
@@ -3046,7 +3046,7 @@ public class PatternTitleParserTest约会大作战 : PatternBasedTitleParserTest
     assertEquals(null, r.subtitleKind)
     }
     kotlin.run {
-    val r = parse("【恶魔岛字幕组】★4月新番【约会大作战 第二季_Date A Live II】[07][GB][720P][MP4]")
+    val r = parse("【惡魔島字幕組】★4月新番【約會大作戰 第二季_Date A Live II】[07][GB][720P][MP4]")
     assertEquals("07..07", r.episodeRange.toString())
     assertEquals("CHS", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("720P", r.resolution.toString())
@@ -3060,7 +3060,7 @@ public class PatternTitleParserTest约会大作战 : PatternBasedTitleParserTest
     assertEquals(null, r.subtitleKind)
     }
     kotlin.run {
-    val r = parse("【动漫国字幕组&DHR动研字幕组】[约会大作战 第二季_DATE A LIVE II][06][简体][720P][MP4]")
+    val r = parse("【動漫國字幕組&DHR動研字幕組】[約會大作戰 第二季_DATE A LIVE II][06][簡體][720P][MP4]")
     assertEquals("06..06", r.episodeRange.toString())
     assertEquals("CHS", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("720P", r.resolution.toString())
@@ -3078,49 +3078,49 @@ public class PatternTitleParserTest约会大作战 : PatternBasedTitleParserTest
   @Test
   public fun `351392-351389-351138-351086-351085-350793-350735-350689-350676-350672`() {
     kotlin.run {
-    val r = parse("【动漫国字幕组&DHR动研字幕组】[约会大作战 第二季_DATE A LIVE II][05][简体][720P][MP4]")
+    val r = parse("【動漫國字幕組&DHR動研字幕組】[約會大作戰 第二季_DATE A LIVE II][05][簡體][720P][MP4]")
     assertEquals("05..05", r.episodeRange.toString())
     assertEquals("CHS", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("720P", r.resolution.toString())
     assertEquals(null, r.subtitleKind)
     }
     kotlin.run {
-    val r = parse("[澄空学园&华盟字幕社] Date A Live II 约会大作战II 第06话 MKV 720p 简繁外挂")
+    val r = parse("[澄空學園&華盟字幕社] Date A Live II 約會大作戰II 第06話 MKV 720p 簡繁外掛")
     assertEquals("06..06", r.episodeRange.toString())
     assertEquals("CHS, CHT", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("720P", r.resolution.toString())
     assertEquals(SubtitleKind.EXTERNAL_DISCOVER, r.subtitleKind)
     }
     kotlin.run {
-    val r = parse("【萌物百科字幕组】[约会大作战 第二季_Date A Live II][06][GB][1280×720][MP4](内附网盘地址）")
+    val r = parse("【萌物百科字幕組】[約會大作戰 第二季_Date A Live II][06][GB][1280×720][MP4](內附網盤地址）")
     assertEquals("06..06", r.episodeRange.toString())
     assertEquals("CHS", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("null", r.resolution.toString())
     assertEquals(null, r.subtitleKind)
     }
     kotlin.run {
-    val r = parse("[银光字幕组][约会大作战第二季DATE·A·LIVE][06][BIG5][四月新番][720P][MP4]")
+    val r = parse("[銀光字幕組][約會大作戰第二季DATE·A·LIVE][06][BIG5][四月新番][720P][MP4]")
     assertEquals("06..06", r.episodeRange.toString())
     assertEquals("CHT", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("720P", r.resolution.toString())
     assertEquals(null, r.subtitleKind)
     }
     kotlin.run {
-    val r = parse("[银光字幕组][约会大作战第二季DATE·A·LIVE][06][GB][四月新番][720P][MP4]")
+    val r = parse("[銀光字幕組][約會大作戰第二季DATE·A·LIVE][06][GB][四月新番][720P][MP4]")
     assertEquals("06..06", r.episodeRange.toString())
     assertEquals("CHS", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("720P", r.resolution.toString())
     assertEquals(null, r.subtitleKind)
     }
     kotlin.run {
-    val r = parse("[澄空学园&华盟字幕社] Date A Live II 约会大作战II 第06话 MP4 720p")
+    val r = parse("[澄空學園&華盟字幕社] Date A Live II 約會大作戰II 第06話 MP4 720p")
     assertEquals("06..06", r.episodeRange.toString())
     assertEquals("", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("720P", r.resolution.toString())
     assertEquals(null, r.subtitleKind)
     }
     kotlin.run {
-    val r = parse("【恶俗×KNA】[约会大作战 2期][Date A Live ll][06][720P][简体][MP4]")
+    val r = parse("【惡俗×KNA】[約會大作戰 2期][Date A Live ll][06][720P][簡體][MP4]")
     assertEquals("06..06", r.episodeRange.toString())
     assertEquals("CHS", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("720P", r.resolution.toString())
@@ -3142,7 +3142,7 @@ public class PatternTitleParserTest约会大作战 : PatternBasedTitleParserTest
     assertEquals(null, r.subtitleKind)
     }
     kotlin.run {
-    val r = parse("【恶魔岛字幕组】★4月新番【约会大作战 第二季_Date A Live II】[06][GB][720P][MP4][内详]")
+    val r = parse("【惡魔島字幕組】★4月新番【約會大作戰 第二季_Date A Live II】[06][GB][720P][MP4][內詳]")
     assertEquals("06..06", r.episodeRange.toString())
     assertEquals("CHS", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("720P", r.resolution.toString())
@@ -3167,28 +3167,28 @@ public class PatternTitleParserTest约会大作战 : PatternBasedTitleParserTest
     assertEquals(null, r.subtitleKind)
     }
     kotlin.run {
-    val r = parse("【附百度网盘】【修罗字幕组】【约会大作战　第二季】【05】【720P】【中日双语字幕】")
+    val r = parse("【附百度網盤】【修羅字幕組】【約會大作戰　第二季】【05】【720P】【中日雙語字幕】")
     assertEquals("05..05", r.episodeRange.toString())
     assertEquals("JPN", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("720P", r.resolution.toString())
     assertEquals(null, r.subtitleKind)
     }
     kotlin.run {
-    val r = parse("[澄空学园&华盟字幕社] Date A Live II 约会大作战II 第05话 MKV 720p 简繁外挂")
+    val r = parse("[澄空學園&華盟字幕社] Date A Live II 約會大作戰II 第05話 MKV 720p 簡繁外掛")
     assertEquals("05..05", r.episodeRange.toString())
     assertEquals("CHS, CHT", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("720P", r.resolution.toString())
     assertEquals(SubtitleKind.EXTERNAL_DISCOVER, r.subtitleKind)
     }
     kotlin.run {
-    val r = parse("[银光字幕组][约会大作战第二季DATE·A·LIVE][05][BIG5][四月新番][720P][MP4]")
+    val r = parse("[銀光字幕組][約會大作戰第二季DATE·A·LIVE][05][BIG5][四月新番][720P][MP4]")
     assertEquals("05..05", r.episodeRange.toString())
     assertEquals("CHT", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("720P", r.resolution.toString())
     assertEquals(null, r.subtitleKind)
     }
     kotlin.run {
-    val r = parse("[银光字幕组][约会大作战第二季DATE·A·LIVE][05][GB][四月新番][720P][MP4]")
+    val r = parse("[銀光字幕組][約會大作戰第二季DATE·A·LIVE][05][GB][四月新番][720P][MP4]")
     assertEquals("05..05", r.episodeRange.toString())
     assertEquals("CHS", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("720P", r.resolution.toString())
@@ -3202,7 +3202,7 @@ public class PatternTitleParserTest约会大作战 : PatternBasedTitleParserTest
     assertEquals(null, r.subtitleKind)
     }
     kotlin.run {
-    val r = parse("【幻之字幕组】约会大作战Ⅱ Date a Live Ⅱ - 05[GB][720P][PSV&PC][MP4]")
+    val r = parse("【幻之字幕組】約會大作戰Ⅱ Date a Live Ⅱ - 05[GB][720P][PSV&PC][MP4]")
     assertEquals("05..05", r.episodeRange.toString())
     assertEquals("CHS", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("720P", r.resolution.toString())
@@ -3216,7 +3216,7 @@ public class PatternTitleParserTest约会大作战 : PatternBasedTitleParserTest
     assertEquals(null, r.subtitleKind)
     }
     kotlin.run {
-    val r = parse("【幻之字幕组】约会大作战Ⅱ Date a Live Ⅱ - 04[GB][720P][PSV&PC][MP4]")
+    val r = parse("【幻之字幕組】約會大作戰Ⅱ Date a Live Ⅱ - 04[GB][720P][PSV&PC][MP4]")
     assertEquals("04..04", r.episodeRange.toString())
     assertEquals("CHS", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("720P", r.resolution.toString())
@@ -3234,28 +3234,28 @@ public class PatternTitleParserTest约会大作战 : PatternBasedTitleParserTest
     assertEquals(null, r.subtitleKind)
     }
     kotlin.run {
-    val r = parse("【幻之字幕组】约会大作战Ⅱ Date a Live Ⅱ - 03_v2[GB][720P][PSV&PC][MP4]")
+    val r = parse("【幻之字幕組】約會大作戰Ⅱ Date a Live Ⅱ - 03_v2[GB][720P][PSV&PC][MP4]")
     assertEquals("03..03", r.episodeRange.toString())
     assertEquals("CHS", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("720P", r.resolution.toString())
     assertEquals(null, r.subtitleKind)
     }
     kotlin.run {
-    val r = parse("【萌物百科字幕组】[约会大作战 第二季_Date A Live II][05][GB][1280×720][MP4]")
+    val r = parse("【萌物百科字幕組】[約會大作戰 第二季_Date A Live II][05][GB][1280×720][MP4]")
     assertEquals("05..05", r.episodeRange.toString())
     assertEquals("CHS", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("null", r.resolution.toString())
     assertEquals(null, r.subtitleKind)
     }
     kotlin.run {
-    val r = parse("【恶俗×KNA】[约会大作战 2期][Date A Live ll][05][720P][简体][MP4]")
+    val r = parse("【惡俗×KNA】[約會大作戰 2期][Date A Live ll][05][720P][簡體][MP4]")
     assertEquals("05..05", r.episodeRange.toString())
     assertEquals("CHS", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("720P", r.resolution.toString())
     assertEquals(null, r.subtitleKind)
     }
     kotlin.run {
-    val r = parse("[澄空学园&华盟字幕社] Date A Live II 约会大作战II 第05话 MP4 720p")
+    val r = parse("[澄空學園&華盟字幕社] Date A Live II 約會大作戰II 第05話 MP4 720p")
     assertEquals("05..05", r.episodeRange.toString())
     assertEquals("", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("720P", r.resolution.toString())
@@ -3269,7 +3269,7 @@ public class PatternTitleParserTest约会大作战 : PatternBasedTitleParserTest
     assertEquals(null, r.subtitleKind)
     }
     kotlin.run {
-    val r = parse("【附百度网盘】【修罗字幕组】【约会大作战　第二季】【04】【720P】【中日双语字幕】")
+    val r = parse("【附百度網盤】【修羅字幕組】【約會大作戰　第二季】【04】【720P】【中日雙語字幕】")
     assertEquals("04..04", r.episodeRange.toString())
     assertEquals("JPN", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("720P", r.resolution.toString())
@@ -3283,7 +3283,7 @@ public class PatternTitleParserTest约会大作战 : PatternBasedTitleParserTest
     assertEquals(null, r.subtitleKind)
     }
     kotlin.run {
-    val r = parse("【恶魔岛字幕组】★4月新番【约会大作战 第二季_Date A Live II】[05][GB][720P][MP4][内详]")
+    val r = parse("【惡魔島字幕組】★4月新番【約會大作戰 第二季_Date A Live II】[05][GB][720P][MP4][內詳]")
     assertEquals("05..05", r.episodeRange.toString())
     assertEquals("CHS", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("720P", r.resolution.toString())
@@ -3301,21 +3301,21 @@ public class PatternTitleParserTest约会大作战 : PatternBasedTitleParserTest
   @Test
   public fun `349681-349679-349546-349522-349521-349470-349195-349114-348910-348854`() {
     kotlin.run {
-    val r = parse("[银光字幕组][约会大作战第二季DATE·A·LIVE][04][BIG5][四月新番][720P][MP4]")
+    val r = parse("[銀光字幕組][約會大作戰第二季DATE·A·LIVE][04][BIG5][四月新番][720P][MP4]")
     assertEquals("04..04", r.episodeRange.toString())
     assertEquals("CHT", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("720P", r.resolution.toString())
     assertEquals(null, r.subtitleKind)
     }
     kotlin.run {
-    val r = parse("[银光字幕组][约会大作战第二季DATE·A·LIVE][04][GB][四月新番][720P][MP4]")
+    val r = parse("[銀光字幕組][約會大作戰第二季DATE·A·LIVE][04][GB][四月新番][720P][MP4]")
     assertEquals("04..04", r.episodeRange.toString())
     assertEquals("CHS", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("720P", r.resolution.toString())
     assertEquals(null, r.subtitleKind)
     }
     kotlin.run {
-    val r = parse("[澄空学园&华盟字幕社] Date A Live II 约会大作战II 第04话 MKV 720p 简繁外挂")
+    val r = parse("[澄空學園&華盟字幕社] Date A Live II 約會大作戰II 第04話 MKV 720p 簡繁外掛")
     assertEquals("04..04", r.episodeRange.toString())
     assertEquals("CHS, CHT", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("720P", r.resolution.toString())
@@ -3329,35 +3329,35 @@ public class PatternTitleParserTest约会大作战 : PatternBasedTitleParserTest
     assertEquals(null, r.subtitleKind)
     }
     kotlin.run {
-    val r = parse("【动漫国字幕组&DHR动研字幕组】[约会大作战 第二季_DATE A LIVE II][04][简体][720P][MP4]")
+    val r = parse("【動漫國字幕組&DHR動研字幕組】[約會大作戰 第二季_DATE A LIVE II][04][簡體][720P][MP4]")
     assertEquals("04..04", r.episodeRange.toString())
     assertEquals("CHS", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("720P", r.resolution.toString())
     assertEquals(null, r.subtitleKind)
     }
     kotlin.run {
-    val r = parse("【萌物百科字幕组】[约会大作战 第二季_Date A Live II][04][GB][1280×720][MP4](内附网盘地址）")
+    val r = parse("【萌物百科字幕組】[約會大作戰 第二季_Date A Live II][04][GB][1280×720][MP4](內附網盤地址）")
     assertEquals("04..04", r.episodeRange.toString())
     assertEquals("CHS", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("null", r.resolution.toString())
     assertEquals(null, r.subtitleKind)
     }
     kotlin.run {
-    val r = parse("【附百度网盘】【修罗字幕组】【约会大作战　第二季】【03】【720P】【中日双语字幕】")
+    val r = parse("【附百度網盤】【修羅字幕組】【約會大作戰　第二季】【03】【720P】【中日雙語字幕】")
     assertEquals("03..03", r.episodeRange.toString())
     assertEquals("JPN", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("720P", r.resolution.toString())
     assertEquals(null, r.subtitleKind)
     }
     kotlin.run {
-    val r = parse("[澄空学园&华盟字幕社] Date A Live II 约会大作战II 第04话 MP4 720p")
+    val r = parse("[澄空學園&華盟字幕社] Date A Live II 約會大作戰II 第04話 MP4 720p")
     assertEquals("04..04", r.episodeRange.toString())
     assertEquals("", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("720P", r.resolution.toString())
     assertEquals(null, r.subtitleKind)
     }
     kotlin.run {
-    val r = parse("【恶俗×KNA】[约会大作战 2期][Date A Live ll][04][720P][简体][MP4]")
+    val r = parse("【惡俗×KNA】[約會大作戰 2期][Date A Live ll][04][720P][簡體][MP4]")
     assertEquals("04..04", r.episodeRange.toString())
     assertEquals("CHS", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("720P", r.resolution.toString())
@@ -3375,7 +3375,7 @@ public class PatternTitleParserTest约会大作战 : PatternBasedTitleParserTest
   @Test
   public fun `348802-348797-348796-348793-348466-348465-348422-348420-348334-347912`() {
     kotlin.run {
-    val r = parse("[澄空学园&华盟字幕社][4月新番] Date A Live II 约会大作战II 第03话 MKV 720p 简繁外挂")
+    val r = parse("[澄空學園&華盟字幕社][4月新番] Date A Live II 約會大作戰II 第03話 MKV 720p 簡繁外掛")
     assertEquals("03..03", r.episodeRange.toString())
     assertEquals("CHS, CHT", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("720P", r.resolution.toString())
@@ -3389,7 +3389,7 @@ public class PatternTitleParserTest约会大作战 : PatternBasedTitleParserTest
     assertEquals(null, r.subtitleKind)
     }
     kotlin.run {
-    val r = parse("【恶魔岛字幕组】★4月新番【约会大作战 第二季_Date A Live II】[04][GB][720P][MP4]")
+    val r = parse("【惡魔島字幕組】★4月新番【約會大作戰 第二季_Date A Live II】[04][GB][720P][MP4]")
     assertEquals("04..04", r.episodeRange.toString())
     assertEquals("CHS", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("720P", r.resolution.toString())
@@ -3410,35 +3410,35 @@ public class PatternTitleParserTest约会大作战 : PatternBasedTitleParserTest
     assertEquals(null, r.subtitleKind)
     }
     kotlin.run {
-    val r = parse("【幻之字幕组】约会大作战Ⅱ Date a Live Ⅱ - 03[GB][720P][PSV&PC][MP4]")
+    val r = parse("【幻之字幕組】約會大作戰Ⅱ Date a Live Ⅱ - 03[GB][720P][PSV&PC][MP4]")
     assertEquals("03..03", r.episodeRange.toString())
     assertEquals("CHS", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("720P", r.resolution.toString())
     assertEquals(null, r.subtitleKind)
     }
     kotlin.run {
-    val r = parse("[银光字幕组][约会大作战第二季DATE·A·LIVE][03][BIG5][四月新番][720P][MP4]")
+    val r = parse("[銀光字幕組][約會大作戰第二季DATE·A·LIVE][03][BIG5][四月新番][720P][MP4]")
     assertEquals("03..03", r.episodeRange.toString())
     assertEquals("CHT", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("720P", r.resolution.toString())
     assertEquals(null, r.subtitleKind)
     }
     kotlin.run {
-    val r = parse("[银光字幕组][约会大作战第二季DATE·A·LIVE][03][GB][四月新番][720P][MP4]")
+    val r = parse("[銀光字幕組][約會大作戰第二季DATE·A·LIVE][03][GB][四月新番][720P][MP4]")
     assertEquals("03..03", r.episodeRange.toString())
     assertEquals("CHS", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("720P", r.resolution.toString())
     assertEquals(null, r.subtitleKind)
     }
     kotlin.run {
-    val r = parse("【萌物百科字幕组】[约会大作战 第二季_Date A Live II][03][GB][1280×720][MP4](内附网盘地址）")
+    val r = parse("【萌物百科字幕組】[約會大作戰 第二季_Date A Live II][03][GB][1280×720][MP4](內附網盤地址）")
     assertEquals("03..03", r.episodeRange.toString())
     assertEquals("CHS", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("null", r.resolution.toString())
     assertEquals(null, r.subtitleKind)
     }
     kotlin.run {
-    val r = parse("【恶俗×KNA】[约会大作战 2期][Date A Live ll][03][720P][简体][MP4]")
+    val r = parse("【惡俗×KNA】[約會大作戰 2期][Date A Live ll][03][720P][簡體][MP4]")
     assertEquals("03..03", r.episodeRange.toString())
     assertEquals("CHS", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("720P", r.resolution.toString())
@@ -3463,7 +3463,7 @@ public class PatternTitleParserTest约会大作战 : PatternBasedTitleParserTest
     assertEquals(null, r.subtitleKind)
     }
     kotlin.run {
-    val r = parse("【动漫国字幕组&DHR动研字幕组】[约会大作战 第二季_DATE A LIVE II][03][简体][720P][MP4]")
+    val r = parse("【動漫國字幕組&DHR動研字幕組】[約會大作戰 第二季_DATE A LIVE II][03][簡體][720P][MP4]")
     assertEquals("03..03", r.episodeRange.toString())
     assertEquals("CHS", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("720P", r.resolution.toString())
@@ -3477,7 +3477,7 @@ public class PatternTitleParserTest约会大作战 : PatternBasedTitleParserTest
     assertEquals(null, r.subtitleKind)
     }
     kotlin.run {
-    val r = parse("【恶魔岛字幕组】★4月新番【约会大作战 第二季_Date A Live II】[03][GB][720P][MP4][V2]")
+    val r = parse("【惡魔島字幕組】★4月新番【約會大作戰 第二季_Date A Live II】[03][GB][720P][MP4][V2]")
     assertEquals("03..03", r.episodeRange.toString())
     assertEquals("CHS", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("720P", r.resolution.toString())
@@ -3498,14 +3498,14 @@ public class PatternTitleParserTest约会大作战 : PatternBasedTitleParserTest
     assertEquals(null, r.subtitleKind)
     }
     kotlin.run {
-    val r = parse("【恶魔岛字幕组】★4月新番【约会大作战 第二季_Date A Live II】[03][GB][720P][MP4]")
+    val r = parse("【惡魔島字幕組】★4月新番【約會大作戰 第二季_Date A Live II】[03][GB][720P][MP4]")
     assertEquals("03..03", r.episodeRange.toString())
     assertEquals("CHS", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("720P", r.resolution.toString())
     assertEquals(null, r.subtitleKind)
     }
     kotlin.run {
-    val r = parse("[澄空学园&华盟字幕社][4月新番] Date A Live II 约会大作战II 第02话 MKV 720p 简繁外挂")
+    val r = parse("[澄空學園&華盟字幕社][4月新番] Date A Live II 約會大作戰II 第02話 MKV 720p 簡繁外掛")
     assertEquals("02..02", r.episodeRange.toString())
     assertEquals("CHS, CHT", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("720P", r.resolution.toString())
@@ -3530,14 +3530,14 @@ public class PatternTitleParserTest约会大作战 : PatternBasedTitleParserTest
     assertEquals(null, r.subtitleKind)
     }
     kotlin.run {
-    val r = parse("【附百度网盘】【修罗字幕组】【约会大作战　第二季】【01】【720P】【中日双语字幕】")
+    val r = parse("【附百度網盤】【修羅字幕組】【約會大作戰　第二季】【01】【720P】【中日雙語字幕】")
     assertEquals("01..01", r.episodeRange.toString())
     assertEquals("JPN", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("720P", r.resolution.toString())
     assertEquals(null, r.subtitleKind)
     }
     kotlin.run {
-    val r = parse("【附百度网盘】【修罗字幕组】【约会大作战　第二季】【02】【720P】【中日双语字幕】")
+    val r = parse("【附百度網盤】【修羅字幕組】【約會大作戰　第二季】【02】【720P】【中日雙語字幕】")
     assertEquals("02..02", r.episodeRange.toString())
     assertEquals("JPN", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("720P", r.resolution.toString())
@@ -3551,14 +3551,14 @@ public class PatternTitleParserTest约会大作战 : PatternBasedTitleParserTest
     assertEquals(null, r.subtitleKind)
     }
     kotlin.run {
-    val r = parse("[银光字幕组][约会大作战第二季DATE·A·LIVE][02][BIG5][四月新番][720P][MP4]")
+    val r = parse("[銀光字幕組][約會大作戰第二季DATE·A·LIVE][02][BIG5][四月新番][720P][MP4]")
     assertEquals("02..02", r.episodeRange.toString())
     assertEquals("CHT", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("720P", r.resolution.toString())
     assertEquals(null, r.subtitleKind)
     }
     kotlin.run {
-    val r = parse("[银光字幕组][约会大作战第二季DATE·A·LIVE][02][GB][四月新番][720P][MP4]")
+    val r = parse("[銀光字幕組][約會大作戰第二季DATE·A·LIVE][02][GB][四月新番][720P][MP4]")
     assertEquals("02..02", r.episodeRange.toString())
     assertEquals("CHS", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("720P", r.resolution.toString())
@@ -3572,7 +3572,7 @@ public class PatternTitleParserTest约会大作战 : PatternBasedTitleParserTest
     assertEquals(null, r.subtitleKind)
     }
     kotlin.run {
-    val r = parse("【动漫国字幕组&DHR动研字幕组】[约会大作战 第二季_DATE A LIVE II][02][简体][720P][MP4]")
+    val r = parse("【動漫國字幕組&DHR動研字幕組】[約會大作戰 第二季_DATE A LIVE II][02][簡體][720P][MP4]")
     assertEquals("02..02", r.episodeRange.toString())
     assertEquals("CHS", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("720P", r.resolution.toString())
@@ -3586,7 +3586,7 @@ public class PatternTitleParserTest约会大作战 : PatternBasedTitleParserTest
     assertEquals(null, r.subtitleKind)
     }
     kotlin.run {
-    val r = parse("【幻之字幕组】约会大作战Ⅱ Date a Live Ⅱ - 02[GB][720P][PSV&PC][MP4]")
+    val r = parse("【幻之字幕組】約會大作戰Ⅱ Date a Live Ⅱ - 02[GB][720P][PSV&PC][MP4]")
     assertEquals("02..02", r.episodeRange.toString())
     assertEquals("CHS", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("720P", r.resolution.toString())
@@ -3597,21 +3597,21 @@ public class PatternTitleParserTest约会大作战 : PatternBasedTitleParserTest
   @Test
   public fun `347018-346887-346873-346852-346798-346774-346657-346295-346176-346128`() {
     kotlin.run {
-    val r = parse("【萌物百科字幕组】[约会大作战 第二季_Date A Live II][02][GB][1280×720][MP4](内附网盘地址）")
+    val r = parse("【萌物百科字幕組】[約會大作戰 第二季_Date A Live II][02][GB][1280×720][MP4](內附網盤地址）")
     assertEquals("02..02", r.episodeRange.toString())
     assertEquals("CHS", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("null", r.resolution.toString())
     assertEquals(null, r.subtitleKind)
     }
     kotlin.run {
-    val r = parse("【恶俗×KNA】[约会大作战 2期][Date A Live ll][02][720P][简体][MP4]")
+    val r = parse("【惡俗×KNA】[約會大作戰 2期][Date A Live ll][02][720P][簡體][MP4]")
     assertEquals("02..02", r.episodeRange.toString())
     assertEquals("CHS", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("720P", r.resolution.toString())
     assertEquals(null, r.subtitleKind)
     }
     kotlin.run {
-    val r = parse("[澄空学园&华盟字幕社][4月新番] Date A Live II 约会大作战II 第02话 MP4 720p")
+    val r = parse("[澄空學園&華盟字幕社][4月新番] Date A Live II 約會大作戰II 第02話 MP4 720p")
     assertEquals("02..02", r.episodeRange.toString())
     assertEquals("", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("720P", r.resolution.toString())
@@ -3632,28 +3632,28 @@ public class PatternTitleParserTest约会大作战 : PatternBasedTitleParserTest
     assertEquals(null, r.subtitleKind)
     }
     kotlin.run {
-    val r = parse("【恶魔岛字幕组】★4月新番【约会大作战 第二季_Date A Live II】[02][GB][720P][MP4]")
+    val r = parse("【惡魔島字幕組】★4月新番【約會大作戰 第二季_Date A Live II】[02][GB][720P][MP4]")
     assertEquals("02..02", r.episodeRange.toString())
     assertEquals("CHS", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("720P", r.resolution.toString())
     assertEquals(null, r.subtitleKind)
     }
     kotlin.run {
-    val r = parse("[澄空学园&华盟字幕社][4月新番] Date A Live II 约会大作战II 第01话 MKV 720p 简繁外挂")
+    val r = parse("[澄空學園&華盟字幕社][4月新番] Date A Live II 約會大作戰II 第01話 MKV 720p 簡繁外掛")
     assertEquals("01..01", r.episodeRange.toString())
     assertEquals("CHS, CHT", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("720P", r.resolution.toString())
     assertEquals(SubtitleKind.EXTERNAL_DISCOVER, r.subtitleKind)
     }
     kotlin.run {
-    val r = parse("[银光字幕组][约会大作战第二季DATE·A·LIVE][01][BIG5][四月新番][720P][MP4]")
+    val r = parse("[銀光字幕組][約會大作戰第二季DATE·A·LIVE][01][BIG5][四月新番][720P][MP4]")
     assertEquals("01..01", r.episodeRange.toString())
     assertEquals("CHT", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("720P", r.resolution.toString())
     assertEquals(null, r.subtitleKind)
     }
     kotlin.run {
-    val r = parse("[银光字幕组][约会大作战第二季DATE·A·LIVE][01][GB][四月新番][720P][MP4]")
+    val r = parse("[銀光字幕組][約會大作戰第二季DATE·A·LIVE][01][GB][四月新番][720P][MP4]")
     assertEquals("01..01", r.episodeRange.toString())
     assertEquals("CHS", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("720P", r.resolution.toString())
@@ -3685,14 +3685,14 @@ public class PatternTitleParserTest约会大作战 : PatternBasedTitleParserTest
     assertEquals(null, r.subtitleKind)
     }
     kotlin.run {
-    val r = parse("【幻之字幕组】约会大作战Ⅱ Date a Live Ⅱ - 01[GB][720P][PSV&PC][MP4]")
+    val r = parse("【幻之字幕組】約會大作戰Ⅱ Date a Live Ⅱ - 01[GB][720P][PSV&PC][MP4]")
     assertEquals("01..01", r.episodeRange.toString())
     assertEquals("CHS", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("720P", r.resolution.toString())
     assertEquals(null, r.subtitleKind)
     }
     kotlin.run {
-    val r = parse("【恶俗×KNA】[约会大作战 2期][Date A Live ll][01][720P][简体][MP4]")
+    val r = parse("【惡俗×KNA】[約會大作戰 2期][Date A Live ll][01][720P][簡體][MP4]")
     assertEquals("01..01", r.episodeRange.toString())
     assertEquals("CHS", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("720P", r.resolution.toString())
@@ -3706,21 +3706,21 @@ public class PatternTitleParserTest约会大作战 : PatternBasedTitleParserTest
     assertEquals(null, r.subtitleKind)
     }
     kotlin.run {
-    val r = parse("[澄空学园&华盟字幕社][4月新番] Date A Live II 约会大作战II 第01话 MP4 720p")
+    val r = parse("[澄空學園&華盟字幕社][4月新番] Date A Live II 約會大作戰II 第01話 MP4 720p")
     assertEquals("01..01", r.episodeRange.toString())
     assertEquals("", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("720P", r.resolution.toString())
     assertEquals(null, r.subtitleKind)
     }
     kotlin.run {
-    val r = parse("[萌物百科字幕组][约会大作战 第二季_Date A Live II][01][GB][1280×720][MP4](内附网盘地址）")
+    val r = parse("[萌物百科字幕組][約會大作戰 第二季_Date A Live II][01][GB][1280×720][MP4](內附網盤地址）")
     assertEquals("01..01", r.episodeRange.toString())
     assertEquals("CHS", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("null", r.resolution.toString())
     assertEquals(null, r.subtitleKind)
     }
     kotlin.run {
-    val r = parse("【动漫国字幕组&DHR动研字幕组】[约会大作战 第二季_DATE A LIVE II][01][简体][720P][MP4]")
+    val r = parse("【動漫國字幕組&DHR動研字幕組】[約會大作戰 第二季_DATE A LIVE II][01][簡體][720P][MP4]")
     assertEquals("01..01", r.episodeRange.toString())
     assertEquals("CHS", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("720P", r.resolution.toString())
@@ -3752,7 +3752,7 @@ public class PatternTitleParserTest约会大作战 : PatternBasedTitleParserTest
     assertEquals(null, r.subtitleKind)
     }
     kotlin.run {
-    val r = parse("【恶魔岛字幕组】★4月新番【约会大作战 第二季_Date A Live II】[01][GB][720P][MP4]")
+    val r = parse("【惡魔島字幕組】★4月新番【約會大作戰 第二季_Date A Live II】[01][GB][720P][MP4]")
     assertEquals("01..01", r.episodeRange.toString())
     assertEquals("CHS", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("720P", r.resolution.toString())
@@ -3824,7 +3824,7 @@ public class PatternTitleParserTest约会大作战 : PatternBasedTitleParserTest
   @Test
   public fun `335868-335867-335447-332129-332078-331843-330563-329968-329719-329654`() {
     kotlin.run {
-    val r = parse("【动漫国字幕组&DHR动研字幕组】[约会大作战_DATE A LIVE][13话_OVA][简体][720P][MP4]")
+    val r = parse("【動漫國字幕組&DHR動研字幕組】[約會大作戰_DATE A LIVE][13話_OVA][簡體][720P][MP4]")
     assertEquals("null", r.episodeRange.toString())
     assertEquals("CHS", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("720P", r.resolution.toString())
@@ -3867,7 +3867,7 @@ public class PatternTitleParserTest约会大作战 : PatternBasedTitleParserTest
     assertEquals(null, r.subtitleKind)
     }
     kotlin.run {
-    val r = parse("[澄空学园&华盟字幕社] Date A Live 约会大作战 TV未放送第13话 MP4 720p")
+    val r = parse("[澄空學園&華盟字幕社] Date A Live 約會大作戰 TV未放送第13話 MP4 720p")
     assertEquals("null", r.episodeRange.toString())
     assertEquals("", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("720P", r.resolution.toString())
@@ -3881,7 +3881,7 @@ public class PatternTitleParserTest约会大作战 : PatternBasedTitleParserTest
     assertEquals(SubtitleKind.EXTERNAL_DISCOVER, r.subtitleKind)
     }
     kotlin.run {
-    val r = parse("[异域-11番小队][约会大作战Date a Live][BDRIP][720P][X264_AAC]")
+    val r = parse("[異域-11番小隊][約會大作戰Date a Live][BDRIP][720P][X264_AAC]")
     assertEquals("S?", r.episodeRange.toString())
     assertEquals("", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("720P", r.resolution.toString())
@@ -3899,7 +3899,7 @@ public class PatternTitleParserTest约会大作战 : PatternBasedTitleParserTest
   @Test
   public fun `329630-329601-329504-329320-329308-329170-325935-325791-323712-323325`() {
     kotlin.run {
-    val r = parse("【极影字幕社】★约会大作战_DATE A LIVE 第13话(TV未放送) 720p GB MP4")
+    val r = parse("【極影字幕社】★約會大作戰_DATE A LIVE 第13話(TV未放送) 720p GB MP4")
     assertEquals("13..13", r.episodeRange.toString())
     assertEquals("CHS", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("720P", r.resolution.toString())
@@ -3914,14 +3914,14 @@ public class PatternTitleParserTest约会大作战 : PatternBasedTitleParserTest
     assertEquals(SubtitleKind.EXTERNAL_DISCOVER, r.subtitleKind)
     }
     kotlin.run {
-    val r = parse("【千夏字幕组】【约会大作战_DATE_A_LIVE】[第13话_TV未放送][1280x720][MP4_PC&PSV兼容][简体]")
+    val r = parse("【千夏字幕組】【約會大作戰_DATE_A_LIVE】[第13話_TV未放送][1280x720][MP4_PC&PSV兼容][簡體]")
     assertEquals("null", r.episodeRange.toString())
     assertEquals("CHS", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("720P", r.resolution.toString())
     assertEquals(null, r.subtitleKind)
     }
     kotlin.run {
-    val r = parse("【幻之字幕组】约会大作战 Date a Live - 13[GB][720P][PSV&PC][MP4](成員招募)")
+    val r = parse("【幻之字幕組】約會大作戰 Date a Live - 13[GB][720P][PSV&PC][MP4](成員招募)")
     assertEquals("13..13", r.episodeRange.toString())
     assertEquals("CHS", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("720P", r.resolution.toString())
@@ -3949,21 +3949,21 @@ public class PatternTitleParserTest约会大作战 : PatternBasedTitleParserTest
     assertEquals(SubtitleKind.EXTERNAL_DISCOVER, r.subtitleKind)
     }
     kotlin.run {
-    val r = parse("[澄空学园&华盟字幕社] Date A Live 约会大作战 BDRip Vol.5 简繁外挂")
+    val r = parse("[澄空學園&華盟字幕社] Date A Live 約會大作戰 BDRip Vol.5 簡繁外掛")
     assertEquals("S?", r.episodeRange.toString())
     assertEquals("CHS, CHT", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("null", r.resolution.toString())
     assertEquals(SubtitleKind.EXTERNAL_DISCOVER, r.subtitleKind)
     }
     kotlin.run {
-    val r = parse("[澄空学园&华盟字幕社] Date A Live 约会大作战 BDRip Vol.4 简繁外挂")
+    val r = parse("[澄空學園&華盟字幕社] Date A Live 約會大作戰 BDRip Vol.4 簡繁外掛")
     assertEquals("S?", r.episodeRange.toString())
     assertEquals("CHS, CHT", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("null", r.resolution.toString())
     assertEquals(SubtitleKind.EXTERNAL_DISCOVER, r.subtitleKind)
     }
     kotlin.run {
-    val r = parse("[澄空学园&华盟字幕社] Date A Live 约会大作战 BDRip Vol.3 简繁外挂")
+    val r = parse("[澄空學園&華盟字幕社] Date A Live 約會大作戰 BDRip Vol.3 簡繁外掛")
     assertEquals("S?", r.episodeRange.toString())
     assertEquals("CHS, CHT", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("null", r.resolution.toString())
@@ -3974,14 +3974,14 @@ public class PatternTitleParserTest约会大作战 : PatternBasedTitleParserTest
   @Test
   public fun `323220-316264-315091-315092-315090-313005-312310-309228-309227-309215`() {
     kotlin.run {
-    val r = parse("[澄空学园&华盟字幕社] Date A Live 约会大作战 BDRip Vol.1-2 简繁外挂")
+    val r = parse("[澄空學園&華盟字幕社] Date A Live 約會大作戰 BDRip Vol.1-2 簡繁外掛")
     assertEquals("01..02", r.episodeRange.toString())
     assertEquals("CHS, CHT", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("null", r.resolution.toString())
     assertEquals(SubtitleKind.EXTERNAL_DISCOVER, r.subtitleKind)
     }
     kotlin.run {
-    val r = parse("【华盟字幕社&澄空学园】[约会大作战][1-12END] [BIG5][RMVB][848X480]")
+    val r = parse("【華盟字幕社&澄空學園】[約會大作戰][1-12END] [BIG5][RMVB][848X480]")
     assertEquals("01..12", r.episodeRange.toString())
     assertEquals("CHT", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("480P", r.resolution.toString())
@@ -3995,7 +3995,7 @@ public class PatternTitleParserTest约会大作战 : PatternBasedTitleParserTest
     assertEquals(null, r.subtitleKind)
     }
     kotlin.run {
-    val r = parse("【动漫国字幕组&DHR动研字幕组】[约会大作战_DATE A LIVE][全12话][简体][720P][MP4](合集版本)")
+    val r = parse("【動漫國字幕組&DHR動研字幕組】[約會大作戰_DATE A LIVE][全12話][簡體][720P][MP4](合集版本)")
     assertEquals("null", r.episodeRange.toString())
     assertEquals("CHS", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("720P", r.resolution.toString())
@@ -4016,7 +4016,7 @@ public class PatternTitleParserTest约会大作战 : PatternBasedTitleParserTest
     assertEquals(SubtitleKind.EXTERNAL_DISCOVER, r.subtitleKind)
     }
     kotlin.run {
-    val r = parse("◆[漫游FREEWIND工作室] DATE A LIVE 約會大作戰 1080P BDRIP BD2 第3~4話+SP")
+    val r = parse("◆[漫遊FREEWIND工作室] DATE A LIVE 約會大作戰 1080P BDRIP BD2 第3~4話+SP")
     assertEquals("03..04+SP", r.episodeRange.toString())
     assertEquals("", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("1080P", r.resolution.toString())
@@ -4070,7 +4070,7 @@ public class PatternTitleParserTest约会大作战 : PatternBasedTitleParserTest
     assertEquals(SubtitleKind.EXTERNAL_DISCOVER, r.subtitleKind)
     }
     kotlin.run {
-    val r = parse("◆[漫游FREEWIND工作室] DATE A LIVE 約會大作戰 1080P BDRIP 第1~2話+SP")
+    val r = parse("◆[漫遊FREEWIND工作室] DATE A LIVE 約會大作戰 1080P BDRIP 第1~2話+SP")
     assertEquals("01..02+SP", r.episodeRange.toString())
     assertEquals("", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("1080P", r.resolution.toString())
@@ -4091,7 +4091,7 @@ public class PatternTitleParserTest约会大作战 : PatternBasedTitleParserTest
     assertEquals(null, r.subtitleKind)
     }
     kotlin.run {
-    val r = parse("[澄空学园&华盟字幕社] Date A Live 约会大作战 第01-12话 MKV 720p 简繁外挂 合集")
+    val r = parse("[澄空學園&華盟字幕社] Date A Live 約會大作戰 第01-12話 MKV 720p 簡繁外掛 合集")
     assertEquals("01..12", r.episodeRange.toString())
     assertEquals("CHS, CHT", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("720P", r.resolution.toString())
@@ -4112,7 +4112,7 @@ public class PatternTitleParserTest约会大作战 : PatternBasedTitleParserTest
     assertEquals(null, r.subtitleKind)
     }
     kotlin.run {
-    val r = parse("[澄空学园&华盟字幕社] Date A Live 约会大作战 第01-12话 MP4 720p 合集")
+    val r = parse("[澄空學園&華盟字幕社] Date A Live 約會大作戰 第01-12話 MP4 720p 合集")
     assertEquals("01..12", r.episodeRange.toString())
     assertEquals("", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("720P", r.resolution.toString())
@@ -4130,7 +4130,7 @@ public class PatternTitleParserTest约会大作战 : PatternBasedTitleParserTest
     assertEquals(SubtitleKind.EXTERNAL_DISCOVER, r.subtitleKind)
     }
     kotlin.run {
-    val r = parse("【雪酷字幕組】★四月新番【DATE A LIVE 約會大作戰】第01-12話 完結合集 简繁外挂字幕 X264_AAC 720P MKV")
+    val r = parse("【雪酷字幕組】★四月新番【DATE A LIVE 約會大作戰】第01-12話 完結合集 簡繁外掛字幕 X264_AAC 720P MKV")
     assertEquals("01..12", r.episodeRange.toString())
     assertEquals("CHS, CHT", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("720P", r.resolution.toString())
@@ -4144,28 +4144,28 @@ public class PatternTitleParserTest约会大作战 : PatternBasedTitleParserTest
     assertEquals(null, r.subtitleKind)
     }
     kotlin.run {
-    val r = parse("【幻之字幕组&猫蒲团汉化组】约会大作战_Date a Live 01-12[GB][720P][PSV&PC][MP4]")
+    val r = parse("【幻之字幕組&貓蒲團漢化組】約會大作戰_Date a Live 01-12[GB][720P][PSV&PC][MP4]")
     assertEquals("01..12", r.episodeRange.toString())
     assertEquals("CHS", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("720P", r.resolution.toString())
     assertEquals(null, r.subtitleKind)
     }
     kotlin.run {
-    val r = parse("【幻之字幕组&猫蒲团汉化组】约会大作战_Date a Live 01-12[BIG5][480P][PSP&PC][MP4]")
+    val r = parse("【幻之字幕組&貓蒲團漢化組】約會大作戰_Date a Live 01-12[BIG5][480P][PSP&PC][MP4]")
     assertEquals("01..12", r.episodeRange.toString())
     assertEquals("CHT", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("480P", r.resolution.toString())
     assertEquals(null, r.subtitleKind)
     }
     kotlin.run {
-    val r = parse("【幻之字幕组&猫蒲团汉化组】约会大作战_Date a Live - 12[GB][720P][PSV&PC][MP4]")
+    val r = parse("【幻之字幕組&貓蒲團漢化組】約會大作戰_Date a Live - 12[GB][720P][PSV&PC][MP4]")
     assertEquals("12..12", r.episodeRange.toString())
     assertEquals("CHS", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("720P", r.resolution.toString())
     assertEquals(null, r.subtitleKind)
     }
     kotlin.run {
-    val r = parse("【幻之字幕组&猫蒲团汉化组】约会大作战_Date a Live - 12[BIG5][480P][PSP&PC][MP4]")
+    val r = parse("【幻之字幕組&貓蒲團漢化組】約會大作戰_Date a Live - 12[BIG5][480P][PSP&PC][MP4]")
     assertEquals("12..12", r.episodeRange.toString())
     assertEquals("CHT", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("480P", r.resolution.toString())
@@ -4197,21 +4197,21 @@ public class PatternTitleParserTest约会大作战 : PatternBasedTitleParserTest
   @Test
   public fun `306991-306969-306965-306958-306957-306951-306928-306916-306911-306910`() {
     kotlin.run {
-    val r = parse("【雪酷字幕組】★四月新番【DATE A LIVE 约会大作战】第12话 完结 GB简体 720P MP4")
+    val r = parse("【雪酷字幕組】★四月新番【DATE A LIVE 約會大作戰】第12話 完結 GB簡體 720P MP4")
     assertEquals("12..12", r.episodeRange.toString())
     assertEquals("CHS", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("720P", r.resolution.toString())
     assertEquals(null, r.subtitleKind)
     }
     kotlin.run {
-    val r = parse("[澄空学园&华盟字幕社] Date A Live 约会大作战 第11话 MKV 720p 简繁外挂")
+    val r = parse("[澄空學園&華盟字幕社] Date A Live 約會大作戰 第11話 MKV 720p 簡繁外掛")
     assertEquals("11..11", r.episodeRange.toString())
     assertEquals("CHS, CHT", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("720P", r.resolution.toString())
     assertEquals(SubtitleKind.EXTERNAL_DISCOVER, r.subtitleKind)
     }
     kotlin.run {
-    val r = parse("【千夏字幕组】【约会大作战_DATE_A_LIVE】[第12话][1280x720][MP4_PC&PSV兼容][简体]")
+    val r = parse("【千夏字幕組】【約會大作戰_DATE_A_LIVE】[第12話][1280x720][MP4_PC&PSV兼容][簡體]")
     assertEquals("12..12", r.episodeRange.toString())
     assertEquals("CHS", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("720P", r.resolution.toString())
@@ -4225,7 +4225,7 @@ public class PatternTitleParserTest约会大作战 : PatternBasedTitleParserTest
     assertEquals(null, r.subtitleKind)
     }
     kotlin.run {
-    val r = parse("【动漫国字幕组&DHR动研字幕组】[约会大作战_DATE A LIVE][12完][简体][720P][MP4]")
+    val r = parse("【動漫國字幕組&DHR動研字幕組】[約會大作戰_DATE A LIVE][12完][簡體][720P][MP4]")
     assertEquals("12..12", r.episodeRange.toString())
     assertEquals("CHS", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("720P", r.resolution.toString())
@@ -4254,14 +4254,14 @@ public class PatternTitleParserTest约会大作战 : PatternBasedTitleParserTest
     assertEquals(null, r.subtitleKind)
     }
     kotlin.run {
-    val r = parse("[澄空学园&华盟字幕社] Date A Live 约会大作战 第12话 MP4 720p 完")
+    val r = parse("[澄空學園&華盟字幕社] Date A Live 約會大作戰 第12話 MP4 720p 完")
     assertEquals("12..12", r.episodeRange.toString())
     assertEquals("", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("720P", r.resolution.toString())
     assertEquals(null, r.subtitleKind)
     }
     kotlin.run {
-    val r = parse("【极影字幕社】★4月新番 约会大作战_DATE A LIVE第12话 720p GB MP4[第一季完]")
+    val r = parse("【極影字幕社】★4月新番 約會大作戰_DATE A LIVE第12話 720p GB MP4[第一季完]")
     assertEquals("null", r.episodeRange.toString())
     assertEquals("CHS", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("720P", r.resolution.toString())
@@ -4286,21 +4286,21 @@ public class PatternTitleParserTest约会大作战 : PatternBasedTitleParserTest
     assertEquals(null, r.subtitleKind)
     }
     kotlin.run {
-    val r = parse("【幻之字幕组&猫蒲团汉化组】约会大作战_Date a Live - 11[GB][720P][PSV&PC][MP4]")
+    val r = parse("【幻之字幕組&貓蒲團漢化組】約會大作戰_Date a Live - 11[GB][720P][PSV&PC][MP4]")
     assertEquals("11..11", r.episodeRange.toString())
     assertEquals("CHS", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("720P", r.resolution.toString())
     assertEquals(null, r.subtitleKind)
     }
     kotlin.run {
-    val r = parse("【幻之字幕组&猫蒲团汉化组】约会大作战_Date a Live - 11[BIG5][480P][PSP&PC][MP4]")
+    val r = parse("【幻之字幕組&貓蒲團漢化組】約會大作戰_Date a Live - 11[BIG5][480P][PSP&PC][MP4]")
     assertEquals("11..11", r.episodeRange.toString())
     assertEquals("CHT", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("480P", r.resolution.toString())
     assertEquals(null, r.subtitleKind)
     }
     kotlin.run {
-    val r = parse("【千夏字幕组】【约会大作战_DATE_A_LIVE】[第11话][1280x720][MP4_PC&PSV兼容][简体]")
+    val r = parse("【千夏字幕組】【約會大作戰_DATE_A_LIVE】[第11話][1280x720][MP4_PC&PSV兼容][簡體]")
     assertEquals("11..11", r.episodeRange.toString())
     assertEquals("CHS", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("720P", r.resolution.toString())
@@ -4335,7 +4335,7 @@ public class PatternTitleParserTest约会大作战 : PatternBasedTitleParserTest
     assertEquals(null, r.subtitleKind)
     }
     kotlin.run {
-    val r = parse("【雪酷字幕組】★四月新番【DATE A LIVE 约会大作战】第11话 GB简体 720P MP4")
+    val r = parse("【雪酷字幕組】★四月新番【DATE A LIVE 約會大作戰】第11話 GB簡體 720P MP4")
     assertEquals("11..11", r.episodeRange.toString())
     assertEquals("CHS", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("720P", r.resolution.toString())
@@ -4346,7 +4346,7 @@ public class PatternTitleParserTest约会大作战 : PatternBasedTitleParserTest
   @Test
   public fun `306150-306138-306128-306115-306112-306111-306109-306108-306027-306019`() {
     kotlin.run {
-    val r = parse("【动漫国字幕组&DHR动研字幕组】[约会大作战_DATE A LIVE][11][简体][720P][MP4]")
+    val r = parse("【動漫國字幕組&DHR動研字幕組】[約會大作戰_DATE A LIVE][11][簡體][720P][MP4]")
     assertEquals("11..11", r.episodeRange.toString())
     assertEquals("CHS", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("720P", r.resolution.toString())
@@ -4374,7 +4374,7 @@ public class PatternTitleParserTest约会大作战 : PatternBasedTitleParserTest
     assertEquals(null, r.subtitleKind)
     }
     kotlin.run {
-    val r = parse("【极影字幕社】★4月新番 约会大作战_DATE A LIVE第11话 720p GB MP4")
+    val r = parse("【極影字幕社】★4月新番 約會大作戰_DATE A LIVE第11話 720p GB MP4")
     assertEquals("null", r.episodeRange.toString())
     assertEquals("CHS", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("720P", r.resolution.toString())
@@ -4388,7 +4388,7 @@ public class PatternTitleParserTest约会大作战 : PatternBasedTitleParserTest
     assertEquals(null, r.subtitleKind)
     }
     kotlin.run {
-    val r = parse("[澄空学园&华盟字幕社] Date A Live 约会大作战 第11话 MP4 720p")
+    val r = parse("[澄空學園&華盟字幕社] Date A Live 約會大作戰 第11話 MP4 720p")
     assertEquals("11..11", r.episodeRange.toString())
     assertEquals("", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("720P", r.resolution.toString())
@@ -4403,7 +4403,7 @@ public class PatternTitleParserTest约会大作战 : PatternBasedTitleParserTest
     assertEquals(null, r.subtitleKind)
     }
     kotlin.run {
-    val r = parse("[澄空学园&华盟字幕社] Date A Live 约会大作战 第10话 MKV 720p 简繁外挂")
+    val r = parse("[澄空學園&華盟字幕社] Date A Live 約會大作戰 第10話 MKV 720p 簡繁外掛")
     assertEquals("10..10", r.episodeRange.toString())
     assertEquals("CHS, CHT", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("720P", r.resolution.toString())
@@ -4449,14 +4449,14 @@ public class PatternTitleParserTest约会大作战 : PatternBasedTitleParserTest
     assertEquals(null, r.subtitleKind)
     }
     kotlin.run {
-    val r = parse("【幻之字幕组&猫蒲团汉化组】约会大作战_Date a Live - 10[BIG5][480P][PSP&PC][MP4]")
+    val r = parse("【幻之字幕組&貓蒲團漢化組】約會大作戰_Date a Live - 10[BIG5][480P][PSP&PC][MP4]")
     assertEquals("10..10", r.episodeRange.toString())
     assertEquals("CHT", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("480P", r.resolution.toString())
     assertEquals(null, r.subtitleKind)
     }
     kotlin.run {
-    val r = parse("【幻之字幕组&猫蒲团汉化组】约会大作战_Date a Live - 10[GB][720P][PSV&PC][MP4]")
+    val r = parse("【幻之字幕組&貓蒲團漢化組】約會大作戰_Date a Live - 10[GB][720P][PSV&PC][MP4]")
     assertEquals("10..10", r.episodeRange.toString())
     assertEquals("CHS", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("720P", r.resolution.toString())
@@ -4470,7 +4470,7 @@ public class PatternTitleParserTest约会大作战 : PatternBasedTitleParserTest
     assertEquals(SubtitleKind.EXTERNAL_DISCOVER, r.subtitleKind)
     }
     kotlin.run {
-    val r = parse("[澄空学园&华盟字幕社] Date A Live 约会大作战 第09话 MKV 720p 简繁外挂 附EDPV")
+    val r = parse("[澄空學園&華盟字幕社] Date A Live 約會大作戰 第09話 MKV 720p 簡繁外掛 附EDPV")
     assertEquals("09..09", r.episodeRange.toString())
     assertEquals("CHS, CHT", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("720P", r.resolution.toString())
@@ -4484,7 +4484,7 @@ public class PatternTitleParserTest约会大作战 : PatternBasedTitleParserTest
     assertEquals(null, r.subtitleKind)
     }
     kotlin.run {
-    val r = parse("【雪酷字幕組】★四月新番【DATE A LIVE 约会大作战】第10话 GB简体 720P MP4")
+    val r = parse("【雪酷字幕組】★四月新番【DATE A LIVE 約會大作戰】第10話 GB簡體 720P MP4")
     assertEquals("10..10", r.episodeRange.toString())
     assertEquals("CHS", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("720P", r.resolution.toString())
@@ -4495,14 +4495,14 @@ public class PatternTitleParserTest约会大作战 : PatternBasedTitleParserTest
   @Test
   public fun `305390-305372-305371-305366-305347-305346-305342-305340-305333-305332`() {
     kotlin.run {
-    val r = parse("【千夏字幕组】【约会大作战_DATE_A_LIVE】[第10话][1280x720][MP4_PC&PSV兼容][简体]")
+    val r = parse("【千夏字幕組】【約會大作戰_DATE_A_LIVE】[第10話][1280x720][MP4_PC&PSV兼容][簡體]")
     assertEquals("10..10", r.episodeRange.toString())
     assertEquals("CHS", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("720P", r.resolution.toString())
     assertEquals(null, r.subtitleKind)
     }
     kotlin.run {
-    val r = parse("【动漫国字幕组&DHR动研字幕组】[约会大作战_DATE A LIVE][10][简体][720P][MP4]")
+    val r = parse("【動漫國字幕組&DHR動研字幕組】[約會大作戰_DATE A LIVE][10][簡體][720P][MP4]")
     assertEquals("10..10", r.episodeRange.toString())
     assertEquals("CHS", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("720P", r.resolution.toString())
@@ -4530,7 +4530,7 @@ public class PatternTitleParserTest约会大作战 : PatternBasedTitleParserTest
     assertEquals(null, r.subtitleKind)
     }
     kotlin.run {
-    val r = parse("【极影字幕社】★4月新番 约会大作战_DATE A LIVE第10话 720p GB MP4")
+    val r = parse("【極影字幕社】★4月新番 約會大作戰_DATE A LIVE第10話 720p GB MP4")
     assertEquals("null", r.episodeRange.toString())
     assertEquals("CHS", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("720P", r.resolution.toString())
@@ -4551,7 +4551,7 @@ public class PatternTitleParserTest约会大作战 : PatternBasedTitleParserTest
     assertEquals(null, r.subtitleKind)
     }
     kotlin.run {
-    val r = parse("[澄空学园&华盟字幕社] Date A Live 约会大作战 第10话 MP4 720p")
+    val r = parse("[澄空學園&華盟字幕社] Date A Live 約會大作戰 第10話 MP4 720p")
     assertEquals("10..10", r.episodeRange.toString())
     assertEquals("", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("720P", r.resolution.toString())
@@ -4591,14 +4591,14 @@ public class PatternTitleParserTest约会大作战 : PatternBasedTitleParserTest
     assertEquals(null, r.subtitleKind)
     }
     kotlin.run {
-    val r = parse("【幻之字幕组&猫蒲团汉化组】约会大作战_Date a Live - 09[BIG5][480P][PSP&PC][MP4]")
+    val r = parse("【幻之字幕組&貓蒲團漢化組】約會大作戰_Date a Live - 09[BIG5][480P][PSP&PC][MP4]")
     assertEquals("09..09", r.episodeRange.toString())
     assertEquals("CHT", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("480P", r.resolution.toString())
     assertEquals(null, r.subtitleKind)
     }
     kotlin.run {
-    val r = parse("【幻之字幕组&猫蒲团汉化组】约会大作战_Date a Live - 09[GB][720P][PSV&PC][MP4]")
+    val r = parse("【幻之字幕組&貓蒲團漢化組】約會大作戰_Date a Live - 09[GB][720P][PSV&PC][MP4]")
     assertEquals("09..09", r.episodeRange.toString())
     assertEquals("CHS", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("720P", r.resolution.toString())
@@ -4619,14 +4619,14 @@ public class PatternTitleParserTest约会大作战 : PatternBasedTitleParserTest
     assertEquals(null, r.subtitleKind)
     }
     kotlin.run {
-    val r = parse("【雪酷字幕組】★四月新番【DATE A LIVE 约会大作战】第09话 GB简体 720P MP4")
+    val r = parse("【雪酷字幕組】★四月新番【DATE A LIVE 約會大作戰】第09話 GB簡體 720P MP4")
     assertEquals("09..09", r.episodeRange.toString())
     assertEquals("CHS", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("720P", r.resolution.toString())
     assertEquals(null, r.subtitleKind)
     }
     kotlin.run {
-    val r = parse("【千夏字幕组】【约会大作战_DATE_A_LIVE】[第09话][1280x720][MP4_PC&PSV兼容][简体]")
+    val r = parse("【千夏字幕組】【約會大作戰_DATE_A_LIVE】[第09話][1280x720][MP4_PC&PSV兼容][簡體]")
     assertEquals("09..09", r.episodeRange.toString())
     assertEquals("CHS", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("720P", r.resolution.toString())
@@ -4644,14 +4644,14 @@ public class PatternTitleParserTest约会大作战 : PatternBasedTitleParserTest
   @Test
   public fun `304508-304482-304481-304473-304472-304467-304460-304309-304284-304171`() {
     kotlin.run {
-    val r = parse("【极影字幕社】★4月新番 约会大作战_DATE A LIVE第09话 720p GB MP4")
+    val r = parse("【極影字幕社】★4月新番 約會大作戰_DATE A LIVE第09話 720p GB MP4")
     assertEquals("null", r.episodeRange.toString())
     assertEquals("CHS", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("720P", r.resolution.toString())
     assertEquals(null, r.subtitleKind)
     }
     kotlin.run {
-    val r = parse("【动漫国字幕组&DHR动研字幕组】[约会大作战_DATE A LIVE][09][简体][720P][MP4]")
+    val r = parse("【動漫國字幕組&DHR動研字幕組】[約會大作戰_DATE A LIVE][09][簡體][720P][MP4]")
     assertEquals("09..09", r.episodeRange.toString())
     assertEquals("CHS", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("720P", r.resolution.toString())
@@ -4679,7 +4679,7 @@ public class PatternTitleParserTest约会大作战 : PatternBasedTitleParserTest
     assertEquals(null, r.subtitleKind)
     }
     kotlin.run {
-    val r = parse("[澄空学园&华盟字幕社] Date A Live 约会大作战 第09话 MP4 720p")
+    val r = parse("[澄空學園&華盟字幕社] Date A Live 約會大作戰 第09話 MP4 720p")
     assertEquals("09..09", r.episodeRange.toString())
     assertEquals("", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("720P", r.resolution.toString())
@@ -4694,7 +4694,7 @@ public class PatternTitleParserTest约会大作战 : PatternBasedTitleParserTest
     assertEquals(null, r.subtitleKind)
     }
     kotlin.run {
-    val r = parse("[澄空学园&华盟字幕社] Date A Live 约会大作战 第08话 MKV 720p 简繁外挂")
+    val r = parse("[澄空學園&華盟字幕社] Date A Live 約會大作戰 第08話 MKV 720p 簡繁外掛")
     assertEquals("08..08", r.episodeRange.toString())
     assertEquals("CHS, CHT", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("720P", r.resolution.toString())
@@ -4726,7 +4726,7 @@ public class PatternTitleParserTest约会大作战 : PatternBasedTitleParserTest
     assertEquals(null, r.subtitleKind)
     }
     kotlin.run {
-    val r = parse("【雪酷字幕組】★四月新番【DATE A LIVE 約會大作戰】第08話 简繁外挂字幕 X264_AAC 720P MKV")
+    val r = parse("【雪酷字幕組】★四月新番【DATE A LIVE 約會大作戰】第08話 簡繁外掛字幕 X264_AAC 720P MKV")
     assertEquals("08..08", r.episodeRange.toString())
     assertEquals("CHS, CHT", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("720P", r.resolution.toString())
@@ -4754,14 +4754,14 @@ public class PatternTitleParserTest约会大作战 : PatternBasedTitleParserTest
     assertEquals(null, r.subtitleKind)
     }
     kotlin.run {
-    val r = parse("【幻之字幕组&猫蒲团汉化组】约会大作战_Date a Live - 08[BIG5][480P][PSP&PC][MP4]")
+    val r = parse("【幻之字幕組&貓蒲團漢化組】約會大作戰_Date a Live - 08[BIG5][480P][PSP&PC][MP4]")
     assertEquals("08..08", r.episodeRange.toString())
     assertEquals("CHT", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("480P", r.resolution.toString())
     assertEquals(null, r.subtitleKind)
     }
     kotlin.run {
-    val r = parse("【幻之字幕组&猫蒲团汉化组】约会大作战_Date a Live - 08[GB][720P][PSV&PC][MP4]")
+    val r = parse("【幻之字幕組&貓蒲團漢化組】約會大作戰_Date a Live - 08[GB][720P][PSV&PC][MP4]")
     assertEquals("08..08", r.episodeRange.toString())
     assertEquals("CHS", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("720P", r.resolution.toString())
@@ -4775,7 +4775,7 @@ public class PatternTitleParserTest约会大作战 : PatternBasedTitleParserTest
     assertEquals(SubtitleKind.EXTERNAL_DISCOVER, r.subtitleKind)
     }
     kotlin.run {
-    val r = parse("[澄空学园&华盟字幕社] Date A Live 约会大作战 第07话 MKV 720p 简繁外挂")
+    val r = parse("[澄空學園&華盟字幕社] Date A Live 約會大作戰 第07話 MKV 720p 簡繁外掛")
     assertEquals("07..07", r.episodeRange.toString())
     assertEquals("CHS, CHT", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("720P", r.resolution.toString())
@@ -4793,7 +4793,7 @@ public class PatternTitleParserTest约会大作战 : PatternBasedTitleParserTest
   @Test
   public fun `303616-303612-303593-303568-303567-303555-303553-303546-303544-303543`() {
     kotlin.run {
-    val r = parse("【雪酷字幕組】★四月新番【DATE A LIVE 约会大作战】第08话 GB简体 720P MP4")
+    val r = parse("【雪酷字幕組】★四月新番【DATE A LIVE 約會大作戰】第08話 GB簡體 720P MP4")
     assertEquals("08..08", r.episodeRange.toString())
     assertEquals("CHS", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("720P", r.resolution.toString())
@@ -4807,14 +4807,14 @@ public class PatternTitleParserTest约会大作战 : PatternBasedTitleParserTest
     assertEquals(null, r.subtitleKind)
     }
     kotlin.run {
-    val r = parse("【千夏字幕组】【约会大作战_DATE_A_LIVE】[第08话][1280x720][MP4_PC&PSV兼容][简体]")
+    val r = parse("【千夏字幕組】【約會大作戰_DATE_A_LIVE】[第08話][1280x720][MP4_PC&PSV兼容][簡體]")
     assertEquals("08..08", r.episodeRange.toString())
     assertEquals("CHS", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("720P", r.resolution.toString())
     assertEquals(null, r.subtitleKind)
     }
     kotlin.run {
-    val r = parse("【动漫国字幕组&DHR动研字幕组】[约会大作战_DATE A LIVE][08][简体][720P][MP4]")
+    val r = parse("【動漫國字幕組&DHR動研字幕組】[約會大作戰_DATE A LIVE][08][簡體][720P][MP4]")
     assertEquals("08..08", r.episodeRange.toString())
     assertEquals("CHS", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("720P", r.resolution.toString())
@@ -4849,14 +4849,14 @@ public class PatternTitleParserTest约会大作战 : PatternBasedTitleParserTest
     assertEquals(null, r.subtitleKind)
     }
     kotlin.run {
-    val r = parse("【极影字幕社】★4月新番 约会大作战_DATE A LIVE第08话 720p GB MP4")
+    val r = parse("【極影字幕社】★4月新番 約會大作戰_DATE A LIVE第08話 720p GB MP4")
     assertEquals("null", r.episodeRange.toString())
     assertEquals("CHS", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("720P", r.resolution.toString())
     assertEquals(null, r.subtitleKind)
     }
     kotlin.run {
-    val r = parse("[澄空学园&华盟字幕社] Date A Live 约会大作战 第08话 MP4 720p")
+    val r = parse("[澄空學園&華盟字幕社] Date A Live 約會大作戰 第08話 MP4 720p")
     assertEquals("08..08", r.episodeRange.toString())
     assertEquals("", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("720P", r.resolution.toString())
@@ -4889,14 +4889,14 @@ public class PatternTitleParserTest约会大作战 : PatternBasedTitleParserTest
     assertEquals(null, r.subtitleKind)
     }
     kotlin.run {
-    val r = parse("[澄空学园&华盟字幕社] Date A Live 约会大作战 第06话 MKV 720p 简繁外挂")
+    val r = parse("[澄空學園&華盟字幕社] Date A Live 約會大作戰 第06話 MKV 720p 簡繁外掛")
     assertEquals("06..06", r.episodeRange.toString())
     assertEquals("CHS, CHT", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("720P", r.resolution.toString())
     assertEquals(SubtitleKind.EXTERNAL_DISCOVER, r.subtitleKind)
     }
     kotlin.run {
-    val r = parse("【雪酷字幕組】★四月新番【DATE A LIVE 約會大作戰】第07話 简繁外挂字幕 X264_AAC 720P MKV")
+    val r = parse("【雪酷字幕組】★四月新番【DATE A LIVE 約會大作戰】第07話 簡繁外掛字幕 X264_AAC 720P MKV")
     assertEquals("07..07", r.episodeRange.toString())
     assertEquals("CHS, CHT", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("720P", r.resolution.toString())
@@ -4942,21 +4942,21 @@ public class PatternTitleParserTest约会大作战 : PatternBasedTitleParserTest
   @Test
   public fun `302790-302783-302775-302758-302757-302753-302746-302737-302736-302730`() {
     kotlin.run {
-    val r = parse("【极影字幕社】★4月新番 约会大作战_DATE A LIVE第07话 720p GB MP4")
+    val r = parse("【極影字幕社】★4月新番 約會大作戰_DATE A LIVE第07話 720p GB MP4")
     assertEquals("null", r.episodeRange.toString())
     assertEquals("CHS", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("720P", r.resolution.toString())
     assertEquals(null, r.subtitleKind)
     }
     kotlin.run {
-    val r = parse("【幻之字幕组&猫蒲团汉化组】约会大作战_Date a Live - 07[BIG5][480P][PSP&PC][MP4]")
+    val r = parse("【幻之字幕組&貓蒲團漢化組】約會大作戰_Date a Live - 07[BIG5][480P][PSP&PC][MP4]")
     assertEquals("07..07", r.episodeRange.toString())
     assertEquals("CHT", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("480P", r.resolution.toString())
     assertEquals(null, r.subtitleKind)
     }
     kotlin.run {
-    val r = parse("【幻之字幕组&猫蒲团汉化组】约会大作战_Date a Live - 07[GB][720P][PSV&PC][MP4]")
+    val r = parse("【幻之字幕組&貓蒲團漢化組】約會大作戰_Date a Live - 07[GB][720P][PSV&PC][MP4]")
     assertEquals("07..07", r.episodeRange.toString())
     assertEquals("CHS", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("720P", r.resolution.toString())
@@ -4970,14 +4970,14 @@ public class PatternTitleParserTest约会大作战 : PatternBasedTitleParserTest
     assertEquals(null, r.subtitleKind)
     }
     kotlin.run {
-    val r = parse("【雪酷字幕組】★四月新番【DATE A LIVE 约会大作战】第07话 GB简体 720P MP4")
+    val r = parse("【雪酷字幕組】★四月新番【DATE A LIVE 約會大作戰】第07話 GB簡體 720P MP4")
     assertEquals("07..07", r.episodeRange.toString())
     assertEquals("CHS", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("720P", r.resolution.toString())
     assertEquals(null, r.subtitleKind)
     }
     kotlin.run {
-    val r = parse("【千夏字幕组】【约会大作战_DATE_A_LIVE】[第07话][1280x720][MP4_PC&PSV兼容][简体]")
+    val r = parse("【千夏字幕組】【約會大作戰_DATE_A_LIVE】[第07話][1280x720][MP4_PC&PSV兼容][簡體]")
     assertEquals("07..07", r.episodeRange.toString())
     assertEquals("CHS", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("720P", r.resolution.toString())
@@ -4991,7 +4991,7 @@ public class PatternTitleParserTest约会大作战 : PatternBasedTitleParserTest
     assertEquals(null, r.subtitleKind)
     }
     kotlin.run {
-    val r = parse("【动漫国字幕组&DHR动研字幕组】[约会大作战_DATE A LIVE][07][简体][720P][MP4]")
+    val r = parse("【動漫國字幕組&DHR動研字幕組】[約會大作戰_DATE A LIVE][07][簡體][720P][MP4]")
     assertEquals("07..07", r.episodeRange.toString())
     assertEquals("CHS", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("720P", r.resolution.toString())
@@ -5016,7 +5016,7 @@ public class PatternTitleParserTest约会大作战 : PatternBasedTitleParserTest
   @Test
   public fun `302718-302717-302555-302386-302385-302347-302013-302012-301971-301969`() {
     kotlin.run {
-    val r = parse("[澄空学园&华盟字幕社] Date A Live 约会大作战 第07话 MP4 720p")
+    val r = parse("[澄空學園&華盟字幕社] Date A Live 約會大作戰 第07話 MP4 720p")
     assertEquals("07..07", r.episodeRange.toString())
     assertEquals("", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("720P", r.resolution.toString())
@@ -5031,7 +5031,7 @@ public class PatternTitleParserTest约会大作战 : PatternBasedTitleParserTest
     assertEquals(null, r.subtitleKind)
     }
     kotlin.run {
-    val r = parse("【雪酷字幕組】★四月新番【DATE A LIVE 約會大作戰】第06話 简繁外挂字幕 X264_AAC 720P MKV")
+    val r = parse("【雪酷字幕組】★四月新番【DATE A LIVE 約會大作戰】第06話 簡繁外掛字幕 X264_AAC 720P MKV")
     assertEquals("06..06", r.episodeRange.toString())
     assertEquals("CHS, CHT", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("720P", r.resolution.toString())
@@ -5066,21 +5066,21 @@ public class PatternTitleParserTest约会大作战 : PatternBasedTitleParserTest
     assertEquals(null, r.subtitleKind)
     }
     kotlin.run {
-    val r = parse("【雪酷字幕組】★四月新番【DATE A LIVE 约会大作战】第06话 GB简体 720P MP4")
+    val r = parse("【雪酷字幕組】★四月新番【DATE A LIVE 約會大作戰】第06話 GB簡體 720P MP4")
     assertEquals("06..06", r.episodeRange.toString())
     assertEquals("CHS", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("720P", r.resolution.toString())
     assertEquals(null, r.subtitleKind)
     }
     kotlin.run {
-    val r = parse("【幻之字幕组&猫蒲团汉化组】约会大作战_Date a Live - 06[BIG5][480P][PSP&PC][MP4]")
+    val r = parse("【幻之字幕組&貓蒲團漢化組】約會大作戰_Date a Live - 06[BIG5][480P][PSP&PC][MP4]")
     assertEquals("06..06", r.episodeRange.toString())
     assertEquals("CHT", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("480P", r.resolution.toString())
     assertEquals(null, r.subtitleKind)
     }
     kotlin.run {
-    val r = parse("【幻之字幕组&猫蒲团汉化组】约会大作战_Date a Live - 06[GB][720P][PSV&PC][MP4]")
+    val r = parse("【幻之字幕組&貓蒲團漢化組】約會大作戰_Date a Live - 06[GB][720P][PSV&PC][MP4]")
     assertEquals("06..06", r.episodeRange.toString())
     assertEquals("CHS", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("720P", r.resolution.toString())
@@ -5091,14 +5091,14 @@ public class PatternTitleParserTest约会大作战 : PatternBasedTitleParserTest
   @Test
   public fun `301965-301964-301952-301938-301937-301917-301914-301904-301903-301899`() {
     kotlin.run {
-    val r = parse("【千夏字幕组】【约会大作战_DATE_A_LIVE】[第06话][1280x720][MP4_PC&PSV兼容][简体]")
+    val r = parse("【千夏字幕組】【約會大作戰_DATE_A_LIVE】[第06話][1280x720][MP4_PC&PSV兼容][簡體]")
     assertEquals("06..06", r.episodeRange.toString())
     assertEquals("CHS", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("720P", r.resolution.toString())
     assertEquals(null, r.subtitleKind)
     }
     kotlin.run {
-    val r = parse("[澄空学园&华盟字幕社] Date A Live 约会大作战 第05话 MKV 720p 简繁外挂")
+    val r = parse("[澄空學園&華盟字幕社] Date A Live 約會大作戰 第05話 MKV 720p 簡繁外掛")
     assertEquals("05..05", r.episodeRange.toString())
     assertEquals("CHS, CHT", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("720P", r.resolution.toString())
@@ -5112,7 +5112,7 @@ public class PatternTitleParserTest约会大作战 : PatternBasedTitleParserTest
     assertEquals(SubtitleKind.EXTERNAL_DISCOVER, r.subtitleKind)
     }
     kotlin.run {
-    val r = parse("【动漫国字幕组&DHR动研字幕组】[约会大作战_DATE A LIVE][06][简体][720P][MP4]")
+    val r = parse("【動漫國字幕組&DHR動研字幕組】[約會大作戰_DATE A LIVE][06][簡體][720P][MP4]")
     assertEquals("06..06", r.episodeRange.toString())
     assertEquals("CHS", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("720P", r.resolution.toString())
@@ -5155,7 +5155,7 @@ public class PatternTitleParserTest约会大作战 : PatternBasedTitleParserTest
     assertEquals(null, r.subtitleKind)
     }
     kotlin.run {
-    val r = parse("[澄空学园&华盟字幕社] Date A Live 约会大作战 第06话 MP4 720p")
+    val r = parse("[澄空學園&華盟字幕社] Date A Live 約會大作戰 第06話 MP4 720p")
     assertEquals("06..06", r.episodeRange.toString())
     assertEquals("", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("720P", r.resolution.toString())
@@ -5166,7 +5166,7 @@ public class PatternTitleParserTest约会大作战 : PatternBasedTitleParserTest
   @Test
   public fun `301895-301629-301581-301501-301500-301395-301351-301350-301349-301200`() {
     kotlin.run {
-    val r = parse("【极影字幕社】★4月新番 约会大作战_DATE A LIVE第06话 720p GB MP4")
+    val r = parse("【極影字幕社】★4月新番 約會大作戰_DATE A LIVE第06話 720p GB MP4")
     assertEquals("null", r.episodeRange.toString())
     assertEquals("CHS", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("720P", r.resolution.toString())
@@ -5180,7 +5180,7 @@ public class PatternTitleParserTest约会大作战 : PatternBasedTitleParserTest
     assertEquals(null, r.subtitleKind)
     }
     kotlin.run {
-    val r = parse("【雪酷字幕組】★四月新番【DATE A LIVE 約會大作戰】第05話 简繁外挂字幕 X264_AAC 720P MKV")
+    val r = parse("【雪酷字幕組】★四月新番【DATE A LIVE 約會大作戰】第05話 簡繁外掛字幕 X264_AAC 720P MKV")
     assertEquals("05..05", r.episodeRange.toString())
     assertEquals("CHS, CHT", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("720P", r.resolution.toString())
@@ -5215,21 +5215,21 @@ public class PatternTitleParserTest约会大作战 : PatternBasedTitleParserTest
     assertEquals(null, r.subtitleKind)
     }
     kotlin.run {
-    val r = parse("【幻之字幕组&猫蒲团汉化组】约会大作战_Date a Live - 05[BIG5][480P][PSP&PC][MP4]")
+    val r = parse("【幻之字幕組&貓蒲團漢化組】約會大作戰_Date a Live - 05[BIG5][480P][PSP&PC][MP4]")
     assertEquals("05..05", r.episodeRange.toString())
     assertEquals("CHT", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("480P", r.resolution.toString())
     assertEquals(null, r.subtitleKind)
     }
     kotlin.run {
-    val r = parse("【幻之字幕组&猫蒲团汉化组】约会大作战_Date a Live - 05[GB][720P][PSV&PC][MP4]")
+    val r = parse("【幻之字幕組&貓蒲團漢化組】約會大作戰_Date a Live - 05[GB][720P][PSV&PC][MP4]")
     assertEquals("05..05", r.episodeRange.toString())
     assertEquals("CHS", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("720P", r.resolution.toString())
     assertEquals(null, r.subtitleKind)
     }
     kotlin.run {
-    val r = parse("[澄空学园&华盟字幕社] Date A Live 约会大作战 第04话 MKV 720p 简繁外挂")
+    val r = parse("[澄空學園&華盟字幕社] Date A Live 約會大作戰 第04話 MKV 720p 簡繁外掛")
     assertEquals("04..04", r.episodeRange.toString())
     assertEquals("CHS, CHT", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("720P", r.resolution.toString())
@@ -5254,21 +5254,21 @@ public class PatternTitleParserTest约会大作战 : PatternBasedTitleParserTest
     assertEquals(null, r.subtitleKind)
     }
     kotlin.run {
-    val r = parse("【雪酷字幕組】★四月新番【DATE A LIVE 约会大作战】第05话 GB简体 720P MP4")
+    val r = parse("【雪酷字幕組】★四月新番【DATE A LIVE 約會大作戰】第05話 GB簡體 720P MP4")
     assertEquals("05..05", r.episodeRange.toString())
     assertEquals("CHS", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("720P", r.resolution.toString())
     assertEquals(null, r.subtitleKind)
     }
     kotlin.run {
-    val r = parse("【千夏字幕组】【约会大作战_DATE_A_LIVE】[第05话][1280x720][MP4_PC&PSV兼容][简体]")
+    val r = parse("【千夏字幕組】【約會大作戰_DATE_A_LIVE】[第05話][1280x720][MP4_PC&PSV兼容][簡體]")
     assertEquals("05..05", r.episodeRange.toString())
     assertEquals("CHS", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("720P", r.resolution.toString())
     assertEquals(null, r.subtitleKind)
     }
     kotlin.run {
-    val r = parse("【动漫国字幕组&DHR动研字幕组】[约会大作战_DATE A LIVE][05][简体][720P][MP4]")
+    val r = parse("【動漫國字幕組&DHR動研字幕組】[約會大作戰_DATE A LIVE][05][簡體][720P][MP4]")
     assertEquals("05..05", r.episodeRange.toString())
     assertEquals("CHS", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("720P", r.resolution.toString())
@@ -5321,14 +5321,14 @@ public class PatternTitleParserTest约会大作战 : PatternBasedTitleParserTest
     assertEquals(null, r.subtitleKind)
     }
     kotlin.run {
-    val r = parse("[澄空学园&华盟字幕社] Date A Live 约会大作战 第05话 MP4 720p")
+    val r = parse("[澄空學園&華盟字幕社] Date A Live 約會大作戰 第05話 MP4 720p")
     assertEquals("05..05", r.episodeRange.toString())
     assertEquals("", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("720P", r.resolution.toString())
     assertEquals(null, r.subtitleKind)
     }
     kotlin.run {
-    val r = parse("【极影字幕社】★4月新番 约会大作战_DATE A LIVE第05话 720p GB MP4")
+    val r = parse("【極影字幕社】★4月新番 約會大作戰_DATE A LIVE第05話 720p GB MP4")
     assertEquals("null", r.episodeRange.toString())
     assertEquals("CHS", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("720P", r.resolution.toString())
@@ -5343,7 +5343,7 @@ public class PatternTitleParserTest约会大作战 : PatternBasedTitleParserTest
     assertEquals(null, r.subtitleKind)
     }
     kotlin.run {
-    val r = parse("【雪酷字幕組】★四月新番【DATE A LIVE 約會大作戰】第04話 简繁外挂字幕 X264_AAC 720P MKV")
+    val r = parse("【雪酷字幕組】★四月新番【DATE A LIVE 約會大作戰】第04話 簡繁外掛字幕 X264_AAC 720P MKV")
     assertEquals("04..04", r.episodeRange.toString())
     assertEquals("CHS, CHT", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("720P", r.resolution.toString())
@@ -5389,7 +5389,7 @@ public class PatternTitleParserTest约会大作战 : PatternBasedTitleParserTest
   @Test
   public fun `300251-300187-300161-300160-300129-300127-300102-300085-300084-300072`() {
     kotlin.run {
-    val r = parse("【千夏字幕组】【约会大作战_DATE_A_LIVE】[第04话][1280x720][MP4_PC&PSV兼容][简体]")
+    val r = parse("【千夏字幕組】【約會大作戰_DATE_A_LIVE】[第04話][1280x720][MP4_PC&PSV兼容][簡體]")
     assertEquals("04..04", r.episodeRange.toString())
     assertEquals("CHS", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("720P", r.resolution.toString())
@@ -5403,14 +5403,14 @@ public class PatternTitleParserTest约会大作战 : PatternBasedTitleParserTest
     assertEquals(null, r.subtitleKind)
     }
     kotlin.run {
-    val r = parse("【幻之字幕组&猫蒲团汉化组】约会大作战_Date a Live - 04[GB][720P][PSV&PC][MP4]")
+    val r = parse("【幻之字幕組&貓蒲團漢化組】約會大作戰_Date a Live - 04[GB][720P][PSV&PC][MP4]")
     assertEquals("04..04", r.episodeRange.toString())
     assertEquals("CHS", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("720P", r.resolution.toString())
     assertEquals(null, r.subtitleKind)
     }
     kotlin.run {
-    val r = parse("【幻之字幕组&猫蒲团汉化组】约会大作战_Date a Live - 04[BIG5][480P][PSP&PC][MP4]")
+    val r = parse("【幻之字幕組&貓蒲團漢化組】約會大作戰_Date a Live - 04[BIG5][480P][PSP&PC][MP4]")
     assertEquals("04..04", r.episodeRange.toString())
     assertEquals("CHT", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("480P", r.resolution.toString())
@@ -5424,21 +5424,21 @@ public class PatternTitleParserTest约会大作战 : PatternBasedTitleParserTest
     assertEquals(null, r.subtitleKind)
     }
     kotlin.run {
-    val r = parse("【雪酷字幕組】★四月新番【DATE A LIVE 约会大作战】第04话 GB简体 720P MP4")
+    val r = parse("【雪酷字幕組】★四月新番【DATE A LIVE 約會大作戰】第04話 GB簡體 720P MP4")
     assertEquals("04..04", r.episodeRange.toString())
     assertEquals("CHS", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("720P", r.resolution.toString())
     assertEquals(null, r.subtitleKind)
     }
     kotlin.run {
-    val r = parse("[澄空学园&华盟字幕社][4月新番] Date A Live 约会大作战 第03话 MKV 720p 简繁外挂")
+    val r = parse("[澄空學園&華盟字幕社][4月新番] Date A Live 約會大作戰 第03話 MKV 720p 簡繁外掛")
     assertEquals("03..03", r.episodeRange.toString())
     assertEquals("CHS, CHT", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("720P", r.resolution.toString())
     assertEquals(SubtitleKind.EXTERNAL_DISCOVER, r.subtitleKind)
     }
     kotlin.run {
-    val r = parse("【动漫国字幕组&DHR动研字幕组】[约会大作战_DATE A LIVE][04][简体][720P][MP4]")
+    val r = parse("【動漫國字幕組&DHR動研字幕組】[約會大作戰_DATE A LIVE][04][簡體][720P][MP4]")
     assertEquals("04..04", r.episodeRange.toString())
     assertEquals("CHS", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("720P", r.resolution.toString())
@@ -5492,42 +5492,42 @@ public class PatternTitleParserTest约会大作战 : PatternBasedTitleParserTest
     assertEquals(null, r.subtitleKind)
     }
     kotlin.run {
-    val r = parse("[澄空学园&华盟字幕社][4月新番] Date A Live 约会大作战 第04话 MP4 720p")
+    val r = parse("[澄空學園&華盟字幕社][4月新番] Date A Live 約會大作戰 第04話 MP4 720p")
     assertEquals("04..04", r.episodeRange.toString())
     assertEquals("", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("720P", r.resolution.toString())
     assertEquals(null, r.subtitleKind)
     }
     kotlin.run {
-    val r = parse("【极影字幕社】★4月新番 约会大作战_DATE A LIVE第04话 720p GB MP4")
+    val r = parse("【極影字幕社】★4月新番 約會大作戰_DATE A LIVE第04話 720p GB MP4")
     assertEquals("null", r.episodeRange.toString())
     assertEquals("CHS", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("720P", r.resolution.toString())
     assertEquals(null, r.subtitleKind)
     }
     kotlin.run {
-    val r = parse("【雪酷字幕組】★四月新番【DATE A LIVE 約會大作戰】第03話 简繁外挂字幕 X264_AAC 720P MKV")
+    val r = parse("【雪酷字幕組】★四月新番【DATE A LIVE 約會大作戰】第03話 簡繁外掛字幕 X264_AAC 720P MKV")
     assertEquals("03..03", r.episodeRange.toString())
     assertEquals("CHS, CHT", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("720P", r.resolution.toString())
     assertEquals(SubtitleKind.EXTERNAL_DISCOVER, r.subtitleKind)
     }
     kotlin.run {
-    val r = parse("【幻之字幕组&猫蒲团汉化组】约会大作战_Date a Live - 03[BIG5][480P][PSP&PC][MP4]")
+    val r = parse("【幻之字幕組&貓蒲團漢化組】約會大作戰_Date a Live - 03[BIG5][480P][PSP&PC][MP4]")
     assertEquals("03..03", r.episodeRange.toString())
     assertEquals("CHT", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("480P", r.resolution.toString())
     assertEquals(null, r.subtitleKind)
     }
     kotlin.run {
-    val r = parse("【幻之字幕组&猫蒲团汉化组】约会大作战_Date a Live - 03[GB][720P][PSV&PC][MP4]")
+    val r = parse("【幻之字幕組&貓蒲團漢化組】約會大作戰_Date a Live - 03[GB][720P][PSV&PC][MP4]")
     assertEquals("03..03", r.episodeRange.toString())
     assertEquals("CHS", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("720P", r.resolution.toString())
     assertEquals(null, r.subtitleKind)
     }
     kotlin.run {
-    val r = parse("【幻之字幕组&猫蒲团汉化组】约会大作战_Date a Live - 02[BIG5][480P][PSP&PC][MP4]")
+    val r = parse("【幻之字幕組&貓蒲團漢化組】約會大作戰_Date a Live - 02[BIG5][480P][PSP&PC][MP4]")
     assertEquals("02..02", r.episodeRange.toString())
     assertEquals("CHT", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("480P", r.resolution.toString())
@@ -5538,7 +5538,7 @@ public class PatternTitleParserTest约会大作战 : PatternBasedTitleParserTest
   @Test
   public fun `299642-299354-299333-299301-299295-299275-299265-299264-299249-299194`() {
     kotlin.run {
-    val r = parse("【幻之字幕组&猫蒲团汉化组】约会大作战_Date a Live - 02[GB][720P][PSV&PC][MP4]")
+    val r = parse("【幻之字幕組&貓蒲團漢化組】約會大作戰_Date a Live - 02[GB][720P][PSV&PC][MP4]")
     assertEquals("02..02", r.episodeRange.toString())
     assertEquals("CHS", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("720P", r.resolution.toString())
@@ -5573,14 +5573,14 @@ public class PatternTitleParserTest约会大作战 : PatternBasedTitleParserTest
     assertEquals(null, r.subtitleKind)
     }
     kotlin.run {
-    val r = parse("【千夏字幕组】【约会大作战_DATE_A_LIVE】[第03话][1280x720][MP4_PC&PSV兼容][简体]")
+    val r = parse("【千夏字幕組】【約會大作戰_DATE_A_LIVE】[第03話][1280x720][MP4_PC&PSV兼容][簡體]")
     assertEquals("03..03", r.episodeRange.toString())
     assertEquals("CHS", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("720P", r.resolution.toString())
     assertEquals(null, r.subtitleKind)
     }
     kotlin.run {
-    val r = parse("【动漫国字幕组&DHR动研字幕组】[约会大作战_DATE A LIVE][03][简体][720P][MP4]")
+    val r = parse("【動漫國字幕組&DHR動研字幕組】[約會大作戰_DATE A LIVE][03][簡體][720P][MP4]")
     assertEquals("03..03", r.episodeRange.toString())
     assertEquals("CHS", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("720P", r.resolution.toString())
@@ -5601,7 +5601,7 @@ public class PatternTitleParserTest约会大作战 : PatternBasedTitleParserTest
     assertEquals(null, r.subtitleKind)
     }
     kotlin.run {
-    val r = parse("[澄空学园&华盟字幕社][4月新番] Date A Live 约会大作战 第02话 MKV 720p 简繁外挂")
+    val r = parse("[澄空學園&華盟字幕社][4月新番] Date A Live 約會大作戰 第02話 MKV 720p 簡繁外掛")
     assertEquals("02..02", r.episodeRange.toString())
     assertEquals("CHS, CHT", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("720P", r.resolution.toString())
@@ -5619,7 +5619,7 @@ public class PatternTitleParserTest约会大作战 : PatternBasedTitleParserTest
     assertEquals(null, r.subtitleKind)
     }
     kotlin.run {
-    val r = parse("【雪酷字幕組】★四月新番【DATE A LIVE 约会大作战】第03话 GB简体 720P MP4")
+    val r = parse("【雪酷字幕組】★四月新番【DATE A LIVE 約會大作戰】第03話 GB簡體 720P MP4")
     assertEquals("03..03", r.episodeRange.toString())
     assertEquals("CHS", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("720P", r.resolution.toString())
@@ -5648,14 +5648,14 @@ public class PatternTitleParserTest约会大作战 : PatternBasedTitleParserTest
     assertEquals(null, r.subtitleKind)
     }
     kotlin.run {
-    val r = parse("【极影字幕社】★4月新番 约会大作战_DATE A LIVE第03话 720p GB MP4")
+    val r = parse("【極影字幕社】★4月新番 約會大作戰_DATE A LIVE第03話 720p GB MP4")
     assertEquals("null", r.episodeRange.toString())
     assertEquals("CHS", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("720P", r.resolution.toString())
     assertEquals(null, r.subtitleKind)
     }
     kotlin.run {
-    val r = parse("[澄空学园&华盟字幕社][4月新番] Date A Live 约会大作战 第03话 MP4 720p")
+    val r = parse("[澄空學園&華盟字幕社][4月新番] Date A Live 約會大作戰 第03話 MP4 720p")
     assertEquals("03..03", r.episodeRange.toString())
     assertEquals("", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("720P", r.resolution.toString())
@@ -5676,7 +5676,7 @@ public class PatternTitleParserTest约会大作战 : PatternBasedTitleParserTest
     assertEquals(null, r.subtitleKind)
     }
     kotlin.run {
-    val r = parse("【雪酷字幕組】★四月新番【DATE A LIVE 約會大作戰】第02話 简繁外挂字幕 X264_AAC 720P MKV")
+    val r = parse("【雪酷字幕組】★四月新番【DATE A LIVE 約會大作戰】第02話 簡繁外掛字幕 X264_AAC 720P MKV")
     assertEquals("02..02", r.episodeRange.toString())
     assertEquals("CHS, CHT", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("720P", r.resolution.toString())
@@ -5687,7 +5687,7 @@ public class PatternTitleParserTest约会大作战 : PatternBasedTitleParserTest
   @Test
   public fun `298722-298514-298512-298433-298432-298428-298328-298327-298326-298313`() {
     kotlin.run {
-    val r = parse("【风之圣殿字幕组】【★四月新番】[约会大作战 DATE A LIVE][02][BIG5][1280X720][Mp4]")
+    val r = parse("【風之聖殿字幕組】【★四月新番】[約會大作戰 DATE A LIVE][02][BIG5][1280X720][Mp4]")
     assertEquals("02..02", r.episodeRange.toString())
     assertEquals("CHT", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("720P", r.resolution.toString())
@@ -5715,7 +5715,7 @@ public class PatternTitleParserTest约会大作战 : PatternBasedTitleParserTest
     assertEquals(null, r.subtitleKind)
     }
     kotlin.run {
-    val r = parse("【雪酷字幕組】★四月新番【DATE A LIVE 约会大作战】第02话 GB简体 720P MP4")
+    val r = parse("【雪酷字幕組】★四月新番【DATE A LIVE 約會大作戰】第02話 GB簡體 720P MP4")
     assertEquals("02..02", r.episodeRange.toString())
     assertEquals("CHS", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("720P", r.resolution.toString())
@@ -5729,14 +5729,14 @@ public class PatternTitleParserTest约会大作战 : PatternBasedTitleParserTest
     assertEquals(null, r.subtitleKind)
     }
     kotlin.run {
-    val r = parse("【千夏字幕组】【约会大作战_DATE_A_LIVE】[第02话][1280x720][MP4_PC&PSV兼容][简体]")
+    val r = parse("【千夏字幕組】【約會大作戰_DATE_A_LIVE】[第02話][1280x720][MP4_PC&PSV兼容][簡體]")
     assertEquals("02..02", r.episodeRange.toString())
     assertEquals("CHS", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("720P", r.resolution.toString())
     assertEquals(null, r.subtitleKind)
     }
     kotlin.run {
-    val r = parse("【动漫国字幕组&DHR动研字幕组】[约会大作战_DATE A LIVE][02][简体][720P][MP4]")
+    val r = parse("【動漫國字幕組&DHR動研字幕組】[約會大作戰_DATE A LIVE][02][簡體][720P][MP4]")
     assertEquals("02..02", r.episodeRange.toString())
     assertEquals("CHS", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("720P", r.resolution.toString())
@@ -5776,28 +5776,28 @@ public class PatternTitleParserTest约会大作战 : PatternBasedTitleParserTest
     assertEquals(null, r.subtitleKind)
     }
     kotlin.run {
-    val r = parse("【極影字幕社】★4月新番 約會大作戰_DATE A LIVE 第02話 720p BIG5 MP4【字幕社招募片源录制】")
+    val r = parse("【極影字幕社】★4月新番 約會大作戰_DATE A LIVE 第02話 720p BIG5 MP4【字幕社招募片源錄製】")
     assertEquals("02..02", r.episodeRange.toString())
     assertEquals("CHT", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("720P", r.resolution.toString())
     assertEquals(null, r.subtitleKind)
     }
     kotlin.run {
-    val r = parse("【极影字幕社】★4月新番 约会大作战_DATE A LIVE第02话 720p GB【字幕社招募片源录制】")
+    val r = parse("【極影字幕社】★4月新番 約會大作戰_DATE A LIVE第02話 720p GB【字幕社招募片源錄製】")
     assertEquals("null", r.episodeRange.toString())
     assertEquals("CHS", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("720P", r.resolution.toString())
     assertEquals(null, r.subtitleKind)
     }
     kotlin.run {
-    val r = parse("[澄空学园&华盟字幕社][4月新番] Date A Live 约会大作战 第02话 MP4 720p")
+    val r = parse("[澄空學園&華盟字幕社][4月新番] Date A Live 約會大作戰 第02話 MP4 720p")
     assertEquals("02..02", r.episodeRange.toString())
     assertEquals("", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("720P", r.resolution.toString())
     assertEquals(null, r.subtitleKind)
     }
     kotlin.run {
-    val r = parse("[澄空学园&华盟字幕社][4月新番] Date A Live 约会大作战 第01话 MKV 720p 简繁外挂")
+    val r = parse("[澄空學園&華盟字幕社][4月新番] Date A Live 約會大作戰 第01話 MKV 720p 簡繁外掛")
     assertEquals("01..01", r.episodeRange.toString())
     assertEquals("CHS, CHT", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("720P", r.resolution.toString())
@@ -5825,7 +5825,7 @@ public class PatternTitleParserTest约会大作战 : PatternBasedTitleParserTest
     assertEquals(null, r.subtitleKind)
     }
     kotlin.run {
-    val r = parse("【雪酷字幕組】★四月新番【DATE A LIVE 約會大作戰】第01話 简繁外挂字幕 X264_AAC 720P MKV")
+    val r = parse("【雪酷字幕組】★四月新番【DATE A LIVE 約會大作戰】第01話 簡繁外掛字幕 X264_AAC 720P MKV")
     assertEquals("01..01", r.episodeRange.toString())
     assertEquals("CHS, CHT", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("720P", r.resolution.toString())
@@ -5850,7 +5850,7 @@ public class PatternTitleParserTest约会大作战 : PatternBasedTitleParserTest
     assertEquals(null, r.subtitleKind)
     }
     kotlin.run {
-    val r = parse("【千夏字幕组】【约会大作战_DATE_A_LIVE】[第01话][1280x720][MP4_PC&PSV兼容][简体]")
+    val r = parse("【千夏字幕組】【約會大作戰_DATE_A_LIVE】[第01話][1280x720][MP4_PC&PSV兼容][簡體]")
     assertEquals("01..01", r.episodeRange.toString())
     assertEquals("CHS", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("720P", r.resolution.toString())
@@ -5886,7 +5886,7 @@ public class PatternTitleParserTest约会大作战 : PatternBasedTitleParserTest
     assertEquals(null, r.subtitleKind)
     }
     kotlin.run {
-    val r = parse("【雪酷字幕組】★四月新番【DATE A LIVE 约会大作战】第01话 GB简体 720P")
+    val r = parse("【雪酷字幕組】★四月新番【DATE A LIVE 約會大作戰】第01話 GB簡體 720P")
     assertEquals("01..01", r.episodeRange.toString())
     assertEquals("CHS", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("720P", r.resolution.toString())
@@ -5900,7 +5900,7 @@ public class PatternTitleParserTest约会大作战 : PatternBasedTitleParserTest
     assertEquals(null, r.subtitleKind)
     }
     kotlin.run {
-    val r = parse("【动漫国字幕组&DHR动研字幕组】[约会大作战_DATE A LIVE][01][簡体][720P][MP4]")
+    val r = parse("【動漫國字幕組&DHR動研字幕組】[約會大作戰_DATE A LIVE][01][簡體][720P][MP4]")
     assertEquals("01..01", r.episodeRange.toString())
     assertEquals("CHS", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("720P", r.resolution.toString())
@@ -5918,7 +5918,7 @@ public class PatternTitleParserTest约会大作战 : PatternBasedTitleParserTest
     assertEquals(null, r.subtitleKind)
     }
     kotlin.run {
-    val r = parse("【极影字幕社】★4月新番 约会大作战 第01话[720p] GB MP4")
+    val r = parse("【極影字幕社】★4月新番 約會大作戰 第01話[720p] GB MP4")
     assertEquals("01..01", r.episodeRange.toString())
     assertEquals("CHS", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("720P", r.resolution.toString())
@@ -5946,7 +5946,7 @@ public class PatternTitleParserTest约会大作战 : PatternBasedTitleParserTest
     assertEquals(null, r.subtitleKind)
     }
     kotlin.run {
-    val r = parse("【极影字幕社】★4月新番 约会大作战 第01话[先行版][nico 854x480] GB MP4")
+    val r = parse("【極影字幕社】★4月新番 約會大作戰 第01話[先行版][nico 854x480] GB MP4")
     assertEquals("01..01", r.episodeRange.toString())
     assertEquals("CHS", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("480P", r.resolution.toString())
@@ -5967,7 +5967,7 @@ public class PatternTitleParserTest约会大作战 : PatternBasedTitleParserTest
     assertEquals(null, r.subtitleKind)
     }
     kotlin.run {
-    val r = parse("【星尘字幕组】1月迷你新番【怪盗丽奈 Kaitou Reinya】【08 诶~丽奈约会大作战】【RV10】")
+    val r = parse("【星塵字幕組】1月迷你新番【怪盜麗奈 Kaitou Reinya】【08 誒~麗奈約會大作戰】【RV10】")
     assertEquals("08..08", r.episodeRange.toString())
     assertEquals("CHS", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("null", r.resolution.toString())

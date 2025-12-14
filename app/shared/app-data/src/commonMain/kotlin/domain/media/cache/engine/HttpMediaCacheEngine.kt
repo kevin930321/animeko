@@ -190,7 +190,7 @@ class HttpMediaCacheEngine(
                 if (allowedAbsolute.none {
                         myPath.startsWith(it)
                     }) {
-                    logger.warn { "本地 WEB 缓存文件未找到匹配的 MediaCache, 已释放 ${save.inSystem.actualSize().bytes}: ${save.inSystem.absolutePath}" }
+                    logger.warn { "本地 WEB 緩存文件未找到匹配的 MediaCache, 已釋放 ${save.inSystem.actualSize().bytes}: ${save.inSystem.absolutePath}" }
                     SystemFileSystem.deleteRecursively(save)
                 }
             }

@@ -57,7 +57,7 @@
 //    val client = DmhyClient.Factory.create {
 //    }
 //
-//    val query = "葬送的芙莉莲"
+//    val query = "葬送的芙莉蓮"
 //    val session = client.startSearchSession(
 //        DownloadSearchQuery(
 //            keywords = query,
@@ -347,9 +347,9 @@
 ////            println(
 ////                GenerateDataset().generate(
 ////                    One(
-////                        input = "【喵萌奶茶屋】★4月新番★[葬送的芙莉莲/Sousou no Frieren][01][GB][1080P][AVC_AAC][MP4].mp4",
+////                        input = "【喵萌奶茶屋】★4月新番★[葬送的芙莉蓮/Sousou no Frieren][01][GB][1080P][AVC_AAC][MP4].mp4",
 ////                        output = Output(
-////                            titles = listOf("葬送的芙莉莲", "Sousou no Frieren"),
+////                            titles = listOf("葬送的芙莉蓮", "Sousou no Frieren"),
 ////                            episode = Episode("01"),
 ////                            resolution = Resolution.R1080P,
 ////                            subtitleLanguages = listOf(SubtitleLanguage.ChineseSimplified),

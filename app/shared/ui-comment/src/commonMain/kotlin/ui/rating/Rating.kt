@@ -55,7 +55,7 @@ fun Rating(
             if (selfRatingScore != 0) {
                 Row(Modifier.padding(horizontal = 2.dp).align(Alignment.End)) {
                     Text(
-                        remember(selfRatingScore) { "你的评分: $selfRatingScore" },
+                        remember(selfRatingScore) { "你的評分: $selfRatingScore" },
                         style = MaterialTheme.typography.labelMedium,
                         fontWeight = FontWeight.Bold,
                         maxLines = 1,
@@ -76,7 +76,7 @@ fun Rating(
                 Column(Modifier.padding(start = 8.dp), horizontalAlignment = Alignment.End) {
                     FiveRatingStars(score = rating.scoreFloat.toInt(), color = LocalContentColor.current)
                     Text(
-                        "${rating.total} 人评丨#${rating.rank}",
+                        "${rating.total} 人評丨#${rating.rank}",
                         Modifier.padding(end = 2.dp),
                         style = MaterialTheme.typography.labelMedium,
                         maxLines = 1,

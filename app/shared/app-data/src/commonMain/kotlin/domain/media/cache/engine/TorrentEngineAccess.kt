@@ -95,21 +95,21 @@ object AlwaysUseTorrentEngineAccess : TorrentEngineAccess {
 }
 
 @RequiresOptIn(
-    message = "若在 block 中调用了需要 TorrentEngine 长期可用的方法, " +
-            "请确保在此函数返回后 TorrentEngine 一定可用 " +
-            "(例如在其中一个实现 TorrentServiceConnectionManager 中, " +
-            "使 checkIfAllTorrentMediaCacheCompleted 为 false, 也就是创建了 BT 媒体缓存), " +
-            "否则会导致错误的 useEngine 状态被 emit. " +
-            "调用此函数需要有明确的注释来说明必须调用此函数的原因和合理性, 方便后人理解这里的逻辑",
+    message = "若在 block 中調用了需要 TorrentEngine 長期可用的方法, " +
+            "請確保在此函數返回後 TorrentEngine 一定可用 " +
+            "(例如在其中一個實現 TorrentServiceConnectionManager 中, " +
+            "使 checkIfAllTorrentMediaCacheCompleted 爲 false, 也就是創建了 BT 媒體緩存), " +
+            "否則會導致錯誤的 useEngine 狀態被 emit. " +
+            "調用此函數需要有明確的註釋來說明必須調用此函數的原因和合理性, 方便後人理解這裏的邏輯",
     level = RequiresOptIn.Level.ERROR,
 )
 annotation class EnsureTorrentEngineIsAccessible
 
 
 @RequiresOptIn(
-    message = "请总是使用 TorrentEngineAccess.withEngineAccessible 来使 TorrentEngine 可用, " +
-            "除非你能确保请求 TorrentEngine 可用后有对应的 `requestUseEngine(false)` 来释放 TorrentEngine 可用状态. " +
-            "调用此函数需要有明确的注释来说明必须调用此函数的原因和合理性, 方便后人理解这里的逻辑",
+    message = "請總是使用 TorrentEngineAccess.withEngineAccessible 來使 TorrentEngine 可用, " +
+            "除非你能確保請求 TorrentEngine 可用後有對應的 `requestUseEngine(false)` 來釋放 TorrentEngine 可用狀態. " +
+            "調用此函數需要有明確的註釋來說明必須調用此函數的原因和合理性, 方便後人理解這裏的邏輯",
     level = RequiresOptIn.Level.ERROR,
 )
 annotation class UnsafeTorrentEngineAccessApi

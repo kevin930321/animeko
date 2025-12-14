@@ -203,7 +203,7 @@ internal fun EditMediaSourceDialog(
 //                title = {
 //                    when (state.editMediaSourceMode) {
 //                        is EditMediaSourceMode.Edit -> Text(state.info.displayName)
-//                        EditMediaSourceMode.Add -> Text("新建数据源")
+//                        EditMediaSourceMode.Add -> Text("新建數據源")
 //                    }
 //                },
 //                navigationIcon = { TopAppBarGoBackButton() },

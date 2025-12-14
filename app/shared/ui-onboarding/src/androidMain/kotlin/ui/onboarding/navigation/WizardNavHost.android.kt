@@ -26,7 +26,7 @@ fun PreviewWizardNavHost() {
         ) {
             step(
                 key = "theme",
-                title = { Text("选择主题") },
+                title = { Text("選擇主題") },
             ) {
                 val data = remember {
                     TestWizardData.MyTheme("theme default", 0)
@@ -41,7 +41,7 @@ fun PreviewWizardNavHost() {
 
             step(
                 key = "proxy",
-                title = { Text("设置代理") },
+                title = { Text("設置代理") },
             ) {
                 val data = remember {
                     TestWizardData.MyProxy("proxy default", 0)

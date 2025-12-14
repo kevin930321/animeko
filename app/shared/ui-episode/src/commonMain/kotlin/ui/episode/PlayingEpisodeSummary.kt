@@ -126,7 +126,7 @@ fun PlayingEpisodeSummaryRow(
                             verticalArrangement = Arrangement.spacedBy(16.dp, alignment = Alignment.CenterVertically)
                         ) {
                             TonalButtonWithIcon("分享", Icons.Rounded.Share, onClickShare)
-                            TonalButtonWithIcon("下载", Icons.Rounded.Download, onClickDownload)
+                            TonalButtonWithIcon("下載", Icons.Rounded.Download, onClickDownload)
                         }
                     }
                 }
@@ -148,7 +148,7 @@ fun PlayingEpisodeSummaryRow(
                             verticalArrangement = Arrangement.spacedBy(0.dp, alignment = Alignment.CenterVertically)
                         ) {
                             TonalButtonWithIcon("分享", Icons.Rounded.Share, onClickShare)
-                            TonalButtonWithIcon("下载", Icons.Rounded.Download, onClickDownload)
+                            TonalButtonWithIcon("下載", Icons.Rounded.Download, onClickDownload)
                         }
 
                         Box(Modifier.width(IntrinsicSize.Max)) {

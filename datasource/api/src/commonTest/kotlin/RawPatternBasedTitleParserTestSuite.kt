@@ -68,13 +68,13 @@ internal class RawPatternBasedTitleParserTestSuite {
     // https://www.dmhy.org/topics/list?keyword=&sort_id=31&team_id=0&order=date-desc
     private val episodeRangeData = listOf(
         range(1, 12)
-                to "[悠哈璃羽字幕社&LoliHouse] Overtake! [01-12 合集][WebRip 1080p HEVC-10bit AAC][简繁内封字幕][Fin]",
+                to "[悠哈璃羽字幕社&LoliHouse] Overtake! [01-12 合集][WebRip 1080p HEVC-10bit AAC][簡繁內封字幕][Fin]",
         range(1, 77) to
-                "[DBD-Raws][偶像活动！ 第三季&第四季/Aikatsu! Akari Generation/アイカツ! あかり Generation][01-77TV全集+特典映像][1080P][BDRip][HEVC-10bit][简繁外挂][FLAC][MKV]",
+                "[DBD-Raws][偶像活動！ 第三季&第四季/Aikatsu! Akari Generation/アイカツ! あかり Generation][01-77TV全集+特典映像][1080P][BDRip][HEVC-10bit][簡繁外掛][FLAC][MKV]",
         range(1, 12) to
-                "【喵萌奶茶屋】★01月新番★[最弱驯魔师开始了捡垃圾之旅。 / Saijaku Tamer wa Gomi Hiroi no Tabi wo Hajimemashita][01-12END][1080p][简日双语][招募翻译]",
+                "【喵萌奶茶屋】★01月新番★[最弱馴魔師開始了撿垃圾之旅。 / Saijaku Tamer wa Gomi Hiroi no Tabi wo Hajimemashita][01-12END][1080p][簡日雙語][招募翻譯]",
         range(1, 12) to
-                " [百冬练习组&LoliHouse] 为了在异世界也能抚摸毛茸茸而努力。 / Isekai de Mofumofu Nadenade suru Tame ni Ganbattemasu [01-12 合集][WebRip 1080p HEVC-10bit AAC][简繁内封字幕][Fin]",
+                " [百冬練習組&LoliHouse] 爲了在異世界也能撫摸毛茸茸而努力。 / Isekai de Mofumofu Nadenade suru Tame ni Ganbattemasu [01-12 合集][WebRip 1080p HEVC-10bit AAC][簡繁內封字幕][Fin]",
     )
 
     @TestFactory

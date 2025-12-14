@@ -35,7 +35,7 @@ fun SelectMediaStorageDialog(
 ) {
     AlertDialog(
         onDismissRequest = onDismissRequest,
-        title = { Text("选择储存位置") },
+        title = { Text("選擇儲存位置") },
         icon = { Icon(Icons.Rounded.Save, null) },
         confirmButton = {
             TextButton(onDismissRequest) {

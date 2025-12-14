@@ -157,12 +157,12 @@ fun RegexFilterItem(
 //        AlertDialog(
 //            onDismissRequest = { showConfirmDelete = false },
 //            icon = { Icon(Icons.Rounded.Delete, null, tint = MaterialTheme.colorScheme.error) },
-//            title = { Text("删除正则") },
-//            text = { Text("确认删除 \"${item.regex}\"？") },
+//            title = { Text("刪除正則") },
+//            text = { Text("確認刪除 \"${item.regex}\"？") },
 //            confirmButton = {
 //                TextButton({ onDelete(); showConfirmDelete = false }) {
 //                    Text(
-//                        "删除",
+//                        "刪除",
 //                        color = MaterialTheme.colorScheme.error,
 //                    )
 //                }

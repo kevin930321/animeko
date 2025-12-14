@@ -214,7 +214,7 @@ class EpisodeCacheListStateImpl(
             } catch (e: Exception) {
                 // TODO: 处理 requestDelete exception
                 throw e
-                // errorMessage.value = ErrorMessage.simple("删除缓存失败", e)
+                // errorMessage.value = ErrorMessage.simple("刪除緩存失敗", e)
             }
         }
     }

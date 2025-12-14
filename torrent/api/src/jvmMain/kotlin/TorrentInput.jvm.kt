@@ -71,7 +71,7 @@ class TorrentInput(
     /**
      * 逻辑上的偏移量, 也就是当 [seekTo] `k` 时, 实际上是在 `logicalStartOffset + k` 处.
      *
-     * 这里的 "逻辑上" 的第一个 piece 指的是包含文件的第一个 byte 的 piece.
+     * 这里的 "邏輯上" 的第一个 piece 指的是包含文件的第一个 byte 的 piece.
      */
     private val logicalStartOffset: Long = pieces.minOf { it.dataStartOffset }, // 默认为第一个 piece 开头
     private val onWait: suspend (Piece) -> Unit = { },

@@ -54,7 +54,7 @@ abstract class BaseJellyfinMediaSource(
 
     override suspend fun checkConnection(): ConnectionStatus {
         try {
-            doSearch("AA测试BB")
+            doSearch("AA測試BB")
             return ConnectionStatus.SUCCESS
         } catch (e: CancellationException) {
             throw e

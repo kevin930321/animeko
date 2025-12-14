@@ -269,7 +269,7 @@ abstract class SelectorMediaSourceEngine {
     }
 
     /**
-     * 有的 channel 会叫 "简中" 和 "繁中"
+     * 有的 channel 会叫 "簡中" 和 "繁中"
      */
     private fun guessSubtitleLanguages(
         info: WebSearchEpisodeInfo,

@@ -67,9 +67,9 @@ fun NsfwMask(
                     verticalArrangement = Arrangement.Center,
                     modifier = Modifier.matchParentSize().defaultMinSize(minHeight = 30.dp).padding(top = 10.dp),
                 ) {
-                    Text("此内容不适合展示", textAlign = TextAlign.Center)
+                    Text("此內容不適合展示", textAlign = TextAlign.Center)
                     IconButton(onTemporarilyDisplay) {
-                        Icon(Icons.Rounded.RemoveRedEye, contentDescription = "临时展示")
+                        Icon(Icons.Rounded.RemoveRedEye, contentDescription = "臨時展示")
                     }
                 }
             }

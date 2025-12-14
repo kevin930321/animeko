@@ -89,8 +89,8 @@ internal actual fun SettingsScope.AppSettingsTabPlatform() {
     // 禁用电池优化
     if (powerManager != null) {
         Group(
-            title = { Text("後台運行") },
-            description = { Text(text = "快取功能需要應用程式保持在後台運行才能下載影片") },
+            title = { Text("後臺運行") },
+            description = { Text(text = "快取功能需要應用程式保持在後臺運行才能下載影片") },
         ) {
             val isPreviewing = LocalIsPreviewing.current
             var isIgnoring by remember {
@@ -128,7 +128,7 @@ internal actual fun SettingsScope.AppSettingsTabPlatform() {
                     }
                 },
                 title = { Text("停用電池最佳化") },
-                description = { Text("可以幫助保持在後台運行。可能增加耗電") },
+                description = { Text("可以幫助保持在後臺運行。可能增加耗電") },
             )
         }
     }

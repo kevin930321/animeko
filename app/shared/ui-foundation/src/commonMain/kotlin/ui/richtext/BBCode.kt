@@ -153,7 +153,7 @@ fun RichText.toUIBriefText(): UIRichElement.AnnotatedText {
     elements.forEach { e ->
         when (e) {
             is RichElement.Text -> plainText.append(e.value.replace('\n', ' '))
-            is RichElement.Image -> plainText.append("[图片]")
+            is RichElement.Image -> plainText.append("[圖片]")
             is RichElement.Kanmoji -> plainText.append(e.id)
             is RichElement.Quote -> plainText.append("[引用]")
             is RichElement.BangumiSticker -> {

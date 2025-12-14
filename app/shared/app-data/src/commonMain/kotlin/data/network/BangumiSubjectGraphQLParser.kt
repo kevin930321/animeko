@@ -93,7 +93,7 @@ object BangumiSubjectGraphQLParser {
                     character = CharacterInfo(
                         id = characterId,
                         name = character.getStringOrFail("name"),
-                        nameCn = character.infobox("简体中文名").firstOrNull() ?: "",
+                        nameCn = character.infobox("簡體中文名").firstOrNull() ?: "",
                         actors = getActors(characterId),
                         imageMedium = character.getOrFail("images").jsonObjectOrNull?.getStringOrFail("medium") ?: "",
                         imageLarge = character.getOrFail("images").jsonObjectOrNull?.getStringOrFail("large") ?: "",
@@ -126,7 +126,7 @@ object BangumiSubjectGraphQLParser {
     }
 
     private fun JsonObject.toBatchSubjectDetails(): BatchSubjectDetails {
-        val completionDate = (this.infobox("播放结束") + this.infobox("放送结束"))
+        val completionDate = (this.infobox("播放結束") + this.infobox("放送結束"))
             .firstOrNull()
             ?.let {
                 PackedDate.parseFromDate(
@@ -155,7 +155,7 @@ object BangumiSubjectGraphQLParser {
             LightRelatedCharacterInfo(
                 id = characterId,
                 name = character.getStringOrFail("name"),
-                nameCn = character.infobox("简体中文名").firstOrNull() ?: "",
+                nameCn = character.infobox("簡體中文名").firstOrNull() ?: "",
                 role = role,
             )
         }
@@ -190,7 +190,7 @@ object BangumiSubjectGraphQLParser {
                             obj.getIntOrFail("count"),
                         )
                     },
-                    aliases = infobox("别名").filter { it.isNotEmpty() }.toList(),
+                    aliases = infobox("別名").filter { it.isNotEmpty() }.toList(),
                     ratingInfo = getOrFail("rating").jsonObject.let { rating ->
                         RatingInfo(
                             rank = rating.getIntOrFail("rank"),
@@ -253,13 +253,13 @@ object BangumiSubjectGraphQLParser {
         id = person.getIntOrFail("id"),
         name = person.getStringOrFail("name"),
         type = PersonType.fromId(person.getIntOrFail("type")),
-        //                careers = person.infobox("职业").map { PersonCareer.valueOf(it) }.toList(),
+        //                careers = person.infobox("職業").map { PersonCareer.valueOf(it) }.toList(),
         careers = emptyList(),
         imageLarge = person["images"]?.jsonObjectOrNull?.getStringOrFail("large") ?: "",
         imageMedium = person["images"]?.jsonObjectOrNull?.getStringOrFail("medium") ?: "",
         summary = person.getString("summary") ?: "",
         locked = person.getIntOrFail("lock") == 1,
-        nameCn = person.infobox("简体中文名").firstOrNull() ?: "",
+        nameCn = person.infobox("簡體中文名").firstOrNull() ?: "",
     )
 
     inline fun forEachCharacter(

@@ -24,35 +24,35 @@ class MediaListFilterEpisodeFilterTest {
     fun `base cases`() = runDynamicTests {
         case(
             "simple sort match",
-            subjectName = "来自深渊 烈日的黄金乡",
+            subjectName = "來自深淵 烈日的黃金鄉",
             episodeSort = EpisodeSort(1),
-            episodeName = "测试",
+            episodeName = "測試",
             mediaEpisodeSort = EpisodeSort(1),
             expected = true,
         )
         case(
             "simple sort not match",
-            subjectName = "来自深渊 烈日的黄金乡",
+            subjectName = "來自深淵 烈日的黃金鄉",
             episodeSort = EpisodeSort(1),
-            episodeName = "测试",
+            episodeName = "測試",
             mediaEpisodeSort = EpisodeSort(2),
             expected = false,
         )
         case(
             "simple ep match",
-            subjectName = "来自深渊 烈日的黄金乡",
+            subjectName = "來自深淵 烈日的黃金鄉",
             episodeSort = EpisodeSort(13),
             episodeEp = EpisodeSort(1),
-            episodeName = "测试",
+            episodeName = "測試",
             mediaEpisodeSort = EpisodeSort(1),
             expected = true,
         )
         case(
             "both ep and sort does not match",
-            subjectName = "来自深渊 烈日的黄金乡",
+            subjectName = "來自深淵 烈日的黃金鄉",
             episodeSort = EpisodeSort(13),
             episodeEp = EpisodeSort(1),
-            episodeName = "测试",
+            episodeName = "測試",
             mediaEpisodeSort = EpisodeSort(2),
             expected = false,
         )
@@ -61,30 +61,30 @@ class MediaListFilterEpisodeFilterTest {
     @TestFactory
     fun `match episode name`() = runDynamicTests {
         case(
-            "match 电影版",
-            subjectName = "来自深渊",
-            episodeSort = EpisodeSort("电影版"),
-            episodeName = "电影版",
+            "match 電影版",
+            subjectName = "來自深淵",
+            episodeSort = EpisodeSort("電影版"),
+            episodeName = "電影版",
             mediaEpisodeSort = null,
-            mediaTitle = "来自深渊 电影版",
+            mediaTitle = "來自深淵 電影版",
             expected = true,
         )
         case(
             "match OVA",
-            subjectName = "来自深渊",
+            subjectName = "來自深淵",
             episodeSort = EpisodeSort("OVA"),
             episodeName = "OVA",
             mediaEpisodeSort = null,
-            mediaTitle = "来自深渊 OVA",
+            mediaTitle = "來自深淵 OVA",
             expected = true,
         )
         case(
             "match episode name - control",
-            subjectName = "来自深渊",
+            subjectName = "來自深淵",
             episodeSort = EpisodeSort(1),
-            episodeName = "电影版",
+            episodeName = "電影版",
             mediaEpisodeSort = null,
-            mediaTitle = "来自深渊 01",
+            mediaTitle = "來自深淵 01",
             expected = false,
         )
     }
@@ -93,17 +93,17 @@ class MediaListFilterEpisodeFilterTest {
     fun `subjectName contains episodeName`() = runDynamicTests {
         case(
             "true case",
-            subjectName = "来自深渊 烈日的黄金乡",
+            subjectName = "來自深淵 烈日的黃金鄉",
             episodeSort = EpisodeSort(12), // 在看 12, 所以可以匹配 12
-            episodeName = "黄金",
+            episodeName = "黃金",
             mediaEpisodeSort = EpisodeSort(12),
             expected = true,
         )
         case(
             "fail case",
-            subjectName = "来自深渊 烈日的黄金乡",
-            episodeSort = EpisodeSort(11), // 在看 11, 但是标题叫"黄金", 不能匹配到
-            episodeName = "黄金",
+            subjectName = "來自深淵 烈日的黃金鄉",
+            episodeSort = EpisodeSort(11), // 在看 11, 但是标题叫"黃金", 不能匹配到
+            episodeName = "黃金",
             mediaEpisodeSort = EpisodeSort(12),
             expected = false,
         )

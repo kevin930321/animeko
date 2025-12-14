@@ -259,9 +259,9 @@ class BangumiClientImpl(
             if (resp.contentType() == ContentType.Text.Html) {
                 // 对不起，您在  秒内只能进行一次搜索，请返回。
                 val text = resp.bodyAsText()
-                if (text.contains("内只能进行一次搜索")) {
+                if (text.contains("內只能進行一次搜索")) {
                     /*
-                    用客户端 get, 如果没有搜索结果, 会返回一个 HTML 提示"对不起，您在  秒内只能进行一次搜索，请返回。", 但是用 chrome 就正常返回了 404
+                    用客户端 get, 如果没有搜索结果, 会返回一个 HTML 提示"對不起，您在  秒內只能進行一次搜索，請返回。", 但是用 chrome 就正常返回了 404
 
                     https://api.bgm.tv/search/subject/%E6%90%9C%E7%B4%A2%E4%B8%8D%E5%88%B0%E6%90%9C%E7%B4%A2%E4%B8%8D%E5%88%B0%E6%90%9C%E7%B4%A2%E4%B8%8D%E5%88%B0%E6%B5%8B%E8%AF%95?type=2&responseGroup=SMALL&start=0&max_results=90
                      */

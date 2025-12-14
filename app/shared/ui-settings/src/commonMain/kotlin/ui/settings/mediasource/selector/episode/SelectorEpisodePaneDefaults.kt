@@ -76,11 +76,11 @@ object SelectorEpisodePaneDefaults {
                             try {
                                 uriHandler.openUri(state.episodeUrl)
                             } catch (e: Throwable) {
-                                toaster.toast("无法打开链接")
+                                toaster.toast("無法打開鏈接")
                             }
                         },
                     ) {
-                        Icon(Icons.Rounded.ArrowOutward, "打开原始链接 ${state.episodeName}")
+                        Icon(Icons.Rounded.ArrowOutward, "打開原始鏈接 ${state.episodeName}")
                     }
                 }
             },
@@ -103,7 +103,7 @@ object SelectorEpisodePaneDefaults {
                 ProvideTextStyle(
                     MaterialTheme.typography.titleLarge,
                 ) {
-                    Text("编辑配置")
+                    Text("編輯配置")
                 }
             }
             SelectorConfigurationDefaults.MatchVideoSection(

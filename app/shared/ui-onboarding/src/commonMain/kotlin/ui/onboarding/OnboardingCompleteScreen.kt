@@ -108,7 +108,7 @@ internal fun OnboardingCompleteScreen(
                 verticalArrangement = Arrangement.spacedBy(8.dp),
             ) {
                 Text(
-                    text = if (state.selfInfo?.nickname != null) "欢迎，${state.selfInfo?.nickname}" else "欢迎",
+                    text = if (state.selfInfo?.nickname != null) "歡迎，${state.selfInfo?.nickname}" else "歡迎",
                     modifier = Modifier
                         .widthIn(max = 240.dp)
                         .animateContentSize(),

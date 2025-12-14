@@ -172,7 +172,7 @@ sealed class MediaSelectorTestSuite {
     fun media(
         sourceId: String = SOURCE_DMHY,
         resolution: String = "1080P",
-        alliance: String = "字幕组",
+        alliance: String = "字幕組",
         size: FileSize = 1.megaBytes,
         publishedTime: Long = 0,
         subtitleLanguages: List<String> = listOf(
@@ -185,7 +185,7 @@ sealed class MediaSelectorTestSuite {
         subtitleKind: SubtitleKind? = null,
         extraFiles: MediaExtraFiles = MediaExtraFiles.EMPTY,
         id: Int = mediaIdCounter++,
-        originalTitle: String = "[字幕组] 孤独摇滚 $id",
+        originalTitle: String = "[字幕組] 孤獨搖滾 $id",
         subjectName: String? = null,
         episodeName: String? = null,
         mediaId: String = "$sourceId.$id",
@@ -316,7 +316,7 @@ class SimpleMediaSelectorTestSuite(
             addMedia(
                 media(
                     // kept
-                    alliance = "简中",
+                    alliance = "簡中",
                     episodeRange = finalRange, kind = MediaSourceKind.WEB,
                     subjectName = subjectName,
                     originalTitle = "$subjectName $finalRange",

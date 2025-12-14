@@ -84,9 +84,9 @@ internal val TestCacheGroupSates = listOf(
         id = TestMediaList[0].mediaId,
         commonInfo = CacheGroupCommonInfo(
             subjectId = 1,
-            "孤独摇滚",
+            "孤獨搖滾",
             mediaSourceId = "mikan-mikanime-tv",
-            allianceName = "某某字幕组",
+            allianceName = "某某字幕組",
         ),
         episodes = TestCacheEpisodes,
         stats = CacheGroupState.Stats(

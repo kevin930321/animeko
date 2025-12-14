@@ -145,7 +145,7 @@ abstract class AbstractDefaultMediaSelectorTest {
     fun media(
         sourceId: String = SOURCE_DMHY,
         resolution: String = "1080P",
-        alliance: String = "字幕组",
+        alliance: String = "字幕組",
         size: FileSize = 1.megaBytes,
         publishedTime: Long = 0,
         subtitleLanguages: List<String> = listOf(
@@ -158,7 +158,7 @@ abstract class AbstractDefaultMediaSelectorTest {
         subtitleKind: SubtitleKind? = null,
         extraFiles: MediaExtraFiles = MediaExtraFiles.Companion.EMPTY,
         id: Int = mediaIdCounter++,
-        originalTitle: String = "[字幕组] 孤独摇滚 $id",
+        originalTitle: String = "[字幕組] 孤獨搖滾 $id",
         subjectName: String? = null,
         episodeName: String? = null,
         mediaId: String = "$sourceId.$id",

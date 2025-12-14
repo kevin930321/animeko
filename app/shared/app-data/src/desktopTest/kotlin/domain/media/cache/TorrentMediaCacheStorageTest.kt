@@ -94,7 +94,7 @@ class TorrentMediaCacheStorageTest : AbstractTorrentMediaCacheEngineTest() {
         subjectNames = emptyList(),
         episodeSort = EpisodeSort("02"),
         episodeEp = EpisodeSort("02"),
-        episodeName = "测试剧集",
+        episodeName = "測試劇集",
     )
 
     ///////////////////////////////////////////////////////////////////////////
@@ -288,7 +288,7 @@ class TorrentMediaCacheStorageTest : AbstractTorrentMediaCacheEngineTest() {
         val testMedia2 = createTestDefaultMedia(
             mediaId = "dmhy.3",
             mediaSourceId = "dmhy",
-            originalTitle = "夜晚的水母不会游泳 02 测试剧集2",
+            originalTitle = "夜晚的水母不會游泳 02 測試劇集2",
             download = ResourceLocation.MagnetLink("magnet:?xt=urn:btih:2"),
             originalUrl = "https://example.com/2",
             publishedTime = 1724493292759,

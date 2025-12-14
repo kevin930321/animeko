@@ -200,7 +200,7 @@ private suspend fun animateScrollTopAppBar(topAppBarState: TopAppBarState, targe
 
 object WizardDefaults {
     fun renderStepIndicatorText(currentStep: Int, totalStep: Int): String {
-        return "步骤 $currentStep / $totalStep"
+        return "步驟 $currentStep / $totalStep"
     }
 
     @Composable
@@ -308,7 +308,7 @@ object WizardDefaults {
     @Composable
     fun SkipButton(
         onClick: () -> Unit,
-        text: String = "跳过",
+        text: String = "跳過",
         modifier: Modifier = Modifier
     ) {
         TextButton(

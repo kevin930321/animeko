@@ -87,13 +87,13 @@ internal fun SettingsScope.TorrentEngineGroup(
 //                        ),
 //                    )
 //                },
-//                title = { Text("允许上传") },
+//                title = { Text("允許上傳") },
 //                description = if (!allowUpload) {
 //                    {
 //                        Text(
-//                            "BT 网络依赖用户间分享，你所看的视频均来自其他用户的分享。" +
-//                                    "除特殊情况外，建议允许上传，共同维护健康的 BT 分享环境。" +
-//                                    "禁用上传会导致许多用户不再分享视频给你。",
+//                            "BT 網絡依賴用戶間分享，你所看的視頻均來自其他用戶的分享。" +
+//                                    "除特殊情況外，建議允許上傳，共同維護健康的 BT 分享環境。" +
+//                                    "禁用上傳會導致許多用戶不再分享視頻給你。",
 //                            color = MaterialTheme.colorScheme.error,
 //                        )
 //                    }
@@ -103,7 +103,7 @@ internal fun SettingsScope.TorrentEngineGroup(
 //            AnimatedVisibility(allowUpload) {
 //            RateTextFieldItem(
 //                torrentSettings.uploadRateLimit,
-//                title = { Text("上传速度限制") },
+//                title = { Text("上傳速度限制") },
 //                onValueChangeCompleted = { vm.torrentSettings.update(torrentSettings.copy(uploadRateLimit = it)) },
 //            )
 
@@ -209,7 +209,7 @@ private fun SettingsScope.RateSliderItem(
 //            double == null || double.kiloBytes.inBytes < minValue.inBytes
 //        },
 //        sanitizeValue = { it.trim() },
-//        textFieldDescription = { Text("单位为 KB/s，最低 1024 KB/s，-1 表示无限制\n\n当前设置: ${renderRateValue(it)}") },
+//        textFieldDescription = { Text("單位爲 KB/s，最低 1024 KB/s，-1 表示無限制\n\n當前設置: ${renderRateValue(it)}") },
 //        exposedItem = { text ->
 //            Text(renderRateValue(text))
 //        },

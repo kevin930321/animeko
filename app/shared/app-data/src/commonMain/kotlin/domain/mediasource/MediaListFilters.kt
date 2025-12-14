@@ -130,7 +130,7 @@ object MediaListFilters {
      * 我们定义几类特殊字符(串):
      *
      * 1. 无条件保留的特殊字符. [keepWords] 中的词总是会被保留.
-     * 2. 无条件删除的特殊字符. 例如 "电影", "剧场版" 等, 这些字符总是会被删除.
+     * 2. 无条件删除的特殊字符. 例如 "電影", "劇場版" 等, 这些字符总是会被删除.
      *
      * 基于经过上面两类处理后的字符串, 我们会进一步处理:
      * 1. 条件删除 ([charsToDelete]) 和替换为空格 ([charsToReplaceWithWhitespace]).
@@ -141,7 +141,7 @@ object MediaListFilters {
      *
      * @param removeWhitespace 如果为 true, 则会删除所有空格（包括通过 replaceWithWhitespace 替换出来的空格）
      * @param replaceNumbers 如果为 true, 则会将中文数字替换成阿拉伯数字 (例如 “三” -> “3”)
-     * @param removeMarkers 如果为 true, 则会删除 "电影", "剧场版", "OVA" 等仅有标记作用的词. 注意, 不能在搜索到之后做匹配的时候使用. 详见 #1794
+     * @param removeMarkers 如果为 true, 则会删除 "電影", "劇場版", "OVA" 等仅有标记作用的词. 注意, 不能在搜索到之后做匹配的时候使用. 详见 #1794
      */
     fun removeSpecials(
         string: String,
@@ -154,17 +154,17 @@ object MediaListFilters {
             acc.replace(keepWord.originalWord, keepWord.mask)
         }
 
-        // 2. 无条件删除 "电影", "剧场版", "OVA" 等
+        // 2. 无条件删除 "電影", "劇場版", "OVA" 等
         val sb = StringBuilder(result).apply {
             if (removeMarkers) {
-                deletePrefix("电影")
-                deleteInfix("电影")
-                deletePrefix("剧场版")
-                deleteInfix("剧场版")
+                deletePrefix("電影")
+                deleteInfix("電影")
+                deletePrefix("劇場版")
+                deleteInfix("劇場版")
                 deletePrefix("OVA")
                 deleteInfix("OVA")
                 deleteInfix("OAD")
-                deleteInfix("总集篇")
+                deleteInfix("總集篇")
             }
         }
 

@@ -34,11 +34,11 @@ class DefaultMediaSelectorSubtitleKindTest : AbstractDefaultMediaSelectorTest() 
         setSubtitlePreferences(MediaSelectorSubtitlePreferences.Companion.AllNormal)
         val target: DefaultMedia
         addMedia(
-            media(alliance = "字幕组1").also { target = it },
-            media(alliance = "字幕组2"),
-            media(alliance = "字幕组3"),
-            media(alliance = "字幕组4"),
-            media(alliance = "字幕组5"),
+            media(alliance = "字幕組1").also { target = it },
+            media(alliance = "字幕組2"),
+            media(alliance = "字幕組3"),
+            media(alliance = "字幕組4"),
+            media(alliance = "字幕組5"),
         )
         savedDefaultPreference.value = DEFAULT_PREFERENCE
         assertEquals(target, selector.trySelectDefault())
@@ -49,11 +49,11 @@ class DefaultMediaSelectorSubtitleKindTest : AbstractDefaultMediaSelectorTest() 
         setSubtitlePreference(SubtitleKind.CLOSED, SubtitleKindPreference.HIDE)
         val target: DefaultMedia
         addMedia(
-            media(alliance = "字幕组1", subtitleKind = SubtitleKind.CLOSED),
-            media(alliance = "字幕组2").also { target = it },
-            media(alliance = "字幕组3"),
-            media(alliance = "字幕组4"),
-            media(alliance = "字幕组5"),
+            media(alliance = "字幕組1", subtitleKind = SubtitleKind.CLOSED),
+            media(alliance = "字幕組2").also { target = it },
+            media(alliance = "字幕組3"),
+            media(alliance = "字幕組4"),
+            media(alliance = "字幕組5"),
         )
         savedDefaultPreference.value = DEFAULT_PREFERENCE
         assertEquals(target, selector.trySelectDefault())
@@ -64,11 +64,11 @@ class DefaultMediaSelectorSubtitleKindTest : AbstractDefaultMediaSelectorTest() 
         setSubtitlePreference(SubtitleKind.CLOSED, SubtitleKindPreference.LOW_PRIORITY)
         val target: DefaultMedia
         addMedia(
-            media(alliance = "字幕组1", subtitleKind = SubtitleKind.CLOSED),
-            media(alliance = "字幕组2").also { target = it },
-            media(alliance = "字幕组3"),
-            media(alliance = "字幕组4"),
-            media(alliance = "字幕组5"),
+            media(alliance = "字幕組1", subtitleKind = SubtitleKind.CLOSED),
+            media(alliance = "字幕組2").also { target = it },
+            media(alliance = "字幕組3"),
+            media(alliance = "字幕組4"),
+            media(alliance = "字幕組5"),
         )
         savedDefaultPreference.value = DEFAULT_PREFERENCE
         assertEquals(target, selector.trySelectDefault())
@@ -78,11 +78,11 @@ class DefaultMediaSelectorSubtitleKindTest : AbstractDefaultMediaSelectorTest() 
     fun `hidden items are not in mediaList`() = runTest {
         setSubtitlePreference(SubtitleKind.CLOSED, SubtitleKindPreference.HIDE)
         addMedia(
-            media(alliance = "字幕组1", subtitleKind = SubtitleKind.CLOSED),
-            media(alliance = "字幕组2"),
-            media(alliance = "字幕组3"),
-            media(alliance = "字幕组4"),
-            media(alliance = "字幕组5"),
+            media(alliance = "字幕組1", subtitleKind = SubtitleKind.CLOSED),
+            media(alliance = "字幕組2"),
+            media(alliance = "字幕組3"),
+            media(alliance = "字幕組4"),
+            media(alliance = "字幕組5"),
         )
         selector.filteredCandidates.first().run {
             assertEquals(5, size)
@@ -95,11 +95,11 @@ class DefaultMediaSelectorSubtitleKindTest : AbstractDefaultMediaSelectorTest() 
     fun `hidden items are not in filteredCandidates`() = runTest {
         setSubtitlePreference(SubtitleKind.CLOSED, SubtitleKindPreference.HIDE)
         addMedia(
-            media(alliance = "字幕组1", subtitleKind = SubtitleKind.CLOSED),
-            media(alliance = "字幕组2"),
-            media(alliance = "字幕组3"),
-            media(alliance = "字幕组4"),
-            media(alliance = "字幕组5"),
+            media(alliance = "字幕組1", subtitleKind = SubtitleKind.CLOSED),
+            media(alliance = "字幕組2"),
+            media(alliance = "字幕組3"),
+            media(alliance = "字幕組4"),
+            media(alliance = "字幕組5"),
         )
         assertEquals(4, selector.preferredCandidatesMedia.first().size)
     }
@@ -119,11 +119,11 @@ sealed class DefaultMediaSelectorSubtitleKindPlatformTest(
         fun `does not select CLOSED_OR_EXTERNAL_DISCOVER`() = runTest {
             val target: DefaultMedia
             addMedia(
-                media(alliance = "字幕组1", subtitleKind = SubtitleKind.CLOSED_OR_EXTERNAL_DISCOVER),
-                media(alliance = "字幕组2").also { target = it },
-                media(alliance = "字幕组3"),
-                media(alliance = "字幕组4"),
-                media(alliance = "字幕组5"),
+                media(alliance = "字幕組1", subtitleKind = SubtitleKind.CLOSED_OR_EXTERNAL_DISCOVER),
+                media(alliance = "字幕組2").also { target = it },
+                media(alliance = "字幕組3"),
+                media(alliance = "字幕組4"),
+                media(alliance = "字幕組5"),
             )
             savedDefaultPreference.value = DEFAULT_PREFERENCE
             assertEquals(target, selector.trySelectDefault())
@@ -133,11 +133,11 @@ sealed class DefaultMediaSelectorSubtitleKindPlatformTest(
         fun `does not select CLOSED`() = runTest {
             val target: DefaultMedia
             addMedia(
-                media(alliance = "字幕组1", subtitleKind = SubtitleKind.CLOSED),
-                media(alliance = "字幕组2").also { target = it },
-                media(alliance = "字幕组3"),
-                media(alliance = "字幕组4"),
-                media(alliance = "字幕组5"),
+                media(alliance = "字幕組1", subtitleKind = SubtitleKind.CLOSED),
+                media(alliance = "字幕組2").also { target = it },
+                media(alliance = "字幕組3"),
+                media(alliance = "字幕組4"),
+                media(alliance = "字幕組5"),
             )
             savedDefaultPreference.value = DEFAULT_PREFERENCE
             assertEquals(target, selector.trySelectDefault())
@@ -150,8 +150,8 @@ sealed class DefaultMediaSelectorSubtitleKindPlatformTest(
         fun `CLOSED is low priority`() = runTest {
             val target: DefaultMedia
             addMedia(
-                media(alliance = "字幕组1", subtitleKind = SubtitleKind.CLOSED),
-                media(alliance = "字幕组2").also { target = it },
+                media(alliance = "字幕組1", subtitleKind = SubtitleKind.CLOSED),
+                media(alliance = "字幕組2").also { target = it },
             )
             savedDefaultPreference.value = DEFAULT_PREFERENCE
             assertEquals(target, selector.trySelectDefault())
@@ -168,11 +168,11 @@ sealed class DefaultMediaSelectorSubtitleKindPlatformTest(
     fun `does not select EXTERNAL_DISCOVER`() = runTest {
         val target: DefaultMedia
         addMedia(
-            media(alliance = "字幕组1", subtitleKind = SubtitleKind.EXTERNAL_DISCOVER),
-            media(alliance = "字幕组2").also { target = it },
-            media(alliance = "字幕组3"),
-            media(alliance = "字幕组4"),
-            media(alliance = "字幕组5"),
+            media(alliance = "字幕組1", subtitleKind = SubtitleKind.EXTERNAL_DISCOVER),
+            media(alliance = "字幕組2").also { target = it },
+            media(alliance = "字幕組3"),
+            media(alliance = "字幕組4"),
+            media(alliance = "字幕組5"),
         )
         savedDefaultPreference.value = DEFAULT_PREFERENCE
         assertEquals(target, selector.trySelectDefault())

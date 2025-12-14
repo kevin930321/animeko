@@ -288,13 +288,13 @@ internal fun SettingsScope.MediaSourceGroup(
                     MediaSourceItem(
                         item,
                         Modifier.combinedClickable(
-                            onClickLabel = "编辑",
+                            onClickLabel = "編輯",
                             onLongClick = {
                                 if (platform.isMobile()) {
                                     sorter.start(state.mediaSources)
                                 }
                             },
-                            onLongClickLabel = "开始排序",
+                            onLongClickLabel = "開始排序",
                             onClick = startEditing,
                         ).onRightClickIfSupported {
                             showMoreDropdown = true

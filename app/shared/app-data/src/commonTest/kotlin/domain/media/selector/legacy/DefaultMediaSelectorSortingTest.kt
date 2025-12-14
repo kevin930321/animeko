@@ -36,12 +36,12 @@ class DefaultMediaSelectorSortingTest : AbstractDefaultMediaSelectorTest() {
     fun `sort by subjectName similarity`() = runTest {
         preferAnyMedia()
         val expectedSort = listOf(
-            media(subjectName = "孤独摇滚", kind = MediaSourceKind.WEB),
+            media(subjectName = "孤獨搖滾", kind = MediaSourceKind.WEB),
             media(subjectName = "Bocchi The Rock!", kind = MediaSourceKind.WEB),
-            media(subjectName = "孤独摇滚!", kind = MediaSourceKind.WEB),
-            media(subjectName = "孤独摇滚 第二季", kind = MediaSourceKind.WEB),
-            media(subjectName = "孤单摇滚", kind = MediaSourceKind.WEB),
-            media(subjectName = "孤单摇滚 第二季", kind = MediaSourceKind.WEB),
+            media(subjectName = "孤獨搖滾!", kind = MediaSourceKind.WEB),
+            media(subjectName = "孤獨搖滾 第二季", kind = MediaSourceKind.WEB),
+            media(subjectName = "孤單搖滾", kind = MediaSourceKind.WEB),
+            media(subjectName = "孤單搖滾 第二季", kind = MediaSourceKind.WEB),
         )
         addMedia(*expectedSort.toTypedArray<DefaultMedia>().apply { shuffle(Random(10000)) })
         assertEquals(
@@ -186,7 +186,7 @@ class DefaultMediaSelectorSortingTest : AbstractDefaultMediaSelectorTest() {
 
     private fun preferAnyMedia() {
         mediaSelectorContext.value = createMediaSelectorContextFromEmpty(
-            subjectInfo = SubjectInfo.Companion.Empty.copy(nameCn = "孤独摇滚", name = "Bocchi The Rock!"),
+            subjectInfo = SubjectInfo.Companion.Empty.copy(nameCn = "孤獨搖滾", name = "Bocchi The Rock!"),
             episodeInfo = EpisodeInfo.Companion.Empty.copy(sort = EpisodeSort(1)),
         )
         savedDefaultPreference.value = MediaPreference.Companion.Any

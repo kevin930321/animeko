@@ -123,7 +123,7 @@ class MediaSelectorAutoSelectTest {
         MediaFetchRequest(
             subjectId = "1",
             episodeId = "1",
-            subjectNames = listOf("孤独摇滚"),
+            subjectNames = listOf("孤獨搖滾"),
             episodeSort = EpisodeSort(1),
             episodeName = "test",
         ),
@@ -205,7 +205,7 @@ class MediaSelectorAutoSelectTest {
             MediaFetchRequest(
                 subjectId = "1",
                 episodeId = "1",
-                subjectNames = listOf("孤独摇滚"),
+                subjectNames = listOf("孤獨搖滾"),
                 episodeSort = EpisodeSort(1),
                 episodeName = "test",
             ),
@@ -220,7 +220,7 @@ class MediaSelectorAutoSelectTest {
             SubtitleLanguage.ChineseTraditional,
         ).map { it.id },
         resolution: String = "1080P",
-        alliance: String = "桜都字幕组",
+        alliance: String = "桜都字幕組",
         size: FileSize = 122.megaBytes,
         subtitleKind: SubtitleKind? = SubtitleKind.CLOSED,
     ): MediaProperties = MediaProperties(
@@ -273,7 +273,7 @@ class MediaSelectorAutoSelectTest {
         val target = createTestDefaultMedia(
             mediaId = "${SOURCE_DMHY}.1",
             mediaSourceId = SOURCE_DMHY,
-            originalTitle = "[桜都字幕组] 孤独摇滚 ABC ABC ABC ABC ABC ABC ABC ABC ABC ABC",
+            originalTitle = "[桜都字幕組] 孤獨搖滾 ABC ABC ABC ABC ABC ABC ABC ABC ABC ABC",
             download = ResourceLocation.MagnetLink("magnet:?xt=urn:btih:1"),
             originalUrl = "https://example.com/1",
             publishedTime = 1,
@@ -284,7 +284,7 @@ class MediaSelectorAutoSelectTest {
                     SubtitleLanguage.ChineseTraditional,
                 ).map { it.id },
                 resolution = "1080P",
-                alliance = "桜都字幕组",
+                alliance = "桜都字幕組",
                 size = 122.megaBytes,
                 subtitleKind = null,
             ),
@@ -302,7 +302,7 @@ class MediaSelectorAutoSelectTest {
         val target = createTestDefaultMedia(
             mediaId = "${SOURCE_DMHY}.1",
             mediaSourceId = SOURCE_DMHY,
-            originalTitle = "[桜都字幕组] 孤独摇滚 ABC ABC ABC ABC ABC ABC ABC ABC ABC ABC",
+            originalTitle = "[桜都字幕組] 孤獨搖滾 ABC ABC ABC ABC ABC ABC ABC ABC ABC ABC",
             download = ResourceLocation.MagnetLink("magnet:?xt=urn:btih:1"),
             originalUrl = "https://example.com/1",
             publishedTime = 1,
@@ -313,7 +313,7 @@ class MediaSelectorAutoSelectTest {
                     SubtitleLanguage.ChineseTraditional,
                 ).map { it.id },
                 resolution = "1080P",
-                alliance = "桜都字幕组",
+                alliance = "桜都字幕組",
                 size = 122.megaBytes,
                 subtitleKind = null,
             ),

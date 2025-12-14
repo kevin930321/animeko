@@ -30,7 +30,7 @@ interface MediaSourceArguments {
     val tier: MediaSourceTier
 }
 
-@RequiresOptIn("实现新的 MediaSourceArgument 时, 还需要在 MediaSourceCodecManager 注册此 Argument 类型的 codec")
+@RequiresOptIn("實現新的 MediaSourceArgument 時, 還需要在 MediaSourceCodecManager 註冊此 Argument 類型的 codec")
 annotation class DontForgetToRegisterCodec
 
 typealias MediaSourceTier = me.him188.ani.datasources.api.source.MediaSourceTier

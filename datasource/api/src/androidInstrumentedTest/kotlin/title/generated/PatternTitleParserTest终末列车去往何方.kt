@@ -26,7 +26,7 @@ public class PatternTitleParserTest终末列车去往何方 : PatternBasedTitleP
   public fun `670442-670441-670440-669853-669852-669851-669084-669083-669082-668544`() {
     kotlin.run {
     val r =
-        parse("[北宇治字幕组] 終末列車去往何方?/ 末班列車去哪裡?/ Shuumatsu Train Doko e Iku [08][WebRip][HEVC_AAC][繁體內嵌]")
+        parse("[北宇治字幕組] 終末列車去往何方?/ 末班列車去哪裡?/ Shuumatsu Train Doko e Iku [08][WebRip][HEVC_AAC][繁體內嵌]")
     assertEquals("08..08", r.episodeRange.toString())
     assertEquals("CHT", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("null", r.resolution.toString())
@@ -34,7 +34,7 @@ public class PatternTitleParserTest终末列车去往何方 : PatternBasedTitleP
     }
     kotlin.run {
     val r =
-        parse("[北宇治字幕组] 终末列车去往何方?/ 末班列车去哪里?/ Shuumatsu Train Doko e Iku [08][WebRip][HEVC_AAC][简体内嵌]")
+        parse("[北宇治字幕組] 終末列車去往何方?/ 末班列車去哪裏?/ Shuumatsu Train Doko e Iku [08][WebRip][HEVC_AAC][簡體內嵌]")
     assertEquals("08..08", r.episodeRange.toString())
     assertEquals("CHS", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("null", r.resolution.toString())
@@ -42,7 +42,7 @@ public class PatternTitleParserTest终末列车去往何方 : PatternBasedTitleP
     }
     kotlin.run {
     val r =
-        parse("[北宇治字幕组] 终末列车去往何方?/ 末班列车去哪里?/ Shuumatsu Train Doko e Iku [08][WebRip][HEVC_AAC][简繁内封]")
+        parse("[北宇治字幕組] 終末列車去往何方?/ 末班列車去哪裏?/ Shuumatsu Train Doko e Iku [08][WebRip][HEVC_AAC][簡繁內封]")
     assertEquals("08..08", r.episodeRange.toString())
     assertEquals("CHS, CHT", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("null", r.resolution.toString())
@@ -50,7 +50,7 @@ public class PatternTitleParserTest终末列车去往何方 : PatternBasedTitleP
     }
     kotlin.run {
     val r =
-        parse("[北宇治字幕组] 终末列车去往何方?/ 末班列车去哪里?/ Shuumatsu Train Doko e Iku [07][WebRip][HEVC_AAC][简繁内封]")
+        parse("[北宇治字幕組] 終末列車去往何方?/ 末班列車去哪裏?/ Shuumatsu Train Doko e Iku [07][WebRip][HEVC_AAC][簡繁內封]")
     assertEquals("07..07", r.episodeRange.toString())
     assertEquals("CHS, CHT", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("null", r.resolution.toString())
@@ -58,7 +58,7 @@ public class PatternTitleParserTest终末列车去往何方 : PatternBasedTitleP
     }
     kotlin.run {
     val r =
-        parse("[北宇治字幕组] 終末列車去往何方?/ 末班列車去哪裡?/ Shuumatsu Train Doko e Iku [07][WebRip][HEVC_AAC][繁體內嵌]")
+        parse("[北宇治字幕組] 終末列車去往何方?/ 末班列車去哪裡?/ Shuumatsu Train Doko e Iku [07][WebRip][HEVC_AAC][繁體內嵌]")
     assertEquals("07..07", r.episodeRange.toString())
     assertEquals("CHT", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("null", r.resolution.toString())
@@ -66,7 +66,7 @@ public class PatternTitleParserTest终末列车去往何方 : PatternBasedTitleP
     }
     kotlin.run {
     val r =
-        parse("[北宇治字幕组] 终末列车去往何方?/ 末班列车去哪里?/ Shuumatsu Train Doko e Iku [07][WebRip][HEVC_AAC][简体内嵌]")
+        parse("[北宇治字幕組] 終末列車去往何方?/ 末班列車去哪裏?/ Shuumatsu Train Doko e Iku [07][WebRip][HEVC_AAC][簡體內嵌]")
     assertEquals("07..07", r.episodeRange.toString())
     assertEquals("CHS", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("null", r.resolution.toString())
@@ -74,7 +74,7 @@ public class PatternTitleParserTest终末列车去往何方 : PatternBasedTitleP
     }
     kotlin.run {
     val r =
-        parse("[北宇治字幕组] 终末列车去往何方?/ 末班列车去哪里?/ Shuumatsu Train Doko e Iku [06][WebRip][HEVC_AAC][简繁内封]")
+        parse("[北宇治字幕組] 終末列車去往何方?/ 末班列車去哪裏?/ Shuumatsu Train Doko e Iku [06][WebRip][HEVC_AAC][簡繁內封]")
     assertEquals("06..06", r.episodeRange.toString())
     assertEquals("CHS, CHT", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("null", r.resolution.toString())
@@ -82,7 +82,7 @@ public class PatternTitleParserTest终末列车去往何方 : PatternBasedTitleP
     }
     kotlin.run {
     val r =
-        parse("[北宇治字幕组] 终末列车去往何方?/ 末班列车去哪里?/ Shuumatsu Train Doko e Iku [06][WebRip][HEVC_AAC][简体内嵌]")
+        parse("[北宇治字幕組] 終末列車去往何方?/ 末班列車去哪裏?/ Shuumatsu Train Doko e Iku [06][WebRip][HEVC_AAC][簡體內嵌]")
     assertEquals("06..06", r.episodeRange.toString())
     assertEquals("CHS", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("null", r.resolution.toString())
@@ -90,7 +90,7 @@ public class PatternTitleParserTest终末列车去往何方 : PatternBasedTitleP
     }
     kotlin.run {
     val r =
-        parse("[北宇治字幕组] 終末列車去往何方?/ 末班列車去哪裡?/ Shuumatsu Train Doko e Iku [06][WebRip][HEVC_AAC][繁體內嵌]")
+        parse("[北宇治字幕組] 終末列車去往何方?/ 末班列車去哪裡?/ Shuumatsu Train Doko e Iku [06][WebRip][HEVC_AAC][繁體內嵌]")
     assertEquals("06..06", r.episodeRange.toString())
     assertEquals("CHT", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("null", r.resolution.toString())
@@ -98,7 +98,7 @@ public class PatternTitleParserTest终末列车去往何方 : PatternBasedTitleP
     }
     kotlin.run {
     val r =
-        parse("[北宇治字幕组] 终末列车去往何方?/ 末班列车去哪里?/ Shuumatsu Train Doko e Iku [05][WebRip][HEVC_AAC][简繁内封]")
+        parse("[北宇治字幕組] 終末列車去往何方?/ 末班列車去哪裏?/ Shuumatsu Train Doko e Iku [05][WebRip][HEVC_AAC][簡繁內封]")
     assertEquals("05..05", r.episodeRange.toString())
     assertEquals("CHS, CHT", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("null", r.resolution.toString())
@@ -110,7 +110,7 @@ public class PatternTitleParserTest终末列车去往何方 : PatternBasedTitleP
   public fun `668543-668542-668092-668034-668033-667470-667469-667468-666692-666691`() {
     kotlin.run {
     val r =
-        parse("[北宇治字幕组] 终末列车去往何方?/ 末班列车去哪里?/ Shuumatsu Train Doko e Iku [05][WebRip][HEVC_AAC][简体内嵌]")
+        parse("[北宇治字幕組] 終末列車去往何方?/ 末班列車去哪裏?/ Shuumatsu Train Doko e Iku [05][WebRip][HEVC_AAC][簡體內嵌]")
     assertEquals("05..05", r.episodeRange.toString())
     assertEquals("CHS", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("null", r.resolution.toString())
@@ -118,7 +118,7 @@ public class PatternTitleParserTest终末列车去往何方 : PatternBasedTitleP
     }
     kotlin.run {
     val r =
-        parse("[北宇治字幕组] 終末列車去往何方?/ 末班列車去哪裡?/ Shuumatsu Train Doko e Iku [05][WebRip][HEVC_AAC][繁體內嵌]")
+        parse("[北宇治字幕組] 終末列車去往何方?/ 末班列車去哪裡?/ Shuumatsu Train Doko e Iku [05][WebRip][HEVC_AAC][繁體內嵌]")
     assertEquals("05..05", r.episodeRange.toString())
     assertEquals("CHT", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("null", r.resolution.toString())
@@ -126,7 +126,7 @@ public class PatternTitleParserTest终末列车去往何方 : PatternBasedTitleP
     }
     kotlin.run {
     val r =
-        parse("[北宇治字幕组] 終末列車去往何方?/ 末班列車去哪裡?/ Shuumatsu Train Doko e Iku [04][WebRip][HEVC_AAC][繁體內嵌]")
+        parse("[北宇治字幕組] 終末列車去往何方?/ 末班列車去哪裡?/ Shuumatsu Train Doko e Iku [04][WebRip][HEVC_AAC][繁體內嵌]")
     assertEquals("04..04", r.episodeRange.toString())
     assertEquals("CHT", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("null", r.resolution.toString())
@@ -134,7 +134,7 @@ public class PatternTitleParserTest终末列车去往何方 : PatternBasedTitleP
     }
     kotlin.run {
     val r =
-        parse("[北宇治字幕组] 终末列车去往何方?/ 末班列车去哪里?/ Shuumatsu Train Doko e Iku [04][WebRip][HEVC_AAC][简繁内封]")
+        parse("[北宇治字幕組] 終末列車去往何方?/ 末班列車去哪裏?/ Shuumatsu Train Doko e Iku [04][WebRip][HEVC_AAC][簡繁內封]")
     assertEquals("04..04", r.episodeRange.toString())
     assertEquals("CHS, CHT", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("null", r.resolution.toString())
@@ -142,7 +142,7 @@ public class PatternTitleParserTest终末列车去往何方 : PatternBasedTitleP
     }
     kotlin.run {
     val r =
-        parse("[北宇治字幕组] 终末列车去往何方?/ 末班列车去哪里?/ Shuumatsu Train Doko e Iku [04][WebRip][HEVC_AAC][简体内嵌]")
+        parse("[北宇治字幕組] 終末列車去往何方?/ 末班列車去哪裏?/ Shuumatsu Train Doko e Iku [04][WebRip][HEVC_AAC][簡體內嵌]")
     assertEquals("04..04", r.episodeRange.toString())
     assertEquals("CHS", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("null", r.resolution.toString())
@@ -150,7 +150,7 @@ public class PatternTitleParserTest终末列车去往何方 : PatternBasedTitleP
     }
     kotlin.run {
     val r =
-        parse("[北宇治字幕组] 終末列車去往何方?/ 末班列車去哪裡?/ Shuumatsu Train Doko e Iku [03][WebRip][HEVC_AAC][繁體內嵌]")
+        parse("[北宇治字幕組] 終末列車去往何方?/ 末班列車去哪裡?/ Shuumatsu Train Doko e Iku [03][WebRip][HEVC_AAC][繁體內嵌]")
     assertEquals("03..03", r.episodeRange.toString())
     assertEquals("CHT", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("null", r.resolution.toString())
@@ -158,7 +158,7 @@ public class PatternTitleParserTest终末列车去往何方 : PatternBasedTitleP
     }
     kotlin.run {
     val r =
-        parse("[北宇治字幕组] 终末列车去往何方?/ 末班列车去哪里?/ Shuumatsu Train Doko e Iku [03][WebRip][HEVC_AAC][简体内嵌]")
+        parse("[北宇治字幕組] 終末列車去往何方?/ 末班列車去哪裏?/ Shuumatsu Train Doko e Iku [03][WebRip][HEVC_AAC][簡體內嵌]")
     assertEquals("03..03", r.episodeRange.toString())
     assertEquals("CHS", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("null", r.resolution.toString())
@@ -166,7 +166,7 @@ public class PatternTitleParserTest终末列车去往何方 : PatternBasedTitleP
     }
     kotlin.run {
     val r =
-        parse("[北宇治字幕组] 终末列车去往何方?/ 末班列车去哪里?/ Shuumatsu Train Doko e Iku [03][WebRip][HEVC_AAC][简繁内封]")
+        parse("[北宇治字幕組] 終末列車去往何方?/ 末班列車去哪裏?/ Shuumatsu Train Doko e Iku [03][WebRip][HEVC_AAC][簡繁內封]")
     assertEquals("03..03", r.episodeRange.toString())
     assertEquals("CHS, CHT", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("null", r.resolution.toString())
@@ -174,7 +174,7 @@ public class PatternTitleParserTest终末列车去往何方 : PatternBasedTitleP
     }
     kotlin.run {
     val r =
-        parse("[北宇治字幕组] 终末列车去往何方?/ 末班列车去哪里?/ Shuumatsu Train Doko e Iku [02][WebRip][HEVC_AAC][简繁内封]")
+        parse("[北宇治字幕組] 終末列車去往何方?/ 末班列車去哪裏?/ Shuumatsu Train Doko e Iku [02][WebRip][HEVC_AAC][簡繁內封]")
     assertEquals("02..02", r.episodeRange.toString())
     assertEquals("CHS, CHT", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("null", r.resolution.toString())
@@ -182,7 +182,7 @@ public class PatternTitleParserTest终末列车去往何方 : PatternBasedTitleP
     }
     kotlin.run {
     val r =
-        parse("[北宇治字幕组] 終末列車去往何方?/ 末班列車去哪裡?/ Shuumatsu Train Doko e Iku [02][WebRip][HEVC_AAC][繁體內嵌]")
+        parse("[北宇治字幕組] 終末列車去往何方?/ 末班列車去哪裡?/ Shuumatsu Train Doko e Iku [02][WebRip][HEVC_AAC][繁體內嵌]")
     assertEquals("02..02", r.episodeRange.toString())
     assertEquals("CHT", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("null", r.resolution.toString())
@@ -194,7 +194,7 @@ public class PatternTitleParserTest终末列车去往何方 : PatternBasedTitleP
   public fun `666690-666212-666211-666210-666067`() {
     kotlin.run {
     val r =
-        parse("[北宇治字幕组] 终末列车去往何方?/ 末班列车去哪里?/ Shuumatsu Train Doko e Iku [02][WebRip][HEVC_AAC][简体内嵌]")
+        parse("[北宇治字幕組] 終末列車去往何方?/ 末班列車去哪裏?/ Shuumatsu Train Doko e Iku [02][WebRip][HEVC_AAC][簡體內嵌]")
     assertEquals("02..02", r.episodeRange.toString())
     assertEquals("CHS", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("null", r.resolution.toString())
@@ -202,7 +202,7 @@ public class PatternTitleParserTest终末列车去往何方 : PatternBasedTitleP
     }
     kotlin.run {
     val r =
-        parse("[北宇治字幕组] 终末列车去往何方?/ 末班列车去哪里?/ Shuumatsu Train Doko e Iku [01v2][WebRip][HEVC_AAC][简繁内封]")
+        parse("[北宇治字幕組] 終末列車去往何方?/ 末班列車去哪裏?/ Shuumatsu Train Doko e Iku [01v2][WebRip][HEVC_AAC][簡繁內封]")
     assertEquals("01..01", r.episodeRange.toString())
     assertEquals("CHS, CHT", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("null", r.resolution.toString())
@@ -210,7 +210,7 @@ public class PatternTitleParserTest终末列车去往何方 : PatternBasedTitleP
     }
     kotlin.run {
     val r =
-        parse("[北宇治字幕组] 終末列車去往何方?/ 末班列車去哪裡?/ Shuumatsu Train Doko e Iku [01v2][WebRip][HEVC_AAC][繁體內嵌]")
+        parse("[北宇治字幕組] 終末列車去往何方?/ 末班列車去哪裡?/ Shuumatsu Train Doko e Iku [01v2][WebRip][HEVC_AAC][繁體內嵌]")
     assertEquals("01..01", r.episodeRange.toString())
     assertEquals("CHT", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("null", r.resolution.toString())
@@ -218,7 +218,7 @@ public class PatternTitleParserTest终末列车去往何方 : PatternBasedTitleP
     }
     kotlin.run {
     val r =
-        parse("[北宇治字幕组] 终末列车去往何方?/ 末班列车去哪里?/ Shuumatsu Train Doko e Iku [01v2][WebRip][HEVC_AAC][简体内嵌]")
+        parse("[北宇治字幕組] 終末列車去往何方?/ 末班列車去哪裏?/ Shuumatsu Train Doko e Iku [01v2][WebRip][HEVC_AAC][簡體內嵌]")
     assertEquals("01..01", r.episodeRange.toString())
     assertEquals("CHS", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("null", r.resolution.toString())
@@ -226,7 +226,7 @@ public class PatternTitleParserTest终末列车去往何方 : PatternBasedTitleP
     }
     kotlin.run {
     val r =
-        parse("[北宇治字幕组] 终末列车去往何方?/ 末班列车去哪里?/ Shuumatsu Train Doko e Iku [01][WebRip][HEVC_AAC][简体内嵌]")
+        parse("[北宇治字幕組] 終末列車去往何方?/ 末班列車去哪裏?/ Shuumatsu Train Doko e Iku [01][WebRip][HEVC_AAC][簡體內嵌]")
     assertEquals("01..01", r.episodeRange.toString())
     assertEquals("CHS", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("null", r.resolution.toString())

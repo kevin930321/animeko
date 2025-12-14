@@ -25,14 +25,14 @@ public class PatternTitleParserTest石纪元 : PatternBasedTitleParserTestSuite(
   @Test
   public fun `690822-690627-690565-690253-690163-690007-689898-689075-688856-688817`() {
     kotlin.run {
-    val r = parse("[猎户压制部] 石纪元 第四季 科学与未来 / Dr.STONE：Science Future [05] [1080p] [简日内嵌] [2025年1月番]")
+    val r = parse("[獵戶壓制部] 石紀元 第四季 科學與未來 / Dr.STONE：Science Future [05] [1080p] [簡日內嵌] [2025年1月番]")
     assertEquals("05..05", r.episodeRange.toString())
     assertEquals("CHS, JPN", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("1080P", r.resolution.toString())
     assertEquals(SubtitleKind.EMBEDDED, r.subtitleKind)
     }
     kotlin.run {
-    val r = parse("[猎户压制部] 石纪元 第四季 科学与未来 / Dr.STONE：Science Future [04] [1080p] [简日内嵌] [2025年1月番]")
+    val r = parse("[獵戶壓制部] 石紀元 第四季 科學與未來 / Dr.STONE：Science Future [04] [1080p] [簡日內嵌] [2025年1月番]")
     assertEquals("04..04", r.episodeRange.toString())
     assertEquals("CHS, JPN", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("1080P", r.resolution.toString())
@@ -40,28 +40,28 @@ public class PatternTitleParserTest石纪元 : PatternBasedTitleParserTestSuite(
     }
     kotlin.run {
     val r =
-        parse("[芝士动物朋友] 石纪元 科学与未来 / Dr.STONE SCIENCE FUTURE [03][CR-WebRip][1080p][HEVC+AAC][简繁内封]（新石纪 第四季 S4）")
+        parse("[芝士動物朋友] 石紀元 科學與未來 / Dr.STONE SCIENCE FUTURE [03][CR-WebRip][1080p][HEVC+AAC][簡繁內封]（新石紀 第四季 S4）")
     assertEquals("03..03", r.episodeRange.toString())
     assertEquals("CHS, CHT", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("1080P", r.resolution.toString())
     assertEquals(SubtitleKind.CLOSED, r.subtitleKind)
     }
     kotlin.run {
-    val r = parse("[猎户压制部] 石纪元 第四季 科学与未来 / Dr.STONE：Science Future [03] [1080p] [简日内嵌] [2025年1月番]")
+    val r = parse("[獵戶壓制部] 石紀元 第四季 科學與未來 / Dr.STONE：Science Future [03] [1080p] [簡日內嵌] [2025年1月番]")
     assertEquals("03..03", r.episodeRange.toString())
     assertEquals("CHS, JPN", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("1080P", r.resolution.toString())
     assertEquals(SubtitleKind.EMBEDDED, r.subtitleKind)
     }
     kotlin.run {
-    val r = parse("[猎户压制部] 石纪元 第四季 科学与未来 / Dr.STONE：Science Future [02] [1080p] [简日内嵌] [2025年1月番]")
+    val r = parse("[獵戶壓制部] 石紀元 第四季 科學與未來 / Dr.STONE：Science Future [02] [1080p] [簡日內嵌] [2025年1月番]")
     assertEquals("02..02", r.episodeRange.toString())
     assertEquals("CHS, JPN", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("1080P", r.resolution.toString())
     assertEquals(SubtitleKind.EMBEDDED, r.subtitleKind)
     }
     kotlin.run {
-    val r = parse("[猎户压制部] 石纪元 第四季 科学与未来 / Dr.STONE：Science Future [01] [1080p] [简日内嵌] [2025年1月番]")
+    val r = parse("[獵戶壓制部] 石紀元 第四季 科學與未來 / Dr.STONE：Science Future [01] [1080p] [簡日內嵌] [2025年1月番]")
     assertEquals("01..01", r.episodeRange.toString())
     assertEquals("CHS, JPN", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("1080P", r.resolution.toString())
@@ -69,7 +69,7 @@ public class PatternTitleParserTest石纪元 : PatternBasedTitleParserTestSuite(
     }
     kotlin.run {
     val r =
-        parse("[芝士动物朋友] 石纪元 科学与未来 / Dr.STONE SCIENCE FUTURE [02][CR-WebRip][1080p][HEVC+AAC][简繁内封]（新石纪 第四季 S4）")
+        parse("[芝士動物朋友] 石紀元 科學與未來 / Dr.STONE SCIENCE FUTURE [02][CR-WebRip][1080p][HEVC+AAC][簡繁內封]（新石紀 第四季 S4）")
     assertEquals("02..02", r.episodeRange.toString())
     assertEquals("CHS, CHT", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("1080P", r.resolution.toString())
@@ -77,7 +77,7 @@ public class PatternTitleParserTest石纪元 : PatternBasedTitleParserTestSuite(
     }
     kotlin.run {
     val r =
-        parse("[DBD-Raws][新石纪 Stone Wars/Dr. Stone Stone Wars][01-11TV全集][1080P][BDRip][HEVC-10bit][简繁外挂][FLAC][MKV](石纪元 第二季/Dr. Stone S2/ドクターストーン Stone Wars)")
+        parse("[DBD-Raws][新石紀 Stone Wars/Dr. Stone Stone Wars][01-11TV全集][1080P][BDRip][HEVC-10bit][簡繁外掛][FLAC][MKV](石紀元 第二季/Dr. Stone S2/ドクターストーン Stone Wars)")
     assertEquals("01..11", r.episodeRange.toString())
     assertEquals("CHS, CHT", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("1080P", r.resolution.toString())
@@ -85,7 +85,7 @@ public class PatternTitleParserTest石纪元 : PatternBasedTitleParserTestSuite(
     }
     kotlin.run {
     val r =
-        parse("[DBD-Raws][新石纪 New World/Dr. Stone New World][01-22TV全集+SP][1080P][BDRip][HEVC-10bit][简繁外挂][FLAC][MKV](石纪元 第三季/Dr. Stone S3/ドクターストーン New World)")
+        parse("[DBD-Raws][新石紀 New World/Dr. Stone New World][01-22TV全集+SP][1080P][BDRip][HEVC-10bit][簡繁外掛][FLAC][MKV](石紀元 第三季/Dr. Stone S3/ドクターストーン New World)")
     assertEquals("01..22+SP", r.episodeRange.toString())
     assertEquals("CHS, CHT", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("1080P", r.resolution.toString())
@@ -93,7 +93,7 @@ public class PatternTitleParserTest石纪元 : PatternBasedTitleParserTestSuite(
     }
     kotlin.run {
     val r =
-        parse("[芝士动物朋友] 石纪元 科学与未来 / Dr.STONE SCIENCE FUTURE [01][CR-WebRip][1080p][HEVC+AAC][简繁内封]（新石纪 第四季 S4）")
+        parse("[芝士動物朋友] 石紀元 科學與未來 / Dr.STONE SCIENCE FUTURE [01][CR-WebRip][1080p][HEVC+AAC][簡繁內封]（新石紀 第四季 S4）")
     assertEquals("01..01", r.episodeRange.toString())
     assertEquals("CHS, CHT", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("1080P", r.resolution.toString())
@@ -105,7 +105,7 @@ public class PatternTitleParserTest石纪元 : PatternBasedTitleParserTestSuite(
   public fun `679339-678927-678485-678132-677722-677229-674728-674226-673771-673207`() {
     kotlin.run {
     val r =
-        parse("[jibaketa合成&音頻壓制][代理商粵語]Dr.Stone New World 新石紀 / 石纪元 第三季 新世界 - 22 END [粵日雙語+內封繁體中文雙字幕] (WEB 1920x1080 AVC AACx2 PGS+SRT Ani-One CHT)")
+        parse("[jibaketa合成&音頻壓制][代理商粵語]Dr.Stone New World 新石紀 / 石紀元 第三季 新世界 - 22 END [粵日雙語+內封繁體中文雙字幕] (WEB 1920x1080 AVC AACx2 PGS+SRT Ani-One CHT)")
     assertEquals("22..22", r.episodeRange.toString())
     assertEquals("CHC, CHT, JPN", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("1080P", r.resolution.toString())
@@ -113,7 +113,7 @@ public class PatternTitleParserTest石纪元 : PatternBasedTitleParserTestSuite(
     }
     kotlin.run {
     val r =
-        parse("[jibaketa合成&音頻壓制][代理商粵語]Dr.Stone New World 新石紀 / 石纪元 第三季 新世界 - 21 [粵日雙語+內封繁體中文雙字幕] (WEB 1920x1080 AVC AACx2 PGS+SRT Ani-One CHT)")
+        parse("[jibaketa合成&音頻壓制][代理商粵語]Dr.Stone New World 新石紀 / 石紀元 第三季 新世界 - 21 [粵日雙語+內封繁體中文雙字幕] (WEB 1920x1080 AVC AACx2 PGS+SRT Ani-One CHT)")
     assertEquals("21..21", r.episodeRange.toString())
     assertEquals("CHC, CHT, JPN", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("1080P", r.resolution.toString())
@@ -121,7 +121,7 @@ public class PatternTitleParserTest石纪元 : PatternBasedTitleParserTestSuite(
     }
     kotlin.run {
     val r =
-        parse("[jibaketa合成&音頻壓制][代理商粵語]Dr.Stone New World 新石紀 / 石纪元 第三季 新世界 - 20 [粵日雙語+內封繁體中文雙字幕] (WEB 1920x1080 AVC AACx2 PGS+SRT Ani-One CHT)")
+        parse("[jibaketa合成&音頻壓制][代理商粵語]Dr.Stone New World 新石紀 / 石紀元 第三季 新世界 - 20 [粵日雙語+內封繁體中文雙字幕] (WEB 1920x1080 AVC AACx2 PGS+SRT Ani-One CHT)")
     assertEquals("20..20", r.episodeRange.toString())
     assertEquals("CHC, CHT, JPN", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("1080P", r.resolution.toString())
@@ -129,7 +129,7 @@ public class PatternTitleParserTest石纪元 : PatternBasedTitleParserTestSuite(
     }
     kotlin.run {
     val r =
-        parse("[jibaketa合成&音頻壓制][代理商粵語]Dr.Stone New World 新石紀 / 石纪元 第三季 新世界 - 19 [粵日雙語+內封繁體中文雙字幕] (WEB 1920x1080 AVC AACx2 PGS+SRT Ani-One CHT)")
+        parse("[jibaketa合成&音頻壓制][代理商粵語]Dr.Stone New World 新石紀 / 石紀元 第三季 新世界 - 19 [粵日雙語+內封繁體中文雙字幕] (WEB 1920x1080 AVC AACx2 PGS+SRT Ani-One CHT)")
     assertEquals("19..19", r.episodeRange.toString())
     assertEquals("CHC, CHT, JPN", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("1080P", r.resolution.toString())
@@ -137,7 +137,7 @@ public class PatternTitleParserTest石纪元 : PatternBasedTitleParserTestSuite(
     }
     kotlin.run {
     val r =
-        parse("[jibaketa合成&音頻壓制][代理商粵語]Dr.Stone New World 新石紀 / 石纪元 第三季 新世界 - 18 [粵日雙語+內封繁體中文雙字幕] (WEB 1920x1080 AVC AACx2 PGS+SRT Ani-One CHT)")
+        parse("[jibaketa合成&音頻壓制][代理商粵語]Dr.Stone New World 新石紀 / 石紀元 第三季 新世界 - 18 [粵日雙語+內封繁體中文雙字幕] (WEB 1920x1080 AVC AACx2 PGS+SRT Ani-One CHT)")
     assertEquals("18..18", r.episodeRange.toString())
     assertEquals("CHC, CHT, JPN", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("1080P", r.resolution.toString())
@@ -145,7 +145,7 @@ public class PatternTitleParserTest石纪元 : PatternBasedTitleParserTestSuite(
     }
     kotlin.run {
     val r =
-        parse("[jibaketa合成&音頻壓制][代理商粵語]Dr.Stone New World 新石紀 / 石纪元 第三季 新世界 - 17 [粵日雙語+內封繁體中文雙字幕] (WEB 1920x1080 AVC AACx2 PGS+SRT Ani-One CHT)")
+        parse("[jibaketa合成&音頻壓制][代理商粵語]Dr.Stone New World 新石紀 / 石紀元 第三季 新世界 - 17 [粵日雙語+內封繁體中文雙字幕] (WEB 1920x1080 AVC AACx2 PGS+SRT Ani-One CHT)")
     assertEquals("17..17", r.episodeRange.toString())
     assertEquals("CHC, CHT, JPN", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("1080P", r.resolution.toString())
@@ -153,7 +153,7 @@ public class PatternTitleParserTest石纪元 : PatternBasedTitleParserTestSuite(
     }
     kotlin.run {
     val r =
-        parse("[jibaketa合成&音頻壓制][代理商粵語]Dr.Stone New World 新石紀 / 石纪元 第三季 新世界 - 16 [粵日雙語+內封繁體中文雙字幕] (WEB 1920x1080 AVC AACx2 PGS+SRT Ani-One CHT)")
+        parse("[jibaketa合成&音頻壓制][代理商粵語]Dr.Stone New World 新石紀 / 石紀元 第三季 新世界 - 16 [粵日雙語+內封繁體中文雙字幕] (WEB 1920x1080 AVC AACx2 PGS+SRT Ani-One CHT)")
     assertEquals("16..16", r.episodeRange.toString())
     assertEquals("CHC, CHT, JPN", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("1080P", r.resolution.toString())
@@ -161,7 +161,7 @@ public class PatternTitleParserTest石纪元 : PatternBasedTitleParserTestSuite(
     }
     kotlin.run {
     val r =
-        parse("[jibaketa合成&音頻壓制][代理商粵語]Dr.Stone New World 新石紀 / 石纪元 第三季 新世界 - 15 [粵日雙語+內封繁體中文雙字幕] (WEB 1920x1080 AVC AACx2 PGS+SRT Ani-One CHT)")
+        parse("[jibaketa合成&音頻壓制][代理商粵語]Dr.Stone New World 新石紀 / 石紀元 第三季 新世界 - 15 [粵日雙語+內封繁體中文雙字幕] (WEB 1920x1080 AVC AACx2 PGS+SRT Ani-One CHT)")
     assertEquals("15..15", r.episodeRange.toString())
     assertEquals("CHC, CHT, JPN", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("1080P", r.resolution.toString())
@@ -169,7 +169,7 @@ public class PatternTitleParserTest石纪元 : PatternBasedTitleParserTestSuite(
     }
     kotlin.run {
     val r =
-        parse("[jibaketa合成&音頻壓制][代理商粵語]Dr.Stone New World 新石紀 / 石纪元 第三季 新世界 - 14 [粵日雙語+內封繁體中文雙字幕] (WEB 1920x1080 AVC AACx2 PGS+SRT Ani-One CHT)")
+        parse("[jibaketa合成&音頻壓制][代理商粵語]Dr.Stone New World 新石紀 / 石紀元 第三季 新世界 - 14 [粵日雙語+內封繁體中文雙字幕] (WEB 1920x1080 AVC AACx2 PGS+SRT Ani-One CHT)")
     assertEquals("14..14", r.episodeRange.toString())
     assertEquals("CHC, CHT, JPN", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("1080P", r.resolution.toString())
@@ -177,7 +177,7 @@ public class PatternTitleParserTest石纪元 : PatternBasedTitleParserTestSuite(
     }
     kotlin.run {
     val r =
-        parse("[jibaketa合成&音頻壓制][代理商粵語]Dr.Stone New World 新石紀 / 石纪元 第三季 新世界 - 13 [粵日雙語+內封繁體中文雙字幕] (WEB 1920x1080 AVC AACx2 PGS+SRT Ani-One CHT)")
+        parse("[jibaketa合成&音頻壓制][代理商粵語]Dr.Stone New World 新石紀 / 石紀元 第三季 新世界 - 13 [粵日雙語+內封繁體中文雙字幕] (WEB 1920x1080 AVC AACx2 PGS+SRT Ani-One CHT)")
     assertEquals("13..13", r.episodeRange.toString())
     assertEquals("CHC, CHT, JPN", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("1080P", r.resolution.toString())
@@ -189,7 +189,7 @@ public class PatternTitleParserTest石纪元 : PatternBasedTitleParserTestSuite(
   public fun `672727-672230-671268-670745-670200-669435-668935-668405-667821-667820`() {
     kotlin.run {
     val r =
-        parse("[jibaketa合成&音頻壓制][代理商粵語]Dr.Stone New World 新石紀 / 石纪元 第三季 新世界 - 12 [粵日雙語+內封繁體中文雙字幕] (WEB 1920x1080 AVC AACx2 PGS+SRT Ani-One CHT)")
+        parse("[jibaketa合成&音頻壓制][代理商粵語]Dr.Stone New World 新石紀 / 石紀元 第三季 新世界 - 12 [粵日雙語+內封繁體中文雙字幕] (WEB 1920x1080 AVC AACx2 PGS+SRT Ani-One CHT)")
     assertEquals("12..12", r.episodeRange.toString())
     assertEquals("CHC, CHT, JPN", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("1080P", r.resolution.toString())
@@ -197,7 +197,7 @@ public class PatternTitleParserTest石纪元 : PatternBasedTitleParserTestSuite(
     }
     kotlin.run {
     val r =
-        parse("[jibaketa合成&壓制][代理商粵語]Dr.Stone New World 新石紀 / 石纪元 第三季 新世界 - 11 [粵日雙語+內封繁體中文雙字幕] (BD 1920x1080 x264 AACx2 PGS+SRT Ani-One CHT)")
+        parse("[jibaketa合成&壓制][代理商粵語]Dr.Stone New World 新石紀 / 石紀元 第三季 新世界 - 11 [粵日雙語+內封繁體中文雙字幕] (BD 1920x1080 x264 AACx2 PGS+SRT Ani-One CHT)")
     assertEquals("11..11", r.episodeRange.toString())
     assertEquals("CHC, CHT, JPN", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("1080P", r.resolution.toString())
@@ -205,7 +205,7 @@ public class PatternTitleParserTest石纪元 : PatternBasedTitleParserTestSuite(
     }
     kotlin.run {
     val r =
-        parse("[jibaketa合成&壓制][代理商粵語]Dr.Stone New World 新石紀 / 石纪元 第三季 新世界 - 10 [粵日雙語+內封繁體中文雙字幕] (BD 1920x1080 x264 AACx2 PGS+SRT Ani-One CHT)")
+        parse("[jibaketa合成&壓制][代理商粵語]Dr.Stone New World 新石紀 / 石紀元 第三季 新世界 - 10 [粵日雙語+內封繁體中文雙字幕] (BD 1920x1080 x264 AACx2 PGS+SRT Ani-One CHT)")
     assertEquals("10..10", r.episodeRange.toString())
     assertEquals("CHC, CHT, JPN", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("1080P", r.resolution.toString())
@@ -213,7 +213,7 @@ public class PatternTitleParserTest石纪元 : PatternBasedTitleParserTestSuite(
     }
     kotlin.run {
     val r =
-        parse("[jibaketa合成&壓制][代理商粵語]Dr.Stone New World 新石紀 / 石纪元 第三季 新世界 - 09 [粵日雙語+內封繁體中文雙字幕] (BD 1920x1080 x264 AACx2 PGS+SRT Ani-One CHT)")
+        parse("[jibaketa合成&壓制][代理商粵語]Dr.Stone New World 新石紀 / 石紀元 第三季 新世界 - 09 [粵日雙語+內封繁體中文雙字幕] (BD 1920x1080 x264 AACx2 PGS+SRT Ani-One CHT)")
     assertEquals("09..09", r.episodeRange.toString())
     assertEquals("CHC, CHT, JPN", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("1080P", r.resolution.toString())
@@ -221,7 +221,7 @@ public class PatternTitleParserTest石纪元 : PatternBasedTitleParserTestSuite(
     }
     kotlin.run {
     val r =
-        parse("[jibaketa合成&壓制][代理商粵語]Dr.Stone New World 新石紀 / 石纪元 第三季 新世界 - 08 [粵日雙語+內封繁體中文雙字幕] (BD 1920x1080 x264 AACx2 PGS+SRT Ani-One CHT)")
+        parse("[jibaketa合成&壓制][代理商粵語]Dr.Stone New World 新石紀 / 石紀元 第三季 新世界 - 08 [粵日雙語+內封繁體中文雙字幕] (BD 1920x1080 x264 AACx2 PGS+SRT Ani-One CHT)")
     assertEquals("08..08", r.episodeRange.toString())
     assertEquals("CHC, CHT, JPN", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("1080P", r.resolution.toString())
@@ -229,7 +229,7 @@ public class PatternTitleParserTest石纪元 : PatternBasedTitleParserTestSuite(
     }
     kotlin.run {
     val r =
-        parse("[jibaketa合成&壓制][代理商粵語]Dr.Stone New World 新石紀 / 石纪元 第三季 新世界 - 07 [粵日雙語+內封繁體中文雙字幕] (BD 1920x1080 x264 AACx2 PGS+SRT Ani-One CHT)")
+        parse("[jibaketa合成&壓制][代理商粵語]Dr.Stone New World 新石紀 / 石紀元 第三季 新世界 - 07 [粵日雙語+內封繁體中文雙字幕] (BD 1920x1080 x264 AACx2 PGS+SRT Ani-One CHT)")
     assertEquals("07..07", r.episodeRange.toString())
     assertEquals("CHC, CHT, JPN", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("1080P", r.resolution.toString())
@@ -237,7 +237,7 @@ public class PatternTitleParserTest石纪元 : PatternBasedTitleParserTestSuite(
     }
     kotlin.run {
     val r =
-        parse("[jibaketa合成&壓制][代理商粵語]Dr.Stone New World 新石紀 / 石纪元 第三季 新世界 - 06 [粵日雙語+內封繁體中文雙字幕] (BD 1920x1080 x264 AACx2 PGS+SRT Ani-One CHT)")
+        parse("[jibaketa合成&壓制][代理商粵語]Dr.Stone New World 新石紀 / 石紀元 第三季 新世界 - 06 [粵日雙語+內封繁體中文雙字幕] (BD 1920x1080 x264 AACx2 PGS+SRT Ani-One CHT)")
     assertEquals("06..06", r.episodeRange.toString())
     assertEquals("CHC, CHT, JPN", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("1080P", r.resolution.toString())
@@ -245,7 +245,7 @@ public class PatternTitleParserTest石纪元 : PatternBasedTitleParserTestSuite(
     }
     kotlin.run {
     val r =
-        parse("[jibaketa合成&壓制][代理商粵語]Dr.Stone New World 新石紀 / 石纪元 第三季 新世界 - 05 [粵日雙語+內封繁體中文雙字幕] (BD 1920x1080 x264 AACx2 PGS+SRT Ani-One CHT)")
+        parse("[jibaketa合成&壓制][代理商粵語]Dr.Stone New World 新石紀 / 石紀元 第三季 新世界 - 05 [粵日雙語+內封繁體中文雙字幕] (BD 1920x1080 x264 AACx2 PGS+SRT Ani-One CHT)")
     assertEquals("05..05", r.episodeRange.toString())
     assertEquals("CHC, CHT, JPN", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("1080P", r.resolution.toString())
@@ -253,7 +253,7 @@ public class PatternTitleParserTest石纪元 : PatternBasedTitleParserTestSuite(
     }
     kotlin.run {
     val r =
-        parse("[jibaketa合成&壓制][代理商粵語]Dr.Stone New World 新石紀 / 石纪元 第三季 新世界 - 04 [粵日雙語+內封繁體中文雙字幕] (BD 1920x1080 x264 AACx2 PGS+SRT Ani-One CHT)")
+        parse("[jibaketa合成&壓制][代理商粵語]Dr.Stone New World 新石紀 / 石紀元 第三季 新世界 - 04 [粵日雙語+內封繁體中文雙字幕] (BD 1920x1080 x264 AACx2 PGS+SRT Ani-One CHT)")
     assertEquals("04..04", r.episodeRange.toString())
     assertEquals("CHC, CHT, JPN", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("1080P", r.resolution.toString())
@@ -261,7 +261,7 @@ public class PatternTitleParserTest石纪元 : PatternBasedTitleParserTestSuite(
     }
     kotlin.run {
     val r =
-        parse("[jibaketa合成&壓制][代理商粵語]Dr.Stone New World 新石紀 / 石纪元 第三季 新世界 - 03 [粵日雙語+內封繁體中文雙字幕] (BD 1920x1080 x264 AACx2 PGS+SRT Ani-One CHT)")
+        parse("[jibaketa合成&壓制][代理商粵語]Dr.Stone New World 新石紀 / 石紀元 第三季 新世界 - 03 [粵日雙語+內封繁體中文雙字幕] (BD 1920x1080 x264 AACx2 PGS+SRT Ani-One CHT)")
     assertEquals("03..03", r.episodeRange.toString())
     assertEquals("CHC, CHT, JPN", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("1080P", r.resolution.toString())
@@ -273,7 +273,7 @@ public class PatternTitleParserTest石纪元 : PatternBasedTitleParserTestSuite(
   public fun `666366-665820-665454-659517-659248-658708-658151-657480-657082-656749`() {
     kotlin.run {
     val r =
-        parse("[jibaketa合成&壓制][代理商粵語]Dr.Stone New World 新石紀 / 石纪元 第三季 新世界 - 02 [粵日雙語+內封繁體中文雙字幕] (BD 1920x1080 x264 AACx2 PGS+SRT Ani-One CHT)")
+        parse("[jibaketa合成&壓制][代理商粵語]Dr.Stone New World 新石紀 / 石紀元 第三季 新世界 - 02 [粵日雙語+內封繁體中文雙字幕] (BD 1920x1080 x264 AACx2 PGS+SRT Ani-One CHT)")
     assertEquals("02..02", r.episodeRange.toString())
     assertEquals("CHC, CHT, JPN", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("1080P", r.resolution.toString())
@@ -281,7 +281,7 @@ public class PatternTitleParserTest石纪元 : PatternBasedTitleParserTestSuite(
     }
     kotlin.run {
     val r =
-        parse("[jibaketa合成&壓制][代理商粵語]Dr.Stone New World 新石紀 / 石纪元 第三季 新世界 - 01 [粵日雙語+內封繁體中文雙字幕] (BD 1920x1080 x264 AACx2 PGS+SRT Ani-One CHT)")
+        parse("[jibaketa合成&壓制][代理商粵語]Dr.Stone New World 新石紀 / 石紀元 第三季 新世界 - 01 [粵日雙語+內封繁體中文雙字幕] (BD 1920x1080 x264 AACx2 PGS+SRT Ani-One CHT)")
     assertEquals("01..01", r.episodeRange.toString())
     assertEquals("CHC, CHT, JPN", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("1080P", r.resolution.toString())
@@ -289,7 +289,7 @@ public class PatternTitleParserTest石纪元 : PatternBasedTitleParserTestSuite(
     }
     kotlin.run {
     val r =
-        parse("[jibaketa合成&壓制][代理商粵語]Dr.Stone Ryuusui 新石紀 / 石纪元 龍水 [粵日雙語+內封繁體中文雙字幕] (BD 1920x1080 x264 AACx2 PGS+SRT Ani-One CHT)")
+        parse("[jibaketa合成&壓制][代理商粵語]Dr.Stone Ryuusui 新石紀 / 石紀元 龍水 [粵日雙語+內封繁體中文雙字幕] (BD 1920x1080 x264 AACx2 PGS+SRT Ani-One CHT)")
     assertEquals("S?", r.episodeRange.toString())
     assertEquals("CHC, CHT, JPN", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("1080P", r.resolution.toString())
@@ -297,49 +297,49 @@ public class PatternTitleParserTest石纪元 : PatternBasedTitleParserTestSuite(
     }
     kotlin.run {
     val r =
-        parse("[猎户压制部] 石纪元 第三季 下半 / Dr.STONE：New World [12-22] [WebRip] [1080p] [简日内嵌] [2023年10月番]")
+        parse("[獵戶壓制部] 石紀元 第三季 下半 / Dr.STONE：New World [12-22] [WebRip] [1080p] [簡日內嵌] [2023年10月番]")
     assertEquals("12..22", r.episodeRange.toString())
     assertEquals("CHS, JPN", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("1080P", r.resolution.toString())
     assertEquals(SubtitleKind.EMBEDDED, r.subtitleKind)
     }
     kotlin.run {
-    val r = parse("[猎户压制部] 石纪元 第三季 下半 / Dr.STONE：New World [22] [END] [1080p] [简日内嵌] [2023年10月番]")
+    val r = parse("[獵戶壓制部] 石紀元 第三季 下半 / Dr.STONE：New World [22] [END] [1080p] [簡日內嵌] [2023年10月番]")
     assertEquals("22..22", r.episodeRange.toString())
     assertEquals("CHS, JPN", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("1080P", r.resolution.toString())
     assertEquals(SubtitleKind.EMBEDDED, r.subtitleKind)
     }
     kotlin.run {
-    val r = parse("[猎户压制部] 石纪元 第三季 下半 / Dr.STONE：New World [21] [1080p] [简日内嵌] [2023年10月番]")
+    val r = parse("[獵戶壓制部] 石紀元 第三季 下半 / Dr.STONE：New World [21] [1080p] [簡日內嵌] [2023年10月番]")
     assertEquals("21..21", r.episodeRange.toString())
     assertEquals("CHS, JPN", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("1080P", r.resolution.toString())
     assertEquals(SubtitleKind.EMBEDDED, r.subtitleKind)
     }
     kotlin.run {
-    val r = parse("[猎户压制部] 石纪元 第三季 下半 / Dr.STONE：New World [20] [1080p] [简日内嵌] [2023年10月番]")
+    val r = parse("[獵戶壓制部] 石紀元 第三季 下半 / Dr.STONE：New World [20] [1080p] [簡日內嵌] [2023年10月番]")
     assertEquals("20..20", r.episodeRange.toString())
     assertEquals("CHS, JPN", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("1080P", r.resolution.toString())
     assertEquals(SubtitleKind.EMBEDDED, r.subtitleKind)
     }
     kotlin.run {
-    val r = parse("[猎户压制部] 石纪元 第三季 下半 / Dr.STONE：New World [19] [1080p] [简日内嵌] [2023年10月番]")
+    val r = parse("[獵戶壓制部] 石紀元 第三季 下半 / Dr.STONE：New World [19] [1080p] [簡日內嵌] [2023年10月番]")
     assertEquals("19..19", r.episodeRange.toString())
     assertEquals("CHS, JPN", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("1080P", r.resolution.toString())
     assertEquals(SubtitleKind.EMBEDDED, r.subtitleKind)
     }
     kotlin.run {
-    val r = parse("[猎户压制部] 石纪元 第三季 下半 / Dr.STONE：New World [18] [1080p] [简日内嵌] [2023年10月番]")
+    val r = parse("[獵戶壓制部] 石紀元 第三季 下半 / Dr.STONE：New World [18] [1080p] [簡日內嵌] [2023年10月番]")
     assertEquals("18..18", r.episodeRange.toString())
     assertEquals("CHS, JPN", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("1080P", r.resolution.toString())
     assertEquals(SubtitleKind.EMBEDDED, r.subtitleKind)
     }
     kotlin.run {
-    val r = parse("[猎户压制部] 石纪元 第三季 下半 / Dr.STONE：New World [17] [1080p] [简日内嵌] [2023年4月番]")
+    val r = parse("[獵戶壓制部] 石紀元 第三季 下半 / Dr.STONE：New World [17] [1080p] [簡日內嵌] [2023年4月番]")
     assertEquals("17..17", r.episodeRange.toString())
     assertEquals("CHS, JPN", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("1080P", r.resolution.toString())
@@ -350,42 +350,42 @@ public class PatternTitleParserTest石纪元 : PatternBasedTitleParserTestSuite(
   @Test
   public fun `656416-655803-655282-654897-654713-644072-643782-643763-643762-643158`() {
     kotlin.run {
-    val r = parse("[猎户压制部] 石纪元 第三季 下半 / Dr.STONE：New World [16] [1080p] [简日内嵌] [2023年4月番]")
+    val r = parse("[獵戶壓制部] 石紀元 第三季 下半 / Dr.STONE：New World [16] [1080p] [簡日內嵌] [2023年4月番]")
     assertEquals("16..16", r.episodeRange.toString())
     assertEquals("CHS, JPN", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("1080P", r.resolution.toString())
     assertEquals(SubtitleKind.EMBEDDED, r.subtitleKind)
     }
     kotlin.run {
-    val r = parse("[猎户压制部] 石纪元 第三季 下半 / Dr.STONE：New World [15] [1080p] [简日内嵌] [2023年4月番]")
+    val r = parse("[獵戶壓制部] 石紀元 第三季 下半 / Dr.STONE：New World [15] [1080p] [簡日內嵌] [2023年4月番]")
     assertEquals("15..15", r.episodeRange.toString())
     assertEquals("CHS, JPN", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("1080P", r.resolution.toString())
     assertEquals(SubtitleKind.EMBEDDED, r.subtitleKind)
     }
     kotlin.run {
-    val r = parse("[猎户压制部] 石纪元 第三季 下半 / Dr.STONE：New World [14] [1080p] [简日内嵌] [2023年4月番]")
+    val r = parse("[獵戶壓制部] 石紀元 第三季 下半 / Dr.STONE：New World [14] [1080p] [簡日內嵌] [2023年4月番]")
     assertEquals("14..14", r.episodeRange.toString())
     assertEquals("CHS, JPN", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("1080P", r.resolution.toString())
     assertEquals(SubtitleKind.EMBEDDED, r.subtitleKind)
     }
     kotlin.run {
-    val r = parse("[猎户压制部] 石纪元 第三季 下半 / Dr.STONE：New World [13] [1080p] [简日内嵌] [2023年4月番]")
+    val r = parse("[獵戶壓制部] 石紀元 第三季 下半 / Dr.STONE：New World [13] [1080p] [簡日內嵌] [2023年4月番]")
     assertEquals("13..13", r.episodeRange.toString())
     assertEquals("CHS, JPN", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("1080P", r.resolution.toString())
     assertEquals(SubtitleKind.EMBEDDED, r.subtitleKind)
     }
     kotlin.run {
-    val r = parse("[猎户压制部] 石纪元 第三季 下半 / Dr.STONE：New World [12] [1080p] [简日内嵌] [2023年4月番]")
+    val r = parse("[獵戶壓制部] 石紀元 第三季 下半 / Dr.STONE：New World [12] [1080p] [簡日內嵌] [2023年4月番]")
     assertEquals("12..12", r.episodeRange.toString())
     assertEquals("CHS, JPN", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("1080P", r.resolution.toString())
     assertEquals(SubtitleKind.EMBEDDED, r.subtitleKind)
     }
     kotlin.run {
-    val r = parse("[猎户手抄部] 石纪元 第三季 Dr.STONE：New World [01-11] [合集] [1080p] [简日内嵌] [2023年4月番]")
+    val r = parse("[獵戶手抄部] 石紀元 第三季 Dr.STONE：New World [01-11] [合集] [1080p] [簡日內嵌] [2023年4月番]")
     assertEquals("01..11", r.episodeRange.toString())
     assertEquals("CHS, JPN", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("1080P", r.resolution.toString())
@@ -393,14 +393,14 @@ public class PatternTitleParserTest石纪元 : PatternBasedTitleParserTestSuite(
     }
     kotlin.run {
     val r =
-        parse("[豌豆字幕组&风之圣殿字幕组&LoliHouse] 新石纪 第三季 / 石纪元 第三季 / Dr.STONE S3 [01-11 合集][WebRip 1080p HEVC-10bit AAC][简繁外挂字幕][Fin]")
+        parse("[豌豆字幕組&風之聖殿字幕組&LoliHouse] 新石紀 第三季 / 石紀元 第三季 / Dr.STONE S3 [01-11 合集][WebRip 1080p HEVC-10bit AAC][簡繁外掛字幕][Fin]")
     assertEquals("01..11", r.episodeRange.toString())
     assertEquals("CHS, CHT", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("1080P", r.resolution.toString())
     assertEquals(SubtitleKind.EXTERNAL_DISCOVER, r.subtitleKind)
     }
     kotlin.run {
-    val r = parse("【豌豆字幕组&风之圣殿字幕组】★04月新番[Dr.STONE 新石纪 / 石纪元 第三季][01-11][合集][简体][1080P][MP4]")
+    val r = parse("【豌豆字幕組&風之聖殿字幕組】★04月新番[Dr.STONE 新石紀 / 石紀元 第三季][01-11][合集][簡體][1080P][MP4]")
     assertEquals("01..11", r.episodeRange.toString())
     assertEquals("CHS", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("1080P", r.resolution.toString())
@@ -414,7 +414,7 @@ public class PatternTitleParserTest石纪元 : PatternBasedTitleParserTestSuite(
     assertEquals(null, r.subtitleKind)
     }
     kotlin.run {
-    val r = parse("[猎户手抄部] 石纪元 第三季 Dr.STONE：New World [11] [1080p] [简繁日内封] [2023年4月番]")
+    val r = parse("[獵戶手抄部] 石紀元 第三季 Dr.STONE：New World [11] [1080p] [簡繁日內封] [2023年4月番]")
     assertEquals("11..11", r.episodeRange.toString())
     assertEquals("CHS, CHT, JPN", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("1080P", r.resolution.toString())
@@ -425,7 +425,7 @@ public class PatternTitleParserTest石纪元 : PatternBasedTitleParserTestSuite(
   @Test
   public fun `643157-643093-643048-643047-642575-642574-642509-642463-642462-642014`() {
     kotlin.run {
-    val r = parse("[猎户手抄部] 石纪元 第三季 Dr.STONE：New World [11] [1080p] [简日内嵌] [2023年4月番]")
+    val r = parse("[獵戶手抄部] 石紀元 第三季 Dr.STONE：New World [11] [1080p] [簡日內嵌] [2023年4月番]")
     assertEquals("11..11", r.episodeRange.toString())
     assertEquals("CHS, JPN", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("1080P", r.resolution.toString())
@@ -433,14 +433,14 @@ public class PatternTitleParserTest石纪元 : PatternBasedTitleParserTestSuite(
     }
     kotlin.run {
     val r =
-        parse("[豌豆字幕组&风之圣殿字幕组&LoliHouse] 新石纪 第三季 / 石纪元 第三季 / Dr.STONE S3 - 11 [WebRip 1080p HEVC-10bit AAC][简繁外挂字幕]")
+        parse("[豌豆字幕組&風之聖殿字幕組&LoliHouse] 新石紀 第三季 / 石紀元 第三季 / Dr.STONE S3 - 11 [WebRip 1080p HEVC-10bit AAC][簡繁外掛字幕]")
     assertEquals("11..11", r.episodeRange.toString())
     assertEquals("CHS, CHT", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("1080P", r.resolution.toString())
     assertEquals(SubtitleKind.EXTERNAL_DISCOVER, r.subtitleKind)
     }
     kotlin.run {
-    val r = parse("【豌豆字幕组&风之圣殿字幕组】★04月新番[Dr.STONE 新石纪 / 石纪元 第三季][11][简体][1080P][MP4]")
+    val r = parse("【豌豆字幕組&風之聖殿字幕組】★04月新番[Dr.STONE 新石紀 / 石紀元 第三季][11][簡體][1080P][MP4]")
     assertEquals("11..11", r.episodeRange.toString())
     assertEquals("CHS", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("1080P", r.resolution.toString())
@@ -454,14 +454,14 @@ public class PatternTitleParserTest石纪元 : PatternBasedTitleParserTestSuite(
     assertEquals(null, r.subtitleKind)
     }
     kotlin.run {
-    val r = parse("[猎户手抄部] 石纪元 第三季 Dr.STONE：New World [10] [1080p] [简繁日内封] [2023年4月番]")
+    val r = parse("[獵戶手抄部] 石紀元 第三季 Dr.STONE：New World [10] [1080p] [簡繁日內封] [2023年4月番]")
     assertEquals("10..10", r.episodeRange.toString())
     assertEquals("CHS, CHT, JPN", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("1080P", r.resolution.toString())
     assertEquals(SubtitleKind.CLOSED, r.subtitleKind)
     }
     kotlin.run {
-    val r = parse("[猎户手抄部] 石纪元 第三季 Dr.STONE：New World [10] [1080p] [简日内嵌] [2023年4月番]")
+    val r = parse("[獵戶手抄部] 石紀元 第三季 Dr.STONE：New World [10] [1080p] [簡日內嵌] [2023年4月番]")
     assertEquals("10..10", r.episodeRange.toString())
     assertEquals("CHS, JPN", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("1080P", r.resolution.toString())
@@ -469,14 +469,14 @@ public class PatternTitleParserTest石纪元 : PatternBasedTitleParserTestSuite(
     }
     kotlin.run {
     val r =
-        parse("[豌豆字幕组&风之圣殿字幕组&LoliHouse] 新石纪 第三季 / 石纪元 第三季 / Dr.STONE S3 - 10 [WebRip 1080p HEVC-10bit AAC][简繁外挂字幕]")
+        parse("[豌豆字幕組&風之聖殿字幕組&LoliHouse] 新石紀 第三季 / 石紀元 第三季 / Dr.STONE S3 - 10 [WebRip 1080p HEVC-10bit AAC][簡繁外掛字幕]")
     assertEquals("10..10", r.episodeRange.toString())
     assertEquals("CHS, CHT", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("1080P", r.resolution.toString())
     assertEquals(SubtitleKind.EXTERNAL_DISCOVER, r.subtitleKind)
     }
     kotlin.run {
-    val r = parse("【豌豆字幕组&风之圣殿字幕组】★04月新番[Dr.STONE 新石纪 / 石纪元 第三季][10][简体][1080P][MP4]")
+    val r = parse("【豌豆字幕組&風之聖殿字幕組】★04月新番[Dr.STONE 新石紀 / 石紀元 第三季][10][簡體][1080P][MP4]")
     assertEquals("10..10", r.episodeRange.toString())
     assertEquals("CHS", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("1080P", r.resolution.toString())
@@ -490,7 +490,7 @@ public class PatternTitleParserTest石纪元 : PatternBasedTitleParserTestSuite(
     assertEquals(null, r.subtitleKind)
     }
     kotlin.run {
-    val r = parse("[猎户手抄部] 石纪元 第三季 Dr.STONE：New World [09] [1080p] [简繁日内封] [2023年4月番]")
+    val r = parse("[獵戶手抄部] 石紀元 第三季 Dr.STONE：New World [09] [1080p] [簡繁日內封] [2023年4月番]")
     assertEquals("09..09", r.episodeRange.toString())
     assertEquals("CHS, CHT, JPN", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("1080P", r.resolution.toString())
@@ -501,7 +501,7 @@ public class PatternTitleParserTest石纪元 : PatternBasedTitleParserTestSuite(
   @Test
   public fun `642013-641868-641865-641864-641499-641500-641365-641286-641285-640857`() {
     kotlin.run {
-    val r = parse("[猎户手抄部] 石纪元 第三季 Dr.STONE：New World [09] [1080p] [简日内嵌] [2023年4月番]")
+    val r = parse("[獵戶手抄部] 石紀元 第三季 Dr.STONE：New World [09] [1080p] [簡日內嵌] [2023年4月番]")
     assertEquals("09..09", r.episodeRange.toString())
     assertEquals("CHS, JPN", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("1080P", r.resolution.toString())
@@ -509,14 +509,14 @@ public class PatternTitleParserTest石纪元 : PatternBasedTitleParserTestSuite(
     }
     kotlin.run {
     val r =
-        parse("[豌豆字幕组&风之圣殿字幕组&LoliHouse] 新石纪 第三季 / 石纪元 第三季 / Dr.STONE S3 - 09 [WebRip 1080p HEVC-10bit AAC][简繁外挂字幕]")
+        parse("[豌豆字幕組&風之聖殿字幕組&LoliHouse] 新石紀 第三季 / 石紀元 第三季 / Dr.STONE S3 - 09 [WebRip 1080p HEVC-10bit AAC][簡繁外掛字幕]")
     assertEquals("09..09", r.episodeRange.toString())
     assertEquals("CHS, CHT", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("1080P", r.resolution.toString())
     assertEquals(SubtitleKind.EXTERNAL_DISCOVER, r.subtitleKind)
     }
     kotlin.run {
-    val r = parse("【豌豆字幕组&风之圣殿字幕组】★04月新番[Dr.STONE 新石纪 / 石纪元 第三季][09][简体][1080P][MP4]")
+    val r = parse("【豌豆字幕組&風之聖殿字幕組】★04月新番[Dr.STONE 新石紀 / 石紀元 第三季][09][簡體][1080P][MP4]")
     assertEquals("09..09", r.episodeRange.toString())
     assertEquals("CHS", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("1080P", r.resolution.toString())
@@ -530,14 +530,14 @@ public class PatternTitleParserTest石纪元 : PatternBasedTitleParserTestSuite(
     assertEquals(null, r.subtitleKind)
     }
     kotlin.run {
-    val r = parse("[猎户手抄部] 石纪元 第三季 Dr.STONE：New World [08] [1080p] [简繁日内封] [2023年4月番]")
+    val r = parse("[獵戶手抄部] 石紀元 第三季 Dr.STONE：New World [08] [1080p] [簡繁日內封] [2023年4月番]")
     assertEquals("08..08", r.episodeRange.toString())
     assertEquals("CHS, CHT, JPN", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("1080P", r.resolution.toString())
     assertEquals(SubtitleKind.CLOSED, r.subtitleKind)
     }
     kotlin.run {
-    val r = parse("[猎户手抄部] 石纪元 第三季 Dr.STONE：New World [08] [1080p] [简日内嵌] [2023年4月番]")
+    val r = parse("[獵戶手抄部] 石紀元 第三季 Dr.STONE：New World [08] [1080p] [簡日內嵌] [2023年4月番]")
     assertEquals("08..08", r.episodeRange.toString())
     assertEquals("CHS, JPN", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("1080P", r.resolution.toString())
@@ -545,14 +545,14 @@ public class PatternTitleParserTest石纪元 : PatternBasedTitleParserTestSuite(
     }
     kotlin.run {
     val r =
-        parse("[豌豆字幕组&风之圣殿字幕组&LoliHouse] 新石纪 第三季 / 石纪元 第三季 / Dr.STONE S3 - 08 [WebRip 1080p HEVC-10bit AAC][简繁外挂字幕]")
+        parse("[豌豆字幕組&風之聖殿字幕組&LoliHouse] 新石紀 第三季 / 石紀元 第三季 / Dr.STONE S3 - 08 [WebRip 1080p HEVC-10bit AAC][簡繁外掛字幕]")
     assertEquals("08..08", r.episodeRange.toString())
     assertEquals("CHS, CHT", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("1080P", r.resolution.toString())
     assertEquals(SubtitleKind.EXTERNAL_DISCOVER, r.subtitleKind)
     }
     kotlin.run {
-    val r = parse("【豌豆字幕组&风之圣殿字幕组】★04月新番[Dr.STONE 新石纪 / 石纪元 第三季][08][简体][1080P][MP4]")
+    val r = parse("【豌豆字幕組&風之聖殿字幕組】★04月新番[Dr.STONE 新石紀 / 石紀元 第三季][08][簡體][1080P][MP4]")
     assertEquals("08..08", r.episodeRange.toString())
     assertEquals("CHS", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("1080P", r.resolution.toString())
@@ -566,7 +566,7 @@ public class PatternTitleParserTest石纪元 : PatternBasedTitleParserTestSuite(
     assertEquals(null, r.subtitleKind)
     }
     kotlin.run {
-    val r = parse("[猎户手抄部] 石纪元 第三季 Dr.STONE：New World [07] [1080p] [简繁日内封] [2023年4月番]")
+    val r = parse("[獵戶手抄部] 石紀元 第三季 Dr.STONE：New World [07] [1080p] [簡繁日內封] [2023年4月番]")
     assertEquals("07..07", r.episodeRange.toString())
     assertEquals("CHS, CHT, JPN", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("1080P", r.resolution.toString())
@@ -577,7 +577,7 @@ public class PatternTitleParserTest石纪元 : PatternBasedTitleParserTestSuite(
   @Test
   public fun `640856-640661-640615-640614-640411-640410-640034-640007-640006-639600`() {
     kotlin.run {
-    val r = parse("[猎户手抄部] 石纪元 第三季 Dr.STONE：New World [07] [1080p] [简日内嵌] [2023年4月番]")
+    val r = parse("[獵戶手抄部] 石紀元 第三季 Dr.STONE：New World [07] [1080p] [簡日內嵌] [2023年4月番]")
     assertEquals("07..07", r.episodeRange.toString())
     assertEquals("CHS, JPN", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("1080P", r.resolution.toString())
@@ -585,14 +585,14 @@ public class PatternTitleParserTest石纪元 : PatternBasedTitleParserTestSuite(
     }
     kotlin.run {
     val r =
-        parse("[豌豆字幕组&风之圣殿字幕组&LoliHouse] 新石纪 第三季 / 石纪元 第三季 / Dr.STONE S3 - 07 [WebRip 1080p HEVC-10bit AAC][简繁外挂字幕]")
+        parse("[豌豆字幕組&風之聖殿字幕組&LoliHouse] 新石紀 第三季 / 石紀元 第三季 / Dr.STONE S3 - 07 [WebRip 1080p HEVC-10bit AAC][簡繁外掛字幕]")
     assertEquals("07..07", r.episodeRange.toString())
     assertEquals("CHS, CHT", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("1080P", r.resolution.toString())
     assertEquals(SubtitleKind.EXTERNAL_DISCOVER, r.subtitleKind)
     }
     kotlin.run {
-    val r = parse("【豌豆字幕组&风之圣殿字幕组】★04月新番[Dr.STONE 新石纪 / 石纪元 第三季][07][简体][1080P][MP4]")
+    val r = parse("【豌豆字幕組&風之聖殿字幕組】★04月新番[Dr.STONE 新石紀 / 石紀元 第三季][07][簡體][1080P][MP4]")
     assertEquals("07..07", r.episodeRange.toString())
     assertEquals("CHS", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("1080P", r.resolution.toString())
@@ -606,14 +606,14 @@ public class PatternTitleParserTest石纪元 : PatternBasedTitleParserTestSuite(
     assertEquals(null, r.subtitleKind)
     }
     kotlin.run {
-    val r = parse("[猎户手抄部] 石纪元 第三季 Dr.STONE：New World [06] [1080p] [简繁日内封] [2023年4月番]")
+    val r = parse("[獵戶手抄部] 石紀元 第三季 Dr.STONE：New World [06] [1080p] [簡繁日內封] [2023年4月番]")
     assertEquals("06..06", r.episodeRange.toString())
     assertEquals("CHS, CHT, JPN", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("1080P", r.resolution.toString())
     assertEquals(SubtitleKind.CLOSED, r.subtitleKind)
     }
     kotlin.run {
-    val r = parse("[猎户手抄部] 石纪元 第三季 Dr.STONE：New World [06] [1080p] [简日内嵌] [2023年4月番]")
+    val r = parse("[獵戶手抄部] 石紀元 第三季 Dr.STONE：New World [06] [1080p] [簡日內嵌] [2023年4月番]")
     assertEquals("06..06", r.episodeRange.toString())
     assertEquals("CHS, JPN", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("1080P", r.resolution.toString())
@@ -621,14 +621,14 @@ public class PatternTitleParserTest石纪元 : PatternBasedTitleParserTestSuite(
     }
     kotlin.run {
     val r =
-        parse("[豌豆字幕组&风之圣殿字幕组&LoliHouse] 新石纪 第三季 / 石纪元 第三季 / Dr.STONE S3 - 06 [WebRip 1080p HEVC-10bit AAC][简繁外挂字幕]")
+        parse("[豌豆字幕組&風之聖殿字幕組&LoliHouse] 新石紀 第三季 / 石紀元 第三季 / Dr.STONE S3 - 06 [WebRip 1080p HEVC-10bit AAC][簡繁外掛字幕]")
     assertEquals("06..06", r.episodeRange.toString())
     assertEquals("CHS, CHT", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("1080P", r.resolution.toString())
     assertEquals(SubtitleKind.EXTERNAL_DISCOVER, r.subtitleKind)
     }
     kotlin.run {
-    val r = parse("【豌豆字幕组&风之圣殿字幕组】★04月新番[Dr.STONE 新石纪 / 石纪元 第三季][06][简体][1080P][MP4]")
+    val r = parse("【豌豆字幕組&風之聖殿字幕組】★04月新番[Dr.STONE 新石紀 / 石紀元 第三季][06][簡體][1080P][MP4]")
     assertEquals("06..06", r.episodeRange.toString())
     assertEquals("CHS", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("1080P", r.resolution.toString())
@@ -642,7 +642,7 @@ public class PatternTitleParserTest石纪元 : PatternBasedTitleParserTestSuite(
     assertEquals(null, r.subtitleKind)
     }
     kotlin.run {
-    val r = parse("[猎户手抄部] 石纪元 第三季 Dr.STONE：New World [05] [1080p] [简繁日内封] [2023年4月番]")
+    val r = parse("[獵戶手抄部] 石紀元 第三季 Dr.STONE：New World [05] [1080p] [簡繁日內封] [2023年4月番]")
     assertEquals("05..05", r.episodeRange.toString())
     assertEquals("CHS, CHT, JPN", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("1080P", r.resolution.toString())
@@ -653,21 +653,21 @@ public class PatternTitleParserTest石纪元 : PatternBasedTitleParserTestSuite(
   @Test
   public fun `639599-639590-639589-639296-639285-639284-638641-638637-638636-638317`() {
     kotlin.run {
-    val r = parse("[猎户手抄部] 石纪元 第三季 Dr.STONE：New World [05] [1080p] [简日内嵌] [2023年4月番]")
+    val r = parse("[獵戶手抄部] 石紀元 第三季 Dr.STONE：New World [05] [1080p] [簡日內嵌] [2023年4月番]")
     assertEquals("05..05", r.episodeRange.toString())
     assertEquals("CHS, JPN", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("1080P", r.resolution.toString())
     assertEquals(SubtitleKind.EMBEDDED, r.subtitleKind)
     }
     kotlin.run {
-    val r = parse("[猎户手抄部] 石纪元 第三季 Dr.STONE：New World [04] [1080p] [简繁日内封] [2023年4月番]")
+    val r = parse("[獵戶手抄部] 石紀元 第三季 Dr.STONE：New World [04] [1080p] [簡繁日內封] [2023年4月番]")
     assertEquals("04..04", r.episodeRange.toString())
     assertEquals("CHS, CHT, JPN", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("1080P", r.resolution.toString())
     assertEquals(SubtitleKind.CLOSED, r.subtitleKind)
     }
     kotlin.run {
-    val r = parse("[猎户手抄部] 石纪元 第三季 Dr.STONE：New World [04] [1080p] [简日内嵌] [2023年4月番]")
+    val r = parse("[獵戶手抄部] 石紀元 第三季 Dr.STONE：New World [04] [1080p] [簡日內嵌] [2023年4月番]")
     assertEquals("04..04", r.episodeRange.toString())
     assertEquals("CHS, JPN", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("1080P", r.resolution.toString())
@@ -675,14 +675,14 @@ public class PatternTitleParserTest石纪元 : PatternBasedTitleParserTestSuite(
     }
     kotlin.run {
     val r =
-        parse("[豌豆字幕组&风之圣殿字幕组&LoliHouse] 新石纪 第三季 / 石纪元 第三季 / Dr.STONE S3 - 05 [WebRip 1080p HEVC-10bit AAC][简繁外挂字幕]")
+        parse("[豌豆字幕組&風之聖殿字幕組&LoliHouse] 新石紀 第三季 / 石紀元 第三季 / Dr.STONE S3 - 05 [WebRip 1080p HEVC-10bit AAC][簡繁外掛字幕]")
     assertEquals("05..05", r.episodeRange.toString())
     assertEquals("CHS, CHT", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("1080P", r.resolution.toString())
     assertEquals(SubtitleKind.EXTERNAL_DISCOVER, r.subtitleKind)
     }
     kotlin.run {
-    val r = parse("【豌豆字幕组&风之圣殿字幕组】★04月新番[Dr.STONE 新石纪 / 石纪元 第三季][05][简体][1080P][MP4]")
+    val r = parse("【豌豆字幕組&風之聖殿字幕組】★04月新番[Dr.STONE 新石紀 / 石紀元 第三季][05][簡體][1080P][MP4]")
     assertEquals("05..05", r.episodeRange.toString())
     assertEquals("CHS", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("1080P", r.resolution.toString())
@@ -697,14 +697,14 @@ public class PatternTitleParserTest石纪元 : PatternBasedTitleParserTestSuite(
     }
     kotlin.run {
     val r =
-        parse("[豌豆字幕组&风之圣殿字幕组&LoliHouse] 新石纪 第三季 / 石纪元 第三季 / Dr.STONE S3 - 04 [WebRip 1080p HEVC-10bit AAC][简繁外挂字幕]")
+        parse("[豌豆字幕組&風之聖殿字幕組&LoliHouse] 新石紀 第三季 / 石紀元 第三季 / Dr.STONE S3 - 04 [WebRip 1080p HEVC-10bit AAC][簡繁外掛字幕]")
     assertEquals("04..04", r.episodeRange.toString())
     assertEquals("CHS, CHT", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("1080P", r.resolution.toString())
     assertEquals(SubtitleKind.EXTERNAL_DISCOVER, r.subtitleKind)
     }
     kotlin.run {
-    val r = parse("【豌豆字幕组&风之圣殿字幕组】★04月新番[Dr.STONE 新石纪 / 石纪元 第三季][04][简体][1080P][MP4]")
+    val r = parse("【豌豆字幕組&風之聖殿字幕組】★04月新番[Dr.STONE 新石紀 / 石紀元 第三季][04][簡體][1080P][MP4]")
     assertEquals("04..04", r.episodeRange.toString())
     assertEquals("CHS", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("1080P", r.resolution.toString())
@@ -718,7 +718,7 @@ public class PatternTitleParserTest石纪元 : PatternBasedTitleParserTestSuite(
     assertEquals(null, r.subtitleKind)
     }
     kotlin.run {
-    val r = parse("[猎户手抄部] 石纪元 第三季 Dr.STONE：New World [03] [1080p] [简繁日内封] [2023年4月番]")
+    val r = parse("[獵戶手抄部] 石紀元 第三季 Dr.STONE：New World [03] [1080p] [簡繁日內封] [2023年4月番]")
     assertEquals("03..03", r.episodeRange.toString())
     assertEquals("CHS, CHT, JPN", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("1080P", r.resolution.toString())
@@ -729,7 +729,7 @@ public class PatternTitleParserTest石纪元 : PatternBasedTitleParserTestSuite(
   @Test
   public fun `638303-638032-637942-637941-637505-637504-637234-637208-637207-636740`() {
     kotlin.run {
-    val r = parse("[猎户手抄部] 石纪元 第三季 Dr.STONE：New World [03] [1080p] [简日内嵌] [2023年4月番]")
+    val r = parse("[獵戶手抄部] 石紀元 第三季 Dr.STONE：New World [03] [1080p] [簡日內嵌] [2023年4月番]")
     assertEquals("03..03", r.episodeRange.toString())
     assertEquals("CHS, JPN", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("1080P", r.resolution.toString())
@@ -737,14 +737,14 @@ public class PatternTitleParserTest石纪元 : PatternBasedTitleParserTestSuite(
     }
     kotlin.run {
     val r =
-        parse("[豌豆字幕组&风之圣殿字幕组&LoliHouse] 新石纪 第三季 / 石纪元 第三季 / Dr.STONE S3 - 03 [WebRip 1080p HEVC-10bit AAC][简繁外挂字幕]")
+        parse("[豌豆字幕組&風之聖殿字幕組&LoliHouse] 新石紀 第三季 / 石紀元 第三季 / Dr.STONE S3 - 03 [WebRip 1080p HEVC-10bit AAC][簡繁外掛字幕]")
     assertEquals("03..03", r.episodeRange.toString())
     assertEquals("CHS, CHT", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("1080P", r.resolution.toString())
     assertEquals(SubtitleKind.EXTERNAL_DISCOVER, r.subtitleKind)
     }
     kotlin.run {
-    val r = parse("【豌豆字幕组&风之圣殿字幕组】★04月新番[Dr.STONE 新石纪 / 石纪元 第三季][03][简体][1080P][MP4]")
+    val r = parse("【豌豆字幕組&風之聖殿字幕組】★04月新番[Dr.STONE 新石紀 / 石紀元 第三季][03][簡體][1080P][MP4]")
     assertEquals("03..03", r.episodeRange.toString())
     assertEquals("CHS", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("1080P", r.resolution.toString())
@@ -758,14 +758,14 @@ public class PatternTitleParserTest石纪元 : PatternBasedTitleParserTestSuite(
     assertEquals(null, r.subtitleKind)
     }
     kotlin.run {
-    val r = parse("[猎户手抄部] 石纪元 第三季 Dr.STONE：New World [02] [1080p] [简繁日内封] [2023年4月番]")
+    val r = parse("[獵戶手抄部] 石紀元 第三季 Dr.STONE：New World [02] [1080p] [簡繁日內封] [2023年4月番]")
     assertEquals("02..02", r.episodeRange.toString())
     assertEquals("CHS, CHT, JPN", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("1080P", r.resolution.toString())
     assertEquals(SubtitleKind.CLOSED, r.subtitleKind)
     }
     kotlin.run {
-    val r = parse("[猎户手抄部] 石纪元 第三季 Dr.STONE：New World [02] [1080p] [简日内嵌] [2023年4月番]")
+    val r = parse("[獵戶手抄部] 石紀元 第三季 Dr.STONE：New World [02] [1080p] [簡日內嵌] [2023年4月番]")
     assertEquals("02..02", r.episodeRange.toString())
     assertEquals("CHS, JPN", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("1080P", r.resolution.toString())
@@ -773,14 +773,14 @@ public class PatternTitleParserTest石纪元 : PatternBasedTitleParserTestSuite(
     }
     kotlin.run {
     val r =
-        parse("[豌豆字幕组&风之圣殿字幕组&LoliHouse] 新石纪 第三季 / 石纪元 第三季 / Dr.STONE S3 - 02 [WebRip 1080p HEVC-10bit AAC][简繁外挂字幕]")
+        parse("[豌豆字幕組&風之聖殿字幕組&LoliHouse] 新石紀 第三季 / 石紀元 第三季 / Dr.STONE S3 - 02 [WebRip 1080p HEVC-10bit AAC][簡繁外掛字幕]")
     assertEquals("02..02", r.episodeRange.toString())
     assertEquals("CHS, CHT", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("1080P", r.resolution.toString())
     assertEquals(SubtitleKind.EXTERNAL_DISCOVER, r.subtitleKind)
     }
     kotlin.run {
-    val r = parse("【豌豆字幕组&风之圣殿字幕组】★04月新番[Dr.STONE 新石纪 / 石纪元 第三季][02][简体][1080P][MP4]")
+    val r = parse("【豌豆字幕組&風之聖殿字幕組】★04月新番[Dr.STONE 新石紀 / 石紀元 第三季][02][簡體][1080P][MP4]")
     assertEquals("02..02", r.episodeRange.toString())
     assertEquals("CHS", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("1080P", r.resolution.toString())
@@ -794,7 +794,7 @@ public class PatternTitleParserTest石纪元 : PatternBasedTitleParserTestSuite(
     assertEquals(null, r.subtitleKind)
     }
     kotlin.run {
-    val r = parse("石纪元 新石纪 Dr.STONE S02")
+    val r = parse("石紀元 新石紀 Dr.STONE S02")
     assertEquals("S2", r.episodeRange.toString())
     assertEquals("", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("null", r.resolution.toString())
@@ -805,28 +805,28 @@ public class PatternTitleParserTest石纪元 : PatternBasedTitleParserTestSuite(
   @Test
   public fun `636739-636738-636671-636670-636638-605298-605294-600372-599745-599318`() {
     kotlin.run {
-    val r = parse("石纪元 新石纪 Dr.STONE S01")
+    val r = parse("石紀元 新石紀 Dr.STONE S01")
     assertEquals("S1", r.episodeRange.toString())
     assertEquals("", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("null", r.resolution.toString())
     assertEquals(null, r.subtitleKind)
     }
     kotlin.run {
-    val r = parse("石纪元 新石纪 Dr.STONE S01+S02")
+    val r = parse("石紀元 新石紀 Dr.STONE S01+S02")
     assertEquals("S1+S2", r.episodeRange.toString())
     assertEquals("", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("null", r.resolution.toString())
     assertEquals(null, r.subtitleKind)
     }
     kotlin.run {
-    val r = parse("[猎户手抄部] 石纪元 第三季 Dr.STONE：New World [01] [1080p] [简繁日内封] [2023年4月番]")
+    val r = parse("[獵戶手抄部] 石紀元 第三季 Dr.STONE：New World [01] [1080p] [簡繁日內封] [2023年4月番]")
     assertEquals("01..01", r.episodeRange.toString())
     assertEquals("CHS, CHT, JPN", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("1080P", r.resolution.toString())
     assertEquals(SubtitleKind.CLOSED, r.subtitleKind)
     }
     kotlin.run {
-    val r = parse("[猎户手抄部] 石纪元 第三季 Dr.STONE：New World [01] [1080p] [简日内嵌] [2023年4月番]")
+    val r = parse("[獵戶手抄部] 石紀元 第三季 Dr.STONE：New World [01] [1080p] [簡日內嵌] [2023年4月番]")
     assertEquals("01..01", r.episodeRange.toString())
     assertEquals("CHS, JPN", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("1080P", r.resolution.toString())
@@ -834,7 +834,7 @@ public class PatternTitleParserTest石纪元 : PatternBasedTitleParserTestSuite(
     }
     kotlin.run {
     val r =
-        parse("[豌豆字幕组&风之圣殿字幕组&LoliHouse] 新石纪 第三季 / 石纪元 第三季 / Dr.STONE S3 - 01 [WebRip 1080p HEVC-10bit AAC][简繁外挂字幕]")
+        parse("[豌豆字幕組&風之聖殿字幕組&LoliHouse] 新石紀 第三季 / 石紀元 第三季 / Dr.STONE S3 - 01 [WebRip 1080p HEVC-10bit AAC][簡繁外掛字幕]")
     assertEquals("01..01", r.episodeRange.toString())
     assertEquals("CHS, CHT", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("1080P", r.resolution.toString())
@@ -842,7 +842,7 @@ public class PatternTitleParserTest石纪元 : PatternBasedTitleParserTestSuite(
     }
     kotlin.run {
     val r =
-        parse("[NC-Raws] Ｄｒ．ＳＴＯＮＥ 石纪元 特别篇(龙水) / Dr. Stone: Ryuusui - 02 (B-Global 1920x1080 HEVC AAC MKV)")
+        parse("[NC-Raws] Ｄｒ．ＳＴＯＮＥ 石紀元 特別篇(龍水) / Dr. Stone: Ryuusui - 02 (B-Global 1920x1080 HEVC AAC MKV)")
     assertEquals("02..02", r.episodeRange.toString())
     assertEquals("", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("1080P", r.resolution.toString())
@@ -850,7 +850,7 @@ public class PatternTitleParserTest石纪元 : PatternBasedTitleParserTestSuite(
     }
     kotlin.run {
     val r =
-        parse("[NC-Raws] Ｄｒ．ＳＴＯＮＥ 石纪元 特别篇(龙水) / Dr. Stone: Ryuusui - 01 (B-Global 1920x1080 HEVC AAC MKV)")
+        parse("[NC-Raws] Ｄｒ．ＳＴＯＮＥ 石紀元 特別篇(龍水) / Dr. Stone: Ryuusui - 01 (B-Global 1920x1080 HEVC AAC MKV)")
     assertEquals("01..01", r.episodeRange.toString())
     assertEquals("", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("1080P", r.resolution.toString())
@@ -950,7 +950,7 @@ public class PatternTitleParserTest石纪元 : PatternBasedTitleParserTestSuite(
     }
     kotlin.run {
     val r =
-        parse("[DBD-Raws][石纪元/Dr.STONE][01-24TV全集+特典映像][1080P][BDRip][HEVC-10bit][简繁外挂][FLAC][MKV]")
+        parse("[DBD-Raws][石紀元/Dr.STONE][01-24TV全集+特典映像][1080P][BDRip][HEVC-10bit][簡繁外掛][FLAC][MKV]")
     assertEquals("01..24", r.episodeRange.toString())
     assertEquals("CHS, CHT", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("1080P", r.resolution.toString())
@@ -1194,7 +1194,7 @@ public class PatternTitleParserTest石纪元 : PatternBasedTitleParserTestSuite(
     }
     kotlin.run {
     val r =
-        parse("【极影字幕社】 ★01月新番 石纪元第二季 Stone Wars Dr.Stone S2 Stone Wars 第01-11话 GB 1080P HEVC MP4（字幕社招人内详）")
+        parse("【極影字幕社】 ★01月新番 石紀元第二季 Stone Wars Dr.Stone S2 Stone Wars 第01-11話 GB 1080P HEVC MP4（字幕社招人內詳）")
     assertEquals("01..11", r.episodeRange.toString())
     assertEquals("CHS", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("1080P", r.resolution.toString())
@@ -1202,7 +1202,7 @@ public class PatternTitleParserTest石纪元 : PatternBasedTitleParserTestSuite(
     }
     kotlin.run {
     val r =
-        parse("【极影字幕社】 ★01月新番 石纪元第二季 Stone Wars Dr.Stone S2 Stone Wars 第01-11话 GB 1080P AVC MP4（字幕社招人内详）")
+        parse("【極影字幕社】 ★01月新番 石紀元第二季 Stone Wars Dr.Stone S2 Stone Wars 第01-11話 GB 1080P AVC MP4（字幕社招人內詳）")
     assertEquals("01..11", r.episodeRange.toString())
     assertEquals("CHS", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("1080P", r.resolution.toString())
@@ -1210,7 +1210,7 @@ public class PatternTitleParserTest石纪元 : PatternBasedTitleParserTestSuite(
     }
     kotlin.run {
     val r =
-        parse("【极影字幕社】 ★01月新番 石纪元第二季 Stone Wars Dr.Stone S2 Stone Wars 第01-11话 GB 720P AVC MP4（字幕社招人内详）")
+        parse("【極影字幕社】 ★01月新番 石紀元第二季 Stone Wars Dr.Stone S2 Stone Wars 第01-11話 GB 720P AVC MP4（字幕社招人內詳）")
     assertEquals("01..11", r.episodeRange.toString())
     assertEquals("CHS", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("720P", r.resolution.toString())
@@ -1237,7 +1237,7 @@ public class PatternTitleParserTest石纪元 : PatternBasedTitleParserTestSuite(
     }
     kotlin.run {
     val r =
-        parse("【极影字幕社】 ★01月新番 石纪元第二季 Stone Wars Dr.Stone S2 Stone Wars 第11话 GB 1080P HEVC MP4（字幕社招人内详）")
+        parse("【極影字幕社】 ★01月新番 石紀元第二季 Stone Wars Dr.Stone S2 Stone Wars 第11話 GB 1080P HEVC MP4（字幕社招人內詳）")
     assertEquals("11..11", r.episodeRange.toString())
     assertEquals("CHS", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("1080P", r.resolution.toString())
@@ -1253,14 +1253,14 @@ public class PatternTitleParserTest石纪元 : PatternBasedTitleParserTestSuite(
     }
     kotlin.run {
     val r =
-        parse("【极影字幕社】 ★01月新番 石纪元第二季 Stone Wars Dr.Stone S2 Stone Wars 第10话 GB 1080P HEVC MP4（字幕社招人内详）")
+        parse("【極影字幕社】 ★01月新番 石紀元第二季 Stone Wars Dr.Stone S2 Stone Wars 第10話 GB 1080P HEVC MP4（字幕社招人內詳）")
     assertEquals("10..10", r.episodeRange.toString())
     assertEquals("CHS", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("1080P", r.resolution.toString())
     assertEquals(null, r.subtitleKind)
     }
     kotlin.run {
-    val r = parse("[c.c动漫][1月新番][新石纪 / 石纪元 第二季][11][GB][HEVC][1080P][MP4][END]")
+    val r = parse("[c.c動漫][1月新番][新石紀 / 石紀元 第二季][11][GB][HEVC][1080P][MP4][END]")
     assertEquals("11..11", r.episodeRange.toString())
     assertEquals("CHS", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("1080P", r.resolution.toString())
@@ -1276,14 +1276,14 @@ public class PatternTitleParserTest石纪元 : PatternBasedTitleParserTestSuite(
     }
     kotlin.run {
     val r =
-        parse("【极影字幕社】 ★01月新番 石纪元第二季 Stone Wars Dr.Stone S2 Stone Wars 第09话 GB 1080P HEVC MP4（字幕社招人内详）")
+        parse("【極影字幕社】 ★01月新番 石紀元第二季 Stone Wars Dr.Stone S2 Stone Wars 第09話 GB 1080P HEVC MP4（字幕社招人內詳）")
     assertEquals("09..09", r.episodeRange.toString())
     assertEquals("CHS", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("1080P", r.resolution.toString())
     assertEquals(null, r.subtitleKind)
     }
     kotlin.run {
-    val r = parse("[c.c动漫][1月新番][新石纪 / 石纪元 第二季][10][GB][HEVC][1080P][MP4]")
+    val r = parse("[c.c動漫][1月新番][新石紀 / 石紀元 第二季][10][GB][HEVC][1080P][MP4]")
     assertEquals("10..10", r.episodeRange.toString())
     assertEquals("CHS", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("1080P", r.resolution.toString())
@@ -1303,14 +1303,14 @@ public class PatternTitleParserTest石纪元 : PatternBasedTitleParserTestSuite(
   public fun `562886-562753-561998-561997-561616-561615-561083-560294-560085-560084`() {
     kotlin.run {
     val r =
-        parse("【极影字幕社】 ★01月新番 石纪元第二季 Stone Wars Dr.Stone S2 Stone Wars 第08话 GB 1080P HEVC MP4（字幕社招人内详）")
+        parse("【極影字幕社】 ★01月新番 石紀元第二季 Stone Wars Dr.Stone S2 Stone Wars 第08話 GB 1080P HEVC MP4（字幕社招人內詳）")
     assertEquals("08..08", r.episodeRange.toString())
     assertEquals("CHS", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("1080P", r.resolution.toString())
     assertEquals(null, r.subtitleKind)
     }
     kotlin.run {
-    val r = parse("[c.c动漫][1月新番][新石纪 / 石纪元 第二季][08-09][GB][HEVC][1080P][MP4]")
+    val r = parse("[c.c動漫][1月新番][新石紀 / 石紀元 第二季][08-09][GB][HEVC][1080P][MP4]")
     assertEquals("08..09", r.episodeRange.toString())
     assertEquals("CHS", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("1080P", r.resolution.toString())
@@ -1326,7 +1326,7 @@ public class PatternTitleParserTest石纪元 : PatternBasedTitleParserTestSuite(
     }
     kotlin.run {
     val r =
-        parse("【极影字幕社】 ★01月新番 石纪元第二季 Stone Wars Dr.Stone S2 Stone Wars 第07话 GB 1080P HEVC MP4（字幕社招人内详）")
+        parse("【極影字幕社】 ★01月新番 石紀元第二季 Stone Wars Dr.Stone S2 Stone Wars 第07話 GB 1080P HEVC MP4（字幕社招人內詳）")
     assertEquals("07..07", r.episodeRange.toString())
     assertEquals("CHS", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("1080P", r.resolution.toString())
@@ -1342,21 +1342,21 @@ public class PatternTitleParserTest石纪元 : PatternBasedTitleParserTestSuite(
     }
     kotlin.run {
     val r =
-        parse("【极影字幕社】 ★01月新番 石纪元第二季 Stone Wars Dr.Stone S2 Stone Wars 第06话 GB 1080P HEVC MP4（字幕社招人内详）")
+        parse("【極影字幕社】 ★01月新番 石紀元第二季 Stone Wars Dr.Stone S2 Stone Wars 第06話 GB 1080P HEVC MP4（字幕社招人內詳）")
     assertEquals("06..06", r.episodeRange.toString())
     assertEquals("CHS", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("1080P", r.resolution.toString())
     assertEquals(null, r.subtitleKind)
     }
     kotlin.run {
-    val r = parse("[c.c动漫][1月新番][新石纪 / 石纪元 第二季][07][GB][HEVC][1080P][MP4][暫停更新公告]")
+    val r = parse("[c.c動漫][1月新番][新石紀 / 石紀元 第二季][07][GB][HEVC][1080P][MP4][暫停更新公告]")
     assertEquals("07..07", r.episodeRange.toString())
     assertEquals("CHS", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("1080P", r.resolution.toString())
     assertEquals(null, r.subtitleKind)
     }
     kotlin.run {
-    val r = parse("[c.c动漫][1月新番][新石纪 / 石纪元 第二季][06][GB][HEVC][1080P][MP4]")
+    val r = parse("[c.c動漫][1月新番][新石紀 / 石紀元 第二季][06][GB][HEVC][1080P][MP4]")
     assertEquals("06..06", r.episodeRange.toString())
     assertEquals("CHS", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("1080P", r.resolution.toString())
@@ -1372,7 +1372,7 @@ public class PatternTitleParserTest石纪元 : PatternBasedTitleParserTestSuite(
     }
     kotlin.run {
     val r =
-        parse("【极影字幕社】 ★01月新番 石纪元第二季 Stone Wars Dr.Stone S2 Stone Wars 第05话 GB 1080P HEVC MP4（字幕社招人内详）")
+        parse("【極影字幕社】 ★01月新番 石紀元第二季 Stone Wars Dr.Stone S2 Stone Wars 第05話 GB 1080P HEVC MP4（字幕社招人內詳）")
     assertEquals("05..05", r.episodeRange.toString())
     assertEquals("CHS", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("1080P", r.resolution.toString())
@@ -1383,7 +1383,7 @@ public class PatternTitleParserTest石纪元 : PatternBasedTitleParserTestSuite(
   @Test
   public fun `559707-559674-559673-559009-558951-558950-558358-558030-558029-557644`() {
     kotlin.run {
-    val r = parse("[c.c动漫][1月新番][新石纪 / 石纪元 第二季][05][GB][HEVC][1080P][MP4]")
+    val r = parse("[c.c動漫][1月新番][新石紀 / 石紀元 第二季][05][GB][HEVC][1080P][MP4]")
     assertEquals("05..05", r.episodeRange.toString())
     assertEquals("CHS", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("1080P", r.resolution.toString())
@@ -1399,14 +1399,14 @@ public class PatternTitleParserTest石纪元 : PatternBasedTitleParserTestSuite(
     }
     kotlin.run {
     val r =
-        parse("【极影字幕社】 ★01月新番 石纪元第二季 Stone Wars Dr.Stone S2 Stone Wars 第04话 GB 1080P HEVC MP4（字幕社招人内详）")
+        parse("【極影字幕社】 ★01月新番 石紀元第二季 Stone Wars Dr.Stone S2 Stone Wars 第04話 GB 1080P HEVC MP4（字幕社招人內詳）")
     assertEquals("04..04", r.episodeRange.toString())
     assertEquals("CHS", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("1080P", r.resolution.toString())
     assertEquals(null, r.subtitleKind)
     }
     kotlin.run {
-    val r = parse("[c.c动漫][1月新番][新石纪 / 石纪元 第二季][04][GB][HEVC][1080P][MP4]")
+    val r = parse("[c.c動漫][1月新番][新石紀 / 石紀元 第二季][04][GB][HEVC][1080P][MP4]")
     assertEquals("04..04", r.episodeRange.toString())
     assertEquals("CHS", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("1080P", r.resolution.toString())
@@ -1422,14 +1422,14 @@ public class PatternTitleParserTest石纪元 : PatternBasedTitleParserTestSuite(
     }
     kotlin.run {
     val r =
-        parse("【极影字幕社】 ★01月新番 石纪元第二季 Stone Wars Dr.Stone S2 Stone Wars 第03话 GB 1080P HEVC MP4（字幕社招人内详）")
+        parse("【極影字幕社】 ★01月新番 石紀元第二季 Stone Wars Dr.Stone S2 Stone Wars 第03話 GB 1080P HEVC MP4（字幕社招人內詳）")
     assertEquals("03..03", r.episodeRange.toString())
     assertEquals("CHS", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("1080P", r.resolution.toString())
     assertEquals(null, r.subtitleKind)
     }
     kotlin.run {
-    val r = parse("[c.c动漫][1月新番][新石纪 / 石纪元 第二季][03][GB][HEVC][1080P][MP4]")
+    val r = parse("[c.c動漫][1月新番][新石紀 / 石紀元 第二季][03][GB][HEVC][1080P][MP4]")
     assertEquals("03..03", r.episodeRange.toString())
     assertEquals("CHS", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("1080P", r.resolution.toString())
@@ -1445,14 +1445,14 @@ public class PatternTitleParserTest石纪元 : PatternBasedTitleParserTestSuite(
     }
     kotlin.run {
     val r =
-        parse("【极影字幕社】 ★01月新番 石纪元第二季 Stone Wars Dr.Stone S2 Stone Wars 第02话 GB 1080P HEVC MP4（字幕社招人内详）")
+        parse("【極影字幕社】 ★01月新番 石紀元第二季 Stone Wars Dr.Stone S2 Stone Wars 第02話 GB 1080P HEVC MP4（字幕社招人內詳）")
     assertEquals("02..02", r.episodeRange.toString())
     assertEquals("CHS", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("1080P", r.resolution.toString())
     assertEquals(null, r.subtitleKind)
     }
     kotlin.run {
-    val r = parse("[c.c动漫][1月新番][新石纪 / 石纪元 第二季][02][GB][HEVC][1080P][MP4]")
+    val r = parse("[c.c動漫][1月新番][新石紀 / 石紀元 第二季][02][GB][HEVC][1080P][MP4]")
     assertEquals("02..02", r.episodeRange.toString())
     assertEquals("CHS", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("1080P", r.resolution.toString())
@@ -1472,14 +1472,14 @@ public class PatternTitleParserTest石纪元 : PatternBasedTitleParserTestSuite(
     }
     kotlin.run {
     val r =
-        parse("【极影字幕社】 ★01月新番 石纪元第二季 Stone Wars Dr.Stone S2 Stone Wars 第01话 GB 1080P MP4（字幕社招人内详）")
+        parse("【極影字幕社】 ★01月新番 石紀元第二季 Stone Wars Dr.Stone S2 Stone Wars 第01話 GB 1080P MP4（字幕社招人內詳）")
     assertEquals("01..01", r.episodeRange.toString())
     assertEquals("CHS", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("1080P", r.resolution.toString())
     assertEquals(null, r.subtitleKind)
     }
     kotlin.run {
-    val r = parse("[c.c动漫][1月新番][新石纪 / 石纪元 第二季][01][GB][HEVC][1080P][MP4]")
+    val r = parse("[c.c動漫][1月新番][新石紀 / 石紀元 第二季][01][GB][HEVC][1080P][MP4]")
     assertEquals("01..01", r.episodeRange.toString())
     assertEquals("CHS", r.subtitleLanguages.sortedBy { it.id }.joinToString { it.id })
     assertEquals("1080P", r.resolution.toString())

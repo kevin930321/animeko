@@ -104,7 +104,7 @@ class MarkAsWatchedExtension(
                         videoLength - 100.seconds.inWholeMilliseconds,
                     )
                 ) {
-                    logger.info { "观看到 90%, 标记看过" }
+                    logger.info { "觀看到 90%, 標記看過" }
                     try {
                         setEpisodeCollectionTypeUseCase(subjectId, episodeId, UnifiedCollectionType.DONE)
                     } catch (e: ClientRequestException) {

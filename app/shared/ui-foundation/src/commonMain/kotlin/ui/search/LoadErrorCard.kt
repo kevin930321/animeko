@@ -199,7 +199,7 @@ fun LoadErrorCard(
                                                 "<User clicked copy, I'm just printing the stack trace>"
                                             }
                                         }
-                                        toaster.toast("已複製，請回報到 GitHub issues 或群組")
+                                        toaster.toast("已複製，請回報到 GitHub issues 或羣組")
                                     },
                                 ) {
                                     Text("複製")

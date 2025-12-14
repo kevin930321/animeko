@@ -61,7 +61,7 @@ internal fun SelfInfoBanner(
         Row(Modifier.padding(horizontal = 16.dp, vertical = 8.dp), verticalAlignment = CenterVertically) {
             if (!isLogin) {
                 FilledTonalButton(onLoginClick, Modifier.fillMaxWidth()) {
-                    Text("登录 / 注册")
+                    Text("登錄 / 註冊")
                 }
             } else {
                 AvatarImage(

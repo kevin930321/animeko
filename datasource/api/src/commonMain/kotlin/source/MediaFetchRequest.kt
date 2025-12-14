@@ -43,7 +43,7 @@ data class MediaFetchRequest(
      *
      * 所有名称包括简体中文译名, 各种别名, 简称, 以及日文原名.
      *
-     * E.g. "关于我转生变成史莱姆这档事 第三季"
+     * E.g. "關於我轉生變成史萊姆這檔事 第三季"
      */
     val subjectNames: List<String>,
     /**
@@ -55,7 +55,7 @@ data class MediaFetchRequest(
      */
     val episodeSort: EpisodeSort,
     /**
-     * 条目服务 (Bangumi) 提供的剧集名称, 例如 "恶魔与阴谋", 不会包含 "第 x 集".
+     * 条目服务 (Bangumi) 提供的剧集名称, 例如 "惡魔與陰謀", 不会包含 "第 x 集".
      * 不一定为简体中文, 可能为日文. 也可能为空字符串.
      */
     val episodeName: String,

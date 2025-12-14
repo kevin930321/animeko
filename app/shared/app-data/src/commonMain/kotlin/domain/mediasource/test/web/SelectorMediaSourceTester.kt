@@ -26,7 +26,7 @@ import kotlin.coroutines.CoroutineContext
 import kotlin.coroutines.cancellation.CancellationException
 
 /**
- * 交互式的 [SelectorMediaSourceEngine]. 用于 UI 的 "测试数据源" 功能.
+ * 交互式的 [SelectorMediaSourceEngine]. 用于 UI 的 "測試數據源" 功能.
  */
 class SelectorMediaSourceTester(
     private val engine: SelectorMediaSourceEngine,

@@ -177,7 +177,7 @@ class PostCommentUseCaseTest {
     private companion object {
         private const val TURNSTILE_TOKEN = "test-cf-turnstile-token-114514"
         private val commentContext = CommentContext.Episode(1, 2)
-        private const val COMMENT_CONTENT = "小祈好可爱我要死了(bgm38)"
+        private const val COMMENT_CONTENT = "小祈好可愛我要死了(bgm38)"
         private const val TURNSTILE_ERROR_CODE = 114514
     }
 }

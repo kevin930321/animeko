@@ -23,7 +23,7 @@ enum class MediaSourceKind {
     /**
      * P2P BitTorrent 网络. 资源为 [ResourceLocation.HttpTorrentFile] 或 [ResourceLocation.MagnetLink].
      *
-     * 如果 [Media.episodeRange] 剧集为单集 [EpisodeRange.single], 且类型为 [MediaSourceKind.BitTorrent], 则很有可能会因为默认启用的"完结番隐藏单集资源"功能而被过滤掉.
+     * 如果 [Media.episodeRange] 剧集为单集 [EpisodeRange.single], 且类型为 [MediaSourceKind.BitTorrent], 则很有可能会因为默认启用的"完結番隱藏單集資源"功能而被过滤掉.
      * @see WEB
      * @see Media.episodeRange
      */

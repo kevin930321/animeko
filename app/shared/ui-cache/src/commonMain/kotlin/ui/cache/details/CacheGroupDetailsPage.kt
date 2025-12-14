@@ -115,7 +115,7 @@ fun MediaCacheDetailsScreen(
         topBar = {
             WindowDragArea {
                 TopAppBar(
-                    title = { Text("详情") },
+                    title = { Text("詳情") },
                     navigationIcon = navigationIcon,
                     colors = AniThemeDefaults.topAppBarColors(),
                     windowInsets = windowInsets.only(WindowInsetsSides.Horizontal + WindowInsetsSides.Top),

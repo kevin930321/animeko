@@ -31,7 +31,7 @@ fun applyingFilters(mediaList: List<Media>) {
     }
 
     val context = MediaListFilterContext(
-        setOf("条目名称"), EpisodeSort(1), EpisodeSort(1),
+        setOf("條目名稱"), EpisodeSort(1), EpisodeSort(1),
         "第1集",
     )
     val newList: List<Media> = with(context) {

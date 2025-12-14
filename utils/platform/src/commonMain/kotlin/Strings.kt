@@ -43,7 +43,7 @@ fun String.Companion.format2f(value: Float): String {
  * 示例：
  * ```kotlin
  * val sb = StringBuilder("abc123def456ghi")
- * sb.deleteMatches(Regex("\\d+")) // 结果为 "abcdefghi"
+ * sb.deleteMatches(Regex("\\d+")) // 結果爲 "abcdefghi"
  * ```
  */
 fun StringBuilder.deleteMatches(regex: Regex): StringBuilder {

@@ -98,7 +98,7 @@ class CreateMediaFetchSelectBundleFlowUseCaseImpl(
         val fetchRequestFlow: Flow<MediaFetchSession?> = bundleDistinct
             // 为什么要 `filterNotNull`:
             // 如果本地有缓存, 我们会优先读取缓存, bundle 会不是 null. 如果缓存有过期, 此时会同时发起网络查询. 
-            // 如果加载发生网络错误, 然后用户点击 "重试", bundle 会变为 `null`. 
+            // 如果加载发生网络错误, 然后用户点击 "重試", bundle 会变为 `null`. 
             // 然而即使进行了网络查询, 新的数据很有可能跟旧的数据是一样的, 就没有必要重新查询. 
             // 所以我们总是等待一个 not null SubjectEpisodeInfoBundle 比较.
             .filterNotNull()

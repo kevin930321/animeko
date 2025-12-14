@@ -542,7 +542,7 @@ private val nameCnMap by lazy(LazyThreadSafetyMode.PUBLICATION) {
         put(PersonPosition.CastingDirector.id, "演員監督")
         put(PersonPosition.ChiefProducer.id, "總製片")
         put(PersonPosition.CoProducer.id, "聯合製片人")
-        put(PersonPosition.DialogueEditing.id, "台詞編輯")
+        put(PersonPosition.DialogueEditing.id, "臺詞編輯")
         put(PersonPosition.PostProductionAssistant.id, "後期製片協調")
         put(PersonPosition.ProductionAssistant.id, "製作助手")
         put(PersonPosition.ProductionCoordination.id, "製作協調")

@@ -59,7 +59,7 @@ internal fun SettingsScope.ServerSelectionGroup(
 
         // Danmaku source selection: null = automatic, true = global, false = mainland/HK
         val options = listOf(
-            null to "自动",
+            null to "自動",
             true to stringResource(Lang.settings_network_danmaku_global_acceleration),
             false to stringResource(Lang.settings_network_danmaku_mainland),
         )
@@ -76,7 +76,7 @@ internal fun SettingsScope.ServerSelectionGroup(
                                 } else {
                                     stringResource(Lang.settings_network_danmaku_mainland)
                                 }
-                                "自动选择：$autoSelected"
+                                "自動選擇：$autoSelected"
                             }
 
                             true -> stringResource(Lang.settings_network_danmaku_global_acceleration_description)

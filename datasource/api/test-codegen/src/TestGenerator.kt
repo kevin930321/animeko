@@ -87,8 +87,8 @@ class TestGenerator(
             }.build(),
         )
         addImport("me.him188.ani.datasources.api.title", "PatternBasedTitleParserTestSuite")
-        addImport("kotlin.test", "assertEquals") // 它不允许 "*"
-        addImport("me.him188.ani.datasources.api", "SubtitleKind") // 它不允许 "*"
+        addImport("kotlin.test", "assertEquals") // 它不允許 "*"
+        addImport("me.him188.ani.datasources.api", "SubtitleKind") // 它不允許 "*"
         addType(
             TypeSpec.classBuilder(
                 ClassName(

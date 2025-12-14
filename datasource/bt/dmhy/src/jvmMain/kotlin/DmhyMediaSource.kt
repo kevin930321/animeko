@@ -33,7 +33,7 @@ class DmhyMediaSource(
         const val ID = "dmhy"
         val INFO = MediaSourceInfo(
             displayName = "動漫花園",
-            description = "动漫资源聚合网站",
+            description = "動漫資源聚合網站",
             iconUrl = "https://dmhy.org/favicon.ico",
             iconResourceId = "dmhy.png",
         )

@@ -142,7 +142,7 @@ class RssMediaSource(
         iconUrl = arguments.iconUrl,
     )
 
-    // https://garden.breadio.wiki/feed.xml?filter=[{"search":["樱trick"]}]
+    // https://garden.breadio.wiki/feed.xml?filter=[{"search":["櫻trick"]}]
     // https://acg.rip/page/2.xml?term=%E9%AD%94%E6%B3%95%E5%B0%91%E5%A5%B3
     private fun startSearch(query: RssSearchQuery): SizedSource<Media> {
         return PageBasedPagedSource { page ->

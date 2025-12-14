@@ -123,7 +123,7 @@ fun ProfilePopup(
 //                        .padding(horizontal = 24.dp)
 //                        .padding(top = 24.dp),
 //                ) {
-//                    Icon(Icons.Default.Close, contentDescription = "关闭")
+//                    Icon(Icons.Default.Close, contentDescription = "關閉")
 //                }
     } else {
         BasicAlertDialog(onDismissRequest) {

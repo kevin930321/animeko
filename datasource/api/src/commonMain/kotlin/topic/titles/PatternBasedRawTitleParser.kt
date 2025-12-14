@@ -21,9 +21,9 @@ import me.him188.ani.datasources.api.topic.SubtitleLanguage
  */
 class PatternBasedRawTitleParser : RawTitleParser() {
     private val brackets = Regex("""[\[【(](.*?)[]】)]""")
-    private val newAnime = Regex("(?:★?|★(.*)?)([0-9]|[一二三四五六七八九十]{0,4}) ?[月年] ?(?:新番|日剧)★?")
-    private val specialEpisode = Regex("★特别篇") // 风之圣殿
-    private val excludeTags = arrayOf(newAnime, specialEpisode, Regex("(短篇动画)|(招募)"))
+    private val newAnime = Regex("(?:★?|★(.*)?)([0-9]|[一二三四五六七八九十]{0,4}) ?[月年] ?(?:新番|日劇)★?")
+    private val specialEpisode = Regex("★特別篇") // 风之圣殿
+    private val excludeTags = arrayOf(newAnime, specialEpisode, Regex("(短篇動畫)|(招募)"))
 
     override fun parse(text: String, allianceName: String?, builder: ParsedTopicTitle.Builder) {
         return parse(
@@ -61,7 +61,7 @@ class PatternBasedRawTitleParser : RawTitleParser() {
             }
             index = result.range.last + 1
 
-            val tagOrTags = result.groups[1]!!.value // can be "WebRip 1080p HEVC-10bit AAC" or "简繁内封字幕"
+            val tagOrTags = result.groups[1]!!.value // can be "WebRip 1080p HEVC-10bit AAC" or "簡繁內封字幕"
             for (tag in splitTags(tagOrTags)) {
                 val anyMatched = processTag(
                     tag = tag,
@@ -70,7 +70,7 @@ class PatternBasedRawTitleParser : RawTitleParser() {
                     collectFrameRate = collectFrameRate,
                     collectMediaOrigin = collectMediaOrigin,
                     collectEpisode = {
-                        if (allianceName == "天使动漫论坛") return@processTag
+                        if (allianceName == "天使動漫論壇") return@processTag
 //                        if (text.indexOf(tag) < text.indexOf()) { // ignore tag that appeared before titles
                         collectEpisode(it)
 //                        }
@@ -96,7 +96,7 @@ class PatternBasedRawTitleParser : RawTitleParser() {
         val exceptTags = exceptTagsBuilder.toString()
             .replace(newAnime) { "" }
             .replace(specialEpisode) { "" }
-        if (exceptTags.isBlank() || allianceName == "极影字幕社" || text.contains("沸羊羊")) {
+        if (exceptTags.isBlank() || allianceName == "極影字幕社" || text.contains("沸羊羊")) {
             // B 类
             val primaryTitles = unknownTags.removeFirstOrNull()
                 ?: return // may contain multiple languages separated by '/' or other delimiters
@@ -357,10 +357,10 @@ class PatternBasedRawTitleParser : RawTitleParser() {
             return true
         }
         if (this.startsWith("第")) {
-            collectEpisode(EpisodeRange.single(this.removePrefix("第").removeSuffix("话").removeSuffix("話"))) // 千夏字幕組
+            collectEpisode(EpisodeRange.single(this.removePrefix("第").removeSuffix("話").removeSuffix("話"))) // 千夏字幕組
             return true
         }
-        if (this.contains("SP", ignoreCase = true) || this.contains("小剧场")) {
+        if (this.contains("SP", ignoreCase = true) || this.contains("小劇場")) {
             collectEpisode(EpisodeRange.single(this))
             return true
         }

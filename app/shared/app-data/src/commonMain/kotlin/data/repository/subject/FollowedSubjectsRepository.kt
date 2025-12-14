@@ -77,7 +77,7 @@ class FollowedSubjectsRepository(
                     else -> e
                 }
 
-                logger.error(displayE) { """Failed to update recently updated subject collections due to ${e}, ignoring. 这只会导致探索页的继续观看栏目可能显示旧结果. """ }
+                logger.error(displayE) { """Failed to update recently updated subject collections due to ${e}, ignoring. 這隻會導致探索頁的繼續觀看欄目可能顯示舊結果. """ }
             }
 
             // 先查询完成 (插入数据库) 再返回 flow 去查数据库. 前端会展示 placeholder 所以延迟没问题.

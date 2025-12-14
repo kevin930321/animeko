@@ -27,7 +27,7 @@ internal class AssNameParser {
         val removeSuffix = name.removeSuffix(".ass")
         val language = removeSuffix.substringAfterLast('.', "")
         if (language.isEmpty()) return removeSuffix
-        if (scCnLowerCaseList.contains(language.toLowerCasePreservingASCIIRules())) return "简中"
+        if (scCnLowerCaseList.contains(language.toLowerCasePreservingASCIIRules())) return "簡中"
         if (tcCnLowerCaseList.contains(language.toLowerCasePreservingASCIIRules())) return "繁中"
         return language;
     }

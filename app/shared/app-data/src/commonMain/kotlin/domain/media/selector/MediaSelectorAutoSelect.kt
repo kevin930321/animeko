@@ -49,7 +49,7 @@ inline val MediaSelector.autoSelect get() = MediaSelectorAutoSelect(this)
 /**
  * [MediaSelector] 自动选择功能.
  *
- * 有关数据源选择算法, 参阅 [MediaSelector], 尤其是 "快速选择的情况" 部分.
+ * 有关数据源选择算法, 参阅 [MediaSelector], 尤其是 "快速選擇的情況" 部分.
  */
 class MediaSelectorAutoSelect(
     private val mediaSelector: MediaSelector,

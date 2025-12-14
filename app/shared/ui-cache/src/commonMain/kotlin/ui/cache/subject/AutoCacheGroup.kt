@@ -22,15 +22,15 @@ fun SettingsScope.AutoCacheGroup(
     onClickGlobalCacheManage: () -> Unit,
 ) {
 //    Group(
-//        title = { Text("自动缓存") },
+//        title = { Text("自動緩存") },
 //        description = {
-//            Text("自动缓存未观看的剧集")
+//            Text("自動緩存未觀看的劇集")
 //        },
 //    ) {
 //        var useGlobalSettings by remember { mutableStateOf(true) }
 //        SwitchItem(
-//            title = { Text("使用全局设置") },
-//            description = { Text("关闭后可为该番剧单独设置 (暂不支持单独设置)") },
+//            title = { Text("使用全局設置") },
+//            description = { Text("關閉後可爲該番劇單獨設置 (暫不支持單獨設置)") },
 //            checked = useGlobalSettings,
 //            onCheckedChange = { useGlobalSettings = !useGlobalSettings },
 //            enabled = false,
@@ -39,12 +39,12 @@ fun SettingsScope.AutoCacheGroup(
 //        AniAnimatedVisibility(!useGlobalSettings) {
 //            var sliderValue by remember { mutableFloatStateOf(0f) }
 //            SliderItem(
-//                title = { Text("最大自动缓存话数") },
+//                title = { Text("最大自動緩存話數") },
 //                description = {
 //                    Row {
 //                        Text(autoCacheDescription(sliderValue))
 //                        if (sliderValue == 10f) {
-//                            Text("可能会占用大量空间", color = MaterialTheme.colorScheme.error)
+//                            Text("可能會佔用大量空間", color = MaterialTheme.colorScheme.error)
 //                        }
 //                    }
 //                },
@@ -64,7 +64,7 @@ fun SettingsScope.AutoCacheGroup(
 //            RowButtonItem(
 //                onClick = onClickGlobalCacheSettings,
 //                icon = { Icon(Icons.Rounded.ArrowOutward, null) },
-//            ) { Text("查看全局设置") }
+//            ) { Text("查看全局設置") }
 //        }
 //
 //    }

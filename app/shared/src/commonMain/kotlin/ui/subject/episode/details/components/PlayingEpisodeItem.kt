@@ -106,7 +106,7 @@ fun PlayingEpisodeItem(
             ),
             verticalAlignment = Alignment.CenterVertically,
         ) {
-            // 标题和"看过"按钮
+            // 标题和"看過"按钮
             // padding 以 text 的为准, top = bottom = 8 + 12 = 20
             FlowRow(
                 Modifier.padding(vertical = 12.dp).weight(1f),
@@ -183,7 +183,7 @@ fun PlayingEpisodeItem(
             // 上面的 InfoRow 的 Icon 有 8dp padding
             Spacer(Modifier.height(rowSpacing - 8.dp))
         } else {
-            Spacer(Modifier.height(8.dp)) // 额外 pad 一点,  否则 "选择数据源" 按钮到 "看过" 按钮之间有点挤
+            Spacer(Modifier.height(8.dp)) // 额外 pad 一点,  否则 "選擇數據源" 按钮到 "看過" 按钮之间有点挤
         }
 
         ProvideTextStyle(MaterialTheme.typography.labelLarge) {

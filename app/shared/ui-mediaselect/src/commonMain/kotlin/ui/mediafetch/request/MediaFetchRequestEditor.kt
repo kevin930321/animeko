@@ -99,7 +99,7 @@ fun MediaFetchRequestEditor(
             value = fetchRequest.primaryName,
             onValueChange = { onFetchRequestChange(fetchRequest.copy(primaryName = it)) },
             label = { Text("主搜索名") },
-            supportingText = { Text("大多数数据源只使用此名称") },
+            supportingText = { Text("大多數數據源只使用此名稱") },
             modifier = Modifier.fillMaxWidth().padding(horizontal = horizontalPadding),
             singleLine = true,
         )
@@ -117,7 +117,7 @@ fun MediaFetchRequestEditor(
             },
             Modifier.padding(top = 8.dp),
             supportingContent = {
-                Text("在线源会忽略这些名称")
+                Text("在線源會忽略這些名稱")
             },
             colors = listItemColors,
             trailingContent = {
@@ -129,7 +129,7 @@ fun MediaFetchRequestEditor(
                     if (showComplementaryNames) {
                         Icon(Icons.Default.KeyboardArrowUp, contentDescription = "收起")
                     } else {
-                        Icon(Icons.Default.KeyboardArrowDown, contentDescription = "展开")
+                        Icon(Icons.Default.KeyboardArrowDown, contentDescription = "展開")
                     }
                 }
             },
@@ -161,7 +161,7 @@ fun MediaFetchRequestEditor(
                                 },
                                 Modifier.padding(end = horizontalPadding - 8.dp),
                             ) {
-                                Icon(Icons.Default.Delete, contentDescription = "删除名称 #$index")
+                                Icon(Icons.Default.Delete, contentDescription = "刪除名稱 #$index")
                             }
                         }
                     }
@@ -183,7 +183,7 @@ fun MediaFetchRequestEditor(
                         Modifier.size(ButtonDefaults.IconSize),
                     )
                     Spacer(Modifier.width(ButtonDefaults.IconSpacing))
-                    Text("添加名称")
+                    Text("添加名稱")
                 }
             }
         }
@@ -193,7 +193,7 @@ fun MediaFetchRequestEditor(
         ListItem(
             headlineContent = {
                 Text(
-                    "剧集信息",
+                    "劇集信息",
                     style = MaterialTheme.typography.titleMedium,
                     color = MaterialTheme.colorScheme.primary,
                 )
@@ -201,7 +201,7 @@ fun MediaFetchRequestEditor(
             Modifier.padding(vertical = 8.dp),
             supportingContent = {
                 Text(
-                    "资源必须至少匹配以下两种信息中的一种，否则不会显示。可以只修改其中一种",
+                    "資源必須至少匹配以下兩種信息中的一種，否則不會顯示。可以只修改其中一種",
                 )
             },
             colors = listItemColors,
@@ -214,7 +214,7 @@ fun MediaFetchRequestEditor(
 //            OutlinedTextField(
 //                value = fetchRequest.episodeName,
 //                onValueChange = { onFetchRequestChange(fetchRequest.copy(episodeName = it)) },
-//                label = { Text("剧集名称") },
+//                label = { Text("劇集名稱") },
 //                supportingText = { Text("可留空") },
 //                modifier = Modifier.fillMaxWidth().padding(horizontal = horizontalPadding),
 //                singleLine = true,
@@ -227,8 +227,8 @@ fun MediaFetchRequestEditor(
                 onValueChange = { newValue ->
                     onFetchRequestChange(fetchRequest.copy(episodeSort = newValue))
                 },
-                label = { Text("系列内剧集序号") },
-                supportingText = { Text("假设有两季，分别有 12 集，则第二季的第一集为 13") },
+                label = { Text("系列內劇集序號") },
+                supportingText = { Text("假設有兩季，分別有 12 集，則第二季的第一集爲 13") },
                 modifier = Modifier.fillMaxWidth().padding(horizontal = horizontalPadding),
                 singleLine = true,
                 isError = sortAndEpAreError,
@@ -238,8 +238,8 @@ fun MediaFetchRequestEditor(
                 onValueChange = { newValue ->
                     onFetchRequestChange(fetchRequest.copy(episodeEp = newValue))
                 },
-                label = { Text("条目内序号") },
-                supportingText = { Text("在当前季度内的序号，例如第二季的第一集为 01") },
+                label = { Text("條目內序號") },
+                supportingText = { Text("在當前季度內的序號，例如第二季的第一集爲 01") },
                 modifier = Modifier.fillMaxWidth().padding(horizontal = horizontalPadding),
                 singleLine = true,
                 isError = sortAndEpAreError,

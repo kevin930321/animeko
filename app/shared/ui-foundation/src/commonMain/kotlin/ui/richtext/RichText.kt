@@ -135,10 +135,10 @@ object RichTextDefaults {
             if (url.startsWith("https://") || url.startsWith("http://")) {
                 navigator.openUri(url)
             } else {
-                toaster.toast("此链接可能会打开其他应用，ani 将不会打开此链接：\n$url")
+                toaster.toast("此鏈接可能會打開其他應用，ani 將不會打開此鏈接：\n$url")
             }
         } catch (ex: Exception) {
-            toaster.toast("无法打开此链接：\n$url")
+            toaster.toast("無法打開此鏈接：\n$url")
         }
     }
 

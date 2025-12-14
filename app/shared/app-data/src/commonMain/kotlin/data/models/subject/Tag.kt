@@ -52,7 +52,7 @@ sealed class CanonicalTagKind(val values: List<String>) {
      */
     @Immutable
     data object Category : CanonicalTagKind(
-        listOf("短片", "剧场版", "TV", "OVA", "MV", "CM", "WEB", "PV", "动态漫画"),
+        listOf("短片", "劇場版", "TV", "OVA", "MV", "CM", "WEB", "PV", "動態漫畫"),
     )
 
     /**
@@ -60,7 +60,7 @@ sealed class CanonicalTagKind(val values: List<String>) {
      */
     @Immutable
     data object Source : CanonicalTagKind(
-        listOf("原创", "漫画改", "游戏改", "小说改"),
+        listOf("原創", "漫畫改", "遊戲改", "小說改"),
     )
 
     /**
@@ -69,9 +69,9 @@ sealed class CanonicalTagKind(val values: List<String>) {
     @Immutable
     data object Genre : CanonicalTagKind(
         listOf(
-            "科幻", "喜剧", "百合", "校园", "惊悚", "后宫", "机战", "悬疑", "恋爱", "奇幻",
-            "推理", "运动", "耽美", "音乐", "战斗", "冒险", "萌系", "穿越", "玄幻", "乙女",
-            "恐怖", "历史", "日常", "剧情", "武侠", "美食", "职场",
+            "科幻", "喜劇", "百合", "校園", "驚悚", "後宮", "機戰", "懸疑", "戀愛", "奇幻",
+            "推理", "運動", "耽美", "音樂", "戰鬥", "冒險", "萌系", "穿越", "玄幻", "乙女",
+            "恐怖", "歷史", "日常", "劇情", "武俠", "美食", "職場",
         ),
     )
 
@@ -81,8 +81,8 @@ sealed class CanonicalTagKind(val values: List<String>) {
     @Immutable
     data object Region : CanonicalTagKind(
         listOf(
-            "欧美", "日本", "美国", "中国", "法国", "韩国", "俄罗斯", "英国",
-            "苏联", "香港", "捷克", "台湾",
+            "歐美", "日本", "美國", "中國", "法國", "韓國", "俄羅斯", "英國",
+            "蘇聯", "香港", "捷克", "臺灣",
         ),
     )
 
@@ -108,8 +108,8 @@ sealed class CanonicalTagKind(val values: List<String>) {
     @Immutable
     data object Setting : CanonicalTagKind(
         listOf(
-            "魔法少女", "超能力", "偶像", "网游", "末世", "乐队",
-            "赛博朋克", "宫廷", "都市", "异世界", "性转", "龙傲天", "凤傲天",
+            "魔法少女", "超能力", "偶像", "網遊", "末世", "樂隊",
+            "賽博朋克", "宮廷", "都市", "異世界", "性轉", "龍傲天", "鳳傲天",
         ),
     )
 
@@ -119,8 +119,8 @@ sealed class CanonicalTagKind(val values: List<String>) {
     @Immutable
     data object Character : CanonicalTagKind(
         listOf(
-            "制服", "兽耳", "伪娘", "吸血鬼", "妹控", "萝莉", "傲娇", "女仆", "巨乳", "电波",
-            "动物", "正太", "兄控", "僵尸", "群像", "美少女", "美少年",
+            "制服", "獸耳", "僞娘", "吸血鬼", "妹控", "蘿莉", "傲嬌", "女僕", "巨乳", "電波",
+            "動物", "正太", "兄控", "殭屍", "羣像", "美少女", "美少年",
         ),
     )
 
@@ -129,7 +129,7 @@ sealed class CanonicalTagKind(val values: List<String>) {
      */
     @Immutable
     data object Emotion : CanonicalTagKind(
-        listOf("热血", "治愈", "温情", "催泪", "纯爱", "友情", "致郁"),
+        listOf("熱血", "治癒", "溫情", "催淚", "純愛", "友情", "致鬱"),
     )
 
     /**
@@ -137,7 +137,7 @@ sealed class CanonicalTagKind(val values: List<String>) {
      */
     @Immutable
     data object Technology : CanonicalTagKind(
-        listOf("黑白", "3D", "水墨", "定格", "粘土", "剪纸", "转描", "三渲二"),
+        listOf("黑白", "3D", "水墨", "定格", "粘土", "剪紙", "轉描", "三渲二"),
     )
 
     /**
@@ -146,8 +146,8 @@ sealed class CanonicalTagKind(val values: List<String>) {
     @Immutable
     data object Series : CanonicalTagKind(
         listOf(
-            "高达", "东方", "Fate", "空之境界", "柯南", "光之美少女", "哆啦A梦",
-            "物语系列", "刀剑神域", "进击的巨人",
+            "高達", "東方", "Fate", "空之境界", "柯南", "光之美少女", "哆啦A夢",
+            "物語系列", "刀劍神域", "進擊的巨人",
         ),
     )
 
