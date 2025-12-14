@@ -149,7 +149,7 @@ data class SubjectInfo(
 }
 
 @Stable
-val SubjectInfo.nameCnOrName get() = nameCn.takeIf { it.isNotBlank() } ?: name
+val SubjectInfo.nameCnOrName get() = name.takeIf { it.isNotBlank() } ?: nameCn
 
 fun SubjectInfo.toNavPlaceholder(): SubjectDetailPlaceholder {
     return SubjectDetailPlaceholder(subjectId, name, nameCn, imageLarge)
