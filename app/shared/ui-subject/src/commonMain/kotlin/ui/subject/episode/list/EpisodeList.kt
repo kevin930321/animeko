@@ -59,7 +59,7 @@ fun EpisodeListDialog(
             Box {
                 Column(Modifier.padding(16.dp)) {
                     Row {
-                        Text("选集播放", style = MaterialTheme.typography.titleLarge)
+                        Text("選集播放", style = MaterialTheme.typography.titleLarge)
                         Spacer(Modifier.weight(1f))
                     }
 
@@ -101,7 +101,7 @@ fun EpisodeListDialog(
                     Row(verticalAlignment = Alignment.CenterVertically) {
                         Icon(Icons.Outlined.Lightbulb, null)
 
-                        Text("长按还可以标记为已看", Modifier.padding(start = 4.dp))
+                        Text("長按還可以標記為已看", Modifier.padding(start = 4.dp))
                     }
 
                     Row(Modifier.padding(top = 16.dp).align(Alignment.End)) {
@@ -112,18 +112,18 @@ fun EpisodeListDialog(
                                     it()
                                 },
                             ) {
-                                Text("条目详情")
+                                Text("條目詳情")
                             }
                         }
 
                         TextButton(onDismissRequest, Modifier.padding(start = 8.dp)) {
-                            Text("关闭")
+                            Text("關閉")
                         }
                     }
                 }
 
                 IconButton(onCacheClick, Modifier.align(Alignment.TopEnd).padding(8.dp)) {
-                    Icon(Icons.Rounded.Download, "缓存")
+                    Icon(Icons.Rounded.Download, "快取")
                 }
             }
         }

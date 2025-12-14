@@ -84,12 +84,12 @@ internal fun WelcomeScene(
                 Column(
                     verticalArrangement = Arrangement.Center,
                 ) {
-                    Text("欢迎使用 Animeko", style = MaterialTheme.typography.headlineMedium)
+                    Text("歡迎使用 Animeko", style = MaterialTheme.typography.headlineMedium)
 
                     ProvideTextStyle(MaterialTheme.typography.bodyLarge) {
                         Row(Modifier.padding(top = 8.dp).align(Alignment.Start)) {
                             Text(
-                                """一站式在线弹幕追番平台 (简称 Ani)""",
+                                """一站式線上彈幕追番平台 (簡稱 Ani)""",
                                 color = MaterialTheme.colorScheme.primary,
                             )
                         }
@@ -100,9 +100,9 @@ internal fun WelcomeScene(
                         verticalArrangement = Arrangement.spacedBy(12.dp),
                     ) {
                         ProvideTextStyle(MaterialTheme.typography.bodyMedium) {
-                            Text("""Ani 目前由爱好者组成的组织 OpenAni 和社区贡献者维护，完全免费，在 GitHub 上开源。""")
+                            Text("""Ani 目前由愛好者組成的組織 OpenAni 和社群貢獻者維護，完全免費，在 GitHub 上開源。""")
 
-                            Text("""Ani 的目标是提供尽可能简单且舒适的追番体验。""")
+                            Text("""Ani 的目標是提供盡可能簡單且舒適的追番體驗。""")
                         }
                     }
 
@@ -118,7 +118,7 @@ internal fun WelcomeScene(
                         onClick = onClickContinue,
                         modifier = Modifier.widthIn(300.dp),
                     ) {
-                        Text("继续")
+                        Text("繼續")
                     }
                 }
             }

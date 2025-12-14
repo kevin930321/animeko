@@ -358,7 +358,7 @@ fun CacheManagementScreen(
         modifier,
         topBar = {
             AniTopAppBar(
-                title = { AniTopAppBarDefaults.Title("缓存管理") },
+                title = { AniTopAppBarDefaults.Title("快取管理") },
                 navigationIcon = navigationIcon,
                 colors = appBarColors,
                 windowInsets = AniWindowInsets.forTopAppBarWithoutDesktopTitle(),

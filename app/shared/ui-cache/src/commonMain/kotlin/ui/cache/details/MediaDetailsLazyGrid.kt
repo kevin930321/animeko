@@ -179,11 +179,11 @@ fun MediaDetailsLazyGrid(
                 {
                     scope.launch {
                         clipboard.setClipEntryText(value())
-                        toaster.toast("已复制")
+                        toaster.toast("已複製")
                     }
                 },
             ) {
-                Icon(Icons.Rounded.ContentCopy, contentDescription = "复制")
+                Icon(Icons.Rounded.ContentCopy, contentDescription = "複製")
             }
         }
         val browseContent = @Composable { url: String ->
@@ -194,12 +194,12 @@ fun MediaDetailsLazyGrid(
                     } else {
                         scope.launch {
                             clipboard.setClipEntryText(url)
-                            toaster.toast("已复制")
+                            toaster.toast("已複製")
                         }
                     }
                 },
             ) {
-                Icon(Icons.Rounded.ArrowOutward, contentDescription = "打开链接")
+                Icon(Icons.Rounded.ArrowOutward, contentDescription = "開啟連結")
             }
         }
         val browseFile = @Composable { url: Path ->
@@ -210,12 +210,12 @@ fun MediaDetailsLazyGrid(
                     {
                         scope.launch {
                             if (!fileRevealer.revealFile(url)) {
-                                toaster.toast("打开文件失败 ${url.inSystem.absolutePath}")
+                                toaster.toast("開啟檔案失敗 ${url.inSystem.absolutePath}")
                             }
                         }
                     },
                 ) {
-                    Icon(Icons.Rounded.FileOpen, contentDescription = "浏览文件")
+                    Icon(Icons.Rounded.FileOpen, contentDescription = "瀏覽檔案")
                 }
             }
         }
@@ -236,7 +236,7 @@ fun MediaDetailsLazyGrid(
         }
         item {
             ListItem(
-                headlineContent = { Text("剧集范围") },
+                headlineContent = { Text("劇集範圍") },
                 leadingContent = { Icon(Icons.Rounded.Layers, contentDescription = null) },
                 supportingContent = {
                     val range = details.episodeRange
@@ -255,13 +255,13 @@ fun MediaDetailsLazyGrid(
         if (showSourceInfo) {
             item {
                 ListItem(
-                    headlineContent = { Text("数据源") },
+                    headlineContent = { Text("資料源") },
                     leadingContent = { MediaSourceIcon(details.sourceInfo, Modifier.size(24.dp)) },
                     supportingContent = {
                         val kind = when (details.kind) {
-                            MediaSourceKind.WEB -> "在线"
+                            MediaSourceKind.WEB -> "線上"
                             MediaSourceKind.BitTorrent -> "BT"
-                            MediaSourceKind.LocalCache -> "本地"
+                            MediaSourceKind.LocalCache -> "本機"
                         }
                         SelectionContainer { Text("[$kind] ${details.sourceInfo?.displayName ?: "未知"}") }
                     },
@@ -282,7 +282,7 @@ fun MediaDetailsLazyGrid(
         }
         item {
             ListItem(
-                headlineContent = { Text("字幕组") },
+                headlineContent = { Text("字幕組") },
                 leadingContent = { Icon(Icons.Rounded.Subtitles, contentDescription = null) },
                 supportingContent = { SelectionContainer { Text(details.properties.alliance) } },
                 trailingContent = { copyContent { details.properties.alliance } },
@@ -290,7 +290,7 @@ fun MediaDetailsLazyGrid(
         }
         item {
             ListItem(
-                headlineContent = { Text("字幕语言") },
+                headlineContent = { Text("字幕語言") },
                 leadingContent = { Icon(Icons.Rounded.Subtitles, contentDescription = null) },
                 supportingContent = {
                     SelectionContainer {
@@ -308,21 +308,21 @@ fun MediaDetailsLazyGrid(
         }
         item {
             ListItem(
-                headlineContent = { Text("发布时间") },
+                headlineContent = { Text("發布時間") },
                 leadingContent = { Icon(Icons.Rounded.Event, contentDescription = null) },
                 supportingContent = { SelectionContainer { Text(formatDateTime(details.publishedTimeMillis)) } },
             )
         }
         item {
             ListItem(
-                headlineContent = { Text("分辨率") },
+                headlineContent = { Text("解析度") },
                 leadingContent = { Icon(Icons.Outlined.Hd, contentDescription = null) },
                 supportingContent = { SelectionContainer { Text(details.properties.resolution) } },
             )
         }
         item {
             ListItem(
-                headlineContent = { Text("文件大小") },
+                headlineContent = { Text("檔案大小") },
                 leadingContent = { Icon(Icons.Rounded.Description, contentDescription = null) },
                 supportingContent = {
                     SelectionContainer {
@@ -337,7 +337,7 @@ fun MediaDetailsLazyGrid(
         }
         item {
             ListItem(
-                headlineContent = { Text("原始链接") },
+                headlineContent = { Text("原始連結") },
                 leadingContent = placeholderLeadingContent,
                 supportingContent = {
                     SelectionContainer {
@@ -350,7 +350,7 @@ fun MediaDetailsLazyGrid(
         if (details.fileType != null) {
             item {
                 ListItem(
-                    headlineContent = { Text("文件类型") },
+                    headlineContent = { Text("檔案類型") },
                     leadingContent = placeholderLeadingContent,
                     supportingContent = {
                         SelectionContainer {
@@ -370,7 +370,7 @@ fun MediaDetailsLazyGrid(
         if (details.contentDownloadUri != null) {
             item {
                 ListItem(
-                    headlineContent = { Text("原始下载链接") },
+                    headlineContent = { Text("原始下載連結") },
                     leadingContent = { Icon(Icons.Rounded.VideoFile, contentDescription = null) },
                     supportingContent = {
                         SelectionContainer {
@@ -384,7 +384,7 @@ fun MediaDetailsLazyGrid(
         if (details.localCacheFilePath != null) {
             item {
                 ListItem(
-                    headlineContent = { Text("本地缓存路径") },
+                    headlineContent = { Text("本機快取路徑") },
                     leadingContent = { Icon(Icons.Rounded.VideoFile, contentDescription = null) },
                     supportingContent = {
                         SelectionContainer {
@@ -400,7 +400,7 @@ fun MediaDetailsLazyGrid(
         if (details.totalSegments != null) {
             item {
                 ListItem(
-                    headlineContent = { Text("总片段数") },
+                    headlineContent = { Text("總片段數") },
                     leadingContent = placeholderLeadingContent,
                     supportingContent = {
                         Text(details.totalSegments.toString(), maxLines = 1, overflow = TextOverflow.Ellipsis)
@@ -411,7 +411,7 @@ fun MediaDetailsLazyGrid(
         if (details.downloaderStatus != null) {
             item {
                 ListItem(
-                    headlineContent = { Text("下载器内部状态") },
+                    headlineContent = { Text("下載器內部狀態") },
                     leadingContent = placeholderLeadingContent,
                     supportingContent = {
                         Text(details.downloaderStatus, maxLines = 1, overflow = TextOverflow.Ellipsis)
@@ -427,7 +427,7 @@ fun MediaDetailsLazyGrid(
                             Text(
                                 remember(subtitle) {
                                     buildString {
-                                        append("外挂字幕 ${index + 1}")
+                                        append("外掛字幕 ${index + 1}")
                                         subtitle.language?.let {
                                             append(": ")
                                             append(it)

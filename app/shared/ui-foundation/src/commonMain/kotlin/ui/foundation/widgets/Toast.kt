@@ -65,20 +65,20 @@ private val logger = logger<Toaster>()
 
 fun Toaster.showLoadError(error: LoadError) { // TODO: localize
     when (error) {
-        LoadError.NetworkError -> show("网络错误，请检查网络连接或稍后再试")
-        LoadError.NoResults -> show("没有结果")
-        LoadError.RateLimited -> show("请求过于频繁，请稍后再试")
-        LoadError.RequiresLogin -> show("此功能需要登录")
-        LoadError.ServiceUnavailable -> show("服务不可用，请稍后再试")
+        LoadError.NetworkError -> show("網路錯誤，請檢查網路連線或稍後再試")
+        LoadError.NoResults -> show("沒有結果")
+        LoadError.RateLimited -> show("請求過於頻繁，請稍後再試")
+        LoadError.RequiresLogin -> show("此功能需要登入")
+        LoadError.ServiceUnavailable -> show("服務不可用，請稍後再試")
         is LoadError.UnknownError -> {
-            show("发生未知错误，请在设置中反馈（附加日志）")
+            show("發生未知錯誤，請在設定中回報（附加日誌）")
             logger.warn(error.throwable) {
                 "Toaster showing an LoadError.UnknownError"
             }
         }
 
         is LoadError.RequestError -> {
-            show("请求错误: ${error.localized}")
+            show("請求錯誤: ${error.localized}")
             logger.warn {
                 "Toaster showing an LoadError.RequestError: ${error.localized}"
             }

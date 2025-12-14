@@ -131,9 +131,9 @@ fun CacheEpisodeItem(
                         ) {
                             Crossfade(state.isFinished, Modifier.size(20.dp)) {
                                 if (it) {
-                                    Icon(Icons.Rounded.DownloadDone, "下载完成")
+                                    Icon(Icons.Rounded.DownloadDone, "下載完成")
                                 } else {
-                                    Icon(Icons.Rounded.Downloading, "下载中")
+                                    Icon(Icons.Rounded.Downloading, "下載中")
                                 }
                             }
 
@@ -207,11 +207,11 @@ fun CacheEpisodeItem(
                         if (!state.isFinished) {
                             if (state.isPaused) {
                                 IconButton(onResume) {
-                                    Icon(Icons.Rounded.Restore, "继续下载")
+                                    Icon(Icons.Rounded.Restore, "繼續下載")
                                 }
                             } else {
                                 IconButton(onPause) {
-                                    Icon(Icons.Rounded.Pause, "暂停下载", Modifier.size(28.dp))
+                                    Icon(Icons.Rounded.Pause, "暫停下載", Modifier.size(28.dp))
                                 }
                             }
                         }
@@ -220,7 +220,7 @@ fun CacheEpisodeItem(
 
                 // 总是展示的更多操作. 实际上点击整个 ListItem 都能展示 dropdown, 但留有这个按钮避免用户无法发现点击 list 能展开.
                 IconButton({ showDropdown = true }) {
-                    Icon(Icons.Rounded.MoreVert, "管理此项")
+                    Icon(Icons.Rounded.MoreVert, "管理此項")
                 }
             }
             Dropdown(
@@ -252,8 +252,8 @@ private fun Dropdown(
         AlertDialog(
             { showConfirm = false },
             icon = { Icon(Icons.Rounded.Delete, null, tint = MaterialTheme.colorScheme.error) },
-            title = { Text("删除缓存") },
-            text = { Text("删除后不可恢复，确认删除吗?") },
+            title = { Text("刪除快取") },
+            text = { Text("刪除後不可恢復，確認刪除嗎?") },
             confirmButton = {
                 TextButton(
                     {
@@ -261,7 +261,7 @@ private fun Dropdown(
                         showConfirm = false
                     },
                 ) {
-                    Text("删除", color = MaterialTheme.colorScheme.error)
+                    Text("刪除", color = MaterialTheme.colorScheme.error)
                 }
             },
             dismissButton = {
@@ -275,7 +275,7 @@ private fun Dropdown(
         if (!state.isFinished) {
             if (state.isPaused) {
                 DropdownMenuItem(
-                    text = { Text("继续下载") },
+                    text = { Text("繼續下載") },
                     leadingIcon = { Icon(Icons.Rounded.Restore, null) },
                     onClick = {
                         onResume()
@@ -284,7 +284,7 @@ private fun Dropdown(
                 )
             } else {
                 DropdownMenuItem(
-                    text = { Text("暂停下载") },
+                    text = { Text("暫停下載") },
                     leadingIcon = { Icon(Icons.Rounded.Pause, null) },
                     onClick = {
                         onPause()
@@ -312,11 +312,11 @@ private fun Dropdown(
                     }
 
                     CacheEpisodeState.Playability.INVALID_SUBJECT_EPISODE_ID -> {
-                        toaster.toast("信息无效，无法播放")
+                        toaster.toast("資訊無效，無法播放")
                     }
 
                     CacheEpisodeState.Playability.STREAMING_NOT_SUPPORTED -> {
-                        toaster.toast("此资源不支持边下边播，请等待下载完成")
+                        toaster.toast("此資源不支援邊下邊播，請等待下載完成")
                     }
                 }
             },
@@ -324,7 +324,7 @@ private fun Dropdown(
 
         ProvideContentColor(MaterialTheme.colorScheme.error) {
             DropdownMenuItem(
-                text = { Text("删除", color = MaterialTheme.colorScheme.error) },
+                text = { Text("刪除", color = MaterialTheme.colorScheme.error) },
                 leadingIcon = { Icon(Icons.Rounded.Delete, null, tint = MaterialTheme.colorScheme.error) },
                 onClick = {
                     showConfirm = true

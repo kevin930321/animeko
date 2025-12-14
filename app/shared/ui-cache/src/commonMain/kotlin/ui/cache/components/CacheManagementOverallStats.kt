@@ -47,7 +47,7 @@ fun CacheManagementOverallStats(
         Stat(
             title = {
                 Icon(Icons.Rounded.Upload, null)
-                Text("总上传", style = MaterialTheme.typography.titleMedium)
+                Text("總上傳", style = MaterialTheme.typography.titleMedium)
             },
             speedText = {
                 Text(renderSpeed(remember(stats) { derivedStateOf { stats().uploadSpeed } }.value))
@@ -60,7 +60,7 @@ fun CacheManagementOverallStats(
         Stat(
             title = {
                 Icon(Icons.Rounded.Download, null)
-                Text("总下载", style = MaterialTheme.typography.titleMedium)
+                Text("總下載", style = MaterialTheme.typography.titleMedium)
             },
             speedText = {
                 Text(renderSpeed(remember(stats) { derivedStateOf { stats().downloadSpeed } }.value))

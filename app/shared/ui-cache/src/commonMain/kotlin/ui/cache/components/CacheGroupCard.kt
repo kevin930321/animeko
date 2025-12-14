@@ -167,14 +167,14 @@ fun CacheGroupCard(
                     Row(Modifier.align(Alignment.Top)) { // no horizontal spacing
                         state.cacheId?.let {
                             IconButton({ navigator.navigateCacheDetails(it) }) {
-                                Icon(Icons.Outlined.Info, "更多缓存信息")
+                                Icon(Icons.Outlined.Info, "更多快取資訊")
                             }
 
                         }
 
                         state.subjectId?.let { subjectId ->
                             IconButton({ navigator.navigateSubjectDetails(subjectId, placeholder = null) }) {
-                                Icon(Icons.Outlined.ArrowOutward, "查看条目详情")
+                                Icon(Icons.Outlined.ArrowOutward, "查看條目詳情")
                             }
                         }
                     }

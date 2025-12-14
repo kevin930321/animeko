@@ -75,8 +75,8 @@ internal fun BitTorrentFeatureStep(
                 .fillMaxWidth(),
             verticalArrangement = Arrangement.spacedBy(8.dp),
         ) {
-            Text("Ani 支持边下边播 BT 资源，BT 下载速度取决于网络质量")
-            Text("允许通知权限，在缓存时查看下载进度")
+            Text("Ani 支援邊下邊播 BT 資源，BT 下載速度取決於網路品質")
+            Text("允許通知權限，在快取時查看下載進度")
         }
         Column(
             modifier = Modifier.padding(vertical = 16.dp),
@@ -120,7 +120,7 @@ internal fun BitTorrentFeatureSwitchItem(
                     verticalAlignment = Alignment.CenterVertically
                 ) {
                     Text(
-                        text = "启用 BitTorrent 功能",
+                        text = "啟用 BitTorrent 功能",
                         style = MaterialTheme.typography.titleMedium,
                         maxLines = 1,
                         modifier = Modifier.basicMarquee()
@@ -165,7 +165,7 @@ internal fun RequestNotificationPermission(
                         modifier = Modifier.size(32.dp)
                     )
                     Text(
-                        text = "允许通知",
+                        text = "允許通知",
                         style = MaterialTheme.typography.titleMedium,
                         maxLines = 1,
                         modifier = Modifier.basicMarquee()
@@ -173,7 +173,7 @@ internal fun RequestNotificationPermission(
                 }
                 Box(modifier = Modifier.padding(start = 48.dp)) {
                     Text(
-                        text = "显示 BT 下载进度和速度等信息",
+                        text = "顯示 BT 下載進度和速度等資訊",
                         style = MaterialTheme.typography.bodyLarge,
                         color = MaterialTheme.colorScheme.onSurfaceVariant
                     )
@@ -184,13 +184,13 @@ internal fun RequestNotificationPermission(
                     onClick = { },
                     enabled = false,
                     modifier = Modifier.fillMaxWidth(),
-                    content = { Text("已授权") }
+                    content = { Text("已授權") }
                 )
             } else {
                 Button(
                     onClick = onRequestNotificationPermission,
                     modifier = Modifier.fillMaxWidth(),
-                    content = { Text("授予权限") }
+                    content = { Text("授予權限") }
                 )
             }
         }

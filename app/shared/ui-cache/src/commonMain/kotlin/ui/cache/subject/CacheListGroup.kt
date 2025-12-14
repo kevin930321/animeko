@@ -221,7 +221,7 @@ fun SettingsScope.EpisodeCacheListGroup(
     }
 
     Group(
-        title = { Text("单集缓存") },
+        title = { Text("單集快取") },
         modifier = modifier,
     ) {
         state.episodes.fastForEachIndexed { i, episodeCacheState ->
@@ -291,7 +291,7 @@ private fun ItemDropdown(
                 onDismissRequest()
             },
             text = {
-                Text("删除")
+                Text("刪除")
             },
             leadingIcon = {
                 Icon(
@@ -344,13 +344,13 @@ fun SettingsScope.EpisodeCacheItem(
                     when (episode.info.watchStatus) {
                         UnifiedCollectionType.DONE -> {
                             Label(Modifier.padding(start = 8.dp)) {
-                                Text("看过")
+                                Text("看過")
                             }
                         }
 
                         UnifiedCollectionType.DROPPED -> {
                             Label(Modifier.padding(start = 8.dp)) {
-                                Text("抛弃")
+                                Text("拋棄")
                             }
                         }
 
@@ -461,7 +461,7 @@ fun EpisodeCacheActionIcon(
             if (canCache) {
                 CompositionLocalProvider(LocalContentColor providesDefault MaterialTheme.colorScheme.primary) {
                     IconButton(onClick) {
-                        Icon(Icons.Rounded.Download, "缓存")
+                        Icon(Icons.Rounded.Download, "快取")
                     }
                 }
             }

@@ -71,5 +71,5 @@ fun SettingsScope.AutoCacheGroup(
     RowButtonItem(
         onClick = onClickGlobalCacheManage,
         icon = { Icon(Icons.AutoMirrored.Rounded.ViewList, null) },
-    ) { Text("管理全部缓存") }
+    ) { Text("管理全部快取") }
 }

@@ -98,7 +98,7 @@ fun LoadErrorCard(
                     iconModifier,
                 )
             },
-            text = { Text("重试") },
+            text = { Text("重試") },
         )
     }
 
@@ -159,7 +159,7 @@ fun LoadErrorCard(
                                     iconModifier,
                                 )
                             },
-                            text = { Text("登录") },
+                            text = { Text("登入") },
                         )
                     },
                     colors = listItemColors,
@@ -199,10 +199,10 @@ fun LoadErrorCard(
                                                 "<User clicked copy, I'm just printing the stack trace>"
                                             }
                                         }
-                                        toaster.toast("已复制，请反馈到 GitHub issues 或群里")
+                                        toaster.toast("已複製，請回報到 GitHub issues 或群組")
                                     },
                                 ) {
-                                    Text("复制")
+                                    Text("複製")
                                 }
                             }
 
@@ -272,16 +272,16 @@ object LoadErrorDefaults {
 
 fun renderLoadErrorMessage(error: LoadError): String {
     return when (error) {
-        LoadError.NetworkError -> "网络错误"
-        LoadError.RateLimited -> "操作过快，请重试"
-        LoadError.ServiceUnavailable -> "服务暂不可用"
-        LoadError.NoResults -> "无搜索结果"
-        LoadError.RequiresLogin -> "此功能需要登录"
+        LoadError.NetworkError -> "網路錯誤"
+        LoadError.RateLimited -> "操作過快，請重試"
+        LoadError.ServiceUnavailable -> "服務暫不可用"
+        LoadError.NoResults -> "無搜尋結果"
+        LoadError.RequiresLogin -> "此功能需要登入"
         is LoadError.UnknownError -> {
             error.throwable?.printStackTrace()
-            "未知错误: ${error.throwable?.message ?: "无详细信息"}"
+            "未知錯誤: ${error.throwable?.message ?: "無詳細資訊"}"
         }
 
-        is LoadError.RequestError -> "请求错误: ${error.localized}"
+        is LoadError.RequestError -> "請求錯誤: ${error.localized}"
     }
 }
