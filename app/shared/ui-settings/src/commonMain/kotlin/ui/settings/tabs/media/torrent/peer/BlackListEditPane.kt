@@ -54,13 +54,13 @@ fun BlackListEditPane(
     SettingsTab(modifier) {
         AniAnimatedVisibility(visible = showTitle) {
             Group(
-                title = { Text("黑名单") },
-                description = { Text("黑名单中的 Peer 总是被屏蔽，无论是否匹配过滤规则") },
+                title = { Text("黑名單") },
+                description = { Text("黑名單中的 Peer 總是會被封鎖，無論是否匹配過濾規則") },
                 content = { },
             )
         }
         TextItem(
-            title = { if (!showTitle) Text("添加黑名单 IP 地址") },
+            title = { if (!showTitle) Text("新增黑名單 IP 位址") },
             action = {
                 if (showTitle) {
                     OutlinedButton({ showAddBlackIpDialog = true }) {
@@ -68,8 +68,8 @@ fun BlackListEditPane(
                             verticalAlignment = Alignment.CenterVertically,
                             horizontalArrangement = Arrangement.spacedBy(4.dp),
                         ) {
-                            Icon(Icons.Default.Add, contentDescription = "添加黑名单 IP 地址")
-                            Text("添加黑名单 IP 地址")
+                            Icon(Icons.Default.Add, contentDescription = "新增黑名單 IP 位址")
+                            Text("新增黑名單 IP 位址")
                         }
                     }
                 } else {
@@ -78,7 +78,7 @@ fun BlackListEditPane(
                             showAddBlackIpDialog = true
                         },
                     ) {
-                        Icon(Icons.Default.Add, contentDescription = "添加黑名单 IP 地址")
+                        Icon(Icons.Default.Add, contentDescription = "新增黑名單 IP 位址")
                     }
                 }
             },
@@ -93,7 +93,7 @@ fun BlackListEditPane(
                     headlineContent = { Text(item) },
                     trailingContent = {
                         IconButton({ onRemove(item) }) {
-                            Icon(Icons.Default.Close, contentDescription = "移除此黑名单 IP")
+                            Icon(Icons.Default.Close, contentDescription = "移除此黑名單 IP")
                         }
                     },
                     colors = listItemColors,

@@ -109,7 +109,7 @@ fun SearchFilterChip(
     val maxWidth = remember(textLayout, density, styleLabelLarge) {
         with(density) {
             textLayout.measure(
-                "占位,占位位",
+                "佔位,佔位位",
                 softWrap = false,
                 maxLines = 1,
                 style = styleLabelLarge,
@@ -166,18 +166,18 @@ private fun renderChipLabel(
         return state.selected.joinToString(",")
     }
     return when (state.kind) {
-        CanonicalTagKind.Audience -> "受众"
-        CanonicalTagKind.Category -> "分类"
+        CanonicalTagKind.Audience -> "受眾"
+        CanonicalTagKind.Category -> "分類"
         CanonicalTagKind.Character -> "角色"
         CanonicalTagKind.Emotion -> "情感"
-        CanonicalTagKind.Genre -> "类型"
-        CanonicalTagKind.Rating -> "分级"
-        CanonicalTagKind.Region -> "地区"
+        CanonicalTagKind.Genre -> "類型"
+        CanonicalTagKind.Rating -> "分級"
+        CanonicalTagKind.Region -> "地區"
         CanonicalTagKind.Series -> "系列"
-        CanonicalTagKind.Setting -> "设定"
-        CanonicalTagKind.Source -> "来源"
-        CanonicalTagKind.Technology -> "技术"
-        null -> "自定义"
+        CanonicalTagKind.Setting -> "設定"
+        CanonicalTagKind.Source -> "來源"
+        CanonicalTagKind.Technology -> "技術"
+        null -> "自訂"
     }
 }
 

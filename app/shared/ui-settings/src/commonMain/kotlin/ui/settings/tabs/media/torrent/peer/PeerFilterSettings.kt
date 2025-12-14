@@ -65,7 +65,7 @@ fun PeerFilterSettingsScreen(
             listPaneTopAppBar = {
                 SearchBlockedIpTopAppBar(
                     enableSearch = !listDetailLayoutParameters.preferSinglePane,
-                    title = { AniTopAppBarDefaults.Title("Peer 过滤和屏蔽设置") },
+                    title = { AniTopAppBarDefaults.Title("Peer 過濾和封鎖設定") },
                     state = state,
                     windowInsets = paneContentWindowInsets.only(WindowInsetsSides.Top + WindowInsetsSides.Horizontal),
                     navigationIcon = {
@@ -107,7 +107,7 @@ fun PeerFilterSettingsScreen(
                 if (listDetailLayoutParameters.preferSinglePane) {
                     SearchBlockedIpTopAppBar(
                         enableSearch = true,
-                        title = { AniTopAppBarDefaults.Title("管理 IP 黑名单") },
+                        title = { AniTopAppBarDefaults.Title("管理 IP 黑名單") },
                         state = state,
                         navigationIcon = {
                             BackNavigationIconButton(
@@ -165,7 +165,7 @@ private fun SearchBlockedIpTopAppBar(
         avatar = {
             if (enableSearch && !state.searchingBlockedIp) {
                 IconButton({ state.startSearchBlockedIp() }) {
-                    Icon(Icons.Default.Search, contentDescription = "搜索黑名单 IP 地址")
+                    Icon(Icons.Default.Search, contentDescription = "搜尋黑名單 IP 位址")
                 }
             }
         },

@@ -313,12 +313,12 @@ private fun DanmakuConfig(
                                 if (danmakuConfig.enableTop) Icon(Icons.Rounded.Check, contentDescription = null)
                                 else Icon(Icons.Rounded.Close, contentDescription = null)
                             },
-                            label = { Text("顶部", maxLines = 1) },
+                            label = { Text("頂部", maxLines = 1) },
                         )
                         ElevatedFilterChip(
                             selected = danmakuConfig.enableFloating,
                             onClick = { setDanmakuConfig(danmakuConfig.copy(enableFloating = !danmakuConfig.enableFloating)) },
-                            label = { Text("滚动", maxLines = 1) },
+                            label = { Text("滾動", maxLines = 1) },
                             leadingIcon = {
                                 if (danmakuConfig.enableFloating) Icon(Icons.Rounded.Check, contentDescription = null)
                                 else Icon(Icons.Rounded.Close, contentDescription = null)
@@ -361,7 +361,7 @@ private fun DanmakuConfig(
                     },
                     valueRange = 0.50f..3f,
 //                steps = ((3f - 0.50f) / 0.05f).toInt() - 1,
-                    title = { Text("弹幕字号") },
+                    title = { Text("彈幕字號") },
                     valueLabel = { Text(remember(fontSize) { "${(fontSize * 100).roundToInt()}%" }) },
                 )
 
@@ -395,7 +395,7 @@ private fun DanmakuConfig(
                     },
                     valueRange = 0f..2f,
 //                steps = ((2f - 0f) / 0.1f).toInt() - 1,
-                    title = { Text("描边宽度") },
+                    title = { Text("描邊寬度") },
                     valueLabel = { Text(remember(strokeWidth) { "${(strokeWidth * 100).roundToInt()}%" }) },
                 )
 
@@ -416,7 +416,7 @@ private fun DanmakuConfig(
                     },
                     valueRange = 100f..900f,
 //                steps = ((900 - 100) / 100) - 1,
-                    title = { Text("弹幕字重") },
+                    title = { Text("彈幕字重") },
                     valueLabel = { Text(remember(fontWeight) { "${fontWeight.toInt()}" }) },
                 )
 
@@ -436,8 +436,8 @@ private fun DanmakuConfig(
                     },
                     valueRange = 0.2f..3f,
 //                steps = ((3f - 0.2f) / 0.1f).toInt() - 1,
-                    title = { Text("弹幕速度") },
-                    description = { Text("弹幕速度不会跟随视频倍速变化") },
+                    title = { Text("彈幕速度") },
+                    description = { Text("彈幕速度不會跟隨影片倍速變化") },
                     valueLabel = { Text(remember(speed) { "${(speed * 100).roundToInt()}%" }) },
                 )
 
@@ -474,11 +474,11 @@ private fun DanmakuConfig(
                     },
                     valueRange = 0f..10f,
                     steps = 9,
-                    title = { Text("同屏密度") },
+                    title = { Text("同螢幕密度") },
                     valueLabel = {
                         when (displayDensity.toInt()) {
                             in 7..10 -> Text("密集")
-                            in 4..6 -> Text("适中")
+                            in 4..6 -> Text("適中")
                             in 0..3 -> Text("稀疏")
                         }
                     },
@@ -521,15 +521,15 @@ private fun DanmakuConfig(
                     },
                     valueRange = 1f..6f,
                     steps = 4,
-                    title = { Text("显示区域") },
+                    title = { Text("顯示區域") },
                     valueLabel = {
                         when (displayArea) {
-                            1f -> Text("1/8 屏")
-                            2f -> Text("1/6 屏")
-                            3f -> Text("1/4 屏")
-                            4f -> Text("半屏")
-                            5f -> Text("3/4 屏")
-                            6f -> Text("全屏")
+                            1f -> Text("1/8 螢幕")
+                            2f -> Text("1/6 螢幕")
+                            3f -> Text("1/4 螢幕")
+                            4f -> Text("半螢幕")
+                            5f -> Text("3/4 螢幕")
+                            6f -> Text("全螢幕")
                         }
                     },
                 )

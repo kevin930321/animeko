@@ -89,8 +89,8 @@ internal actual fun SettingsScope.AppSettingsTabPlatform() {
     // 禁用电池优化
     if (powerManager != null) {
         Group(
-            title = { Text("后台运行") },
-            description = { Text(text = "缓存功能需要应用保持在后台运行才能下载视频") },
+            title = { Text("後台運行") },
+            description = { Text(text = "快取功能需要應用程式保持在後台運行才能下載影片") },
         ) {
             val isPreviewing = LocalIsPreviewing.current
             var isIgnoring by remember {
@@ -127,14 +127,14 @@ internal actual fun SettingsScope.AppSettingsTabPlatform() {
                         }
                     }
                 },
-                title = { Text("禁用电池优化") },
-                description = { Text("可以帮助保持在后台运行。可能增加耗电") },
+                title = { Text("停用電池最佳化") },
+                description = { Text("可以幫助保持在後台運行。可能增加耗電") },
             )
         }
     }
 
     Group(
-        title = { Text("通知设置") },
+        title = { Text("通知設定") },
     ) {
         RowButtonItem(
             icon = { Icon(Icons.Rounded.ArrowOutward, contentDescription = null) },
@@ -152,6 +152,6 @@ internal actual fun SettingsScope.AppSettingsTabPlatform() {
                     it.printStackTrace()
                 }
             },
-        ) { Text(text = "打开设置") }
+        ) { Text(text = "開啟設定") }
     }
 }

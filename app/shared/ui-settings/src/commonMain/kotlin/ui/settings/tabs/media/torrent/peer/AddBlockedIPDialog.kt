@@ -100,13 +100,13 @@ fun AddBlockedIPDialog(
 
     AlertDialog(
         onDismissRequest = dismiss,
-        title = { Text("添加 IP 地址") },
+        title = { Text("新增 IP 位址") },
         text = {
             Column {
-                Text("向 IP 地址黑名单添加新的 IP 地址")
-                Text("支持 IPv4 或 IPv6 地址，且 IPv6 地址必须为完整格式的地址")
+                Text("向 IP 位址黑名單新增 IP 位址")
+                Text("支援 IPv4 或 IPv6 位址，且 IPv6 位址必須為完整格式的位址")
                 if (LocalPlatform.current is Platform.Desktop) {
-                    Text("可输入多行，按 Enter 确认添加，Ctrl+Enter 换行")
+                    Text("可輸入多行，按 Enter 確認新增，Ctrl+Enter 換行")
                 }
                 Spacer(Modifier.height(12.dp))
                 OutlinedTextField(
@@ -142,7 +142,7 @@ fun AddBlockedIPDialog(
                         ProvideContentColor(MaterialTheme.colorScheme.error) {
                             Icon(Icons.Default.Close, contentDescription = null)
                             Spacer(Modifier.width(8.dp))
-                            Text("IP 地址格式错误")
+                            Text("IP 位址格式錯誤")
                         }
                     }
                 }
@@ -157,7 +157,7 @@ fun AddBlockedIPDialog(
                 enabled = dialogAddButtonEnabled,
                 onClick = doAdd,
             ) {
-                Text("添加")
+                Text("新增")
             }
         },
         dismissButton = {

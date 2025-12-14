@@ -141,27 +141,27 @@ fun BangumiSyncTabImpl(
     isBangumiSyncing: Boolean,
     modifier: Modifier = Modifier,
 ) = SettingsTab(modifier) {
-    Group({ Text("手动全量同步") }) {
+    Group({ Text("手動全量同步") }) {
         TextItem(
             title = {
-                Text("重新下载全部 Bangumi 数据")
+                Text("重新下載全部 Bangumi 資料")
             },
             onClick = onFullSyncClick,
             onClickEnabled = !isBangumiSyncing,
             description = {
-                Text("将 Bangumi 的收藏数据下载到 Animeko 收藏服务。通常来说不需要进行这个操作，Animeko 能自动完成同步。仅在你有发现数据不一致的情况时才需要手动下载。此操作可能需要数分钟才能完成，在同步过程中其他功能不可用。请注意，每十分钟只能执行一次全量同步")
+                Text("將 Bangumi 的收藏資料下載到 Animeko 收藏服務。通常來說不需要進行這個操作，Animeko 能自動完成同步。僅在你有發現資料不一致的情況時才需要手動下載。此操作可能需要數分鐘才能完成，在同步過程中其他功能不可用。請注意，每十分鐘只能執行一次全量同步")
             },
         )
     }
 
     val items = syncCommandsFlow.collectAsLazyPagingItems()
     Group(
-        { Text("同步队列") },
-        description = { Text("待执行的同步操作") },
+        { Text("同步佇列") },
+        description = { Text("待執行的同步操作") },
         actions = {
             TextButton(onPushClick, enabled = !isBangumiSyncing) {
                 Icon(Icons.Default.Publish, null, Modifier.size(ButtonDefaults.IconSize))
-                Text("执行全部")
+                Text("執行全部")
             }
         },
     ) {
@@ -179,11 +179,11 @@ fun BangumiSyncTabImpl(
                     title = {
                         Text(
                             item?.let { describe(it.op) }
-                                ?: "加载中加载中加载中加载中...", // placeholder, no localization
+                                ?: "載入中載入中載入中載入中...", // placeholder, no localization
                         )
                     },
                     description = {
-                        Text(item?.id ?: "加载中...")
+                        Text(item?.id ?: "載入中...")
                     },
                     modifier = Modifier.placeholder(item == null)
                         .animateItem(
@@ -210,19 +210,19 @@ fun BangumiSyncTabImpl(
 private fun describe(op: BangumiSyncOp?): String {
     return when (op) {
         is BangumiSyncOp.AddCollection -> "更新收藏：${op.subjectId} (${op.type.name})"
-        is BangumiSyncOp.DeleteCollection -> "删除收藏：${op.subjectId}"
+        is BangumiSyncOp.DeleteCollection -> "刪除收藏：${op.subjectId}"
         is BangumiSyncOp.UpdateCollection -> {
-            if (op.type == null) return "删除收藏：${op.subjectId}"
+            if (op.type == null) return "刪除收藏：${op.subjectId}"
             "更新收藏：${op.subjectId} (${op.type?.name})"
         }
 
         is BangumiSyncOp.UpdateEpisodeCollection -> {
             val type = op.type
-            if (type == null) return "标记剧集为未看过：${op.episodeId}"
-            "标记剧集为看过：${op.episodeId} (${type.name})"
+            if (type == null) return "標記劇集為未看過：${op.episodeId}"
+            "標記劇集為看過：${op.episodeId} (${type.name})"
         }
 
-        null -> "未知操作（请更新版本）"
+        null -> "未知操作（請更新版本）"
     }
 }
 

@@ -96,8 +96,8 @@ internal fun SelectorConfigurationPane(
                     Modifier
                         .fillMaxWidth()
                         .moveFocusOnEnter(),
-                    label = { Text("名称*") },
-                    placeholder = { Text("设置显示在列表中的名称") },
+                    label = { Text("名稱*") },
+                    placeholder = { Text("設定顯示在列表中的名稱") },
                     isError = state.displayNameIsError,
                     keyboardOptions = KeyboardOptions(imeAction = ImeAction.Next),
                     shape = textFieldShape,
@@ -108,7 +108,7 @@ internal fun SelectorConfigurationPane(
                     Modifier
                         .fillMaxWidth()
                         .moveFocusOnEnter(),
-                    label = { Text("图标链接") },
+                    label = { Text("圖示連結") },
                     keyboardOptions = KeyboardOptions(imeAction = ImeAction.Next),
                     shape = textFieldShape,
                     enabled = state.enableEdit,
@@ -128,7 +128,7 @@ internal fun SelectorConfigurationPane(
                 OutlinedTextField(
                     state.searchUrl, { state.searchUrl = it },
                     Modifier.fillMaxWidth().moveFocusOnEnter(),
-                    label = { Text("搜索链接") },
+                    label = { Text("搜尋連結") },
                     placeholder = {
                         Text(
                             "示例：https://www.nyacg.net/search.html?wd={keyword}",
@@ -138,8 +138,8 @@ internal fun SelectorConfigurationPane(
                     supportingText = {
                         Text(
                             """
-                                    替换规则：
-                                    {keyword} 替换为条目 (番剧) 名称
+                                    替換規則：
+                                    {keyword} 替換為條目 (番劇) 名稱
                                 """.trimIndent(),
                         )
                     },
@@ -153,7 +153,7 @@ internal fun SelectorConfigurationPane(
                     Modifier
                         .padding(top = (verticalSpacing - 8.dp).coerceAtLeast(0.dp))
                         .fillMaxWidth().moveFocusOnEnter(),
-                    label = { Text("Base URL (可选)") },
+                    label = { Text("Base URL (可選)") },
                     placeholder = state.baseUrlPlaceholder?.let {
                         {
                             Text(it, color = MaterialTheme.colorScheme.outline)
@@ -161,7 +161,7 @@ internal fun SelectorConfigurationPane(
                     },
                     supportingText = {
                         Text(
-                            """可选。用于拼接条目详情 (剧集列表) 页面 URL，将会影响步骤 2。默认自动从搜索链接生成""".trimIndent(),
+                            """可選。用於拼接條目詳情 (劇集列表) 頁面 URL，將會影響步驟 2。預設自動從搜尋連結生成""".trimIndent(),
                         )
                     },
                     isError = state.searchUrlIsError,
@@ -170,13 +170,13 @@ internal fun SelectorConfigurationPane(
                     enabled = state.enableEdit,
                 )
                 ListItem(
-                    headlineContent = { Text("仅使用第一个词") },
+                    headlineContent = { Text("僅使用第一個詞") },
                     Modifier
                         .padding(top = (verticalSpacing - 8.dp).coerceAtLeast(0.dp))
                         .clickable(enabled = state.enableEdit) {
                             state.searchUseOnlyFirstWord = !state.searchUseOnlyFirstWord
                         },
-                    supportingContent = { Text("以空格分割，仅使用第一个词搜索。适用于搜索兼容性差的情况") },
+                    supportingContent = { Text("以空格分割，僅使用第一個詞搜尋。適用於搜尋相容性差的情況") },
                     trailingContent = {
                         Switch(
                             state.searchUseOnlyFirstWord, { state.searchUseOnlyFirstWord = it },
@@ -186,13 +186,13 @@ internal fun SelectorConfigurationPane(
                     colors = listItemColors,
                 )
                 ListItem(
-                    headlineContent = { Text("去除特殊字符") },
+                    headlineContent = { Text("去除特殊字元") },
                     Modifier
                         .padding(top = (verticalSpacing - 8.dp).coerceAtLeast(0.dp))
                         .clickable(enabled = state.enableEdit) {
                             state.searchRemoveSpecial = !state.searchRemoveSpecial
                         },
-                    supportingContent = { Text("去除特殊字符以及 \"电影\" 等字样，提升搜索成功率") },
+                    supportingContent = { Text("去除特殊字元以及 \"電影\" 等字樣，提升搜尋成功率") },
                     trailingContent = {
                         Switch(
                             state.searchRemoveSpecial, { state.searchRemoveSpecial = it },
@@ -214,13 +214,13 @@ internal fun SelectorConfigurationPane(
                     Modifier
                         .padding(top = (verticalSpacing - 8.dp).coerceAtLeast(0.dp))
                         .fillMaxWidth().moveFocusOnEnter(),
-                    label = { Text("尝试条目名称数量") },
+                    label = { Text("嘗試條目名稱數量") },
                     supportingText = {
                         Text(
                             """
-                                每次播放使用多少个条目名称进行查询。
-                                为 1 则只使用主中文名称，为 2 额外使用日文原名，大于 2 将额外使用其他别名，别名的数量不固定。
-                                一般用 1 就够了，使用多个名称将会显著增加播放时的等待时间。
+                                每次播放使用多少個條目名稱進行查詢。
+                                為 1 則只使用主中文名稱，為 2 額外使用日文原名，大於 2 將額外使用其他別名，別名的數量不固定。
+                                一般用 1 就夠了，使用多個名稱將會顯著增加播放時的等待時間。
                                 """.trimIndent(),
                         )
                     },
@@ -243,10 +243,10 @@ internal fun SelectorConfigurationPane(
                     Modifier
                         .padding(top = (verticalSpacing - 8.dp).coerceAtLeast(0.dp))
                         .fillMaxWidth().moveFocusOnEnter(),
-                    label = { Text("搜索请求间隔时间 (毫秒)") },
+                    label = { Text("搜尋請求間隔時間 (毫秒)") },
                     supportingText = {
                         Text(
-                            """控制每发送一个请求后等待多久后再发送下一个请求""".trimIndent(),
+                            """控制每發送一個請求後等待多久後再發送下一個請求""".trimIndent(),
                         )
                     },
                     isError = requestIntervalString.toLongOrNull() == null,
@@ -308,7 +308,7 @@ internal fun SelectorConfigurationPane(
                     MaterialTheme.typography.titleMedium,
                     MaterialTheme.colorScheme.primary,
                 ) {
-                    Text("过滤设置")
+                    Text("過濾設定")
                 }
             }
 
@@ -317,11 +317,11 @@ internal fun SelectorConfigurationPane(
                 verticalArrangement = Arrangement.spacedBy((verticalSpacing - 16.dp).coerceAtLeast(0.dp)),
             ) {
                 ListItem(
-                    headlineContent = { Text("使用条目名称过滤") },
+                    headlineContent = { Text("使用條目名稱過濾") },
                     Modifier.focusable(false).clickable(
                         enabled = state.enableEdit,
                     ) { state.filterBySubjectName = !state.filterBySubjectName },
-                    supportingContent = { Text("要求资源标题包含条目名称。适用于数据源可能搜到无关内容的情况。此功能只对 4.4.0 以前版本有效，对其他版本无效") },
+                    supportingContent = { Text("要求資源標題包含條目名稱。適用於資料源可能搜到無關內容的情況。此功能只對 4.4.0 以前版本有效，對其他版本無效") },
                     trailingContent = {
                         Switch(
                             state.filterBySubjectName, { state.filterBySubjectName = it },
@@ -331,11 +331,11 @@ internal fun SelectorConfigurationPane(
                     colors = listItemColors,
                 )
                 ListItem(
-                    headlineContent = { Text("使用剧集序号过滤") },
+                    headlineContent = { Text("使用劇集序號過濾") },
                     Modifier.focusable(false).clickable(
                         enabled = state.enableEdit,
                     ) { state.filterByEpisodeSort = !state.filterByEpisodeSort },
-                    supportingContent = { Text("要求资源标题包含剧集序号。适用于数据源可能搜到无关内容的情况。通常建议开启") },
+                    supportingContent = { Text("要求資源標題包含劇集序號。適用於資料源可能搜到無關內容的情況。通常建議開啟") },
                     trailingContent = {
                         Switch(
                             state.filterByEpisodeSort, { state.filterByEpisodeSort = it },
@@ -364,11 +364,11 @@ internal fun SelectorConfigurationPane(
             kotlin.run {
                 var showMenu by rememberSaveable { mutableStateOf(false) }
                 ListItem(
-                    headlineContent = { Text("标记分辨率") },
+                    headlineContent = { Text("標記解析度") },
                     Modifier.focusable(false).clickable(
                         enabled = state.enableEdit,
                     ) { showMenu = !showMenu },
-                    supportingContent = { Text("将此数据源的资源都标记为该分辨率。不影响查询，只在播放器中选择数据源时用做偏好和过滤选项。") },
+                    supportingContent = { Text("將此資料源的資源都標記為該解析度。不影響查詢，只在播放器中選擇資料源時用做偏好和過濾選項。") },
                     trailingContent = {
                         TextButton(onClick = { showMenu = true }) {
                             Text(state.defaultResolution.displayName)
@@ -394,11 +394,11 @@ internal fun SelectorConfigurationPane(
             kotlin.run {
                 var showMenu by rememberSaveable { mutableStateOf(false) }
                 ListItem(
-                    headlineContent = { Text("标记字幕语言") },
+                    headlineContent = { Text("標記字幕語言") },
                     Modifier.focusable(false).clickable(
                         enabled = state.enableEdit,
                     ) { showMenu = !showMenu },
-                    supportingContent = { Text("将此数据源的资源都标记为该字幕语言。不影响查询，只在播放器中选择数据源时用做偏好和过滤选项。") },
+                    supportingContent = { Text("將此資料源的資源都標記為該字幕語言。不影響查詢，只在播放器中選擇資料源時用做偏好和過濾選項。") },
                     trailingContent = {
                         TextButton(onClick = { showMenu = true }) {
                             Text(state.defaultSubtitleLanguage.displayName)
@@ -426,22 +426,22 @@ internal fun SelectorConfigurationPane(
                     MaterialTheme.typography.titleMedium,
                     MaterialTheme.colorScheme.primary,
                 ) {
-                    Text("在播放器内选择资源时")
+                    Text("在播放器內選擇資源時")
                 }
             }
 
             Column(Modifier, verticalArrangement = Arrangement.spacedBy(verticalSpacing)) {
                 val conf = state.selectMediaConfig
                 ListItem(
-                    headlineContent = { Text("区分条目名称") },
+                    headlineContent = { Text("區分條目名稱") },
                     Modifier.focusable(false).clickable(
                         enabled = state.enableEdit,
                     ) { conf.distinguishSubjectName = !conf.distinguishSubjectName },
                     supportingContent = {
                         Text(
-                            "关闭后，所有步骤 1 搜索到的条目都将被视为同一个，它们的相同标题的剧集将会被去重。" +
-                                    "开启此项则不会这样去重。\n" +
-                                    "此选项不影响测试结果，影响播放器内选择数据源时的结果。",
+                            "關閉後，所有步驟 1 搜尋到的條目都將被視為同一個，它們的相同標題的劇集將會被去重。" +
+                                    "開啟此項則不會這樣去重。\n" +
+                                    "此選項不影響測試結果，影響播放器內選擇資料源時的結果。",
                         )
                     },
                     trailingContent = {
@@ -453,15 +453,15 @@ internal fun SelectorConfigurationPane(
                     colors = listItemColors,
                 )
                 ListItem(
-                    headlineContent = { Text("区分线路名称") },
+                    headlineContent = { Text("區分線路名稱") },
                     Modifier.focusable(false).clickable(
                         enabled = state.enableEdit,
                     ) { conf.distinguishChannelName = !conf.distinguishChannelName },
                     supportingContent = {
                         Text(
-                            "关闭后，线路名称不同，但只要标题相同的剧集就会被去重。" +
-                                    "开启此项则不会这样去重。\n" +
-                                    "此选项不影响测试结果，影响播放器内选择数据源时的结果。",
+                            "關閉後，線路名稱不同，但只要標題相同的劇集就會被去重。" +
+                                    "開啟此項則不會這樣去重。\n" +
+                                    "此選項不影響測試結果，影響播放器內選擇資料源時的結果。",
                         )
                     },
                     trailingContent = {
@@ -479,7 +479,7 @@ internal fun SelectorConfigurationPane(
                     MaterialTheme.typography.titleMedium,
                     MaterialTheme.colorScheme.primary,
                 ) {
-                    Text("播放视频时")
+                    Text("播放影片時")
                 }
             }
 
@@ -489,7 +489,7 @@ internal fun SelectorConfigurationPane(
                     conf.referer, { conf.referer = it },
                     Modifier.fillMaxWidth().moveFocusOnEnter(),
                     label = { Text("Referer") },
-                    supportingText = { Text("播放视频时执行的 HTTP 请求的 Referer，可留空") },
+                    supportingText = { Text("播放影片時執行的 HTTP 請求的 Referer，可留空") },
                     keyboardOptions = KeyboardOptions(imeAction = ImeAction.Next),
                     shape = textFieldShape,
                     enabled = state.enableEdit,
@@ -498,7 +498,7 @@ internal fun SelectorConfigurationPane(
                     conf.userAgent, { conf.userAgent = it },
                     Modifier.fillMaxWidth().moveFocusOnEnter(),
                     label = { Text("User-Agent") },
-                    supportingText = { Text("播放视频时执行的 HTTP 请求的 User-Agent") },
+                    supportingText = { Text("播放影片時執行的 HTTP 請求的 User-Agent") },
                     keyboardOptions = KeyboardOptions(imeAction = ImeAction.Next),
                     shape = textFieldShape,
                     enabled = state.enableEdit,
@@ -511,7 +511,7 @@ internal fun SelectorConfigurationPane(
                         MaterialTheme.typography.labelMedium,
                         MaterialTheme.colorScheme.outline,
                     ) {
-                        Text("提示：修改自动保存")
+                        Text("提示：修改自動儲存")
                     }
                 }
             }
@@ -547,8 +547,8 @@ private fun SelectorSubjectFormatSelectionButtonRow(
             Btn(format.id, index) {
                 Text(
                     when (format) { // type-safe to handle all formats
-                        SelectorSubjectFormatA -> "单标签"
-                        SelectorSubjectFormatIndexed -> "多标签"
+                        SelectorSubjectFormatA -> "單標籤"
+                        SelectorSubjectFormatIndexed -> "多標籤"
                         SelectorSubjectFormatJsonPathIndexed -> "JsonPath"
                     },
                     softWrap = false,
@@ -584,8 +584,8 @@ private fun SelectorChannelSelectionButtonRow(
             Btn(selectorChannelFormat.id, index) {
                 Text(
                     when (selectorChannelFormat) { // type-safe to handle all formats
-                        SelectorChannelFormatNoChannel -> "不区分线路"
-                        SelectorChannelFormatIndexGrouped -> "线路分组"
+                        SelectorChannelFormatNoChannel -> "不區分線路"
+                        SelectorChannelFormatIndexGrouped -> "線路分組"
                     },
                     softWrap = false,
                 )

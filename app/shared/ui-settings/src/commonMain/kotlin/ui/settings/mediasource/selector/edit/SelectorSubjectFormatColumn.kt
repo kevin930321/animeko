@@ -45,7 +45,7 @@ internal fun SelectorSubjectConfigurationColumn(
     when (format) {
         SelectorSubjectFormatA -> Column(modifier) {
             Text(
-                "单个表达式，选取一些 <a>，根据其 title 属性或 text 确定名称，href 属性确定链接",
+                "單個表達式，選取一些 <a>，根據其 title 屬性或 text 確定名稱，href 屬性確定連結",
                 Modifier,
                 style = MaterialTheme.typography.labelLarge,
             )
@@ -54,19 +54,19 @@ internal fun SelectorSubjectConfigurationColumn(
             OutlinedTextField(
                 conf.selectLists, { conf.selectLists = it },
                 Modifier.fillMaxWidth().moveFocusOnEnter().padding(top = verticalSpacing),
-                label = { Text("提取条目列表") },
-                supportingText = { Text("CSS Selector 表达式。期望返回一些 <a>，每个对应一个条目，将会读取其 href 属性和 text") },
+                label = { Text("提取條目列表") },
+                supportingText = { Text("CSS Selector 表達式。期望返回一些 <a>，每個對應一個條目，將會讀取其 href 屬性和 text") },
                 keyboardOptions = KeyboardOptions(imeAction = ImeAction.Next),
                 shape = textFieldShape,
                 isError = conf.selectListsIsError,
                 enabled = state.enableEdit,
             )
             ListItem(
-                headlineContent = { Text("优先选择最短标题") },
+                headlineContent = { Text("優先選擇最短標題") },
                 Modifier
                     .padding(top = (verticalSpacing - 8.dp).coerceAtLeast(0.dp))
                     .clickable(enabled = state.enableEdit) { conf.preferShorterName = !conf.preferShorterName },
-                supportingContent = { Text("优先选择满足匹配的标题最短的条目。可避免为第一季匹配到第二季") },
+                supportingContent = { Text("優先選擇滿足匹配的標題最短的條目。可避免為第一季匹配到第二季") },
                 trailingContent = {
                     Switch(
                         conf.preferShorterName, { conf.preferShorterName = it },
@@ -79,7 +79,7 @@ internal fun SelectorSubjectConfigurationColumn(
 
         SelectorSubjectFormatIndexed -> Column(modifier) {
             Text(
-                "两个 CSS Selector 表达式，分别选取条目名称列表和链接列表，按顺序一一对应",
+                "兩個 CSS Selector 表達式，分別選取條目名稱列表和連結列表，按順序一一對應",
                 Modifier,
                 style = MaterialTheme.typography.labelLarge,
             )
@@ -87,8 +87,8 @@ internal fun SelectorSubjectConfigurationColumn(
             OutlinedTextField(
                 conf.selectNames, { conf.selectNames = it },
                 Modifier.fillMaxWidth().moveFocusOnEnter().padding(top = verticalSpacing),
-                label = { Text("提取条目名称列表") },
-                supportingText = { Text("CSS Selector 表达式。选取条目名称列表") },
+                label = { Text("提取條目名稱列表") },
+                supportingText = { Text("CSS Selector 表達式。選取條目名稱列表") },
                 keyboardOptions = KeyboardOptions(imeAction = ImeAction.Next),
                 shape = textFieldShape,
                 isError = conf.selectNamesIsError,
@@ -97,19 +97,19 @@ internal fun SelectorSubjectConfigurationColumn(
             OutlinedTextField(
                 conf.selectLinks, { conf.selectLinks = it },
                 Modifier.fillMaxWidth().moveFocusOnEnter().padding(top = verticalSpacing),
-                label = { Text("提取条目链接列表") },
-                supportingText = { Text("CSS Selector 表达式。选取链接列表") },
+                label = { Text("提取條目連結列表") },
+                supportingText = { Text("CSS Selector 表達式。選取連結列表") },
                 keyboardOptions = KeyboardOptions(imeAction = ImeAction.Next),
                 shape = textFieldShape,
                 isError = conf.selectLinksIsError,
                 enabled = state.enableEdit,
             )
             ListItem(
-                headlineContent = { Text("优先选择最短标题") },
+                headlineContent = { Text("優先選擇最短標題") },
                 Modifier
                     .padding(top = (verticalSpacing - 8.dp).coerceAtLeast(0.dp))
                     .clickable(enabled = state.enableEdit) { conf.preferShorterName = !conf.preferShorterName },
-                supportingContent = { Text("优先选择满足匹配的标题最短的条目。可避免为第一季匹配到第二季") },
+                supportingContent = { Text("優先選擇滿足匹配的標題最短的條目。可避免為第一季匹配到第二季") },
                 trailingContent = {
                     Switch(
                         conf.preferShorterName, { conf.preferShorterName = it },
@@ -122,7 +122,7 @@ internal fun SelectorSubjectConfigurationColumn(
 
         SelectorSubjectFormatJsonPathIndexed -> Column(modifier) {
             Text(
-                "两个 JsonPath 表达式，分别选取条目名称列表和链接列表，按顺序一一对应",
+                "兩個 JsonPath 表達式，分別選取條目名稱列表和連結列表，按順序一一對應",
                 Modifier,
                 style = MaterialTheme.typography.labelLarge,
             )
@@ -130,8 +130,8 @@ internal fun SelectorSubjectConfigurationColumn(
             OutlinedTextField(
                 conf.selectNames, { conf.selectNames = it },
                 Modifier.fillMaxWidth().moveFocusOnEnter().padding(top = verticalSpacing),
-                label = { Text("提取条目名称列表") },
-                supportingText = { Text("""JsonPath 表达式。选取条目名称列表。期望返回一个数组，每个元素对应一个名称。支持嵌套结构，例如 ["a", "b"] 与 [{"any": "a"}, {"any": "b"}] 都可以解析为两个名称 a b""") },
+                label = { Text("提取條目名稱列表") },
+                supportingText = { Text("""JsonPath 表達式。選取條目名稱列表。期望返回一個數組，每個元素對應一個名稱。支援嵌套結構，例如 ["a", "b"] 與 [{"any": "a"}, {"any": "b"}] 都可以解析為兩個名稱 a b""") },
                 keyboardOptions = KeyboardOptions(imeAction = ImeAction.Next),
                 shape = textFieldShape,
                 isError = conf.selectNamesIsError,
@@ -140,19 +140,19 @@ internal fun SelectorSubjectConfigurationColumn(
             OutlinedTextField(
                 conf.selectLinks, { conf.selectLinks = it },
                 Modifier.fillMaxWidth().moveFocusOnEnter().padding(top = verticalSpacing),
-                label = { Text("提取条目链接列表") },
-                supportingText = { Text("""JsonPath 表达式。选取链接列表。期望返回一个数组，每个元素对应一个链接。支持嵌套结构""") },
+                label = { Text("提取條目連結列表") },
+                supportingText = { Text("""JsonPath 表達式。選取連結列表。期望返回一個數組，每個元素對應一個連結。支援嵌套結構""") },
                 keyboardOptions = KeyboardOptions(imeAction = ImeAction.Next),
                 shape = textFieldShape,
                 isError = conf.selectLinksIsError,
                 enabled = state.enableEdit,
             )
             ListItem(
-                headlineContent = { Text("优先选择最短标题") },
+                headlineContent = { Text("優先選擇最短標題") },
                 Modifier
                     .padding(top = (verticalSpacing - 8.dp).coerceAtLeast(0.dp))
                     .clickable(enabled = state.enableEdit) { conf.preferShorterName = !conf.preferShorterName },
-                supportingContent = { Text("优先选择满足匹配的标题最短的条目。可避免为第一季匹配到第二季") },
+                supportingContent = { Text("優先選擇滿足匹配的標題最短的條目。可避免為第一季匹配到第二季") },
                 trailingContent = {
                     Switch(
                         conf.preferShorterName, { conf.preferShorterName = it },

@@ -206,7 +206,7 @@ fun SelectorEpisodePaneContent(
                             contentDescription = null,
                             tint = MaterialTheme.colorScheme.error,
                         )
-                        Text("根据步骤 3 的配置，从 ${list.size} 个链接中未匹配到播放链接，请检查配置")
+                        Text("根據步驟 3 的配置，從 ${list.size} 個連結中未匹配到播放連結，請檢查配置")
                     }
 
                     1 -> {
@@ -215,7 +215,7 @@ fun SelectorEpisodePaneContent(
                             contentDescription = null,
                             tint = MaterialTheme.colorScheme.primary,
                         )
-                        Text("根据步骤 3 的配置，从 ${list.size} 个链接中匹配到了 $matchedVideoSize 个链接")
+                        Text("根據步驟 3 的配置，從 ${list.size} 個連結中匹配到了 $matchedVideoSize 個連結")
                     }
 
                     else -> {
@@ -224,7 +224,7 @@ fun SelectorEpisodePaneContent(
                             contentDescription = null,
                             tint = Color.Yellow.compositeOver(MaterialTheme.colorScheme.error),
                         )
-                        Text("根据步骤 3 的配置，从 ${list.size} 个链接中匹配到了 $matchedVideoSize 个链接。为了更好的稳定性，建议调整规则，匹配到正好一个链接")
+                        Text("根據步驟 3 的配置，從 ${list.size} 個連結中匹配到了 $matchedVideoSize 個連結。為了更好的穩定性，建議調整規則，匹配到正好一個連結")
                     }
                 }
             }
@@ -237,25 +237,25 @@ fun SelectorEpisodePaneContent(
             FilterChip(
                 selected = state.hideImages,
                 { state.hideImages = !state.hideImages },
-                label = { Text("隐藏图片") },
+                label = { Text("隱藏圖片") },
                 leadingIcon = { if (state.hideImages) Icon(Icons.Rounded.Check, null) },
             )
             FilterChip(
                 selected = state.hideCss,
                 { state.hideCss = !state.hideCss },
-                label = { Text("隐藏 CSS/字体") },
+                label = { Text("隱藏 CSS/字體") },
                 leadingIcon = { if (state.hideCss) Icon(Icons.Rounded.Check, null) },
             )
             FilterChip(
                 selected = state.hideScripts,
                 { state.hideScripts = !state.hideScripts },
-                label = { Text("隐藏 JS/WASM") },
+                label = { Text("隱藏 JS/WASM") },
                 leadingIcon = { if (state.hideScripts) Icon(Icons.Rounded.Check, null) },
             )
             FilterChip(
                 selected = state.hideData,
                 { state.hideData = !state.hideData },
-                label = { Text("隐藏 data") },
+                label = { Text("隱藏 data") },
                 leadingIcon = { if (state.hideData) Icon(Icons.Rounded.Check, null) },
             )
         }
@@ -288,18 +288,18 @@ fun SelectorEpisodePaneContent(
                             .clickable {
                                 scope.launch {
                                     clipboard.setClipEntryText(matchResult.originalUrl)
-                                    toaster.toast("已复制")
+                                    toaster.toast("已複製")
                                 }
                             },
                         supportingContent = {
                             val m3u8 = matchResult.video?.m3u8Url
                             when {
                                 m3u8 != null && m3u8 != matchResult.originalUrl -> {
-                                    Text("将实际播放：${m3u8}")
+                                    Text("將實際播放：${m3u8}")
                                 }
 
                                 matchResult.webUrl.didLoadNestedPage -> {
-                                    Text("嵌套链接")
+                                    Text("嵌套連結")
                                 }
                             }
                         },

@@ -113,13 +113,13 @@ fun MediaSelectorWebSourcesColumn(
         ) {
             Text(
                 buildAnnotatedString {
-                    append("都不对？")
+                    append("都不對？")
                     pushStyle(
                         SpanStyle(
                             textDecoration = TextDecoration.Underline,
                         ),
                     )
-                    append("修改查询")
+                    append("修改查詢")
                 },
                 color = MaterialTheme.colorScheme.outline,
                 textAlign = TextAlign.Center,
@@ -151,7 +151,7 @@ private fun WebSourceCard(
             )
             Box(Modifier.padding(start = 8.dp)) {
                 Text(
-                    "五个字占位",
+                    "五個字佔位",
                     Modifier.alpha(0f).width(IntrinsicSize.Max),
                     softWrap = true,
                     maxLines = 2,
@@ -206,7 +206,7 @@ private fun WebSourceCard(
 
         if (source.isError) {
             IconButton(onRefresh) {
-                Icon(Icons.Rounded.Refresh, "刷新")
+                Icon(Icons.Rounded.Refresh, "重新整理")
             }
         }
     }
@@ -272,7 +272,7 @@ internal val TestWebSources
             instanceId = "source$it",
             mediaSourceId = "source$it",
             iconUrl = "https://example.com/example.png",
-            name = "数据源 $it",
+            name = "資料源 $it",
             channels = if (it % 2 == 0) {
                 TestWebSourceChannels1
             } else {
@@ -300,7 +300,7 @@ internal val TestWebSources
                 instanceId = "source error",
                 mediaSourceId = "source error",
                 iconUrl = "https://example.com/example.png",
-                name = "查询错误的数据源",
+                name = "查詢錯誤的資料源",
                 channels = emptyList(),
                 isError = true,
                 isLoading = false,
@@ -311,16 +311,16 @@ internal val TestWebSources
 @TestOnly
 private val TestWebSourceChannels1
     get() = listOf(
-        WebSourceChannel(name = "线路1"),
-        WebSourceChannel(name = "线路2"),
-        WebSourceChannel(name = "线路3"),
-        WebSourceChannel(name = "线路4"),
-        WebSourceChannel(name = "线路5"),
+        WebSourceChannel(name = "線路1"),
+        WebSourceChannel(name = "線路2"),
+        WebSourceChannel(name = "線路3"),
+        WebSourceChannel(name = "線路4"),
+        WebSourceChannel(name = "線路5"),
     )
 
 @TestOnly
 private val TestWebSourceChannels2
     get() = listOf(
-        WebSourceChannel(name = "主线"),
-        WebSourceChannel(name = "备线"),
+        WebSourceChannel(name = "主線"),
+        WebSourceChannel(name = "備線"),
     )

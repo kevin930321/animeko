@@ -67,7 +67,7 @@ private fun RuleEditItem(
             OutlinedTextField(
                 value = content,
                 enabled = enabled,
-                label = { Text("规则") },
+                label = { Text("規則") },
                 maxLines = 8,
                 onValueChange = onContentChange,
                 shape = textFieldShape,
@@ -87,20 +87,20 @@ private fun renderLastLoaded(lastLoaded: PeerFilterSubscription.LastLoaded?): St
     val error = lastLoaded?.error
 
     if (lastLoaded == null || (stat == null && error == null)) {
-        return "未更新，启用以更新"
+        return "未更新，啟用以更新"
     }
 
     return buildString {
         if (stat != null) {
-            append("包含 ${stat.ipRuleCount} 个 IP 过滤项，${stat.idRuleCount} 个 ID 过滤项和 ${stat.clientRuleCount} 个客户端过滤项")
+            append("包含 ${stat.ipRuleCount} 個 IP 過濾項，${stat.idRuleCount} 個 ID 過濾項和 ${stat.clientRuleCount} 個客戶端過濾項")
         }
 
         if (error != null) {
             if (stat == null) {
-                append("加载错误：$error")
+                append("載入錯誤：$error")
             } else {
                 appendLine()
-                append("更新错误：$error")
+                append("更新錯誤：$error")
             }
         }
     }
@@ -117,7 +117,7 @@ fun PeerFilterEditPane(
     
     SettingsTab(modifier.verticalScroll(rememberScrollState())) {
         Group(
-            title = { Text("过滤规则订阅") },
+            title = { Text("過濾規則訂閱") },
             actions = {
                 val updatingSubs by state.updatingSubs.collectAsStateWithLifecycle(false)
                 AnimatedContent(
@@ -129,7 +129,7 @@ fun PeerFilterEditPane(
                         CircularProgressIndicator(Modifier.size(24.dp))
                     } else {
                         IconButton({ state.updateSubs() }) {
-                            Icon(Icons.Rounded.Refresh, contentDescription = "刷新全部")
+                            Icon(Icons.Rounded.Refresh, contentDescription = "重新整理全部")
                         }
                     }
                 }
@@ -142,7 +142,7 @@ fun PeerFilterEditPane(
 
             SwitchItem(
                 onClick = { onCheckedChange(!(builtInSub?.enabled ?: false)) },
-                title = { Text("使用内置过滤规则") },
+                title = { Text("使用內建過濾規則") },
                 description = { Text(renderLastLoaded(list.firstOrNull()?.lastLoaded)) },
             ) {
                 Switch(
@@ -154,11 +154,11 @@ fun PeerFilterEditPane(
         }
 
         Group(
-            title = { Text("本地过滤规则") },
-            description = { Text("除通过订阅过滤规则外，还可以手动添加过滤规则") },
+            title = { Text("本地過濾規則") },
+            description = { Text("除透過訂閱過濾規則外，還可以手動新增過濾規則") },
         ) {
             SwitchItem(
-                title = { Text("过滤 IP 地址") },
+                title = { Text("過濾 IP 位址") },
                 checked = state.ipFilterEnabled,
                 onCheckedChange = { state.ipFilterEnabled = it },
             )
@@ -167,16 +167,16 @@ fun PeerFilterEditPane(
                     content = state.ipFiltersPattern,
                     enabled = true,
                     supportingTextBBCode = """
-                        每行一条过滤规则，支持 IPv4 和 IPv6
-                        支持以下格式：
-                        * 无类别域间路由（CIDR）
-                          例如：[code]10.0.0.1/24[/code] 将过滤从 [code]10.0.0.0[/code] 至 [code]10.0.0.255[/code] 的所有 IP
-                          [code]ff06:1234::/64[/code] 将过滤从 [code]ff06:1234::[/code] 至 [code]ff06:1234::ffff:ffff:ffff:ffff[/code] 的所有 IP
-                        * 通配符
-                          例如：[code]10.0.12.*[/code] 将过滤从 [code]10.0.12.0[/code] 至 [code]10.0.12.255[/code] 的所有 IP
-                          [code]ff06:1234::*[/code] 将过滤从 [code]ff06:1234::[/code] 至 [code]ff06:1234::ffff[/code] 的所有 IP
-                          支持多级通配符，例如 [code]10.0.*.*[/code]
-                        * 范围表示
+                        每行一條過濾規則，支援 IPv4 和 IPv6
+                        支援以下格式：
+                        * 無類別域間路由（CIDR）
+                          例如：[code]10.0.0.1/24[/code] 將過濾從 [code]10.0.0.0[/code] 至 [code]10.0.0.255[/code] 的所有 IP
+                          [code]ff06:1234::/64[/code] 將過濾從 [code]ff06:1234::[/code] 至 [code]ff06:1234::ffff:ffff:ffff:ffff[/code] 的所有 IP
+                        * 萬用字元
+                          例如：[code]10.0.12.*[/code] 將過濾從 [code]10.0.12.0[/code] 至 [code]10.0.12.255[/code] 的所有 IP
+                          [code]ff06:1234::*[/code] 將過濾從 [code]ff06:1234::[/code] 至 [code]ff06:1234::ffff[/code] 的所有 IP
+                          支援多級萬用字元，例如 [code]10.0.*.*[/code]
+                        * 範圍表示
                           例如 [code]10.0.24.100-200[/code] 和 [code]ff06:1234::cafe-dead[/code]
                     """.trimIndent(),
                     onContentChange = { state.ipFiltersPattern = it },
@@ -184,7 +184,7 @@ fun PeerFilterEditPane(
             }
 
             SwitchItem(
-                title = { Text("过滤客户端指纹") },
+                title = { Text("過濾客戶端指紋") },
                 checked = state.idFilterEnabled,
                 onCheckedChange = { state.idFilterEnabled = it },
             )
@@ -194,24 +194,24 @@ fun PeerFilterEditPane(
                         content = state.idFiltersRegex,
                         enabled = true,
                         supportingTextBBCode = """
-                        每行一条过滤规则，仅支持使用正则表达式过滤
-                        例如：[code]\-HP\d{4}\-[/code] 将封禁具有 -HPxxxx- 指纹的客户端
+                        每行一條過濾規則，僅支援使用正規表達式過濾
+                        例如：[code]\-HP\d{4}\-[/code] 將封禁具有 -HPxxxx- 指紋的客戶端
                     """.trimIndent(),
                         onContentChange = { state.idFiltersRegex = it },
                     )
                     SwitchItem(
-                        title = { Text("总是过滤异常指纹") },
+                        title = { Text("總是過濾異常指紋") },
                         checked = state.blockInvalidId,
                         onCheckedChange = { state.blockInvalidId = it },
                         description = {
-                            BBCodeSupportingText("无论是否满足规则, 都会屏蔽指纹不符合 [code]-xxxxxx-[/code] 格式的客户端")
+                            BBCodeSupportingText("無論是否滿足規則, 都會封鎖指紋不符合 [code]-xxxxxx-[/code] 格式的客戶端")
                         },
                     )
                 }
             }
 
             SwitchItem(
-                title = { Text("过滤客户端类型") },
+                title = { Text("過濾客戶端類型") },
                 checked = state.clientFilterEnabled,
                 onCheckedChange = { state.clientFilterEnabled = it },
             )
@@ -220,8 +220,8 @@ fun PeerFilterEditPane(
                     content = state.clientFiltersRegex,
                     enabled = true,
                     supportingTextBBCode = """
-                        每行一条过滤规则，仅支持使用正则表达式过滤
-                        例如：[code]go\.torrent(\sdev)?[/code] 将封禁百度网盘的离线下载客户端
+                        每行一條過濾規則，僅支援使用正規表達式過濾
+                        例如：[code]go\.torrent(\sdev)?[/code] 將封禁百度網盤的離線下載客戶端
                     """.trimIndent(),
                     onContentChange = { state.clientFiltersRegex = it },
                 )
@@ -229,12 +229,12 @@ fun PeerFilterEditPane(
 
             AniAnimatedVisibility(visible = showIpBlockingItem) {
                 Group(
-                    title = { Text("黑名单") },
-                    description = { Text("黑名单中的 Peer 总是被屏蔽，无论是否匹配过滤规则") },
+                    title = { Text("黑名單") },
+                    description = { Text("黑名單中的 Peer 總是會被封鎖，無論是否匹配過濾規則") },
                 ) {
                     TextItem(
-                        title = { Text("IP 黑名单设置") },
-                        description = { Text("配置 IP 黑名单列表") },
+                        title = { Text("IP 黑名單設定") },
+                        description = { Text("配置 IP 黑名單列表") },
                         action = {
                             IconButton(onClickIpBlockSettings) {
                                 Icon(Icons.Rounded.ArrowOutward, null)
@@ -254,7 +254,7 @@ fun PeerFilterEditPane(
                         MaterialTheme.typography.labelMedium,
                         MaterialTheme.colorScheme.outline,
                     ) {
-                        Text("提示：修改自动保存")
+                        Text("提示：修改自動儲存")
                     }
                 }
             }
