@@ -93,12 +93,12 @@ internal fun MediaSelectorItem(
             reason.toString()
         } else {
             when (reason) {
-                MediaExclusionReason.MediaWithoutSubtitle -> "无字幕"
-                is MediaExclusionReason.SingleEpisodeForCompleteSubject -> "单集资源"
-                MediaExclusionReason.UnsupportedByPlatformPlayer -> "不支持播放"
+                MediaExclusionReason.MediaWithoutSubtitle -> "無字幕"
+                is MediaExclusionReason.SingleEpisodeForCompleteSubject -> "單集資源"
+                MediaExclusionReason.UnsupportedByPlatformPlayer -> "不支援播放"
                 MediaExclusionReason.FromSequelSeason -> "季度不匹配"
                 MediaExclusionReason.FromSeriesSeason -> "季度不匹配(2)"
-                MediaExclusionReason.SubjectNameMismatch -> "条目标题不匹配"
+                MediaExclusionReason.SubjectNameMismatch -> "條目標題不匹配"
             }
         }
     }

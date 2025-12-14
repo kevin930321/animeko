@@ -37,15 +37,15 @@ fun MediaSelectorHelp(
     modifier: Modifier = Modifier
 ) {
     RichDialogLayout(
-        title = { Text("数据源帮助") },
+        title = { Text("資料源幫助") },
         buttons = {
             TextButton(onDismissRequest) {
-                Text("关闭")
+                Text("關閉")
             }
         },
         modifier,
     ) {
-        Text("数据源类型", style = MaterialTheme.typography.titleMedium)
+        Text("資料源類型", style = MaterialTheme.typography.titleMedium)
 
         Row(Modifier.padding(top = 16.dp), horizontalArrangement = Arrangement.spacedBy(8.dp)) {
             ExplainerCard(
@@ -55,16 +55,16 @@ fun MediaSelectorHelp(
                     Icon(MediaSourceIcons.KindBT, null)
                 },
             ) {
-                Text("从 BitTorrent 网络获取资源，清晰度高，资源全面，加载速度可能不快")
+                Text("從 BitTorrent 網路獲取資源，清晰度高，資源全面，載入速度可能不快")
             }
             ExplainerCard(
-                title = { Text("在线") },
+                title = { Text("線上") },
                 Modifier.weight(1f),
                 icon = {
                     Icon(MediaSourceIcons.KindWeb, null)
                 },
             ) {
-                Text("从在线视频网站获取资源，加载速度快，但清晰度通常不高")
+                Text("從線上影音網站獲取資源，載入速度快，但清晰度通常不高")
             }
         }
     }

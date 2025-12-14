@@ -268,7 +268,7 @@ private fun NarrowEpisodeListSection(
         ) {
             Row(verticalAlignment = Alignment.CenterVertically) {
                 Text(
-                    "剧集列表",
+                    "劇集列表",
                     style = MaterialTheme.typography.titleMedium,
                     modifier = Modifier.combinedClickable(
                         onClick = {},

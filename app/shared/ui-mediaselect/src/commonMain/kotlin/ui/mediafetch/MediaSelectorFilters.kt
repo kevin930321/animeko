@@ -71,7 +71,7 @@ fun MediaSelectorFilters(
             allValues = { resolutionPresentation.available },
             onSelect = { scope.launch { resolution.prefer(it) } },
             onDeselect = { scope.launch { resolution.removePreference() } },
-            name = { Text("分辨率") },
+            name = { Text("解析度") },
             Modifier.widthIn(min = minWidth, max = maxWidth),
         )
         val subtitleLanguagePresentation by subtitleLanguageId.presentationFlow.collectAsStateWithLifecycle()
@@ -90,7 +90,7 @@ fun MediaSelectorFilters(
             allValues = { alliancePresentation.available },
             onSelect = { scope.launch { alliance.prefer(it) } },
             onDeselect = { scope.launch { alliance.removePreference() } },
-            name = { Text("字幕组") },
+            name = { Text("字幕組") },
             Modifier.widthIn(min = minWidth, max = maxWidth),
         )
     }
@@ -177,10 +177,10 @@ private fun <T : Any> MediaSelectorFilterChip(
             trailingIcon = if (isSingleValue) null else {
                 {
                     if (selected == null) {
-                        Icon(Icons.Default.ArrowDropDown, "展开")
+                        Icon(Icons.Default.ArrowDropDown, "展開")
                     } else {
                         Icon(
-                            Icons.Default.Close, "取消筛选",
+                            Icons.Default.Close, "取消篩選",
                             Modifier.clickable { selectedState?.let { onDeselect(it) } },
                         )
                     }
@@ -204,7 +204,7 @@ private fun <T : Any> MediaSelectorFilterChip(
                     text = { label(item) },
                     trailingIcon = {
                         if (selectedState == item) {
-                            Icon(Icons.Default.Check, "当前选中")
+                            Icon(Icons.Default.Check, "當前選中")
                         }
                     },
                     onClick = {

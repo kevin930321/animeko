@@ -88,21 +88,21 @@ fun EpisodeVideoLoadingIndicator(
         showProgress = state is VideoLoadingState.Progressing,
         text = {
             if (playerError) {
-                TextWithBorder("播放失败, 请更换数据源", color = MaterialTheme.colorScheme.error)
+                TextWithBorder("播放失敗，請更換資料源", color = MaterialTheme.colorScheme.error)
                 return@VideoLoadingIndicator
             }
             when (state) {
                 VideoLoadingState.Initial -> {
                     if (optimizeForFullscreen) {
-                        TextWithBorder("正在自动选择数据源，请稍候")
+                        TextWithBorder("正在自動選擇資料源，請稍候")
                     } else {
-                        TextWithBorder("正在自动选择数据源，请稍候")
+                        TextWithBorder("正在自動選擇資料源，請稍候")
                     }
                 }
 
                 VideoLoadingState.ResolvingSource -> {
                     TextWithBorder(
-                        "正在解析资源链接\n通常几秒内完成，否则请切换数据源",
+                        "正在解析資源連結\n通常幾秒內完成，否則請切換資料源",
                         textAlign = TextAlign.Center,
                     )
                 }
@@ -110,9 +110,9 @@ fun EpisodeVideoLoadingIndicator(
                 is VideoLoadingState.DecodingData -> {
                     TextWithBorder(
                         if (!state.isBt) {
-                            "资源解析成功, 正在准备视频"
+                            "資源解析成功，正在準備影片"
                         } else {
-                            "正在解析磁力链或查询元数据\n通常几秒内完成, 否则请尝试切换数据源或先缓存再看"
+                            "正在解析磁力鏈或查詢元資料\n通常幾秒內完成，否則請嘗試切換資料源或先快取再看"
                         },
                         textAlign = TextAlign.Center,
                     )
@@ -133,7 +133,7 @@ fun EpisodeVideoLoadingIndicator(
                     val text by remember {
                         derivedStateOf {
                             buildString {
-                                append("正在缓冲")
+                                append("正在緩衝")
                                 if (speed != FileSize.Unspecified) {
                                     appendLine()
                                     append(speed.toString())
@@ -143,11 +143,11 @@ fun EpisodeVideoLoadingIndicator(
                                 if (tooLong) {
                                     appendLine()
                                     if (state.isBt) {
-                                        append("BT 初始缓冲耗时稍长, 请耐心等待 30 秒")
+                                        append("BT 初始緩衝耗時稍長，請耐心等待 30 秒")
                                         appendLine()
-                                        append("若持续没有速度, 可尝试切换数据源")
+                                        append("若持續沒有速度，可嘗試切換資料源")
                                     } else {
-                                        append("缓冲耗时过长, 可尝试切换数据源")
+                                        append("緩衝耗時過長，可嘗試切換資料源")
                                     }
                                 }
                             }
@@ -159,7 +159,7 @@ fun EpisodeVideoLoadingIndicator(
 
                 is VideoLoadingState.Failed -> {
                     TextWithBorder(
-                        "加载失败: ${renderCause(state)}",
+                        "載入失敗: ${renderCause(state)}",
                         color = MaterialTheme.colorScheme.error,
                         textAlign = TextAlign.Center,
                     )
@@ -171,10 +171,10 @@ fun EpisodeVideoLoadingIndicator(
 }
 
 fun renderCause(cause: VideoLoadingState.Failed): String = when (cause) {
-    is VideoLoadingState.ResolutionTimedOut -> "解析超时"
-    is VideoLoadingState.UnknownError -> "未知错误"
-    is VideoLoadingState.UnsupportedMedia -> "不支持该文件类型"
-    VideoLoadingState.NoMatchingFile -> "未找到可播放的文件"
+    is VideoLoadingState.ResolutionTimedOut -> "解析逾時"
+    is VideoLoadingState.UnknownError -> "未知錯誤"
+    is VideoLoadingState.UnsupportedMedia -> "不支援該檔案類型"
+    VideoLoadingState.NoMatchingFile -> "未找到可播放的檔案"
     VideoLoadingState.Cancelled -> "已取消"
-    VideoLoadingState.NetworkError -> "网络错误"
+    VideoLoadingState.NetworkError -> "網路錯誤"
 }

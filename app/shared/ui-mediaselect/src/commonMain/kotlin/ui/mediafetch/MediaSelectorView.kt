@@ -231,14 +231,14 @@ private fun ViewKindAndMoreRow(
                 onClick = { onViewKindChange(ViewKind.WEB) },
                 selected = viewKind == ViewKind.WEB,
             ) {
-                Text("简单模式", softWrap = false)
+                Text("簡單模式", softWrap = false)
             }
             SegmentedButton(
                 shape = SegmentedButtonDefaults.itemShape(index = 1, count = 2),
                 onClick = { onViewKindChange(ViewKind.BT) },
                 selected = viewKind == ViewKind.BT,
             ) {
-                Text("详细模式", softWrap = false)
+                Text("詳細模式", softWrap = false)
             }
         }
 
@@ -314,7 +314,7 @@ private fun LegacyBTSourceColumn(
             ) {
                 Text(
                     remember(presentation.preferredCandidates.size, presentation.filteredCandidates.size) {
-                        "筛选到 ${presentation.preferredCandidates.size}/${presentation.filteredCandidates.size} 条资源"
+                        "篩選到 ${presentation.preferredCandidates.size}/${presentation.filteredCandidates.size} 條資源"
                     },
                     style = MaterialTheme.typography.titleMedium,
                 )
@@ -343,7 +343,7 @@ private fun LegacyBTSourceColumn(
                     verticalAlignment = Alignment.CenterVertically,
                 ) {
                     Text(
-                        "显示已被排除的资源 (${presentation.groupedMediaListExcluded.size})",
+                        "顯示已被排除的資源 (${presentation.groupedMediaListExcluded.size})",
                         Modifier.padding(end = 8.dp),
                         style = MaterialTheme.typography.labelLarge,
                     )

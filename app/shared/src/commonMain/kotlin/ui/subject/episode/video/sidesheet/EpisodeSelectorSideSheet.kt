@@ -126,10 +126,10 @@ fun EpisodeVideoSideSheets.EpisodeSelectorSheet(
     SideSheetLayout(
         onDismissRequest = onDismissRequest,
         modifier = modifier.testTag(TAG_EPISODE_SELECTOR_SHEET),
-        title = { Text(text = "选择剧集") },
+        title = { Text(text = "選擇劇集") },
         closeButton = {
             IconButton(onClick = onDismissRequest) {
-                Icon(Icons.Rounded.Close, contentDescription = "关闭")
+                Icon(Icons.Rounded.Close, contentDescription = "關閉")
             }
         },
     ) {

@@ -31,13 +31,13 @@ fun createTestDanmakuStatistics(
     state: DanmakuLoadingState = DanmakuLoadingState.Success,
     fetchResults: List<DanmakuFetchResultWithConfig> = listOf(
         createTestDanmakuFetchResultWithConfig(
-            "弹幕源弹幕源弹幕源弹幕源",
+            "彈幕源彈幕源彈幕源彈幕源",
             DanmakuMatchInfo(
-                DanmakuServiceId("弹幕源弹幕源弹幕源弹幕源"),
+                DanmakuServiceId("彈幕源彈幕源彈幕源彈幕源"),
                 100,
                 DanmakuMatchMethod.Exact(
-                    subjectTitle = "条目标题",
-                    episodeTitle = "剧集标题",
+                    subjectTitle = "條目標題",
+                    episodeTitle = "劇集標題",
                 ),
             ),
         ),

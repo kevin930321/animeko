@@ -112,8 +112,8 @@ fun MediaSourceResultsView(
                     sourceResults.enabledSourceCount,
                     sourceResults.totalSourceCount,
                 ) {
-                    val status = if (sourceResults.anyLoading) "正在查询" else "已查询"
-                    "$status ${sourceResults.enabledSourceCount}/${sourceResults.totalSourceCount} 数据源"
+                    val status = if (sourceResults.anyLoading) "正在查詢" else "已查詢"
+                    "$status ${sourceResults.enabledSourceCount}/${sourceResults.totalSourceCount} 資料源"
                 },
                 Modifier.weight(1f),
                 style = MaterialTheme.typography.titleMedium,
@@ -126,14 +126,14 @@ fun MediaSourceResultsView(
                 }
             }
             IconButton(onRefresh) {
-                Icon(Icons.Outlined.Refresh, "刷新")
+                Icon(Icons.Outlined.Refresh, "重新整理")
             }
             IconButton({ showHelp = true }) {
-                Icon(Icons.AutoMirrored.Outlined.HelpOutline, "帮助")
+                Icon(Icons.AutoMirrored.Outlined.HelpOutline, "幫助")
             }
             val navigator = LocalNavigator.current
             IconButton({ navigator.navigateSettings(SettingsTab.MEDIA_SOURCE) }) {
-                Icon(Icons.Outlined.Settings, "设置")
+                Icon(Icons.Outlined.Settings, "設定")
             }
 
             // TODO: 允许展开的话可能要考虑需要把下面 FlowList 变成 Grid 
@@ -169,7 +169,7 @@ fun MediaSourceResultsView(
                         Icon(MediaSourceIcons.KindBT, null)
                         ProvideTextStyle(MaterialTheme.typography.labelSmall) {
                             Box(Modifier.padding(top = 2.dp), contentAlignment = Alignment.Center) {
-                                Text("在线", Modifier.alpha(0f)) // 相同宽度
+                                Text("線上", Modifier.alpha(0f)) // 相同宽度
                                 Text("BT")
                             }
                         }
@@ -186,12 +186,12 @@ fun MediaSourceResultsView(
                         Icon(MediaSourceIcons.KindWeb, null)
                         ProvideTextStyle(MaterialTheme.typography.labelSmall) {
                             Box(Modifier.padding(top = 2.dp), contentAlignment = Alignment.Center) {
-                                Text("在线")
+                                Text("線上")
                             }
                         }
                     }
 //                            Icon(MediaSourceIcons.Web, null)
-//                            Text("在线", Modifier.padding(start = 4.dp))
+//                            Text("線上", Modifier.padding(start = 4.dp))
                 },
             )
         }
@@ -303,7 +303,7 @@ private fun MediaSourceResultCard(
                         when {
                             source.isDisabled -> {
                                 Icon(Icons.Outlined.HorizontalRule, null)
-                                Text("点击临时启用")
+                                Text("點擊臨時啟用")
                             }
 
                             source.isWorking -> {
@@ -313,13 +313,13 @@ private fun MediaSourceResultCard(
 
                             source.isFailedOrAbandoned -> {
                                 CompositionLocalProvider(LocalContentColor provides MaterialTheme.colorScheme.error) {
-                                    Icon(Icons.Outlined.Close, "查询失败")
-                                    Text("点击重试")
+                                    Icon(Icons.Outlined.Close, "查詢失敗")
+                                    Text("點擊重試")
                                 }
                             }
 
                             else -> {
-                                Icon(Icons.Outlined.Check, "查询成功")
+                                Icon(Icons.Outlined.Check, "查詢成功")
                                 Text(remember(source.totalCount) { "${source.totalCount}" })
                             }
                         }
@@ -351,7 +351,7 @@ private fun MediaSourceResultCard(
 
                     source.isFailedOrAbandoned -> {
                         CompositionLocalProvider(LocalContentColor provides MaterialTheme.colorScheme.error) {
-                            Icon(Icons.Outlined.Close, "查询失败")
+                            Icon(Icons.Outlined.Close, "查詢失敗")
                         }
                     }
 

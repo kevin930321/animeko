@@ -55,12 +55,12 @@ fun EpisodeVideoSideSheets.MediaSelectorSheet(
     modifier: Modifier = Modifier,
 ) {
     SideSheetLayout(
-        title = { Text(text = "选择数据源") },
+        title = { Text(text = "選擇資料源") },
         onDismissRequest = onDismissRequest,
         Modifier.testTag(TAG_MEDIA_SELECTOR_SHEET),
         closeButton = {
             IconButton(onClick = onDismissRequest) {
-                Icon(Icons.Rounded.Close, contentDescription = "关闭")
+                Icon(Icons.Rounded.Close, contentDescription = "關閉")
             }
         },
     ) {
