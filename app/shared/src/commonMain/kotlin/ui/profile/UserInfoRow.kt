@@ -119,7 +119,7 @@ fun UserInfoRow(
 
         Column(Modifier.align(Alignment.Top)) {
             IconButton(onClickSettings) {
-                Icon(Icons.Rounded.Settings, "设置")
+                Icon(Icons.Rounded.Settings, "設定")
             }
         }
     }

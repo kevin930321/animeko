@@ -35,7 +35,7 @@ fun PreviewEditComment() {
                 CommentEditorState(
                     showExpandEditCommentButton = true,
                     initialEditExpanded = false,
-                    panelTitle = mutableStateOf("评论：我心里危险的东西 第二季"),
+                    panelTitle = mutableStateOf("評論：我心裡危險的東西 第二季"),
                     stickers = mutableStateOf(
                         (0..64)
                             .map { EditCommentSticker(it, null) }

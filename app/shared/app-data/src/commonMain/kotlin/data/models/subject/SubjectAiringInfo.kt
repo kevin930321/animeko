@@ -217,11 +217,11 @@ fun SubjectAiringInfo.computeTotalEpisodeText(): String? {
         null
     } else {
         when (kind) {
-            SubjectAiringKind.COMPLETED -> "全 $mainEpisodeCount 话"
+            SubjectAiringKind.COMPLETED -> "全 $mainEpisodeCount 話"
 
             SubjectAiringKind.ON_AIR,
             SubjectAiringKind.UPCOMING,
-                -> "预定全 $mainEpisodeCount 话"
+                -> "預定全 $mainEpisodeCount 話"
         }
     }
 }

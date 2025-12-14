@@ -122,8 +122,8 @@ private fun PreviewVideoScaffoldImpl(
         title = {
             EpisodePlayerTitle(
                 "28",
-                "因为下次再见的时候就会很难为情",
-                "葬送的芙莉莲",
+                "因為下次再見的時候就會很難為情",
+                "葬送的芙莉蓮",
             )
         },
         danmakuHost = {},
@@ -225,8 +225,8 @@ private fun PreviewVideoScaffoldImpl(
 //                title = {
 //                    EpisodePlayerTitle(
 //                        ep = "28",
-//                        episodeTitle = "因为下次再见的时候会很难为情",
-//                        subjectTitle = "葬送的芙莉莲"
+//                        episodeTitle = "因為下次再見的時候會很難為情",
+//                        subjectTitle = "葬送的芙莉蓮"
 //                    )
 //                },
 //

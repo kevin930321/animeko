@@ -48,7 +48,7 @@ fun TestEpisodeWatchStatusButton() {
 @Composable
 private fun PreviewEpisodeItemImpl(
     media: DefaultMedia? = TestMediaList[0],
-    episodeTitle: String = "中文剧集名称",
+    episodeTitle: String = "中文劇集名稱",
     filename: String? = "filename-".repeat(3) + ".mkv",
     videoLoadingState: VideoLoadingState = VideoLoadingState.Succeed(false),
 ) {
@@ -114,7 +114,7 @@ fun PreviewPlayingEpisodeItemNoFilename() = ProvideCompositionLocalsForPreview {
 @PreviewLightDark
 fun PreviewPlayingEpisodeItemLongTexts() = ProvideCompositionLocalsForPreview {
     PreviewEpisodeItemImpl(
-        episodeTitle = "超长名称".repeat(20),
+        episodeTitle = "超長名稱".repeat(20),
         filename = "filename-".repeat(20) + ".mkv",
     )
 }

@@ -76,7 +76,7 @@ class RssItemInfo(
 
                 if (config.filterBySubjectName) {
                     emit(
-                        "标题",
+                        "標題",
                         isMatch = me.him188.ani.app.domain.mediasource.MediaListFilters.ContainsSubjectName.applyOn(
                             candidate,
                         ),
@@ -118,11 +118,11 @@ private fun renderSubtitleKind(
     subtitleKind: SubtitleKind?,
 ): String? {
     return when (subtitleKind) {
-        SubtitleKind.EMBEDDED -> "内嵌"
-        SubtitleKind.CLOSED -> "内封"
-        SubtitleKind.EXTERNAL_PROVIDED -> "外挂"
+        SubtitleKind.EMBEDDED -> "內嵌"
+        SubtitleKind.CLOSED -> "內封"
+        SubtitleKind.EXTERNAL_PROVIDED -> "外掛"
         SubtitleKind.EXTERNAL_DISCOVER -> "未知"
-        SubtitleKind.CLOSED_OR_EXTERNAL_DISCOVER -> "内封或未知"
+        SubtitleKind.CLOSED_OR_EXTERNAL_DISCOVER -> "內封或未知"
         null -> null
     }
 }

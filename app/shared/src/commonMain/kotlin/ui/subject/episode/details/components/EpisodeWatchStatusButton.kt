@@ -41,7 +41,7 @@ fun EpisodeWatchStatusButton(
             SuggestionChip(
                 onClick = onMarkAsDone,
                 label = {
-                    Text("看过", softWrap = false)
+                    Text("看過", softWrap = false)
                 },
                 icon = {
                     Icon(Icons.Outlined.AddTask, null)

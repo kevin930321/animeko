@@ -299,7 +299,7 @@ fun EpisodeDetails(
                     UnifiedCollectionType.WISH, UnifiedCollectionType.ON_HOLD -> {
                         ProvideTextStyle(MaterialTheme.typography.labelLarge) {
                             Text(
-                                "已想看，可更改为：", Modifier.align(Alignment.CenterVertically),
+                                "已想看，可更改為：", Modifier.align(Alignment.CenterVertically),
                             )
                         }
                         Row(horizontalArrangement = Arrangement.spacedBy(12.dp)) { // 一起换行

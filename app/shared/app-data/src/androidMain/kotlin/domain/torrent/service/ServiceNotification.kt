@@ -68,7 +68,7 @@ class ServiceNotification(
             defaultNotificationAppearance.name
         }
         // TODO
-        val titleIdle = "BT 下载服务正在运行"/*intent.getStringOrDefault("app_service_title_text_idle") {
+        val titleIdle = "BT 下載服務正在執行"/*intent.getStringOrDefault("app_service_title_text_idle") {
             defaultNotificationAppearance.titleIdle
         }*/
         val titleWorking = intent.getStringOrDefault("app_service_title_text_working") {
@@ -195,10 +195,10 @@ class ServiceNotification(
         private val logger = logger<ServiceNotification>()
 
         private val defaultNotificationAppearance = NotificationAppearance(
-            name = "Animeko BT 引擎服务",
-            titleIdle = "BT 下载服务正在运行",
-            titleWorking = "正在下载 %1\$d 个资源",
-            content = "下载：%1\$s，上传：%2\$s",
+            name = "Animeko BT 引擎服務",
+            titleIdle = "BT 下載服務正在執行",
+            titleWorking = "正在下載 %1\$d 個資源",
+            content = "下載：%1\$s，上傳：%2\$s",
             stopActionText = "停止",
             icon = Icon.createWithBitmap(Bitmap.createBitmap(1, 1, Bitmap.Config.ARGB_8888)),
         )

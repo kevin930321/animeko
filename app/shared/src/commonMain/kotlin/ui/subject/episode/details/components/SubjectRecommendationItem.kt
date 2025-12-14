@@ -95,9 +95,9 @@ val TestSubjectRecommendation
     get() = SubjectRecommendation(
         subjectId = 123456,
         name = "進撃の巨人",
-        nameCn = "进击的巨人",
+        nameCn = "進擊的巨人",
         desc1 = "2022 年 10 月",
-        desc2 = "2 万收藏 · 7.3 分",
+        desc2 = "2 萬收藏 · 7.3 分",
         imageUrl = "https://lain.bgm.tv/pic/cover/l/8e",
         uri = null,
     )

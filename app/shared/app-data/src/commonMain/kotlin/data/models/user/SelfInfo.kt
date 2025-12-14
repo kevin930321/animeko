@@ -38,7 +38,14 @@ data class SelfInfoDisplay(
 fun SelfInfo?.calculateDisplay(): SelfInfoDisplay {
     val selfInfo = this
     if (selfInfo == null) {
-        return SelfInfoDisplay("加载中...", "") // placeholder, no need to be localized
+    val guest: Boolean,
+) {
+    companion object {
+        fun guest(): SelfInfoDisplay {
+            return SelfInfoDisplay("載入中...", "") // placeholder, no need to be localized
+        }
+    }
+}
     }
 
     if (selfInfo.nickname.isNotEmpty()) {

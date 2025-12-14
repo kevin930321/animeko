@@ -92,7 +92,7 @@ class MediaSourceSubscriptionUpdater(
                     is RepositoryRateLimitedException ->
                         setResult(
                             null,
-                            UpdateError("请求过于频繁", null), // TODO: 2024/12/3 use ApiFailure.RateLimited
+                            UpdateError("請求過於頻繁", null), // TODO: 2024/12/3 use ApiFailure.RateLimited
                         )
 
                     is RepositoryServiceUnavailableException ->

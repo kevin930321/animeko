@@ -46,7 +46,7 @@ class WeekFormatter(
                 when (dayOfWeek.ordinal - now.dayOfWeek.ordinal) {
                     0 -> "今天"
                     1 -> "明天"
-                    2 -> "后天"
+                    2 -> "後天"
                     else -> dayToChinese(dayOfWeek.ordinal + 1)
                 }
             }
@@ -68,13 +68,13 @@ class WeekFormatter(
 
     private fun dayToChinese(day: Int): String {
         return when (day) {
-            1 -> "周一"
-            2 -> "周二"
-            3 -> "周三"
-            4 -> "周四"
-            5 -> "周五"
-            6 -> "周六"
-            7 -> "周日"
+            1 -> "週一"
+            2 -> "週二"
+            3 -> "週三"
+            4 -> "週四"
+            5 -> "週五"
+            6 -> "週六"
+            7 -> "週日"
             else -> throw IllegalArgumentException("Invalid day: $day")
         }
     }

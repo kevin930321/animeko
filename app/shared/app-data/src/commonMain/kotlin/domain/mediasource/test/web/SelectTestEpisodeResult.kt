@@ -86,16 +86,16 @@ class SelectorTestEpisodePresentation(
                     }
 
                     if (info.channel != null) {
-                        emit("线路: ${info.channel}")
+                        emit("線路: ${info.channel}")
                     }
 
                     when {
                         info.playUrl.isEmpty() -> {
-                            emit("缺失播放地址", isMissing = true)
+                            emit("缺失播放連結", isMissing = true)
                         }
 
                         !info.playUrl.startsWith("http") -> {
-                            emit("播放地址: ${info.playUrl}", isMatch = false)
+                            emit("播放連結: ${info.playUrl}", isMatch = false)
                         }
 
                         else -> {

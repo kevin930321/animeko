@@ -111,7 +111,7 @@ interface MediaSourceManager { // available by inject
             return flowOf(
                 MediaSourceInfo(
                     "Bangumi",
-                    "提供观看记录数据",
+                    "提供觀看記錄資料",
                     "https://bangumi.tv",
                     "https://bangumi.tv/img/favicon.ico",
                     iconResourceId = "bangumi.png",

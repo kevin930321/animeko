@@ -181,7 +181,7 @@ private fun MainScreenContent(
                             },
                         elevation = FloatingActionButtonDefaults.elevation(0.dp, 0.dp, 0.dp, 0.dp),
                     ) {
-                        Icon(Icons.Rounded.Search, "搜索")
+                        Icon(Icons.Rounded.Search, "搜尋")
                     }
                 },
                 navigationRailFooter = {
@@ -195,7 +195,7 @@ private fun MainScreenContent(
                         onClick = { onNavigateToSettings(null) },
                         icon = { Icon(Icons.Rounded.Settings, null) },
                         enabled = true,
-                        label = { Text("设置") },
+                        label = { Text("設定") },
                         alwaysShowLabel = true,
                         colors = itemColors,
                     )

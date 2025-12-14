@@ -56,7 +56,7 @@ fun PreviewEpisodeDetailsLongTitle() = ProvideCompositionLocalsForPreview {
     val state = rememberTestEpisodeDetailsState(
         remember {
             SubjectInfo.Empty.copy(
-                nameCn = "中文条目名称啊中文条目名称中文条啊目名称中文条目名称中文条目名称中文",
+                nameCn = "中文條目名稱啊中文條目名稱中文條啊目名稱中文條目名稱中文條目名稱中文",
             )
         },
     )
@@ -155,7 +155,7 @@ fun PreviewEpisodeDetailsNotSelected() = ProvideCompositionLocalsForPreview {
 @Composable
 private fun rememberTestEpisodeDetailsState(
     subjectInfo: SubjectInfo = SubjectInfo.Empty.copy(
-        nameCn = "中文条目名称啊中文条目名称中文条啊目名称中文条目名称中文条目名称中文",
+        nameCn = "中文條目名稱啊中文條目名稱中文條啊目名稱中文條目名稱中文條目名稱中文",
     ),
 ): EpisodeDetailsState {
     val scope = rememberCoroutineScope()

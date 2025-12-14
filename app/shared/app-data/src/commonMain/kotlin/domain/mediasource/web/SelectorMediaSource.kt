@@ -125,7 +125,7 @@ class SelectorMediaSource(
 
         override val info: MediaSourceInfo = MediaSourceInfo(
             displayName = "Selector",
-            description = "通用 CSS Selector 数据源",
+            description = "通用 CSS Selector 資料源",
             iconUrl = "",
         )
 

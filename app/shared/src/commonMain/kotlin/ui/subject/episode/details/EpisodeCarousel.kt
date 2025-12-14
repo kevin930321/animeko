@@ -152,7 +152,7 @@ fun EpisodeCarousel(
                         },
                         title = {
                             Text(
-                                collection.episodeInfo.nameCn.ifEmpty { "第 ${collection.episodeInfo.sort} 话" },
+                                collection.episodeInfo.nameCn.ifEmpty { "第 ${collection.episodeInfo.sort} 話" },
                                 color = if (isPlaying) MaterialTheme.colorScheme.primary else LocalContentColor.current,
                             )
                         },
@@ -174,7 +174,7 @@ fun EpisodeCarousel(
                                 verticalAlignment = Alignment.CenterVertically,
                                 horizontalArrangement = Arrangement.spacedBy(8.dp),
                             ) {
-                                Icon(Icons.AutoMirrored.Outlined.Chat, contentDescription = "评论数量")
+                                Icon(Icons.AutoMirrored.Outlined.Chat, contentDescription = "評論數量")
                                 Text(collection.episodeInfo.comment.toString(), softWrap = false)
                             }
 
@@ -247,7 +247,7 @@ private fun EpisodeCacheStatusLabel(
             when (cacheStatusState) {
                 is EpisodeCacheStatus.Cached -> {
                     Icon(Icons.Rounded.DownloadDone, contentDescription = null)
-                    Text("已缓存", softWrap = false)
+                    Text("已快取", softWrap = false)
                 }
 
                 is EpisodeCacheStatus.Caching -> {

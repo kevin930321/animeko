@@ -60,7 +60,7 @@ class AndroidBrowserNavigator : BrowserNavigator {
         try {
             val browserIntent = Intent(Intent.ACTION_VIEW)
                 .apply { setDataAndType(url.toUri(), "video/*") }
-            context.startActivity(Intent.createChooser(browserIntent, "选择播放器"))
+            context.startActivity(Intent.createChooser(browserIntent, "選擇播放器"))
             return OpenBrowserResult.Success
         } catch (ex: Exception) {
             logger.warn("Failed to open video", ex)

@@ -76,13 +76,13 @@ data class SelectorTestSubjectPresentation(
                 val candidate = info.asCandidate()
                 if (filterBySubjectName) {
                     if (!MediaListFilters.ContainsSubjectName.applyOn(candidate)) {
-                        emit("标题", isMatch = false)
+                        emit("標題", isMatch = false)
                     } else {
-                        emit("标题", isMatch = true)
+                        emit("標題", isMatch = true)
                     }
                 }
                 if (info.fullUrl.isBlank()) {
-                    emit("链接", isMissing = true)
+                    emit("連結", isMissing = true)
                 } else {
                     emit(info.partialUrl, isMatch = true)
                 }

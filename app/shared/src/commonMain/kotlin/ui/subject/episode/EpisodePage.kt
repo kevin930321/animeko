@@ -583,7 +583,7 @@ private fun TabRow(
         Tab(
             selected = pagerState.currentPage == 0,
             onClick = { scope.launch { pagerState.animateScrollToPage(0) } },
-            text = { Text("详情", softWrap = false) },
+            text = { Text("詳情", softWrap = false) },
             selectedContentColor = MaterialTheme.colorScheme.primary,
             unselectedContentColor = MaterialTheme.colorScheme.onSurface,
         )
@@ -594,7 +594,7 @@ private fun TabRow(
                 val text by remember(commentCount) {
                     derivedStateOf {
                         val count = commentCount()
-                        if (count == null) "评论" else "评论 $count"
+                        if (count == null) "評論" else "評論 $count"
                     }
                 }
                 Text(text, softWrap = false)
@@ -762,7 +762,7 @@ private fun DetachedDanmakuEditorLayout(
     modifier: Modifier = Modifier,
 ) {
     Column(modifier.padding(all = 16.dp), verticalArrangement = Arrangement.spacedBy(16.dp)) {
-        Text("发送弹幕", style = MaterialTheme.typography.titleMedium)
+        Text("發送彈幕", style = MaterialTheme.typography.titleMedium)
         val isSending = danmakuEditorState.isSending.collectAsStateWithLifecycle()
         PlayerDanmakuEditor(
             text = danmakuEditorState.text,

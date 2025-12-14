@@ -349,7 +349,7 @@ class EpisodeViewModel(
     ).cacheProgressInfoFlow
 
     /**
-     * "视频统计" bottom sheet 显示内容
+     * "影片統計" bottom sheet 显示内容
      */
     @OptIn(UnsafeEpisodeSessionApi::class)
     val videoStatisticsFlow: Flow<VideoStatistics> = VideoStatisticsCollector(
@@ -428,7 +428,7 @@ class EpisodeViewModel(
             val startEp = groupIndex * 100 + 1
             val endEp = startEp + chunk.size - 1
             PaginatedGroup(
-                title = "第 $startEp-$endEp 话",
+                title = "第 $startEp-$endEp 話",
                 items = chunk,
                 startIndex = startItemIndex,
                 groupIndex = groupIndex,

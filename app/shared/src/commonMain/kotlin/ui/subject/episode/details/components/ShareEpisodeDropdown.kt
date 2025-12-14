@@ -50,15 +50,15 @@ fun ShareEpisodeDropdown(
     ) {
         data.download?.let { download ->
             val downloadText = when (download) {
-                is ResourceLocation.HttpStreamingFile -> "视频流链接"
-                is ResourceLocation.HttpTorrentFile -> "种子文件下载链接"
-                is ResourceLocation.LocalFile -> "本地文件链接"
-                is ResourceLocation.MagnetLink -> "磁力链接"
-                is ResourceLocation.WebVideo -> "网页链接" // should not happen though
+                is ResourceLocation.HttpStreamingFile -> "視訊流連結"
+                is ResourceLocation.HttpTorrentFile -> "種子檔案下載連結"
+                is ResourceLocation.LocalFile -> "本機檔案連結"
+                is ResourceLocation.MagnetLink -> "磁力連結"
+                is ResourceLocation.WebVideo -> "網頁連結" // should not happen though
             }
             DropdownMenuItem(
                 text = {
-                    Text("复制$downloadText")
+                    Text("複製$downloadText")
                 },
                 onClick = {
                     onDismissRequest()
@@ -69,7 +69,7 @@ fun ShareEpisodeDropdown(
                 leadingIcon = { Icon(Icons.Rounded.ContentCopy, null) },
             )
             DropdownMenuItem(
-                text = { Text("访问$downloadText") },
+                text = { Text("訪問$downloadText") },
                 onClick = {
                     onDismissRequest()
                     uriHandler.openUri(download.uri)
@@ -78,7 +78,7 @@ fun ShareEpisodeDropdown(
             )
             if (LocalPlatform.current.isAndroid() && download !is ResourceLocation.WebVideo) {
                 DropdownMenuItem(
-                    text = { Text("用其他应用打开") },
+                    text = { Text("用其他應用程式開啟") },
                     onClick = {
                         onDismissRequest()
                         browserNavigator.intentOpenVideo(context, download.uri)
@@ -90,7 +90,7 @@ fun ShareEpisodeDropdown(
 
         data.websiteUrl?.let { websiteUrl ->
             DropdownMenuItem(
-                text = { Text("复制数据源页面链接") },
+                text = { Text("複製資料源頁面連結") },
                 onClick = {
                     onDismissRequest()
                     scope.launch {
@@ -100,7 +100,7 @@ fun ShareEpisodeDropdown(
                 leadingIcon = { Icon(Icons.Rounded.ContentCopy, null) },
             )
             DropdownMenuItem(
-                text = { Text("访问数据源页面") },
+                text = { Text("訪問資料源頁面") },
                 onClick = {
                     onDismissRequest()
                     uriHandler.openUri(websiteUrl)

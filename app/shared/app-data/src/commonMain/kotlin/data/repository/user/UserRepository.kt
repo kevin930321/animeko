@@ -219,7 +219,7 @@ class UserRepository(
                     if (e.response.status == HttpStatusCode.UnprocessableEntity) {
                         // 邮箱不正确
                         throw RepositoryRequestError(
-                            localizedMessage = "邮箱格式不正确", // TODO: localize
+                            localizedMessage = "信箱格式不正確", // TODO: localize
                             cause = e,
                         )
                     }

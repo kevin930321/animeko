@@ -121,7 +121,7 @@ fun DanmakuListSection(
                                     CircularProgressIndicator()
                                 } else {
                                     Text(
-                                        text = if (state.isEmpty) "暂无弹幕数据" else "没有符合筛选条件的弹幕",
+                                        text = if (state.isEmpty) "暫無彈幕資料" else "沒有符合篩選條件的彈幕",
                                         style = MaterialTheme.typography.bodyMedium,
                                         color = MaterialTheme.colorScheme.onSurfaceVariant,
                                     )
@@ -153,7 +153,7 @@ fun DanmakuListSection(
         ) {
             ListItem(
                 headlineContent = {
-                    Text("弹幕列表")
+                    Text("彈幕列表")
                 },
                 leadingContent = {
                     Icon(Icons.AutoMirrored.Outlined.FeaturedPlayList, contentDescription = null)
@@ -161,7 +161,7 @@ fun DanmakuListSection(
                 trailingContent = {
                     Icon(
                         if (expanded) Icons.Outlined.ExpandLess else Icons.Outlined.ExpandMore,
-                        contentDescription = if (expanded) "收起" else "展开",
+                        contentDescription = if (expanded) "收起" else "展開",
                     )
                 },
                 modifier = Modifier.clickable { onToggleExpanded() },
@@ -225,7 +225,7 @@ private fun DanmakuSourceChip(
                     if (!isAnimeko) {
                         Icon(
                             Icons.Outlined.ArrowDropDown,
-                            contentDescription = "更多选项",
+                            contentDescription = "更多選項",
                             modifier = Modifier
                                 .offset(x = 8.dp)
                                 .clickable { showDropdown = true },
@@ -279,14 +279,14 @@ private fun DanmakuSourceChip(
 
                 // 操作菜单项
                 DropdownMenuItem(
-                    text = { Text(if (sourceItem.enabled) "禁用" else "启用") },
+                    text = { Text(if (sourceItem.enabled) "停用" else "啟用") },
                     onClick = {
                         onToggle()
                         showDropdown = false
                     },
                 )
                 DropdownMenuItem(
-                    text = { Text("重新匹配") },
+                    text = { Text("重新配對") },
                     onClick = {
                         onManualMatch()
                         showDropdown = false
@@ -343,8 +343,8 @@ private fun DanmakuServiceIcon(
 @Composable
 private fun getDanmakuServiceIconInfo(serviceId: DanmakuServiceId): String {
     return when (serviceId) {
-        DanmakuServiceId.Bilibili -> "哔"
-        DanmakuServiceId.Dandanplay -> "弹"
+        DanmakuServiceId.Bilibili -> "嗶"
+        DanmakuServiceId.Dandanplay -> "彈"
         DanmakuServiceId.AcFun -> "Ac"
         DanmakuServiceId.Baha -> "巴"
         DanmakuServiceId.Tucao -> "TC"

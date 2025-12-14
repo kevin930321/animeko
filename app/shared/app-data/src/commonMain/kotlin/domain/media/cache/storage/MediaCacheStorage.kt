@@ -191,7 +191,7 @@ class MediaCacheStorageSource(
 
     override val info: MediaSourceInfo = MediaSourceInfo(
         displayName,
-        "本地缓存",
+        "本機快取",
         isSpecial = true,
     )
 }

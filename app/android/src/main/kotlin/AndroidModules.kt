@@ -113,7 +113,7 @@ fun getAndroidModules(
         if (oldCacheDir.exists() && oldCacheDir.isDirectory()) {
             val piecesDir = oldCacheDir.resolve("pieces")
             if (piecesDir.exists() && piecesDir.isDirectory() && piecesDir.list().isNotEmpty()) {
-                Toast.makeText(context, "旧 BT 引擎的缓存已不被支持，请重新缓存", Toast.LENGTH_LONG).show()
+                Toast.makeText(context, "舊 BT 引擎的快取已不被支援，請重新快取", Toast.LENGTH_LONG).show()
             }
             thread(name = "DeleteOldCaches") {
                 try {

@@ -124,7 +124,7 @@ fun DanmakuSourceCard(
                 trailingContent = {
                     Box {
                         IconButton(onClickSettings, Modifier.offset(x = 8.dp)) {
-                            Icon(Icons.Rounded.MoreVert, "设置 ${renderDanmakuServiceId(info.serviceId)}")
+                            Icon(Icons.Rounded.MoreVert, "設定 ${renderDanmakuServiceId(info.serviceId)}")
                         }
                         dropdown()
                     }
@@ -147,7 +147,7 @@ fun DanmakuSourceCard(
 //                }
 //
 //                IconButton(onClickSettings) {
-//                    Icon(Icons.Rounded.Settings, "设置 ${info.providerId}")
+//                    Icon(Icons.Rounded.Settings, "設定 ${info.providerId}")
 //                }
 //            }
 
@@ -158,7 +158,7 @@ fun DanmakuSourceCard(
                         verticalArrangement = Arrangement.spacedBy(8.dp, Alignment.CenterVertically),
                         horizontalArrangement = Arrangement.spacedBy(8.dp),
                     ) {
-                        Icon(Icons.Outlined.Subtitles, "弹幕数量")
+                        Icon(Icons.Outlined.Subtitles, "彈幕數量")
                         Text(remember(info.count) { "${info.count}" }, softWrap = false)
                     }
                 }
@@ -174,7 +174,7 @@ fun DanmakuSourceCard(
                 }
             } else {
                 ListItem(
-                    headlineContent = { Text("已禁用") },
+                    headlineContent = { Text("已停用") },
                     leadingContent = {
                         Icon(Icons.Rounded.Close, null)
                     },
@@ -191,8 +191,8 @@ internal fun renderDanmakuServiceId(serviceId: DanmakuServiceId): String = when 
     DanmakuServiceId.Animeko -> "Animeko"
     DanmakuServiceId.AcFun -> "AcFun"
     DanmakuServiceId.Baha -> "Baha"
-    DanmakuServiceId.Bilibili -> "哔哩哔哩"
-    DanmakuServiceId.Dandanplay -> "弹弹"
+    DanmakuServiceId.Bilibili -> "嗶哩嗶哩"
+    DanmakuServiceId.Dandanplay -> "彈彈"
     DanmakuServiceId.Tucao -> "Tucao"
 
     // `else` should not reach in production
@@ -224,21 +224,21 @@ fun DanmakuSourceSettingsDropdown(
 ) {
     DropdownMenu(expanded, onDismissRequest, modifier) {
         DropdownMenuItem(
-            text = { Text("更换") },
+            text = { Text("更換") },
             onClick = {
                 onClickChange()
                 onDismissRequest()
             },
         )
         DropdownMenuItem(
-            text = { Text(if (enabled) "禁用" else "启用") },
+            text = { Text(if (enabled) "停用" else "啟用") },
             onClick = {
                 onSetEnabled(!enabled)
                 onDismissRequest()
             },
         )
         DropdownMenuItem(
-            text = { Text("时间校准 (${formatDanmakuShiftMillis(currentShiftMillis)})") },
+            text = { Text("時間校準 (${formatDanmakuShiftMillis(currentShiftMillis)})") },
             leadingIcon = { Icon(Icons.Outlined.Schedule, null) },
             onClick = {
                 onClickAdjustShift()
@@ -275,7 +275,7 @@ private fun DanmakuMatchMethodView(
                 ) {
                     CompositionLocalProvider(LocalContentColor provides MaterialTheme.colorScheme.tertiary) {
                         Icon(Icons.Outlined.QuestionMark, null)
-                        Text("半模糊匹配", softWrap = false)
+                        Text("半模糊配對", softWrap = false)
                     }
                 }
                 if (showDetails) {
@@ -295,7 +295,7 @@ private fun DanmakuMatchMethodView(
                 ) {
                     CompositionLocalProvider(LocalContentColor provides MaterialTheme.colorScheme.tertiary) {
                         Icon(Icons.Outlined.QuestionMark, null)
-                        Text("模糊匹配", softWrap = false)
+                        Text("模糊配對", softWrap = false)
                     }
                 }
                 if (showDetails) {
@@ -327,7 +327,7 @@ private fun DanmakuMatchMethodView(
                 ) {
                     CompositionLocalProvider(LocalContentColor provides MaterialTheme.colorScheme.secondary) {
                         Icon(Icons.Outlined.Close, null)
-                        Text("无匹配", softWrap = false)
+                        Text("無配對", softWrap = false)
                     }
                 }
             }
@@ -344,7 +344,7 @@ private fun ExactMatch() {
     ) {
         CompositionLocalProvider(LocalContentColor provides MaterialTheme.colorScheme.primary) {
             Icon(Icons.Outlined.WorkspacePremium, null)
-            Text("精确匹配")
+            Text("精確配對")
         }
     }
 }

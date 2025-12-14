@@ -67,7 +67,7 @@ fun createTestMediaProperties(
     episodeName: String? = null,
     subtitleLanguageIds: List<String> = listOf(ChineseSimplified, ChineseTraditional).map { it.id },
     resolution: String = "1080P",
-    alliance: String = "桜都字幕组",
+    alliance: String = "桜都字幕組",
     size: FileSize = 122.megaBytes,
     subtitleKind: SubtitleKind? = SubtitleKind.CLOSED,
 ): MediaProperties = MediaProperties(
@@ -87,7 +87,7 @@ val TestMediaList = listOf(
     createTestDefaultMedia(
         mediaId = "$SOURCE_DMHY.1",
         mediaSourceId = SOURCE_DMHY,
-        originalTitle = "[桜都字幕组] 孤独摇滚 ABC ABC ABC ABC ABC ABC ABC ABC ABC ABC",
+        originalTitle = "[桜都字幕組] 孤獨搖滾 ABC ABC ABC ABC ABC ABC ABC ABC ABC ABC",
         download = ResourceLocation.MagnetLink("magnet:?xt=urn:btih:1"),
         originalUrl = "https://example.com/1",
         publishedTime = 1,
@@ -95,7 +95,7 @@ val TestMediaList = listOf(
         properties = createTestMediaProperties(
             subtitleLanguageIds = listOf(ChineseSimplified, ChineseTraditional).map { it.id },
             resolution = "1080P",
-            alliance = "桜都字幕组",
+            alliance = "桜都字幕組",
             size = 122.megaBytes,
             subtitleKind = SubtitleKind.CLOSED,
         ),
@@ -106,7 +106,7 @@ val TestMediaList = listOf(
                 Subtitle(
                     uri = "https://example.com/1",
                     mimeType = "text/x-ass",
-                    language = "简体中文",
+                    language = "繁體中文",
                 ),
             ),
         ),
@@ -115,7 +115,7 @@ val TestMediaList = listOf(
     createTestDefaultMedia(
         mediaId = "$SOURCE_ACG.1",
         mediaSourceId = SOURCE_ACG,
-        originalTitle = "[桜都字幕组] 孤独摇滚 ABC ABC ABC ABC ABC ABC ABC ABC ABC ABC",
+        originalTitle = "[桜都字幕組] 孤獨搖滾 ABC ABC ABC ABC ABC ABC ABC ABC ABC ABC",
         download = ResourceLocation.MagnetLink("magnet:?xt=urn:btih:1"),
         originalUrl = "https://example.com/1",
         publishedTime = 2,
@@ -123,7 +123,7 @@ val TestMediaList = listOf(
         properties = createTestMediaProperties(
             subtitleLanguageIds = listOf(ChineseSimplified, ChineseTraditional).map { it.id },
             resolution = "1080P",
-            alliance = "桜都字幕组",
+            alliance = "桜都字幕組",
             size = 122.megaBytes,
             subtitleKind = null,
         ),
@@ -134,7 +134,7 @@ val TestMediaList = listOf(
     createTestDefaultMedia(
         mediaId = "$SOURCE_DMHY.2",
         mediaSourceId = SOURCE_DMHY,
-        originalTitle = "夜晚的水母不会游泳",
+        originalTitle = "夜晚的水母不會游泳",
         download = ResourceLocation.MagnetLink("magnet:?xt=urn:btih:1"),
         originalUrl = "https://example.com/1",
         publishedTime = 3,
@@ -142,7 +142,7 @@ val TestMediaList = listOf(
         properties = createTestMediaProperties(
             subtitleLanguageIds = listOf(ChineseTraditional).map { it.id },
             resolution = "1080P",
-            alliance = "北宇治字幕组北宇治字幕组北宇治字幕组北宇治字幕组北宇治字幕组北宇治字幕组北宇治字幕组北宇治字幕组",
+            alliance = "北宇治字幕組北宇治字幕組北宇治字幕組北宇治字幕組北宇治字幕組北宇治字幕組北宇治字幕組北宇治字幕組",
             size = 233.megaBytes,
             subtitleKind = null,
         ),
@@ -152,7 +152,7 @@ val TestMediaList = listOf(
     createTestDefaultMedia(
         mediaId = "$SOURCE_ACG.2",
         mediaSourceId = SOURCE_ACG,
-        originalTitle = "葬送的芙莉莲",
+        originalTitle = "葬送的芙莉蓮",
         download = ResourceLocation.MagnetLink("magnet:?xt=urn:btih:1"),
         originalUrl = "https://example.com/1",
         publishedTime = 4,
@@ -160,7 +160,7 @@ val TestMediaList = listOf(
         properties = createTestMediaProperties(
             subtitleLanguageIds = listOf(ChineseSimplified).map { it.id },
             resolution = "1080P",
-            alliance = "桜都字幕组",
+            alliance = "桜都字幕組",
             size = 0.bytes,
             subtitleKind = null,
         ),
@@ -170,7 +170,7 @@ val TestMediaList = listOf(
     createTestDefaultMedia(
         mediaId = "$SOURCE_ACG.3",
         mediaSourceId = SOURCE_ACG,
-        originalTitle = "某个生肉",
+        originalTitle = "某個生肉",
         download = ResourceLocation.MagnetLink("magnet:?xt=urn:btih:1"),
         originalUrl = "https://example.com/1",
         publishedTime = 5,

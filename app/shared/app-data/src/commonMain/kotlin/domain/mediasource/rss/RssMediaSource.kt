@@ -103,7 +103,7 @@ class RssMediaSource(
 
         override val info: MediaSourceInfo = MediaSourceInfo(
             displayName = "RSS",
-            description = "通用 RSS BT 数据源",
+            description = "通用 RSS BT 資料源",
             // https://rss.com/blog/free-rss-icon/
             iconUrl = "https://rss.com/blog/wp-content/uploads/2019/10/social_style_3_rss-512-1.png",
         )

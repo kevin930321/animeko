@@ -217,7 +217,7 @@ object PlayingEpisodeItemDefaults {
         modifier: Modifier = Modifier,
     ) {
         IconButton(onClick, modifier) {
-            Icon(Icons.Rounded.Download, "缓存")
+            Icon(Icons.Rounded.Download, "快取")
         }
     }
 
@@ -270,7 +270,7 @@ object PlayingEpisodeItemDefaults {
                     Icon(Icons.Rounded.DisplaySettings, null)
 
                     Text(
-                        "选择数据源",
+                        "選擇資料源",
                         Modifier.padding(start = 12.dp).align(Alignment.CenterVertically),
                         maxLines = 1,
                         softWrap = false,

@@ -190,7 +190,7 @@ fun DummyDanmakuEditor(
             ) {
                 ProvideContentColor(MaterialTheme.colorScheme.onSurfaceVariant) {
                     Text(
-                        "发送弹幕",
+                        "發送彈幕",
                         style = MaterialTheme.typography.labelLarge,
                     )
 

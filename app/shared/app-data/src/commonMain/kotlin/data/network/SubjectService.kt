@@ -191,9 +191,9 @@ class RemoteSubjectService(
                             SubjectInfo.Empty.copy(
                                 subjectId = subjectId,
                                 subjectType = SubjectType.ANIME,
-                                nameCn = "账号注册满四个月后可看 $subjectId",
-                                name = "账号注册满四个月后可看 $subjectId",
-                                summary = "此条目已被隐藏, 请尝试登录后再次尝试. 如已登录, 请等待注册时间满四个月后再看.",
+                                nameCn = "帳號註冊滿四個月後可看 $subjectId",
+                                name = "帳號註冊滿四個月後可看 $subjectId",
+                                summary = "此條目已被隱藏，請嘗試登入後再次嘗試。如已登入，請等待註冊時間滿四個月後再看。",
                                 nsfw = true,
                             ),
                             mainEpisodeCount = 0,
@@ -207,8 +207,8 @@ class RemoteSubjectService(
                         BatchSubjectDetails(
                             SubjectInfo.Empty.copy(
                                 subjectId = subjectId, subjectType = SubjectType.ANIME,
-                                nameCn = "<$subjectId 错误>",
-                                name = "<$subjectId 错误>",
+                                nameCn = "<$subjectId 錯誤>",
+                                name = "<$subjectId 錯誤>",
                                 summary = errors,
                             ),
                             mainEpisodeCount = 0,
@@ -276,8 +276,8 @@ class RemoteSubjectService(
                     LightSubjectAndEpisodes(
                         subject = LightSubjectInfo(
                             subjectId,
-                            name = "错误 $subjectId: $errors",
-                            nameCn = "错误 $subjectId: $errors",
+                            name = "錯誤 $subjectId: $errors",
+                            nameCn = "錯誤 $subjectId: $errors",
                             imageLarge = "",
                         ),
                         episodes = emptyList(),

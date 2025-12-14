@@ -153,7 +153,7 @@ private fun PreviewEpisodeItem() = ProvideCompositionLocalsForPreview {
                         info = EpisodeCacheInfo(
                             sort = EpisodeSort(++id),
                             ep = null,
-                            title = "$watchStatus - ${if (hasPublished) "已开播" else "未开播"}",
+                            title = "$watchStatus - ${if (hasPublished) "已開播" else "未開播"}",
                             watchStatus = watchStatus,
                             hasPublished = true,
                         ),
@@ -177,7 +177,7 @@ private fun PreviewEpisodeItemVeryLong() = ProvideCompositionLocalsForPreview {
                 EpisodeCacheInfo(
                     sort = EpisodeSort(1),
                     ep = null,
-                    title = "测试标题".repeat(10),
+                    title = "測試標題".repeat(10),
                     watchStatus = UnifiedCollectionType.WISH,
                     hasPublished = true,
                 ),

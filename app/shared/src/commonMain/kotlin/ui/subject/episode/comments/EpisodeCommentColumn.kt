@@ -54,7 +54,7 @@ fun EpisodeCommentColumn(
         // TODO: 2025.08.15 暂时去掉发评论功能, 等 ani server 做好转发再上
         /*floatingActionButton = {
             ExtendedFloatingActionButton(
-                text = { Text("写评论") },
+                text = { Text("寫評論") },
                 icon = {
                     Icon(Icons.Rounded.AddComment, null)
                 },
