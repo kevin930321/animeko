@@ -201,9 +201,9 @@ internal fun SettingsScope.ProfileGroupImpl(
 
                 TextFieldItem(
                     value = currentInfo?.nickname.orEmpty(),
-                    title = { Text("昵称") },
-                    description = { Text(currentInfo?.nickname?.let { "@$it" } ?: "未设置") },
-                    textFieldDescription = { Text("最多 20 字，只能包含中文、日文、英文、数字和下划线") },
+                    title = { Text("暱稱") },
+                    description = { Text(currentInfo?.nickname?.let { "@$it" } ?: "未設定") },
+                    textFieldDescription = { Text("最多 20 字，只能包含中文、日文、英文、數字和底線") },
                     onValueChangeCompleted = { onSaveNickname(it) },
                     inverseTitleDescription = true,
                     isErrorProvider = { isNicknameErrorProvider(it) },
@@ -218,19 +218,19 @@ internal fun SettingsScope.ProfileGroupImpl(
                     title = {
                         SelectionContainer {
                             Text(
-                                currentInfo?.email ?: "未设置",
+                                currentInfo?.email ?: "未設定",
                                 maxLines = 1,
                                 overflow = TextOverflow.MiddleEllipsis,
                             )
                         }
                     },
-                    description = { Text("邮箱") },
+                    description = { Text("郵箱") },
                     modifier = Modifier.placeholder(isPlaceholder),
                     onClick = if (canBindEmail) onNavigateToEmail else null,
                     action = if (canBindEmail) {
                         {
                             IconButton(onNavigateToEmail) {
-                                Icon(Icons.Rounded.Edit, "绑定", tint = MaterialTheme.colorScheme.primary)
+                                Icon(Icons.Rounded.Edit, "綁定", tint = MaterialTheme.colorScheme.primary)
                             }
                         }
                     } else null,
@@ -245,17 +245,17 @@ internal fun SettingsScope.ProfileGroupImpl(
                     modifier = Modifier.placeholder(isPlaceholder),
                 )
 
-                Group(title = { Text("第三方账号") }) {
+                Group(title = { Text("第三方帳號") }) {
                     TextItem(
                         title = { Text("Bangumi") },
-                        description = { Text(currentInfo?.bangumiUsername ?: "未绑定") },
+                        description = { Text(currentInfo?.bangumiUsername ?: "未綁定") },
                         icon = {
                             Image(Icons.Default.BangumiNext, contentDescription = "Bangumi Icon")
                         },
                         onClick = onBangumiClick,
                         action = if (!currentInfo?.bangumiUsername.isNullOrEmpty()) {
                             {
-                                TextButton(onClick = { showUnbindBangumiDialog = true }) { Text("解绑") }
+                                TextButton(onClick = { showUnbindBangumiDialog = true }) { Text("解除綁定") }
                             }
                         } else null,
                         modifier = Modifier.placeholder(isPlaceholder),
@@ -317,10 +317,10 @@ private fun UnbindBangumiDialog(
     AlertDialog(
         onCancel,
         // icon omitted to reduce dependency on specific icon packs
-        text = { Text("确定要解绑 Bangumi 吗？解绑后将不再同步观看记录到 Bangumi。解绑后可以重新绑定。") },
+        text = { Text("確定要解除綁定 Bangumi 嗎？解除綁定後將不再同步觀看記錄到 Bangumi。解除綁定後可以重新綁定。") },
         confirmButton = {
             TextButton(onConfirm, enabled = confirmEnabled) {
-                Text("解绑", color = MaterialTheme.colorScheme.error)
+                Text("解除綁定", color = MaterialTheme.colorScheme.error)
             }
         },
         dismissButton = {
@@ -345,7 +345,7 @@ private fun SettingsScope.UploadAvatarDialog(
     val asyncHandler = rememberAsyncHandler()
     val filePicker = rememberFilePickerLauncher(
         type = FileKitType.Image,
-        title = "选择头像",
+        title = "選擇頭像",
     ) {
         filePickerLaunched = false
         it?.let { file ->
@@ -385,19 +385,19 @@ private fun SettingsScope.UploadAvatarDialog(
             }
         },
         title = {
-            Text("上传头像")
+            Text("上傳頭像")
         },
         text = {
             Column(modifier) {
                 TextItem(
-                    title = { Text("选择文件") },
+                    title = { Text("選擇檔案") },
                     description = {
                         Text(
                             buildString {
                                 if (currentPlatform() is Platform.Desktop) {
-                                    append("或拖动文件到此处。")
+                                    append("或拖動檔案到此處。")
                                 }
-                                append("支持 JPEG/PNG/WebP，最大 1MB。多次上传需间隔一分钟。")
+                                append("支援 JPEG/PNG/WebP，最大 1MB。多次上傳需間隔一分鐘。")
                             },
                         )
                     },
@@ -483,9 +483,9 @@ private fun renderAvatarUploadMessage(
     state: EditProfileState.UploadAvatarState,
 ): String {
     return when (state) {
-        is EditProfileState.UploadAvatarState.Uploading -> "正在上传..."
-        is EditProfileState.UploadAvatarState.SizeExceeded -> "图片大小超过 1MB"
-        is EditProfileState.UploadAvatarState.InvalidFormat -> "图片格式不支持"
+        is EditProfileState.UploadAvatarState.Uploading -> "正在上傳..."
+        is EditProfileState.UploadAvatarState.SizeExceeded -> "圖片大小超過 1MB"
+        is EditProfileState.UploadAvatarState.InvalidFormat -> "圖片格式不支援"
         is EditProfileState.UploadAvatarState.UnknownError -> renderLoadErrorMessage(state.loadError)
         is EditProfileState.UploadAvatarState.UnknownErrorWithRetry -> renderLoadErrorMessage(state.loadError)
         is EditProfileState.UploadAvatarState.Success, EditProfileState.UploadAvatarState.Default -> ""
@@ -537,13 +537,13 @@ private fun CropAvatarDialog(
                     onConfirmCropped(bytes)
                 },
             ) {
-                Text("裁剪并上传")
+                Text("裁剪並上傳")
             }
         },
         dismissButton = {
             TextButton(onDismissRequest) { Text("取消") }
         },
-        title = { Text("裁剪头像") },
+        title = { Text("裁剪頭像") },
         text = {
             Column(Modifier.fillMaxWidth()) {
                 val isAndroid = currentPlatform() is Platform.Mobile
@@ -776,7 +776,7 @@ private fun CropAvatarDialog(
                     drawHandle(sx + ss - handlePx / 2, sy + ss - handlePx / 2)
                 }
 
-                Text("拖动选框移动，拖动角点调整大小", Modifier.padding(top = 8.dp))
+                Text("拖動選框移動，拖動角點調整大小", Modifier.padding(top = 8.dp))
             }
         },
     )
