@@ -167,13 +167,13 @@ fun ErrorDialogHost(
                         val scope = rememberCoroutineScope()
                         TextButton(
                             onClick = {
-                                val copyTarget = "删除缓存失败\n\n" + error.cause?.stackTraceToString()
+                                val copyTarget = "刪除快取失敗\n\n" + error.cause?.stackTraceToString()
                                 scope.launch {
                                     clipboard.setClipEntryText(copyTarget)
                                 }
                             },
                         ) {
-                            Text("复制")
+                            Text("複製")
                         }
                     }
                     TextButton(
