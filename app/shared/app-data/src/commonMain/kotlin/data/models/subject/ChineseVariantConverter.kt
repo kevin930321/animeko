@@ -9,7 +9,7 @@
 
 package me.him188.ani.app.data.models.subject
 
-/**
+/*
  * A utility to convert between Simplified Chinese and Traditional Chinese.
  *
  * maintain a mapping of about 2500 common characters.
