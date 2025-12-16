@@ -101,6 +101,14 @@ data class SubjectInfo(
             addIfNotBlank(nameCn) // name cn 需要是第一个, SelectorMediaSource 依赖这个性质
             addIfNotBlank(name)
             aliases.forEach { addIfNotBlank(it) }
+
+            // 添加簡繁體轉換的變體
+            val originalNames = this.toSet()
+            originalNames.forEach { original ->
+                ChineseVariantConverter.getAllVariants(original)
+                    .filter { it !in originalNames && it !in this }
+                    .forEach { add(it) }
+            }
         }
     }
 
