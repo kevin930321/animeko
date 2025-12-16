@@ -51,7 +51,7 @@ data class SelectorSearchConfig(
      *
      * @since 4.2
      */
-    val searchUseSubjectNamesCount: Int = 1,
+    val searchUseSubjectNamesCount: Int = 3,
     val rawBaseUrl: String = "", // if empty, guess
     /**
      * 两个搜索请求之间的间隔时间
