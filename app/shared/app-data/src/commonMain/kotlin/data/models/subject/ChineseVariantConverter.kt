@@ -9,7 +9,7 @@
 
 package me.him188.ani.app.data.models.subject
 
-/*
+/**
  * A utility to convert between Simplified Chinese and Traditional Chinese.
  *
  * maintain a mapping of about 2500 common characters.
@@ -210,7 +210,7 @@ object ChineseVariantConverter {
 个	個 箇
 丰	豐 丰
 临	臨
-为	爲
+为	為
 丽	麗
 举	舉
 么	麼
