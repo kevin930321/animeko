@@ -64,8 +64,10 @@ import androidx.paging.compose.LazyPagingItems
 import kotlinx.coroutines.launch
 import me.him188.ani.app.data.models.recommend.RecommendedItemInfo
 import me.him188.ani.app.data.models.recommend.RecommendedSubjectInfo
+import me.him188.ani.app.data.models.recommend.preferredDisplayName as preferredRecommendedDisplayName
 import me.him188.ani.app.data.models.subject.FollowedSubjectInfo
 import me.him188.ani.app.data.models.subject.SubjectCollectionInfo
+import me.him188.ani.app.data.models.subject.preferredDisplayName
 import me.him188.ani.app.data.models.subject.subjectInfo
 import me.him188.ani.app.ui.foundation.AsyncImage
 import me.him188.ani.app.ui.lang.Lang
@@ -104,7 +106,10 @@ internal sealed class TvExplorationRow(val key: String, val area: TvExplorationA
         override fun card(index: Int, load: Boolean): TvHomeCard? = null
     }
 
-    class ContinueWatching(val items: LazyPagingItems<FollowedSubjectInfo>) :
+    class ContinueWatching(
+        val items: LazyPagingItems<FollowedSubjectInfo>,
+        val useOriginalTitle: Boolean = false,
+    ) :
         TvExplorationRow("followed", TvExplorationArea.ContinueWatching, Lang.exploration_continue_watching) {
         override val count get() = items.itemCount
         override fun card(index: Int, load: Boolean): TvHomeCard? {
@@ -112,7 +117,7 @@ internal sealed class TvExplorationRow(val key: String, val area: TvExplorationA
             val item = (if (load) items[index] else items.peek(index)) ?: return null
             val info = item.subjectInfo
             return TvHomeCard(
-                TvHeroSubject(info.subjectId, info.displayName, info.imageLarge),
+                TvHeroSubject(info.subjectId, info.preferredDisplayName(useOriginalTitle), info.imageLarge),
                 item.subjectCollectionInfo, item.subjectProgressInfo.nextEpisodeIdToPlay,
             )
         }
@@ -123,13 +128,14 @@ internal sealed class TvExplorationRow(val key: String, val area: TvExplorationA
         val indices: List<Int>,
         val rowIndex: Int,
         val columns: Int,
+        val useOriginalTitle: Boolean = false,
     ) : TvExplorationRow("rec-$rowIndex", TvExplorationArea.Recommendations, Lang.exploration_for_you) {
         override val count get() = (indices.size - rowIndex * columns).coerceIn(0, columns)
         override fun card(index: Int, load: Boolean): TvHomeCard? {
             if (index !in 0 until count) return null
             val sourceIndex = indices[rowIndex * columns + index]
             val item = (if (load) items[sourceIndex] else items.peek(sourceIndex)) as? RecommendedSubjectInfo ?: return null
-            return TvHomeCard(TvHeroSubject(item.bangumiId, item.nameCn, item.imageLarge))
+            return TvHomeCard(TvHeroSubject(item.bangumiId, item.preferredRecommendedDisplayName(useOriginalTitle), item.imageLarge))
         }
     }
 

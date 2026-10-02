@@ -21,7 +21,9 @@ import androidx.compose.ui.unit.dp
 import androidx.paging.LoadState
 import androidx.paging.compose.LazyPagingItems
 import me.him188.ani.app.data.models.person.PersonSubjectSummary
+import me.him188.ani.app.data.models.person.preferredDisplayName
 import me.him188.ani.app.domain.foundation.LoadError
+import me.him188.ani.app.ui.foundation.LocalSubjectAppearanceSettings
 import me.him188.ani.app.ui.lang.Lang
 import me.him188.ani.app.ui.lang.settings_mediasource_retry
 import me.him188.ani.app.ui.search.renderLoadErrorMessage
@@ -99,7 +101,7 @@ internal fun TvPeopleBrowseSection(
 internal fun TvPeopleWorkCard(subject: PersonSubjectSummary, positions: String, modifier: Modifier, onClick: () -> Unit) {
     TvLandscapeCard(
         imageUrl = subject.imageLarge,
-        title = subject.displayName,
+        title = subject.preferredDisplayName(LocalSubjectAppearanceSettings.current.useOriginalTitle),
         onClick = onClick,
         modifier = modifier,
         width = TvSubjectDetailsDefaults.RelatedCardWidth,

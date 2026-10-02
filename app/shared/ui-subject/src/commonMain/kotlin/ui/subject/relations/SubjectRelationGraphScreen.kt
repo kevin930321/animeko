@@ -60,6 +60,8 @@ import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import kotlinx.coroutines.launch
 import me.him188.ani.app.data.models.subject.SubjectRelationGraph
 import me.him188.ani.app.data.models.subject.SubjectRelationGraphSubject
+import me.him188.ani.app.data.models.subject.preferredDisplayName
+import me.him188.ani.app.ui.foundation.LocalSubjectAppearanceSettings
 import me.him188.ani.app.ui.adaptive.AniTopAppBar
 import me.him188.ani.app.ui.adaptive.HorizontalScrollControlScaffoldOnDesktop
 import me.him188.ani.app.ui.foundation.HorizontalScrollControlState
@@ -170,6 +172,12 @@ internal class SubjectRelationGraphPresentation(
     val seriesName: String = (graph.mainline.firstOrNull { !it.isMinor } ?: graph.mainline.firstOrNull())
         ?.subject?.displayName.orEmpty()
 
+    fun preferredSeriesName(useOriginalTitle: Boolean): String {
+        val subject = (graph.mainline.firstOrNull { !it.isMinor } ?: graph.mainline.firstOrNull())?.subject
+            ?: return seriesName
+        return subject.preferredDisplayName(useOriginalTitle)
+    }
+
     /** 时间线走到 [index] 处是否已经经过用户查看的条目 */
     fun isReached(index: Int): Boolean = index <= currentMainIndex
 }
@@ -196,6 +204,8 @@ internal fun SubjectRelationGraphColumn(
         }
         itemsIndexed(graph.mainline, key = { _, node -> node.subject.subjectId }) { index, node ->
             val colors = SubjectRelationGraphDefaults.timelineColors()
+            val seriesName =
+                presentation.preferredSeriesName(LocalSubjectAppearanceSettings.current.useOriginalTitle)
             Row(
                 Modifier.fillMaxWidth().timelineVertical(
                     colors = colors,
@@ -224,7 +234,7 @@ internal fun SubjectRelationGraphColumn(
                     SubjectRelationGraphBranchList(
                         node.branches,
                         currentSubjectId = graph.subjectId,
-                        seriesName = presentation.seriesName,
+                        seriesName = seriesName,
                         collapsedCount = SubjectRelationGraphDefaults.COLLAPSED_BRANCH_COUNT_COMPACT,
                         nameMaxLines = 1,
                         onClick = onClickSubject,
@@ -284,6 +294,8 @@ internal fun SubjectRelationGraphRow(
         ) {
             Row(Modifier.horizontalScroll(horizontalScrollState).padding(horizontal = horizontalPadding)) {
                 val colors = SubjectRelationGraphDefaults.timelineColors()
+                val seriesName =
+                    presentation.preferredSeriesName(LocalSubjectAppearanceSettings.current.useOriginalTitle)
                 graph.mainline.forEachIndexed { index, node ->
                     val isCurrent = index == presentation.currentMainIndex
                     Column(Modifier.width(WIDE_COLUMN_WIDTH)) {
@@ -322,7 +334,7 @@ internal fun SubjectRelationGraphRow(
                                 SubjectRelationGraphBranchList(
                                     node.branches,
                                     currentSubjectId = graph.subjectId,
-                                    seriesName = presentation.seriesName,
+                                    seriesName = seriesName,
                                     collapsedCount = SubjectRelationGraphDefaults.COLLAPSED_BRANCH_COUNT_WIDE,
                                     nameMaxLines = 2,
                                     onClick = onClickSubject,
@@ -387,7 +399,7 @@ private fun SubjectRelationGraphHeader(
     val graph = presentation.graph
     Column(modifier) {
         Text(
-            presentation.seriesName,
+            presentation.preferredSeriesName(LocalSubjectAppearanceSettings.current.useOriginalTitle),
             style = MaterialTheme.typography.headlineMedium,
             fontWeight = FontWeight.Bold,
             maxLines = 1,

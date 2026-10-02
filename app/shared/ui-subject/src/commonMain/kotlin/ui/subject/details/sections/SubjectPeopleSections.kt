@@ -46,6 +46,8 @@ import me.him188.ani.app.data.models.subject.RelatedCharacterInfo
 import me.him188.ani.app.data.models.subject.RelatedPersonInfo
 import me.him188.ani.app.data.models.subject.SubjectCollectionStats
 import me.him188.ani.app.data.models.subject.nameCn
+import me.him188.ani.app.data.models.subject.preferredDisplayName
+import me.him188.ani.app.ui.foundation.LocalSubjectAppearanceSettings
 import me.him188.ani.app.ui.foundation.avatar.AvatarImage
 import me.him188.ani.app.ui.foundation.ifThen
 import me.him188.ani.app.ui.lang.Lang
@@ -226,7 +228,10 @@ private fun CharacterAvatarCell(
     avatarSize: Dp,
     onClick: () -> Unit,
 ) {
-    val cv = remember(info) { info.character.actors.firstOrNull()?.displayName }
+    val useOriginalTitle = LocalSubjectAppearanceSettings.current.useOriginalTitle
+    val cv = remember(info, useOriginalTitle) {
+        info.character.actors.firstOrNull()?.preferredDisplayName(useOriginalTitle)
+    }
     Column(
         Modifier
             .width(itemWidth)
@@ -245,7 +250,7 @@ private fun CharacterAvatarCell(
             )
         }
         Text(
-            info.character.displayName,
+            info.character.preferredDisplayName(useOriginalTitle),
             style = MaterialTheme.typography.bodySmall,
             fontWeight = FontWeight.Medium,
             maxLines = 1,
@@ -335,6 +340,7 @@ private fun StaffGrid(
         verticalArrangement = Arrangement.spacedBy(16.dp),
         maxItemsInEachRow = columns,
     ) {
+        val useOriginalTitle = LocalSubjectAppearanceSettings.current.useOriginalTitle
         val count = minOf(staff.itemCount, maxItems)
         for (i in 0 until count) {
             val person = staff[i] ?: continue
@@ -353,7 +359,7 @@ private fun StaffGrid(
                     overflow = TextOverflow.Ellipsis,
                 )
                 Text(
-                    person.personInfo.displayName,
+                    person.personInfo.preferredDisplayName(useOriginalTitle),
                     style = MaterialTheme.typography.bodyMedium,
                     fontWeight = FontWeight.Medium,
                     maxLines = 1,
@@ -380,6 +386,7 @@ private fun StaffKeyValueList(
     rowSpacing: Dp = 12.dp,
 ) {
     Column(modifier.fillMaxWidth(), verticalArrangement = Arrangement.spacedBy(rowSpacing)) {
+        val useOriginalTitle = LocalSubjectAppearanceSettings.current.useOriginalTitle
         for (i in 0 until minOf(staff.itemCount, maxItems)) {
             val person = staff[i] ?: continue
             Row(
@@ -397,7 +404,7 @@ private fun StaffKeyValueList(
                     overflow = TextOverflow.Ellipsis,
                 )
                 Text(
-                    person.personInfo.displayName,
+                    person.personInfo.preferredDisplayName(useOriginalTitle),
                     Modifier.weight(1f).padding(start = 8.dp),
                     style = MaterialTheme.typography.bodyMedium,
                 )

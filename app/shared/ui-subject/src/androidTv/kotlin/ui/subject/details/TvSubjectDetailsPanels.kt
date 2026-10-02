@@ -36,15 +36,18 @@ import androidx.paging.LoadState
 import androidx.paging.compose.LazyPagingItems
 import androidx.paging.compose.collectAsLazyPagingItems
 import me.him188.ani.app.data.models.person.PersonSubjectSummary
+import me.him188.ani.app.data.models.person.preferredDisplayName as preferredPersonSubjectDisplayName
 import me.him188.ani.app.data.models.subject.RelatedCharacterInfo
 import me.him188.ani.app.data.models.subject.RelatedPersonInfo
 import me.him188.ani.app.data.models.subject.RelatedSubjectInfo
+import me.him188.ani.app.data.models.subject.preferredDisplayName
 import me.him188.ani.app.domain.foundation.LoadError
 import me.him188.ani.app.ui.comment.CommentReportReason
 import me.him188.ani.app.ui.comment.UIComment
 import me.him188.ani.app.ui.comment.UICommentSource
 import me.him188.ani.app.ui.comment.UICommentVote
 import me.him188.ani.app.ui.foundation.AsyncImage
+import me.him188.ani.app.ui.subject.episode.list.preferredDisplayName as preferredEpisodeDisplayName
 import me.him188.ani.app.ui.lang.Lang
 import me.him188.ani.app.ui.lang.comment_dislike
 import me.him188.ani.app.ui.lang.comment_hide_hidden
@@ -104,6 +107,7 @@ import me.him188.ani.tv.ui.subject.components.detailsRevealMasks
 import me.him188.ani.tv.ui.subject.components.detailsRedactMasks
 import me.him188.ani.tv.ui.subject.presentation.TvDetailsPanelKind
 import me.him188.ani.tv.ui.subject.presentation.TvSubjectPresentationState
+import me.him188.ani.app.ui.foundation.LocalSubjectAppearanceSettings
 import org.jetbrains.compose.resources.stringResource
 
 internal class TvDetailsLists(
@@ -154,6 +158,7 @@ internal fun TvSubjectDetailsPanels(
     val entries = mutableListOf<TvDetailsPanelEntry>()
     val actions = mutableListOf<TvDetailsPanelEntry>()
     val busy = state.operation.busy
+    val useOriginalTitle = LocalSubjectAppearanceSettings.current.useOriginalTitle
     fun action(key: String, label: String, icon: ImageVector, selected: Boolean = false, onClick: () -> Unit) {
         actions += TvDetailsPanelEntry(key) { modifier ->
             TvDetailsAction(label, icon, onClick, modifier.widthIn(max = 240.dp), active = selected, busy = busy, compact = true)
@@ -176,7 +181,7 @@ internal fun TvSubjectDetailsPanels(
             val item = items.peek(index) ?: return@repeat
             entries += TvDetailsPanelEntry("subject:${item.subjectId}") { modifier ->
                 items[index]?.let {
-                    TvOptionRow(it.displayName, modifier = modifier) {
+                    TvOptionRow(it.preferredPersonSubjectDisplayName(useOriginalTitle), modifier = modifier) {
                         onIntent(TvSubjectDetailsIntent.OpenRelatedSubject(it.subjectId))
                     }
                 }
@@ -241,7 +246,7 @@ internal fun TvSubjectDetailsPanels(
                     entries += TvDetailsPanelEntry("episode:${episode.episodeId}") { modifier ->
                         val play = { onIntent(TvSubjectDetailsIntent.PlayEpisode(episode.episodeId)) }
                         TvOptionRow(
-                            "${episode.sort} · ${episode.nameCn.ifBlank { episode.name }}",
+                            "${episode.sort} · ${episode.preferredEpisodeDisplayName(useOriginalTitle)}",
                             value = if (episode.isDoneOrDropped) stringResource(Lang.subject_episode_watched) else "",
                             selected = episode.episodeId == details.playTargetId,
                             supportingText = stringResource(Lang.subject_episode_long_press_mark_watched),
@@ -262,7 +267,15 @@ internal fun TvSubjectDetailsPanels(
                 val item = lists.characters.peek(index) ?: return@repeat
                 entries += TvDetailsPanelEntry("character:${item.character.id}") { modifier ->
                     lists.characters[index]?.let {
-                        TvOptionRow(it.character.displayName, supportingText = it.character.actors.joinToString { it.displayName }, modifier = modifier) {
+                        TvOptionRow(
+                            it.character.preferredDisplayName(useOriginalTitle),
+                            supportingText = it.character.actors.joinToString {
+                                it.preferredDisplayName(
+                                    useOriginalTitle,
+                                )
+                            },
+                            modifier = modifier,
+                        ) {
                             onIntent(TvSubjectDetailsIntent.OpenCharacter(it.character.id))
                         }
                     }
@@ -276,7 +289,10 @@ internal fun TvSubjectDetailsPanels(
                 val item = lists.staff.peek(index) ?: return@repeat
                 entries += TvDetailsPanelEntry("person:${item.personInfo.id}:${item.position}") { modifier ->
                     lists.staff[index]?.let {
-                        TvOptionRow(it.personInfo.displayName, modifier = modifier) {
+                        TvOptionRow(
+                            it.personInfo.preferredDisplayName(useOriginalTitle),
+                            modifier = modifier,
+                        ) {
                             onIntent(TvSubjectDetailsIntent.OpenStaff(it.personInfo.id))
                         }
                     }

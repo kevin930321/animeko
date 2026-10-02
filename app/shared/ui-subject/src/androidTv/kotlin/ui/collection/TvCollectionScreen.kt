@@ -42,6 +42,8 @@ import androidx.tv.material3.Text
 import kotlinx.coroutines.flow.first
 import me.him188.ani.app.data.models.subject.SubjectCollectionCounts
 import me.him188.ani.app.data.models.subject.SubjectCollectionInfo
+import me.him188.ani.app.data.models.subject.preferredDisplayName
+import me.him188.ani.app.ui.foundation.LocalSubjectAppearanceSettings
 import me.him188.ani.app.ui.subject.collection.COLLECTION_TABS_SORTED
 import me.him188.ani.datasources.api.topic.UnifiedCollectionType
 import me.him188.ani.tv.ui.foundation.focus.TvFocusKey
@@ -273,7 +275,7 @@ private fun TvCollectionGrid(
             val info = items[index] ?: return@items
             TvPosterCard(
                 imageUrl = info.subjectInfo.imageLarge,
-                title = info.subjectInfo.displayName,
+                title = info.subjectInfo.preferredDisplayName(LocalSubjectAppearanceSettings.current.useOriginalTitle),
                 onClick = { onClickSubject(info) },
                 memoryId = "col-${info.subjectId}",
                 modifier = Modifier.tvGridFocusItem(gridFocus, index, items.itemCount),

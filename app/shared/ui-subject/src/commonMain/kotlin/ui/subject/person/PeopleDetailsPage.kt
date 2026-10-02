@@ -60,7 +60,10 @@ import me.him188.ani.app.data.models.person.InfoboxRowInfo
 import me.him188.ani.app.data.models.person.PersonCastInfo
 import me.him188.ani.app.data.models.person.PersonDetailsInfo
 import me.him188.ani.app.data.models.person.PersonWorkInfo
+import me.him188.ani.app.data.models.person.preferredDisplayName as preferredPersonSubjectDisplayName
 import me.him188.ani.app.data.models.subject.nameCn
+import me.him188.ani.app.data.models.subject.preferredDisplayName
+import me.him188.ani.app.ui.foundation.LocalSubjectAppearanceSettings
 import me.him188.ani.app.ui.external.placeholder.placeholder
 import me.him188.ani.app.ui.foundation.AsyncImage
 import me.him188.ani.app.ui.foundation.ImageViewer
@@ -99,9 +102,10 @@ fun PersonDetailsScreen(
     val details by vm.details.collectAsState()
     val casts = vm.castsPager.collectAsLazyPagingItems()
     val works = vm.worksPager.collectAsLazyPagingItems()
+    val useOriginalTitle = LocalSubjectAppearanceSettings.current.useOriginalTitle
 
     PeopleDetailsScaffold(
-        topBarTitle = details?.person?.displayName ?: "",
+        topBarTitle = details?.person?.preferredDisplayName(useOriginalTitle) ?: "",
         navigationIcon = navigationIcon,
         windowInsets = windowInsets,
         isPlaceholder = details == null,
@@ -109,8 +113,8 @@ fun PersonDetailsScreen(
         sidebarInfo = details?.infobox.orEmpty(),
         titleBlock = { isPlaceholder ->
             PeopleTitleBlock(
-                displayName = details?.person?.displayName ?: "",
-                originalName = details?.person?.name,
+                displayName = details?.person?.preferredDisplayName(useOriginalTitle) ?: "",
+                originalName = if (useOriginalTitle) details?.person?.displayName else details?.person?.name,
                 metaLine = peopleMetaLine(personKindLabel(details?.career.orEmpty()), details?.collects ?: 0),
                 isPlaceholder = isPlaceholder,
             )
@@ -140,9 +144,10 @@ fun CharacterDetailsScreen(
 ) {
     val details by vm.details.collectAsState()
     val subjects = vm.subjectsPager.collectAsLazyPagingItems()
+    val useOriginalTitle = LocalSubjectAppearanceSettings.current.useOriginalTitle
 
     PeopleDetailsScaffold(
-        topBarTitle = details?.character?.displayName ?: "",
+        topBarTitle = details?.character?.preferredDisplayName(useOriginalTitle) ?: "",
         navigationIcon = navigationIcon,
         windowInsets = windowInsets,
         isPlaceholder = details == null,
@@ -150,8 +155,8 @@ fun CharacterDetailsScreen(
         sidebarInfo = details?.infobox.orEmpty(),
         titleBlock = { isPlaceholder ->
             PeopleTitleBlock(
-                displayName = details?.character?.displayName ?: "",
-                originalName = details?.character?.name,
+                displayName = details?.character?.preferredDisplayName(useOriginalTitle) ?: "",
+                originalName = if (useOriginalTitle) details?.character?.displayName else details?.character?.name,
                 metaLine = peopleMetaLine(characterRoleLabel(details?.role ?: 1), details?.collects ?: 0),
                 isPlaceholder = isPlaceholder,
             )
@@ -414,11 +419,12 @@ internal fun PersonDetailsContentColumn(
     imageViewer: ImageViewerHandler? = null,
 ) {
     var showAllComments by rememberSaveable { mutableStateOf(false) }
+    val useOriginalTitle = LocalSubjectAppearanceSettings.current.useOriginalTitle
     Column(modifier.fillMaxWidth(), verticalArrangement = Arrangement.spacedBy(24.dp)) {
         PeopleHeaderRow(
             imageUrl = details?.person?.imageLarge,
-            displayName = details?.person?.displayName ?: "",
-            originalName = details?.person?.name,
+            displayName = details?.person?.preferredDisplayName(useOriginalTitle) ?: "",
+            originalName = if (useOriginalTitle) details?.person?.displayName else details?.person?.name,
             metaLine = peopleMetaLine(personKindLabel(details?.career.orEmpty()), details?.collects ?: 0),
             isPlaceholder = details == null,
             onClickImage = imageViewer.viewImageOrNull(details?.person?.imageLarge),
@@ -450,6 +456,7 @@ private fun PersonStrips(
 ) {
     var showAllCasts by rememberSaveable { mutableStateOf(false) }
     var showAllWorks by rememberSaveable { mutableStateOf(false) }
+    val useOriginalTitle = LocalSubjectAppearanceSettings.current.useOriginalTitle
 
     PeopleStripSection(
         stringResource(Lang.person_details_casts),
@@ -458,8 +465,8 @@ private fun PersonStrips(
     ) { cast ->
         PeoplePortraitCard(
             imageUrl = cast.character.imageMedium,
-            name = cast.character.displayName,
-            caption = cast.subject.displayName,
+            name = cast.character.preferredDisplayName(useOriginalTitle),
+            caption = cast.subject.preferredPersonSubjectDisplayName(useOriginalTitle),
             onClick = { navigation.onClickCharacter(cast.character.id) },
         )
     }
@@ -483,8 +490,8 @@ private fun PersonStrips(
         ) { cast ->
             PersonCard(
                 avatarUrl = cast.character.imageMedium,
-                name = cast.character.displayName,
-                relation = cast.subject.displayName,
+                name = cast.character.preferredDisplayName(useOriginalTitle),
+                relation = cast.subject.preferredPersonSubjectDisplayName(useOriginalTitle),
                 modifier = Modifier
                     .clip(MaterialTheme.shapes.small)
                     .clickable { navigation.onClickCharacter(cast.character.id) },
@@ -499,7 +506,7 @@ private fun PersonStrips(
         ) { work ->
             PersonCard(
                 avatarUrl = work.subject.imageLarge,
-                name = work.subject.displayName,
+                name = work.subject.preferredPersonSubjectDisplayName(useOriginalTitle),
                 relation = work.positions.mapNotNull { it.nameCn }.distinct().joinToString("、"),
                 modifier = Modifier
                     .clip(MaterialTheme.shapes.small)
@@ -522,11 +529,12 @@ internal fun CharacterDetailsContentColumn(
     imageViewer: ImageViewerHandler? = null,
 ) {
     var showAllComments by rememberSaveable { mutableStateOf(false) }
+    val useOriginalTitle = LocalSubjectAppearanceSettings.current.useOriginalTitle
     Column(modifier.fillMaxWidth(), verticalArrangement = Arrangement.spacedBy(24.dp)) {
         PeopleHeaderRow(
             imageUrl = details?.character?.imageLarge,
-            displayName = details?.character?.displayName ?: "",
-            originalName = details?.character?.name,
+            displayName = details?.character?.preferredDisplayName(useOriginalTitle) ?: "",
+            originalName = if (useOriginalTitle) details?.character?.displayName else details?.character?.name,
             metaLine = peopleMetaLine(characterRoleLabel(details?.role ?: 1), details?.collects ?: 0),
             isPlaceholder = details == null,
             onClickImage = imageViewer.viewImageOrNull(details?.character?.imageLarge),
@@ -557,6 +565,7 @@ private fun CharacterStrips(
     navigation: PeopleDetailsNavigation = rememberPeopleDetailsNavigation(),
 ) {
     var showAllSubjects by rememberSaveable { mutableStateOf(false) }
+    val useOriginalTitle = LocalSubjectAppearanceSettings.current.useOriginalTitle
 
     val actors = details?.character?.actors.orEmpty()
     if (actors.isNotEmpty()) {
@@ -566,7 +575,7 @@ private fun CharacterStrips(
                 for (actor in actors) {
                     PeoplePortraitCard(
                         imageUrl = actor.imageMedium,
-                        name = actor.displayName,
+                        name = actor.preferredDisplayName(useOriginalTitle),
                         caption = null,
                         onClick = { navigation.onClickPerson(actor.id) },
                         width = 76.dp,
@@ -596,7 +605,7 @@ private fun CharacterStrips(
         ) { item ->
             PersonCard(
                 avatarUrl = item.subject.imageLarge,
-                name = item.subject.displayName,
+                name = item.subject.preferredPersonSubjectDisplayName(useOriginalTitle),
                 relation = item.role.nameCn,
                 modifier = Modifier
                     .clip(MaterialTheme.shapes.small)

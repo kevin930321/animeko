@@ -56,8 +56,10 @@ import androidx.paging.LoadState
 import androidx.paging.compose.LazyPagingItems
 import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.launch
+import me.him188.ani.app.data.models.subject.preferredDisplayName
 import me.him188.ani.app.domain.foundation.LoadError
 import me.him188.ani.app.ui.comment.UIComment
+import me.him188.ani.app.ui.foundation.LocalSubjectAppearanceSettings
 import me.him188.ani.app.ui.lang.Lang
 import me.him188.ani.app.ui.lang.comment_empty_title
 import me.him188.ani.app.ui.lang.settings_mediasource_retry
@@ -216,7 +218,7 @@ internal fun TvSubjectComments(
                 Text(stringResource(Lang.subject_details_review_title),
                     style = MaterialTheme.typography.headlineMedium.copy(fontSize = 28.sp),
                     color = TvSubjectDetailsDefaults.Content, modifier = Modifier.testTag("tv-comments-title"))
-                Text(details.info.displayName,
+                Text(details.info.preferredDisplayName(LocalSubjectAppearanceSettings.current.useOriginalTitle),
                     style = MaterialTheme.typography.bodyLarge.copy(fontSize = 16.sp),
                     color = TvSubjectDetailsDefaults.SecondaryContent, maxLines = 1, overflow = TextOverflow.Ellipsis,
                     modifier = Modifier.padding(top = 6.dp).testTag("tv-review-subject-title"))

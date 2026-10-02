@@ -38,8 +38,10 @@ import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import androidx.paging.compose.LazyPagingItems
 import me.him188.ani.app.data.models.trending.TrendingSubjectInfo
+import me.him188.ani.app.data.models.trending.preferredDisplayName
 import me.him188.ani.app.ui.external.placeholder.placeholder
 import me.him188.ani.app.ui.foundation.AsyncImage
+import me.him188.ani.app.ui.foundation.LocalSubjectAppearanceSettings
 import me.him188.ani.app.ui.foundation.ProvideCompositionLocalsForPreview
 import me.him188.ani.app.ui.foundation.layout.CarouselAutoAdvanceEffect
 import me.him188.ani.app.ui.foundation.layout.CarouselItem
@@ -67,10 +69,11 @@ fun TrendingSubjectsCarousel(
     val interactionSource = remember { MutableInteractionSource() }
     val isHovered by interactionSource.collectIsHoveredAsState()
     Box(modifier.padding(contentPadding).hoverable(interactionSource)) {
+        val useOriginalTitle = LocalSubjectAppearanceSettings.current.useOriginalTitle
         val content: @Composable CarouselItemScope.(Int) -> Unit = { index ->
             val item = if (items.isLoadingFirstPageOrRefreshing) null else items[index]
             CarouselItem(
-                label = { CarouselItemDefaults.Text(item?.nameCn ?: "") },
+                label = { CarouselItemDefaults.Text(item?.preferredDisplayName(useOriginalTitle) ?: "") },
                 Modifier.placeholder(item == null, shape = rememberMaskShape(CarouselItemDefaults.shape)),
             ) {
                 if (item != null) {
@@ -78,7 +81,7 @@ fun TrendingSubjectsCarousel(
                         AsyncImage(
                             item.imageLarge,
                             modifier = Modifier.height(size.imageHeight),
-                            contentDescription = item.nameCn,
+                            contentDescription = item.preferredDisplayName(useOriginalTitle),
                             contentScale = ContentScale.Crop,
                         )
                     }
@@ -153,21 +156,25 @@ val TestTrendingSubjectInfos
             bangumiId = 467461,
             nameCn = "胆大党",
             imageLarge = "https://lain.bgm.tv/pic/cover/l/44/7d/467461_HHw4K.jpg",
+            name = "ダンダダン",
         ),
         TrendingSubjectInfo(
             bangumiId = 425998,
             nameCn = "Re：从零开始的异世界生活 第三季 袭击篇",
             imageLarge = "https://lain.bgm.tv/pic/cover/l/26/d6/425998_dnzr8.jpg",
+            name = "Re:ゼロから始める異世界生活 3rd season 襲撃編",
         ),
         TrendingSubjectInfo(
             bangumiId = 389156,
             nameCn = "地。 ―关于地球的运动―",
             imageLarge = "https://lain.bgm.tv/pic/cover/l/5f/84/389156_J4gqQ.jpg",
+            name = "チ。 ―地球の運動について―",
         ),
         TrendingSubjectInfo(
             bangumiId = 464376,
             nameCn = "败犬女主太多了！",
             imageLarge = "https://lain.bgm.tv/pic/cover/l/e4/dc/464376_NsZRw.jpg",
+            name = "負けヒロインが多すぎる！",
         ),
     )
 

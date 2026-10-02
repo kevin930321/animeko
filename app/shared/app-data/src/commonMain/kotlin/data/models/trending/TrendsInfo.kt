@@ -22,4 +22,19 @@ data class TrendingSubjectInfo(
     val bangumiId: Int,
     val nameCn: String,
     val imageLarge: String,
-)
+    /**
+     * 条目原名 (通常为日文), 供"显示原名"设置开启时使用.
+     *
+     * 服务端尚未下发该字段时为空, 此时回退显示 [nameCn].
+     */
+    val name: String = "",
+) {
+    val displayName: String get() = nameCn.ifBlank { name }
+}
+
+/**
+ * 根据用户偏好选择的显示名称.
+ * @param useOriginalTitle 为 `true` 时优先显示原名 ([TrendingSubjectInfo.name]).
+ */
+fun TrendingSubjectInfo.preferredDisplayName(useOriginalTitle: Boolean): String =
+    if (useOriginalTitle) name.ifBlank { nameCn } else displayName

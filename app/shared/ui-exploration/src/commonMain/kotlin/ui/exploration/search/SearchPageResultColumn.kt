@@ -68,6 +68,7 @@ import kotlinx.coroutines.flow.collectLatest
 import me.him188.ani.app.data.models.preference.NsfwMode
 import me.him188.ani.app.domain.search.SearchSort
 import me.him188.ani.app.ui.foundation.IconButton
+import me.him188.ani.app.ui.foundation.LocalSubjectAppearanceSettings
 import me.him188.ani.app.ui.foundation.animation.AniMotionScheme
 import me.him188.ani.app.ui.foundation.animation.LocalAniMotionScheme
 import me.him188.ani.app.ui.foundation.icons.BackgroundDotLarge
@@ -174,6 +175,7 @@ internal fun SearchResultColumn(
                 layoutParams.kind,
                 transitionSpec = aniMotionScheme.animatedContent.topLevel,
             ) { targetKind ->
+                val useOriginalTitle = LocalSubjectAppearanceSettings.current.useOriginalTitle
                 var nsfwMaskState: NsfwMode by rememberSaveable(info?.title) {
                     mutableStateOf(info?.nsfwMode ?: NsfwMode.DISPLAY)
                 }
@@ -185,7 +187,7 @@ internal fun SearchResultColumn(
                     when (targetKind) {
                         SearchResultLayoutKind.COVER -> {
                             SubjectCoverCard(
-                                info?.title,
+                                if (useOriginalTitle) info?.originalTitle else info?.title,
                                 info?.imageUrl,
                                 isPlaceholder = info == null,
                                 onClick = { onSelect(index) },
@@ -311,12 +313,7 @@ private fun SearchResultItem(
                 )
             }
         },
-        title = { maxLines ->
-            Text(
-                info.title,
-                maxLines = maxLines,
-            )
-        },
+        // 不传自定义 title 即使用 SubjectPreviewItem 默认实现 (跟随"显示原名"设置).
     )
 }
 

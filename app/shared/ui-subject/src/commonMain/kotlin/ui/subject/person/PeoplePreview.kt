@@ -39,8 +39,10 @@ import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.paging.compose.collectAsLazyPagingItems
+import me.him188.ani.app.data.models.subject.preferredDisplayName
 import me.him188.ani.app.navigation.LocalNavigator
 import me.him188.ani.app.ui.foundation.ImageViewer
+import me.him188.ani.app.ui.foundation.LocalSubjectAppearanceSettings
 import me.him188.ani.app.ui.foundation.ImageViewerBackHandler
 import me.him188.ani.app.ui.foundation.ImageViewerHandler
 import me.him188.ani.app.ui.foundation.rememberImageViewerHandler
@@ -151,8 +153,9 @@ private fun PersonPreviewContent(
 ) {
     val vm = viewModel<PersonDetailsViewModel>(key = "person-preview-$personId") { PersonDetailsViewModel(personId) }
     val details by vm.details.collectAsState()
+    val useOriginalTitle = LocalSubjectAppearanceSettings.current.useOriginalTitle
     Column {
-        PreviewSheetHeader(details?.person?.displayName ?: "", onOpenFullPage, onDismissRequest)
+        PreviewSheetHeader(details?.person?.preferredDisplayName(useOriginalTitle) ?: "", onOpenFullPage, onDismissRequest)
         Column(
             Modifier.fillMaxWidth().verticalScroll(rememberScrollState()),
         ) {
@@ -181,8 +184,9 @@ private fun CharacterPreviewContent(
         CharacterDetailsViewModel(characterId)
     }
     val details by vm.details.collectAsState()
+    val useOriginalTitle = LocalSubjectAppearanceSettings.current.useOriginalTitle
     Column {
-        PreviewSheetHeader(details?.character?.displayName ?: "", onOpenFullPage, onDismissRequest)
+        PreviewSheetHeader(details?.character?.preferredDisplayName(useOriginalTitle) ?: "", onOpenFullPage, onDismissRequest)
         Column(
             Modifier.fillMaxWidth().verticalScroll(rememberScrollState()),
         ) {

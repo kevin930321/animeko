@@ -282,7 +282,8 @@ fun ExplorationScreen(
                                     subjectId = it.bangumiId,
                                     placeholder = SubjectDetailPlaceholder(
                                         id = it.bangumiId,
-                                        name = it.nameCn,
+                                        name = it.name.ifBlank { it.nameCn },
+                                        nameCN = it.nameCn,
                                         coverUrl = it.imageLarge,
                                     ),
                                 )

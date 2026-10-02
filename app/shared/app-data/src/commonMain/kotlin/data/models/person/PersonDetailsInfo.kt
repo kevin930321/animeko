@@ -67,7 +67,16 @@ data class PersonSubjectSummary(
     val imageLarge: String,
 ) {
     val displayName get() = nameCn.takeIf { it.isNotBlank() } ?: name
+
+    val nameOrNameCn get() = name.ifBlank { nameCn }
 }
+
+/**
+ * 根据用户偏好选择的显示名称.
+ * @param useOriginalTitle 为 `true` 时优先显示原名 ([PersonSubjectSummary.name]).
+ */
+fun PersonSubjectSummary.preferredDisplayName(useOriginalTitle: Boolean): String =
+    if (useOriginalTitle) nameOrNameCn else displayName
 
 /** 人物参与的一部作品及其全部职位. */
 @Immutable

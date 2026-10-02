@@ -53,6 +53,7 @@ import androidx.paging.compose.LazyPagingItems
 import androidx.paging.compose.collectAsLazyPagingItemsWithLifecycle
 import me.him188.ani.app.data.models.person.InfoboxRowInfo
 import me.him188.ani.app.data.models.person.PersonSubjectSummary
+import me.him188.ani.app.data.models.person.preferredDisplayName
 import me.him188.ani.app.navigation.LocalNavigator
 import me.him188.ani.app.navigation.SubjectDetailPlaceholder
 import me.him188.ani.app.tools.formatDateTime
@@ -60,6 +61,7 @@ import me.him188.ani.app.ui.comment.CommentState
 import me.him188.ani.app.ui.comment.UIComment
 import me.him188.ani.app.ui.external.placeholder.placeholder
 import me.him188.ani.app.ui.foundation.ImageViewer
+import me.him188.ani.app.ui.foundation.LocalSubjectAppearanceSettings
 import me.him188.ani.app.ui.foundation.avatar.AvatarImage
 import me.him188.ani.app.ui.foundation.layout.rememberConnectedScrollState
 import me.him188.ani.app.ui.foundation.rememberImageViewerHandler
@@ -317,7 +319,7 @@ internal fun PeopleSubjectCard(
             AvatarImage(subject.imageLarge, Modifier.matchParentSize(), contentScale = ContentScale.Crop)
         }
         Text(
-            subject.displayName,
+            subject.preferredDisplayName(LocalSubjectAppearanceSettings.current.useOriginalTitle),
             style = MaterialTheme.typography.bodySmall,
             fontWeight = FontWeight.Medium,
             maxLines = 1,
