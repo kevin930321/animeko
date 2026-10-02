@@ -49,8 +49,10 @@ import me.him188.ani.app.data.models.subject.PersonType
 import me.him188.ani.app.data.models.subject.RelatedPersonInfo
 import me.him188.ani.app.data.models.subject.RelatedSubjectInfo
 import me.him188.ani.app.data.models.subject.SubjectRelation
-import me.him188.ani.app.data.models.subject.nameCn
+import me.him188.ani.app.data.models.subject.nameResource
+import me.him188.ani.app.data.models.subject.preferredDisplayName
 import me.him188.ani.app.ui.foundation.AsyncImage
+import me.him188.ani.tv.ui.foundation.LocalTvUseOriginalTitle
 import me.him188.ani.app.ui.lang.Lang
 import me.him188.ani.app.ui.lang.subject_details_relation_compilation
 import me.him188.ani.app.ui.lang.subject_details_relation_derived
@@ -132,7 +134,7 @@ internal fun TvEpisodeCard(
                     color = if (watched) Color.White.copy(alpha = 0.55f) else Color.White,
                 )
                 Text(
-                    episode.nameCn.ifBlank { episode.name },
+                    episode.preferredDisplayName(LocalTvUseOriginalTitle.current),
                     style = MaterialTheme.typography.bodySmall,
                     color = if (watched) Color.White.copy(alpha = 0.55f) else Color.White,
                     maxLines = 1,
@@ -148,15 +150,20 @@ internal fun TvEpisodeCard(
 internal fun TvCharacterCard(info: RelatedCharacterInfo, modifier: Modifier = Modifier, onClick: () -> Unit) =
     TvDetailsPersonCard(
         info.character.imageMedium,
-        info.character.nameCn.ifBlank { info.character.name },
-        info.character.actors.firstOrNull()?.displayName.orEmpty(),
+        info.character.preferredDisplayName(LocalTvUseOriginalTitle.current),
+        info.character.actors.firstOrNull()
+            ?.preferredDisplayName(LocalTvUseOriginalTitle.current).orEmpty(),
         onClick, modifier,
     )
 
 @Composable
 internal fun TvStaffCard(info: RelatedPersonInfo, modifier: Modifier = Modifier, onClick: () -> Unit) =
-    TvDetailsPersonCard(info.personInfo.imageMedium, info.personInfo.displayName, info.position.nameCn.orEmpty(),
-        onClick, modifier, portrait = info.personInfo.type == PersonType.Individual)
+    TvDetailsPersonCard(
+        info.personInfo.imageMedium,
+        info.personInfo.preferredDisplayName(LocalTvUseOriginalTitle.current),
+        info.position.nameResource()?.let { stringResource(it) }.orEmpty(),
+        onClick, modifier, portrait = info.personInfo.type == PersonType.Individual,
+    )
 
 @Composable
 internal fun TvDetailsPersonCard(
@@ -205,7 +212,7 @@ internal fun TvRelatedSubjectCard(
 ) {
     TvLandscapeCard(
         imageUrl = info.image,
-        title = info.displayName,
+        title = info.preferredDisplayName(LocalTvUseOriginalTitle.current),
         onClick = { onClick(info.subjectId) },
         modifier = modifier,
         width = TvSubjectDetailsDefaults.RelatedCardWidth,

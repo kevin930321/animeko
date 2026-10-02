@@ -52,7 +52,16 @@ data class CharacterInfo(
     val imageLarge: String,
 ) {
     val displayName get() = nameCn.takeIf { it.isNotBlank() } ?: name
+
+    val nameOrNameCn get() = name.ifBlank { nameCn }
 }
+
+/**
+ * 根据用户偏好选择的显示名称.
+ * @param useOriginalTitle 为 `true` 时优先显示原名 ([CharacterInfo.name]).
+ */
+fun CharacterInfo.preferredDisplayName(useOriginalTitle: Boolean): String =
+    if (useOriginalTitle) nameOrNameCn else displayName
 
 @JvmInline
 @Immutable
@@ -119,10 +128,19 @@ data class PersonInfo(
 ) {
     val displayName get() = nameCn.takeIf { it.isNotBlank() } ?: name
 
+    val nameOrNameCn get() = name.ifBlank { nameCn }
+
     override fun toString(): String {
         return "PersonInfo(id=$id, name='$name', type=$type, careers=$careers, imageLarge='$imageLarge', imageMedium=<omitted>, summary=<omitted>, locked=$locked, nameCn='$nameCn')"
     }
 }
+
+/**
+ * 根据用户偏好选择的显示名称.
+ * @param useOriginalTitle 为 `true` 时优先显示原名 ([PersonInfo.name]).
+ */
+fun PersonInfo.preferredDisplayName(useOriginalTitle: Boolean): String =
+    if (useOriginalTitle) nameOrNameCn else displayName
 
 @JvmInline
 @Immutable

@@ -52,8 +52,10 @@ import me.him188.ani.app.data.models.subject.SubjectRelationGraphBranch
 import me.him188.ani.app.data.models.subject.SubjectRelationGraphMainNode
 import me.him188.ani.app.data.models.subject.SubjectRelationGraphPlatform
 import me.him188.ani.app.data.models.subject.SubjectRelationGraphSubject
+import me.him188.ani.app.data.models.subject.preferredDisplayName
 import me.him188.ani.app.platform.currentAniBuildConfig
 import me.him188.ani.app.ui.foundation.AsyncImage
+import me.him188.ani.app.ui.foundation.LocalSubjectAppearanceSettings
 import me.him188.ani.app.ui.lang.Lang
 import me.him188.ani.app.ui.lang.subject_collection_doing
 import me.him188.ani.app.ui.lang.subject_collection_done
@@ -236,7 +238,7 @@ internal fun SubjectRelationGraphPoster(
         Column(verticalArrangement = Arrangement.spacedBy(2.dp)) {
             MainNodeLabel(node, ordinal, isCurrent)
             Text(
-                subject.displayName,
+                subject.preferredDisplayName(LocalSubjectAppearanceSettings.current.useOriginalTitle),
                 style = MaterialTheme.typography.titleSmall,
                 minLines = 2,
                 maxLines = 2,
@@ -289,7 +291,7 @@ internal fun SubjectRelationGraphCompactCard(
                     CollectionTypeText(subject.collectionType)
                 }
                 Text(
-                    subject.displayName,
+                    subject.preferredDisplayName(LocalSubjectAppearanceSettings.current.useOriginalTitle),
                     style = MaterialTheme.typography.titleMedium,
                     maxLines = 3,
                     overflow = TextOverflow.Ellipsis,
@@ -361,11 +363,14 @@ internal fun SubjectRelationGraphBranchList(
     // 与主时间线未到达的部分同色, 但更细
     val connectorColor = MaterialTheme.colorScheme.outline.copy(alpha = 0.5f)
     Column(modifier, verticalArrangement = Arrangement.spacedBy(spacing)) {
+        val useOriginalTitle = LocalSubjectAppearanceSettings.current.useOriginalTitle
         val visible = if (canCollapse && !expanded) branches.take(collapsedCount) else branches
         visible.forEachIndexed { index, branch ->
             BranchRow(
                 branch,
-                name = remember(branch, seriesName) { branch.subject.displayName.removeSeriesPrefix(seriesName) },
+                name = remember(branch, seriesName, useOriginalTitle) {
+                    branch.subject.preferredDisplayName(useOriginalTitle).removeSeriesPrefix(seriesName)
+                },
                 isCurrent = branch.subject.subjectId == currentSubjectId,
                 nameMaxLines = nameMaxLines,
                 onClick = { onClick(branch.subject) },

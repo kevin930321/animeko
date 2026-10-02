@@ -29,34 +29,39 @@ import me.him188.ani.app.data.models.subject.PersonInfo
 import me.him188.ani.app.data.models.subject.RelatedCharacterInfo
 import me.him188.ani.app.data.models.subject.RelatedPersonInfo
 import me.him188.ani.app.data.models.subject.nameCn
+import me.him188.ani.app.data.models.subject.nameResource
+import me.him188.ani.app.data.models.subject.preferredDisplayName
+import me.him188.ani.app.ui.foundation.LocalSubjectAppearanceSettings
 import me.him188.ani.app.ui.foundation.avatar.AvatarImage
+import org.jetbrains.compose.resources.stringResource
 
 /** 人物卡行: 方圆角头像 + 名字 + `职位/角色 (· CV)`. 用于角色/制作人员的"查看全部"列表. */
 @Composable
 fun PersonCard(info: RelatedPersonInfo, modifier: Modifier = Modifier) {
     PersonCard(
         avatarUrl = info.personInfo.imageMedium,
-        name = info.personInfo.displayName,
-        relation = info.position.nameCn ?: "",
+        name = info.personInfo.preferredDisplayName(LocalSubjectAppearanceSettings.current.useOriginalTitle),
+        relation = info.position.nameResource()?.let { stringResource(it) } ?: "",
         modifier = modifier,
     )
 }
 
 @Composable
 fun PersonCard(info: RelatedCharacterInfo, modifier: Modifier = Modifier) {
+    val useOriginalTitle = LocalSubjectAppearanceSettings.current.useOriginalTitle
     PersonCard(
         avatarUrl = info.character.imageMedium,
-        name = info.character.displayName,
+        name = info.character.preferredDisplayName(useOriginalTitle),
         relation = info.role.nameCn,
         modifier = modifier,
-        actorName = remember(info) { getFirstName(info.character.actors) },
+        actorName = remember(info, useOriginalTitle) { getFirstName(info.character.actors, useOriginalTitle) },
     )
 }
 
-private fun getFirstName(actors: List<PersonInfo>): String {
+private fun getFirstName(actors: List<PersonInfo>, useOriginalTitle: Boolean): String {
     if (actors.isEmpty()) return ""
     val actor = actors.first()
-    return actor.displayName
+    return actor.preferredDisplayName(useOriginalTitle)
 }
 
 @Composable

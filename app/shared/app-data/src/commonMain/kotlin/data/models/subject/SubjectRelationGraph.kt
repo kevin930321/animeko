@@ -80,7 +80,16 @@ data class SubjectRelationGraphSubject(
     val collectionType: UnifiedCollectionType,
 ) {
     val displayName: String get() = nameCn.ifBlank { name }
+
+    val nameOrNameCn: String get() = name.ifBlank { nameCn }
 }
+
+/**
+ * 根据用户偏好选择的显示名称.
+ * @param useOriginalTitle 为 `true` 时优先显示原名 ([SubjectRelationGraphSubject.name]).
+ */
+fun SubjectRelationGraphSubject.preferredDisplayName(useOriginalTitle: Boolean): String =
+    if (useOriginalTitle) nameOrNameCn else displayName
 
 enum class SubjectRelationGraphPlatform {
     TV, OVA, MOVIE, WEB,

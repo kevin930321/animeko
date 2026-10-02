@@ -73,6 +73,8 @@ import me.him188.ani.app.data.models.recommend.RecommendedItemInfo
 import me.him188.ani.app.data.models.recommend.RecommendedSubjectInfo
 import me.him188.ani.app.data.models.subject.FollowedSubjectInfo
 import me.him188.ani.app.data.models.trending.TrendingSubjectInfo
+import me.him188.ani.app.data.models.trending.preferredDisplayName as trendingPreferredDisplayName
+import me.him188.ani.tv.ui.foundation.LocalTvUseOriginalTitle
 import me.him188.ani.app.ui.foundation.navigation.BackHandler
 import me.him188.ani.tv.ui.foundation.focus.TvFocusKey
 import me.him188.ani.tv.ui.foundation.focus.TvFocusScope
@@ -140,9 +142,10 @@ private fun TvExplorationContent(
     val carouselItems = (0 until trendsPager.itemCount)
         .mapNotNull { trendsPager.peek(it) }.distinctBy { it.bangumiId }
     val carouselIds = carouselItems.map { it.bangumiId }
+    val useOriginalTitle = LocalTvUseOriginalTitle.current
     val selectedIndex = carouselIds.indexOf(carouselId).coerceAtLeast(0)
     val featuredSubject = carouselItems.getOrNull(selectedIndex)
-        ?.let { TvHeroSubject(it.bangumiId, it.nameCn, it.imageLarge) }
+        ?.let { TvHeroSubject(it.bangumiId, it.trendingPreferredDisplayName(useOriginalTitle), it.imageLarge) }
     LaunchedEffect(carouselIds) { if (carouselId !in carouselIds) carouselId = carouselIds.firstOrNull() }
     LaunchedEffect(detailsFocused, carouselId, carouselIds, lifecycleState) {
         if (!detailsFocused || carouselIds.size < 2 || !lifecycleState.isAtLeast(Lifecycle.State.RESUMED)) return@LaunchedEffect
@@ -160,7 +163,7 @@ private fun TvExplorationContent(
     val recommendationIndices = (0 until recommendations.itemCount)
         .filter { recommendations.peek(it) is RecommendedSubjectInfo }
     val rows = buildList {
-        if (followed.itemCount > 0) add(TvExplorationRow.ContinueWatching(followed))
+        if (followed.itemCount > 0) add(TvExplorationRow.ContinueWatching(followed, useOriginalTitle))
         else if (followed.loadState.refresh is LoadState.Loading) {
             add(TvExplorationRow.Loading(TvExplorationArea.ContinueWatching, columns))
         }
@@ -168,7 +171,7 @@ private fun TvExplorationContent(
             add(TvExplorationRow.Loading(TvExplorationArea.Recommendations, columns))
         }
         repeat((recommendationIndices.size + columns - 1) / columns) {
-            add(TvExplorationRow.RecommendationGrid(recommendations, recommendationIndices, it, columns))
+            add(TvExplorationRow.RecommendationGrid(recommendations, recommendationIndices, it, columns, useOriginalTitle))
         }
     }
     val currentRows by rememberUpdatedState(rows)

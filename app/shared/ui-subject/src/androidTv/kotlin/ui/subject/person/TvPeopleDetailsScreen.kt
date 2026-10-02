@@ -47,8 +47,12 @@ import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.launch
 import me.him188.ani.app.data.models.subject.PersonType
 import me.him188.ani.app.data.models.subject.nameCn
+import me.him188.ani.app.data.models.subject.nameResource
+import me.him188.ani.app.data.models.subject.preferredDisplayName
+import me.him188.ani.app.data.models.person.preferredDisplayName as preferredPersonSubjectDisplayName
 import me.him188.ani.app.ui.comment.CommentOverlayCleanupEffect
 import me.him188.ani.app.ui.foundation.AsyncImage
+import me.him188.ani.tv.ui.foundation.LocalTvUseOriginalTitle
 import me.him188.ani.app.ui.lang.Lang
 import me.him188.ani.app.ui.lang.comment_preview_image
 import me.him188.ani.app.ui.lang.comment_preview_quote
@@ -138,15 +142,18 @@ internal fun TvPeopleDetailsScreen(
         scrollMemory.capture(scroll, rowStates)
         onIntent(intent)
     }
+    val useOriginalTitle = LocalTvUseOriginalTitle.current
     val sections = buildList {
         if (state.target.kind == TvPeopleKind.Character) {
             add(TvPeopleSection("actors", stringResource(Lang.person_details_voice_actors), actorItems.map { "actors:${it.id}" },
                 profileLoading, state.error.takeIf { profile == null }, { onIntent(TvPeopleIntent.Retry) },
                 placeholder = { TvDetailsPersonPlaceholder(it) }) { index, itemModifier ->
                 val actor = actorItems[index]
-                TvDetailsPersonCard(actor.imageMedium, actor.displayName, "", {
-                    navigate(TvPeopleIntent.OpenPerson(TvPeopleTarget(actor.id, TvPeopleKind.VoiceActor)))
-                }, itemModifier, portrait = actor.type == PersonType.Individual)
+                TvDetailsPersonCard(
+                    actor.imageMedium, actor.preferredDisplayName(useOriginalTitle), "", {
+                        navigate(TvPeopleIntent.OpenPerson(TvPeopleTarget(actor.id, TvPeopleKind.VoiceActor)))
+                    }, itemModifier, portrait = actor.type == PersonType.Individual,
+                )
             })
             subjects?.let { add(peopleSection("works", stringResource(Lang.person_details_character_subjects), it,
                 placeholder = { TvDetailsLandscapePlaceholder(it) },
@@ -158,15 +165,20 @@ internal fun TvPeopleDetailsScreen(
             add(peopleSection("casts", stringResource(Lang.person_details_casts), it,
                 placeholder = { TvDetailsPersonPlaceholder(it) },
                 key = { record -> "${record.character.id}:${record.subject.subjectId}" }) { record, itemModifier ->
-                TvDetailsPersonCard(record.character.imageMedium, record.character.displayName, record.subject.displayName,
-                    { navigate(TvPeopleIntent.OpenPerson(TvPeopleTarget(record.character.id, TvPeopleKind.Character))) }, itemModifier)
+                TvDetailsPersonCard(
+                    record.character.imageMedium,
+                    record.character.preferredDisplayName(useOriginalTitle),
+                    record.subject.preferredPersonSubjectDisplayName(useOriginalTitle),
+                    { navigate(TvPeopleIntent.OpenPerson(TvPeopleTarget(record.character.id, TvPeopleKind.Character))) },
+                    itemModifier,
+                )
             })
         }
         if (state.target.kind != TvPeopleKind.Character) works?.let {
             add(peopleSection("works", stringResource(Lang.person_details_works), it,
                 placeholder = { TvDetailsLandscapePlaceholder(it) },
                 key = { record -> record.subject.subjectId.toString() }) { record, itemModifier ->
-                TvPeopleWorkCard(record.subject, record.positions.mapNotNull { position -> position.nameCn }.distinct().joinToString(" · "), itemModifier) {
+                TvPeopleWorkCard(record.subject, record.positions.mapNotNull { position -> position.nameResource()?.let { res -> stringResource(res) } }.distinct().joinToString(" · "), itemModifier) {
                     navigate(TvPeopleIntent.OpenSubject(record.subject))
                 }
             })

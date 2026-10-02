@@ -64,6 +64,8 @@ import androidx.compose.ui.unit.sp
 import androidx.paging.LoadState
 import me.him188.ani.app.data.models.subject.FollowedSubjectInfo
 import me.him188.ani.app.data.models.subject.SubjectCollectionInfo
+import me.him188.ani.app.data.models.subject.preferredDisplayName
+import me.him188.ani.tv.ui.foundation.LocalTvUseOriginalTitle
 import me.him188.ani.app.ui.lang.Lang
 import me.him188.ani.app.ui.lang.exploration_load_failed
 import me.him188.ani.app.ui.lang.exploration_loading
@@ -138,14 +140,16 @@ internal fun TvExplorationHero(
                         if (loading) {
                             TvExplorationHeroIdentityPlaceholder()
                         } else {
+                            val useOriginalTitle = LocalTvUseOriginalTitle.current
                             TvDetailsTitle(
-                                collection?.subjectInfo?.displayName ?: subject?.title ?: stringResource(
-                                    when (loadState) {
-                                        is LoadState.Loading -> Lang.exploration_loading
-                                        is LoadState.Error -> Lang.exploration_load_failed
-                                        else -> Lang.subject_details_empty
-                                    },
-                                ),
+                                collection?.subjectInfo?.preferredDisplayName(useOriginalTitle)
+                                    ?: subject?.title ?: stringResource(
+                                        when (loadState) {
+                                            is LoadState.Loading -> Lang.exploration_loading
+                                            is LoadState.Error -> Lang.exploration_load_failed
+                                            else -> Lang.subject_details_empty
+                                        },
+                                    ),
                                 Modifier.fillMaxWidth().testTag("tv-exploration-featured-title"),
                             )
                             HomeMetadata(collection, Modifier.testTag("tv-exploration-featured-metadata-${subject?.subjectId}"))
@@ -227,7 +231,8 @@ internal fun TvExplorationHero(
                     verticalArrangement = Arrangement.Bottom,
                 ) {
                     TvDetailsTitle(
-                        collection?.subjectInfo?.displayName ?: subject?.title.orEmpty(),
+                        collection?.subjectInfo?.preferredDisplayName(LocalTvUseOriginalTitle.current)
+                            ?: subject?.title.orEmpty(),
                         Modifier.widthIn(max = 620.dp).fillMaxWidth().testTag("tv-exploration-preview-title"),
                     )
                     if (collection != null) {

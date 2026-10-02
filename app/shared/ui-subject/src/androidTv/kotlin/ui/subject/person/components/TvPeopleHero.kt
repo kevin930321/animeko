@@ -47,6 +47,7 @@ import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import me.him188.ani.app.ui.foundation.AsyncImage
+import me.him188.ani.tv.ui.foundation.LocalTvUseOriginalTitle
 import me.him188.ani.app.ui.lang.Lang
 import me.him188.ani.app.ui.lang.foundation_loading
 import me.him188.ani.app.ui.lang.person_details_meta
@@ -62,6 +63,16 @@ import org.jetbrains.compose.resources.stringResource
 
 @Composable
 internal fun TvPeopleIdentity(kind: TvPeopleKind, profile: TvPeopleProfile?, loading: Boolean = false) {
+    val useOriginalTitle = LocalTvUseOriginalTitle.current
+    val primaryName = remember(profile, useOriginalTitle) {
+        if (profile == null) null
+        else if (useOriginalTitle) profile.originalName.ifBlank { profile.name } else profile.name
+    }
+    val secondaryName = remember(profile, useOriginalTitle) {
+        if (profile == null) null
+        else if (useOriginalTitle) profile.name.takeIf { it.isNotBlank() && it != primaryName }
+        else profile.originalName.takeIf { it.isNotBlank() && it != profile.name }
+    }
     Column(verticalArrangement = Arrangement.spacedBy(5.dp)) {
         Text(peopleKindLabel(kind), color = TvSubjectDetailsDefaults.SecondaryContent,
             style = MaterialTheme.typography.bodyLarge.copy(fontSize = 15.sp, lineHeight = 20.sp), modifier = Modifier.testTag("tv-people-kind"))
@@ -72,11 +83,11 @@ internal fun TvPeopleIdentity(kind: TvPeopleKind, profile: TvPeopleProfile?, loa
                 TvDetailsTextPlaceholder(lines = 1, fontSize = 19.sp, lineHeight = 24.sp, lastLineFraction = .5f)
                 TvDetailsTextPlaceholder(Modifier.padding(top = 4.dp), lines = 1, fontSize = 15.sp, lineHeight = 20.sp, lastLineFraction = .8f)
             }
-        } else Text(profile?.name ?: peopleKindLabel(kind),
+        } else Text(primaryName ?: peopleKindLabel(kind),
             color = TvSubjectDetailsDefaults.Content,
             style = MaterialTheme.typography.displaySmall.copy(fontSize = 40.sp, lineHeight = 48.sp),
             maxLines = 2, overflow = TextOverflow.Ellipsis, modifier = Modifier.testTag("tv-people-name"))
-        profile?.originalName?.takeIf { it.isNotBlank() && it != profile.name }?.let {
+        secondaryName?.let {
             Text(it, color = TvSubjectDetailsDefaults.SecondaryContent,
                 style = MaterialTheme.typography.titleLarge.copy(fontSize = 19.sp, lineHeight = 24.sp), maxLines = 2, overflow = TextOverflow.Ellipsis)
         }
