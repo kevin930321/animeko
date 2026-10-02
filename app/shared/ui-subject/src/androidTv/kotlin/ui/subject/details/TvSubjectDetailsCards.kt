@@ -61,7 +61,6 @@ import me.him188.ani.app.ui.lang.subject_details_relation_prequel
 import me.him188.ani.app.ui.lang.subject_details_relation_sequel
 import me.him188.ani.app.ui.lang.subject_details_relation_special
 import me.him188.ani.app.ui.subject.episode.list.EpisodeListItem
-import me.him188.ani.app.ui.subject.episode.list.preferredDisplayName as preferredEpisodeDisplayName
 import me.him188.ani.tv.ui.foundation.focus.TvFocusDefaults
 import me.him188.ani.tv.ui.foundation.focus.tvCardFocusBorder
 import me.him188.ani.tv.ui.foundation.focus.tvLongPressKey
@@ -135,7 +134,7 @@ internal fun TvEpisodeCard(
                     color = if (watched) Color.White.copy(alpha = 0.55f) else Color.White,
                 )
                 Text(
-                    episode.preferredEpisodeDisplayName(LocalSubjectAppearanceSettings.current.useOriginalTitle),
+                    episode.preferredDisplayName(LocalSubjectAppearanceSettings.current.useOriginalTitle),
                     style = MaterialTheme.typography.bodySmall,
                     color = if (watched) Color.White.copy(alpha = 0.55f) else Color.White,
                     maxLines = 1,

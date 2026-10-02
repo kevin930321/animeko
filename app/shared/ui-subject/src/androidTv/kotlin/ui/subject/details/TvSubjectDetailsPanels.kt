@@ -47,7 +47,6 @@ import me.him188.ani.app.ui.comment.UIComment
 import me.him188.ani.app.ui.comment.UICommentSource
 import me.him188.ani.app.ui.comment.UICommentVote
 import me.him188.ani.app.ui.foundation.AsyncImage
-import me.him188.ani.app.ui.subject.episode.list.preferredDisplayName as preferredEpisodeDisplayName
 import me.him188.ani.app.ui.lang.Lang
 import me.him188.ani.app.ui.lang.comment_dislike
 import me.him188.ani.app.ui.lang.comment_hide_hidden
@@ -246,7 +245,7 @@ internal fun TvSubjectDetailsPanels(
                     entries += TvDetailsPanelEntry("episode:${episode.episodeId}") { modifier ->
                         val play = { onIntent(TvSubjectDetailsIntent.PlayEpisode(episode.episodeId)) }
                         TvOptionRow(
-                            "${episode.sort} · ${episode.preferredEpisodeDisplayName(useOriginalTitle)}",
+                            "${episode.sort} · ${episode.preferredDisplayName(useOriginalTitle)}",
                             value = if (episode.isDoneOrDropped) stringResource(Lang.subject_episode_watched) else "",
                             selected = episode.episodeId == details.playTargetId,
                             supportingText = stringResource(Lang.subject_episode_long_press_mark_watched),
