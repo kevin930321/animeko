@@ -49,7 +49,7 @@ import me.him188.ani.app.data.models.subject.PersonType
 import me.him188.ani.app.data.models.subject.RelatedPersonInfo
 import me.him188.ani.app.data.models.subject.RelatedSubjectInfo
 import me.him188.ani.app.data.models.subject.SubjectRelation
-import me.him188.ani.app.data.models.subject.nameCn
+import me.him188.ani.app.data.models.subject.nameResource
 import me.him188.ani.app.data.models.subject.preferredDisplayName
 import me.him188.ani.app.ui.foundation.AsyncImage
 import me.him188.ani.tv.ui.foundation.LocalTvUseOriginalTitle
@@ -161,7 +161,7 @@ internal fun TvStaffCard(info: RelatedPersonInfo, modifier: Modifier = Modifier,
     TvDetailsPersonCard(
         info.personInfo.imageMedium,
         info.personInfo.preferredDisplayName(LocalTvUseOriginalTitle.current),
-        info.position.nameCn.orEmpty(),
+        info.position.nameResource()?.let { stringResource(it) }.orEmpty(),
         onClick, modifier, portrait = info.personInfo.type == PersonType.Individual,
     )
 

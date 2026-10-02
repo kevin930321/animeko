@@ -46,6 +46,7 @@ import me.him188.ani.app.data.models.subject.RelatedCharacterInfo
 import me.him188.ani.app.data.models.subject.RelatedPersonInfo
 import me.him188.ani.app.data.models.subject.SubjectCollectionStats
 import me.him188.ani.app.data.models.subject.nameCn
+import me.him188.ani.app.data.models.subject.nameResource
 import me.him188.ani.app.data.models.subject.preferredDisplayName
 import me.him188.ani.app.ui.foundation.LocalSubjectAppearanceSettings
 import me.him188.ani.app.ui.foundation.avatar.AvatarImage
@@ -352,7 +353,7 @@ private fun StaffGrid(
                 verticalArrangement = Arrangement.spacedBy(2.dp),
             ) {
                 Text(
-                    person.position.nameCn ?: "",
+                    person.position.nameResource()?.let { stringResource(it) } ?: "",
                     style = MaterialTheme.typography.bodySmall,
                     color = MaterialTheme.colorScheme.onSurfaceVariant,
                     maxLines = 1,
@@ -396,7 +397,7 @@ private fun StaffKeyValueList(
                     .clickable { onClick(person) },
             ) {
                 Text(
-                    person.position.nameCn ?: "",
+                    person.position.nameResource()?.let { stringResource(it) } ?: "",
                     Modifier.width(labelWidth),
                     style = MaterialTheme.typography.bodyMedium,
                     color = MaterialTheme.colorScheme.onSurfaceVariant,

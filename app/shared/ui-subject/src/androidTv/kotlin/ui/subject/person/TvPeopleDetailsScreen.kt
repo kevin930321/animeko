@@ -47,6 +47,7 @@ import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.launch
 import me.him188.ani.app.data.models.subject.PersonType
 import me.him188.ani.app.data.models.subject.nameCn
+import me.him188.ani.app.data.models.subject.nameResource
 import me.him188.ani.app.data.models.subject.preferredDisplayName
 import me.him188.ani.app.data.models.person.preferredDisplayName as preferredPersonSubjectDisplayName
 import me.him188.ani.app.ui.comment.CommentOverlayCleanupEffect
@@ -177,7 +178,7 @@ internal fun TvPeopleDetailsScreen(
             add(peopleSection("works", stringResource(Lang.person_details_works), it,
                 placeholder = { TvDetailsLandscapePlaceholder(it) },
                 key = { record -> record.subject.subjectId.toString() }) { record, itemModifier ->
-                TvPeopleWorkCard(record.subject, record.positions.mapNotNull { position -> position.nameCn }.distinct().joinToString(" · "), itemModifier) {
+                TvPeopleWorkCard(record.subject, record.positions.mapNotNull { position -> position.nameResource()?.let { res -> stringResource(res) } }.distinct().joinToString(" · "), itemModifier) {
                     navigate(TvPeopleIntent.OpenSubject(record.subject))
                 }
             })

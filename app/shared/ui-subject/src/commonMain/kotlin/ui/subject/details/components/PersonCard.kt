@@ -29,9 +29,11 @@ import me.him188.ani.app.data.models.subject.PersonInfo
 import me.him188.ani.app.data.models.subject.RelatedCharacterInfo
 import me.him188.ani.app.data.models.subject.RelatedPersonInfo
 import me.him188.ani.app.data.models.subject.nameCn
+import me.him188.ani.app.data.models.subject.nameResource
 import me.him188.ani.app.data.models.subject.preferredDisplayName
 import me.him188.ani.app.ui.foundation.LocalSubjectAppearanceSettings
 import me.him188.ani.app.ui.foundation.avatar.AvatarImage
+import org.jetbrains.compose.resources.stringResource
 
 /** 人物卡行: 方圆角头像 + 名字 + `职位/角色 (· CV)`. 用于角色/制作人员的"查看全部"列表. */
 @Composable
@@ -39,7 +41,7 @@ fun PersonCard(info: RelatedPersonInfo, modifier: Modifier = Modifier) {
     PersonCard(
         avatarUrl = info.personInfo.imageMedium,
         name = info.personInfo.preferredDisplayName(LocalSubjectAppearanceSettings.current.useOriginalTitle),
-        relation = info.position.nameCn ?: "",
+        relation = info.position.nameResource()?.let { stringResource(it) } ?: "",
         modifier = modifier,
     )
 }

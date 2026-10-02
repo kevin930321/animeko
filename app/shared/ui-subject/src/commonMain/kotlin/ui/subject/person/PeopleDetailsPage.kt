@@ -62,6 +62,7 @@ import me.him188.ani.app.data.models.person.PersonDetailsInfo
 import me.him188.ani.app.data.models.person.PersonWorkInfo
 import me.him188.ani.app.data.models.person.preferredDisplayName as preferredPersonSubjectDisplayName
 import me.him188.ani.app.data.models.subject.nameCn
+import me.him188.ani.app.data.models.subject.nameResource
 import me.him188.ani.app.data.models.subject.preferredDisplayName
 import me.him188.ani.app.ui.foundation.LocalSubjectAppearanceSettings
 import me.him188.ani.app.ui.external.placeholder.placeholder
@@ -477,7 +478,7 @@ private fun PersonStrips(
     ) { work ->
         PeopleSubjectCard(
             subject = work.subject,
-            caption = work.positions.firstNotNullOfOrNull { it.nameCn },
+            caption = work.positions.firstNotNullOfOrNull { it.nameResource()?.let { res -> stringResource(res) } },
             onClick = { navigation.onClickSubject(work.subject) },
         )
     }
@@ -507,7 +508,7 @@ private fun PersonStrips(
             PersonCard(
                 avatarUrl = work.subject.imageLarge,
                 name = work.subject.preferredPersonSubjectDisplayName(useOriginalTitle),
-                relation = work.positions.mapNotNull { it.nameCn }.distinct().joinToString("、"),
+                relation = work.positions.mapNotNull { it.nameResource()?.let { res -> stringResource(res) } }.distinct().joinToString("、"),
                 modifier = Modifier
                     .clip(MaterialTheme.shapes.small)
                     .clickable { navigation.onClickSubject(work.subject) },
