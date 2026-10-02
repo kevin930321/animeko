@@ -106,7 +106,7 @@ import me.him188.ani.tv.ui.subject.components.detailsRevealMasks
 import me.him188.ani.tv.ui.subject.components.detailsRedactMasks
 import me.him188.ani.tv.ui.subject.presentation.TvDetailsPanelKind
 import me.him188.ani.tv.ui.subject.presentation.TvSubjectPresentationState
-import me.him188.ani.app.ui.foundation.LocalSubjectAppearanceSettings
+import me.him188.ani.tv.ui.foundation.LocalTvUseOriginalTitle
 import org.jetbrains.compose.resources.stringResource
 
 internal class TvDetailsLists(
@@ -157,7 +157,7 @@ internal fun TvSubjectDetailsPanels(
     val entries = mutableListOf<TvDetailsPanelEntry>()
     val actions = mutableListOf<TvDetailsPanelEntry>()
     val busy = state.operation.busy
-    val useOriginalTitle = LocalSubjectAppearanceSettings.current.useOriginalTitle
+    val useOriginalTitle = LocalTvUseOriginalTitle.current
     fun action(key: String, label: String, icon: ImageVector, selected: Boolean = false, onClick: () -> Unit) {
         actions += TvDetailsPanelEntry(key) { modifier ->
             TvDetailsAction(label, icon, onClick, modifier.widthIn(max = 240.dp), active = selected, busy = busy, compact = true)

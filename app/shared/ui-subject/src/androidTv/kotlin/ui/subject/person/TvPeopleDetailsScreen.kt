@@ -51,7 +51,7 @@ import me.him188.ani.app.data.models.subject.preferredDisplayName
 import me.him188.ani.app.data.models.person.preferredDisplayName as preferredPersonSubjectDisplayName
 import me.him188.ani.app.ui.comment.CommentOverlayCleanupEffect
 import me.him188.ani.app.ui.foundation.AsyncImage
-import me.him188.ani.app.ui.foundation.LocalSubjectAppearanceSettings
+import me.him188.ani.tv.ui.foundation.LocalTvUseOriginalTitle
 import me.him188.ani.app.ui.lang.Lang
 import me.him188.ani.app.ui.lang.comment_preview_image
 import me.him188.ani.app.ui.lang.comment_preview_quote
@@ -141,7 +141,7 @@ internal fun TvPeopleDetailsScreen(
         scrollMemory.capture(scroll, rowStates)
         onIntent(intent)
     }
-    val useOriginalTitle = LocalSubjectAppearanceSettings.current.useOriginalTitle
+    val useOriginalTitle = LocalTvUseOriginalTitle.current
     val sections = buildList {
         if (state.target.kind == TvPeopleKind.Character) {
             add(TvPeopleSection("actors", stringResource(Lang.person_details_voice_actors), actorItems.map { "actors:${it.id}" },

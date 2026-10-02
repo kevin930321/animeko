@@ -65,7 +65,7 @@ import androidx.paging.LoadState
 import me.him188.ani.app.data.models.subject.FollowedSubjectInfo
 import me.him188.ani.app.data.models.subject.SubjectCollectionInfo
 import me.him188.ani.app.data.models.subject.preferredDisplayName
-import me.him188.ani.app.ui.foundation.LocalSubjectAppearanceSettings
+import me.him188.ani.tv.ui.foundation.LocalTvUseOriginalTitle
 import me.him188.ani.app.ui.lang.Lang
 import me.him188.ani.app.ui.lang.exploration_load_failed
 import me.him188.ani.app.ui.lang.exploration_loading
@@ -140,7 +140,7 @@ internal fun TvExplorationHero(
                         if (loading) {
                             TvExplorationHeroIdentityPlaceholder()
                         } else {
-                            val useOriginalTitle = LocalSubjectAppearanceSettings.current.useOriginalTitle
+                            val useOriginalTitle = LocalTvUseOriginalTitle.current
                             TvDetailsTitle(
                                 collection?.subjectInfo?.preferredDisplayName(useOriginalTitle)
                                     ?: subject?.title ?: stringResource(
@@ -231,7 +231,7 @@ internal fun TvExplorationHero(
                     verticalArrangement = Arrangement.Bottom,
                 ) {
                     TvDetailsTitle(
-                        collection?.subjectInfo?.preferredDisplayName(LocalSubjectAppearanceSettings.current.useOriginalTitle)
+                        collection?.subjectInfo?.preferredDisplayName(LocalTvUseOriginalTitle.current)
                             ?: subject?.title.orEmpty(),
                         Modifier.widthIn(max = 620.dp).fillMaxWidth().testTag("tv-exploration-preview-title"),
                     )

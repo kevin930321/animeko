@@ -50,7 +50,7 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import me.him188.ani.app.data.models.subject.SubjectInfo
 import me.him188.ani.app.data.models.subject.preferredDisplayName
-import me.him188.ani.app.ui.foundation.LocalSubjectAppearanceSettings
+import me.him188.ani.tv.ui.foundation.LocalTvUseOriginalTitle
 import me.him188.ani.app.ui.lang.Lang
 import me.him188.ani.app.ui.lang.foundation_loading
 import me.him188.ani.app.ui.lang.subject_details_no_episodes
@@ -161,7 +161,7 @@ fun TvDetailsHero(
                         )
                     } else {
                         TvDetailsTitle(
-                            subject.preferredDisplayName(LocalSubjectAppearanceSettings.current.useOriginalTitle),
+                            subject.preferredDisplayName(LocalTvUseOriginalTitle.current),
                             textModifier, fontSize, reservedLineHeight, titleMinLines,
                         )
                         TvDetailsMetadata(subject, airing, onComments ?: {}, scoreModifier, onComments != null)

@@ -52,7 +52,7 @@ import me.him188.ani.app.data.models.subject.SubjectRelation
 import me.him188.ani.app.data.models.subject.nameCn
 import me.him188.ani.app.data.models.subject.preferredDisplayName
 import me.him188.ani.app.ui.foundation.AsyncImage
-import me.him188.ani.app.ui.foundation.LocalSubjectAppearanceSettings
+import me.him188.ani.tv.ui.foundation.LocalTvUseOriginalTitle
 import me.him188.ani.app.ui.lang.Lang
 import me.him188.ani.app.ui.lang.subject_details_relation_compilation
 import me.him188.ani.app.ui.lang.subject_details_relation_derived
@@ -134,7 +134,7 @@ internal fun TvEpisodeCard(
                     color = if (watched) Color.White.copy(alpha = 0.55f) else Color.White,
                 )
                 Text(
-                    episode.preferredDisplayName(LocalSubjectAppearanceSettings.current.useOriginalTitle),
+                    episode.preferredDisplayName(LocalTvUseOriginalTitle.current),
                     style = MaterialTheme.typography.bodySmall,
                     color = if (watched) Color.White.copy(alpha = 0.55f) else Color.White,
                     maxLines = 1,
@@ -150,9 +150,9 @@ internal fun TvEpisodeCard(
 internal fun TvCharacterCard(info: RelatedCharacterInfo, modifier: Modifier = Modifier, onClick: () -> Unit) =
     TvDetailsPersonCard(
         info.character.imageMedium,
-        info.character.preferredDisplayName(LocalSubjectAppearanceSettings.current.useOriginalTitle),
+        info.character.preferredDisplayName(LocalTvUseOriginalTitle.current),
         info.character.actors.firstOrNull()
-            ?.preferredDisplayName(LocalSubjectAppearanceSettings.current.useOriginalTitle).orEmpty(),
+            ?.preferredDisplayName(LocalTvUseOriginalTitle.current).orEmpty(),
         onClick, modifier,
     )
 
@@ -160,7 +160,7 @@ internal fun TvCharacterCard(info: RelatedCharacterInfo, modifier: Modifier = Mo
 internal fun TvStaffCard(info: RelatedPersonInfo, modifier: Modifier = Modifier, onClick: () -> Unit) =
     TvDetailsPersonCard(
         info.personInfo.imageMedium,
-        info.personInfo.preferredDisplayName(LocalSubjectAppearanceSettings.current.useOriginalTitle),
+        info.personInfo.preferredDisplayName(LocalTvUseOriginalTitle.current),
         info.position.nameCn.orEmpty(),
         onClick, modifier, portrait = info.personInfo.type == PersonType.Individual,
     )
@@ -212,7 +212,7 @@ internal fun TvRelatedSubjectCard(
 ) {
     TvLandscapeCard(
         imageUrl = info.image,
-        title = info.preferredDisplayName(LocalSubjectAppearanceSettings.current.useOriginalTitle),
+        title = info.preferredDisplayName(LocalTvUseOriginalTitle.current),
         onClick = { onClick(info.subjectId) },
         modifier = modifier,
         width = TvSubjectDetailsDefaults.RelatedCardWidth,

@@ -74,7 +74,7 @@ import me.him188.ani.app.data.models.recommend.RecommendedSubjectInfo
 import me.him188.ani.app.data.models.subject.FollowedSubjectInfo
 import me.him188.ani.app.data.models.trending.TrendingSubjectInfo
 import me.him188.ani.app.data.models.trending.preferredDisplayName as trendingPreferredDisplayName
-import me.him188.ani.app.ui.foundation.LocalSubjectAppearanceSettings
+import me.him188.ani.tv.ui.foundation.LocalTvUseOriginalTitle
 import me.him188.ani.app.ui.foundation.navigation.BackHandler
 import me.him188.ani.tv.ui.foundation.focus.TvFocusKey
 import me.him188.ani.tv.ui.foundation.focus.TvFocusScope
@@ -142,7 +142,7 @@ private fun TvExplorationContent(
     val carouselItems = (0 until trendsPager.itemCount)
         .mapNotNull { trendsPager.peek(it) }.distinctBy { it.bangumiId }
     val carouselIds = carouselItems.map { it.bangumiId }
-    val useOriginalTitle = LocalSubjectAppearanceSettings.current.useOriginalTitle
+    val useOriginalTitle = LocalTvUseOriginalTitle.current
     val selectedIndex = carouselIds.indexOf(carouselId).coerceAtLeast(0)
     val featuredSubject = carouselItems.getOrNull(selectedIndex)
         ?.let { TvHeroSubject(it.bangumiId, it.trendingPreferredDisplayName(useOriginalTitle), it.imageLarge) }

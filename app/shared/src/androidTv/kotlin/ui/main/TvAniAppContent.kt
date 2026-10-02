@@ -24,11 +24,13 @@ import androidx.compose.ui.platform.LocalContext
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.LifecycleEventObserver
 import androidx.lifecycle.compose.LocalLifecycleOwner
+import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import androidx.lifecycle.viewmodel.navigation3.rememberViewModelStoreNavEntryDecorator
 import androidx.navigation3.runtime.entryProvider
 import androidx.navigation3.runtime.rememberSaveableStateHolderNavEntryDecorator
 import androidx.navigation3.ui.NavDisplay
 import androidx.tv.material3.Surface
+import kotlinx.coroutines.flow.map
 import me.him188.ani.app.data.models.subject.SubjectInfo
 import me.him188.ani.app.navigation.AniNavigator
 import me.him188.ani.app.navigation.LocalNavigator
@@ -48,6 +50,7 @@ import me.him188.ani.tv.ui.exploration.TvExplorationRoute
 import me.him188.ani.tv.ui.exploration.TvExplorationViewModel
 import me.him188.ani.tv.ui.foundation.TvNavigationEvent
 import me.him188.ani.tv.ui.foundation.focus.TvFocusMemory
+import me.him188.ani.tv.ui.foundation.LocalTvUseOriginalTitle
 import me.him188.ani.tv.ui.foundation.tvViewModel
 import me.him188.ani.tv.ui.login.TvLoginRoute
 import me.him188.ani.tv.ui.login.TvLoginViewModel
@@ -137,6 +140,9 @@ fun TvAniAppContent(
     CompositionLocalProvider(
         LocalNavigator provides aniNavigator,
         LocalTimeFormatter provides remember { TimeFormatter() },
+        LocalTvUseOriginalTitle provides remember(dependencies.settingsRepository) {
+            dependencies.settingsRepository.uiSettings.flow.map { it.subjectAppearance.useOriginalTitle }
+        }.collectAsStateWithLifecycle(initialValue = false).value,
     ) {
         // tv MaterialTheme 不绘制窗口背景, 根部铺一层 Surface (深色 surface + content color)
         Surface(modifier.fillMaxSize()) {

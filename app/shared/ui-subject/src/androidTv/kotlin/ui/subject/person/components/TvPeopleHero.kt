@@ -47,7 +47,7 @@ import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import me.him188.ani.app.ui.foundation.AsyncImage
-import me.him188.ani.app.ui.foundation.LocalSubjectAppearanceSettings
+import me.him188.ani.tv.ui.foundation.LocalTvUseOriginalTitle
 import me.him188.ani.app.ui.lang.Lang
 import me.him188.ani.app.ui.lang.foundation_loading
 import me.him188.ani.app.ui.lang.person_details_meta
@@ -63,7 +63,7 @@ import org.jetbrains.compose.resources.stringResource
 
 @Composable
 internal fun TvPeopleIdentity(kind: TvPeopleKind, profile: TvPeopleProfile?, loading: Boolean = false) {
-    val useOriginalTitle = LocalSubjectAppearanceSettings.current.useOriginalTitle
+    val useOriginalTitle = LocalTvUseOriginalTitle.current
     val primaryName = remember(profile, useOriginalTitle) {
         if (profile == null) null
         else if (useOriginalTitle) profile.originalName.ifBlank { profile.name } else profile.name
