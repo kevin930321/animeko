@@ -257,7 +257,7 @@ fun KoinApplication.repositoryModules(
         )
     }
 
-    single<TrendsRepository> { TrendsRepository(get<AniApiProvider>().trendsApi) }
+    single<TrendsRepository> { TrendsRepository(get<AniApiProvider>().trendsApi, get<AniApiProvider>().subjectApi) }
 
     single<RecommendationRepository> { RecommendationRepository(get<AniApiProvider>().homeApi) }
 
