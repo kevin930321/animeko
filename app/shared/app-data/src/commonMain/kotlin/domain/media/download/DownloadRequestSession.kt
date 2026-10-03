@@ -31,8 +31,10 @@ import kotlinx.coroutines.launch
 import kotlinx.coroutines.withTimeoutOrNull
 import me.him188.ani.app.data.models.episode.EpisodeInfo
 import me.him188.ani.app.data.models.episode.displayName
+import me.him188.ani.app.data.models.episode.nameOrNameCn as episodeNameOrNameCn
 import me.him188.ani.app.data.models.preference.MediaPreference
 import me.him188.ani.app.data.models.subject.SubjectInfo
+import me.him188.ani.app.data.models.subject.nameOrNameCn as subjectNameOrNameCn
 import me.him188.ani.app.data.repository.media.EpisodePreferencesRepository
 import me.him188.ani.app.data.repository.subject.SubjectCollectionRepository
 import me.him188.ani.app.domain.media.fetch.MediaFetchSession
@@ -138,6 +140,8 @@ data class DownloadEpisodeOption(
      * 是否为发起下载的那一集.
      */
     val isCurrent: Boolean,
+    /** 剧集原名, 供"显示原文"设置使用; 未知时与 [name] 相同. */
+    val originalName: String = name,
 ) {
     enum class Availability {
         AVAILABLE,
@@ -302,7 +306,11 @@ class DownloadRequestSession internal constructor(
                 for ((target, media) in batch) {
                     val pendingNow = batchIds.filter { it !in handled } + pending.filter { it !in batchIds }
                     setStateUnlessFinished(DownloadRequestState.Creating(target.episodeId, pendingNow))
-                    addDownload(subject, target, media, MediaCacheMetadata(MediaFetchRequest.create(subject, target)))
+                    addDownload(subject, target, media, MediaCacheMetadata(
+                        MediaFetchRequest.create(subject, target),
+                        subjectOriginalName = subject.subjectNameOrNameCn,
+                        episodeOriginalName = target.episodeNameOrNameCn,
+                    ))
                     created += ExistingDownload(media, target.episodeId)
                     handled += target.episodeId
                 }
@@ -396,6 +404,7 @@ class DownloadRequestSession internal constructor(
             episodeId = episodeId,
             sort = sort,
             name = displayName,
+            originalName = episodeNameOrNameCn,
             availability = when (plan) {
                 EpisodeDownloadPlan.AlreadyDownloaded -> DownloadEpisodeOption.Availability.ALREADY_DOWNLOADED
                 EpisodeDownloadPlan.Uncovered -> DownloadEpisodeOption.Availability.UNMATCHED

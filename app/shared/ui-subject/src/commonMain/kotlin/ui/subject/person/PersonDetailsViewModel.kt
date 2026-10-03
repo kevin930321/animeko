@@ -15,6 +15,8 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.channels.Channel
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.Flow
+import kotlinx.coroutines.flow.combine
+import kotlinx.coroutines.flow.distinctUntilChanged
 import kotlinx.coroutines.flow.flowOf
 import kotlinx.coroutines.flow.map
 import kotlinx.coroutines.flow.receiveAsFlow
@@ -24,10 +26,12 @@ import me.him188.ani.app.data.models.comment.CommentReportTargetType
 import me.him188.ani.app.data.models.person.CharacterDetailsInfo
 import me.him188.ani.app.data.models.person.PersonCommentTarget
 import me.him188.ani.app.data.models.person.PersonDetailsInfo
+import me.him188.ani.app.data.models.subject.preferredDisplayName
 import me.him188.ani.app.data.network.AniCommentReportService
 import me.him188.ani.app.data.repository.RepositoryServiceUnavailableException
 import me.him188.ani.app.data.repository.person.PersonCommentRepository
 import me.him188.ani.app.data.repository.person.PersonDetailsRepository
+import me.him188.ani.app.data.repository.user.SettingsRepository
 import me.him188.ani.app.domain.comment.PostCommentUseCase
 import me.him188.ani.app.ui.comment.BangumiCommentSticker
 import me.him188.ani.app.ui.comment.CommentEditorState
@@ -61,6 +65,12 @@ abstract class PeopleDetailsViewModel(
     private val commentRepository: PersonCommentRepository by inject()
     private val commentReportService: AniCommentReportService by inject()
     private val postCommentUseCase: PostCommentUseCase by inject()
+    private val settingsRepository: SettingsRepository by inject()
+
+    /** 跟随"显示原文"设置的展示名开关. */
+    protected val useOriginalTitleFlow: Flow<Boolean> by lazy {
+        settingsRepository.uiSettings.flow.map { it.subjectAppearance.useOriginalTitle }.distinctUntilChanged()
+    }
 
     /** 详情 (含评论数) 的重启器: 发送评论后重新拉一次, 让评论数与列表一致. */
     protected val detailsRestarter = FlowRestarter()
@@ -168,7 +178,10 @@ class PersonDetailsViewModel(personId: Int) : PeopleDetailsViewModel(
     val castsPager = repository.personCastsPager(personId).cachedIn(backgroundScope)
     val worksPager = repository.personWorksPager(personId).cachedIn(backgroundScope)
 
-    override val commentPanelTitleFlow: Flow<String?> = details.map { it?.person?.displayName }
+    override val commentPanelTitleFlow: Flow<String?> = combine(
+        details.map { it?.person },
+        useOriginalTitleFlow,
+    ) { person, useOriginalTitle -> person?.preferredDisplayName(useOriginalTitle) }
     override val commentCountFlow: Flow<Int?> = details.map { it?.commentCount }
 }
 
@@ -182,7 +195,10 @@ class CharacterDetailsViewModel(characterId: Int) : PeopleDetailsViewModel(
         .stateInBackground(null)
     val subjectsPager = repository.characterSubjectsPager(characterId).cachedIn(backgroundScope)
 
-    override val commentPanelTitleFlow: Flow<String?> = details.map { it?.character?.displayName }
+    override val commentPanelTitleFlow: Flow<String?> = combine(
+        details.map { it?.character },
+        useOriginalTitleFlow,
+    ) { character, useOriginalTitle -> character?.preferredDisplayName(useOriginalTitle) }
     override val commentCountFlow: Flow<Int?> = details.map { it?.commentCount }
 }
 

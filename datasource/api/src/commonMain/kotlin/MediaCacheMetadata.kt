@@ -54,6 +54,15 @@ data class MediaCacheMetadata(
      */
     val episodeName: String,
 
+    /**
+     * 创建缓存时的条目原名, 供"显示原文"设置使用. 历史记录可能缺失, 缺失时回退到 [subjectNameCN].
+     */
+    val subjectOriginalName: String? = null,
+    /**
+     * 创建缓存时的剧集原名, 供"显示原文"设置使用. 历史记录可能缺失, 缺失时回退到 [episodeName].
+     */
+    val episodeOriginalName: String? = null,
+
     val creationTime: Long = Clock.System.now().toEpochMilliseconds(),
 
     /**
@@ -65,7 +74,9 @@ data class MediaCacheMetadata(
 ) {
     constructor(
         request: MediaFetchRequest,
-        autoCached: Boolean = false
+        autoCached: Boolean = false,
+        subjectOriginalName: String? = null,
+        episodeOriginalName: String? = null,
     ) : this(
         subjectId = request.subjectId,
         episodeId = request.episodeId,
@@ -74,6 +85,8 @@ data class MediaCacheMetadata(
         episodeSort = request.episodeSort,
         episodeEp = request.episodeEp,
         episodeName = request.episodeName,
+        subjectOriginalName = subjectOriginalName,
+        episodeOriginalName = episodeOriginalName,
         creationTime = Clock.System.now().toEpochMilliseconds(),
         autoCached = autoCached,
     )

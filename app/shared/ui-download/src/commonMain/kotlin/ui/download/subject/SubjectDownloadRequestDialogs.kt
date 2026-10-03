@@ -62,6 +62,7 @@ import me.him188.ani.app.domain.media.fetch.MediaFetchSession
 import me.him188.ani.app.domain.media.fetch.MediaSourceResultsFilterer
 import me.him188.ani.app.domain.media.fetch.restart
 import me.him188.ani.app.domain.media.selector.MediaSelector
+import me.him188.ani.app.ui.foundation.LocalSubjectAppearanceSettings
 import me.him188.ani.app.ui.foundation.layout.desktopTitleBar
 import me.him188.ani.app.ui.foundation.layout.desktopTitleBarPadding
 import me.him188.ani.app.ui.lang.Lang
@@ -446,8 +447,10 @@ private fun EpisodeOptionRow(
     ) {
         Checkbox(checked = checked && enabled, onCheckedChange = null, enabled = enabled)
         Column(Modifier.weight(1f)) {
+            val episodeName =
+                if (LocalSubjectAppearanceSettings.current.useOriginalTitle) option.originalName else option.name
             Text(
-                stringResource(Lang.cache_management_episode_label, option.sort, option.name),
+                stringResource(Lang.cache_management_episode_label, option.sort, episodeName),
                 style = MaterialTheme.typography.bodyLarge,
                 maxLines = 1,
                 overflow = TextOverflow.Ellipsis,

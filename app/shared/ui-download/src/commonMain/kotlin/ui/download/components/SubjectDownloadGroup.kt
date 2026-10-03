@@ -23,6 +23,8 @@ import me.him188.ani.utils.platform.annotations.TestOnly
 data class SubjectDownloadGroup(
     val subjectId: Int,
     val subjectName: String,
+    /** 条目原名, 供"显示原文"设置使用; 未知时与 [subjectName] 相同. */
+    val subjectOriginalName: String = subjectName,
     val entries: List<DownloadItem>,
     val collectionType: UnifiedCollectionType?,
     /**

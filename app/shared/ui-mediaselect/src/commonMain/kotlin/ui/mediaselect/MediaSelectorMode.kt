@@ -15,6 +15,7 @@ import androidx.compose.ui.unit.dp
 import kotlinx.serialization.Serializable
 import me.him188.ani.app.data.models.episode.EpisodeInfo
 import me.him188.ani.app.data.models.episode.displayName
+import me.him188.ani.app.data.models.episode.nameOrNameCn
 import me.him188.ani.datasources.api.EpisodeSort
 import me.him188.ani.datasources.api.source.MediaFetchRequest
 
@@ -40,17 +41,20 @@ data class WatchingEpisode(
      * 续季的 sort 接着上一季编号, 而不少数据源按 EP 编号 (从 01 重新开始), 两者不同时都要显示, 用户才能对上资源标题里的集号.
      */
     val ep: String? = null,
+    /** 剧集原名, 供"显示原文"设置使用; 未知时与 [name] 相同. */
+    val originalName: String = name,
 )
 
 /**
  * `EpisodeSort.Normal.toString()` 已补零 ("01").
  */
-fun EpisodeInfo.toWatchingEpisode(): WatchingEpisode = watchingEpisode(sort, ep, displayName)
+fun EpisodeInfo.toWatchingEpisode(): WatchingEpisode = watchingEpisode(sort, ep, displayName, nameOrNameCn)
 
-fun MediaFetchRequest.toWatchingEpisode(): WatchingEpisode = watchingEpisode(episodeSort, episodeEp, episodeName)
+fun MediaFetchRequest.toWatchingEpisode(): WatchingEpisode =
+    watchingEpisode(episodeSort, episodeEp, episodeName, episodeOriginalName ?: episodeName)
 
-private fun watchingEpisode(sort: EpisodeSort, ep: EpisodeSort?, name: String): WatchingEpisode =
-    WatchingEpisode(sort.toString(), name, ep?.takeIf { it != sort }?.toString())
+private fun watchingEpisode(sort: EpisodeSort, ep: EpisodeSort?, name: String, originalName: String = name): WatchingEpisode =
+    WatchingEpisode(sort.toString(), name, ep?.takeIf { it != sort }?.toString(), originalName = originalName)
 
 object MediaSelectorLayoutDefaults {
     /**

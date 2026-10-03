@@ -32,6 +32,10 @@ data class DownloadItem(
     val sort: EpisodeSort,
     val subjectName: String,
     val displayName: String,
+    /** 条目原名, 供"显示原文"设置使用; 未知时与 [subjectName] 相同. */
+    val subjectOriginalName: String = subjectName,
+    /** 剧集原名, 供"显示原文"设置使用; 未知时与 [displayName] 相同. */
+    val episodeOriginalName: String = displayName,
     val creationTime: Long?,
     val stats: Stats,
     val status: DownloadStatus,

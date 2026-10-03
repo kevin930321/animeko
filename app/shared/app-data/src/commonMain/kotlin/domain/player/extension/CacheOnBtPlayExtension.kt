@@ -14,6 +14,8 @@ import kotlinx.coroutines.flow.filterNotNull
 import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.NonCancellable
 import kotlinx.coroutines.withContext
+import me.him188.ani.app.data.models.episode.nameOrNameCn as episodeNameOrNameCn
+import me.him188.ani.app.data.models.subject.nameOrNameCn as subjectNameOrNameCn
 import me.him188.ani.app.domain.episode.EpisodeSession
 import me.him188.ani.app.domain.media.cache.DeleteCacheUseCase
 import me.him188.ani.app.domain.media.cache.MediaCache
@@ -90,7 +92,12 @@ class CacheOnBtPlayExtension(
 
                         val metadata =
                             // 查询会话按条目共用, 其请求中的当前剧集是首次打开的那一集; 记录要用本集自己的信息.
-                            MediaCacheMetadata(MediaFetchRequest.create(info.subjectInfo, info.episodeInfo), autoCached = true)
+                            MediaCacheMetadata(
+                                MediaFetchRequest.create(info.subjectInfo, info.episodeInfo),
+                                autoCached = true,
+                                subjectOriginalName = info.subjectInfo.subjectNameOrNameCn,
+                                episodeOriginalName = info.episodeInfo.episodeNameOrNameCn,
+                            )
                         val cache = downloadManager.createDownload(media, metadata, episodeMetadata, storage)
                         if (cache.metadata.autoCached) {
                             autoCaches += cache

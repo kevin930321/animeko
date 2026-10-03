@@ -103,6 +103,7 @@ class DownloadManagementViewModel(
             SubjectDownloadGroup(
                 subjectId = subjectId,
                 subjectName = subject?.info?.displayName ?: entries.first().subjectName,
+                subjectOriginalName = entries.first().subjectOriginalName,
                 entries = entries,
                 collectionType = subject?.type,
                 imageUrl = subject?.info?.imageThumb,

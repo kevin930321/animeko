@@ -41,6 +41,7 @@ import kotlinx.coroutines.launch
 import kotlinx.io.IOException
 import me.him188.ani.app.data.models.episode.EpisodeInfo
 import me.him188.ani.app.data.models.episode.displayName
+import me.him188.ani.app.data.models.episode.nameOrNameCn
 import me.him188.ani.app.data.models.subject.SubjectInfo
 import me.him188.ani.app.data.models.subject.nameCnOrName
 import me.him188.ani.app.domain.chinese.ChineseConverter
@@ -154,6 +155,7 @@ fun MediaFetchRequest.Companion.create(
                 airDate = it.airDate,
             )
         },
+        episodeOriginalName = episode.nameOrNameCn,
     )
 }
 

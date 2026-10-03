@@ -295,7 +295,13 @@ internal class FakeSettingsRepository : SettingsRepository {
     override val proxySettings: Settings<ProxySettings> get() = error("Not used")
     override val mediaCacheSettings: Settings<MediaCacheSettings> get() = error("Not used")
     override val danmakuSettings: Settings<DanmakuSettings> get() = error("Not used")
-    override val uiSettings: Settings<UISettings> get() = error("Not used")
+    override val uiSettings: Settings<UISettings> = object : Settings<UISettings> {
+        private val state = MutableStateFlow(UISettings.Default)
+        override val flow: Flow<UISettings> = state
+        override suspend fun set(value: UISettings) {
+            state.value = value
+        }
+    }
     override val themeSettings: Settings<ThemeSettings> get() = error("Not used")
     override val updateSettings: Settings<UpdateSettings> get() = error("Not used")
     override val videoScaffoldConfig: Settings<VideoScaffoldConfig> get() = error("Not used")

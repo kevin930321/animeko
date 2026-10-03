@@ -47,6 +47,7 @@ import me.him188.ani.app.tools.getOrZero
 import me.him188.ani.app.ui.download.DownloadActionDropdown
 import me.him188.ani.app.ui.download.DeleteActionDialog
 import me.him188.ani.app.ui.foundation.animation.AniAnimatedVisibility
+import me.him188.ani.app.ui.foundation.LocalSubjectAppearanceSettings
 import me.him188.ani.app.ui.foundation.widgets.LocalToaster
 import me.him188.ani.app.ui.lang.Lang
 import me.him188.ani.app.ui.lang.cache_episode_download_failed
@@ -145,10 +146,13 @@ fun DownloadRow(
                 }
 
                 Column(Modifier.weight(1f), verticalArrangement = Arrangement.spacedBy(4.dp)) {
+                    val useOriginalTitle = LocalSubjectAppearanceSettings.current.useOriginalTitle
                     val title = if (showSubjectTitle) {
-                        episode.subjectName
+                        if (useOriginalTitle) episode.subjectOriginalName else episode.subjectName
                     } else {
-                        stringResource(Lang.cache_management_episode_label, episode.sort, episode.displayName)
+                        val episodeName =
+                            if (useOriginalTitle) episode.episodeOriginalName else episode.displayName
+                        stringResource(Lang.cache_management_episode_label, episode.sort, episodeName)
                     }
                     Text(
                         title,

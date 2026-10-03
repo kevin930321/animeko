@@ -93,6 +93,8 @@ import me.him188.ani.app.ui.download.components.rememberDownloadSelectionState
 import me.him188.ani.app.ui.download.subject.SubjectDownloadsDetailPane
 import me.him188.ani.app.ui.download.subject.SubjectDownloadsHeader
 import me.him188.ani.app.ui.download.subject.SubjectDownloadsSummaryRow
+import me.him188.ani.app.ui.foundation.LocalSubjectAppearanceSettings
+import me.him188.ani.app.ui.foundation.LocalSubjectAppearanceSettings
 import me.him188.ani.app.ui.foundation.ProvideCompositionLocalsForPreview
 import me.him188.ani.app.ui.foundation.animation.AniAnimatedVisibility
 import me.him188.ani.app.ui.foundation.layout.AniWindowInsets
@@ -195,7 +197,11 @@ fun DownloadManagementScreen(
         windowInsets = windowInsets,
         detailPaneContent = { group, selectionState ->
             // 详情栏展示的条目由 ViewModel 持有, 切换条目时上一条目的状态与选源会话随之关闭.
-            LaunchedEffect(group?.subjectId) { vm.selectSubject(group?.subjectId, group?.subjectName) }
+            val useOriginalTitle = LocalSubjectAppearanceSettings.current.useOriginalTitle
+            // 条目信息加载完成前的占位标题, 与加载完成后的标题保持同一语言.
+            val placeholderTitle =
+                group?.let { if (useOriginalTitle) it.subjectOriginalName else it.subjectName }
+            LaunchedEffect(group?.subjectId) { vm.selectSubject(group?.subjectId, placeholderTitle) }
             val presenter by vm.subjectPresenter.collectAsStateWithLifecycle()
             if (group == null) {
                 EmptyDetailPanePlaceholder(Modifier.fillMaxSize())
@@ -203,7 +209,7 @@ fun DownloadManagementScreen(
                 SubjectDownloadsDetailPane(
                     // 切换条目后实例要到下一帧才就绪, 期间显示加载态而不是旧条目或空占位.
                     presenter = presenter?.takeIf { it.subjectId == group.subjectId },
-                    loadingTitle = group.subjectName,
+                    loadingTitle = placeholderTitle,
                     selectionState = selectionState,
                     onPlay = onPlay,
                     onViewDetail = { onNavigateCacheDetail(it.id) },
@@ -341,7 +347,11 @@ fun DownloadManagementScreen(
                 appBarColors = appBarColors,
                 windowInsets = AniWindowInsets.forTopAppBarWithoutDesktopTitle(),
                 scrollBehavior = scrollBehavior,
-                detailPaneTitle = if (isSinglePaneDetailVisible) currentViewingGroup?.subjectName else null,
+                detailPaneTitle = if (isSinglePaneDetailVisible) {
+                    currentViewingGroup?.let {
+                        if (LocalSubjectAppearanceSettings.current.useOriginalTitle) it.subjectOriginalName else it.subjectName
+                    }
+                } else null,
                 onNavigateBackFromDetail = { tasker.launch { navigator.navigateBack() } },
             )
         },

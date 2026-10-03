@@ -28,6 +28,7 @@ import kotlinx.coroutines.flow.update
 import kotlinx.coroutines.flow.updateAndGet
 import me.him188.ani.app.data.models.subject.SubjectCollectionInfo
 import me.him188.ani.app.data.models.subject.nameCnOrName
+import me.him188.ani.app.data.models.subject.nameOrNameCn
 import me.him188.ani.app.data.repository.player.EpisodePlayHistoryRepository
 import me.him188.ani.app.data.repository.subject.SubjectCollectionRepository
 import me.him188.ani.app.data.repository.user.SettingsRepository
@@ -85,7 +86,7 @@ class SubjectDownloadsPresenter(
     private val downloads = reloadCount.flatMapLatest { downloadManager.snapshots(subjectId).asLoadState(downloadsLoad) }
 
     val uiState: StateFlow<SubjectDownloadsUiState> =
-        combine(subject, downloads, histories.flow, requestState) { subject, downloads, histories, request ->
+        combine(subject, downloads, histories.flow, requestState, settings.uiSettings.flow) { subject, downloads, histories, request, uiSettings ->
             val info = subject.value
             val historyByEpisode = histories.associateBy { it.episodeId }
             val items = downloads.value.orEmpty().map { snapshot ->
@@ -93,7 +94,15 @@ class SubjectDownloadsPresenter(
                 snapshot.toDownloadItem(info?.collectionType, history)
             }
             SubjectDownloadsUiState(
-                title = info?.subjectInfo?.nameCnOrName ?: initialTitle,
+                // 条目信息缺原文 (如本地缓存陈旧) 时, 用下载记录里的原名兜底, 最后才回退到简中名.
+                title = if (uiSettings.subjectAppearance.useOriginalTitle) {
+                    info?.subjectInfo?.nameOrNameCn?.takeIf { it.isNotBlank() }
+                        ?: downloads.value?.firstOrNull()?.metadata?.subjectOriginalName?.takeIf { it.isNotBlank() }
+                        ?: info?.subjectInfo?.nameCnOrName
+                        ?: initialTitle
+                } else {
+                    info?.subjectInfo?.nameCnOrName ?: initialTitle
+                },
                 items = buildSubjectDownloadItems(info?.downloadEpisodes().orEmpty(), items),
                 downloads = items,
                 totalEpisodes = info?.episodes?.size,

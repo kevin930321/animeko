@@ -25,13 +25,17 @@ internal fun DownloadSnapshot.toDownloadItem(
 ): DownloadItem {
     val subjectId = metadata.subjectId.toIntOrNull() ?: 0
     val episodeId = metadata.episodeId.toIntOrNull() ?: 0
+    val subjectName = metadata.subjectNameCN ?: metadata.subjectNames.firstOrNull().orEmpty()
+    val displayName = metadata.episodeName
     return DownloadItem(
         subjectId = subjectId,
         episodeId = episodeId,
         id = id,
         sort = metadata.episodeSort,
-        subjectName = metadata.subjectNameCN ?: metadata.subjectNames.firstOrNull().orEmpty(),
-        displayName = metadata.episodeName,
+        subjectName = subjectName,
+        displayName = displayName,
+        subjectOriginalName = metadata.subjectOriginalName ?: subjectName,
+        episodeOriginalName = metadata.episodeOriginalName ?: displayName,
         creationTime = metadata.creationTime,
         stats = DownloadItem.Stats(downloadSpeed, progress, totalSize),
         status = toDownloadStatus(status),

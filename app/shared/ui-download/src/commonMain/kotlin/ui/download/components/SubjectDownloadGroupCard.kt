@@ -38,6 +38,7 @@ import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import me.him188.ani.app.ui.foundation.AsyncImage
+import me.him188.ani.app.ui.foundation.LocalSubjectAppearanceSettings
 import me.him188.ani.app.ui.lang.Lang
 import me.him188.ani.app.ui.lang.cache_management_finished_count
 import me.him188.ani.datasources.api.topic.FileSize
@@ -108,7 +109,7 @@ fun SubjectDownloadGroupCard(
                 verticalArrangement = Arrangement.spacedBy(6.dp),
             ) {
                 Text(
-                    group.subjectName,
+                    if (LocalSubjectAppearanceSettings.current.useOriginalTitle) group.subjectOriginalName else group.subjectName,
                     style = MaterialTheme.typography.titleMedium,
                     maxLines = 1,
                     overflow = TextOverflow.Ellipsis,

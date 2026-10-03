@@ -43,6 +43,7 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.text.withStyle
 import androidx.compose.ui.unit.dp
+import me.him188.ani.app.ui.foundation.LocalSubjectAppearanceSettings
 import me.him188.ani.app.ui.foundation.dialogs.PlatformPopupProperties
 import me.him188.ani.app.ui.foundation.widgets.SelectableDropdownMenuItem
 import me.him188.ani.app.ui.lang.Lang
@@ -181,6 +182,7 @@ private fun watchingEpisodeText(episode: WatchingEpisode): AnnotatedString {
     val episodeLabel = episode.episodeLabel()
     val prefixColor = MaterialTheme.colorScheme.onSurfaceVariant
     val emphasisColor = MaterialTheme.colorScheme.onSurface
+    val name = if (LocalSubjectAppearanceSettings.current.useOriginalTitle) episode.originalName else episode.name
     return buildAnnotatedString {
         withStyle(SpanStyle(color = prefixColor)) {
             append(prefix)
@@ -188,9 +190,9 @@ private fun watchingEpisodeText(episode: WatchingEpisode): AnnotatedString {
         }
         withStyle(SpanStyle(color = emphasisColor, fontWeight = FontWeight.Medium)) {
             append(episodeLabel)
-            if (episode.name.isNotBlank()) {
+            if (name.isNotBlank()) {
                 append(' ')
-                append(episode.name)
+                append(name)
             }
         }
     }

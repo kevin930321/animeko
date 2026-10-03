@@ -57,6 +57,7 @@ import kotlinx.coroutines.withContext
 import me.him188.ani.app.data.models.comment.CommentReportTargetType
 import me.him188.ani.app.data.models.episode.EpisodeInfo
 import me.him188.ani.app.data.models.episode.displayName
+import me.him188.ani.app.data.models.episode.nameOrNameCn as episodeNameOrNameCn
 import me.him188.ani.app.data.models.episode.nameOrNameCn
 import me.him188.ani.app.data.models.episode.renderEpisodeEp
 import me.him188.ani.app.data.models.player.playProgressByEpisodeId
@@ -67,6 +68,7 @@ import me.him188.ani.app.data.models.subject.SubjectInfo
 import me.him188.ani.app.data.models.subject.SubjectProgressInfo
 import me.him188.ani.app.data.models.subject.nameCnOrName
 import me.him188.ani.app.data.models.subject.nameOrNameCn
+import me.him188.ani.app.data.models.subject.preferredDisplayName
 import me.him188.ani.app.data.network.AniCommentReportService
 import me.him188.ani.app.data.network.AutoSkipRepository
 import me.him188.ani.app.data.repository.RepositoryServiceUnavailableException
@@ -866,9 +868,13 @@ open class EpisodeViewModel(
     val commentEditorState: CommentEditorState = CommentEditorState(
         showExpandEditCommentButton = true,
         initialEditExpanded = false,
-        panelTitle = subjectInfoFlow
-            .combine(episodeInfoFlow) { sub, epi -> "${sub.displayName} ${epi?.renderEpisodeEp()}" }
-            .produceState(null),
+        panelTitle = combine(
+            subjectInfoFlow,
+            episodeInfoFlow,
+            settingsRepository.uiSettings.flow.map { it.subjectAppearance.useOriginalTitle }.distinctUntilChanged(),
+        ) { sub, epi, useOriginalTitle ->
+            "${sub.preferredDisplayName(useOriginalTitle)} ${epi?.renderEpisodeEp()}"
+        }.produceState(null),
         stickers = flowOf(BangumiCommentSticker.map { EditCommentSticker(it.first, it.second) })
             .produceState(emptyList()),
         richTextRenderer = { text ->
@@ -1440,6 +1446,7 @@ private fun MediaFetchRequest.withCurrentEpisode(episode: EpisodeInfo): MediaFet
         episodeId = episode.episodeId.toString(),
         episodeSort = episode.sort,
         episodeName = episode.displayName,
+        episodeOriginalName = episode.episodeNameOrNameCn,
         episodeEp = episode.ep,
     )
 }

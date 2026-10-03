@@ -42,12 +42,14 @@ import androidx.compose.ui.unit.dp
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import kotlinx.coroutines.CoroutineScope
 import me.him188.ani.app.data.models.episode.EpisodeCollectionInfo
+import me.him188.ani.app.data.models.episode.preferredDisplayName
 import me.him188.ani.app.domain.media.cache.EpisodeCacheStatus
 import me.him188.ani.app.domain.media.cache.isCachedOrCaching
 import me.him188.ani.app.tools.MonoTasker
 import me.him188.ani.app.tools.toPercentageOrZero
 import me.him188.ani.app.tools.toProgress
 import me.him188.ani.app.ui.foundation.ProvideCompositionLocalsForPreview
+import me.him188.ani.app.ui.foundation.LocalSubjectAppearanceSettings
 import me.him188.ani.app.ui.foundation.icons.PlayingIcon
 import me.him188.ani.app.ui.foundation.lists.PaginatedGroup
 import me.him188.ani.app.ui.lang.Lang
@@ -170,13 +172,16 @@ fun EpisodeCarousel(
                             )
                         },
                         title = {
+                            val title = collection.episodeInfo.preferredDisplayName(
+                                LocalSubjectAppearanceSettings.current.useOriginalTitle,
+                            ).ifEmpty {
+                                stringResource(
+                                    Lang.subject_episode_default_title,
+                                    collection.episodeInfo.sort.toString(),
+                                )
+                            }
                             Text(
-                                collection.episodeInfo.nameCn.ifEmpty {
-                                    stringResource(
-                                        Lang.subject_episode_default_title,
-                                        collection.episodeInfo.sort.toString(),
-                                    )
-                                },
+                                title,
                                 color = if (isPlaying) MaterialTheme.colorScheme.primary else LocalContentColor.current,
                             )
                         },

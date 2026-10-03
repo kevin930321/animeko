@@ -31,6 +31,8 @@ import kotlinx.coroutines.test.advanceTimeBy
 import kotlinx.coroutines.test.runCurrent
 import kotlinx.coroutines.test.runTest
 import me.him188.ani.app.data.models.player.EpisodeHistory
+import me.him188.ani.app.data.models.preference.SubjectAppearanceSettings
+import me.him188.ani.app.data.models.preference.UISettings
 import me.him188.ani.app.domain.media.TestMediaList
 import me.him188.ani.app.domain.media.cache.MediaCache
 import me.him188.ani.app.domain.media.cache.MediaCacheState
@@ -89,6 +91,26 @@ class SubjectDownloadsPresenterTest {
         assertEquals(DummyMediaCacheEngine.engineKey, item.engineKey)
         assertEquals(media.mediaSourceId, item.mediaSourceId)
         assertFalse(item.isBusy)
+    }
+
+    @Test
+    fun `title follows useOriginalTitle setting`() = withFixture {
+        val loaded = awaitState { !it.episodesLoading }
+        assertEquals("中文条目名称", loaded.title)
+
+        settings.uiSettings.set(UISettings.Default.copy(subjectAppearance = SubjectAppearanceSettings(useOriginalTitle = true)))
+        val original = awaitState { it.title == "Subject Name" }
+        assertEquals("Subject Name", original.title)
+    }
+
+    @Test
+    fun `title falls back to nameCn when original name is missing`() = withFixture {
+        subjects.collection.value = testSubjectCollection(subjectId = 1, episodeCount = 3).let { collection ->
+            collection.copy(subjectInfo = collection.subjectInfo.copy(name = ""))
+        }
+        settings.uiSettings.set(UISettings.Default.copy(subjectAppearance = SubjectAppearanceSettings(useOriginalTitle = true)))
+        val loaded = awaitState { !it.episodesLoading }
+        assertEquals("中文条目名称", loaded.title)
     }
 
     @Test
@@ -401,6 +423,7 @@ class SubjectDownloadsPresenterTest {
         val fetcher = FakeMediaFetcher()
         val sources = FakeMediaSourceManager(fetcher)
         val addDownload = FakeAddDownloadUseCase(storage)
+        val settings = FakeSettingsRepository()
         val sessionFactory = DownloadRequestSessionFactory(
             subjects, preferences, sources, fakeMediaSelectorFactory(), downloadManager, addDownload,
         )
@@ -409,7 +432,7 @@ class SubjectDownloadsPresenterTest {
             parentScope = testScope.backgroundScope,
             subjects = subjects,
             histories = histories,
-            settings = FakeSettingsRepository(),
+            settings = settings,
             sources = sources,
             downloadManager = downloadManager,
             sessionFactory = sessionFactory,

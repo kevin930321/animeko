@@ -78,6 +78,10 @@ data class MediaFetchRequest(
      * 为空表示未知.
      */
     val episodes: List<Episode> = emptyList(),
+    /**
+     * 创建请求时的当前剧集原名, 供"显示原文"设置使用. 历史请求可能缺失, 缺失时回退到 [episodeName].
+     */
+    val episodeOriginalName: String? = null,
 ) {
     /**
      * 两个请求是否查询同一个条目: 条目 ID, 名称与剧集列表相同, 忽略仅作提示的当前剧集字段.

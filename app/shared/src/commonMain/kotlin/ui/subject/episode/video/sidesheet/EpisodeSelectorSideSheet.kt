@@ -49,6 +49,7 @@ import kotlinx.coroutines.flow.first
 import me.him188.ani.app.ui.download.subject.contentColorForWatchStatus
 import me.him188.ani.app.ui.foundation.BackgroundScope
 import me.him188.ani.app.ui.foundation.HasBackgroundScope
+import me.him188.ani.app.ui.foundation.LocalSubjectAppearanceSettings
 import me.him188.ani.app.ui.foundation.ProvideCompositionLocalsForPreview
 import me.him188.ani.app.ui.foundation.icons.PlayingIcon
 import me.him188.ani.app.ui.lang.Lang
@@ -139,6 +140,7 @@ fun EpisodeVideoSideSheets.EpisodeSelectorSheet(
     val selectEpisodeText = stringResource(Lang.video_player_select_episode)
     val closeText = stringResource(Lang.subject_episode_close)
     val nowPlayingText = stringResource(Lang.subject_episode_now_playing)
+    val useOriginalTitle = LocalSubjectAppearanceSettings.current.useOriginalTitle
 
     SideSheetLayout(
         onDismissRequest = onDismissRequest,
@@ -169,7 +171,12 @@ fun EpisodeVideoSideSheets.EpisodeSelectorSheet(
                 val selected = index == state.currentIndex
                 val color = contentColorForWatchStatus(item.collectionType, item.isKnownBroadcast)
                 ListItem(
-                    headlineContent = { Text(item.title, color = color) },
+                    headlineContent = {
+                        Text(
+                            if (useOriginalTitle) item.originalTitle else item.title,
+                            color = color,
+                        )
+                    },
                     Modifier.clickable {
                         state.select(item)
                         onDismissRequest()
