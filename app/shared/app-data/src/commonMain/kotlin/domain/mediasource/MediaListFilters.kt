@@ -17,6 +17,7 @@ import me.him188.ani.app.domain.mediasource.MediaListFilters.keepWords
 import me.him188.ani.app.domain.mediasource.MediaListFilters.minimumLength
 import me.him188.ani.datasources.api.EpisodeSort
 import me.him188.ani.datasources.api.topic.contains
+import me.him188.ani.app.domain.chinese.ChineseConverter
 import me.him188.ani.utils.platform.deleteAnyCharIn
 import me.him188.ani.utils.platform.deleteInfix
 import me.him188.ani.utils.platform.deletePrefix
@@ -33,24 +34,17 @@ object MediaListFilters {
      * 要求包含条目名称. 支持模糊匹配.
      */
     val ContainsSubjectName = BasicMediaListFilter { media ->
+        val originalTitle = removeSpecials(media.subjectName, removeWhitespace = true, replaceNumbers = true)
+        val originalTitleSimp = ChineseConverter.toSimplified(originalTitle)
         subjectNamesWithoutSpecial.any { subjectName ->
-            val originalTitle = removeSpecials(media.subjectName, removeWhitespace = true, replaceNumbers = true)
-            fun exactlyContains() = originalTitle
-                .contains(subjectName, ignoreCase = true)
+            fun exactlyContains(): Boolean {
+                if (originalTitle.contains(subjectName, ignoreCase = true)) return true
+                val subjectNameSimp = ChineseConverter.toSimplified(subjectName)
+                return originalTitleSimp.contains(subjectNameSimp, ignoreCase = true)
+            }
 
             fun fuzzyMatches() = StringMatcher.calculateMatchRate(originalTitle, subjectName) >= 80
 
-//            println(
-//                when {
-//                    exactlyContains() -> "'$originalTitle' included because exactlyContains()"
-//                    fuzzyMatches() -> "'$originalTitle' included because fuzzyMatches() at " + StringMatcher.calculateMatchRate(
-//                        originalTitle,
-//                        subjectName,
-//                    )
-//
-//                    else -> {}
-//                },
-//            )
             exactlyContains() || fuzzyMatches()
         }
     }
@@ -202,13 +196,21 @@ object MediaListFilters {
     }
 
     fun specialEquals(first: String, second: String): Boolean {
-        return removeSpecials(first, removeWhitespace = true, replaceNumbers = true)
-            .equals(removeSpecials(second, removeWhitespace = true, replaceNumbers = true), ignoreCase = true)
+        val s1 = removeSpecials(first, removeWhitespace = true, replaceNumbers = true)
+        val s2 = removeSpecials(second, removeWhitespace = true, replaceNumbers = true)
+        if (s1.equals(s2, ignoreCase = true)) return true
+        val c1 = ChineseConverter.toSimplified(s1)
+        val c2 = ChineseConverter.toSimplified(s2)
+        return c1.equals(c2, ignoreCase = true)
     }
 
     fun specialContains(string: String, sub: String): Boolean {
-        return removeSpecials(string, removeWhitespace = true, replaceNumbers = true)
-            .contains(removeSpecials(sub, removeWhitespace = true, replaceNumbers = true), ignoreCase = true)
+        val s1 = removeSpecials(string, removeWhitespace = true, replaceNumbers = true)
+        val s2 = removeSpecials(sub, removeWhitespace = true, replaceNumbers = true)
+        if (s1.contains(s2, ignoreCase = true)) return true
+        val c1 = ChineseConverter.toSimplified(s1)
+        val c2 = ChineseConverter.toSimplified(s2)
+        return c1.contains(c2, ignoreCase = true)
     }
 
     /**

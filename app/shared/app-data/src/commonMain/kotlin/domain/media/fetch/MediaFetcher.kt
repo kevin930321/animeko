@@ -43,6 +43,7 @@ import me.him188.ani.app.data.models.episode.EpisodeInfo
 import me.him188.ani.app.data.models.episode.displayName
 import me.him188.ani.app.data.models.subject.SubjectInfo
 import me.him188.ani.app.data.models.subject.nameCnOrName
+import me.him188.ani.app.domain.chinese.ChineseConverter
 import me.him188.ani.app.data.repository.RepositoryAuthorizationException
 import me.him188.ani.app.data.repository.RepositoryException
 import me.him188.ani.app.data.repository.RepositoryNetworkException
@@ -128,11 +129,19 @@ fun MediaFetchRequest.Companion.create(
     episode: EpisodeInfo,
     episodes: List<EpisodeInfo> = emptyList(),
 ): MediaFetchRequest {
+    val subjectNames = buildList {
+        for (name in subject.allNames) {
+            if (!contains(name)) add(name)
+            for (variant in ChineseConverter.getVariants(name)) {
+                if (!contains(variant)) add(variant)
+            }
+        }
+    }
     return MediaFetchRequest(
         subjectId = subject.subjectId.toString(),
         episodeId = episode.episodeId.toString(),
         subjectNameCN = subject.nameCnOrName,
-        subjectNames = subject.allNames,
+        subjectNames = subjectNames,
         episodeSort = episode.sort,
         episodeName = episode.displayName,
         episodeEp = episode.ep,
@@ -447,6 +456,7 @@ class MediaSourceMediaFetcher(
                     disabled = !instance.isEnabled,
                     pagedSources = this.request
                         .map {
+                            ChineseConverter.ensureLoaded()
                             instance.source.fetch(it)
                         },
                     flowContext = flowContext,

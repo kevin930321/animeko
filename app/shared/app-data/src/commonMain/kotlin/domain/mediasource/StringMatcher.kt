@@ -9,6 +9,8 @@
 
 package me.him188.ani.app.domain.mediasource
 
+import me.him188.ani.app.domain.chinese.ChineseConverter
+
 object StringMatcher {
     /**
      * Calculates the match rate between two strings (0..100).
@@ -20,9 +22,11 @@ object StringMatcher {
             return 100
         }
 
-        val distance = levenshteinDistance(a, b)
+        val normA = ChineseConverter.toSimplified(a)
+        val normB = ChineseConverter.toSimplified(b)
+        val distance = levenshteinDistance(normA, normB)
         // We scale similarity based on the longest string length
-        val maxLen = maxOf(a.length, b.length)
+        val maxLen = maxOf(normA.length, normB.length)
         // Similarity is 1 - (distance / maxLen), then multiplied by 100
         val similarity = 1 - (distance.toDouble() / maxLen)
         return (similarity * 100).toInt().coerceIn(0, 100)

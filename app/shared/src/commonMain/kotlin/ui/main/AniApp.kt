@@ -25,12 +25,13 @@ import kotlinx.coroutines.flow.combine
 import kotlinx.coroutines.flow.distinctUntilChanged
 import kotlinx.coroutines.flow.flowOf
 import kotlinx.coroutines.flow.map
-import kotlinx.coroutines.flow.take
+import kotlinx.coroutines.launch
 import me.him188.ani.app.data.models.preference.EpisodeProgressSettings
 import me.him188.ani.app.data.models.preference.SubjectAppearanceSettings
 import me.him188.ani.app.data.models.preference.ThemeSettings
 import me.him188.ani.app.data.repository.user.SettingsRepository
 import me.him188.ani.app.data.repository.user.UserRepository
+import me.him188.ani.app.domain.chinese.ChineseConverter
 import me.him188.ani.app.domain.foundation.HttpClientProvider
 import me.him188.ani.app.domain.foundation.ScopedHttpClientUserAgent
 import me.him188.ani.app.domain.foundation.get
@@ -94,6 +95,12 @@ class AniAppViewModel : AbstractViewModel(), KoinComponent {
     private val pikPakEngine: PikPakEngine by inject()
 
     private val imageLoaderClient = httpClientProvider.get(ScopedHttpClientUserAgent.ANI)
+
+    init {
+        backgroundScope.launch {
+            ChineseConverter.ensureLoaded()
+        }
+    }
 
     private val mediaCacheComposablesFlow = flowOf(
         downloadManager.storages.map { @Composable { it.engine.ComposeContent() } },

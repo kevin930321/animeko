@@ -25,6 +25,7 @@ import me.him188.ani.app.data.models.ApiFailure
 import me.him188.ani.app.data.models.fold
 import me.him188.ani.app.data.models.runApiRequest
 import me.him188.ani.app.data.repository.media.SelectorMediaSourceEpisodeCacheRepository
+import me.him188.ani.app.domain.chinese.ChineseConverter
 import me.him188.ani.app.domain.mediasource.MediaSourceEngineHelpers
 import me.him188.ani.app.domain.mediasource.codec.DefaultMediaSourceCodec
 import me.him188.ani.app.domain.mediasource.codec.DontForgetToRegisterCodec
@@ -366,8 +367,27 @@ class SelectorMediaSource(
             ),
         )
 
-        val originalSubjects = fetchPageOrThrow(searchUrl, PageExpectation.SearchResults(searchConfig))
+        val initialSubjects = fetchPageOrThrow(searchUrl, PageExpectation.SearchResults(searchConfig))
             ?: return@withContext emptyList()
+
+        val originalSubjects = if (initialSubjects.isEmpty()) {
+            val opposite = ChineseConverter.convertOpposite(query.subjectName)
+            if (opposite != null && opposite != query.subjectName) {
+                delayUntilNextAllowedSearch()
+                val convertedSearchUrl = buildSearchUrl(
+                    MediaSourceEngineHelpers.getSearchKeyword(
+                        opposite,
+                        searchConfig.autoMatch.searchRemoveSpecial,
+                        searchConfig.autoMatch.searchUseOnlyFirstWord,
+                    ),
+                )
+                fetchPageOrThrow(convertedSearchUrl, PageExpectation.SearchResults(searchConfig)) ?: emptyList()
+            } else {
+                emptyList()
+            }
+        } else {
+            initialSubjects
+        }
 
         val subjects = searchConfig.orderSubjectsForAutoMatch(originalSubjects).let { originalList ->
             val filters = searchConfig.createFiltersForSubject()
@@ -412,11 +432,12 @@ class SelectorMediaSource(
     }
 
     override suspend fun fetch(query: MediaFetchRequest): SizedSource<MediaMatch> {
+        ChineseConverter.ensureLoaded()
         if (!searchConfig.autoMatch.enabled) {
             // 只用于浏览手动选集的数据源, 不参与自动匹配
             return emptySizedSource()
         }
-        val allSubjectNames = query.subjectNames.toSet()
+        val allSubjectNames = query.subjectNames.flatMap { ChineseConverter.getVariants(it) }.toSet()
         val freshnessProbe = query.latestAiredEpisode()?.let {
             SelectorEpisodeProbe(episodeSort = it.sort, episodeEp = it.ep, episodeName = it.name)
         }
@@ -462,10 +483,22 @@ class SelectorMediaSource(
         searchConfig.searchUrl.replace("{keyword}", MediaSourceEngineHelpers.encodeUrlSegment(keyword))
 
     override suspend fun searchSubjects(keyword: String): List<BrowseSubject> {
+        ChineseConverter.ensureLoaded()
         delayUntilNextAllowedSearch()
         val subjects = fetchPageOrThrow(buildSearchUrl(keyword), PageExpectation.SearchResults(searchConfig))
             ?: return emptyList()
-        return subjects.map { BrowseSubject(name = it.name, url = it.fullUrl) }
+        if (subjects.isNotEmpty()) {
+            return subjects.map { BrowseSubject(name = it.name, url = it.fullUrl) }
+        }
+        val opposite = ChineseConverter.convertOpposite(keyword)
+        if (opposite != null && opposite != keyword) {
+            delayUntilNextAllowedSearch()
+            val convertedSubjects = fetchPageOrThrow(buildSearchUrl(opposite), PageExpectation.SearchResults(searchConfig))
+            if (!convertedSubjects.isNullOrEmpty()) {
+                return convertedSubjects.map { BrowseSubject(name = it.name, url = it.fullUrl) }
+            }
+        }
+        return emptyList()
     }
 
     override suspend fun browseSubject(subject: BrowseSubject): List<BrowseChannel> {

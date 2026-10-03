@@ -13,6 +13,7 @@ import androidx.compose.runtime.Immutable
 import androidx.compose.runtime.Stable
 import me.him188.ani.app.domain.search.SubjectType
 import me.him188.ani.app.navigation.SubjectDetailPlaceholder
+import me.him188.ani.app.domain.chinese.ChineseConverter
 import me.him188.ani.datasources.api.PackedDate
 import me.him188.ani.utils.platform.annotations.TestOnly
 
@@ -109,6 +110,13 @@ data class SubjectInfo(
             addIfNotBlank(nameCn) // name cn 需要是第一个, SelectorMediaSource 依赖这个性质
             addIfNotBlank(name)
             aliases.forEach { addIfNotBlank(it) }
+
+            val currentNames = toList()
+            for (curr in currentNames) {
+                for (variant in ChineseConverter.getVariants(curr)) {
+                    addIfNotBlank(variant)
+                }
+            }
         }
     }
 
