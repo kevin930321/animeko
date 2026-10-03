@@ -25,6 +25,7 @@ import kotlinx.coroutines.flow.combine
 import kotlinx.coroutines.flow.distinctUntilChanged
 import kotlinx.coroutines.flow.flowOf
 import kotlinx.coroutines.flow.map
+import kotlinx.coroutines.flow.take
 import kotlinx.coroutines.launch
 import me.him188.ani.app.data.models.preference.EpisodeProgressSettings
 import me.him188.ani.app.data.models.preference.SubjectAppearanceSettings
