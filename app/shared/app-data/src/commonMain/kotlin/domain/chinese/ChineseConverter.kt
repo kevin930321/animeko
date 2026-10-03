@@ -9,6 +9,8 @@
 
 package me.him188.ani.app.domain.chinese
 
+import kotlinx.atomicfu.locks.SynchronizedObject
+import kotlinx.atomicfu.locks.synchronized
 import kotlinx.coroutines.sync.Mutex
 import kotlinx.coroutines.sync.withLock
 import me.him188.ani.app.data.Res
@@ -23,8 +25,11 @@ object ChineseConverter {
         private set
 
     private val mutex = Mutex()
-    private val s2tDict = OpenCcDict()
-    private val t2sDict = OpenCcDict()
+    private val lock = SynchronizedObject()
+    @Volatile
+    private var s2tDict = OpenCcDict()
+    @Volatile
+    private var t2sDict = OpenCcDict()
 
     /**
      * 确保词典已异步加载完毕。可在应用启动或数据源搜索前调用。
@@ -33,23 +38,29 @@ object ChineseConverter {
         if (isLoaded) return
         mutex.withLock {
             if (isLoaded) return
-            loadInternal()
-            isLoaded = true
+            val s2t = OpenCcDict()
+            val t2s = OpenCcDict()
+            loadInternal(s2t, t2s)
+            synchronized(lock) {
+                s2tDict = s2t
+                t2sDict = t2s
+                isLoaded = true
+            }
         }
     }
 
-    private suspend fun loadInternal() {
+    private suspend fun loadInternal(s2t: OpenCcDict, t2s: OpenCcDict) {
         // S2T 词典 (包含台湾词汇与变体)
-        loadDict(s2tDict, "files/opencc/STPhrases.txt")
-        loadDict(s2tDict, "files/opencc/STCharacters.txt")
-        loadDict(s2tDict, "files/opencc/TWPhrases.txt")
-        loadDict(s2tDict, "files/opencc/TWVariants.txt")
+        loadDict(s2t, "files/opencc/STPhrases.txt")
+        loadDict(s2t, "files/opencc/STCharacters.txt")
+        loadDict(s2t, "files/opencc/TWPhrases.txt")
+        loadDict(s2t, "files/opencc/TWVariants.txt")
 
         // T2S 词典 (先还原台湾变体短语, 再转简体)
-        loadDict(t2sDict, "files/opencc/TWVariantsRevPhrases.txt")
-        loadDict(t2sDict, "files/opencc/TWPhrasesRev.txt")
-        loadDict(t2sDict, "files/opencc/TSPhrases.txt")
-        loadDict(t2sDict, "files/opencc/TSCharacters.txt")
+        loadDict(t2s, "files/opencc/TWVariantsRevPhrases.txt")
+        loadDict(t2s, "files/opencc/TWPhrasesRev.txt")
+        loadDict(t2s, "files/opencc/TSPhrases.txt")
+        loadDict(t2s, "files/opencc/TSCharacters.txt")
     }
 
     private suspend fun loadDict(dict: OpenCcDict, path: String) {
@@ -110,19 +121,25 @@ object ChineseConverter {
     }
 
     private fun tryLoadBlocking() {
+        if (isLoaded) return
         val bytes = readOpenCcFallback("files/opencc/STCharacters.txt") ?: return
-        synchronized(this) {
+        synchronized(lock) {
             if (isLoaded) return
             try {
-                loadDictBlocking(s2tDict, "files/opencc/STPhrases.txt")
-                loadDictBlocking(s2tDict, "files/opencc/STCharacters.txt")
-                loadDictBlocking(s2tDict, "files/opencc/TWPhrases.txt")
-                loadDictBlocking(s2tDict, "files/opencc/TWVariants.txt")
+                val s2t = OpenCcDict()
+                loadDictBlocking(s2t, "files/opencc/STPhrases.txt")
+                loadDictBlocking(s2t, "files/opencc/STCharacters.txt")
+                loadDictBlocking(s2t, "files/opencc/TWPhrases.txt")
+                loadDictBlocking(s2t, "files/opencc/TWVariants.txt")
 
-                loadDictBlocking(t2sDict, "files/opencc/TWVariantsRevPhrases.txt")
-                loadDictBlocking(t2sDict, "files/opencc/TWPhrasesRev.txt")
-                loadDictBlocking(t2sDict, "files/opencc/TSPhrases.txt")
-                loadDictBlocking(t2sDict, "files/opencc/TSCharacters.txt")
+                val t2s = OpenCcDict()
+                loadDictBlocking(t2s, "files/opencc/TWVariantsRevPhrases.txt")
+                loadDictBlocking(t2s, "files/opencc/TWPhrasesRev.txt")
+                loadDictBlocking(t2s, "files/opencc/TSPhrases.txt")
+                loadDictBlocking(t2s, "files/opencc/TSCharacters.txt")
+
+                s2tDict = s2t
+                t2sDict = t2s
                 isLoaded = true
             } catch (_: Throwable) {
             }
