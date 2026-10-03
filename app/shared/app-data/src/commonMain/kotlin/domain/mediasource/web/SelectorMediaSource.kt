@@ -359,28 +359,23 @@ class SelectorMediaSource(
 
         delayUntilNextAllowedSearch()
 
-        val searchUrl = buildSearchUrl(
-            MediaSourceEngineHelpers.getSearchKeyword(
-                query.subjectName,
-                searchConfig.autoMatch.searchRemoveSpecial,
-                searchConfig.autoMatch.searchUseOnlyFirstWord,
-            ),
+        // 先去除标记词并取首词, 再转繁体查询; 无结果时回退到简体
+        val baseKeyword = MediaSourceEngineHelpers.getSearchKeyword(
+            query.subjectName,
+            searchConfig.autoMatch.searchRemoveSpecial,
+            searchConfig.autoMatch.searchUseOnlyFirstWord,
         )
+        val traditionalKeyword = ChineseConverter.toTraditional(baseKeyword)
+        val searchUrl = buildSearchUrl(traditionalKeyword)
 
-        val initialSubjects = fetchPageOrThrow(searchUrl, PageExpectation.SearchResults(searchConfig))
-            ?: return@withContext emptyList()
+        // 站点无结果 (包括 404) 时尝试简体, 实现简繁中文互通
+        val initialSubjects = fetchPageOrThrow(searchUrl, PageExpectation.SearchResults(searchConfig)).orEmpty()
 
         val originalSubjects = if (initialSubjects.isEmpty()) {
-            val opposite = ChineseConverter.convertOpposite(query.subjectName)
-            if (opposite != null && opposite != query.subjectName) {
+            val simplifiedKeyword = ChineseConverter.toSimplified(baseKeyword)
+            if (simplifiedKeyword != traditionalKeyword) {
                 delayUntilNextAllowedSearch()
-                val convertedSearchUrl = buildSearchUrl(
-                    MediaSourceEngineHelpers.getSearchKeyword(
-                        opposite,
-                        searchConfig.autoMatch.searchRemoveSpecial,
-                        searchConfig.autoMatch.searchUseOnlyFirstWord,
-                    ),
-                )
+                val convertedSearchUrl = buildSearchUrl(simplifiedKeyword)
                 fetchPageOrThrow(convertedSearchUrl, PageExpectation.SearchResults(searchConfig)) ?: emptyList()
             } else {
                 emptyList()
@@ -485,15 +480,16 @@ class SelectorMediaSource(
     override suspend fun searchSubjects(keyword: String): List<BrowseSubject> {
         ChineseConverter.ensureLoaded()
         delayUntilNextAllowedSearch()
-        val subjects = fetchPageOrThrow(buildSearchUrl(keyword), PageExpectation.SearchResults(searchConfig))
-            ?: return emptyList()
+        // 默认以繁体查询, 无结果时回退到简体
+        val traditionalKeyword = ChineseConverter.toTraditional(keyword)
+        val subjects = fetchPageOrThrow(buildSearchUrl(traditionalKeyword), PageExpectation.SearchResults(searchConfig)).orEmpty()
         if (subjects.isNotEmpty()) {
             return subjects.map { BrowseSubject(name = it.name, url = it.fullUrl) }
         }
-        val opposite = ChineseConverter.convertOpposite(keyword)
-        if (opposite != null && opposite != keyword) {
+        val simplifiedKeyword = ChineseConverter.toSimplified(keyword)
+        if (simplifiedKeyword != traditionalKeyword) {
             delayUntilNextAllowedSearch()
-            val convertedSubjects = fetchPageOrThrow(buildSearchUrl(opposite), PageExpectation.SearchResults(searchConfig))
+            val convertedSubjects = fetchPageOrThrow(buildSearchUrl(simplifiedKeyword), PageExpectation.SearchResults(searchConfig))
             if (!convertedSubjects.isNullOrEmpty()) {
                 return convertedSubjects.map { BrowseSubject(name = it.name, url = it.fullUrl) }
             }

@@ -157,6 +157,26 @@ fun MediaFetchRequest.Companion.create(
     )
 }
 
+/**
+ * 为请求中的每个名称补齐简繁中文变体.
+ *
+ * 请求可能在词典加载完成前创建 ([MediaFetchRequest.create] 为同步函数, 无法等待词典加载),
+ * 因此各数据源不得假设 [MediaFetchRequest.subjectNames] 已包含变体,
+ * 在发起搜索前调用本函数补齐.
+ */
+internal fun MediaFetchRequest.withChineseVariants(): MediaFetchRequest {
+    if (subjectNames.isEmpty()) return this
+    val expanded = buildList {
+        for (name in subjectNames) {
+            if (!contains(name)) add(name)
+            for (variant in ChineseConverter.getVariants(name)) {
+                if (!contains(variant)) add(variant)
+            }
+        }
+    }
+    return if (expanded == subjectNames) this else copy(subjectNames = expanded)
+}
+
 class MediaFetcherConfig(
     val enableBTFetcher: Boolean
 ) { // 战未来
@@ -457,7 +477,7 @@ class MediaSourceMediaFetcher(
                     pagedSources = this.request
                         .map {
                             ChineseConverter.ensureLoaded()
-                            instance.source.fetch(it)
+                            instance.source.fetch(it.withChineseVariants())
                         },
                     flowContext = flowContext,
                 )

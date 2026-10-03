@@ -190,12 +190,28 @@ abstract class AbstractMikanMediaSource(
 
     private suspend fun HttpClient.searchByKeyword(query: MediaFetchRequest): List<MediaMatch> {
         val client = this
-        val resp = client.prepareGet("$baseUrl/RSS/Search") {
-            parameter("searchstr", query.subjectNameCN?.take(10))
+        // 索引未命中时的回退路径: 依次尝试候选关键字并合并结果.
+        // subjectNames 已由调用方补齐简繁中文变体, 按顺序尝试即可覆盖不同字形.
+        val keywords = (listOfNotNull(query.subjectNameCN) + query.subjectNames)
+            .map { it.trim().take(10) }
+            .filter { it.isNotBlank() }
+            .distinct()
+            .take(3)
+        val topics = mutableListOf<Topic>()
+        for (keyword in keywords) {
+            val resp = client.prepareGet("$baseUrl/RSS/Search") {
+                parameter("searchstr", keyword)
+            }
+            val list = resp.body<ByteReadChannel>().toSource().use {
+                parseRssTopicList(Xml.parse(it, baseUrl), baseUrl)
+            }
+            for (topic in list) {
+                if (topics.none { it.topicId == topic.topicId }) {
+                    topics.add(topic)
+                }
+            }
         }
-        return resp.body<ByteReadChannel>().toSource().use {
-            parseRssTopicList(Xml.parse(it, baseUrl), baseUrl)
-        }.map {
+        return topics.map {
             MediaMatch(it.toOnlineMedia(mediaSourceId), MatchKind.FUZZY)
         }
     }
