@@ -603,7 +603,7 @@ open class EpisodeViewModel(
             val startEp = groupIndex * 100 + 1
             val endEp = startEp + chunk.size - 1
             PaginatedGroup(
-                title = "第 $startEp-$endEp 话",
+                title = "第 $startEp-$endEp 話",
                 items = chunk,
                 startIndex = startItemIndex,
                 groupIndex = groupIndex,

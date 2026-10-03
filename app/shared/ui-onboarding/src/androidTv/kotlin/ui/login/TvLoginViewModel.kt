@@ -88,8 +88,8 @@ class TvLoginViewModel(
                 request(sending = false) {
                     when (submitEmailOtp(fields.value.otp)) {
                         is UserRepository.SendOtpResult.Success -> navigation.emit(TvNavigationEvent.LoggedIn)
-                        UserRepository.SendOtpResult.InvalidOtp -> fields.update { it.copy(error = "验证码不正确") }
-                        UserRepository.SendOtpResult.EmailAlreadyExist -> fields.update { it.copy(error = "邮箱已被占用") }
+                        UserRepository.SendOtpResult.InvalidOtp -> fields.update { it.copy(error = "驗證碼不正確") }
+                        UserRepository.SendOtpResult.EmailAlreadyExist -> fields.update { it.copy(error = "電子郵件已被佔用") }
                     }
                 }
             }
@@ -106,10 +106,10 @@ class TvLoginViewModel(
             } catch (e: CancellationException) {
                 throw e
             } catch (e: RepositoryRateLimitedException) {
-                fields.update { it.copy(error = "发送太频繁, 请稍后再试") }
+                fields.update { it.copy(error = "發送太頻繁，請稍後再試") }
             } catch (e: Exception) {
                 fields.update {
-                    it.copy(error = if (sending) "发送失败, 请检查邮箱地址与网络" else "登录失败, 请重试")
+                    it.copy(error = if (sending) "發送失敗，請檢查電子郵件地址與網路" else "登入失敗，請重試")
                 }
             } finally {
                 fields.update { it.copy(busy = false) }

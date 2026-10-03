@@ -129,7 +129,7 @@ fun SelectorTestPane(
                         enabled = presentation.hasCaptchaSession && !presentation.isHandlingCaptcha,
                     ) {
                         Icon(Icons.Rounded.Refresh, contentDescription = null)
-                        Text("重置验证码会话", Modifier.padding(start = 8.dp))
+                        Text("重設驗證碼會話", Modifier.padding(start = 8.dp))
                     }
                 }
 
@@ -305,9 +305,9 @@ private fun SelectorCaptchaHintRow(
         Icon(Icons.Rounded.WarningAmber, contentDescription = null)
         Text(
             if (isHandlingCaptcha) {
-                "正在处理${request.kind.displayName()}"
+                "正在處理${request.kind.displayName()}"
             } else {
-                "需要处理${request.kind.displayName()}"
+                "需要處理${request.kind.displayName()}"
             },
             modifier = Modifier.padding(start = 8.dp),
             color = MaterialTheme.colorScheme.error,

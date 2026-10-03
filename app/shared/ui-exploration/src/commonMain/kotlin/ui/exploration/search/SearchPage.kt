@@ -454,7 +454,7 @@ private fun SearchPageSearchBar(
                                 },
                                 enabled = state.removingHistory != text,
                             ) {
-                                Icon(Icons.Default.Close, contentDescription = "删除 $text")
+                                Icon(Icons.Default.Close, contentDescription = "刪除 $text")
                             }
                         }
                     } else {

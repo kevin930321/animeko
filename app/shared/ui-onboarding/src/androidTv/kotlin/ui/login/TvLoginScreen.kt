@@ -103,8 +103,8 @@ fun TvLoginScreen(
     ) {
         when (step) {
             TvLoginStep.Email -> TvLoginStepSection(
-                title = "登录 Animeko",
-                subtitle = "输入邮箱, 我们将发送 6 位验证码",
+                title = "登入 Animeko",
+                subtitle = "輸入電子郵件，我們將發送 6 位數驗證碼",
                 field = {
                     TvTextField(
                         value = uiState.email,
@@ -112,7 +112,7 @@ fun TvLoginScreen(
                         modifier = Modifier.fillMaxWidth(0.85f)
                             .tvFocusAnchor(focus, TvLoginFocus.Field)
                             .tvFocusHotkey(focus, Key.DirectionDown to TvLoginFocus.Submit),
-                        placeholder = "邮箱地址",
+                        placeholder = "電子郵件地址",
                         keyboardOptions = KeyboardOptions(
                             keyboardType = KeyboardType.Email,
                             imeAction = ImeAction.Send,
@@ -123,9 +123,9 @@ fun TvLoginScreen(
                 buttons = {
                     TvHeroButton(
                         text = when {
-                            busy -> "发送中…"
-                            resendRemainSec > 0 -> "重新发送 (${resendRemainSec}s)"
-                            else -> "发送验证码"
+                            busy -> "發送中…"
+                            resendRemainSec > 0 -> "重新發送 (${resendRemainSec}s)"
+                            else -> "發送驗證碼"
                         },
                         icon = Icons.AutoMirrored.Rounded.Send,
                         filled = true,
@@ -139,12 +139,12 @@ fun TvLoginScreen(
             TvLoginStep.Otp -> {
                 val otp = uiState.otp
                 TvLoginStepSection(
-                    title = "输入验证码",
+                    title = "輸入驗證碼",
                     subtitle = buildString {
-                        append("已发送至 ${uiState.email}")
+                        append("已發送至 ${uiState.email}")
                         when (uiState.isExistingAccount) {
-                            true -> append(" · 登录已有账号")
-                            false -> append(" · 将注册新账号")
+                            true -> append(" · 登入現有帳號")
+                            false -> append(" · 將註冊新帳號")
                             null -> {}
                         }
                     },
@@ -155,7 +155,7 @@ fun TvLoginScreen(
                             modifier = Modifier.fillMaxWidth(0.55f)
                                 .tvFocusAnchor(focus, TvLoginFocus.Field)
                                 .tvFocusHotkey(focus, Key.DirectionDown to TvLoginFocus.Submit),
-                            placeholder = "6 位验证码",
+                            placeholder = "6 位數驗證碼",
                             keyboardOptions = KeyboardOptions(
                                 keyboardType = KeyboardType.Number,
                                 imeAction = ImeAction.Done,
@@ -165,7 +165,7 @@ fun TvLoginScreen(
                     },
                     buttons = {
                         TvHeroButton(
-                            text = if (busy) "验证中…" else "登录",
+                            text = if (busy) "驗證中…" else "登入",
                             icon = Icons.Rounded.Done,
                             filled = true,
                             onClick = { onIntent(TvLoginIntent.SubmitOtp) },
@@ -173,7 +173,7 @@ fun TvLoginScreen(
                             modifier = Modifier.tvFocusAnchor(focus, TvLoginFocus.Submit),
                         )
                         TvHeroButton(
-                            text = "重新输入邮箱",
+                            text = "重新輸入電子郵件",
                             icon = Icons.Rounded.Undo,
                             filled = false,
                             onClick = {

@@ -95,7 +95,7 @@ fun MediaSelectorSummaryBanner(
                         ) {
                             LoadingIndicator(Modifier.size(20.dp))
                             Text(
-                                "正在查询数据源",
+                                "正在查詢資料來源",
                                 style = MaterialTheme.typography.titleSmall,
                                 softWrap = false,
                             )
@@ -114,7 +114,7 @@ fun MediaSelectorSummaryBanner(
                                     Modifier.size(20.dp),
                                 )
                                 Text(
-                                    "请选择数据源",
+                                    "請選擇資料來源",
                                     style = MaterialTheme.typography.titleSmall,
                                     softWrap = false,
                                 )
@@ -156,7 +156,7 @@ fun MediaSelectorSummaryBanner(
 
             Icon(
                 Icons.Rounded.SyncAlt,
-                contentDescription = "切换数据源",
+                contentDescription = "切換資料來源",
                 Modifier.size(20.dp),
             )
         }

@@ -198,7 +198,7 @@ private fun NewVersionDialogPreview() {
         Surface {
             NewVersionPopupCard(
                 version = "4.8.0‑alpha01",
-                changes = listOf("支持标签搜索", "支持缓存在线源"),
+                changes = listOf("支援標籤搜尋", "支援快取線上來源"),
                 onDetailsClick = {},
                 onAutoUpdateClick = {},
                 onDismissRequest = {},

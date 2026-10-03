@@ -137,12 +137,12 @@ fun TvScheduleScreen(
             verticalArrangement = Arrangement.Center,
         ) {
             Text(
-                "加载失败了, 请检查网络后重试",
+                "載入失敗了，請檢查網路後重試",
                 style = MaterialTheme.typography.titleMedium,
                 color = tvHeroSecondaryContentColor(),
             )
             TvHeroButton(
-                text = "重试",
+                text = "重試",
                 icon = Icons.Rounded.Refresh,
                 filled = true,
                 onClick = { onIntent(TvScheduleIntent.Refresh) },
@@ -195,7 +195,7 @@ private fun TvScheduleDayColumn(
         if (items.isEmpty()) {
             Box(Modifier.fillMaxSize(), contentAlignment = Alignment.Center) {
                 Text(
-                    "这一天没有新番",
+                    "這一天沒有新番",
                     style = MaterialTheme.typography.bodyLarge,
                     color = tvHeroSecondaryContentColor(),
                 )
@@ -419,7 +419,7 @@ private val timeFormatter = LocalTime.Format {
 }
 
 private fun renderTime(time: LocalTime?): String =
-    time?.let { timeFormatter.format(it) } ?: "时间未定"
+    time?.let { timeFormatter.format(it) } ?: "時間未定"
 
 /** 集数渲染: 手机 ScheduleItemDefaults.Episode 同语义 ("第 N 话 [名称]" / ep(sort) 特殊形). */
 private fun renderEpisode(
@@ -430,11 +430,11 @@ private fun renderEpisode(
     val epText = episodeEp?.toString()?.removePrefix("0")
     val sortText = episodeSort.toString().removePrefix("0")
     val sortDisplay = if (episodeEp == null || episodeEp == episodeSort) {
-        if (episodeSort is EpisodeSort.Normal) "第 $sortText 话" else sortText
+        if (episodeSort is EpisodeSort.Normal) "第 $sortText 話" else sortText
     } else {
         checkNotNull(epText)
         if (episodeSort is EpisodeSort.Normal && episodeEp is EpisodeSort.Normal) {
-            "第 $epText ($sortText) 话"
+            "第 $epText ($sortText) 話"
         } else {
             "$epText ($sortText)"
         }
@@ -448,9 +448,9 @@ private fun renderDayOfWeek(day: ScheduleDay): String {
         1 -> "一"; 2 -> "二"; 3 -> "三"; 4 -> "四"; 5 -> "五"; 6 -> "六"; else -> "日"
     }
     return when (day.kind) {
-        ScheduleDay.Kind.LAST_WEEK -> "上周$weekday"
-        ScheduleDay.Kind.THIS_WEEK, ScheduleDay.Kind.TODAY -> "周$weekday"
-        ScheduleDay.Kind.NEXT_WEEK -> "下周$weekday"
+        ScheduleDay.Kind.LAST_WEEK -> "上週$weekday"
+        ScheduleDay.Kind.THIS_WEEK, ScheduleDay.Kind.TODAY -> "週$weekday"
+        ScheduleDay.Kind.NEXT_WEEK -> "下週$weekday"
     }
 }
 

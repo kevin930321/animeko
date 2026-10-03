@@ -24,7 +24,7 @@ private fun PreviewWatchTogetherDialogJoinForm() = ProvideCompositionLocalsForPr
     PreviewDialogContent(
         WatchTogetherUiState.Initial.copy(
             featureEnabled = true,
-            joinForm = WatchTogetherJoinFormState(lastRoomName = "周五夜放送"),
+            joinForm = WatchTogetherJoinFormState(lastRoomName = "週五夜放送"),
         ),
     )
 }
@@ -36,7 +36,7 @@ private fun PreviewWatchTogetherDialogJoinError() = ProvideCompositionLocalsForP
         WatchTogetherUiState.Initial.copy(
             featureEnabled = true,
             joinForm = WatchTogetherJoinFormState(
-                lastRoomName = "周五夜放送",
+                lastRoomName = "週五夜放送",
                 errorMessage = "WRONG_PASSWORD",
             ),
         ),
@@ -50,7 +50,7 @@ private fun PreviewWatchTogetherDialogJoining() = ProvideCompositionLocalsForPre
         WatchTogetherUiState.Initial.copy(
             featureEnabled = true,
             phase = WatchTogetherPhase.JOINING,
-            joinForm = WatchTogetherJoinFormState(lastRoomName = "周五夜放送"),
+            joinForm = WatchTogetherJoinFormState(lastRoomName = "週五夜放送"),
         ),
     )
 }
@@ -170,9 +170,9 @@ private fun previewInRoomState(
 ) = WatchTogetherUiState(
     featureEnabled = true,
     phase = WatchTogetherPhase.IN_ROOM,
-    joinForm = WatchTogetherJoinFormState(lastRoomName = "周五夜放送"),
+    joinForm = WatchTogetherJoinFormState(lastRoomName = "週五夜放送"),
     room = WatchTogetherRoomCardState(
-        roomName = "周五夜放送",
+        roomName = "週五夜放送",
         connection = connection,
         playback = playback,
         members = listOf(

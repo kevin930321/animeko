@@ -84,7 +84,7 @@ fun InteractiveSolveDialog(ui: InteractiveSolveUi) {
                         IconButton(onClick = ui.onRefresh) {
                             Icon(
                                 imageVector = Icons.Rounded.Refresh,
-                                contentDescription = "刷新",
+                                contentDescription = "重新整理",
                                 tint = Color.White,
                             )
                         }

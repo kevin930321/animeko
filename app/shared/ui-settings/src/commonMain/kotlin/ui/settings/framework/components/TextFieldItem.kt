@@ -118,7 +118,7 @@ fun SettingsScope.TextFieldItem(
             },
             trailingContent = {
                 IconButton({ showDialog = true }) {
-                    Icon(Icons.Rounded.Edit, "编辑", tint = MaterialTheme.colorScheme.primary)
+                    Icon(Icons.Rounded.Edit, "編輯", tint = MaterialTheme.colorScheme.primary)
                 }
             },
         )
@@ -214,7 +214,7 @@ internal fun SettingsScope.TextFieldDialog(
                 onClick = onConfirm,
                 enabled = confirmEnabled,
             ) {
-                Text("确认")
+                Text("確認")
             }
         },
         title = title,
@@ -260,7 +260,7 @@ private fun PreviewTextFieldDialog() {
         TextFieldDialog(
             onDismissRequest = {},
             onConfirm = {},
-            title = { Text(text = "编辑") },
+            title = { Text(text = "編輯") },
             description = {
                 Text(
                     "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt" +

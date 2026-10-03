@@ -26,15 +26,15 @@ internal fun SettingsScope.VideoResolverGroup(
 
     Group(
         title = {
-            Text("视频解析")
+            Text("影片解析")
         },
         modifier = modifier,
     ) {
         val itemText: @Composable (WebViewDriver) -> Unit = {
             when (it) {
                 WebViewDriver.CHROME -> Text("Chrome")
-                WebViewDriver.EDGE -> Text("Edge浏览器")
-                WebViewDriver.AUTO -> Text("自动选择")
+                WebViewDriver.EDGE -> Text("Edge 瀏覽器")
+                WebViewDriver.AUTO -> Text("自動選擇")
             }
         }
         DropdownItem(
@@ -49,13 +49,13 @@ internal fun SettingsScope.VideoResolverGroup(
                     ),
                 )
             },
-            title = { Text("浏览器引擎") },
-            description = { Text("播放部分视频源时需要使用无头浏览器引擎，请在电脑上安装 Chrome 或 Edge 浏览器，Safari 不支持") },
+            title = { Text("瀏覽器引擎") },
+            description = { Text("播放部分影片來源時需要使用無頭瀏覽器引擎，請在電腦上安裝 Chrome 或 Edge 瀏覽器，Safari 不支援") },
         )
         DropdownItem(
             selected = { config.effectiveDataSourceBrowserConcurrency },
             values = { VideoResolverSettings.DataSourceBrowserConcurrencyOptions },
-            itemText = { Text("$it 个") },
+            itemText = { Text("$it 個") },
             onSelect = {
                 videoResolverSettingsState.update(
                     config.copy(
@@ -63,8 +63,8 @@ internal fun SettingsScope.VideoResolverGroup(
                     ),
                 )
             },
-            title = { Text("数据源查询浏览器数") },
-            description = { Text("限制数据源查询阶段可同时使用的浏览器数量，例如验证码处理") },
+            title = { Text("資料來源查詢瀏覽器數") },
+            description = { Text("限制資料來源查詢階段可同時使用的瀏覽器數量，例如驗證碼處理") },
         )
     }
 }

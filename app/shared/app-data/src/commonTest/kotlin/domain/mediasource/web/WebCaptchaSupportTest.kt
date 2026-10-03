@@ -19,10 +19,10 @@ import kotlin.test.assertTrue
 class WebCaptchaSupportTest {
     @Test
     fun `displayName matches ui copy`() {
-        assertEquals("图片验证码", WebCaptchaKind.Image.displayName())
-        assertEquals("Cloudflare 验证", WebCaptchaKind.Cloudflare.displayName())
-        assertEquals("Cloudflare Turnstile 验证", WebCaptchaKind.CloudflareTurnstile.displayName())
-        assertEquals("验证码", WebCaptchaKind.Unknown.displayName())
+        assertEquals("圖片驗證碼", WebCaptchaKind.Image.displayName())
+        assertEquals("Cloudflare 驗證", WebCaptchaKind.Cloudflare.displayName())
+        assertEquals("Cloudflare Turnstile 驗證", WebCaptchaKind.CloudflareTurnstile.displayName())
+        assertEquals("驗證碼", WebCaptchaKind.Unknown.displayName())
     }
 
     @Test

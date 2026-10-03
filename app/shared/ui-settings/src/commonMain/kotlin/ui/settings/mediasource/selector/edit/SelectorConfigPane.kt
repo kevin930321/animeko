@@ -251,11 +251,11 @@ internal fun SelectorConfigurationPane(
                     colors = listItemColors,
                 )
                 ListItem(
-                    headlineContent = { Text("优先选择最短标题") },
+                    headlineContent = { Text("優先選擇最短標題") },
                     Modifier
                         .padding(top = (verticalSpacing - 8.dp).coerceAtLeast(0.dp))
                         .clickable(enabled = state.enableEdit) { state.preferShorterName = !state.preferShorterName },
-                    supportingContent = { Text("优先选择满足匹配的标题最短的条目。可避免为第一季匹配到第二季") },
+                    supportingContent = { Text("優先選擇滿足符合條件的標題最短的條目，可避免第一季配對到第二季") },
                     trailingContent = {
                         Switch(
                             state.preferShorterName, { state.preferShorterName = it },

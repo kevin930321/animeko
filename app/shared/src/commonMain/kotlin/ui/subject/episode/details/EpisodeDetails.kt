@@ -735,7 +735,7 @@ fun EpisodeDetails(
                         verticalAlignment = Alignment.CenterVertically,
                     ) {
                         Text(
-                            "弹幕列表",
+                            "彈幕列表",
                             Modifier.weight(1f),
                             style = MaterialTheme.typography.titleLarge,
                         )

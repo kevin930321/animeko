@@ -237,7 +237,7 @@ private fun TvCollectionEmptyPlaceholder(
     }
     Box(modifier.fillMaxSize(), contentAlignment = Alignment.Center) {
         Text(
-            "这里空空如也，去探索页找些番剧吧",
+            "這裡空空如也，去探索頁找些番劇吧",
             style = MaterialTheme.typography.titleMedium,
             color = MaterialTheme.colorScheme.onSurfaceVariant,
         )
@@ -297,8 +297,8 @@ private object TvCollectionDefaults {
 private fun UnifiedCollectionType.displayText(): String = when (this) {
     UnifiedCollectionType.WISH -> "想看"
     UnifiedCollectionType.DOING -> "在看"
-    UnifiedCollectionType.ON_HOLD -> "搁置"
-    UnifiedCollectionType.DONE -> "看过"
-    UnifiedCollectionType.DROPPED -> "抛弃"
+    UnifiedCollectionType.ON_HOLD -> "擱置"
+    UnifiedCollectionType.DONE -> "看過"
+    UnifiedCollectionType.DROPPED -> "拋棄"
     UnifiedCollectionType.NOT_COLLECTED -> "未收藏"
 }

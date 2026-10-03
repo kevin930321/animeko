@@ -89,8 +89,8 @@ fun TvSearchScreen(
         modifier = modifier.fillMaxSize().padding(navigationRailInsets),
     ) {
         when {
-            !state.hasSearched -> TvSearchCenteredHint("输入关键词, 按软键盘搜索键开始")
-            results.itemCount == 0 -> TvSearchCenteredHint("没有找到相关番剧")
+            !state.hasSearched -> TvSearchCenteredHint("輸入關鍵字，按螢幕鍵盤搜尋鍵開始")
+            results.itemCount == 0 -> TvSearchCenteredHint("沒有找到相關番劇")
             else -> TvSearchResultsGrid(results, { onIntent(TvSearchIntent.OpenSubject(it)) }, focus)
         }
     }
@@ -162,7 +162,7 @@ private fun TvSearchField(
                 Box {
                     if (keywords.isEmpty()) {
                         Text(
-                            "搜索番剧…",
+                            "搜尋番劇…",
                             style = MaterialTheme.typography.titleMedium,
                             color = MaterialTheme.colorScheme.onSurfaceVariant.copy(alpha = 0.6f),
                         )

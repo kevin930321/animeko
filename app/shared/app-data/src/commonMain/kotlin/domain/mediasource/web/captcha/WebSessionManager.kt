@@ -73,7 +73,7 @@ class InteractiveSolveUi internal constructor(
     val onDismiss: () -> Unit,
     val onRefresh: () -> Unit,
 ) {
-    val title: String get() = normalizedSessionHost(request.pageUrl) ?: "验证码验证"
+    val title: String get() = normalizedSessionHost(request.pageUrl) ?: "驗證碼驗證"
 }
 
 /**

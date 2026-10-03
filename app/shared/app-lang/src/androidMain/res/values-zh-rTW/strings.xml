@@ -188,8 +188,8 @@
     <string name="settings_about_website">官方網站</string>
     <string name="settings_about_feedback">回饋建議</string>
     <string name="settings_about_source_code">原始碼</string>
-    <string name="settings_about_chat_groups">交流群</string>
-    <string name="settings_about_qq_group">QQ 群</string>
+    <string name="settings_about_chat_groups">交流群組</string>
+    <string name="settings_about_qq_group">QQ 群組</string>
     <string name="settings_about_icon_description">Animeko Icon</string>
     <string name="settings_about_app_name">Animeko</string>
     <string name="settings_about_app_description">集找番、追番、看番的一站式彈幕追番平台</string>
@@ -328,7 +328,7 @@
     <string name="settings_app_search">搜尋</string>
     <string name="settings_app_use_new_search_api">使用新版條目查詢介面</string>
     <string name="settings_app_use_new_search_api_description">實驗性介面，可能會缺失部分條目，請謹慎啟用</string>
-    <string name="settings_app_not_show_done_and_dropped_subjects">不顯示看過和抛棄的條目</string>
+    <string name="settings_app_not_show_done_and_dropped_subjects">不顯示看過和拋棄的條目</string>
     <string name="settings_app_nsfw_hide">隱藏</string>
     <string name="settings_app_nsfw_blur">模糊</string>
     <string name="settings_app_nsfw_display">顯示</string>
@@ -708,7 +708,7 @@
     <string name="settings_danmaku_export_to_clipboard">複製規則到剪貼板</string>
     <string name="settings_danmaku_import_from_clipboard">從剪貼板導入規則</string>
     <string name="settings_danmaku_import_title">導入彈幕正則過濾規則</string>
-    <string name="settings_danmaku_import_description">這會覆蓋當前創建的所有規則，且無法撤銷，確認導入嗎？</string>
+    <string name="settings_danmaku_import_description">這會覆蓋目前建立的所有規則，且無法復原，確認匯入嗎？</string>
     <string name="settings_danmaku_import_failed">導入失敗，剪貼板內容無效</string>
     <string name="settings_danmaku_import_success">導入成功</string>
 
@@ -750,20 +750,20 @@
     <!-- TorrentEngineGroup -->
     <string name="settings_media_torrent_title">anitorrent</string>
     <string name="settings_media_torrent_download_rate_limit">下載速度限制</string>
-    <string name="settings_media_torrent_sharing_settings">分享設置</string>
-    <string name="settings_media_torrent_sharing_description">BT 網絡依賴用戶間分享，你所看的視頻均來自其他用戶的分享。允許上傳，共同維護健康的 BT 分享環境。</string>
+    <string name="settings_media_torrent_sharing_settings">分享設定</string>
+    <string name="settings_media_torrent_sharing_description">BT 網路依賴使用者之間分享，你所看的影片均來自其他使用者的分享。允許上傳，共同維護健康的 BT 分享環境。</string>
     <string name="settings_media_torrent_upload_rate_limit">上傳速度限制</string>
     <string name="settings_media_torrent_share_ratio_limit">分享率限制</string>
     <string name="settings_media_torrent_share_ratio_description">分享率 = 上傳量 / 下載量。大於 1 說明上傳量大於下載量。資源達到分享率限制後，將停止上傳。</string>
     <string name="settings_media_torrent_unlimited">無限制</string>
     <string name="settings_media_torrent_speed_format">%1$s MB/s</string>
-    <string name="settings_media_torrent_limit_upload_on_metered">計費網絡限制上傳</string>
-    <string name="settings_media_torrent_limit_upload_on_metered_description">在計費網絡環境下限制上傳速度為 1 KB/s</string>
-    <string name="settings_media_torrent_peer_filter">Peer 過濾和屏蔽設置</string>
-    <string name="settings_media_torrent_peer_filter_description">在下載或上傳緩存的番劇時不與黑名單或命中過濾規則的客戶端連接</string>
+    <string name="settings_media_torrent_limit_upload_on_metered">計費網路限制上傳</string>
+    <string name="settings_media_torrent_limit_upload_on_metered_description">在計費網路環境下限制上傳速度為 1 KB/s</string>
+    <string name="settings_media_torrent_peer_filter">Peer 過濾與封鎖設定</string>
+    <string name="settings_media_torrent_peer_filter_description">在下載或上傳快取的番劇時不與黑名單或命中過濾規則的用戶端連線</string>
     <string name="settings_media_torrent_extra_trackers">額外 Tracker</string>
-    <string name="settings_media_torrent_extra_trackers_description">在 BT 下載開始前額外添加的 tracker 伺服器，幫助發現更多用戶</string>
-    <string name="settings_media_torrent_extra_trackers_dialog_description">每行一個 tracker 地址，例如 udp://tracker.example.com:6969/announce。將在 BT 下載開始前與內置 tracker 一起添加。修改僅對之後開始的下載生效。</string>
+    <string name="settings_media_torrent_extra_trackers_description">在 BT 下載開始前額外新增的 Tracker 伺服器，協助發現更多使用者</string>
+    <string name="settings_media_torrent_extra_trackers_dialog_description">每行一個 Tracker 位址，例如 udp://tracker.example.com:6969/announce。將在 BT 下載開始前與內建 Tracker 一起新增。修改僅對之後開始的下載生效。</string>
 
     <!-- AutoCacheGroup -->
     <string name="settings_media_auto_cache_title">自動快取</string>
@@ -1349,7 +1349,7 @@
     <string name="media_selector_item_episode_mismatch">劇集不相符</string>
     <string name="media_selector_web_waiting_captcha">正在等待驗證碼處理</string>
     <string name="media_selector_web_rate_limited">限流中 · %1$d 秒後自動重試</string>
-    <string name="media_selector_web_captcha_unsupported">此源需要網頁驗證, 當前平台暫不支持, 請在桌面 / Android 端使用或更換數據源</string>
+    <string name="media_selector_web_captcha_unsupported">此來源需要網頁驗證，目前平台暫不支援，請在桌面 / Android 端使用或更換資料來源</string>
     <string name="media_selector_summary_manual_select">手動選擇</string>
     <string name="media_selector_summary_change">更換</string>
     <string name="media_selector_summary_auto_selecting">正在自動選擇資料來源</string>
@@ -1362,7 +1362,7 @@
     <string name="media_source_results_verify">驗證</string>
     <string name="media_selector_view_simple_mode">簡單模式</string>
     <string name="media_selector_view_detailed_mode">詳細模式</string>
-    <string name="media_selector_sources">數據源</string>
+    <string name="media_selector_sources">資料來源</string>
     <string name="media_selector_mode_auto">自動匹配</string>
     <string name="media_selector_mode_manual">手動查找</string>
     <string name="media_selector_mode_bt">BT 資源</string>
@@ -1374,8 +1374,8 @@
     <string name="media_selector_retry">重試</string>
     <string name="media_selector_load_failed">載入失敗</string>
     <string name="media_selector_auto_rescue">找不到想看的？手動查找</string>
-    <string name="media_selector_manual_no_sources">沒有支援瀏覽的數據源</string>
-    <string name="media_selector_manual_captcha_unsupported">需要網頁驗證，當前平台不支援</string>
+    <string name="media_selector_manual_no_sources">沒有支援瀏覽的資料來源</string>
+    <string name="media_selector_manual_captcha_unsupported">需要網頁驗證，目前平台不支援</string>
     <string name="media_selector_manual_result_count">共 %1$d 條結果</string>
     <string name="media_selector_manual_no_result">沒有結果</string>
     <string name="media_selector_manual_back">返回</string>
@@ -1383,7 +1383,7 @@
     <string name="media_selector_manual_default_channel">預設線路</string>
     <string name="media_selector_manual_episodes_count">劇集 %1$d 項</string>
     <string name="media_selector_manual_remember_selection">記住選擇</string>
-    <string name="media_selector_bt_source_all">全部數據源 %1$d 條</string>
+    <string name="media_selector_bt_source_all">全部資料來源 %1$d 條</string>
     <string name="media_selector_bt_source_count">%1$d 條</string>
     <string name="media_selector_bt_source_querying">查詢中</string>
     <string name="media_selector_bt_source_failed">查詢失敗</string>

@@ -135,11 +135,11 @@ object WebCaptchaDetector {
 }
 
 fun WebCaptchaKind.displayName(): String = when (this) {
-    WebCaptchaKind.Image -> "图片验证码"
-    WebCaptchaKind.Cloudflare -> "Cloudflare 验证"
-    WebCaptchaKind.CloudflareTurnstile -> "Cloudflare Turnstile 验证"
-    WebCaptchaKind.Unknown -> "验证码"
-    WebCaptchaKind.SliderCaptcha -> "滑动验证"
+    WebCaptchaKind.Image -> "圖片驗證碼"
+    WebCaptchaKind.Cloudflare -> "Cloudflare 驗證"
+    WebCaptchaKind.CloudflareTurnstile -> "Cloudflare Turnstile 驗證"
+    WebCaptchaKind.Unknown -> "驗證碼"
+    WebCaptchaKind.SliderCaptcha -> "滑動驗證"
 }
 
 /**
